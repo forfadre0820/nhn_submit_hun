@@ -208,58 +208,8 @@ export default function CombinedLanding() {
         </div>
       </section>
 
-      {/* Video Scaling Section */}
-      <section className="relative h-[400vh] bg-white">
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-          <motion.div
-            className="text-center max-w-4xl mx-auto px-4"
-            style={{
-              scale: useTransform(scrollY, [window.innerHeight * 2, window.innerHeight * 4], [1, 0.8]),
-              opacity: useTransform(scrollY, [window.innerHeight * 2, window.innerHeight * 4], [1, 0])
-            }}
-          >
-            <motion.h1 
-              className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Dites bonjour<br />
-              aux idées{" "}
-              <motion.span className="inline-block relative">
-                <motion.video
-                  className="inline-block rounded-lg"
-                  style={{
-                    width: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3], ["120px", "200px", "400px", "100vw"]),
-                    height: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3], ["80px", "130px", "260px", "100vh"]),
-                    position: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["relative", "fixed"]),
-                    top: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["0px", "0px"]),
-                    left: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["0px", "0px"]),
-                    zIndex: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], [1, 50])
-                  }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  <source
-                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                    type="video/mp4"
-                  />
-                </motion.video>
-              </motion.span>
-              {" "}qui<br />
-              transforment<br />
-              <em className="italic">vraiment</em><br />
-              la vie des gens.
-            </motion.h1>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Ross Mason Section */}
-      <section className="bg-white text-black relative z-10">
+      <section className="bg-white text-black">
         {/* About Section - Ross Mason Style */}
         <motion.div 
           className="py-16 bg-white"
@@ -392,7 +342,7 @@ export default function CombinedLanding() {
                 viewport={{ once: true }}
               >
                 <div className="h-full flex flex-col justify-between">
-                  {/* Service Image */}
+                  {/* Service Image with Scaling Video */}
                   <motion.div 
                     className="mb-8 relative overflow-hidden rounded-lg"
                     key={selectedService}
@@ -405,15 +355,23 @@ export default function CombinedLanding() {
                       alt={`${selectedService} work example`}
                       className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700"
                     />
-                    {/* Video overlay for demonstration */}
+                    {/* Scroll-triggered scaling video overlay */}
                     <motion.div 
                       className="absolute inset-0 flex items-center justify-center"
                       initial={{ scale: 0.3, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
                     >
-                      <video
-                        className="w-24 h-16 object-cover rounded opacity-90"
+                      <motion.video
+                        className="object-cover rounded opacity-90"
+                        style={{
+                          width: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3, window.innerHeight * 4], ["96px", "150px", "300px", "80vw", "100vw"]),
+                          height: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3, window.innerHeight * 4], ["64px", "100px", "200px", "60vh", "100vh"]),
+                          position: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], ["relative", "fixed"]),
+                          top: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], ["0px", "0px"]),
+                          left: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], ["0px", "0px"]),
+                          zIndex: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], [1, 1000])
+                        }}
                         autoPlay
                         loop
                         muted
@@ -423,7 +381,7 @@ export default function CombinedLanding() {
                           src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                           type="video/mp4"
                         />
-                      </video>
+                      </motion.video>
                     </motion.div>
                   </motion.div>
 
