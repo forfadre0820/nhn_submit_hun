@@ -152,6 +152,9 @@ Changelog:
 - July 04, 2025. Removed "Experience" overlay text from video full-screen section
 - July 04, 2025. Smoothed video upward scroll transition with gradual translate percentage increases
 - July 04, 2025. Enhanced Ross Mason section reveal with 6-point transform progression for natural emergence
+- July 04, 2025. Added dissolve effect to video fade-out with dual opacity transforms on container and video element
+- July 04, 2025. Implemented smooth transition CSS for natural dissolve appearance during scroll exit
+- July 04, 2025. Created layered opacity animation: container (1→0.5→0) and video (1→0.3→0) for gradual dissolution
 ```
 
 ## User Preferences

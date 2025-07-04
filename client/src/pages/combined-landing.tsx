@@ -243,7 +243,7 @@ export default function CombinedLanding() {
                               zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
                               top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
                               left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [2000, 2200], [1, 0]),
+                              opacity: useTransform(scrollY, [1800, 2000, 2200], [1, 0.5, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -259,7 +259,8 @@ export default function CombinedLanding() {
                                 left: "0px",
                                 height: "87px",
                                 width: "230px",
-                                objectFit: "cover"
+                                objectFit: "cover",
+                                opacity: useTransform(scrollY, [1700, 1900, 2100], [1, 0.3, 0])
                               }}
                             />
                           </motion.div>
