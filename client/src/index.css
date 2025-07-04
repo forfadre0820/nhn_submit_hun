@@ -89,12 +89,15 @@
     width: 8.3rem;
     pointer-events: none;
     z-index: 1;
+    vertical-align: baseline;
+    margin: 0 0.5rem;
   }
 
   @media (min-width: 768px) {
     .home__hero__video {
       height: 6.0417vw;
       width: 15.9722vw;
+      margin: 0 1vw;
     }
   }
 

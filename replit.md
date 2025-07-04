@@ -125,6 +125,8 @@ Changelog:
 - July 04, 2025. Recreated McCann.fr heroVideo() structure with inline-block display and rem/vw sizing
 - July 04, 2025. Added proper CSS classes for video positioning and scaling animation behavior
 - July 04, 2025. Video scales from 3.1rem x 8.3rem to full screen with smooth scroll transitions
+- July 04, 2025. Positioned video in exact gap between "aux idées" and "qui" text with baseline alignment
+- July 04, 2025. Added margin spacing (0.5rem mobile, 1vw desktop) for proper text flow
 ```
 
 ## User Preferences

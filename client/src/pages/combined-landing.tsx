@@ -191,7 +191,7 @@ export default function CombinedLanding() {
                       <div className="sentence">
                         aux idées&nbsp;
                         <motion.div 
-                          className="home__hero__video inline-block"
+                          className="home__hero__video"
                           data-cursor="sound on"
                           data-cursor-click="sound off"
                           style={{
@@ -202,7 +202,9 @@ export default function CombinedLanding() {
                             zIndex: useTransform(scrollY, [0, 600], [1, 9999]),
                             position: useTransform(scrollY, [600], ["fixed"]),
                             top: useTransform(scrollY, [600], ["0px"]),
-                            left: useTransform(scrollY, [600], ["0px"])
+                            left: useTransform(scrollY, [600], ["0px"]),
+                            verticalAlign: "baseline",
+                            margin: "0 0.5rem"
                           }}
                         >
                           <motion.video
@@ -223,7 +225,7 @@ export default function CombinedLanding() {
                             }}
                           />
                         </motion.div>
-                        &nbsp;qui
+                        qui
                       </div>
                     </div>
                     <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
