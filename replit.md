@@ -146,6 +146,9 @@ Changelog:
 - July 04, 2025. Adjusted scroll timing: 5 scroll actions to reach full-screen, then 3 more to naturally exit
 - July 04, 2025. Smoothed video exit animation with gradual scale reduction and upward translation
 - July 04, 2025. Extended full-screen section back to 300vh for better scroll pacing and natural transitions
+- July 04, 2025. Modified video exit to scroll upward instead of scaling down, maintaining full size during transition
+- July 04, 2025. Implemented parallax effect with Ross Mason section appearing at different scroll speed
+- July 04, 2025. Created overlapping transition where video and next section move at different rates for natural reveal
 ```
 
 ## User Preferences
