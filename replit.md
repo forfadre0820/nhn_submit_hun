@@ -122,6 +122,9 @@ Changelog:
 - July 04, 2025. Fixed position overlay triggered at 600px scroll point with z-index 9999
 - July 04, 2025. Added home__video class with position-relative and active states for proper video containment
 - July 04, 2025. Implemented video scaling with negative top/left positioning to cover text content when expanded
+- July 04, 2025. Recreated McCann.fr heroVideo() structure with inline-block display and rem/vw sizing
+- July 04, 2025. Added proper CSS classes for video positioning and scaling animation behavior
+- July 04, 2025. Video scales from 3.1rem x 8.3rem to full screen with smooth scroll transitions
 ```
 
 ## User Preferences

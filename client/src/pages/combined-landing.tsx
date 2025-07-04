@@ -174,60 +174,35 @@ export default function CombinedLanding() {
           </div>
         </header>
 
-        {/* Hero Section */}
-        <div className="relative min-h-screen flex items-center justify-center pt-20 home__video position-relative active">
-          <div className="container mx-auto px-4" style={{ height: "300vh" }}>
-            <motion.div
-              className="text-center max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="sentence relative">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
-                  <div className="mb-4">Dites bonjour</div>
-                  <div className="mb-4 home__hero__line">
-                    <div className="sentence">
-                      aux idées&nbsp;
-                      <motion.div 
-                        className="pin-spacer"
-                        style={{
-                          order: 0,
-                          placeSelf: "auto",
-                          gridArea: "auto",
-                          zIndex: 1,
-                          float: "none",
-                          flexShrink: 1,
-                          display: "inline-block",
-                          margin: "0px",
-                          inset: "auto",
-                          position: "relative",
-                          flexBasis: "auto",
-                          overflow: "visible",
-                          boxSizing: "border-box",
-                          width: "195px",
-                          height: "74px",
-                          padding: "0px"
-                        }}
-                      >
+        {/* Hero Section with Video */}
+        <div className="relative home__video" style={{ height: "150vh" }}>
+          <div className="min-h-screen flex items-center justify-center pt-20">
+            <div className="container mx-auto px-4">
+              <motion.div
+                className="text-center max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="sentence relative">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
+                    <div className="mb-4">Dites bonjour</div>
+                    <div className="mb-4 home__hero__line">
+                      <div className="sentence">
+                        aux idées&nbsp;
                         <motion.div 
-                          className="home__hero__video is-finished"
+                          className="home__hero__video inline-block"
+                          data-cursor="sound on"
+                          data-cursor-click="sound off"
                           style={{
-                            translate: "none",
-                            rotate: "none",
-                            scale: "none",
-                            inset: "0px auto auto 0px",
-                            margin: "0px",
-                            maxWidth: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "230px", "300px", "50vw", "70vw", "90vw", "100vw"]),
-                            width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "230px", "300px", "50vw", "70vw", "90vw", "100vw"]),
-                            maxHeight: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "87px", "113px", "28vw", "39vw", "51vw", "56vw"]),
-                            height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "87px", "113px", "28vw", "39vw", "51vw", "56vw"]),
-                            padding: "0px",
-                            transform: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["translate(0px, 0px)", "translate(0px, 200px)", "translate(0px, 400px)", "translate(0px, 600px)", "translate(0px, 800px)", "translate(0px, 1000px)", "translate(0px, 1200px)"]),
+                            display: "inline-block",
+                            height: "3.1rem",
+                            width: "8.3rem",
+                            pointerEvents: "none",
+                            zIndex: useTransform(scrollY, [0, 600], [1, 9999]),
                             position: useTransform(scrollY, [600], ["fixed"]),
                             top: useTransform(scrollY, [600], ["0px"]),
-                            left: useTransform(scrollY, [600], ["0px"]),
-                            zIndex: useTransform(scrollY, [600], [9999])
+                            left: useTransform(scrollY, [600], ["0px"])
                           }}
                         >
                           <motion.video
@@ -238,23 +213,25 @@ export default function CombinedLanding() {
                             autoPlay
                             crossOrigin="anonymous"
                             style={{
-                              top: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["0px", "-50px", "-100px", "-200px", "-300px", "-400px", "-500px"]),
-                              left: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["0px", "-100px", "-200px", "-400px", "-600px", "-800px", "-1000px"]),
-                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "87px", "113px", "50vh", "70vh", "90vh", "100vh"]),
-                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "230px", "300px", "70vw", "90vw", "100vw", "100vw"]),
-                              transform: useTransform(scrollY, [1400, 1600, 1800], ["translateY(0)", "translateY(0)", "translateY(-100vh)"])
+                              display: "block",
+                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["100%", "200%", "400%", "100vw", "100vw", "100vw"]),
+                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["100%", "200%", "400%", "100vh", "100vh", "100vh"]),
+                              objectFit: "cover",
+                              left: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["0px", "-50px", "-100px", "-400px", "-800px", "-1200px"]),
+                              top: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["0px", "-25px", "-50px", "-200px", "-400px", "-600px"]),
+                              transform: useTransform(scrollY, [1200, 1400], ["translateY(0)", "translateY(-100vh)"])
                             }}
                           />
                         </motion.div>
-                      </motion.div>
-                      &nbsp;qui
+                        &nbsp;qui
+                      </div>
                     </div>
-                  </div>
-                  <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
-                  <div>la vie des gens<span className="text-red-500">.</span></div>
-                </h1>
-              </div>
-            </motion.div>
+                    <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
+                    <div>la vie des gens<span className="text-red-500">.</span></div>
+                  </h1>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

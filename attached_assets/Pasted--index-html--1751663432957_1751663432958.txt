@@ -1,0 +1,194 @@
+“작게 보이던 비디오가 스크롤에 맞춰 커졌다가 다음 섹션으로 넘어가는” 핵심 로직이 들어 있는 부분입니다.
+(스크립트 번들 안에 그대로 들어 있기 때문에 index.html에서 바로 확인됩니다.)
+
+1. heroVideo() 메서드 정의부
+js
+Copy
+Edit
+heroVideo() {
+  const wrap  = window.wrapper.querySelector('.home__hero__video'); // 글자 속 작은 비디오
+  const track = window.wrapper.querySelector('.home__video');       // 스크롤 트랙
+  const video = wrap.querySelector('video');
+
+  /* ① 작은 비디오·메타 정보 고정 ----------------------- */
+  ScrollTrigger.create({
+    pin: wrap,                // 비디오를 스크롤 구간 동안 ‘붙잡음’
+    pinSpacing: false,
+    trigger: track,
+    start: 'top+=1px bottom',
+    end:   'bottom bottom+=1px',
+    scrub: true,
+  });
+  ScrollTrigger.create({
+    pin: '.home__hero__metas', // 하단 좌표·시계도 함께 고정
+    pinSpacing: false,
+    trigger: '.home__video',
+    start: 'top+=1px bottom',
+    end:   'bottom bottom+=1px',
+    scrub: true,
+  });
+
+  /* ② 비디오 크기·위치 계산 함수 ----------------------- */
+  const getOffsets = () => {
+    const vRect = video.getBoundingClientRect();
+    const tRect = track.getBoundingClientRect();
+    return {
+      top: this.isPortrait ? tRect.top - vRect.top - vRect.height : -vRect.top,
+      left: -vRect.left,
+    };
+  };
+  const { top: offsetTop, left: offsetLeft } = getOffsets();
+  const calcHeight = () => (this.isPortrait ? 0.5625 * window.innerWidth : '100vh');
+
+  /* ③ GSAP 타임라인 — ‘따라 커지는’ 모션 -------------- */
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.home__hero',
+      endTrigger: '.home__video',
+      start: 'top top',
+      end:   () => (this.isPortrait ? 'bottom bottom' : 'top top'),
+      scrub: true,
+      invalidateOnRefresh: () => !(window.innerWidth < 768),
+      onRefresh: () => {
+        if (window.innerWidth > 768) {
+          const { top, left } = getOffsets();
+          this.offsetTop  = this.isPortrait ? top : -video.getBoundingClientRect().top;
+          this.offsetLeft = left;
+        }
+      },
+      onEnterBack: () => {
+        window.cursor.leave(true);
+        wrap.classList.remove('is-finished');
+        track.classList.remove('active');
+      },
+    },
+  });
+
+  tl.fromTo(
+       video,                      // 대상
+       { left: 0, top: 0 },        // 시작 값
+       {                            // 끝 값 — 화면 한가운데 풀스크린
+         width:  '100vw',
+         height: () => (this.enterAnimationEnded ? calcHeight() : this.videoHeight),
+         top:    () => (this.enterAnimationEnded ? getOffsets().top  : offsetTop),
+         left:   () => (this.enterAnimationEnded ? getOffsets().left : offsetLeft),
+       },
+       'together',
+     )
+     .call(() => {                 // 애니메이션 끝났을 때 클래스 토글
+       window.cursor.enter(wrap.dataset.cursor);
+       wrap.classList.add('is-finished');
+       track.classList.add('active');
+     });
+}
+
+ 
+
+2. 흐름이 어떻게 이어지는가?
+initEnterAnimation() → 페이지 첫 진입 애니메이션이 끝나면 heroVideo()를 호출해 비디오 스크롤 트리거를 세팅합니다. 
+
+ScrollTrigger 두 개가
+
+비디오 상자(.home__hero__video)와
+
+좌표·시계(.home__hero__metas)
+을 트랙 구간 동안 ‘핀(pin)’ 해서 화면에 고정시킵니다.
+
+GSAP 타임라인(tl)이 스크롤 진행도에 맞춰
+
+width, height, top, left 값을 점진적으로 바꿔 → 결국 100 vw × 100 vh(또는 16:9) 풀스크린으로 커지게 합니다.
+
+타임라인 마지막에 클래스 .is-finished와 .active를 주어, “더 스크롤하면 바로 다음 섹션 pin 시작” 이 자연스럽게 이어집니다.
+
+3. 왜 이 부분이 핵심인가?
+스크롤에 반응해 요소를 고정(pin) + 실시간 값 변환(scrub) 하는 ScrollTrigger 패턴의 전형적인 구현.
+
+레이아웃 계산(getOffsets, calcHeight)을 onRefresh 안에서 다시 해 주므로, 윈도우 리사이즈나 방향 전환 시에도 깨지지 않습니다.
+
+마지막 콜백에서 커서 모드·클래스 토글을 해 두어, 다음 구간 마우스 인터랙션까지 한 번에 처리합니다.
+
+이 heroVideo() 블록을 다른 프로젝트에 그대로 옮긴 뒤, .home__hero__video / .home__video 두 요소와 스크롤 트랙 높이(height: 150vh)만 맞춰 주면 같은 연출을 손쉽게 재현할 수 있습니다.
+
+
+Sources
+
+
+
+
+
+
+
+You said:
+그러면 텍스트 사이에 영상은 어떤식으로 들어가있어
+
+
+ChatGPT said:
+
+Thought for 1m 7s
+텍스트 줄 안에 영상을 끼워넣는 구조
+HTML ― 영상이 “글자처럼” 배치됨
+두 번째 줄 마크업을 보면,
+
+html
+Copy
+Edit
+<div class="home__hero__line">
+  <div class="sentence">
+    aux idées&nbsp;
+    <div class="home__hero__video" data-cursor="sound on" data-cursor-click="sound off">
+      <video src="…/Chivas_15s_3D_16x9_231002-1.mp4"
+             loop playsinline muted crossorigin="anonymous"></video>
+    </div>
+    qui
+  </div>
+</div>
+home__hero__video DIV를 sentence 내부에 끼워 넣어 두었기 때문에 “aux idées [영상] qui”처럼 한 단어 취급으로 흐릅니다. 
+
+CSS ― 진짜 글자처럼 보이게 만드는 치트키
+
+css
+Copy
+Edit
+.home__hero__video {
+  display: inline-block; /* 인라인 흐름에 참여 */
+  height: 3.1rem;        /* 모바일 기준 글꼴 높이만큼 */
+  width:  8.3rem;        /* 가로 고정 */
+  pointer-events: none;  /* 처음엔 클릭 막기 */
+  z-index: 1;
+}
+@media (min-width:760px) {
+  .home__hero__video {       /* 뷰포트 넓어지면 글자 크기 따라 자동 비율 조정 */
+    height: 6.0417vw;
+    width:  15.9722vw;
+  }
+}
+.home__hero__video video {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;       /* DIV 크기에 맞춰 잘라내기 */
+}
+``` :contentReference[oaicite:1]{index=1}
+
+* **`display:inline-block`** 덕분에 영상 DIV가 스페이스 하나짜리 글자처럼 줄 안에 들어갑니다.  
+* 높이·넓이를 **rem / vw** 단위로 맞춰서 헤드라인 폰트 크기가 변해도 영상이 같은 ‘활자 크기’로 보입니다.  
+* `object-fit:cover`로 16 × 9 영상을 사각형 안에 꽉 채워 잘라내므로 글자처럼 단정하게 보입니다.  
+
+인터랙션 제어용 클래스
+애니메이션이 끝나면 JS가 .is-finished를 붙여서
+
+css
+Copy
+Edit
+.home__hero__video.is-finished{
+  cursor:none;           /* 커서 숨김 */
+  pointer-events:all;    /* 클릭 / 사운드 토글 활성화 */
+}
+``` :contentReference[oaicite:2]{index=2}  
+스크롤 애니메이션이 다 끝나기 전까지는 영상이 “장식용 활자”처럼만 존재하고, 끝난 뒤에야 사운드 토글 등의 인터랙션을 열어 주는 식입니다.
+요약 ✔️
+**sentence 내부에 div 하나를 끼워넣고 inline-block**으로 만들어서, 영상이 글자 사이에 자연스럽게 흐르도록 했다.
+
+rem / vw 단위를 써서 헤드라인 폰트 크기가 바뀌면 영상도 비례해 커진다.
+
+애니메이션 전엔 pointer-events:none으로 완전히 글자처럼 취급, 끝난 뒤 .is-finished를 붙여 인터랙션용 요소로 전환한다.
