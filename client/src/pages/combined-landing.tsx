@@ -186,25 +186,35 @@ export default function CombinedLanding() {
               <div className="sentence relative">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
                   <div className="mb-4">Dites bonjour</div>
-                  <div className="mb-4">aux idées qui 
-                    <motion.video 
-                      className="inline-block rounded-lg object-cover mx-2 align-middle"
+                  <div className="mb-4">
+                    aux idées&nbsp;<span>qui</span>
+                    <div 
+                      className="video-thumb inline-block align-middle mx-2 rounded-lg overflow-hidden"
                       style={{
-                        width: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], ["120px", "140px", "180px", "240px", "320px", "400px", "50vw", "70vw", "85vw", "95vw", "100vw"]),
-                        height: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], ["68px", "79px", "101px", "135px", "180px", "225px", "28vw", "39vw", "48vw", "53vw", "56vw"]),
-                        position: useTransform(scrollY, [600], ["fixed"]),
-                        top: useTransform(scrollY, [600], ["0px"]),
-                        left: useTransform(scrollY, [600], ["0px"]),
-                        zIndex: useTransform(scrollY, [600], [9999]),
-                        transform: useTransform(scrollY, [900, 1100, 1300], ["translate(0, 0)", "translate(0, 0)", "translate(0, -100vh)"])
+                        width: "120px",
+                        height: "67px",
+                        transform: "translateY(-2px)",
+                        transition: "opacity 0.3s"
                       }}
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline
                     >
-                      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                    </motion.video>
+                      <motion.video 
+                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        className="w-full h-full object-cover rounded-lg"
+                        style={{
+                          scale: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], [1, 1.2, 1.5, 2, 2.7, 3.3, 4.2, 5.8, 7.1, 7.9, 8.3]),
+                          position: useTransform(scrollY, [500], ["fixed"]),
+                          top: useTransform(scrollY, [500], ["0px"]),
+                          left: useTransform(scrollY, [500], ["0px"]),
+                          zIndex: useTransform(scrollY, [500], [9999]),
+                          transformOrigin: "center",
+                          transform: useTransform(scrollY, [900, 1100, 1300], ["scale(8.3)", "scale(8.3)", "scale(8.3) translateY(-100vh)"])
+                        }}
+                      />
+                    </div>
                   </div>
                   <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                   <div>la vie des gens<span className="text-red-500">.</span></div>
