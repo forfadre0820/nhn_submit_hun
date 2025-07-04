@@ -143,6 +143,9 @@ Changelog:
 - July 04, 2025. Fixed video positioning to stop following scroll after full-screen section ends
 - July 04, 2025. Video now properly disappears at 1000px scroll point with opacity fade and position reset
 - July 04, 2025. Reduced full-screen section height to 200vh for better scroll control
+- July 04, 2025. Adjusted scroll timing: 5 scroll actions to reach full-screen, then 3 more to naturally exit
+- July 04, 2025. Smoothed video exit animation with gradual scale reduction and upward translation
+- July 04, 2025. Extended full-screen section back to 300vh for better scroll pacing and natural transitions
 ```
 
 ## User Preferences
