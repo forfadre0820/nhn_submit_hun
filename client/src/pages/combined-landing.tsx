@@ -218,7 +218,6 @@ export default function CombinedLanding() {
                             style={{
                               translate: "none",
                               rotate: "none",
-                              scale: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], [1, 1.5, 2.5, 5, 8, 12, 12]),
                               inset: "0px auto auto 0px",
                               margin: "0px",
                               maxWidth: "230px",
@@ -226,7 +225,18 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [599, 600, 2800, 2801], ["translate(0px, 0px)", "translate(-50%, -50%)", "translate(-50%, -50%)", "translate(-50%, -150%)"]),
+                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 599, 600, 2800, 2801], [
+                                "translate(0px, 0px) scale(1)",
+                                "translate(0px, 0px) scale(1.5)",
+                                "translate(0px, 0px) scale(2.5)",
+                                "translate(0px, 0px) scale(4)",
+                                "translate(0px, 0px) scale(6)",
+                                "translate(0px, 0px) scale(8)",
+                                "translate(0px, 0px) scale(10)",
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -150%) scale(10)"
+                              ]),
                               position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
                               top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
@@ -267,6 +277,34 @@ export default function CombinedLanding() {
       {/* Video Full Screen Section */}
       <section className="relative bg-black" style={{ height: "300vh" }}>
         <div className="sticky top-0 w-full h-screen overflow-hidden">
+          <div className="relative overflow-hidden h-screen h-full-screen">
+            <div className="absolute inset-0" style={{ 
+              translate: "none", 
+              rotate: "none", 
+              scale: "none", 
+              transform: "translate3d(0px, -4.2364rem, 0px)" 
+            }}>
+              <motion.div 
+                className="overflow-hidden media-fill lazy absolute top-0 left-0 h-full w-full"
+                style={{
+                  opacity: useTransform(scrollY, [600, 800], [0, 1])
+                }}
+              >
+                <motion.video
+                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                  loop
+                  playsInline
+                  muted
+                  autoPlay
+                  crossOrigin="anonymous"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{
+                    opacity: useTransform(scrollY, [600, 800], [0, 1])
+                  }}
+                />
+              </motion.div>
+            </div>
+          </div>
           <div className="absolute inset-0 flex items-center justify-center text-white z-10">
             <motion.div
               className="text-center"

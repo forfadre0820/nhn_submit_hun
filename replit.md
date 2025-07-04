@@ -137,6 +137,9 @@ Changelog:
 - July 04, 2025. Implemented McCann.fr exact pin-spacer structure with 230px x 87px dimensions
 - July 04, 2025. Applied proper CSS properties matching McCann.fr: translate, rotate, scale, inset positioning
 - July 04, 2025. Fixed video container structure with pin-spacer wrapper for proper text alignment
+- July 04, 2025. Rebuilt video scaling with combined transform property for proper scale animation
+- July 04, 2025. Added dedicated full-screen video container with media-fill class structure
+- July 04, 2025. Implemented gradual scale progression: 1x → 1.5x → 2.5x → 4x → 6x → 8x → 10x with smooth transitions
 ```
 
 ## User Preferences
