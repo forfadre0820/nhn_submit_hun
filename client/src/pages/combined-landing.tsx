@@ -125,25 +125,9 @@ export default function CombinedLanding() {
                 <a href="#" className="text-base uppercase tracking-wide hover:opacity-75">Creations</a>
               </nav>
               
-              <div className="flex justify-center">
-                <svg viewBox="0 0 107 20" className="h-6 fill-current">
-                  <path d="M0 0.321777H3.4102L9.8294 12.5552L16.2486 0.321777H19.4983V19.7182H16.4091V5.8751L10.7522 16.5391H8.70604L3.08924 5.8751V19.7182H0V0.321777Z"/>
-                  <path d="M21.5444 12.8771C21.5444 8.53105 24.1522 5.75439 28.084 5.75439C31.2133 5.75439 33.7008 7.44454 34.2625 10.6236H31.1732C30.6517 9.09443 29.6086 8.37009 28.084 8.37009C25.9175 8.37009 24.5534 9.93951 24.5534 12.8771C24.5534 15.8148 25.8774 17.3842 28.084 17.3842C29.6487 17.3842 30.7319 16.6598 31.2134 14.9294H34.3026C33.7008 18.1085 31.2936 19.9999 28.084 19.9999C24.1121 20.0401 21.5444 17.2232 21.5444 12.8771Z"/>
-                  <path d="M35.7469 9.97988C35.7469 4.10463 39.438 0 44.8943 0C49.2273 0 52.477 2.53521 53.3997 6.72032H50.15C49.3877 4.10463 47.5021 2.85714 44.8943 2.85714C41.2033 2.85714 38.9164 5.6338 38.9164 10.0201C38.9164 14.4064 41.2033 17.1831 44.8943 17.1831C47.5021 17.1831 49.4279 15.8551 50.1901 13.1187H53.3997C52.477 17.4245 49.2674 20.0402 44.8943 20.0402C39.3979 20 35.7469 16.0161 35.7469 9.97988Z"/>
-                  <path d="M60.541 0.321777H63.7105L70.9321 19.7182H67.6423L65.877 14.7685H58.2943L56.529 19.7182H53.2793L60.541 0.321777ZM64.874 11.9918L62.0656 4.06423L59.2572 11.9918H64.874Z"/>
-                  <path d="M72.4567 0.321777H75.3453L85.0543 14.4063V0.321777H87.9831V19.7182H85.1346L75.3854 5.63365V19.7182H72.4567V0.321777Z"/>
-                  <path d="M91.4735 0.321777H94.3621L104.071 14.4063V0.321777H107V19.7182H104.151L94.4023 5.63365V19.7182H91.4735V0.321777Z"/>
-                </svg>
-              </div>
-              
               <nav className="flex items-center space-x-6">
                 <a href="#" className="text-base uppercase tracking-wide hover:opacity-75">Equipe</a>
                 <a href="#" className="text-base uppercase tracking-wide hover:opacity-75">Contact</a>
-                <div className="flex items-center space-x-2">
-                  <span className="text-base">FR</span>
-                  <span className="text-base opacity-50">|</span>
-                  <span className="text-base opacity-50">EN</span>
-                </div>
               </nav>
             </div>
           </div>
@@ -479,53 +463,130 @@ export default function CombinedLanding() {
           </div>
         </motion.div>
 
-        {/* Tutorial Gallery */}
+        {/* Learn 3D Mastery Section */}
         <motion.div 
-          className="py-12 bg-gray-50"
+          className="py-16 bg-gray-50"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <div className="container mx-auto px-4">
-            <h3 className="text-2xl font-bold mb-8">Recent Tutorials</h3>
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-              {tutorialData.map((tutorial, index) => (
-                <motion.article
-                  key={index}
-                  className={`group cursor-pointer break-inside-avoid mb-6 ${
-                    index % 3 === 0 ? 'transform scale-110' : 
-                    index % 4 === 0 ? 'transform -rotate-1' : 
-                    index % 5 === 0 ? 'transform rotate-1' : ''
-                  }`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10, scale: 1.05 }}
-                >
-                  <div className="mb-3">
-                    <span className="text-sm text-gray-500 uppercase tracking-wide">
-                      [{tutorial.tags.join(", ")}]
-                    </span>
-                  </div>
-                  <div className={`relative mb-3 overflow-hidden rounded-lg ${
-                    index % 2 === 0 ? 'aspect-[3/4]' : 
-                    index % 3 === 0 ? 'aspect-[4/3]' : 
-                    'aspect-[16/9]'
-                  }`}>
-                    <img
-                      src={tutorial.image}
-                      alt={tutorial.alt}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="flex justify-between items-center text-sm text-gray-600">
-                    <span>{tutorial.duration} / {tutorial.month}</span>
-                    <span className="font-medium">{tutorial.title}</span>
-                  </div>
-                </motion.article>
-              ))}
+            {/* Header */}
+            <div className="mb-12">
+              <motion.h2 
+                className="text-6xl md:text-7xl font-black uppercase mb-6"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                LEARN 3D<br />MASTERY
+              </motion.h2>
+              <motion.button
+                className="bg-black text-white px-8 py-4 rounded-full text-base font-medium hover:bg-gray-800 transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get a free patreon tutorial sample
+              </motion.button>
+            </div>
+
+            {/* Irregular Image Grid */}
+            <div className="relative h-[800px] overflow-hidden">
+              {/* Large image on the left */}
+              <motion.div
+                className="absolute left-0 top-0 w-[35%] h-full"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1600"
+                  alt="3D Interior Design"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </motion.div>
+
+              {/* Medium image top center */}
+              <motion.div
+                className="absolute left-[40%] top-0 w-[25%] h-[45%]"
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+                  alt="3D Architectural Render"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </motion.div>
+
+              {/* Small image center */}
+              <motion.div
+                className="absolute left-[42%] top-[50%] w-[20%] h-[30%]"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400"
+                  alt="3D Abstract Art"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </motion.div>
+
+              {/* Medium image right side */}
+              <motion.div
+                className="absolute right-[5%] top-[20%] w-[28%] h-[50%]"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=1000"
+                  alt="3D Product Design"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </motion.div>
+
+              {/* Small square image bottom left */}
+              <motion.div
+                className="absolute left-[70%] bottom-[10%] w-[15%] h-[20%]"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
+                  alt="3D Geometric Shapes"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </motion.div>
+
+              {/* Vertical image far right */}
+              <motion.div
+                className="absolute right-0 top-0 w-[20%] h-[80%]"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1617791160588-241658c0f566?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=1200"
+                  alt="3D Character Design"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </motion.div>
             </div>
           </div>
         </motion.div>

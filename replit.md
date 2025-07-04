@@ -97,6 +97,10 @@ Changelog:
 - July 04, 2025. Removed location/time display and hero image section
 - July 04, 2025. Added comprehensive career section with personal info, education, and experience
 - July 04, 2025. Simplified layout for natural scroll transition between sections
+- July 04, 2025. Removed "McCann" branding and "FR/EN" language toggle from navigation
+- July 04, 2025. Replaced tutorial gallery with "Learn 3D Mastery" section featuring irregular image layout
+- July 04, 2025. Increased font sizes throughout the site for better readability
+- July 04, 2025. Added comprehensive animations and hover effects across all sections
 ```
 
 ## User Preferences
