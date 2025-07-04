@@ -225,7 +225,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 1200, 1500, 1800, 2000], [
+                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 1400, 1600, 1800, 2000, 2200], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -234,14 +234,16 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(10)",
                                 "translate(-50%, -50%) scale(10)",
                                 "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -100vh) scale(10)"
+                                "translate(-50%, -60%) scale(10)",
+                                "translate(-50%, -80%) scale(10)",
+                                "translate(-50%, -100%) scale(10)",
+                                "translate(-50%, -120%) scale(10)"
                               ]),
                               position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
                               top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
                               left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [2000, 2200], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -306,22 +308,7 @@ export default function CombinedLanding() {
               </motion.div>
             </div>
           </div>
-          <div className="absolute inset-0 flex items-center justify-center text-white z-10">
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
-                Experience
-              </h2>
-              <p className="text-xl md:text-2xl lg:text-3xl text-gray-300">
-                Full immersion
-              </p>
-            </motion.div>
-          </div>
+
         </div>
       </section>
 
@@ -329,7 +316,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [1200, 1800, 2200], ["translateY(100vh)", "translateY(50vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [1400, 1600, 1800, 2000, 2200, 2400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}

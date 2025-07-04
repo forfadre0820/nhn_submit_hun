@@ -149,6 +149,9 @@ Changelog:
 - July 04, 2025. Modified video exit to scroll upward instead of scaling down, maintaining full size during transition
 - July 04, 2025. Implemented parallax effect with Ross Mason section appearing at different scroll speed
 - July 04, 2025. Created overlapping transition where video and next section move at different rates for natural reveal
+- July 04, 2025. Removed "Experience" overlay text from video full-screen section
+- July 04, 2025. Smoothed video upward scroll transition with gradual translate percentage increases
+- July 04, 2025. Enhanced Ross Mason section reveal with 6-point transform progression for natural emergence
 ```
 
 ## User Preferences
