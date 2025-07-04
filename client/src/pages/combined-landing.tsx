@@ -183,27 +183,8 @@ export default function CombinedLanding() {
 
       {/* Ross Mason Section */}
       <section className="bg-white text-black">
-        {/* Navigation Header */}
-        <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-          <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
-            <div className="flex items-center justify-between space-x-12">
-              <div>
-                <a href="#" className="text-lg font-medium">Ross Mason</a>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
-                <span>{currentTime}</span>
-              </div>
-              <div>
-                <button className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
-                  Send me a message
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
         {/* Latest Tutorial Section */}
-        <div className="py-20 bg-black text-white">
+        <div className="py-8 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-6">
               <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
@@ -224,19 +205,19 @@ export default function CombinedLanding() {
         </div>
 
         {/* Career Section */}
-        <div className="py-32 bg-gray-50">
+        <div className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
               <div className="md:col-span-4">
-                <div className="sticky top-32">
+                <div className="sticky top-20">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600"
                     alt="Ross Mason Portrait"
-                    className="w-full aspect-[4/5] object-cover rounded-lg mb-6"
+                    className="w-full aspect-[16/9] object-cover rounded-lg mb-4"
                   />
-                  <h3 className="text-2xl font-bold mb-2">Ross Mason</h3>
-                  <p className="text-gray-600 mb-4">3D Artist & Educator</p>
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <h3 className="text-xl font-bold mb-2">Ross Mason</h3>
+                  <p className="text-gray-600 mb-3 text-sm">3D Artist & Educator</p>
+                  <div className="space-y-1 text-xs text-gray-600">
                     <div>
                       <span className="font-medium">Location:</span> Los Angeles, CA
                     </div>
@@ -251,11 +232,11 @@ export default function CombinedLanding() {
               </div>
               
               <div className="md:col-span-8">
-                <div className="space-y-12">
+                <div className="space-y-6">
                   {/* About */}
                   <div>
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">About</h4>
-                    <p className="text-gray-600 leading-relaxed">
+                    <h4 className="text-base font-semibold mb-2 text-gray-800">About</h4>
+                    <p className="text-gray-600 leading-relaxed text-sm">
                       Passionate 3D artist with over 8 years of experience in creating stunning visual content for brands, 
                       agencies, and independent projects. Specialized in Cinema 4D and Redshift rendering, with a focus on 
                       architectural visualization, product design, and motion graphics. Currently teaching and sharing knowledge 
@@ -265,32 +246,32 @@ export default function CombinedLanding() {
 
                   {/* Personal Information */}
                   <div>
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Personal Information</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-3">
-                        <div className="flex justify-between">
+                    <h4 className="text-base font-semibold mb-2 text-gray-800">Personal Information</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs">
                           <span className="text-gray-600">Born:</span>
                           <span className="font-medium">March 15, 1990</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between text-xs">
                           <span className="text-gray-600">Nationality:</span>
                           <span className="font-medium">American</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between text-xs">
                           <span className="text-gray-600">Languages:</span>
                           <span className="font-medium">English, French</span>
                         </div>
                       </div>
-                      <div className="space-y-3">
-                        <div className="flex justify-between">
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs">
                           <span className="text-gray-600">Email:</span>
                           <span className="font-medium">ross@masonstudio.com</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between text-xs">
                           <span className="text-gray-600">Phone:</span>
                           <span className="font-medium">+1 (555) 123-4567</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between text-xs">
                           <span className="text-gray-600">Website:</span>
                           <span className="font-medium">masonstudio.com</span>
                         </div>
@@ -300,52 +281,52 @@ export default function CombinedLanding() {
 
                   {/* Education */}
                   <div>
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Education</h4>
-                    <div className="space-y-4">
-                      <div className="border-l-2 border-gray-300 pl-4">
-                        <h5 className="font-medium">Bachelor of Fine Arts in 3D Animation</h5>
-                        <p className="text-gray-600">Art Center College of Design, Pasadena</p>
-                        <p className="text-sm text-gray-500">2008 - 2012</p>
+                    <h4 className="text-base font-semibold mb-2 text-gray-800">Education</h4>
+                    <div className="space-y-3">
+                      <div className="border-l-2 border-gray-300 pl-3">
+                        <h5 className="font-medium text-sm">Bachelor of Fine Arts in 3D Animation</h5>
+                        <p className="text-gray-600 text-xs">Art Center College of Design, Pasadena</p>
+                        <p className="text-xs text-gray-500">2008 - 2012</p>
                       </div>
-                      <div className="border-l-2 border-gray-300 pl-4">
-                        <h5 className="font-medium">Certificate in Motion Graphics</h5>
-                        <p className="text-gray-600">School of Visual Arts, New York</p>
-                        <p className="text-sm text-gray-500">2013</p>
+                      <div className="border-l-2 border-gray-300 pl-3">
+                        <h5 className="font-medium text-sm">Certificate in Motion Graphics</h5>
+                        <p className="text-gray-600 text-xs">School of Visual Arts, New York</p>
+                        <p className="text-xs text-gray-500">2013</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Experience */}
                   <div>
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Professional Experience</h4>
-                    <div className="space-y-6">
-                      <div className="border-l-2 border-black pl-4">
-                        <h5 className="font-medium">Senior 3D Artist & Educator</h5>
-                        <p className="text-gray-600">Freelance / Patreon Creator</p>
-                        <p className="text-sm text-gray-500 mb-2">2020 - Present</p>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                    <h4 className="text-base font-semibold mb-2 text-gray-800">Professional Experience</h4>
+                    <div className="space-y-4">
+                      <div className="border-l-2 border-black pl-3">
+                        <h5 className="font-medium text-sm">Senior 3D Artist & Educator</h5>
+                        <p className="text-gray-600 text-xs">Freelance / Patreon Creator</p>
+                        <p className="text-xs text-gray-500 mb-1">2020 - Present</p>
+                        <ul className="text-xs text-gray-600 space-y-0.5">
                           <li>• Creating educational content for 1000+ subscribers on Patreon</li>
                           <li>• Developing comprehensive Cinema 4D and Redshift tutorials</li>
                           <li>• Consulting for major brands on 3D visualization projects</li>
                         </ul>
                       </div>
                       
-                      <div className="border-l-2 border-gray-300 pl-4">
-                        <h5 className="font-medium">3D Visualization Artist</h5>
-                        <p className="text-gray-600">Digital Dimension Studios</p>
-                        <p className="text-sm text-gray-500 mb-2">2017 - 2020</p>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                      <div className="border-l-2 border-gray-300 pl-3">
+                        <h5 className="font-medium text-sm">3D Visualization Artist</h5>
+                        <p className="text-gray-600 text-xs">Digital Dimension Studios</p>
+                        <p className="text-xs text-gray-500 mb-1">2017 - 2020</p>
+                        <ul className="text-xs text-gray-600 space-y-0.5">
                           <li>• Lead artist on architectural visualization projects</li>
                           <li>• Collaborated with architects and real estate developers</li>
                           <li>• Mentored junior artists in advanced rendering techniques</li>
                         </ul>
                       </div>
                       
-                      <div className="border-l-2 border-gray-300 pl-4">
-                        <h5 className="font-medium">Motion Graphics Designer</h5>
-                        <p className="text-gray-600">Creative Agency Los Angeles</p>
-                        <p className="text-sm text-gray-500 mb-2">2013 - 2017</p>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                      <div className="border-l-2 border-gray-300 pl-3">
+                        <h5 className="font-medium text-sm">Motion Graphics Designer</h5>
+                        <p className="text-gray-600 text-xs">Creative Agency Los Angeles</p>
+                        <p className="text-xs text-gray-500 mb-1">2013 - 2017</p>
+                        <ul className="text-xs text-gray-600 space-y-0.5">
                           <li>• Created motion graphics for advertising campaigns</li>
                           <li>• Worked with clients including Nike, Apple, and Google</li>
                           <li>• Specialized in product visualization and brand animations</li>
@@ -356,27 +337,27 @@ export default function CombinedLanding() {
 
                   {/* Skills */}
                   <div>
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Technical Skills</h4>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                      <div className="bg-white p-4 rounded-lg">
-                        <h6 className="font-medium mb-2">3D Software</h6>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                    <h4 className="text-base font-semibold mb-2 text-gray-800">Technical Skills</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      <div className="bg-white p-3 rounded-lg">
+                        <h6 className="font-medium mb-1 text-sm">3D Software</h6>
+                        <ul className="text-xs text-gray-600 space-y-0.5">
                           <li>Cinema 4D</li>
                           <li>Blender</li>
                           <li>Maya</li>
                         </ul>
                       </div>
-                      <div className="bg-white p-4 rounded-lg">
-                        <h6 className="font-medium mb-2">Rendering</h6>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                      <div className="bg-white p-3 rounded-lg">
+                        <h6 className="font-medium mb-1 text-sm">Rendering</h6>
+                        <ul className="text-xs text-gray-600 space-y-0.5">
                           <li>Redshift</li>
                           <li>Octane</li>
                           <li>Arnold</li>
                         </ul>
                       </div>
-                      <div className="bg-white p-4 rounded-lg">
-                        <h6 className="font-medium mb-2">Post-Production</h6>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                      <div className="bg-white p-3 rounded-lg">
+                        <h6 className="font-medium mb-1 text-sm">Post-Production</h6>
+                        <ul className="text-xs text-gray-600 space-y-0.5">
                           <li>After Effects</li>
                           <li>Photoshop</li>
                           <li>Premiere Pro</li>
@@ -391,22 +372,22 @@ export default function CombinedLanding() {
         </div>
 
         {/* Why Join Section */}
-        <div className="py-32">
+        <div className="py-8">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              <div className="md:col-span-3 mb-8 md:mb-0">
-                <h3 className="text-sm uppercase tracking-wide">[Why join?]</h3>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+              <div className="md:col-span-3 mb-4 md:mb-0">
+                <h3 className="text-xs uppercase tracking-wide">[Why join?]</h3>
               </div>
               <div className="md:col-span-9">
-                <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
+                <h2 className="text-xl md:text-2xl font-bold leading-tight mb-4">
                   LEVEL UP YOUR 3D SKILLS AND DO <em className="italic">the work</em> YOU'VE <em className="italic">always</em> WANTED TO DO.
                 </h2>
-                <a href="#" className="text-lg hover:opacity-75 transition-opacity border-b-2 border-black">
+                <a href="#" className="text-sm hover:opacity-75 transition-opacity border-b border-black">
                   Unlock your 3D capabilities - Patreon
                 </a>
                 
                 {/* Benefits Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-24">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                   {benefits.map((benefit, index) => (
                     <motion.div
                       key={index}
@@ -416,9 +397,9 @@ export default function CombinedLanding() {
                       transition={{ delay: index * 0.2, duration: 0.6 }}
                       viewport={{ once: true }}
                     >
-                      <span className="text-sm opacity-50 mb-4">{benefit.number}</span>
-                      <h4 className="text-xl font-semibold mb-4">{benefit.title}</h4>
-                      <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                      <span className="text-xs opacity-50 mb-2">{benefit.number}</span>
+                      <h4 className="text-sm font-semibold mb-2">{benefit.title}</h4>
+                      <p className="text-gray-600 leading-relaxed text-xs">{benefit.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -428,10 +409,10 @@ export default function CombinedLanding() {
         </div>
 
         {/* Tutorial Gallery */}
-        <div className="py-16 bg-gray-50">
+        <div className="py-8 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h3 className="text-2xl font-bold mb-12">Recent Tutorials</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h3 className="text-lg font-bold mb-6">Recent Tutorials</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {tutorialData.map((tutorial, index) => (
                 <motion.article
                   key={index}
@@ -441,19 +422,19 @@ export default function CombinedLanding() {
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <div className="mb-4">
-                    <span className="text-sm text-gray-500 uppercase tracking-wide">
+                  <div className="mb-2">
+                    <span className="text-xs text-gray-500 uppercase tracking-wide">
                       [{tutorial.tags.join(", ")}]
                     </span>
                   </div>
-                  <div className="relative mb-4 aspect-[4/5] overflow-hidden rounded-lg">
+                  <div className="relative mb-2 aspect-[16/9] overflow-hidden rounded-lg">
                     <img
                       src={tutorial.image}
                       alt={tutorial.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <div className="flex justify-between items-center text-sm text-gray-600">
+                  <div className="flex justify-between items-center text-xs text-gray-600">
                     <span>{tutorial.duration} / {tutorial.month}</span>
                     <span>{tutorial.title}</span>
                   </div>
@@ -464,10 +445,10 @@ export default function CombinedLanding() {
         </div>
 
         {/* CTA Section */}
-        <div className="py-32 bg-black text-white text-center">
+        <div className="py-12 bg-black text-white text-center">
           <div className="container mx-auto px-4">
             <motion.h2
-              className="text-4xl md:text-6xl font-bold mb-8"
+              className="text-2xl md:text-3xl font-bold mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -476,7 +457,7 @@ export default function CombinedLanding() {
               Ready to elevate your 3D skills?
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+              className="text-sm text-gray-300 mb-6 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -485,7 +466,7 @@ export default function CombinedLanding() {
               Join hundreds of 3D artists who are already mastering Cinema 4D and Redshift with our comprehensive tutorials.
             </motion.p>
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-3 justify-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -493,13 +474,13 @@ export default function CombinedLanding() {
             >
               <a
                 href="#"
-                className="bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors"
+                className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors"
               >
                 Start Learning on Patreon
               </a>
               <a
                 href="#"
-                className="border border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-black transition-colors"
+                className="border border-white text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors"
               >
                 View Free Samples
               </a>
@@ -508,28 +489,28 @@ export default function CombinedLanding() {
         </div>
 
         {/* Footer */}
-        <footer className="py-16 bg-gray-900 text-white">
+        <footer className="py-8 bg-gray-900 text-white">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-2xl font-bold mb-4">Ross Mason</h3>
-                <p className="text-gray-400 mb-6">
+                <h3 className="text-lg font-bold mb-2">Ross Mason</h3>
+                <p className="text-gray-400 mb-3 text-sm">
                   3D Artist & Educator specializing in Cinema 4D and Redshift rendering techniques.
                 </p>
               </div>
               <div className="flex flex-col md:items-end">
-                <div className="flex space-x-6 mb-6">
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <div className="flex space-x-4 mb-3">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Patreon
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Instagram
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Twitter
                   </a>
                 </div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs">
                   © 2024 Ross Mason. All rights reserved.
                 </p>
               </div>
