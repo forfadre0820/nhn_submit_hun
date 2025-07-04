@@ -183,32 +183,43 @@ export default function CombinedLanding() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
-                <div className="mb-4">Dites bonjour</div>
-                <div className="mb-4 flex items-center justify-center flex-wrap">
-                  <span>aux idées</span>
-                  <motion.video 
-                    className="object-cover rounded-lg mx-4"
-                    style={{
-                      width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["80px", "100px", "150px", "250px", "400px", "60vw", "100vw"]),
-                      height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["50px", "65px", "95px", "155px", "250px", "40vh", "100vh"]),
-                      position: useTransform(scrollY, [1000, 1200], ["relative", "fixed"]),
-                      top: useTransform(scrollY, [1000, 1200], ["0px", "0px"]),
-                      left: useTransform(scrollY, [1000, 1200], ["0px", "0px"]),
-                      zIndex: useTransform(scrollY, [1000, 1200], [1, 1000])
-                    }}
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                  >
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                  </motion.video>
-                  <span>qui</span>
-                </div>
-                <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
-                <div>la vie des gens<span className="text-red-500">.</span></div>
-              </h1>
+              <div className="sentence relative">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
+                  <div className="mb-4">Dites bonjour</div>
+                  <div className="mb-4">aux idées</div>
+                  
+                  {/* Pin Spacer for Video Area */}
+                  <div className="pin-spacer relative w-full mb-4 flex items-center justify-center">
+                    <div 
+                      className="video-container relative bg-gray-100 rounded-lg overflow-hidden"
+                      style={{
+                        width: "min(90vw, 800px)",
+                        height: "min(50.6vw, 450px)", // 16:9 비율 유지
+                        aspectRatio: "16/9"
+                      }}
+                    >
+                      <motion.video 
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{
+                          scale: useTransform(scrollY, [0, 200, 400, 600], [0.3, 0.6, 0.9, 1.0]),
+                          position: useTransform(scrollY, [600], ["sticky"]),
+                          zIndex: 10
+                        }}
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                      >
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                      </motion.video>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">qui</div>
+                  <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
+                  <div>la vie des gens<span className="text-red-500">.</span></div>
+                </h1>
+              </div>
             </motion.div>
           </div>
         </div>
