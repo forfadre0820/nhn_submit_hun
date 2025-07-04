@@ -140,6 +140,9 @@ Changelog:
 - July 04, 2025. Rebuilt video scaling with combined transform property for proper scale animation
 - July 04, 2025. Added dedicated full-screen video container with media-fill class structure
 - July 04, 2025. Implemented gradual scale progression: 1x → 1.5x → 2.5x → 4x → 6x → 8x → 10x with smooth transitions
+- July 04, 2025. Fixed video positioning to stop following scroll after full-screen section ends
+- July 04, 2025. Video now properly disappears at 1000px scroll point with opacity fade and position reset
+- July 04, 2025. Reduced full-screen section height to 200vh for better scroll control
 ```
 
 ## User Preferences

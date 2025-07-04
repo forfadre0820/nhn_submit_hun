@@ -225,7 +225,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 599, 600, 2800, 2801], [
+                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 599, 600, 1000, 1001], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -237,10 +237,11 @@ export default function CombinedLanding() {
                                 "translate(-50%, -50%) scale(10)",
                                 "translate(-50%, -150%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
-                              top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              position: useTransform(scrollY, [599, 600, 1000, 1001], ["static", "fixed", "fixed", "absolute"]),
+                              zIndex: useTransform(scrollY, [599, 600, 1000, 1001], [1, 9999, 9999, -1]),
+                              top: useTransform(scrollY, [599, 600, 1000, 1001], ["auto", "50%", "50%", "-100vh"]),
                               left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [1000, 1001], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -275,7 +276,7 @@ export default function CombinedLanding() {
       </section>
 
       {/* Video Full Screen Section */}
-      <section className="relative bg-black" style={{ height: "300vh" }}>
+      <section className="relative bg-black" style={{ height: "200vh" }}>
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           <div className="relative overflow-hidden h-screen h-full-screen">
             <div className="absolute inset-0" style={{ 
