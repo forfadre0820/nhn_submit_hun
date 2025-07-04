@@ -92,6 +92,11 @@ This is a modern full-stack web application for a 3D artist's portfolio website.
 ```
 Changelog:
 - July 04, 2025. Initial setup
+- July 04, 2025. Created combined landing page with McCann and Ross Mason sections
+- July 04, 2025. Updated navigation to floating rounded style with backdrop blur
+- July 04, 2025. Removed location/time display and hero image section
+- July 04, 2025. Added comprehensive career section with personal info, education, and experience
+- July 04, 2025. Simplified layout for natural scroll transition between sections
 ```
 
 ## User Preferences

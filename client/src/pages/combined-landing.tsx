@@ -115,16 +115,16 @@ export default function CombinedLanding() {
       {/* McCann Section */}
       <section className="min-h-screen relative">
         {/* Header */}
-        <header className="fixed top-0 left-0 w-full z-50 bg-white">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <nav className="flex items-center space-x-8">
+        <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+          <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
+            <div className="flex items-center space-x-8">
+              <nav className="flex items-center space-x-6">
                 <a href="#" className="text-sm uppercase tracking-wide hover:opacity-75">Agence</a>
                 <a href="#" className="text-sm uppercase tracking-wide hover:opacity-75">Creations</a>
               </nav>
               
-              <div className="flex-1 flex justify-center">
-                <svg viewBox="0 0 107 20" className="h-5 fill-current">
+              <div className="flex justify-center">
+                <svg viewBox="0 0 107 20" className="h-4 fill-current">
                   <path d="M0 0.321777H3.4102L9.8294 12.5552L16.2486 0.321777H19.4983V19.7182H16.4091V5.8751L10.7522 16.5391H8.70604L3.08924 5.8751V19.7182H0V0.321777Z"/>
                   <path d="M21.5444 12.8771C21.5444 8.53105 24.1522 5.75439 28.084 5.75439C31.2133 5.75439 33.7008 7.44454 34.2625 10.6236H31.1732C30.6517 9.09443 29.6086 8.37009 28.084 8.37009C25.9175 8.37009 24.5534 9.93951 24.5534 12.8771C24.5534 15.8148 25.8774 17.3842 28.084 17.3842C29.6487 17.3842 30.7319 16.6598 31.2134 14.9294H34.3026C33.7008 18.1085 31.2936 19.9999 28.084 19.9999C24.1121 20.0401 21.5444 17.2232 21.5444 12.8771Z"/>
                   <path d="M35.7469 9.97988C35.7469 4.10463 39.438 0 44.8943 0C49.2273 0 52.477 2.53521 53.3997 6.72032H50.15C49.3877 4.10463 47.5021 2.85714 44.8943 2.85714C41.2033 2.85714 38.9164 5.6338 38.9164 10.0201C38.9164 14.4064 41.2033 17.1831 44.8943 17.1831C47.5021 17.1831 49.4279 15.8551 50.1901 13.1187H53.3997C52.477 17.4245 49.2674 20.0402 44.8943 20.0402C39.3979 20 35.7469 16.0161 35.7469 9.97988Z"/>
@@ -134,7 +134,7 @@ export default function CombinedLanding() {
                 </svg>
               </div>
               
-              <nav className="flex items-center space-x-8">
+              <nav className="flex items-center space-x-6">
                 <a href="#" className="text-sm uppercase tracking-wide hover:opacity-75">Equipe</a>
                 <a href="#" className="text-sm uppercase tracking-wide hover:opacity-75">Contact</a>
                 <div className="flex items-center space-x-2">
@@ -178,96 +178,29 @@ export default function CombinedLanding() {
               </h1>
             </motion.div>
           </div>
-          
-          {/* Location and Time */}
-          <div className="absolute bottom-8 left-0 right-0">
-            <div className="container mx-auto px-4">
-              <div className="flex justify-between items-center text-sm text-gray-600">
-                <div>N 48° 53' 34.915"</div>
-                <div className="font-mono">{currentTime}</div>
-                <div>E 02° 15' 52.038"</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Ross Mason Section */}
       <section className="bg-white text-black">
         {/* Navigation Header */}
-        <header className="sticky top-0 left-0 w-full z-50 pt-6 md:pt-8 text-white mix-blend-difference">
-          <nav className="container mx-auto px-4">
-            <div className="flex items-center justify-between">
+        <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+          <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
+            <div className="flex items-center justify-between space-x-12">
               <div>
                 <a href="#" className="text-lg font-medium">Ross Mason</a>
               </div>
-              <div className="flex justify-end">
-                <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors">
+              <div className="flex items-center space-x-2 text-sm text-gray-600">
+                <span>{currentTime}</span>
+              </div>
+              <div>
+                <button className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
                   Send me a message
                 </button>
               </div>
             </div>
-          </nav>
-        </header>
-
-        {/* Hero Section */}
-        <div className="min-h-screen flex flex-col justify-between pt-20 pb-10">
-          <div className="container mx-auto px-4 flex-1 flex items-center">
-            <div className="w-full">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-none">
-                <div className="overflow-hidden mb-4">
-                  <motion.div
-                    className="slide-content"
-                    variants={slideVariants}
-                    initial="hidden"
-                    animate={animationStarted ? "visible" : "hidden"}
-                    custom={0}
-                  >
-                    Learn 3D
-                  </motion.div>
-                </div>
-                <div className="overflow-hidden">
-                  <motion.div
-                    className="slide-content"
-                    variants={slideVariants}
-                    initial="hidden"
-                    animate={animationStarted ? "visible" : "hidden"}
-                    custom={1}
-                  >
-                    Mastery
-                  </motion.div>
-                </div>
-              </h1>
-              <motion.div
-                className="mt-12 md:mt-16"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.5, duration: 0.8 }}
-              >
-                <a
-                  href="#"
-                  className="inline-block bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
-                >
-                  Get a free patreon tutorial sample
-                </a>
-              </motion.div>
-            </div>
           </div>
-          
-          {/* Hero Image */}
-          <motion.div
-            className="relative h-screen overflow-hidden mt-12"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2, duration: 1.2 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080"
-              alt="3D rendered modern interior"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </div>
+        </header>
 
         {/* Latest Tutorial Section */}
         <div className="py-20 bg-black text-white">
@@ -285,6 +218,173 @@ export default function CombinedLanding() {
                 <a href="#" className="text-white hover:opacity-75 transition-opacity border-b-2 border-white">
                   Visit Patreon
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Career Section */}
+        <div className="py-32 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+              <div className="md:col-span-4">
+                <div className="sticky top-32">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600"
+                    alt="Ross Mason Portrait"
+                    className="w-full aspect-[4/5] object-cover rounded-lg mb-6"
+                  />
+                  <h3 className="text-2xl font-bold mb-2">Ross Mason</h3>
+                  <p className="text-gray-600 mb-4">3D Artist & Educator</p>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div>
+                      <span className="font-medium">Location:</span> Los Angeles, CA
+                    </div>
+                    <div>
+                      <span className="font-medium">Experience:</span> 8+ Years
+                    </div>
+                    <div>
+                      <span className="font-medium">Specialization:</span> Cinema 4D, Redshift
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="md:col-span-8">
+                <div className="space-y-12">
+                  {/* About */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">About</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Passionate 3D artist with over 8 years of experience in creating stunning visual content for brands, 
+                      agencies, and independent projects. Specialized in Cinema 4D and Redshift rendering, with a focus on 
+                      architectural visualization, product design, and motion graphics. Currently teaching and sharing knowledge 
+                      through comprehensive tutorials on Patreon.
+                    </p>
+                  </div>
+
+                  {/* Personal Information */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Personal Information</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Born:</span>
+                          <span className="font-medium">March 15, 1990</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Nationality:</span>
+                          <span className="font-medium">American</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Languages:</span>
+                          <span className="font-medium">English, French</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Email:</span>
+                          <span className="font-medium">ross@masonstudio.com</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Phone:</span>
+                          <span className="font-medium">+1 (555) 123-4567</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">Website:</span>
+                          <span className="font-medium">masonstudio.com</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Education */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Education</h4>
+                    <div className="space-y-4">
+                      <div className="border-l-2 border-gray-300 pl-4">
+                        <h5 className="font-medium">Bachelor of Fine Arts in 3D Animation</h5>
+                        <p className="text-gray-600">Art Center College of Design, Pasadena</p>
+                        <p className="text-sm text-gray-500">2008 - 2012</p>
+                      </div>
+                      <div className="border-l-2 border-gray-300 pl-4">
+                        <h5 className="font-medium">Certificate in Motion Graphics</h5>
+                        <p className="text-gray-600">School of Visual Arts, New York</p>
+                        <p className="text-sm text-gray-500">2013</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Experience */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Professional Experience</h4>
+                    <div className="space-y-6">
+                      <div className="border-l-2 border-black pl-4">
+                        <h5 className="font-medium">Senior 3D Artist & Educator</h5>
+                        <p className="text-gray-600">Freelance / Patreon Creator</p>
+                        <p className="text-sm text-gray-500 mb-2">2020 - Present</p>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• Creating educational content for 1000+ subscribers on Patreon</li>
+                          <li>• Developing comprehensive Cinema 4D and Redshift tutorials</li>
+                          <li>• Consulting for major brands on 3D visualization projects</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="border-l-2 border-gray-300 pl-4">
+                        <h5 className="font-medium">3D Visualization Artist</h5>
+                        <p className="text-gray-600">Digital Dimension Studios</p>
+                        <p className="text-sm text-gray-500 mb-2">2017 - 2020</p>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• Lead artist on architectural visualization projects</li>
+                          <li>• Collaborated with architects and real estate developers</li>
+                          <li>• Mentored junior artists in advanced rendering techniques</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="border-l-2 border-gray-300 pl-4">
+                        <h5 className="font-medium">Motion Graphics Designer</h5>
+                        <p className="text-gray-600">Creative Agency Los Angeles</p>
+                        <p className="text-sm text-gray-500 mb-2">2013 - 2017</p>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• Created motion graphics for advertising campaigns</li>
+                          <li>• Worked with clients including Nike, Apple, and Google</li>
+                          <li>• Specialized in product visualization and brand animations</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Technical Skills</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                      <div className="bg-white p-4 rounded-lg">
+                        <h6 className="font-medium mb-2">3D Software</h6>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>Cinema 4D</li>
+                          <li>Blender</li>
+                          <li>Maya</li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg">
+                        <h6 className="font-medium mb-2">Rendering</h6>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>Redshift</li>
+                          <li>Octane</li>
+                          <li>Arnold</li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg">
+                        <h6 className="font-medium mb-2">Post-Production</h6>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>After Effects</li>
+                          <li>Photoshop</li>
+                          <li>Premiere Pro</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
