@@ -187,26 +187,24 @@ export default function CombinedLanding() {
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
                   <div className="mb-4">Dites bonjour</div>
                   <div className="mb-4">aux idées qui 
-                    <span className="inline-block mx-2 relative">
-                      <motion.video 
-                        className="rounded-lg object-cover"
-                        style={{
-                          width: useTransform(scrollY, [0, 200, 400, 600], ["120px", "240px", "50vw", "100vw"]),
-                          height: useTransform(scrollY, [0, 200, 400, 600], ["68px", "135px", "28vw", "56vw"]),
-                          position: useTransform(scrollY, [400], ["fixed"]),
-                          top: useTransform(scrollY, [400], ["0px"]),
-                          left: useTransform(scrollY, [400], ["0px"]),
-                          zIndex: useTransform(scrollY, [400], [9999]),
-                          transform: useTransform(scrollY, [600, 800, 1000], ["translate(0, 0)", "translate(0, 0)", "translate(0, -100vh)"])
-                        }}
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                      >
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                      </motion.video>
-                    </span>
+                    <motion.video 
+                      className="inline-block rounded-lg object-cover mx-2 align-middle"
+                      style={{
+                        width: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], ["120px", "140px", "180px", "240px", "320px", "400px", "50vw", "70vw", "85vw", "95vw", "100vw"]),
+                        height: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], ["68px", "79px", "101px", "135px", "180px", "225px", "28vw", "39vw", "48vw", "53vw", "56vw"]),
+                        position: useTransform(scrollY, [600], ["fixed"]),
+                        top: useTransform(scrollY, [600], ["0px"]),
+                        left: useTransform(scrollY, [600], ["0px"]),
+                        zIndex: useTransform(scrollY, [600], [9999]),
+                        transform: useTransform(scrollY, [900, 1100, 1300], ["translate(0, 0)", "translate(0, 0)", "translate(0, -100vh)"])
+                      }}
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline
+                    >
+                      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                    </motion.video>
                   </div>
                   <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                   <div>la vie des gens<span className="text-red-500">.</span></div>
