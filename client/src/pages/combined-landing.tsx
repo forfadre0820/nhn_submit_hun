@@ -208,10 +208,58 @@ export default function CombinedLanding() {
         </div>
       </section>
 
+      {/* Video Scaling Section */}
+      <section className="relative h-[400vh] bg-white">
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <motion.div
+            className="text-center max-w-4xl mx-auto px-4"
+            style={{
+              scale: useTransform(scrollY, [window.innerHeight * 2, window.innerHeight * 4], [1, 0.8]),
+              opacity: useTransform(scrollY, [window.innerHeight * 2, window.innerHeight * 4], [1, 0])
+            }}
+          >
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Dites bonjour<br />
+              aux idées{" "}
+              <motion.span className="inline-block relative">
+                <motion.video
+                  className="inline-block rounded-lg"
+                  style={{
+                    width: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3], ["120px", "200px", "400px", "100vw"]),
+                    height: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3], ["80px", "130px", "260px", "100vh"]),
+                    position: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["relative", "fixed"]),
+                    top: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["0px", "0px"]),
+                    left: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["0px", "0px"]),
+                    zIndex: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], [1, 50])
+                  }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source
+                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                    type="video/mp4"
+                  />
+                </motion.video>
+              </motion.span>
+              {" "}qui<br />
+              transforment<br />
+              <em className="italic">vraiment</em><br />
+              la vie des gens.
+            </motion.h1>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Ross Mason Section */}
-      <section className="bg-white text-black">
-
-
+      <section className="bg-white text-black relative z-10">
         {/* About Section - Ross Mason Style */}
         <motion.div 
           className="py-16 bg-white"
