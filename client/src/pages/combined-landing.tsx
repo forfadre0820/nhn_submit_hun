@@ -253,7 +253,7 @@ export default function CombinedLanding() {
           </div>
         </motion.div>
 
-        {/* Career Section - Professional Resume Style */}
+        {/* About Section - Ross Mason Style */}
         <motion.div 
           className="py-16 bg-white"
           initial={{ opacity: 0, y: 30 }}
@@ -261,370 +261,335 @@ export default function CombinedLanding() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="max-w-6xl mx-auto px-4">
+          <div className="container mx-auto px-4">
             {/* Main Title */}
-            <div className="text-center mb-20">
+            <div className="mb-16">
               <motion.h2 
-                className="text-4xl md:text-6xl font-bold uppercase leading-tight mb-4"
+                className="text-4xl md:text-6xl font-bold uppercase leading-tight"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                ROSS MASON
+                SELF <em className="italic">taught</em> 3D ARTIST
               </motion.h2>
-              <motion.p 
-                className="text-xl text-gray-600 uppercase tracking-wide"
+            </div>
+
+            {/* Personal Story Section */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+              <motion.div 
+                className="md:col-span-3"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-base uppercase tracking-wide text-gray-600">[PERSONAL STORY]</h3>
+              </motion.div>
+
+              <motion.div 
+                className="md:col-span-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-lg leading-relaxed space-y-4">
+                  <p><strong>Forever learning.</strong></p>
+                  <p>
+                    I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
+                  </p>
+                  <p>
+                    Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
+                  </p>
+                  <p>
+                    I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Services Section */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+              <motion.div 
+                className="md:col-span-6"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="text-base uppercase tracking-wide text-gray-600 mb-8">[Services list]</h4>
+                
+                <div className="space-y-6">
+                  <motion.div 
+                    className="group cursor-pointer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase group-hover:opacity-75 transition-opacity">
+                        3D DESIGN
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500">01.</span>
+                    </div>
+                    <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-2"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="group cursor-pointer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase group-hover:opacity-75 transition-opacity">
+                        ART DIRECTION
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500">02.</span>
+                    </div>
+                    <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-2"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="group cursor-pointer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase group-hover:opacity-75 transition-opacity">
+                        MOTION
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500">03.</span>
+                    </div>
+                    <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-2"></div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="md:col-span-6"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="h-full flex flex-col justify-end">
+                  <div className="mt-8 md:mt-0">
+                    <motion.p 
+                      className="text-xl font-medium mb-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5, duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      Bring your ideas to life
+                    </motion.p>
+                    <motion.p 
+                      className="text-gray-600 leading-relaxed text-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6, duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality.
+                    </motion.p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Clients and Partners Section */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+              <motion.div 
+                className="md:col-span-6"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                3D ARTIST & EDUCATOR
-              </motion.p>
-            </div>
-
-            {/* Four Column Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
-              
-              {/* Column 1: Personal Information */}
-              <motion.div 
-                className="space-y-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div>
-                  <h3 className="text-base uppercase tracking-wide text-gray-600 mb-6">[PERSONAL INFO]</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <span className="text-sm text-gray-500 uppercase tracking-wide block">Location</span>
-                      <p className="text-lg">London, UK</p>
-                    </div>
-                    <div>
-                      <span className="text-sm text-gray-500 uppercase tracking-wide block">Email</span>
-                      <p className="text-lg">ross@masonstudio.com</p>
-                    </div>
-                    <div>
-                      <span className="text-sm text-gray-500 uppercase tracking-wide block">Website</span>
-                      <p className="text-lg">masonstudio.com</p>
-                    </div>
-                    <div>
-                      <span className="text-sm text-gray-500 uppercase tracking-wide block">Phone</span>
-                      <p className="text-lg">+44 7123 456789</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-base uppercase tracking-wide text-gray-600 mb-6">[LANGUAGES]</h3>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>English</span>
-                      <span className="text-sm text-gray-500">Native</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Spanish</span>
-                      <span className="text-sm text-gray-500">Intermediate</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>French</span>
-                      <span className="text-sm text-gray-500">Basic</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Column 2: Education & Skills */}
-              <motion.div 
-                className="space-y-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div>
-                  <h3 className="text-base uppercase tracking-wide text-gray-600 mb-6">[EDUCATION]</h3>
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-black pl-4">
-                      <h4 className="font-bold text-lg mb-1">BA Graphic Design</h4>
-                      <p className="text-gray-600 text-sm">University of the Arts London</p>
-                      <p className="text-gray-500 text-sm">2013 - 2016</p>
-                      <p className="text-gray-500 text-sm">First Class Honours</p>
-                    </div>
-                    <div className="border-l-4 border-gray-300 pl-4">
-                      <h4 className="font-bold text-lg mb-1">A-Levels</h4>
-                      <p className="text-gray-600 text-sm">Sixth Form College</p>
-                      <p className="text-gray-500 text-sm">2011 - 2013</p>
-                      <p className="text-gray-500 text-sm">Art (A*), Maths (A), Physics (B)</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-base uppercase tracking-wide text-gray-600 mb-6">[CORE SKILLS]</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span>Cinema 4D</span>
-                      <span className="text-sm text-gray-500">Expert</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Redshift</span>
-                      <span className="text-sm text-gray-500">Expert</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>After Effects</span>
-                      <span className="text-sm text-gray-500">Expert</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Blender</span>
-                      <span className="text-sm text-gray-500">Advanced</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Photoshop</span>
-                      <span className="text-sm text-gray-500">Advanced</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Octane</span>
-                      <span className="text-sm text-gray-500">Advanced</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Column 3: Experience */}
-              <motion.div 
-                className="space-y-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div>
-                  <h3 className="text-base uppercase tracking-wide text-gray-600 mb-6">[EXPERIENCE]</h3>
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-black pl-4">
-                      <h4 className="font-bold text-lg mb-1">Senior 3D Artist</h4>
-                      <p className="text-gray-600 text-sm">Freelance / Patreon</p>
-                      <p className="text-gray-500 text-sm mb-2">2020 - Present</p>
-                      <ul className="text-gray-700 text-sm space-y-1">
-                        <li>• 2,500+ Patreon subscribers</li>
-                        <li>• $150K+ annual revenue</li>
-                        <li>• Premium 3D tutorials</li>
-                        <li>• Brand consultancy</li>
-                      </ul>
-                    </div>
-                    
-                    <div className="border-l-4 border-gray-300 pl-4">
-                      <h4 className="font-bold text-lg mb-1">Senior 3D Visualizer</h4>
-                      <p className="text-gray-600 text-sm">ManvsMachine</p>
-                      <p className="text-gray-500 text-sm mb-2">2018 - 2020</p>
-                      <ul className="text-gray-700 text-sm space-y-1">
-                        <li>• Lead 3D artist</li>
-                        <li>• International brands</li>
-                        <li>• Team mentoring</li>
-                      </ul>
-                    </div>
-                    
-                    <div className="border-l-4 border-gray-300 pl-4">
-                      <h4 className="font-bold text-lg mb-1">3D Motion Designer</h4>
-                      <p className="text-gray-600 text-sm">Frame Studio</p>
-                      <p className="text-gray-500 text-sm mb-2">2016 - 2018</p>
-                      <ul className="text-gray-700 text-sm space-y-1">
-                        <li>• Motion graphics</li>
-                        <li>• C4D & AE integration</li>
-                        <li>• Award-winning projects</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Column 4: Services & Achievements */}
-              <motion.div 
-                className="space-y-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div>
-                  <h3 className="text-base uppercase tracking-wide text-gray-600 mb-6">[SERVICES]</h3>
-                  <div className="space-y-4">
-                    <motion.div 
-                      className="group cursor-pointer"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="flex items-center">
-                        <h4 className="text-xl font-bold uppercase group-hover:opacity-75 transition-opacity">
-                          3D DESIGN
-                        </h4>
-                        <span className="ml-2 text-xs text-gray-500">01.</span>
-                      </div>
-                      <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-1"></div>
-                    </motion.div>
-
-                    <motion.div 
-                      className="group cursor-pointer"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="flex items-center">
-                        <h4 className="text-xl font-bold uppercase group-hover:opacity-75 transition-opacity">
-                          ART DIRECTION
-                        </h4>
-                        <span className="ml-2 text-xs text-gray-500">02.</span>
-                      </div>
-                      <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-1"></div>
-                    </motion.div>
-
-                    <motion.div 
-                      className="group cursor-pointer"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="flex items-center">
-                        <h4 className="text-xl font-bold uppercase group-hover:opacity-75 transition-opacity">
-                          MOTION
-                        </h4>
-                        <span className="ml-2 text-xs text-gray-500">03.</span>
-                      </div>
-                      <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-1"></div>
-                    </motion.div>
-
-                    <motion.div 
-                      className="group cursor-pointer"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="flex items-center">
-                        <h4 className="text-xl font-bold uppercase group-hover:opacity-75 transition-opacity">
-                          EDUCATION
-                        </h4>
-                        <span className="ml-2 text-xs text-gray-500">04.</span>
-                      </div>
-                      <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-1"></div>
-                    </motion.div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-base uppercase tracking-wide text-gray-600 mb-6">[AWARDS]</h3>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-black pl-4">
-                      <h4 className="font-bold text-lg mb-1">Top Creator</h4>
-                      <p className="text-gray-600 text-sm">Patreon</p>
-                      <p className="text-gray-500 text-sm">2023</p>
-                    </div>
-                    <div className="border-l-4 border-gray-300 pl-4">
-                      <h4 className="font-bold text-lg mb-1">Motion Excellence</h4>
-                      <p className="text-gray-600 text-sm">Creative Pool</p>
-                      <p className="text-gray-500 text-sm">2019</p>
-                    </div>
-                    <div className="border-l-4 border-gray-300 pl-4">
-                      <h4 className="font-bold text-lg mb-1">Best Portfolio</h4>
-                      <p className="text-gray-600 text-sm">UAL</p>
-                      <p className="text-gray-500 text-sm">2016</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Featured Section with Image */}
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              {/* Left: Services Description */}
-              <div>
-                <motion.div 
-                  className="mb-8"
+                <motion.p 
+                  className="text-lg mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-2xl font-bold mb-4">Bring your ideas to life</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">
-                    Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality.
-                  </p>
-                </motion.div>
-
-                {/* Client Lists */}
-                <motion.div 
-                  className="grid grid-cols-1 md:grid-cols-2 gap-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div>
-                    <h4 className="text-base uppercase tracking-wide text-gray-600 mb-4">[Clients]</h4>
-                    <div className="space-y-2">
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                  Below is a list of some of my favourite clients and partners that I have worked with. Let's work together to add your name to that list.
+                </motion.p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <h5 className="text-base uppercase tracking-wide text-gray-600 mb-6">[Client List]</h5>
+                    <div className="space-y-4">
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">Glossier</span>
-                      </motion.div>
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                      </motion.a>
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">Louis Poulsen</span>
-                      </motion.div>
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                      </motion.a>
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">Logitech</span>
-                      </motion.div>
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                      </motion.a>
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">OneFineStay</span>
-                      </motion.div>
+                      </motion.a>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  <div>
-                    <h4 className="text-base uppercase tracking-wide text-gray-600 mb-4">[Partners]</h4>
-                    <div className="space-y-2">
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <h5 className="text-base uppercase tracking-wide text-gray-600 mb-6">[Partners]</h5>
+                    <div className="space-y-4">
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">ManvsMachine</span>
-                      </motion.div>
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                      </motion.a>
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">Frame</span>
-                      </motion.div>
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                      </motion.a>
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">Steelworks</span>
-                      </motion.div>
-                      <motion.div className="flex items-center group cursor-pointer" whileHover={{ x: 3 }}>
-                        <span className="mr-2 text-sm">→</span>
+                      </motion.a>
+                      <motion.a 
+                        href="#" 
+                        className="flex items-center group"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="mr-3 group-hover:opacity-75 transition-opacity">→</span>
                         <span className="group-hover:opacity-75 transition-opacity">Builders Club</span>
-                      </motion.div>
+                      </motion.a>
                     </div>
-                  </div>
-                </motion.div>
-              </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
 
-              {/* Right: Featured Image */}
+            {/* Featured Image Section - Reversed Layout */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-12 gap-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              {/* Left: Featured Image */}
               <motion.div 
-                className="relative"
-                initial={{ opacity: 0, x: 30 }}
+                className="md:col-span-6 order-2 md:order-1"
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
                 viewport={{ once: true }}
               >
                 <div className="relative overflow-hidden rounded-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+                    src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800"
                     alt="Ross Mason 3D Work"
-                    className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-10 hover:bg-opacity-0 transition-all duration-300"></div>
+                </div>
+              </motion.div>
+              
+              {/* Right: CTA Content */}
+              <motion.div 
+                className="md:col-span-6 flex items-end order-1 md:order-2"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div>
+                  <motion.h2 
+                    className="text-3xl md:text-4xl font-bold leading-tight mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    Ready to <em className="italic">work</em><br />
+                    together<br />
+                    on <em className="italic">your</em><br />
+                    project?
+                  </motion.h2>
+                  <motion.div 
+                    className="mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      Looking to bring your brand to life? Want to put your product in a surreal environment? Need help learning 3D? Shoot me a message and we'll see what we can do together.
+                    </p>
+                  </motion.div>
+                  <motion.button
+                    className="text-lg border-b-2 border-black hover:opacity-75 transition-opacity"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -2 }}
+                  >
+                    Let's work together
+                  </motion.button>
                 </div>
               </motion.div>
             </motion.div>

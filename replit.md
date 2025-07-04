@@ -110,6 +110,8 @@ Changelog:
 - July 04, 2025. Restructured to 4-column professional resume layout with centered alignment
 - July 04, 2025. Added comprehensive resume content: personal info, languages, education, skills, experience, services, awards
 - July 04, 2025. Integrated traditional resume elements while maintaining visual design aesthetics
+- July 04, 2025. Removed 4-column layout and restored original Ross Mason About page structure
+- July 04, 2025. Implemented image position reversal with left-right flipped layout for featured section
 ```
 
 ## User Preferences
