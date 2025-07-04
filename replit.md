@@ -120,6 +120,8 @@ Changelog:
 - July 04, 2025. Video positioned inline between "aux idées" and "qui" text with exact CSS properties
 - July 04, 2025. Applied 195x74px initial size scaling to full screen with precise transforms
 - July 04, 2025. Fixed position overlay triggered at 600px scroll point with z-index 9999
+- July 04, 2025. Added home__video class with position-relative and active states for proper video containment
+- July 04, 2025. Implemented video scaling with negative top/left positioning to cover text content when expanded
 ```
 
 ## User Preferences

@@ -175,8 +175,8 @@ export default function CombinedLanding() {
         </header>
 
         {/* Hero Section */}
-        <div className="relative min-h-screen flex items-center justify-center pt-20">
-          <div className="container mx-auto px-4">
+        <div className="relative min-h-screen flex items-center justify-center pt-20 home__video position-relative active">
+          <div className="container mx-auto px-4" style={{ height: "300vh" }}>
             <motion.div
               className="text-center max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
@@ -205,25 +205,25 @@ export default function CombinedLanding() {
                           flexBasis: "auto",
                           overflow: "visible",
                           boxSizing: "border-box",
-                          width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "300px", "450px", "70vw", "80vw", "95vw", "100vw"]),
-                          height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
+                          width: "195px",
+                          height: "74px",
                           padding: "0px"
                         }}
                       >
                         <motion.div 
-                          className="home__hero__video"
+                          className="home__hero__video is-finished"
                           style={{
                             translate: "none",
                             rotate: "none",
                             scale: "none",
                             inset: "0px auto auto 0px",
                             margin: "0px",
-                            maxWidth: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["194.531px", "299px", "449px", "70vw", "80vw", "95vw", "100vw"]),
-                            width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["194.531px", "299px", "449px", "70vw", "80vw", "95vw", "100vw"]),
-                            maxHeight: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["73.5781px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
-                            height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["73.5781px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
+                            maxWidth: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "230px", "300px", "50vw", "70vw", "90vw", "100vw"]),
+                            width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "230px", "300px", "50vw", "70vw", "90vw", "100vw"]),
+                            maxHeight: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "87px", "113px", "28vw", "39vw", "51vw", "56vw"]),
+                            height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "87px", "113px", "28vw", "39vw", "51vw", "56vw"]),
                             padding: "0px",
-                            transform: "translate(0px, 0px)",
+                            transform: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["translate(0px, 0px)", "translate(0px, 200px)", "translate(0px, 400px)", "translate(0px, 600px)", "translate(0px, 800px)", "translate(0px, 1000px)", "translate(0px, 1200px)"]),
                             position: useTransform(scrollY, [600], ["fixed"]),
                             top: useTransform(scrollY, [600], ["0px"]),
                             left: useTransform(scrollY, [600], ["0px"]),
@@ -238,10 +238,10 @@ export default function CombinedLanding() {
                             autoPlay
                             crossOrigin="anonymous"
                             style={{
-                              top: "0px",
-                              left: "0px",
-                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["73.5625px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
-                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["194.516px", "299px", "449px", "70vw", "80vw", "95vw", "100vw"]),
+                              top: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["0px", "-50px", "-100px", "-200px", "-300px", "-400px", "-500px"]),
+                              left: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["0px", "-100px", "-200px", "-400px", "-600px", "-800px", "-1000px"]),
+                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "87px", "113px", "50vh", "70vh", "90vh", "100vh"]),
+                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "230px", "300px", "70vw", "90vw", "100vw", "100vw"]),
                               transform: useTransform(scrollY, [1400, 1600, 1800], ["translateY(0)", "translateY(0)", "translateY(-100vh)"])
                             }}
                           />
