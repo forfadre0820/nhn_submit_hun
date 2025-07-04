@@ -194,18 +194,6 @@ export default function CombinedLanding() {
                           className="home__hero__video"
                           data-cursor="sound on"
                           data-cursor-click="sound off"
-                          style={{
-                            display: "inline-block",
-                            height: "3.1rem",
-                            width: "8.3rem",
-                            pointerEvents: "none",
-                            zIndex: useTransform(scrollY, [800, 1000], [1, 9999]),
-                            position: useTransform(scrollY, [800], (value) => value >= 800 ? "fixed" : "static"),
-                            top: useTransform(scrollY, [800], (value) => value >= 800 ? "0px" : "auto"),
-                            left: useTransform(scrollY, [800], (value) => value >= 800 ? "0px" : "auto"),
-                            verticalAlign: "baseline",
-                            margin: "0 0.5rem"
-                          }}
                         >
                           <motion.video
                             src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
@@ -216,12 +204,14 @@ export default function CombinedLanding() {
                             crossOrigin="anonymous"
                             style={{
                               display: "block",
-                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["100%", "200%", "400%", "100vw", "100vw", "100vw"]),
-                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["100%", "200%", "400%", "100vh", "100vh", "100vh"]),
+                              width: useTransform(scrollY, [0, 300, 600, 900, 1200], ["100%", "150%", "300%", "100vw", "100vw"]),
+                              height: useTransform(scrollY, [0, 300, 600, 900, 1200], ["100%", "150%", "300%", "100vh", "100vh"]),
                               objectFit: "cover",
-                              left: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["0px", "-50px", "-100px", "-400px", "-800px", "-1200px"]),
-                              top: useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["0px", "-25px", "-50px", "-200px", "-400px", "-600px"]),
-                              transform: useTransform(scrollY, [1200, 1400], ["translateY(0)", "translateY(-100vh)"])
+                              position: useTransform(scrollY, [800], (value) => value >= 800 ? "fixed" : "static"),
+                              top: useTransform(scrollY, [800], (value) => value >= 800 ? "0" : "auto"),
+                              left: useTransform(scrollY, [800], (value) => value >= 800 ? "0" : "auto"),
+                              zIndex: useTransform(scrollY, [800], (value) => value >= 800 ? 9999 : 1),
+                              transform: useTransform(scrollY, [1400, 1600], ["translateY(0vh)", "translateY(-100vh)"])
                             }}
                           />
                         </motion.div>
