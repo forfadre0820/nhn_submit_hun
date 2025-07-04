@@ -186,7 +186,8 @@ export default function CombinedLanding() {
               <div className="sentence relative">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
                   <div className="mb-4">Dites bonjour</div>
-                  <div className="mb-4">aux idées 
+                  <div className="mb-4">aux idées</div>
+                  <div className="mb-4">
                     <span className="inline-block mx-2 relative">
                       <motion.video 
                         className="rounded-lg object-cover"
@@ -207,8 +208,8 @@ export default function CombinedLanding() {
                         <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
                       </motion.video>
                     </span>
-                    qui
                   </div>
+                  <div className="mb-4">qui</div>
                   <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                   <div>la vie des gens<span className="text-red-500">.</span></div>
                 </h1>
