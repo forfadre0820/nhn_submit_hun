@@ -131,6 +131,9 @@ Changelog:
 - July 04, 2025. Corrected position animation to center video during scaling before full screen overlay
 - July 04, 2025. Implemented scale-based animation for in-place video expansion using transformOrigin center
 - July 04, 2025. Video now scales from 1x to 15x in place, then transitions to fixed position overlay
+- July 04, 2025. Added dedicated video full-screen section with 300vh height for 3 scroll sections
+- July 04, 2025. Fixed video text alignment with vertical-align: middle and proper baseline positioning
+- July 04, 2025. Limited video scale to max 12x to prevent oversized scaling beyond screen boundaries
 ```
 
 ## User Preferences

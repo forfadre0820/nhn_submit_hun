@@ -196,13 +196,13 @@ export default function CombinedLanding() {
                           data-cursor-click="sound off"
                           style={{
                             transformOrigin: "center",
-                            scale: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], [1, 1.5, 2.5, 5, 8, 12, 15]),
+                            scale: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], [1, 1.5, 2.5, 5, 8, 12, 12]),
                             position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
                             zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
                             top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
                             left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
                             x: useTransform(scrollY, [599, 600], ["0%", "-50%"]),
-                            y: useTransform(scrollY, [599, 600, 1400, 1401], ["0%", "-50%", "-50%", "-150%"])
+                            y: useTransform(scrollY, [599, 600, 2800, 2801], ["0%", "-50%", "-50%", "-150%"])
                           }}
                         >
                           <motion.video
@@ -229,6 +229,28 @@ export default function CombinedLanding() {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Full Screen Section */}
+      <section className="relative bg-black" style={{ height: "300vh" }}>
+        <div className="sticky top-0 w-full h-screen overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center text-white z-10">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+                Experience
+              </h2>
+              <p className="text-xl md:text-2xl lg:text-3xl text-gray-300">
+                Full immersion
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
