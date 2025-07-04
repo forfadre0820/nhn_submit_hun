@@ -186,42 +186,69 @@ export default function CombinedLanding() {
               <div className="sentence relative">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
                   <div className="mb-4">Dites bonjour</div>
-                  <div className="mb-4">
-                    aux idées&nbsp;<span>qui</span>&nbsp;
-                    <motion.div 
-                      className="video-thumb"
-                      style={{
-                        width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["120px", "200px", "320px", "50vw", "70vw", "90vw", "100vw"]),
-                        height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["67px", "112px", "180px", "28vw", "39vw", "51vw", "56vw"]),
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        margin: "0 8px",
-                        borderRadius: "8px",
-                        overflow: "hidden",
-                        transform: "translateY(-2px)",
-                        opacity: 1,
-                        transition: "opacity 0.3s",
-                        position: useTransform(scrollY, [600], ["fixed"]),
-                        top: useTransform(scrollY, [600], ["0px"]),
-                        left: useTransform(scrollY, [600], ["0px"]),
-                        zIndex: useTransform(scrollY, [600], [9999])
-                      }}
-                    >
-                      <motion.video 
-                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
+                  <div className="mb-4 home__hero__line">
+                    <div className="sentence">
+                      aux idées&nbsp;
+                      <motion.div 
+                        className="pin-spacer"
                         style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          borderRadius: "8px",
-                          transform: useTransform(scrollY, [1400, 1600, 1800], ["translateY(0)", "translateY(0)", "translateY(-100vh)"])
+                          order: 0,
+                          placeSelf: "auto",
+                          gridArea: "auto",
+                          zIndex: 1,
+                          float: "none",
+                          flexShrink: 1,
+                          display: "inline-block",
+                          margin: "0px",
+                          inset: "auto",
+                          position: "relative",
+                          flexBasis: "auto",
+                          overflow: "visible",
+                          boxSizing: "border-box",
+                          width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["195px", "300px", "450px", "70vw", "80vw", "95vw", "100vw"]),
+                          height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["74px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
+                          padding: "0px"
                         }}
-                      />
-                    </motion.div>
+                      >
+                        <motion.div 
+                          className="home__hero__video"
+                          style={{
+                            translate: "none",
+                            rotate: "none",
+                            scale: "none",
+                            inset: "0px auto auto 0px",
+                            margin: "0px",
+                            maxWidth: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["194.531px", "299px", "449px", "70vw", "80vw", "95vw", "100vw"]),
+                            width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["194.531px", "299px", "449px", "70vw", "80vw", "95vw", "100vw"]),
+                            maxHeight: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["73.5781px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
+                            height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["73.5781px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
+                            padding: "0px",
+                            transform: "translate(0px, 0px)",
+                            position: useTransform(scrollY, [600], ["fixed"]),
+                            top: useTransform(scrollY, [600], ["0px"]),
+                            left: useTransform(scrollY, [600], ["0px"]),
+                            zIndex: useTransform(scrollY, [600], [9999])
+                          }}
+                        >
+                          <motion.video
+                            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                            loop
+                            playsInline
+                            muted
+                            autoPlay
+                            crossOrigin="anonymous"
+                            style={{
+                              top: "0px",
+                              left: "0px",
+                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["73.5625px", "113px", "170px", "39vw", "45vw", "53vw", "56vw"]),
+                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["194.516px", "299px", "449px", "70vw", "80vw", "95vw", "100vw"]),
+                              transform: useTransform(scrollY, [1400, 1600, 1800], ["translateY(0)", "translateY(0)", "translateY(-100vh)"])
+                            }}
+                          />
+                        </motion.div>
+                      </motion.div>
+                      &nbsp;qui
+                    </div>
                   </div>
                   <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                   <div>la vie des gens<span className="text-red-500">.</span></div>
