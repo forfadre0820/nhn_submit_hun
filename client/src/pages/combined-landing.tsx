@@ -194,6 +194,16 @@ export default function CombinedLanding() {
                           className="home__hero__video"
                           data-cursor="sound on"
                           data-cursor-click="sound off"
+                          style={{
+                            transformOrigin: "center",
+                            scale: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], [1, 1.5, 2.5, 5, 8, 12, 15]),
+                            position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
+                            zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
+                            top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                            left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                            x: useTransform(scrollY, [599, 600], ["0%", "-50%"]),
+                            y: useTransform(scrollY, [599, 600, 1400, 1401], ["0%", "-50%", "-50%", "-150%"])
+                          }}
                         >
                           <motion.video
                             src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
@@ -205,18 +215,8 @@ export default function CombinedLanding() {
                             style={{
                               display: "block",
                               objectFit: "cover",
-                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["8.3rem", "12rem", "20rem", "40rem", "60rem", "80vw", "100vw"]),
-                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["3.1rem", "4.5rem", "7.5rem", "15rem", "22.5rem", "45vh", "100vh"]),
-                              position: useTransform(scrollY, [600, 800], ["static", "fixed"]),
-                              top: useTransform(scrollY, [600, 800, 1000, 1200], ["auto", "50%", "0px", "0px"]),
-                              left: useTransform(scrollY, [600, 800, 1000, 1200], ["auto", "50%", "0px", "0px"]),
-                              zIndex: useTransform(scrollY, [600, 800], [1, 9999]),
-                              transform: useTransform(scrollY, [600, 800, 1200, 1400], [
-                                "translate(0%, 0%)", 
-                                "translate(-50%, -50%)", 
-                                "translate(-50%, -50%)", 
-                                "translate(-50%, -150%)"
-                              ])
+                              width: "100%",
+                              height: "100%"
                             }}
                           />
                         </motion.div>

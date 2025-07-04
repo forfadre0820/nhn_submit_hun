@@ -129,6 +129,8 @@ Changelog:
 - July 04, 2025. Added margin spacing (0.5rem mobile, 1vw desktop) for proper text flow
 - July 04, 2025. Fixed video scaling to be gradual and smooth: 8.3rem → 12rem → 20rem → 40rem → 60rem → 80vw → 100vw
 - July 04, 2025. Corrected position animation to center video during scaling before full screen overlay
+- July 04, 2025. Implemented scale-based animation for in-place video expansion using transformOrigin center
+- July 04, 2025. Video now scales from 1x to 15x in place, then transitions to fixed position overlay
 ```
 
 ## User Preferences
