@@ -1,340 +1,413 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-
-const tutorialData = [
-  {
-    title: "Simple Studio Setup",
-    tags: ["C4D", "Redshift"],
-    duration: "00:28:43",
-    month: "January",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000",
-    alt: "3D studio setup tutorial"
-  },
-  {
-    title: "Bottle Scene Lighting",
-    tags: ["C4D", "Redshift"],
-    duration: "00:43:55",
-    month: "December",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000",
-    alt: "3D bottle scene tutorial"
-  },
-  {
-    title: "Designer Lamp Part 2",
-    tags: ["C4D", "Redshift"],
-    duration: "01:00:14",
-    month: "November",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000",
-    alt: "3D lamp design tutorial"
-  },
-  {
-    title: "Designer Lamp Part 1",
-    tags: ["C4D", "Redshift"],
-    duration: "01:16:19",
-    month: "November",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000",
-    alt: "3D interior design tutorial"
-  },
-  {
-    title: "Cocktail Scene",
-    tags: ["C4D", "Redshift"],
-    duration: "03:03:52",
-    month: "October",
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000",
-    alt: "3D cocktail scene tutorial"
-  },
-  {
-    title: "X-Ray Effects",
-    tags: ["C4D", "Redshift"],
-    duration: "00:53:56",
-    month: "September",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000",
-    alt: "3D abstract forms tutorial"
-  }
-];
-
-const benefits = [
-  {
-    number: "01.",
-    title: "In-depth tutorials",
-    description: "Step-by-step breakdowns of complex 3D scenes using Cinema 4D and Redshift rendering."
-  },
-  {
-    number: "02.",
-    title: "Project files included",
-    description: "Download and explore the complete project files for every tutorial to accelerate your learning."
-  },
-  {
-    number: "03.",
-    title: "Monthly new content",
-    description: "Fresh tutorials and techniques released monthly to keep your skills sharp and current."
-  }
-];
+import { useLocation } from "wouter";
 
 export default function RossMason() {
+  const [currentTime, setCurrentTime] = useState("");
   const [animationStarted, setAnimationStarted] = useState(false);
+  const [, navigate] = useLocation();
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(now.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: false
+      }));
+    };
+    
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationStarted(true);
     }, 500);
-
     return () => clearTimeout(timer);
   }, []);
 
   const slideVariants = {
     hidden: { y: "100%" },
     visible: (i: number) => ({
-      y: 0,
+      y: "0%",
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        delay: i * 0.2
+        delay: i * 0.1,
+        ease: "easeOut"
       }
     })
   };
 
+  const tutorials = [
+    {
+      title: "Simple Studio Setup",
+      duration: "00:28:43",
+      tags: ["C4D", "Redshift"],
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+    },
+    {
+      title: "Bottle Scene Lighting",
+      duration: "00:43:55",
+      tags: ["C4D", "Redshift"],
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+    },
+    {
+      title: "Designer Lamp",
+      duration: "01:00:14",
+      tags: ["C4D", "Redshift"],
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+    },
+    {
+      title: "Cocktail Scene",
+      duration: "03:03:52",
+      tags: ["C4D", "Redshift"],
+      image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+    }
+  ];
+
+  const patrons = [
+    { name: "Alexander Chen", role: "Motion Designer" },
+    { name: "Maria Santos", role: "Art Director" },
+    { name: "David Kim", role: "3D Artist" },
+    { name: "Sarah Johnson", role: "Creative Director" },
+    { name: "Michael Brown", role: "VFX Artist" },
+    { name: "Lisa Wong", role: "UI/UX Designer" },
+    { name: "James Wilson", role: "Animator" },
+    { name: "Emma Davis", role: "Concept Artist" }
+  ];
+
   return (
-    <div className="bg-white text-black scroll-smooth">
-      {/* Navigation Header */}
-      <header className="fixed top-0 left-0 w-full z-50 pt-6 md:pt-8 text-white mix-blend-difference">
-        <nav className="site-grid">
-          <div className="col-span-6 md:col-span-3">
-            <a href="#" className="text-lg font-medium">Ross Mason</a>
+    <div className="min-h-screen bg-white font-['Noto_Sans'] text-black">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md">
+        <div className="container mx-auto px-8 py-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <motion.div 
+                className="w-12 h-12 bg-black rounded-full flex items-center justify-center"
+                whileHover={{ scale: 1.1 }}
+              >
+                <span className="text-white font-bold text-lg">RM</span>
+              </motion.div>
+              <div>
+                <h1 className="text-2xl font-bold">Ross Mason</h1>
+                <p className="text-sm text-gray-600">3D Artist & Educator</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-8">
+              <nav className="hidden md:flex items-center space-x-6">
+                <a href="#" className="text-gray-700 hover:text-black transition-colors">Tutorials</a>
+                <a href="#" className="text-gray-700 hover:text-black transition-colors">Resources</a>
+                <a href="#" className="text-gray-700 hover:text-black transition-colors">Community</a>
+              </nav>
+              
+              <div className="text-sm text-gray-500 font-mono bg-gray-100 px-3 py-1 rounded-full">
+                {currentTime}
+              </div>
+            </div>
           </div>
-          <div className="col-span-6 md:col-span-9 flex justify-end">
-            <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors">
-              Send me a message
-            </button>
-          </div>
-        </nav>
+        </div>
       </header>
 
       {/* Hero Section */}
-      <section className="min-h-[70vh] flex flex-col justify-between pt-16 md:pt-20 pb-8">
-        <div className="site-grid flex-1 flex items-center">
-          <div className="col-span-12">
-            <h1 className="hero-text font-black uppercase leading-none">
-              <div className="overflow-hidden-text">
-                <motion.div
-                  className="slide-content"
-                  variants={slideVariants}
-                  initial="hidden"
-                  animate={animationStarted ? "visible" : "hidden"}
-                  custom={0}
-                >
-                  Learn 3D
-                </motion.div>
-              </div>
-              <div className="overflow-hidden-text">
-                <motion.div
-                  className="slide-content"
-                  variants={slideVariants}
-                  initial="hidden"
-                  animate={animationStarted ? "visible" : "hidden"}
-                  custom={1}
-                >
-                  Mastery
-                </motion.div>
-              </div>
-            </h1>
+      <section className="min-h-screen flex items-center justify-center pt-24 pb-12">
+        <div className="container mx-auto px-8">
+          <div className="text-center space-y-8">
             <motion.div
-              className="mt-8 md:mt-12"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
+              transition={{ duration: 0.8 }}
+              className="text-sm uppercase tracking-wide text-gray-500 mb-4"
             >
-              <a
-                href="#"
-                className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Get Free Tutorial Sample
-              </a>
+              LEARN 3D
+            </motion.div>
+            
+            <motion.h1 
+              className="text-6xl md:text-8xl lg:text-9xl font-light tracking-tight"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <span className="font-light">3D</span>
+              <br />
+              <span className="italic font-light">wizardry</span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex items-center justify-center space-x-4 text-lg"
+            >
+              <span className="bg-red-600 text-white px-4 py-2 rounded text-sm font-medium">
+                Cinema 4D
+              </span>
+              <span className="text-2xl font-bold">C4D &</span>
+              <span className="text-2xl font-bold">REDSHIFT</span>
             </motion.div>
           </div>
         </div>
-        
-        {/* Hero Image */}
-        <motion.div
-          className="relative h-[60vh] overflow-hidden mt-8"
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2, duration: 1.2 }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080"
-            alt="3D rendered modern interior"
-            className="media-fill object-cover rounded-2xl"
-          />
-        </motion.div>
       </section>
 
-      {/* Latest Tutorial Section */}
-      <section className="py-12 bg-black text-white">
-        <div className="site-grid">
-          <div className="col-span-12 flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-6">
-            <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-              <div className="text-sm uppercase tracking-wide mb-2 md:mb-0 text-purple-400">Latest tutorial</div>
-              <div className="text-lg font-medium">
-                Creating Interiors
-                <div className="text-sm opacity-75">[C4D & REDSHIFT]</div>
-              </div>
+      {/* Hero Image */}
+      <section className="py-12">
+        <div className="container mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.6 }}
+            className="relative aspect-video rounded-2xl overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080"
+              alt="3D rendered modern interior"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-black text-white">
+        <div className="container mx-auto px-8 text-center">
+          <motion.h2 
+            className="text-3xl md:text-5xl font-bold mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            LEVEL UP YOUR 3D SKILLS AND DO{" "}
+            <em className="italic">the work</em> YOU'VE{" "}
+            <em className="italic">always</em> WANTED TO DO.
+          </motion.h2>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12"
+          >
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold">Advanced Techniques</h3>
+              <p className="text-gray-300">Learn cutting-edge 3D modeling and rendering techniques used by industry professionals.</p>
             </div>
-            <div className="flex items-center space-x-6">
-              <span className="text-sm hidden md:inline bg-white/10 px-3 py-1 rounded-full">02:12:58</span>
-              <a href="#" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
-                Visit Patreon
-              </a>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold">Professional Workflows</h3>
+              <p className="text-gray-300">Discover efficient workflows that will dramatically improve your creative process.</p>
             </div>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold">Industry Insights</h3>
+              <p className="text-gray-300">Get exclusive insights from years of experience in 3D art direction and motion design.</p>
+            </div>
+          </motion.div>
+          
+          <motion.button
+            className="bg-white text-black px-12 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            Join Patreon Community
+          </motion.button>
+        </div>
+      </section>
+
+      {/* Recent Tutorials */}
+      <section className="py-20">
+        <div className="container mx-auto px-8">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            RECENT <em className="italic">tutorials</em>
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {tutorials.map((tutorial, index) => (
+              <motion.div
+                key={index}
+                className="group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                  <img
+                    src={tutorial.image}
+                    alt={tutorial.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{tutorial.title}</h3>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    {tutorial.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-500">{tutorial.duration}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Join Section */}
-      <section className="py-16 md:py-20">
-        <div className="site-grid">
-          <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
-            <h3 className="text-sm uppercase tracking-wide text-purple-600">[Why join?]</h3>
-          </div>
-          <div className="col-span-12 md:col-span-9">
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-              LEVEL UP YOUR 3D SKILLS AND DO <em className="italic">the work</em> YOU'VE <em className="italic">always</em> WANTED TO DO.
-            </h2>
-            <a href="#" className="uline-double text-lg hover:opacity-75 transition-opacity">
-              Unlock your 3D capabilities - Patreon
-            </a>
-            
-            {/* Benefits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-24">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-sm opacity-50 mb-4">{benefit.number}</span>
-                  <h4 className="text-xl font-semibold mb-4">{benefit.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tutorial Gallery */}
+      {/* Download Sample */}
       <section className="py-16 bg-gray-50">
-        <div className="site-grid">
-          <div className="col-span-12">
-            <h3 className="text-2xl font-bold mb-12">Recent Tutorials</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {tutorialData.map((tutorial, index) => (
-                <motion.article
-                  key={index}
-                  className="group cursor-pointer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="mb-4">
-                    <span className="text-sm text-gray-500 uppercase tracking-wide">
-                      [{tutorial.tags.join(", ")}]
-                    </span>
-                  </div>
-                  <div className="relative mb-4 aspect-4-5 overflow-hidden rounded-lg">
-                    <img
-                      src={tutorial.image}
-                      alt={tutorial.alt}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="flex justify-between items-center text-sm text-gray-600">
-                    <span>{tutorial.duration} / {tutorial.month}</span>
-                    <span>{tutorial.title}</span>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 bg-black text-white text-center">
-        <div className="site-grid">
-          <div className="col-span-12">
-            <motion.h2
-              className="text-4xl md:text-6xl font-bold mb-8"
-              initial={{ opacity: 0, y: 20 }}
+        <div className="container mx-auto px-8">
+          <div className="bg-white rounded-2xl p-12 text-center shadow-lg">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Ready to elevate your 3D skills?
-            </motion.h2>
-            <motion.p
-              className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Join hundreds of 3D artists who are already mastering Cinema 4D and Redshift with our comprehensive tutorials.
-            </motion.p>
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <a
-                href="#"
-                className="bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors"
-              >
-                Start Learning on Patreon
-              </a>
-              <a
-                href="#"
-                className="border border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-black transition-colors"
-              >
-                View Free Samples
-              </a>
+              <h2 className="text-3xl font-bold mb-4">DOWNLOAD</h2>
+              <p className="text-xl mb-2">Free SAMPLE</p>
+              <p className="text-lg mb-8">TUTORIAL</p>
+              <button className="bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors">
+                Download Now
+              </button>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-16 bg-gray-900 text-white">
-        <div className="site-grid">
-          <div className="col-span-12 md:col-span-6">
-            <h3 className="text-2xl font-bold mb-4">Ross Mason</h3>
-            <p className="text-gray-400 mb-6">
-              3D Artist & Educator specializing in Cinema 4D and Redshift rendering techniques.
-            </p>
+      {/* Made by Patrons */}
+      <section className="py-20">
+        <div className="container mx-auto px-8">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            MADE BY <em className="italic">patrons</em>
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {tutorials.map((tutorial, index) => (
+              <motion.div
+                key={index}
+                className="group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="aspect-square rounded-lg overflow-hidden">
+                  <img
+                    src={tutorial.image}
+                    alt={tutorial.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <div className="col-span-12 md:col-span-6 flex flex-col md:items-end">
-            <div className="flex space-x-6 mb-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Patreon
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Instagram
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Twitter
-              </a>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+          >
+            {patrons.map((patron, index) => (
+              <div key={index} className="space-y-1">
+                <p className="font-semibold text-sm">{patron.name}</p>
+                <p className="text-xs text-gray-500">{patron.role}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* A-Grade Tutorials */}
+      <section className="py-20 bg-black text-white">
+        <div className="container mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <motion.h2 
+                className="text-4xl md:text-6xl font-bold mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                A-GRADE
+                <br />
+                <em className="italic">tutorials</em>
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-gray-300 mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                DIRECT <em className="italic">messaging</em>
+              </motion.p>
+              <motion.p 
+                className="text-gray-400 mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                Get access to premium tutorials, exclusive content, and direct communication with Ross Mason. 
+                Join a community of passionate 3D artists and take your skills to the next level.
+              </motion.p>
+              <motion.button
+                className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                Start Learning Today
+              </motion.button>
             </div>
-            <p className="text-gray-500 text-sm">
-              © 2024 Ross Mason. All rights reserved.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-right"
+            >
+              <p className="text-sm text-gray-400 mb-4">Get a message from Ross when you sign up:</p>
+              <div className="bg-gray-800 rounded-lg p-6 text-left">
+                <p className="text-sm text-gray-300">
+                  "Welcome to the community! I'm excited to help you master 3D design. 
+                  Let's create something amazing together."
+                </p>
+                <p className="text-xs text-gray-500 mt-4">- Ross Mason</p>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }

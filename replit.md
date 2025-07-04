@@ -92,10 +92,17 @@ This is a modern full-stack web application for a 3D artist's portfolio website.
 ```
 Changelog:
 - July 04, 2025. Initial setup
+- July 04, 2025. Complete redesign based on user's reference images:
+  - McCann landing page with navigation bar and video positioned on right side
+  - Ross Mason page recreated to match 90% similarity to provided Patreon design
+  - Added Noto Sans font throughout application
+  - Implemented scroll-triggered video expansion effects
+  - Created smooth page transitions and text animations
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Design requirements: 90% similarity to Ross Mason Patreon layout, video positioned on right side of text, navigation bar like reference image 2, use Noto Sans font.
 ```
