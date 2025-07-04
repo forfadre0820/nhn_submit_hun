@@ -188,15 +188,23 @@ export default function CombinedLanding() {
                 <div className="mb-4">
                   aux idées 
                   <span className="relative inline-block mx-4">
-                    <video 
-                      className="w-32 h-20 object-cover rounded-lg"
+                    <motion.video 
+                      className="object-cover rounded-lg"
+                      style={{
+                        width: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3], ["128px", "200px", "50vw", "100vw"]),
+                        height: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3], ["80px", "125px", "30vh", "100vh"]),
+                        position: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["relative", "fixed"]),
+                        top: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["0px", "0px"]),
+                        left: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], ["0px", "0px"]),
+                        zIndex: useTransform(scrollY, [window.innerHeight * 2.5, window.innerHeight * 3], [1, 1000])
+                      }}
                       autoPlay 
                       loop 
                       muted 
                       playsInline
                     >
                       <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                    </video>
+                    </motion.video>
                   </span>
                   qui
                 </div>
@@ -355,23 +363,15 @@ export default function CombinedLanding() {
                       alt={`${selectedService} work example`}
                       className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700"
                     />
-                    {/* Scroll-triggered scaling video overlay */}
+                    {/* Simple video overlay for demonstration */}
                     <motion.div 
                       className="absolute inset-0 flex items-center justify-center"
                       initial={{ scale: 0.3, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
                     >
-                      <motion.video
-                        className="object-cover rounded opacity-90"
-                        style={{
-                          width: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3, window.innerHeight * 4], ["96px", "150px", "300px", "80vw", "100vw"]),
-                          height: useTransform(scrollY, [0, window.innerHeight, window.innerHeight * 2, window.innerHeight * 3, window.innerHeight * 4], ["64px", "100px", "200px", "60vh", "100vh"]),
-                          position: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], ["relative", "fixed"]),
-                          top: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], ["0px", "0px"]),
-                          left: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], ["0px", "0px"]),
-                          zIndex: useTransform(scrollY, [window.innerHeight * 3, window.innerHeight * 4], [1, 1000])
-                        }}
+                      <video
+                        className="w-24 h-16 object-cover rounded opacity-90"
                         autoPlay
                         loop
                         muted
@@ -381,7 +381,7 @@ export default function CombinedLanding() {
                           src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                           type="video/mp4"
                         />
-                      </motion.video>
+                      </video>
                     </motion.div>
                   </motion.div>
 

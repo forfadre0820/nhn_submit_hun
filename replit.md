@@ -115,8 +115,9 @@ Changelog:
 - July 04, 2025. Removed "Learn 3D Mastery" and tutorial sections, replaced with scroll-triggered scaling video animation
 - July 04, 2025. Added interactive service selection with dynamic image switching for 3D Design, Art Direction, and Motion
 - July 04, 2025. Implemented video overlay on service images that scales with scroll interaction
-- July 04, 2025. Removed separate video scaling section and integrated scroll-triggered scaling into existing service section
-- July 04, 2025. Video overlay in service images now scales from small to full screen based on scroll position
+- July 04, 2025. Implemented scroll-triggered video scaling in McCann hero section text
+- July 04, 2025. Video in "aux idées [video] qui" text grows from 128px to full screen as user scrolls
+- July 04, 2025. Restored simple video overlay in Ross Mason service section without scaling
 ```
 
 ## User Preferences
