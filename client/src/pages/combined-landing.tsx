@@ -204,14 +204,19 @@ export default function CombinedLanding() {
                             crossOrigin="anonymous"
                             style={{
                               display: "block",
-                              width: useTransform(scrollY, [0, 300, 600, 900, 1200], ["100%", "150%", "300%", "100vw", "100vw"]),
-                              height: useTransform(scrollY, [0, 300, 600, 900, 1200], ["100%", "150%", "300%", "100vh", "100vh"]),
                               objectFit: "cover",
-                              position: useTransform(scrollY, [800], (value) => value >= 800 ? "fixed" : "static"),
-                              top: useTransform(scrollY, [800], (value) => value >= 800 ? "0" : "auto"),
-                              left: useTransform(scrollY, [800], (value) => value >= 800 ? "0" : "auto"),
-                              zIndex: useTransform(scrollY, [800], (value) => value >= 800 ? 9999 : 1),
-                              transform: useTransform(scrollY, [1400, 1600], ["translateY(0vh)", "translateY(-100vh)"])
+                              width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["8.3rem", "12rem", "20rem", "40rem", "60rem", "80vw", "100vw"]),
+                              height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["3.1rem", "4.5rem", "7.5rem", "15rem", "22.5rem", "45vh", "100vh"]),
+                              position: useTransform(scrollY, [600, 800], ["static", "fixed"]),
+                              top: useTransform(scrollY, [600, 800, 1000, 1200], ["auto", "50%", "0px", "0px"]),
+                              left: useTransform(scrollY, [600, 800, 1000, 1200], ["auto", "50%", "0px", "0px"]),
+                              zIndex: useTransform(scrollY, [600, 800], [1, 9999]),
+                              transform: useTransform(scrollY, [600, 800, 1200, 1400], [
+                                "translate(0%, 0%)", 
+                                "translate(-50%, -50%)", 
+                                "translate(-50%, -50%)", 
+                                "translate(-50%, -150%)"
+                              ])
                             }}
                           />
                         </motion.div>
