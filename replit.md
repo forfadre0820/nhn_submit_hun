@@ -103,6 +103,8 @@ Changelog:
 - July 04, 2025. Added comprehensive animations and hover effects across all sections
 - July 04, 2025. Removed "Learn 3D Mastery" section and replaced career section with Ross Mason About page style
 - July 04, 2025. Implemented personal story, services list, and client/partner sections with interactive animations
+- July 04, 2025. Restructured career section with traditional resume hierarchy: personal info, education, experience, skills, awards, clients
+- July 04, 2025. Enhanced scroll animations with upward motion effects for all text elements
 ```
 
 ## User Preferences
