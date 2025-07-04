@@ -101,6 +101,8 @@ Changelog:
 - July 04, 2025. Replaced tutorial gallery with "Learn 3D Mastery" section featuring irregular image layout
 - July 04, 2025. Increased font sizes throughout the site for better readability
 - July 04, 2025. Added comprehensive animations and hover effects across all sections
+- July 04, 2025. Removed "Learn 3D Mastery" section and replaced career section with Ross Mason About page style
+- July 04, 2025. Implemented personal story, services list, and client/partner sections with interactive animations
 ```
 
 ## User Preferences
