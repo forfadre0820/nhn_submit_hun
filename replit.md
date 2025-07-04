@@ -113,6 +113,8 @@ Changelog:
 - July 04, 2025. Removed 4-column layout and restored original Ross Mason About page structure
 - July 04, 2025. Implemented image position reversal with left-right flipped layout for featured section
 - July 04, 2025. Removed "Learn 3D Mastery" and tutorial sections, replaced with scroll-triggered scaling video animation
+- July 04, 2025. Added interactive service selection with dynamic image switching for 3D Design, Art Direction, and Motion
+- July 04, 2025. Implemented video overlay on service images that scales with scroll interaction
 ```
 
 ## User Preferences

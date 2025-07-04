@@ -8,6 +8,47 @@ export default function CombinedLanding() {
   const [currentTime, setCurrentTime] = useState("");
   const { scrollY } = useScroll();
   const [animationStarted, setAnimationStarted] = useState(false);
+  const [selectedService, setSelectedService] = useState<string>('3D_DESIGN');
+
+  // Helper functions for service content
+  const getServiceImage = (service: string) => {
+    switch (service) {
+      case '3D_DESIGN':
+        return "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
+      case 'ART_DIRECTION':
+        return "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
+      case 'MOTION':
+        return "https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
+      default:
+        return "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
+    }
+  };
+
+  const getServiceTitle = (service: string) => {
+    switch (service) {
+      case '3D_DESIGN':
+        return "Bring your ideas to life";
+      case 'ART_DIRECTION':
+        return "Creative vision and direction";
+      case 'MOTION':
+        return "Dynamic motion graphics";
+      default:
+        return "Bring your ideas to life";
+    }
+  };
+
+  const getServiceDescription = (service: string) => {
+    switch (service) {
+      case '3D_DESIGN':
+        return "Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality.";
+      case 'ART_DIRECTION':
+        return "Crafting compelling visual narratives that resonate with your audience. From concept development to final execution, I guide the creative process to ensure every element serves your brand's story and objectives.";
+      case 'MOTION':
+        return "Bringing static designs to life through fluid animations and dynamic motion graphics. Creating engaging visual experiences that capture attention and communicate your message with impact and style.";
+      default:
+        return "Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries.";
+    }
+  };
 
   useEffect(() => {
     const updateTime = () => {
@@ -169,50 +210,7 @@ export default function CombinedLanding() {
 
       {/* Ross Mason Section */}
       <section className="bg-white text-black">
-        {/* Scroll-triggered Video Section */}
-        <motion.div 
-          className="py-32 bg-gray-50 flex items-center justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="container mx-auto px-4 flex justify-center">
-            <motion.div
-              className="relative"
-              initial={{ scale: 0.2, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ 
-                duration: 1.5, 
-                ease: "easeOut",
-                type: "spring",
-                stiffness: 100,
-                damping: 20
-              }}
-              viewport={{ once: true, margin: "-10%" }}
-            >
-              <video
-                className="w-[32rem] h-80 object-cover rounded-lg shadow-2xl"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              
-              {/* Optional overlay for better visual appeal */}
-              <motion.div 
-                className="absolute inset-0 rounded-lg bg-black bg-opacity-10 hover:bg-opacity-0 transition-all duration-500"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              ></motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
+
 
         {/* About Section - Ross Mason Style */}
         <motion.div 
@@ -270,7 +268,7 @@ export default function CombinedLanding() {
               </motion.div>
             </div>
 
-            {/* Services Section */}
+            {/* Services Section with Interactive Images */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
               <motion.div 
                 className="md:col-span-6"
@@ -283,54 +281,57 @@ export default function CombinedLanding() {
                 
                 <div className="space-y-6">
                   <motion.div 
-                    className="group cursor-pointer"
+                    className={`group cursor-pointer ${selectedService === '3D_DESIGN' ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
                     whileHover={{ x: 10 }}
+                    onClick={() => setSelectedService('3D_DESIGN')}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-3xl md:text-4xl font-bold uppercase group-hover:opacity-75 transition-opacity">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
                         3D DESIGN
                       </h3>
                       <span className="ml-4 text-xs text-gray-500">01.</span>
                     </div>
-                    <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-2"></div>
+                    <div className={`h-px ${selectedService === '3D_DESIGN' ? 'bg-black' : 'bg-gray-200'} transition-colors duration-300 mt-2`}></div>
                   </motion.div>
 
                   <motion.div 
-                    className="group cursor-pointer"
+                    className={`group cursor-pointer ${selectedService === 'ART_DIRECTION' ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                     viewport={{ once: true }}
                     whileHover={{ x: 10 }}
+                    onClick={() => setSelectedService('ART_DIRECTION')}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-3xl md:text-4xl font-bold uppercase group-hover:opacity-75 transition-opacity">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
                         ART DIRECTION
                       </h3>
                       <span className="ml-4 text-xs text-gray-500">02.</span>
                     </div>
-                    <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-2"></div>
+                    <div className={`h-px ${selectedService === 'ART_DIRECTION' ? 'bg-black' : 'bg-gray-200'} transition-colors duration-300 mt-2`}></div>
                   </motion.div>
 
                   <motion.div 
-                    className="group cursor-pointer"
+                    className={`group cursor-pointer ${selectedService === 'MOTION' ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
                     viewport={{ once: true }}
                     whileHover={{ x: 10 }}
+                    onClick={() => setSelectedService('MOTION')}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-3xl md:text-4xl font-bold uppercase group-hover:opacity-75 transition-opacity">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
                         MOTION
                       </h3>
                       <span className="ml-4 text-xs text-gray-500">03.</span>
                     </div>
-                    <div className="h-px bg-gray-200 group-hover:bg-black transition-colors duration-300 mt-2"></div>
+                    <div className={`h-px ${selectedService === 'MOTION' ? 'bg-black' : 'bg-gray-200'} transition-colors duration-300 mt-2`}></div>
                   </motion.div>
                 </div>
               </motion.div>
@@ -342,8 +343,44 @@ export default function CombinedLanding() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="h-full flex flex-col justify-end">
-                  <div className="mt-8 md:mt-0">
+                <div className="h-full flex flex-col justify-between">
+                  {/* Service Image */}
+                  <motion.div 
+                    className="mb-8 relative overflow-hidden rounded-lg"
+                    key={selectedService}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img
+                      src={getServiceImage(selectedService)}
+                      alt={`${selectedService} work example`}
+                      className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                    {/* Video overlay for demonstration */}
+                    <motion.div 
+                      className="absolute inset-0 flex items-center justify-center"
+                      initial={{ scale: 0.3, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+                    >
+                      <video
+                        className="w-24 h-16 object-cover rounded opacity-90"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      >
+                        <source
+                          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Service Description */}
+                  <div>
                     <motion.p 
                       className="text-xl font-medium mb-6"
                       initial={{ opacity: 0, y: 20 }}
@@ -351,7 +388,7 @@ export default function CombinedLanding() {
                       transition={{ delay: 0.5, duration: 0.6 }}
                       viewport={{ once: true }}
                     >
-                      Bring your ideas to life
+                      {getServiceTitle(selectedService)}
                     </motion.p>
                     <motion.p 
                       className="text-gray-600 leading-relaxed text-lg"
@@ -360,7 +397,7 @@ export default function CombinedLanding() {
                       transition={{ delay: 0.6, duration: 0.6 }}
                       viewport={{ once: true }}
                     >
-                      Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality.
+                      {getServiceDescription(selectedService)}
                     </motion.p>
                   </div>
                 </div>
