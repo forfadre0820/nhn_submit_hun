@@ -119,6 +119,8 @@ Changelog:
 - July 04, 2025. Created pin-spacer container for video with fixed 16:9 aspect ratio area
 - July 04, 2025. Video scales from 0.3 to 1.0 within designated container area
 - July 04, 2025. Added sticky positioning so video stays in place when fully expanded
+- July 04, 2025. Video background matches page background and spans full width
+- July 04, 2025. Removed text line breaks for cleaner layout presentation
 ```
 
 ## User Preferences

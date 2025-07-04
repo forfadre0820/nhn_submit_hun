@@ -185,16 +185,15 @@ export default function CombinedLanding() {
             >
               <div className="sentence relative">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
-                  <div className="mb-4">Dites bonjour</div>
-                  <div className="mb-4">aux idées</div>
+                  <div className="mb-4">Dites bonjour aux idées</div>
                   
                   {/* Pin Spacer for Video Area */}
-                  <div className="pin-spacer relative w-full mb-4 flex items-center justify-center">
+                  <div className="pin-spacer relative w-screen -mx-[50vw] left-[50%] mb-4 flex items-center justify-center">
                     <div 
-                      className="video-container relative bg-gray-100 rounded-lg overflow-hidden"
+                      className="video-container relative bg-white overflow-hidden"
                       style={{
-                        width: "min(90vw, 800px)",
-                        height: "min(50.6vw, 450px)", // 16:9 비율 유지
+                        width: "100vw",
+                        height: "56.25vw", // 16:9 비율 유지 (100vw * 9/16)
                         aspectRatio: "16/9"
                       }}
                     >
@@ -215,8 +214,7 @@ export default function CombinedLanding() {
                     </div>
                   </div>
                   
-                  <div className="mb-4">qui</div>
-                  <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
+                  <div className="mb-4">qui transforment <sup className="text-sm">(vraiment)</sup></div>
                   <div>la vie des gens<span className="text-red-500">.</span></div>
                 </h1>
               </div>
