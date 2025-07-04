@@ -169,87 +169,48 @@ export default function CombinedLanding() {
 
       {/* Ross Mason Section */}
       <section className="bg-white text-black">
-        {/* Learn 3D Mastery Section */}
+        {/* Scroll-triggered Video Section */}
         <motion.div 
-          className="py-16 bg-gray-50"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <motion.h2
-                  className="text-4xl md:text-6xl font-black text-black mb-6 leading-tight"
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  LEARN 3D<br />
-                  MASTERY
-                </motion.h2>
-                <motion.button
-                  className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Get a free patreon tutorial sample
-                </motion.button>
-              </div>
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <img
-                  src={learnImage}
-                  alt="3D Interior Design Mastery"
-                  className="w-full h-auto rounded-lg shadow-2xl"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Latest Tutorial Section */}
-        <motion.div 
-          className="py-8 bg-black text-white"
+          className="py-32 bg-gray-50 flex items-center justify-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-6">
-              <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-                <div className="text-base uppercase tracking-wide mb-2 md:mb-0">Latest tutorial</div>
-                <div className="text-2xl font-medium">
-                  Creating Interiors
-                  <div className="text-base opacity-75">[C4D & REDSHIFT]</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-6">
-                <span className="text-base hidden md:inline">02:12:58</span>
-                <a href="#" className="text-white hover:opacity-75 transition-opacity border-b-2 border-white text-base">
-                  Visit Patreon
-                </a>
-              </div>
-            </div>
-            <div className="mt-8">
-              <img
-                src={latestTutorialImage}
-                alt="Latest Tutorial - Creating Interiors"
-                className="w-full h-auto rounded-lg shadow-2xl"
-              />
-            </div>
+          <div className="container mx-auto px-4 flex justify-center">
+            <motion.div
+              className="relative"
+              initial={{ scale: 0.2, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ 
+                duration: 1.5, 
+                ease: "easeOut",
+                type: "spring",
+                stiffness: 100,
+                damping: 20
+              }}
+              viewport={{ once: true, margin: "-10%" }}
+            >
+              <video
+                className="w-[32rem] h-80 object-cover rounded-lg shadow-2xl"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source
+                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              
+              {/* Optional overlay for better visual appeal */}
+              <motion.div 
+                className="absolute inset-0 rounded-lg bg-black bg-opacity-10 hover:bg-opacity-0 transition-all duration-500"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              ></motion.div>
+            </motion.div>
           </div>
         </motion.div>
 

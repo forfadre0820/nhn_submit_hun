@@ -112,6 +112,7 @@ Changelog:
 - July 04, 2025. Integrated traditional resume elements while maintaining visual design aesthetics
 - July 04, 2025. Removed 4-column layout and restored original Ross Mason About page structure
 - July 04, 2025. Implemented image position reversal with left-right flipped layout for featured section
+- July 04, 2025. Removed "Learn 3D Mastery" and tutorial sections, replaced with scroll-triggered scaling video animation
 ```
 
 ## User Preferences
