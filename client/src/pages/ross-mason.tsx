@@ -110,7 +110,7 @@ export default function RossMason() {
       </header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-between pt-110 md:pt-120 pb-10">
+      <section className="min-h-[70vh] flex flex-col justify-between pt-16 md:pt-20 pb-8">
         <div className="site-grid flex-1 flex items-center">
           <div className="col-span-12">
             <h1 className="hero-text font-black uppercase leading-none">
@@ -138,16 +138,16 @@ export default function RossMason() {
               </div>
             </h1>
             <motion.div
-              className="mt-12 md:mt-16"
+              className="mt-8 md:mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5, duration: 0.8 }}
             >
               <a
                 href="#"
-                className="inline-block bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
+                className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Get a free patreon tutorial sample
+                Get Free Tutorial Sample
               </a>
             </motion.div>
           </div>
@@ -155,7 +155,7 @@ export default function RossMason() {
         
         {/* Hero Image */}
         <motion.div
-          className="relative h-screen overflow-hidden mt-12"
+          className="relative h-[60vh] overflow-hidden mt-8"
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 2, duration: 1.2 }}
@@ -163,25 +163,25 @@ export default function RossMason() {
           <img
             src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080"
             alt="3D rendered modern interior"
-            className="media-fill object-cover"
+            className="media-fill object-cover rounded-2xl"
           />
         </motion.div>
       </section>
 
       {/* Latest Tutorial Section */}
-      <section className="py-20 bg-black text-white">
+      <section className="py-12 bg-black text-white">
         <div className="site-grid">
-          <div className="col-span-12 flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-6">
+          <div className="col-span-12 flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-6">
             <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-              <div className="text-sm uppercase tracking-wide mb-2 md:mb-0">Latest tutorial</div>
+              <div className="text-sm uppercase tracking-wide mb-2 md:mb-0 text-purple-400">Latest tutorial</div>
               <div className="text-lg font-medium">
                 Creating Interiors
                 <div className="text-sm opacity-75">[C4D & REDSHIFT]</div>
               </div>
             </div>
             <div className="flex items-center space-x-6">
-              <span className="text-sm hidden md:inline">02:12:58</span>
-              <a href="#" className="uline-double hover:opacity-75 transition-opacity">
+              <span className="text-sm hidden md:inline bg-white/10 px-3 py-1 rounded-full">02:12:58</span>
+              <a href="#" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
                 Visit Patreon
               </a>
             </div>
@@ -190,13 +190,13 @@ export default function RossMason() {
       </section>
 
       {/* Why Join Section */}
-      <section className="py-200 md:py-225">
+      <section className="py-16 md:py-20">
         <div className="site-grid">
-          <div className="col-span-12 md:col-span-3 mb-8 md:mb-0">
-            <h3 className="text-sm uppercase tracking-wide">[Why join?]</h3>
+          <div className="col-span-12 md:col-span-3 mb-6 md:mb-0">
+            <h3 className="text-sm uppercase tracking-wide text-purple-600">[Why join?]</h3>
           </div>
           <div className="col-span-12 md:col-span-9">
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
               LEVEL UP YOUR 3D SKILLS AND DO <em className="italic">the work</em> YOU'VE <em className="italic">always</em> WANTED TO DO.
             </h2>
             <a href="#" className="uline-double text-lg hover:opacity-75 transition-opacity">

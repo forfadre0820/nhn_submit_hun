@@ -1,9 +1,20 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { ChevronDown, Volume2, VolumeX, Maximize, Minimize } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function McCannLanding() {
   const [currentTime, setCurrentTime] = useState("");
+  const [isVideoExpanded, setIsVideoExpanded] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [, navigate] = useLocation();
+  const { scrollYProgress } = useScroll({ target: heroRef });
+  
+  const videoScale = useTransform(scrollYProgress, [0, 0.5], [1, 2.5]);
+  const videoOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 1, 0.8]);
 
   useEffect(() => {
     const updateTime = () => {
@@ -18,6 +29,39 @@ export default function McCannLanding() {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // Sound effect for scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollYProgress.get() > 0.1 && !isMuted) {
+        // Play scroll sound (you would implement actual sound here)
+        console.log('Scroll sound effect');
+      }
+    };
+
+    const unsubscribe = scrollYProgress.onChange(handleScroll);
+    return () => unsubscribe();
+  }, [scrollYProgress, isMuted]);
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (!isFullscreen) {
+      if (videoRef.current?.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+    setIsFullscreen(!isFullscreen);
+  };
 
   const projects = [
     {
@@ -48,7 +92,7 @@ export default function McCannLanding() {
   ];
 
   const handleContinueClick = () => {
-    window.location.href = "/ross-mason";
+    navigate("/ross-mason");
   };
 
   return (
@@ -87,39 +131,99 @@ export default function McCannLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <section ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center pt-16 pb-8">
         <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
-              <div className="mb-4">Dites bonjour</div>
-              <div className="mb-4">
-                aux idées 
-                <span className="relative inline-block mx-4">
-                  <video 
-                    className="w-32 h-20 object-cover rounded-lg"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <motion.div
+              className="text-left max-w-2xl"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+                <motion.div 
+                  className="mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  Dites bonjour
+                </motion.div>
+                <motion.div 
+                  className="mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  aux idées qui
+                </motion.div>
+                <motion.div 
+                  className="mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                >
+                  transforment <sup className="text-sm">(vraiment)</sup>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
+                  la vie des gens<span className="text-red-500">.</span>
+                </motion.div>
+              </h1>
+            </motion.div>
+
+            {/* Video Content */}
+            <motion.div
+              className="relative flex justify-center lg:justify-end"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <motion.div
+                className="relative overflow-hidden rounded-xl shadow-2xl"
+                style={{
+                  scale: videoScale,
+                  opacity: videoOpacity,
+                }}
+              >
+                <video 
+                  ref={videoRef}
+                  className="w-80 h-60 object-cover cursor-pointer"
+                  autoPlay 
+                  loop 
+                  muted={isMuted}
+                  playsInline
+                  onClick={() => setIsVideoExpanded(!isVideoExpanded)}
+                >
+                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                </video>
+                
+                {/* Video Controls */}
+                <div className="absolute top-4 right-4 flex space-x-2">
+                  <button
+                    onClick={toggleMute}
+                    className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
                   >
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                  </video>
-                </span>
-                qui
-              </div>
-              <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
-              <div>la vie des gens<span className="text-red-500">.</span></div>
-            </h1>
-          </motion.div>
+                    {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+                  </button>
+                  <button
+                    onClick={toggleFullscreen}
+                    className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                  >
+                    {isFullscreen ? <Minimize size={16} /> : <Maximize size={16} />}
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
         
         {/* Location and Time */}
-        <div className="absolute bottom-8 left-0 right-0">
+        <div className="absolute bottom-4 left-0 right-0">
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center text-sm text-gray-600">
               <div>N 48° 53' 34.915"</div>
@@ -153,9 +257,9 @@ export default function McCannLanding() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -182,8 +286,99 @@ export default function McCannLanding() {
         </div>
       </section>
 
+      {/* Ross Mason Introduction Section */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-5xl md:text-6xl font-bold mb-8 text-gray-900"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Meet Ross Mason
+            </motion.h2>
+            
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-left">
+                <motion.p 
+                  className="text-xl text-gray-700 mb-6 leading-relaxed"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  Ross Mason is a digital artist specializing in 3D art direction and motion design. 
+                  With years of experience in the industry, he creates stunning visual experiences 
+                  that push the boundaries of digital creativity.
+                </motion.p>
+                
+                <motion.p 
+                  className="text-lg text-gray-600 mb-8"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  Through his educational platform, Ross shares advanced techniques, 
+                  industry insights, and creative workflows that have helped thousands 
+                  of artists elevate their 3D skills.
+                </motion.p>
+
+                <motion.div
+                  className="flex flex-wrap gap-4 mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                  viewport={{ once: true }}
+                >
+                  {["3D Modeling", "Motion Graphics", "Art Direction", "Visual Effects"].map((skill, index) => (
+                    <span 
+                      key={index}
+                      className="px-4 py-2 bg-black text-white rounded-full text-sm font-medium"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </motion.div>
+              </div>
+
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-square bg-gradient-to-br from-purple-400 to-blue-600 rounded-2xl p-8 shadow-2xl">
+                  <div className="w-full h-full bg-black/20 rounded-xl flex items-center justify-center">
+                    <div className="text-white text-center">
+                      <div className="text-6xl font-bold mb-4">3D</div>
+                      <div className="text-xl">Artist & Educator</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Continue Button */}
-      <section className="py-20 bg-gray-100">
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,44 +386,46 @@ export default function McCannLanding() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Prêt à découvrir notre expertise en 3D ?
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              Ready to explore Ross Mason's 3D world?
             </h2>
-            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-              Explorez notre portfolio de création 3D et nos tutoriels avancés avec Ross Mason.
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Dive into advanced 3D tutorials, behind-the-scenes content, and professional workflows 
+              that will transform your creative process.
             </p>
             <motion.button
               onClick={handleContinueClick}
-              className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors inline-flex items-center space-x-2"
-              whileHover={{ scale: 1.05 }}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 inline-flex items-center space-x-3 shadow-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Continuer vers Ross Mason</span>
-              <ChevronDown className="w-5 h-5" />
+              <span>Enter Ross Mason's Studio</span>
+              <ChevronDown className="w-5 h-5 transform rotate-[-90deg]" />
             </motion.button>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">McCann Paris</h3>
-              <p className="text-gray-400 mb-6">
-                Agence de communication intégrée reconnue mondialement pour sa créativité et son efficacité.
+              <h3 className="text-xl font-bold mb-3">McCann Paris x Ross Mason</h3>
+              <p className="text-gray-400 mb-4 text-sm">
+                A collaboration between creative excellence and 3D mastery. 
+                Pushing the boundaries of digital art and motion design.
               </p>
             </div>
             <div className="flex flex-col md:items-end">
-              <div className="flex space-x-6 mb-6">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+              <div className="flex space-x-4 mb-4 text-sm">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Tutorials</a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
               </div>
-              <p className="text-gray-500 text-sm">
-                © 2024 McCann Paris. Tous droits réservés.
+              <p className="text-gray-500 text-xs">
+                © 2024 Creative Collaboration. All rights reserved.
               </p>
             </div>
           </div>
