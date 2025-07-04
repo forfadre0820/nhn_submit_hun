@@ -191,36 +191,67 @@ export default function CombinedLanding() {
                       <div className="sentence">
                         aux idées&nbsp;
                         <motion.div 
-                          className="home__hero__video"
-                          data-cursor="sound on"
-                          data-cursor-click="sound off"
+                          className="pin-spacer"
                           style={{
-                            transformOrigin: "center",
-                            scale: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], [1, 1.5, 2.5, 5, 8, 12, 12]),
-                            position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
-                            zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
-                            top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                            left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                            x: useTransform(scrollY, [599, 600], ["0%", "-50%"]),
-                            y: useTransform(scrollY, [599, 600, 2800, 2801], ["0%", "-50%", "-50%", "-150%"])
+                            order: 0,
+                            placeSelf: "auto",
+                            gridArea: "auto",
+                            zIndex: 1,
+                            float: "none",
+                            flexShrink: 1,
+                            display: "inline-block",
+                            margin: "0px",
+                            inset: "auto",
+                            position: "relative",
+                            flexBasis: "auto",
+                            overflow: "visible",
+                            boxSizing: "border-box",
+                            width: "230px",
+                            height: "87px",
+                            padding: "0px"
                           }}
                         >
-                          <motion.video
-                            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                            loop
-                            playsInline
-                            muted
-                            autoPlay
-                            crossOrigin="anonymous"
+                          <motion.div 
+                            className="home__hero__video"
+                            data-cursor="sound on"
+                            data-cursor-click="sound off"
                             style={{
-                              display: "block",
-                              objectFit: "cover",
-                              width: "100%",
-                              height: "100%"
+                              translate: "none",
+                              rotate: "none",
+                              scale: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], [1, 1.5, 2.5, 5, 8, 12, 12]),
+                              inset: "0px auto auto 0px",
+                              margin: "0px",
+                              maxWidth: "230px",
+                              width: "230px",
+                              maxHeight: "87px",
+                              height: "87px",
+                              padding: "0px",
+                              transform: useTransform(scrollY, [599, 600, 2800, 2801], ["translate(0px, 0px)", "translate(-50%, -50%)", "translate(-50%, -50%)", "translate(-50%, -150%)"]),
+                              position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
+                              top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              transformOrigin: "center"
                             }}
-                          />
+                          >
+                            <motion.video
+                              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                              loop
+                              playsInline
+                              muted
+                              autoPlay
+                              crossOrigin="anonymous"
+                              style={{
+                                top: "0px",
+                                left: "0px",
+                                height: "87px",
+                                width: "230px",
+                                objectFit: "cover"
+                              }}
+                            />
+                          </motion.div>
                         </motion.div>
-                        qui
+                        &nbsp;qui
                       </div>
                     </div>
                     <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>

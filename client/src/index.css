@@ -83,14 +83,29 @@
     position: relative;
   }
 
-  .home__hero__video {
-    display: inline-block;
-    height: 3.1rem;
-    width: 8.3rem;
-    pointer-events: none;
+  .pin-spacer {
+    order: 0;
+    place-self: auto;
+    grid-area: auto;
     z-index: 1;
-    vertical-align: middle;
-    margin: 0 0.5rem;
+    float: none;
+    flex-shrink: 1;
+    display: inline-block;
+    margin: 0px;
+    inset: auto;
+    position: relative;
+    flex-basis: auto;
+    overflow: visible;
+    box-sizing: border-box;
+    padding: 0px;
+  }
+
+  .home__hero__video {
+    translate: none;
+    rotate: none;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    padding: 0px;
     overflow: hidden;
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.1);

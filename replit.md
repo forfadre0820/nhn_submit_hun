@@ -134,6 +134,9 @@ Changelog:
 - July 04, 2025. Added dedicated video full-screen section with 300vh height for 3 scroll sections
 - July 04, 2025. Fixed video text alignment with vertical-align: middle and proper baseline positioning
 - July 04, 2025. Limited video scale to max 12x to prevent oversized scaling beyond screen boundaries
+- July 04, 2025. Implemented McCann.fr exact pin-spacer structure with 230px x 87px dimensions
+- July 04, 2025. Applied proper CSS properties matching McCann.fr: translate, rotate, scale, inset positioning
+- July 04, 2025. Fixed video container structure with pin-spacer wrapper for proper text alignment
 ```
 
 ## User Preferences
