@@ -199,10 +199,10 @@ export default function CombinedLanding() {
                             height: "3.1rem",
                             width: "8.3rem",
                             pointerEvents: "none",
-                            zIndex: useTransform(scrollY, [0, 600], [1, 9999]),
-                            position: useTransform(scrollY, [600], ["fixed"]),
-                            top: useTransform(scrollY, [600], ["0px"]),
-                            left: useTransform(scrollY, [600], ["0px"]),
+                            zIndex: useTransform(scrollY, [800, 1000], [1, 9999]),
+                            position: useTransform(scrollY, [800], (value) => value >= 800 ? "fixed" : "static"),
+                            top: useTransform(scrollY, [800], (value) => value >= 800 ? "0px" : "auto"),
+                            left: useTransform(scrollY, [800], (value) => value >= 800 ? "0px" : "auto"),
                             verticalAlign: "baseline",
                             margin: "0 0.5rem"
                           }}
