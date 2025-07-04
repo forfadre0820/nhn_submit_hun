@@ -116,8 +116,9 @@ Changelog:
 - July 04, 2025. Added interactive service selection with dynamic image switching for 3D Design, Art Direction, and Motion
 - July 04, 2025. Implemented video overlay on service images that scales with scroll interaction
 - July 04, 2025. Implemented scroll-triggered video scaling in McCann hero section text
-- July 04, 2025. Video in "aux idées [video] qui" text grows from 128px to full screen as user scrolls
-- July 04, 2025. Restored simple video overlay in Ross Mason service section without scaling
+- July 04, 2025. Video in "aux idées [video] qui" text grows from 80px to full screen with smooth transitions
+- July 04, 2025. Adjusted video positioning to display on second line between "aux idées" and "qui"
+- July 04, 2025. Created gradual scaling across 7 scroll points (0-1200px) for smooth animation
 ```
 
 ## User Preferences
