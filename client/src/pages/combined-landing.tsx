@@ -185,24 +185,19 @@ export default function CombinedLanding() {
             >
               <div className="sentence relative">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
-                  <div className="mb-4">Dites bonjour aux idées</div>
-                  
-                  {/* Pin Spacer for Video Area */}
-                  <div className="pin-spacer relative w-screen -mx-[50vw] left-[50%] mb-4 flex items-center justify-center">
-                    <div 
-                      className="video-container relative bg-white overflow-hidden"
-                      style={{
-                        width: "100vw",
-                        height: "56.25vw", // 16:9 비율 유지 (100vw * 9/16)
-                        aspectRatio: "16/9"
-                      }}
-                    >
+                  <div className="mb-4">Dites bonjour</div>
+                  <div className="mb-4">aux idées 
+                    <span className="inline-block mx-2 relative">
                       <motion.video 
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="rounded-lg object-cover"
                         style={{
-                          scale: useTransform(scrollY, [0, 200, 400, 600], [0.3, 0.6, 0.9, 1.0]),
-                          position: useTransform(scrollY, [600], ["sticky"]),
-                          zIndex: 10
+                          width: useTransform(scrollY, [0, 200, 400, 600], ["120px", "240px", "50vw", "100vw"]),
+                          height: useTransform(scrollY, [0, 200, 400, 600], ["68px", "135px", "28vw", "56vw"]),
+                          position: useTransform(scrollY, [400], ["fixed"]),
+                          top: useTransform(scrollY, [400], ["0px"]),
+                          left: useTransform(scrollY, [400], ["0px"]),
+                          zIndex: useTransform(scrollY, [400], [9999]),
+                          transform: useTransform(scrollY, [600, 800, 1000], ["translate(0, 0)", "translate(0, 0)", "translate(0, -100vh)"])
                         }}
                         autoPlay 
                         loop 
@@ -211,10 +206,10 @@ export default function CombinedLanding() {
                       >
                         <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
                       </motion.video>
-                    </div>
+                    </span>
+                    qui
                   </div>
-                  
-                  <div className="mb-4">qui transforment <sup className="text-sm">(vraiment)</sup></div>
+                  <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                   <div>la vie des gens<span className="text-red-500">.</span></div>
                 </h1>
               </div>

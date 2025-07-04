@@ -116,11 +116,10 @@ Changelog:
 - July 04, 2025. Added interactive service selection with dynamic image switching for 3D Design, Art Direction, and Motion
 - July 04, 2025. Implemented video overlay on service images that scales with scroll interaction
 - July 04, 2025. Implemented scroll-triggered video scaling in McCann hero section text
-- July 04, 2025. Created pin-spacer container for video with fixed 16:9 aspect ratio area
-- July 04, 2025. Video scales from 0.3 to 1.0 within designated container area
-- July 04, 2025. Added sticky positioning so video stays in place when fully expanded
-- July 04, 2025. Video background matches page background and spans full width
-- July 04, 2025. Removed text line breaks for cleaner layout presentation
+- July 04, 2025. Video embedded directly in text between "aux idées" and "qui"
+- July 04, 2025. Video scales from 120px to full screen with fixed positioning overlay
+- July 04, 2025. Video stays full screen for 3 scroll cycles then moves up off-screen
+- July 04, 2025. Z-index 9999 ensures video appears on top of all other content
 ```
 
 ## User Preferences
