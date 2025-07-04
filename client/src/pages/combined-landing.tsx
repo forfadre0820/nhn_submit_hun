@@ -187,19 +187,24 @@ export default function CombinedLanding() {
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
                   <div className="mb-4">Dites bonjour</div>
                   <div className="mb-4">
-                    aux idées&nbsp;<span>qui</span>
+                    aux idées&nbsp;<span>qui</span>&nbsp;
                     <motion.div 
-                      className="video-thumb inline-block align-middle mx-2 rounded-lg overflow-hidden"
+                      className="video-thumb"
                       style={{
                         width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["120px", "200px", "320px", "50vw", "70vw", "90vw", "100vw"]),
                         height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["67px", "112px", "180px", "28vw", "39vw", "51vw", "56vw"]),
+                        display: "inline-block",
+                        verticalAlign: "middle",
+                        margin: "0 8px",
+                        borderRadius: "8px",
+                        overflow: "hidden",
                         transform: "translateY(-2px)",
+                        opacity: 1,
                         transition: "opacity 0.3s",
-                        position: useTransform(scrollY, [800], ["fixed"]),
-                        top: useTransform(scrollY, [800], ["0px"]),
-                        left: useTransform(scrollY, [800], ["0px"]),
-                        zIndex: useTransform(scrollY, [800], [9999]),
-                        transformOrigin: "center"
+                        position: useTransform(scrollY, [600], ["fixed"]),
+                        top: useTransform(scrollY, [600], ["0px"]),
+                        left: useTransform(scrollY, [600], ["0px"]),
+                        zIndex: useTransform(scrollY, [600], [9999])
                       }}
                     >
                       <motion.video 
@@ -208,8 +213,11 @@ export default function CombinedLanding() {
                         loop 
                         muted 
                         playsInline
-                        className="w-full h-full object-cover rounded-lg"
                         style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "8px",
                           transform: useTransform(scrollY, [1400, 1600, 1800], ["translateY(0)", "translateY(0)", "translateY(-100vh)"])
                         }}
                       />
