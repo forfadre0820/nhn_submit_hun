@@ -156,7 +156,7 @@ export default function CombinedLanding() {
   return (
     <div className="bg-white text-black scroll-smooth">
       {/* McCann Section */}
-      <section className="min-h-screen relative">
+      <section className="min-h-[300vh] relative">
         {/* Header */}
         <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
@@ -188,13 +188,18 @@ export default function CombinedLanding() {
                   <div className="mb-4">Dites bonjour</div>
                   <div className="mb-4">
                     aux idées&nbsp;<span>qui</span>
-                    <div 
+                    <motion.div 
                       className="video-thumb inline-block align-middle mx-2 rounded-lg overflow-hidden"
                       style={{
-                        width: "120px",
-                        height: "67px",
+                        width: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["120px", "200px", "320px", "50vw", "70vw", "90vw", "100vw"]),
+                        height: useTransform(scrollY, [0, 200, 400, 600, 800, 1000, 1200], ["67px", "112px", "180px", "28vw", "39vw", "51vw", "56vw"]),
                         transform: "translateY(-2px)",
-                        transition: "opacity 0.3s"
+                        transition: "opacity 0.3s",
+                        position: useTransform(scrollY, [800], ["fixed"]),
+                        top: useTransform(scrollY, [800], ["0px"]),
+                        left: useTransform(scrollY, [800], ["0px"]),
+                        zIndex: useTransform(scrollY, [800], [9999]),
+                        transformOrigin: "center"
                       }}
                     >
                       <motion.video 
@@ -205,16 +210,10 @@ export default function CombinedLanding() {
                         playsInline
                         className="w-full h-full object-cover rounded-lg"
                         style={{
-                          scale: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000], [1, 1.2, 1.5, 2, 2.7, 3.3, 4.2, 5.8, 7.1, 7.9, 8.3]),
-                          position: useTransform(scrollY, [500], ["fixed"]),
-                          top: useTransform(scrollY, [500], ["0px"]),
-                          left: useTransform(scrollY, [500], ["0px"]),
-                          zIndex: useTransform(scrollY, [500], [9999]),
-                          transformOrigin: "center",
-                          transform: useTransform(scrollY, [900, 1100, 1300], ["scale(8.3)", "scale(8.3)", "scale(8.3) translateY(-100vh)"])
+                          transform: useTransform(scrollY, [1400, 1600, 1800], ["translateY(0)", "translateY(0)", "translateY(-100vh)"])
                         }}
                       />
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                   <div>la vie des gens<span className="text-red-500">.</span></div>
