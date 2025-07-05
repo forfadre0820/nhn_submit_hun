@@ -5,28 +5,28 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 비디오 스케일 애니메이션 (웹페이지 100% 크기까지만, 더 빠른 확대)
-  const videoScale = useTransform(scrollY, [0, 200, 400, 600], [1, 2, 4, 6]);
+  // 비디오 스케일 애니메이션 (점진적으로 증가)
+  const videoScale = useTransform(scrollY, [0, 300, 600, 900, 1200], [1, 1.5, 3, 6, 12]);
   
-  // 비디오 중앙 정렬을 위한 변환 (더 극적으로 왼쪽 이동)
-  const videoTransformX = useTransform(scrollY, [0, 150, 300, 450, 600], ["0%", "-15%", "-35%", "-45%", "-50%"]);
-  const videoTransformY = useTransform(scrollY, [0, 150, 300, 450, 600], ["0%", "-10%", "-25%", "-40%", "-50%"]);
+  // 비디오 중앙 정렬을 위한 변환 (스크롤에 따라 원래 위치에서 중앙으로 이동)
+  const videoTransformX = useTransform(scrollY, [0, 300, 600, 900], ["0%", "0%", "-25%", "-50%"]);
+  const videoTransformY = useTransform(scrollY, [0, 300, 600, 900], ["0%", "0%", "-25%", "-50%"]);
   
-  // 비디오 포지션 (더 빠른 고정)
-  const videoPosition = useTransform(scrollY, [400, 500], ["static", "fixed"]);
-  const videoTop = useTransform(scrollY, [400, 500], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [400, 500], ["auto", "50%"]);
-  const videoZIndex = useTransform(scrollY, [400, 500], [1, 9999]);
+  // 비디오 포지션 (일정 스크롤 이후 고정)
+  const videoPosition = useTransform(scrollY, [600, 700], ["static", "fixed"]);
+  const videoTop = useTransform(scrollY, [600, 700], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [600, 700], ["auto", "50%"]);
+  const videoZIndex = useTransform(scrollY, [600, 700], [1, 9999]);
   
   // 비디오 투명도 및 종료 애니메이션
-  const videoOpacity = useTransform(scrollY, [0, 800, 1000], [1, 1, 0]);
+  const videoOpacity = useTransform(scrollY, [0, 1200, 1500], [1, 1, 0]);
   
   // Ross Mason 섹션 진입 애니메이션
   const rossSectionY = useTransform(scrollY, [1200, 1600], ["100vh", "0vh"]);
   
-  // 스크롤 표시기  
-  const scrollIndicatorOpacity = useTransform(scrollY, [400, 500, 800, 900], [0, 1, 1, 0]);
-  const scrollIndicatorY = useTransform(scrollY, [400, 900], [0, -50]);
+  // 스크롤 표시기
+  const scrollIndicatorOpacity = useTransform(scrollY, [600, 700, 1200, 1300], [0, 1, 1, 0]);
+  const scrollIndicatorY = useTransform(scrollY, [600, 1300], [0, -50]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -57,10 +57,10 @@ export default function CombinedLanding() {
               </div>
               
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative">
-                <div className="mb-4 relative flex items-baseline">
-                  <span className="relative z-10">aux idées</span>
+                <div className="mb-4 relative">
+                  aux idées{" "}
                   <motion.span
-                    className="inline-block ml-4"
+                    className="inline-block align-middle"
                     style={{
                       position: videoPosition,
                       top: videoTop,
@@ -70,8 +70,7 @@ export default function CombinedLanding() {
                       zIndex: videoZIndex,
                       x: videoTransformX,
                       y: videoTransformY,
-                      scale: videoScale,
-                      verticalAlign: "baseline"
+                      scale: videoScale
                     }}
                   >
                     <video
@@ -81,7 +80,7 @@ export default function CombinedLanding() {
                       muted
                       autoPlay
                       crossOrigin="anonymous"
-                      className="w-[230px] h-[87px] object-cover block"
+                      className="w-[230px] h-[87px] object-cover"
                     />
                   </motion.span>
                 </div>
