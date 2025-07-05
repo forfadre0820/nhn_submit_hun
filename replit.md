@@ -155,31 +155,6 @@ Changelog:
 - July 04, 2025. Added dissolve effect to video fade-out with dual opacity transforms on container and video element
 - July 04, 2025. Implemented smooth transition CSS for natural dissolve appearance during scroll exit
 - July 04, 2025. Created layered opacity animation: container (1→0.5→0) and video (1→0.3→0) for gradual dissolution
-- July 05, 2025. Enhanced video scaling to 15x for complete screen coverage and maintained fixed positioning
-- July 05, 2025. Removed fade-out effects and implemented upward scroll movement synchronized with other elements
-- July 05, 2025. Modified video exit behavior to transition from fixed to relative positioning for natural scroll flow
-- July 05, 2025. Removed redundant full-screen video section to eliminate duplication
-- July 05, 2025. Optimized scroll transition points to eliminate jerky movements and ensure smooth scaling
-- July 05, 2025. Added CSS transitions and will-change properties for hardware acceleration and smoother animations
-- July 05, 2025. Adjusted video scaling to 10x for precise browser-fit full-screen coverage
-- July 05, 2025. Simplified position transitions to prevent sudden Y-axis position changes
-- July 05, 2025. Reduced McCann section height from 300vh to 150vh to minimize empty space
-- July 05, 2025. Optimized Ross Mason section entry timing for smoother content flow
-- July 05, 2025. Implemented granular 1-pixel scroll detection with 13-point transform progression
-- July 05, 2025. Added 10-point position transition system for smoother fixed/static positioning
-- July 05, 2025. Created 9-point Ross Mason section reveal with gradual translateY progression
-- July 05, 2025. Removed CSS transitions and scroll-smooth for direct scroll-based control
-- July 05, 2025. Redesigned with simplified architecture: fixed target section for full-screen video display
-- July 05, 2025. Implemented center-based video scaling with translate(-50%, -50%) positioning for browser center
-- July 05, 2025. Added proper fixed positioning system to ensure video stays centered during scaling
-- July 05, 2025. Optimized video scale progression: 1x → 3x → 12x with smooth transition timing
-- July 05, 2025. Repositioned second line text to right side with justify-between layout
-- July 05, 2025. Enhanced video scaling: 1x → 2x → 4x → 15x with fixed position at screen center
-- July 05, 2025. Removed border-radius from video for sharp corners instead of rounded edges
-- July 05, 2025. Added 3-scroll exit sequence with upward translation for smooth Ross Mason section reveal
-- July 05, 2025. Fixed second line text positioning using absolute positioning instead of justify-between
-- July 05, 2025. Added scroll indicator during full-screen video section with animated bounce effect
-- July 05, 2025. Implemented "스크롤 계속" indicator with line and dot animation for user guidance
 ```
 
 ## User Preferences

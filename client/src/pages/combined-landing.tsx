@@ -154,9 +154,9 @@ export default function CombinedLanding() {
   ];
 
   return (
-    <div className="bg-white text-black">
+    <div className="bg-white text-black scroll-smooth">
       {/* McCann Section */}
-      <section className="min-h-[150vh] relative">
+      <section className="min-h-[300vh] relative">
         {/* Header */}
         <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
@@ -175,7 +175,7 @@ export default function CombinedLanding() {
         </header>
 
         {/* Hero Section with Video */}
-        <div className="relative home__video" style={{ height: "100vh" }}>
+        <div className="relative home__video" style={{ height: "150vh" }}>
           <div className="min-h-screen flex items-center justify-center pt-20">
             <div className="container mx-auto px-4">
               <motion.div
@@ -225,30 +225,25 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600], [
+                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 1400, 1600, 1800, 2000, 2200], [
                                 "translate(0px, 0px) scale(1)",
-                                "translate(0px, 0px) scale(1.2)",
                                 "translate(0px, 0px) scale(1.5)",
-                                "translate(0px, 0px) scale(2)",
                                 "translate(0px, 0px) scale(2.5)",
-                                "translate(0px, 0px) scale(3)",
                                 "translate(0px, 0px) scale(4)",
-                                "translate(0px, 0px) scale(5)",
                                 "translate(0px, 0px) scale(6)",
-                                "translate(0px, 0px) scale(7)",
-                                "translate(0px, 0px) scale(8)",
-                                "translate(0px, 0px) scale(9)",
-                                "translate(-50%, -50%) scale(10)"
+                                "translate(0px, 0px) scale(10)",
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -60%) scale(10)",
+                                "translate(-50%, -80%) scale(10)",
+                                "translate(-50%, -100%) scale(10)",
+                                "translate(-50%, -120%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [
-                                590, 595, 600, 605, 610, 700, 750, 800, 850, 900
-                              ], [
-                                "static", "static", "fixed", "fixed", "fixed", "fixed", "fixed", "fixed", "fixed", "static"
-                              ]),
-                              zIndex: useTransform(scrollY, [590, 600, 900, 910], [1, 9999, 9999, 1]),
-                              top: useTransform(scrollY, [590, 600, 900, 910], ["auto", "50%", "50%", "auto"]),
-                              left: useTransform(scrollY, [590, 600, 900, 910], ["auto", "50%", "50%", "auto"]),
-
+                              position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
+                              top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [1800, 2000, 2200], [1, 0.5, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -264,7 +259,8 @@ export default function CombinedLanding() {
                                 left: "0px",
                                 height: "87px",
                                 width: "230px",
-                                objectFit: "cover"
+                                objectFit: "cover",
+                                opacity: useTransform(scrollY, [1700, 1900, 2100], [1, 0.3, 0])
                               }}
                             />
                           </motion.div>
@@ -282,17 +278,46 @@ export default function CombinedLanding() {
         </div>
       </section>
 
+      {/* Video Full Screen Section */}
+      <section className="relative bg-black" style={{ height: "400vh" }}>
+        <div className="sticky top-0 w-full h-screen overflow-hidden">
+          <div className="relative overflow-hidden h-screen h-full-screen">
+            <div className="absolute inset-0" style={{ 
+              translate: "none", 
+              rotate: "none", 
+              scale: "none", 
+              transform: "translate3d(0px, -4.2364rem, 0px)" 
+            }}>
+              <motion.div 
+                className="overflow-hidden media-fill lazy absolute top-0 left-0 h-full w-full"
+                style={{
+                  opacity: useTransform(scrollY, [600, 800], [0, 1])
+                }}
+              >
+                <motion.video
+                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                  loop
+                  playsInline
+                  muted
+                  autoPlay
+                  crossOrigin="anonymous"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{
+                    opacity: useTransform(scrollY, [600, 800], [0, 1])
+                  }}
+                />
+              </motion.div>
+            </div>
+          </div>
 
+        </div>
+      </section>
 
       {/* Ross Mason Section */}
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [
-            600, 650, 700, 750, 800, 850, 900, 950, 1000
-          ], [
-            "translateY(100vh)", "translateY(85vh)", "translateY(70vh)", "translateY(55vh)", "translateY(40vh)", "translateY(25vh)", "translateY(10vh)", "translateY(5vh)", "translateY(0vh)"
-          ])
+          transform: useTransform(scrollY, [1400, 1600, 1800, 2000, 2200, 2400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
