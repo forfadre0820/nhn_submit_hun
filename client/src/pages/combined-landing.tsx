@@ -225,24 +225,24 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 1400, 1600, 1800, 2000, 2200], [
+                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
-                                "translate(0px, 0px) scale(15)",
+                                "translate(0px, 0px) scale(10)",
                                 "translate(-50%, -50%) scale(15)",
                                 "translate(-50%, -50%) scale(15)",
-                                "translate(-50%, -60%) scale(15)",
-                                "translate(-50%, -80%) scale(15)",
-                                "translate(-50%, -100%) scale(15)",
-                                "translate(-50%, -120%) scale(15)"
+                                "translate(-50%, -50%) scale(15)",
+                                "translate(-50%, -50%) scale(15)",
+                                "translate(-50%, -50%) scale(15)",
+                                "translate(-50%, -50%) scale(15)"
                               ]),
-                              position: useTransform(scrollY, [599, 600, 2000, 2001], ["static", "fixed", "fixed", "relative"]),
-                              zIndex: useTransform(scrollY, [599, 600, 2000, 2001], [1, 9999, 9999, 1]),
-                              top: useTransform(scrollY, [599, 600, 2000, 2001], ["auto", "50%", "50%", "auto"]),
-                              left: useTransform(scrollY, [599, 600, 2000, 2001], ["auto", "50%", "50%", "auto"]),
+                              position: useTransform(scrollY, [599, 600, 1200, 1201], ["static", "fixed", "fixed", "relative"]),
+                              zIndex: useTransform(scrollY, [599, 600, 1200, 1201], [1, 9999, 9999, 1]),
+                              top: useTransform(scrollY, [599, 600, 1200, 1201], ["auto", "50%", "50%", "auto"]),
+                              left: useTransform(scrollY, [599, 600, 1200, 1201], ["auto", "50%", "50%", "auto"]),
 
                               transformOrigin: "center"
                             }}
@@ -277,46 +277,13 @@ export default function CombinedLanding() {
         </div>
       </section>
 
-      {/* Video Full Screen Section */}
-      <section className="relative bg-black" style={{ height: "400vh" }}>
-        <div className="sticky top-0 w-full h-screen overflow-hidden">
-          <div className="relative overflow-hidden h-screen h-full-screen">
-            <div className="absolute inset-0" style={{ 
-              translate: "none", 
-              rotate: "none", 
-              scale: "none", 
-              transform: "translate3d(0px, -4.2364rem, 0px)" 
-            }}>
-              <motion.div 
-                className="overflow-hidden media-fill lazy absolute top-0 left-0 h-full w-full"
-                style={{
-                  opacity: useTransform(scrollY, [600, 800], [0, 1])
-                }}
-              >
-                <motion.video
-                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                  loop
-                  playsInline
-                  muted
-                  autoPlay
-                  crossOrigin="anonymous"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{
-                    opacity: useTransform(scrollY, [600, 800], [0, 1])
-                  }}
-                />
-              </motion.div>
-            </div>
-          </div>
 
-        </div>
-      </section>
 
       {/* Ross Mason Section */}
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [1400, 1600, 1800, 2000, 2200, 2400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [900, 1000, 1100, 1200, 1300, 1400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}

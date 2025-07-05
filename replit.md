@@ -158,6 +158,9 @@ Changelog:
 - July 05, 2025. Enhanced video scaling to 15x for complete screen coverage and maintained fixed positioning
 - July 05, 2025. Removed fade-out effects and implemented upward scroll movement synchronized with other elements
 - July 05, 2025. Modified video exit behavior to transition from fixed to relative positioning for natural scroll flow
+- July 05, 2025. Removed redundant full-screen video section to eliminate duplication
+- July 05, 2025. Optimized scroll transition points to eliminate jerky movements and ensure smooth scaling
+- July 05, 2025. Added CSS transitions and will-change properties for hardware acceleration and smoother animations
 ```
 
 ## User Preferences
