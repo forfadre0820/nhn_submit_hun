@@ -245,7 +245,7 @@ export default function CombinedLanding() {
                               transformOrigin: "center"
                             }}
                           >
-                            <motion.video
+                            <video
                               className="video-always-visible"
                               src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                               loop
@@ -253,14 +253,13 @@ export default function CombinedLanding() {
                               muted
                               autoPlay
                               crossOrigin="anonymous"
-                              animate={{ opacity: 1 }}
                               style={{
                                 top: "0px",
                                 left: "0px",
                                 height: "87px",
                                 width: "230px",
                                 objectFit: "cover",
-
+                                opacity: 1,
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}

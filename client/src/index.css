@@ -50,9 +50,26 @@
 /* Force video visibility */
 .video-always-visible {
   opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .video-container-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Override any motion transforms on video elements */
+.home__hero__video,
+.home__hero__video *,
+.home__hero__video video,
+video.video-always-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure video stays visible during any animation */
+[data-cursor="sound on"] video,
+[data-cursor="sound off"] video {
   opacity: 1 !important;
 }
 
