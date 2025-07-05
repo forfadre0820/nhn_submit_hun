@@ -5,18 +5,16 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 1단계: 먼저 중앙으로 이동 (ease-out-in 효과)
-  const videoTransformX = useTransform(scrollY, [0, 200, 400], ["0%", "-30%", "-50%"]);
-  const videoTransformY = useTransform(scrollY, [0, 200, 400], ["0%", "-30%", "-50%"]);
+  // 위치와 크기 동시 변경 (ease-out-in 효과)
+  const videoTransformX = useTransform(scrollY, [0, 150, 300, 600], ["0%", "-20%", "-40%", "-50%"]);
+  const videoTransformY = useTransform(scrollY, [0, 150, 300, 600], ["0%", "-20%", "-40%", "-50%"]);
+  const videoScale = useTransform(scrollY, [0, 150, 300, 600, 900, 1200], [1, 1.2, 2, 4, 8, 12]);
   
-  // 2단계: 중앙 정렬 후 스케일 증가
-  const videoScale = useTransform(scrollY, [400, 600, 800, 1000, 1200], [1, 2, 4, 8, 12]);
-  
-  // 비디오 포지션 (중앙 정렬 완료 후 고정)
-  const videoPosition = useTransform(scrollY, [400, 500], ["static", "fixed"]);
-  const videoTop = useTransform(scrollY, [400, 500], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [400, 500], ["auto", "50%"]);
-  const videoZIndex = useTransform(scrollY, [400, 500], [1, 9999]);
+  // 비디오 포지션 (크기와 함께 변경)
+  const videoPosition = useTransform(scrollY, [300, 400], ["static", "fixed"]);
+  const videoTop = useTransform(scrollY, [300, 400], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [300, 400], ["auto", "50%"]);
+  const videoZIndex = useTransform(scrollY, [300, 400], [1, 9999]);
   
   // 비디오 투명도 및 종료 애니메이션
   const videoOpacity = useTransform(scrollY, [0, 1200, 1500], [1, 1, 0]);
