@@ -5,16 +5,17 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 위치와 크기 동시 변경 (ease-out-in 효과)
-  const videoTransformX = useTransform(scrollY, [0, 150, 300, 600], ["0%", "-20%", "-40%", "-50%"]);
-  const videoTransformY = useTransform(scrollY, [0, 150, 300, 600], ["0%", "-20%", "-40%", "-50%"]);
-  const videoScale = useTransform(scrollY, [0, 150, 300, 600, 900, 1200], [1, 1.2, 2, 4, 8, 12]);
+  // McCann.fr 스타일 비디오 애니메이션
+  const videoTranslateX = useTransform(scrollY, [0, 200, 400, 600], [0, -100, -300, -500]);
+  const videoTranslateY = useTransform(scrollY, [0, 200, 400, 600], [0, -50, -200, -350]);
+  const videoLeft = useTransform(scrollY, [0, 200, 400, 600], ["auto", "600px", "50vw", "50vw"]);
+  const videoTop = useTransform(scrollY, [0, 200, 400, 600], ["auto", "400px", "50vh", "50vh"]);
+  const videoWidth = useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["230px", "300px", "15vw", "25vw", "50vw", "100vw"]);
+  const videoHeight = useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["87px", "120px", "8vh", "15vh", "30vh", "100vh"]);
   
-  // 비디오 포지션 (크기와 함께 변경)
-  const videoPosition = useTransform(scrollY, [300, 400], ["static", "fixed"]);
-  const videoTop = useTransform(scrollY, [300, 400], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [300, 400], ["auto", "50%"]);
-  const videoZIndex = useTransform(scrollY, [300, 400], [1, 9999]);
+  // 비디오 포지션
+  const videoPosition = useTransform(scrollY, [200, 300], ["static", "fixed"]);
+  const videoZIndex = useTransform(scrollY, [200, 300], [1, 9999]);
   
   // 비디오 투명도 및 종료 애니메이션
   const videoOpacity = useTransform(scrollY, [0, 1200, 1500], [1, 1, 0]);
@@ -57,31 +58,66 @@ export default function CombinedLanding() {
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative">
                 <div className="mb-4 relative">
                   aux idées{" "}
+                  {/* Pin Spacer Container */}
                   <motion.span
-                    className="inline-block align-middle"
+                    className="pin-spacer inline-block"
                     style={{
-                      position: videoPosition,
-                      top: videoTop,
-                      left: videoLeft,
-                      opacity: videoOpacity,
-                      transformOrigin: "center",
-                      zIndex: videoZIndex,
-                      x: videoTransformX,
-                      y: videoTransformY,
-                      scale: videoScale,
-                      transition: "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)", // ease-out-in 효과
-                      willChange: "transform"
+                      order: 0,
+                      placeSelf: "auto",
+                      gridArea: "auto",
+                      zIndex: 1,
+                      float: "none",
+                      flexShrink: 1,
+                      display: "inline-block",
+                      margin: "0px",
+                      inset: "auto",
+                      position: "relative",
+                      flexBasis: "auto",
+                      overflow: "visible",
+                      boxSizing: "border-box",
+                      width: "230px",
+                      height: "87px",
+                      padding: "0px"
                     }}
                   >
-                    <video
-                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                      loop
-                      playsInline
-                      muted
-                      autoPlay
-                      crossOrigin="anonymous"
-                      className="w-[230px] h-[87px] object-cover"
-                    />
+                    {/* Home Hero Video Container */}
+                    <motion.div
+                      className="home__hero__video"
+                      style={{
+                        translate: "none",
+                        rotate: "none",
+                        scale: "none",
+                        left: videoLeft,
+                        top: videoTop,
+                        margin: "0px",
+                        maxWidth: "230px",
+                        width: videoWidth,
+                        maxHeight: "87px",
+                        height: videoHeight,
+                        padding: "0px",
+                        boxSizing: "border-box",
+                        position: videoPosition,
+                        transform: `translate(${videoTranslateX}px, ${videoTranslateY}px)`,
+                        zIndex: videoZIndex,
+                        opacity: videoOpacity
+                      }}
+                    >
+                      <video
+                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        loop
+                        playsInline
+                        muted
+                        autoPlay
+                        crossOrigin="anonymous"
+                        style={{
+                          top: "-59px",
+                          left: "-85px",
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover"
+                        }}
+                      />
+                    </motion.div>
                   </motion.span>
                 </div>
                 <div className="mb-4 relative z-10">transforment <sup className="text-sm">(vraiment)</sup></div>
