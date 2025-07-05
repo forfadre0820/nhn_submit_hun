@@ -160,10 +160,6 @@ Changelog:
 - July 05, 2025. Extended full-screen video section to 500vh for longer scroll interaction
 - July 05, 2025. Modified video animation to stay full-screen longer, then move upward instead of shrinking
 - July 05, 2025. Adjusted timing for video disappearance and Ross Mason section emergence with better pacing
-- July 05, 2025. Removed full-screen video section and replaced with Ross Mason About page structure
-- July 05, 2025. Created clean resume-style layout with personal story, services, and client/partner sections
-- July 05, 2025. Implemented comprehensive text animations using Framer Motion whileInView triggers
-- July 05, 2025. Restructured site flow: McCann hero → Resume section with smooth scroll transitions
 ```
 
 ## User Preferences
