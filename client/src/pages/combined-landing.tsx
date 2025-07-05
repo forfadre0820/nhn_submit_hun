@@ -225,7 +225,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 900, 1100, 1300, 1500, 1700], [
+                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 700, 800, 900, 1000, 1100], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -243,7 +243,7 @@ export default function CombinedLanding() {
                               zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
                               top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
                               left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [1500, 1600, 1700], [1, 0.5, 0]),
+                              opacity: useTransform(scrollY, [1000, 1100, 1200], [1, 0.5, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -260,7 +260,7 @@ export default function CombinedLanding() {
                                 height: "87px",
                                 width: "230px",
                                 objectFit: "cover",
-                                opacity: useTransform(scrollY, [1400, 1550, 1650], [1, 0.3, 0]),
+                                opacity: useTransform(scrollY, [950, 1050, 1150], [1, 0.3, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
@@ -281,7 +281,7 @@ export default function CombinedLanding() {
       </section>
 
       {/* Video Full Screen Section */}
-      <section className="relative bg-white" style={{ height: "300vh" }}>
+      <section className="relative bg-white" style={{ height: "200vh" }}>
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           {/* This section provides scroll space for video animations */}
         </div>
@@ -291,7 +291,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [1200, 1400, 1600, 1800, 2000, 2200], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [900, 1000, 1100, 1200, 1300, 1400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
