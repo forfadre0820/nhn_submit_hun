@@ -225,7 +225,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 60, 120, 180, 240, 299, 300, 350, 400, 450, 500, 550, 600], [
+                              transform: useTransform(scrollY, [0, 42, 84, 126, 168, 209, 210, 245, 280, 315, 350, 385, 420], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -240,10 +240,10 @@ export default function CombinedLanding() {
                                 "translate(-50%, -150%) scale(10)",
                                 "translate(-50%, -200%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [299, 300], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [299, 300], [1, 9999]),
-                              top: useTransform(scrollY, [299, 300], ["auto", "50%"]),
-                              left: useTransform(scrollY, [299, 300], ["auto", "50%"]),
+                              position: useTransform(scrollY, [209, 210], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [209, 210], [1, 9999]),
+                              top: useTransform(scrollY, [209, 210], ["auto", "50%"]),
+                              left: useTransform(scrollY, [209, 210], ["auto", "50%"]),
                               opacity: useTransform(scrollY, [1000, 1100, 1200], [1, 1, 1]),
                               transformOrigin: "center"
                             }}
@@ -284,7 +284,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 200], [1, 0])
+                  opacity: useTransform(scrollY, [0, 140], [1, 0])
                 }}
               >
                 <motion.div
@@ -312,9 +312,34 @@ export default function CombinedLanding() {
       </section>
 
       {/* Video Full Screen Section */}
-      <section className="relative bg-white" style={{ height: "100vh" }}>
-        <div className="sticky top-0 w-full h-screen overflow-hidden">
-          {/* This section provides scroll space for video animations */}
+      <section className="relative bg-white" style={{ height: "70vh" }}>
+        <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
+          {/* Additional Scroll Indicator during video animation */}
+          <motion.div 
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10"
+            style={{
+              opacity: useTransform(scrollY, [210, 350], [0, 1])
+            }}
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="text-sm text-white mb-2"
+            >
+              Continue scrolling
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 }}
+              className="w-6 h-10 border-2 border-white rounded-full mx-auto relative"
+            >
+              <motion.div
+                animate={{ y: [0, 16, 0] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                className="w-1 h-3 bg-white rounded-full absolute left-1/2 top-1 transform -translate-x-1/2"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -322,10 +347,10 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [450, 500, 550, 600, 650, 700], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [315, 350, 385, 420, 455, 490], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
-        {/* About Section - Ross Mason Style */}
+        {/* About Section - Brian Miller Style */}
         <motion.div 
           className="py-16 bg-white"
           initial={{ opacity: 0, y: 30 }}
@@ -333,56 +358,280 @@ export default function CombinedLanding() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-4">
-            {/* Main Title */}
-            <div className="mb-16">
-              <motion.h2 
-                className="text-4xl md:text-6xl font-bold uppercase leading-tight"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                SELF <em className="italic">taught</em> 3D ARTIST
-              </motion.h2>
+          <div className="container mx-auto px-8">
+            {/* Header with number */}
+            <div className="flex justify-between items-center mb-16">
+              <div>
+                <h2 className="text-red-500 text-sm font-medium tracking-wide uppercase mb-4">
+                  ABOUT ROSS MASON
+                </h2>
+              </div>
+              <div className="text-red-500 text-2xl font-bold">01</div>
             </div>
 
-            {/* Personal Story Section */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
-              <motion.div 
-                className="md:col-span-3"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
+            {/* Main Content Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+              {/* Left Column */}
+              <div>
+                <motion.h1 
+                  className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  3D product designer focused on development.
+                </motion.h1>
+                
+                <motion.p 
+                  className="text-gray-600 text-lg leading-relaxed mb-8"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  Currently improving users experience and interface design as lead designer director at crafto theme agency.
+                </motion.p>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Discover</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Working at the sweet spot between minimalism and sustainability to develop visual solutions that inform and persuade.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Prototyping</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We spend enough time to uncover business goals and client needs by understanding market trends and unlocking opportunities.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Creation</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Development is heart of our business. Our skilled designers and developers make sure to deliver tried-tested efficient, scalable.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Bottom Info Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8 border-t border-gray-200">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-base uppercase tracking-wide text-gray-600">[PERSONAL STORY]</h3>
+                <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Expertise</h4>
+                <p className="text-gray-900 font-medium">Designing and web</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Born in</h4>
+                <p className="text-gray-900 font-medium">London, UK</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Date of birth</h4>
+                <p className="text-gray-900 font-medium">26 December 1984</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Education</h4>
+                <p className="text-gray-900 font-medium">Master of design</p>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Latest Works Section - Brian Miller Style */}
+        <motion.div 
+          className="py-16 bg-white"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="container mx-auto px-8">
+            {/* Header with number */}
+            <div className="flex justify-between items-center mb-16">
+              <div>
+                <h2 className="text-red-500 text-sm font-medium tracking-wide uppercase mb-4">
+                  LATEST WORKS
+                </h2>
+              </div>
+              <div className="text-red-500 text-2xl font-bold">02</div>
+            </div>
+
+            {/* Portfolio Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Large image - top left */}
+              <motion.div 
+                className="md:col-span-2 md:row-span-2 bg-blue-100 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-4xl mb-2">📱</div>
+                    <div className="text-sm">Product Design</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Small image - top right */}
+              <motion.div 
+                className="md:col-span-2 bg-gray-100 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-2xl mb-1">🎨</div>
+                    <div className="text-xs">Brand Design</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Pink accent image */}
+              <motion.div 
+                className="md:col-span-2 bg-pink-100 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-video bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-2xl mb-1">✋</div>
+                    <div className="text-xs">UI/UX Design</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Green accent image */}
+              <motion.div 
+                className="bg-green-100 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-xl mb-1">🌿</div>
+                    <div className="text-xs">Nature</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Bottom left image */}
+              <motion.div 
+                className="bg-orange-100 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-square bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-xl mb-1">📄</div>
+                    <div className="text-xs">Print</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Bottom center image */}
+              <motion.div 
+                className="bg-yellow-100 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-square bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-xl mb-1">📱</div>
+                    <div className="text-xs">Mobile</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Bottom right images */}
+              <motion.div 
+                className="bg-gray-200 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-xl mb-1">🥚</div>
+                    <div className="text-xs">3D Art</div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div 
-                className="md:col-span-6"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                className="bg-blue-200 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="text-lg leading-relaxed space-y-4">
-                  <p><strong>Forever learning.</strong></p>
-                  <p>
-                    I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
-                  </p>
-                  <p>
-                    Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
-                  </p>
-                  <p>
-                    I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
-                  </p>
+                <div className="aspect-square bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="text-xl mb-1">👕</div>
+                    <div className="text-xs">Fashion</div>
+                  </div>
                 </div>
               </motion.div>
             </div>
-
-            {/* Services Section with Interactive Images */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+          </div>
+        </motion.div>
+      </motion.div>
+    );
+  }
               <motion.div 
                 className="md:col-span-6"
                 initial={{ opacity: 0, x: -30 }}
