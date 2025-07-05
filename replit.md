@@ -177,6 +177,9 @@ Changelog:
 - July 05, 2025. Enhanced video scaling: 1x → 2x → 4x → 15x with fixed position at screen center
 - July 05, 2025. Removed border-radius from video for sharp corners instead of rounded edges
 - July 05, 2025. Added 3-scroll exit sequence with upward translation for smooth Ross Mason section reveal
+- July 05, 2025. Fixed second line text positioning using absolute positioning instead of justify-between
+- July 05, 2025. Added scroll indicator during full-screen video section with animated bounce effect
+- July 05, 2025. Implemented "스크롤 계속" indicator with line and dot animation for user guidance
 ```
 
 ## User Preferences

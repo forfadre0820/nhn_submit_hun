@@ -20,6 +20,10 @@ export default function CombinedLanding() {
   ]);
   const videoOpacity = useTransform(scrollY, [0, 800, 1200], [1, 1, 0]);
   const rossSectionY = useTransform(scrollY, [1000, 1400], ["100vh", "0vh"]);
+  
+  // 스크롤 표시기
+  const scrollIndicatorOpacity = useTransform(scrollY, [500, 600, 1000, 1100], [0, 1, 1, 0]);
+  const scrollIndicatorY = useTransform(scrollY, [500, 1100], [0, -50]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -51,7 +55,7 @@ export default function CombinedLanding() {
               
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black">
                 <div className="mb-4">aux idées</div>
-                <div className="flex items-baseline justify-between gap-3 mb-4 max-w-4xl mx-auto">
+                <div className="flex items-baseline justify-start gap-3 mb-4 relative">
                   {/* Inline Video */}
                   <motion.div 
                     className="inline-block"
@@ -76,7 +80,7 @@ export default function CombinedLanding() {
                     />
                   </motion.div>
                   
-                  <span className="ml-auto">qui</span>
+                  <span className="absolute right-0">qui</span>
                 </div>
                 <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                 <div>la vie des gens<span className="text-red-500">.</span></div>
@@ -87,7 +91,22 @@ export default function CombinedLanding() {
       </section>
 
       {/* Spacer Section */}
-      <section className="h-[200vh] bg-black"></section>
+      <section className="h-[200vh] bg-black relative">
+        {/* 스크롤 표시기 */}
+        <motion.div 
+          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white z-50"
+          style={{
+            opacity: scrollIndicatorOpacity,
+            y: scrollIndicatorY
+          }}
+        >
+          <div className="text-sm mb-2 opacity-75">스크롤 계속</div>
+          <div className="flex flex-col items-center">
+            <div className="w-0.5 h-12 bg-white opacity-50 mb-2"></div>
+            <div className="w-2 h-2 bg-white rounded-full animate-bounce"></div>
+          </div>
+        </motion.div>
+      </section>
 
       {/* Ross Mason Section */}
       <motion.div 
