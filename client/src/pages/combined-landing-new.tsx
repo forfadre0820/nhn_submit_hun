@@ -9,9 +9,11 @@ export default function CombinedLanding() {
   const videoScale = useTransform(scrollY, [0, 300, 600, 900], [1, 2, 8, 15]);
   
   // 비디오 위치 - 화면 중앙으로 이동
-  const videoPosition = useTransform(scrollY, [200, 400], ["relative", "fixed"]);
-  const videoLeft = useTransform(scrollY, [200, 400], ["0", "50%"]);
-  const videoTop = useTransform(scrollY, [200, 400], ["0", "50%"]);
+  const videoPosition = useTransform(scrollY, [300, 500], ["relative", "fixed"]);
+  const videoLeft = useTransform(scrollY, [300, 500], ["auto", "50%"]);
+  const videoTop = useTransform(scrollY, [300, 500], ["auto", "50%"]);
+  const videoTransform = useTransform(scrollY, [300, 500], ["none", "translate(-50%, -50%)"]);
+  const videoZIndex = useTransform(scrollY, [300, 500], [1, 9999]);
   
   // 비디오 투명도
   const videoOpacity = useTransform(scrollY, [0, 900, 1200], [1, 1, 0]);
@@ -78,8 +80,8 @@ export default function CombinedLanding() {
                         transformOrigin: "center",
                         scale: videoScale,
                         opacity: videoOpacity,
-                        transform: videoPosition === "fixed" ? `translate(-50%, -50%)` : "none",
-                        zIndex: videoPosition === "fixed" ? 9999 : 1
+                        transform: videoTransform,
+                        zIndex: videoZIndex
                       }}
                     />
                   </motion.span>
