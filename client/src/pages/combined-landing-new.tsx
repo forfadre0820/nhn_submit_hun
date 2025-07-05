@@ -5,11 +5,19 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 더 단순한 스크롤 기반 트랜스폼
-  const videoScale = useTransform(scrollY, [0, 800], [1, 20]);
-  const videoOpacity = useTransform(scrollY, [0, 400, 800], [1, 1, 0]);
-  const fullScreenOpacity = useTransform(scrollY, [700, 900], [0, 1]);
-  const rossSectionY = useTransform(scrollY, [800, 1200], ["100vh", "0vh"]);
+  // 3단계 분기 시스템
+  // 1단계: 영상이 중앙으로 이동하면서 커지기 (0-800px)
+  const videoScale = useTransform(scrollY, [0, 800], [1, 12]);
+  const videoX = useTransform(scrollY, [0, 800], [0, -50]); // 중앙으로 이동
+  const videoY = useTransform(scrollY, [0, 800], [0, -50]); // 중앙으로 이동
+  const videoPosition = useTransform(scrollY, [700, 800], ["static", "fixed"]);
+  const videoZIndex = useTransform(scrollY, [700, 800], [1, 9999]);
+  
+  // 2단계: 전체화면 고정 (800-1600px)
+  const fullScreenOpacity = useTransform(scrollY, [800, 900, 1500, 1600], [0, 1, 1, 0]);
+  
+  // 3단계: 화면과 함께 올라가기 (1600px~)
+  const rossSectionY = useTransform(scrollY, [1600, 2000], ["100vh", "0vh"]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -30,7 +38,7 @@ export default function CombinedLanding() {
         </div>
       </header>
 
-      {/* McCann Section with Video */}
+      {/* 1단계: McCann Section with Video */}
       <section className="h-screen relative bg-white">
         <div className="min-h-screen flex items-center justify-center pt-20">
           <div className="container mx-auto px-4">
@@ -43,12 +51,17 @@ export default function CombinedLanding() {
                 <div className="flex flex-wrap items-baseline justify-center gap-3">
                   <div className="mb-4">aux idées</div>
                   
-                  {/* Inline Video */}
+                  {/* Inline Video - 중앙으로 이동하면서 커지기 */}
                   <motion.div 
                     className="inline-block"
                     style={{
                       scale: videoScale,
-                      opacity: videoOpacity,
+                      x: videoX + "%",
+                      y: videoY + "%",
+                      position: videoPosition,
+                      zIndex: videoZIndex,
+                      top: "50%",
+                      left: "50%",
                       transformOrigin: "center"
                     }}
                   >
@@ -73,10 +86,10 @@ export default function CombinedLanding() {
         </div>
       </section>
 
-      {/* Spacer Section */}
-      <section className="h-screen bg-black"></section>
+      {/* 2단계: Video Full Screen Section - 전체화면 고정 */}
+      <section className="h-[800px] bg-black relative"></section>
 
-      {/* Full Screen Video Target */}
+      {/* 2단계: Full Screen Video Fixed Overlay */}
       <motion.div 
         className="fixed inset-0 z-[9999] pointer-events-none"
         style={{
@@ -94,7 +107,7 @@ export default function CombinedLanding() {
         />
       </motion.div>
 
-      {/* Ross Mason Section */}
+      {/* 3단계: Ross Mason Section - 화면과 함께 올라가기 */}
       <motion.div 
         className="bg-white text-black relative z-20 min-h-screen"
         style={{
