@@ -156,7 +156,7 @@ export default function CombinedLanding() {
   return (
     <div className="bg-white text-black scroll-smooth">
       {/* McCann Section */}
-      <section className="min-h-[300vh] relative">
+      <section className="min-h-[150vh] relative">
         {/* Header */}
         <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
@@ -175,7 +175,7 @@ export default function CombinedLanding() {
         </header>
 
         {/* Hero Section with Video */}
-        <div className="relative home__video" style={{ height: "150vh" }}>
+        <div className="relative home__video" style={{ height: "100vh" }}>
           <div className="min-h-screen flex items-center justify-center pt-20">
             <div className="container mx-auto px-4">
               <motion.div
@@ -225,24 +225,19 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100], [
+                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
                                 "translate(0px, 0px) scale(10)",
-                                "translate(-50%, -50%) scale(15)",
-                                "translate(-50%, -50%) scale(15)",
-                                "translate(-50%, -50%) scale(15)",
-                                "translate(-50%, -50%) scale(15)",
-                                "translate(-50%, -50%) scale(15)",
-                                "translate(-50%, -50%) scale(15)"
+                                "translate(-50%, -50%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [599, 600, 1200, 1201], ["static", "fixed", "fixed", "relative"]),
-                              zIndex: useTransform(scrollY, [599, 600, 1200, 1201], [1, 9999, 9999, 1]),
-                              top: useTransform(scrollY, [599, 600, 1200, 1201], ["auto", "50%", "50%", "auto"]),
-                              left: useTransform(scrollY, [599, 600, 1200, 1201], ["auto", "50%", "50%", "auto"]),
+                              position: useTransform(scrollY, [599, 600, 800, 900], ["static", "fixed", "fixed", "static"]),
+                              zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
+                              top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
 
                               transformOrigin: "center"
                             }}
@@ -283,7 +278,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [900, 1000, 1100, 1200, 1300, 1400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [600, 750, 900], ["translateY(100vh)", "translateY(50vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}

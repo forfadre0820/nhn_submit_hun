@@ -161,6 +161,10 @@ Changelog:
 - July 05, 2025. Removed redundant full-screen video section to eliminate duplication
 - July 05, 2025. Optimized scroll transition points to eliminate jerky movements and ensure smooth scaling
 - July 05, 2025. Added CSS transitions and will-change properties for hardware acceleration and smoother animations
+- July 05, 2025. Adjusted video scaling to 10x for precise browser-fit full-screen coverage
+- July 05, 2025. Simplified position transitions to prevent sudden Y-axis position changes
+- July 05, 2025. Reduced McCann section height from 300vh to 150vh to minimize empty space
+- July 05, 2025. Optimized Ross Mason section entry timing for smoother content flow
 ```
 
 ## User Preferences
