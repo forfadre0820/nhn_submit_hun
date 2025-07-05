@@ -37,7 +37,7 @@ export default function CombinedLanding() {
         return "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
       case 'ART_DIRECTION':
         return "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
-      case 'MOTION':
+      case 'ANIMATION':
         return "https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
       default:
         return "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
@@ -50,8 +50,8 @@ export default function CombinedLanding() {
         return "Bring your ideas to life";
       case 'ART_DIRECTION':
         return "Creative vision and direction";
-      case 'MOTION':
-        return "Dynamic motion graphics";
+      case 'ANIMATION':
+        return "Dynamic animation workflows";
       default:
         return "Bring your ideas to life";
     }
@@ -63,8 +63,8 @@ export default function CombinedLanding() {
         return "Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality.";
       case 'ART_DIRECTION':
         return "Crafting compelling visual narratives that resonate with your audience. From concept development to final execution, I guide the creative process to ensure every element serves your brand's story and objectives.";
-      case 'MOTION':
-        return "Bringing static designs to life through fluid animations and dynamic motion graphics. Creating engaging visual experiences that capture attention and communicate your message with impact and style.";
+      case 'ANIMATION':
+        return "Bringing static designs to life through fluid animations and dynamic workflows. Creating engaging visual experiences that capture attention and communicate your message with impact and style.";
       default:
         return "Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries.";
     }
@@ -672,21 +672,21 @@ export default function CombinedLanding() {
                   </motion.div>
 
                   <motion.div 
-                    className={`group cursor-pointer ${selectedService === 'MOTION' ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
+                    className={`group cursor-pointer ${selectedService === 'ANIMATION' ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
                     viewport={{ once: true }}
                     whileHover={{ x: 10 }}
-                    onClick={() => setSelectedService('MOTION')}
+                    onClick={() => setSelectedService('ANIMATION')}
                   >
                     <div className="flex items-center">
                       <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
-                        MOTION
+                        ANIMATION
                       </h3>
                       <span className="ml-4 text-xs text-gray-500">03.</span>
                     </div>
-                    <div className={`h-px ${selectedService === 'MOTION' ? 'bg-black' : 'bg-gray-200'} transition-colors duration-300 mt-2`}></div>
+                    <div className={`h-px ${selectedService === 'ANIMATION' ? 'bg-black' : 'bg-gray-200'} transition-colors duration-300 mt-2`}></div>
                   </motion.div>
                 </div>
               </motion.div>
