@@ -212,7 +212,7 @@ export default function CombinedLanding() {
                           }}
                         >
                           <motion.div 
-                            className="home__hero__video"
+                            className="home__hero__video video-container-visible"
                             data-cursor="sound on"
                             data-cursor-click="sound off"
                             style={{
@@ -246,6 +246,7 @@ export default function CombinedLanding() {
                             }}
                           >
                             <motion.video
+                              className="video-always-visible"
                               src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                               loop
                               playsInline

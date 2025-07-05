@@ -47,6 +47,15 @@
   --ring: hsl(0, 0%, 84%);
 }
 
+/* Force video visibility */
+.video-always-visible {
+  opacity: 1 !important;
+}
+
+.video-container-visible {
+  opacity: 1 !important;
+}
+
 @layer base {
   * {
     @apply border-border;
