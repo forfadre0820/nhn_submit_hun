@@ -167,6 +167,8 @@ Changelog:
 - July 05, 2025. Fixed video opacity to never fade to 0, ensuring video stays visible throughout scroll
 - July 05, 2025. Improved video upward movement animation with gradual translate progression
 - July 05, 2025. Reduced scroll distances for faster section transitions and smoother user experience
+- July 05, 2025. Optimized scroll timing to 70% of original distances for quicker section transitions
+- July 05, 2025. Updated video scaling and Ross Mason section reveal timing to match faster scroll progression
 ```
 
 ## User Preferences
