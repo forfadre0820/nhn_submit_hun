@@ -56,12 +56,12 @@ export default function CombinedLanding() {
                 <div className="text-sm uppercase tracking-[0.5em] mb-4 opacity-75">Nous donnons vie</div>
               </div>
               
-              <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black">
-                <div className="mb-4">aux idées</div>
-                <div className="mb-4 flex items-center justify-between max-w-4xl mx-auto">
+              <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative">
+                <div className="mb-4 relative">
+                  <span className="relative z-10">aux idées</span>{" "}
                   {/* Inline Video */}
                   <motion.div 
-                    className="inline-block"
+                    className="inline-block align-middle ml-4"
                     style={{
                       position: videoPosition,
                       top: videoTop,
@@ -84,10 +84,9 @@ export default function CombinedLanding() {
                       className="w-[230px] h-[87px] object-cover"
                     />
                   </motion.div>
-                  <span className="absolute right-0">qui</span>
                 </div>
-                <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
-                <div>la vie des gens<span className="text-red-500">.</span></div>
+                <div className="mb-4 relative z-10">transforment <sup className="text-sm">(vraiment)</sup></div>
+                <div className="relative z-10">la vie des gens<span className="text-red-500">.</span></div>
               </h1>
             </div>
           </div>
