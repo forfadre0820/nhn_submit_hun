@@ -6,10 +6,13 @@ export default function CombinedLanding() {
   const { scrollY } = useScroll();
 
   // 더 단순한 스크롤 기반 트랜스폼
-  const videoScale = useTransform(scrollY, [0, 800], [1, 20]);
-  const videoOpacity = useTransform(scrollY, [0, 400, 800], [1, 1, 0]);
-  const fullScreenOpacity = useTransform(scrollY, [700, 900], [0, 1]);
-  const rossSectionY = useTransform(scrollY, [800, 1200], ["100vh", "0vh"]);
+  const videoScale = useTransform(scrollY, [0, 400, 800], [1, 8, 15]);
+  const videoOpacity = useTransform(scrollY, [0, 700, 900], [1, 1, 0]);
+  const videoPosition = useTransform(scrollY, [390, 400], ["static", "fixed"]);
+  const videoTop = useTransform(scrollY, [390, 400], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [390, 400], ["auto", "50%"]);
+  const videoTransform = useTransform(scrollY, [390, 400], ["none", "translate(-50%, -50%)"]);
+  const rossSectionY = useTransform(scrollY, [700, 1000], ["100vh", "0vh"]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -49,7 +52,12 @@ export default function CombinedLanding() {
                     style={{
                       scale: videoScale,
                       opacity: videoOpacity,
-                      transformOrigin: "center"
+                      position: videoPosition,
+                      top: videoTop,
+                      left: videoLeft,
+                      transform: videoTransform,
+                      transformOrigin: "center",
+                      zIndex: 9999
                     }}
                   >
                     <video
@@ -75,24 +83,6 @@ export default function CombinedLanding() {
 
       {/* Spacer Section */}
       <section className="h-screen bg-black"></section>
-
-      {/* Full Screen Video Target */}
-      <motion.div 
-        className="fixed inset-0 z-[9999] pointer-events-none"
-        style={{
-          opacity: fullScreenOpacity
-        }}
-      >
-        <video
-          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          loop
-          playsInline
-          muted
-          autoPlay
-          crossOrigin="anonymous"
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
 
       {/* Ross Mason Section */}
       <motion.div 
