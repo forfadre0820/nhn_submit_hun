@@ -225,7 +225,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 1400, 1600, 1800, 2000, 2200], [
+                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 1000, 1200, 1400, 1600, 1800, 2000, 2200], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -236,14 +236,16 @@ export default function CombinedLanding() {
                                 "translate(-50%, -50%) scale(10)",
                                 "translate(-50%, -50%) scale(10)",
                                 "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -50%) scale(10)"
+                                "translate(-50%, -70%) scale(10)",
+                                "translate(-50%, -100%) scale(10)",
+                                "translate(-50%, -150%) scale(10)",
+                                "translate(-50%, -200%) scale(10)"
                               ]),
                               position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
                               top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
                               left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [1800, 2000, 2200], [1, 0.5, 0]),
+                              opacity: useTransform(scrollY, [2200, 2400, 2600], [1, 0.5, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -260,7 +262,7 @@ export default function CombinedLanding() {
                                 height: "87px",
                                 width: "230px",
                                 objectFit: "cover",
-                                opacity: useTransform(scrollY, [1700, 1900, 2100], [1, 0.3, 0]),
+                                opacity: useTransform(scrollY, [2100, 2300, 2500], [1, 0.3, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
@@ -281,7 +283,7 @@ export default function CombinedLanding() {
       </section>
 
       {/* Video Full Screen Section */}
-      <section className="relative bg-black" style={{ height: "400vh" }}>
+      <section className="relative bg-black" style={{ height: "500vh" }}>
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           <div className="relative overflow-hidden h-screen h-full-screen">
             <div className="absolute inset-0" style={{ 
@@ -319,7 +321,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [1400, 1600, 1800, 2000, 2200, 2400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [1800, 2000, 2200, 2400, 2600, 2800], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}

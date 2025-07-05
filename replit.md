@@ -155,6 +155,11 @@ Changelog:
 - July 04, 2025. Added dissolve effect to video fade-out with dual opacity transforms on container and video element
 - July 04, 2025. Implemented smooth transition CSS for natural dissolve appearance during scroll exit
 - July 04, 2025. Created layered opacity animation: container (1→0.5→0) and video (1→0.3→0) for gradual dissolution
+- July 05, 2025. Added white stroke border to video and removed rounded corners for clean appearance
+- July 05, 2025. Fixed video scaling to maintain center alignment during growth with translate(-50%, -50%)
+- July 05, 2025. Extended full-screen video section to 500vh for longer scroll interaction
+- July 05, 2025. Modified video animation to stay full-screen longer, then move upward instead of shrinking
+- July 05, 2025. Adjusted timing for video disappearance and Ross Mason section emergence with better pacing
 ```
 
 ## User Preferences
