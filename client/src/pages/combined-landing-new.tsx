@@ -5,18 +5,18 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 비디오 스케일 애니메이션 (점진적으로 증가)
-  const videoScale = useTransform(scrollY, [0, 300, 600, 900, 1200], [1, 1.5, 3, 6, 12]);
+  // 1단계: 먼저 중앙으로 이동 (ease-out-in 효과)
+  const videoTransformX = useTransform(scrollY, [0, 200, 400], ["0%", "-30%", "-50%"]);
+  const videoTransformY = useTransform(scrollY, [0, 200, 400], ["0%", "-30%", "-50%"]);
   
-  // 비디오 중앙 정렬을 위한 변환 (스크롤에 따라 원래 위치에서 중앙으로 이동)
-  const videoTransformX = useTransform(scrollY, [0, 300, 600, 900], ["0%", "0%", "-25%", "-50%"]);
-  const videoTransformY = useTransform(scrollY, [0, 300, 600, 900], ["0%", "0%", "-25%", "-50%"]);
+  // 2단계: 중앙 정렬 후 스케일 증가
+  const videoScale = useTransform(scrollY, [400, 600, 800, 1000, 1200], [1, 2, 4, 8, 12]);
   
-  // 비디오 포지션 (일정 스크롤 이후 고정)
-  const videoPosition = useTransform(scrollY, [600, 700], ["static", "fixed"]);
-  const videoTop = useTransform(scrollY, [600, 700], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [600, 700], ["auto", "50%"]);
-  const videoZIndex = useTransform(scrollY, [600, 700], [1, 9999]);
+  // 비디오 포지션 (중앙 정렬 완료 후 고정)
+  const videoPosition = useTransform(scrollY, [400, 500], ["static", "fixed"]);
+  const videoTop = useTransform(scrollY, [400, 500], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [400, 500], ["auto", "50%"]);
+  const videoZIndex = useTransform(scrollY, [400, 500], [1, 9999]);
   
   // 비디오 투명도 및 종료 애니메이션
   const videoOpacity = useTransform(scrollY, [0, 1200, 1500], [1, 1, 0]);
@@ -70,7 +70,9 @@ export default function CombinedLanding() {
                       zIndex: videoZIndex,
                       x: videoTransformX,
                       y: videoTransformY,
-                      scale: videoScale
+                      scale: videoScale,
+                      transition: "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)", // ease-out-in 효과
+                      willChange: "transform"
                     }}
                   >
                     <video
