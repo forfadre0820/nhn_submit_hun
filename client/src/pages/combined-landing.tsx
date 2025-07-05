@@ -225,26 +225,20 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 60, 120, 180, 240, 299, 300, 350, 400, 450, 500, 550, 600], [
+                              transform: useTransform(scrollY, [0, 60, 120, 180, 240, 299, 360], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
-                                "translate(0px, 0px) scale(10)",
                                 "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -70%) scale(10)",
-                                "translate(-50%, -100%) scale(10)",
-                                "translate(-50%, -150%) scale(10)",
                                 "translate(-50%, -200%) scale(10)"
                               ]),
                               position: useTransform(scrollY, [299, 300], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [299, 300], [1, 9999]),
                               top: useTransform(scrollY, [299, 300], ["auto", "50%"]),
                               left: useTransform(scrollY, [299, 300], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [1000, 1100, 1200], [1, 1, 1]),
+                              opacity: useTransform(scrollY, [350, 360], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -322,7 +316,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [450, 500, 550, 600, 650, 700], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [350, 360, 370, 380, 390, 400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
