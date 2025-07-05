@@ -9,8 +9,8 @@ export default function CombinedLanding() {
   const videoScale = useTransform(scrollY, [0, 300, 600, 900, 1200], [1, 1.5, 3, 6, 12]);
   
   // 비디오 중앙 정렬을 위한 변환 (스크롤에 따라 원래 위치에서 중앙으로 이동)
-  const videoTransformX = useTransform(scrollY, [0, 300, 600], ["0%", "-25%", "-50%"]);
-  const videoTransformY = useTransform(scrollY, [0, 300, 600], ["0%", "-25%", "-50%"]);
+  const videoTransformX = useTransform(scrollY, [0, 300, 600, 900], ["0%", "0%", "-25%", "-50%"]);
+  const videoTransformY = useTransform(scrollY, [0, 300, 600, 900], ["0%", "0%", "-25%", "-50%"]);
   
   // 비디오 포지션 (일정 스크롤 이후 고정)
   const videoPosition = useTransform(scrollY, [600, 700], ["static", "fixed"]);
@@ -56,38 +56,40 @@ export default function CombinedLanding() {
                 <div className="text-sm uppercase tracking-[0.5em] mb-4 opacity-75">Nous donnons vie</div>
               </div>
               
-              <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative">
-                <div className="mb-4 relative">
-                  <span className="relative z-10">aux idées</span>{" "}
-                  {/* Inline Video */}
-                  <motion.div 
-                    className="inline-block align-middle ml-4"
-                    style={{
-                      position: videoPosition,
-                      top: videoTop,
-                      left: videoLeft,
-                      opacity: videoOpacity,
-                      transformOrigin: "center",
-                      zIndex: videoZIndex,
-                      x: videoTransformX,
-                      y: videoTransformY,
-                      scale: videoScale
-                    }}
-                  >
-                    <video
-                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                      loop
-                      playsInline
-                      muted
-                      autoPlay
-                      crossOrigin="anonymous"
-                      className="w-[230px] h-[87px] object-cover"
-                    />
-                  </motion.div>
-                </div>
-                <div className="mb-4 relative z-10">transforment <sup className="text-sm">(vraiment)</sup></div>
-                <div className="relative z-10">la vie des gens<span className="text-red-500">.</span></div>
-              </h1>
+              {/* 텍스트는 고정, 비디오만 변형 */}
+              <div className="relative">
+                <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative z-10">
+                  <div className="mb-4">aux idées</div>
+                  <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
+                  <div>la vie des gens<span className="text-red-500">.</span></div>
+                </h1>
+                
+                {/* 비디오는 절대 위치로 "aux idées" 뒤에 배치 */}
+                <motion.div
+                  className="absolute"
+                  style={{
+                    top: "0px",
+                    left: "calc(50% + 180px)", // "aux idées" 텍스트 뒤 위치
+                    position: videoPosition,
+                    opacity: videoOpacity,
+                    transformOrigin: "center",
+                    zIndex: videoZIndex,
+                    x: videoTransformX,
+                    y: videoTransformY,
+                    scale: videoScale
+                  }}
+                >
+                  <video
+                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                    loop
+                    playsInline
+                    muted
+                    autoPlay
+                    crossOrigin="anonymous"
+                    className="w-[230px] h-[87px] object-cover"
+                  />
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
