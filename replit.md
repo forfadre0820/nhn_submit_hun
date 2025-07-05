@@ -160,6 +160,10 @@ Changelog:
 - July 05, 2025. Extended full-screen video section to 500vh for longer scroll interaction
 - July 05, 2025. Modified video animation to stay full-screen longer, then move upward instead of shrinking
 - July 05, 2025. Adjusted timing for video disappearance and Ross Mason section emergence with better pacing
+- July 05, 2025. Reduced scroll distances by 50% for faster section transitions and improved user experience
+- July 05, 2025. Added animated scroll indicator with "Scroll to explore" text and mouse icon
+- July 05, 2025. Implemented smooth ease-out-in animations for video movement using cubic-bezier transitions
+- July 05, 2025. Enhanced video container with smooth CSS transitions for natural movement feel
 ```
 
 ## User Preferences

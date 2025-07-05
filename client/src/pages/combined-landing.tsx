@@ -276,6 +276,36 @@ export default function CombinedLanding() {
                   </h1>
                 </div>
               </motion.div>
+              
+              {/* Scroll Indicator */}
+              <motion.div 
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2, duration: 1 }}
+                style={{
+                  opacity: useTransform(scrollY, [0, 200], [1, 0])
+                }}
+              >
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  className="text-sm text-gray-600 mb-2"
+                >
+                  Scroll to explore
+                </motion.div>
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 }}
+                  className="w-6 h-10 border-2 border-gray-400 rounded-full mx-auto relative"
+                >
+                  <motion.div
+                    animate={{ y: [0, 16, 0] }}
+                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                    className="w-1 h-3 bg-gray-400 rounded-full absolute left-1/2 top-1 transform -translate-x-1/2"
+                  />
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
