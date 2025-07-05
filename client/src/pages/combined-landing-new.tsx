@@ -297,6 +297,185 @@ export default function CombinedLanding() {
                       </p>
                     </div>
                   </div>
+                  
+                  {/* Professional Resume Information */}
+                  <div className="mt-16 pt-12 border-t border-gray-200">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                      {/* Contact Information */}
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">[CONTACT INFO]</h5>
+                        <div className="space-y-2">
+                          <p className="text-gray-700">Ross Mason</p>
+                          <p className="text-gray-700">3D Artist & Motion Designer</p>
+                          <p className="text-gray-700">London, UK</p>
+                          <p className="text-gray-700">ross@example.com</p>
+                          <p className="text-gray-700">+44 7xxx xxx xxx</p>
+                        </div>
+                      </div>
+                      
+                      {/* Education */}
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">[EDUCATION]</h5>
+                        <div className="space-y-4">
+                          <div>
+                            <h6 className="font-medium text-gray-900">BA Graphic Design</h6>
+                            <p className="text-sm text-gray-600">University of Arts London</p>
+                            <p className="text-sm text-gray-500">2010 - 2014</p>
+                          </div>
+                          <div>
+                            <h6 className="font-medium text-gray-900">Self-taught 3D Artist</h6>
+                            <p className="text-sm text-gray-600">Cinema 4D, Blender, Maya</p>
+                            <p className="text-sm text-gray-500">2011 - Present</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Languages */}
+                      <div>
+                        <h5 className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">[LANGUAGES]</h5>
+                        <div className="space-y-2">
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">English</span>
+                            <span className="text-sm text-gray-500">Native</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">French</span>
+                            <span className="text-sm text-gray-500">Fluent</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Spanish</span>
+                            <span className="text-sm text-gray-500">Basic</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Professional Experience */}
+                  <div className="mt-16 pt-12 border-t border-gray-200">
+                    <h5 className="text-sm font-medium text-gray-500 mb-8 uppercase tracking-wide">[PROFESSIONAL EXPERIENCE]</h5>
+                    <div className="space-y-8">
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div className="md:col-span-1">
+                          <p className="text-sm text-gray-500">2020 - Present</p>
+                        </div>
+                        <div className="md:col-span-3">
+                          <h6 className="font-medium text-gray-900 mb-2">Senior 3D Artist & Content Creator</h6>
+                          <p className="text-sm text-gray-600 mb-2">Freelance / Patreon</p>
+                          <p className="text-gray-700 leading-relaxed">
+                            Creating premium 3D tutorials and educational content for 1000+ subscribers. 
+                            Specializing in Cinema 4D workflows, rendering techniques, and motion graphics.
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div className="md:col-span-1">
+                          <p className="text-sm text-gray-500">2018 - 2020</p>
+                        </div>
+                        <div className="md:col-span-3">
+                          <h6 className="font-medium text-gray-900 mb-2">3D Visualiser</h6>
+                          <p className="text-sm text-gray-600 mb-2">Creative Agency London</p>
+                          <p className="text-gray-700 leading-relaxed">
+                            Developed high-quality 3D visualizations for architectural projects and product launches. 
+                            Collaborated with design teams to create compelling visual narratives.
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div className="md:col-span-1">
+                          <p className="text-sm text-gray-500">2015 - 2018</p>
+                        </div>
+                        <div className="md:col-span-3">
+                          <h6 className="font-medium text-gray-900 mb-2">Motion Designer</h6>
+                          <p className="text-sm text-gray-600 mb-2">Digital Studio UK</p>
+                          <p className="text-gray-700 leading-relaxed">
+                            Created dynamic motion graphics and animations for brand campaigns. 
+                            Worked with major clients including Nike, Adidas, and Samsung.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Technical Skills */}
+                  <div className="mt-16 pt-12 border-t border-gray-200">
+                    <h5 className="text-sm font-medium text-gray-500 mb-8 uppercase tracking-wide">[TECHNICAL SKILLS]</h5>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div>
+                        <h6 className="font-medium text-gray-900 mb-4">3D Software</h6>
+                        <div className="space-y-2">
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Cinema 4D</span>
+                            <span className="text-sm text-gray-500">Expert</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Blender</span>
+                            <span className="text-sm text-gray-500">Advanced</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Maya</span>
+                            <span className="text-sm text-gray-500">Intermediate</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Houdini</span>
+                            <span className="text-sm text-gray-500">Basic</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h6 className="font-medium text-gray-900 mb-4">Rendering & Post</h6>
+                        <div className="space-y-2">
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Octane Render</span>
+                            <span className="text-sm text-gray-500">Expert</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Redshift</span>
+                            <span className="text-sm text-gray-500">Advanced</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">After Effects</span>
+                            <span className="text-sm text-gray-500">Expert</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-700">Photoshop</span>
+                            <span className="text-sm text-gray-500">Advanced</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Awards & Recognition */}
+                  <div className="mt-16 pt-12 border-t border-gray-200">
+                    <h5 className="text-sm font-medium text-gray-500 mb-8 uppercase tracking-wide">[AWARDS & RECOGNITION]</h5>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h6 className="font-medium text-gray-900">Best Motion Graphics</h6>
+                          <p className="text-sm text-gray-600">Creative Awards London</p>
+                        </div>
+                        <span className="text-sm text-gray-500">2019</span>
+                      </div>
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h6 className="font-medium text-gray-900">Featured Artist</h6>
+                          <p className="text-sm text-gray-600">3D Artist Magazine</p>
+                        </div>
+                        <span className="text-sm text-gray-500">2020</span>
+                      </div>
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h6 className="font-medium text-gray-900">Top Creator</h6>
+                          <p className="text-sm text-gray-600">Patreon Platform</p>
+                        </div>
+                        <span className="text-sm text-gray-500">2021</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
