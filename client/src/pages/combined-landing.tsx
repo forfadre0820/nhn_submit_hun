@@ -234,10 +234,10 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(10)",
                                 "translate(-50%, -50%) scale(10)",
                                 "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -60%) scale(10)",
-                                "translate(-50%, -80%) scale(10)",
-                                "translate(-50%, -100%) scale(10)",
-                                "translate(-50%, -120%) scale(10)"
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -50%) scale(10)"
                               ]),
                               position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
@@ -260,7 +260,9 @@ export default function CombinedLanding() {
                                 height: "87px",
                                 width: "230px",
                                 objectFit: "cover",
-                                opacity: useTransform(scrollY, [1700, 1900, 2100], [1, 0.3, 0])
+                                opacity: useTransform(scrollY, [1700, 1900, 2100], [1, 0.3, 0]),
+                                border: "2px solid rgba(255, 255, 255, 0.8)",
+                                borderRadius: "0"
                               }}
                             />
                           </motion.div>
