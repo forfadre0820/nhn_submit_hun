@@ -333,7 +333,7 @@ export default function CombinedLanding() {
           transform: useTransform(scrollY, SCROLL_CONFIG.ROSS_SECTION_REVEAL, ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
         }}
       >
-        {/* Professional Resume Section */}
+        {/* Professional Resume Section - Patreon Style */}
         <motion.div 
           className="py-20 bg-white"
           initial={{ opacity: 0, y: 30 }}
@@ -341,448 +341,134 @@ export default function CombinedLanding() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-4 max-w-6xl">
-            {/* Header Section */}
-            <div className="mb-16 text-center">
+          <div className="container mx-auto px-4 max-w-4xl">
+            {/* Header - Patreon Style */}
+            <div className="mb-32">
               <motion.h1 
-                className="text-5xl md:text-7xl font-bold uppercase leading-tight mb-6"
+                className="text-6xl md:text-8xl font-bold uppercase leading-tight mb-4"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                ROSS MASON
+                LEARN 3D<br />
+                <em className="italic font-light">wizardry</em>
               </motion.h1>
-              <motion.h2 
-                className="text-2xl md:text-3xl font-light text-gray-600 mb-8"
+              <motion.div 
+                className="flex items-center gap-4 mb-8"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                Senior 3D Artist & Motion Designer
-              </motion.h2>
+                <div className="bg-black text-white px-4 py-2 text-sm font-medium">C4D &</div>
+                <div className="bg-red-600 text-white px-4 py-2 text-sm font-medium">REDSHIFT</div>
+              </motion.div>
+              
               <motion.div 
-                className="text-lg text-gray-500 space-y-2"
+                className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <p>📧 contact@rossmason.com | 📱 +44 7123 456789</p>
-                <p>📍 London, United Kingdom | 🌐 www.rossmason.com</p>
+                <div>
+                  <p className="font-medium">Self-taught 3D artist passionate about teaching others the craft.</p>
+                  <p className="text-gray-600 mt-2">Over 10 years of experience in commercial 3D visualization and motion graphics.</p>
+                </div>
+                <div>
+                  <p className="font-medium">Specializing in Cinema 4D and Redshift rendering.</p>
+                  <p className="text-gray-600 mt-2">Creating premium educational content for aspiring 3D artists worldwide.</p>
+                </div>
+                <div>
+                  <p className="font-medium">Building a community of creative professionals.</p>
+                  <p className="text-gray-600 mt-2">Mentoring the next generation through comprehensive tutorials and workshops.</p>
+                </div>
               </motion.div>
             </div>
 
-            {/* Professional Summary */}
-            <div className="mb-16">
-              <motion.div 
-                className="text-center max-w-4xl mx-auto"
+            {/* Hero Image Section */}
+            <div className="mb-32">
+              <motion.div
+                className="relative overflow-hidden rounded-lg"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600"
+                  alt="3D Visualization Work"
+                  className="w-full h-[400px] object-cover"
+                />
+              </motion.div>
+            </div>
+
+            {/* Why Join Section */}
+            <div className="mb-32">
+              <motion.div
+                className="text-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-6 uppercase tracking-wide">Professional Summary</h3>
-                <p className="text-lg leading-relaxed text-gray-700">
-                  Self-taught 3D artist with over 10 years of experience creating compelling visual content for agencies and brands worldwide. 
-                  Specialized in motion graphics, 3D visualization, and educational content creation. Proven track record of delivering 
-                  high-impact projects while mentoring the next generation of 3D artists through comprehensive tutorials and workshops.
-                </p>
+                <h2 className="text-4xl md:text-5xl font-bold uppercase mb-8">
+                  LEVEL UP YOUR 3D SKILLS<br />
+                  AND DO <em className="italic font-light">the work</em> YOU'VE<br />
+                  <em className="italic font-light">always</em> WANTED TO DO.
+                </h2>
+                <a
+                  href="#"
+                  className="inline-block text-lg font-medium underline decoration-2 underline-offset-4 hover:decoration-4 transition-all duration-300"
+                >
+                  Unlock your 3D capabilities - Patreon
+                </a>
               </motion.div>
             </div>
 
-            {/* Core Competencies */}
-            <div className="mb-16">
+            {/* Recent Tutorials Section */}
+            <div className="mb-32">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Core Competencies</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Technical Skills</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>Cinema 4D (Expert)</li>
-                      <li>Blender (Advanced)</li>
-                      <li>After Effects (Expert)</li>
-                      <li>Photoshop (Advanced)</li>
-                      <li>Octane Render</li>
-                      <li>Arnold Renderer</li>
-                      <li>Redshift</li>
-                    </ul>
-                  </div>
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Creative Specializations</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>3D Modeling & Animation</li>
-                      <li>Motion Graphics</li>
-                      <li>Product Visualization</li>
-                      <li>Architectural Rendering</li>
-                      <li>Brand Identity Design</li>
-                      <li>Visual Effects</li>
-                      <li>Art Direction</li>
-                    </ul>
-                  </div>
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Business Skills</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>Project Management</li>
-                      <li>Client Communication</li>
-                      <li>Content Creation</li>
-                      <li>Educational Development</li>
-                      <li>Team Leadership</li>
-                      <li>Creative Direction</li>
-                      <li>Brand Strategy</li>
-                    </ul>
-                  </div>
+                <div className="flex items-center justify-between mb-8">
+                  <h3 className="text-2xl font-bold uppercase">RECENT <em className="italic font-light">tutorials</em></h3>
+                  <a href="#" className="text-sm underline">View all</a>
                 </div>
-              </motion.div>
-            </div>
-
-            {/* Professional Experience */}
-            <div className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Professional Experience</h3>
-                <div className="space-y-8">
-                  <div className="border-l-4 border-black pl-6">
-                    <h4 className="text-xl font-semibold">Senior Freelance 3D Artist</h4>
-                    <p className="text-gray-600 mb-2">2018 - Present | Self-Employed</p>
-                    <ul className="text-gray-700 space-y-1">
-                      <li>• Delivered 200+ high-impact 3D visualizations for global brands</li>
-                      <li>• Created educational content reaching 50,000+ students worldwide</li>
-                      <li>• Managed client relationships and project timelines for complex campaigns</li>
-                      <li>• Specialized in product visualization and motion graphics</li>
-                    </ul>
-                  </div>
-                  <div className="border-l-4 border-gray-300 pl-6">
-                    <h4 className="text-xl font-semibold">3D Visualiser</h4>
-                    <p className="text-gray-600 mb-2">2015 - 2018 | Creative Agency London</p>
-                    <ul className="text-gray-700 space-y-1">
-                      <li>• Produced architectural visualizations for luxury property developments</li>
-                      <li>• Collaborated with architects and interior designers on concept development</li>
-                      <li>• Optimized render pipelines reducing production time by 40%</li>
-                      <li>• Mentored junior artists on 3D workflows and best practices</li>
-                    </ul>
-                  </div>
-                  <div className="border-l-4 border-gray-300 pl-6">
-                    <h4 className="text-xl font-semibold">Motion Designer</h4>
-                    <p className="text-gray-600 mb-2">2013 - 2015 | Digital Studio Manchester</p>
-                    <ul className="text-gray-700 space-y-1">
-                      <li>• Created motion graphics for broadcast and digital campaigns</li>
-                      <li>• Developed brand animations for corporate clients</li>
-                      <li>• Collaborated with creative directors on concept development</li>
-                      <li>• Maintained consistent brand guidelines across all deliverables</li>
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Education & Certifications */}
-            <div className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Education & Certifications</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4">Education</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <h5 className="font-medium">BA (Hons) Graphic Design</h5>
-                        <p className="text-gray-600">University of Arts London | 2011-2014</p>
-                        <p className="text-gray-600">First Class Honours</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium">Foundation in Art & Design</h5>
-                        <p className="text-gray-600">Central Saint Martins | 2010-2011</p>
-                        <p className="text-gray-600">Distinction</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4">Certifications</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <h5 className="font-medium">Certified Cinema 4D Specialist</h5>
-                        <p className="text-gray-600">Maxon | 2020</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium">Adobe Certified Expert</h5>
-                        <p className="text-gray-600">Adobe Systems | 2019</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium">Project Management Professional</h5>
-                        <p className="text-gray-600">PMI | 2021</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4">Languages</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <h5 className="font-medium">English</h5>
-                        <p className="text-gray-600">Native Speaker</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium">French</h5>
-                        <p className="text-gray-600">Conversational</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium">Spanish</h5>
-                        <p className="text-gray-600">Basic</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Personal Story Section */}
-            <div className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Personal Story</h3>
-                <div className="max-w-4xl mx-auto">
-                  <div className="text-lg leading-relaxed space-y-4 text-gray-700">
-                    <p><strong>Forever learning.</strong></p>
-                    <p>
-                      I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
-                    </p>
-                    <p>
-                      Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
-                    </p>
-                    <p>
-                      I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Achievements & Awards */}
-            <div className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Achievements & Awards</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="font-semibold text-lg mb-2">🏆 Design Excellence Award</h4>
-                      <p className="text-gray-600">British Design & Art Direction | 2022</p>
-                      <p className="text-gray-700 mt-2">Recognized for outstanding 3D visualization work on luxury brand campaign</p>
-                    </div>
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="font-semibold text-lg mb-2">🎬 Motion Graphics Award</h4>
-                      <p className="text-gray-600">Creative Circle Awards | 2021</p>
-                      <p className="text-gray-700 mt-2">Gold award for innovative motion design in automotive advertising</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="font-semibold text-lg mb-2">📈 Content Creator of the Year</h4>
-                      <p className="text-gray-600">3D Community Awards | 2023</p>
-                      <p className="text-gray-700 mt-2">Recognized for exceptional educational content and community impact</p>
-                    </div>
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="font-semibold text-lg mb-2">🎯 Client Excellence Award</h4>
-                      <p className="text-gray-600">Freelancer Platform | 2022</p>
-                      <p className="text-gray-700 mt-2">Top 1% of freelancers based on client satisfaction ratings</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Featured Clients & Projects */}
-            <div className="mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Featured Clients & Projects</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Global Brands</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>Nike - Product Visualization</li>
-                      <li>BMW - Motion Graphics</li>
-                      <li>Apple - 3D Rendering</li>
-                      <li>Samsung - Brand Animation</li>
-                      <li>Coca-Cola - Campaign Visuals</li>
-                    </ul>
-                  </div>
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Creative Agencies</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>Wieden+Kennedy</li>
-                      <li>Saatchi & Saatchi</li>
-                      <li>BBDO Worldwide</li>
-                      <li>Ogilvy & Mather</li>
-                      <li>Leo Burnett</li>
-                    </ul>
-                  </div>
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Educational Impact</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>50,000+ Students Trained</li>
-                      <li>200+ Tutorial Videos</li>
-                      <li>15+ Comprehensive Courses</li>
-                      <li>95% Student Satisfaction</li>
-                      <li>Global Community Leader</li>
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Portfolio Gallery - Inspired by Patreon Page */}
-            <div className="mb-20">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Featured Portfolio</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                  {/* Portfolio Items */}
-                  {[...Array(12)].map((_, index) => (
-                    <motion.div
-                      key={index}
-                      className="relative group cursor-pointer"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
-                        <img
-                          src={`https://images.unsplash.com/photo-${1600000000000 + index * 123456}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500`}
-                          alt={`Portfolio piece ${index + 1}`}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                          <div className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
-                            <div className="mb-2">3D Visualization</div>
-                            <div className="text-xs">[C4D • REDSHIFT]</div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="text-center mt-12">
-                  <motion.a
-                    href="#"
-                    className="inline-block text-lg font-medium underline decoration-2 underline-offset-4 hover:decoration-4 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    View Full Portfolio
-                  </motion.a>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Tutorial Gallery Section */}
-            <div className="mb-20">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-                  <div className="md:col-span-3">
-                    <h3 className="text-base uppercase tracking-wide text-gray-600">[Latest Tutorial]</h3>
-                  </div>
-                  <div className="md:col-span-6">
-                    <h2 className="text-3xl md:text-4xl font-bold uppercase">
-                      Creating Interiors
-                    </h2>
-                    <div className="text-lg text-gray-600 mt-2">[C4D & REDSHIFT]</div>
-                  </div>
-                  <div className="md:col-span-3 flex items-center justify-end">
-                    <div className="text-right">
-                      <div className="text-lg font-medium">02:12:58</div>
-                      <a href="#" className="uline-double text-sm">Visit Patreon</a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Tutorial Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
-                    { title: "Architectural Lighting", tools: "C4D • Redshift", duration: "45:30" },
-                    { title: "Product Visualization", tools: "C4D • Redshift", duration: "38:45" },
-                    { title: "Motion Graphics", tools: "C4D • Redshift", duration: "52:15" },
-                    { title: "Character Modeling", tools: "C4D • Redshift", duration: "67:20" },
-                    { title: "Environment Design", tools: "C4D • Redshift", duration: "41:50" },
-                    { title: "Texture Creation", tools: "C4D • Redshift", duration: "29:35" },
-                    { title: "Animation Basics", tools: "C4D • Redshift • Timelapse", duration: "55:40" },
-                    { title: "Rendering Techniques", tools: "C4D • Redshift • Tutorial", duration: "33:25" }
-                  ].map((tutorial, index) => (
+                    "Interior Lighting",
+                    "Product Render",
+                    "Motion Graphics",
+                    "Character Work"
+                  ].map((title, index) => (
                     <motion.div
                       key={index}
                       className="group cursor-pointer"
                       whileHover={{ y: -5 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden mb-4">
+                      <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden mb-2">
                         <img
-                          src={`https://images.unsplash.com/photo-${1650000000000 + index * 234567}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500`}
-                          alt={tutorial.title}
+                          src={`https://images.unsplash.com/photo-${1650000000000 + index * 234567}?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300`}
+                          alt={title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
-                      <div className="text-sm font-medium mb-1">{tutorial.title}</div>
-                      <div className="text-xs text-gray-600 mb-2">[{tutorial.tools}]</div>
-                      <div className="text-xs text-gray-500">{tutorial.duration}</div>
+                      <div className="text-sm font-medium">{title}</div>
                     </motion.div>
                   ))}
-                </div>
-
-                <div className="text-center mt-12">
-                  <motion.div
-                    className="inline-block"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <h3 className="text-xl font-semibold mb-4 uppercase tracking-wide">[Why Join?]</h3>
-                    <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
-                      LEVEL UP YOUR 3D SKILLS AND DO <em>the work </em>YOU'VE <em>always </em>WANTED TO DO.
-                    </h2>
-                    <a
-                      href="#"
-                      className="inline-block text-lg font-medium underline decoration-double underline-offset-4 hover:decoration-4 transition-all duration-300"
-                    >
-                      Unlock your 3D capabilities - Patreon
-                    </a>
-                  </motion.div>
                 </div>
               </motion.div>
             </div>
 
             {/* Download Section */}
-            <div className="mb-20">
+            <div className="mb-32">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -791,10 +477,12 @@ export default function CombinedLanding() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">
-                      DOWNLOAD <em>free </em>SAMPLE TUTORIAL.
+                    <h2 className="text-4xl font-bold uppercase mb-6">
+                      DOWNLOAD<br />
+                      <em className="italic font-light">free</em> SAMPLE<br />
+                      TUTORIAL.
                     </h2>
-                    <p className="text-lg text-gray-700 mb-8">
+                    <p className="text-gray-600 mb-8">
                       Get started with a comprehensive sample tutorial that showcases the quality and depth of content available in our premium courses.
                     </p>
                     <motion.a
@@ -823,6 +511,117 @@ export default function CombinedLanding() {
                 </div>
               </motion.div>
             </div>
+
+            {/* Made by Patreon Section */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center justify-between mb-8">
+                  <h3 className="text-2xl font-bold uppercase">MADE BY <em className="italic font-light">patreons</em></h3>
+                  <a href="#" className="text-sm underline">View all</a>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    "Student Work A",
+                    "Student Work B", 
+                    "Student Work C",
+                    "Student Work D"
+                  ].map((title, index) => (
+                    <motion.div
+                      key={index}
+                      className="group cursor-pointer"
+                      whileHover={{ y: -5 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden mb-2">
+                        <img
+                          src={`https://images.unsplash.com/photo-${1700000000000 + index * 345678}?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300`}
+                          alt={title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="text-sm font-medium">{title}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Final Feature Section */}
+            <div className="mb-32">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-center">
+                  <h2 className="text-5xl font-bold uppercase mb-8">
+                    A-GRADE<br />
+                    <em className="italic font-light">tutorials</em>
+                  </h2>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                    <div>
+                      <h3 className="text-lg font-bold uppercase mb-2">DIRECT</h3>
+                      <p className="text-sm text-gray-600">MESSAGING</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold uppercase mb-2">EXCLUSIVE</h3>
+                      <p className="text-sm text-gray-600">CONTENT</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold uppercase mb-2">UNCUT</h3>
+                      <p className="text-sm text-gray-600">WORKFLOWS</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold uppercase mb-2">A-GRADE</h3>
+                      <p className="text-sm text-gray-600">TUTORIALS</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Footer Section */}
+            <div className="mb-20">
+              <motion.div
+                className="bg-black text-white p-12 rounded-lg"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold uppercase mb-4">
+                    3D WIZARD<br />
+                    <em className="italic font-light">from the UK</em>
+                  </h2>
+                  <p className="text-lg mb-8">PASSIONATE ABOUT SHARING</p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                    <div>
+                      <p className="font-medium mb-2">Teaching Experience</p>
+                      <p className="text-gray-300">Over 50,000 students worldwide</p>
+                    </div>
+                    <div>
+                      <p className="font-medium mb-2">Industry Experience</p>
+                      <p className="text-gray-300">10+ years in commercial 3D</p>
+                    </div>
+                    <div>
+                      <p className="font-medium mb-2">Community Impact</p>
+                      <p className="text-gray-300">Building the next generation</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+
 
             {/* Services Section with Interactive Images */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
