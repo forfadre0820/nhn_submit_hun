@@ -215,6 +215,7 @@ export default function CombinedLanding() {
                             className="home__hero__video video-container-visible"
                             data-cursor="sound on"
                             data-cursor-click="sound off"
+                            animate={{ opacity: 1 }}
                             style={{
                               translate: "none",
                               rotate: "none",
@@ -241,7 +242,6 @@ export default function CombinedLanding() {
                               zIndex: useTransform(scrollY, [199, 200], [1, 9999]),
                               top: useTransform(scrollY, [199, 200], ["auto", "50%"]),
                               left: useTransform(scrollY, [199, 200], ["auto", "50%"]),
-                              opacity: 1,
                               transformOrigin: "center"
                             }}
                           >
@@ -253,13 +253,14 @@ export default function CombinedLanding() {
                               muted
                               autoPlay
                               crossOrigin="anonymous"
+                              animate={{ opacity: 1 }}
                               style={{
                                 top: "0px",
                                 left: "0px",
                                 height: "87px",
                                 width: "230px",
                                 objectFit: "cover",
-                                opacity: 1,
+
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
