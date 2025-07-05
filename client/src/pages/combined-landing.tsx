@@ -175,7 +175,7 @@ export default function CombinedLanding() {
         </header>
 
         {/* Hero Section with Video */}
-        <div className="relative home__video" style={{ height: "150vh" }}>
+        <div className="relative home__video" style={{ height: "120vh" }}>
           <div className="min-h-screen flex items-center justify-center pt-20">
             <div className="container mx-auto px-4">
               <motion.div
@@ -225,20 +225,22 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 60, 120, 180, 240, 299, 360], [
+                              transform: useTransform(scrollY, [0, 40, 80, 120, 160, 200, 240, 280, 320], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
                                 "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -100%) scale(10)",
+                                "translate(-50%, -150%) scale(10)",
                                 "translate(-50%, -200%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [299, 300], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [299, 300], [1, 9999]),
-                              top: useTransform(scrollY, [299, 300], ["auto", "50%"]),
-                              left: useTransform(scrollY, [299, 300], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [350, 360], [1, 0]),
+                              position: useTransform(scrollY, [199, 200], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [199, 200], [1, 9999]),
+                              top: useTransform(scrollY, [199, 200], ["auto", "50%"]),
+                              left: useTransform(scrollY, [199, 200], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [260, 280, 300, 320], [1, 1, 1, 1]),
                               transformOrigin: "center"
                             }}
                           >
@@ -316,7 +318,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [350, 360, 370, 380, 390, 400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [300, 320, 340, 360], ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
