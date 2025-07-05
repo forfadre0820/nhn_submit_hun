@@ -226,7 +226,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 28, 56, 84, 112, 140, 168, 196, 224, 252], [
+                              transform: useTransform(scrollY, [0, 20, 40, 60, 80, 100, 120, 140, 160, 180], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -238,10 +238,10 @@ export default function CombinedLanding() {
                                 "translate(-50%, -160%) scale(10)",
                                 "translate(-50%, -200%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [139, 140], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [139, 140], [1, 9999]),
-                              top: useTransform(scrollY, [139, 140], ["auto", "50%"]),
-                              left: useTransform(scrollY, [139, 140], ["auto", "50%"]),
+                              position: useTransform(scrollY, [99, 100], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [99, 100], [1, 9999]),
+                              top: useTransform(scrollY, [99, 100], ["auto", "50%"]),
+                              left: useTransform(scrollY, [99, 100], ["auto", "50%"]),
                               transformOrigin: "center"
                             }}
                           >
@@ -277,30 +277,30 @@ export default function CombinedLanding() {
               
               {/* Scroll Indicator */}
               <motion.div 
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center"
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-50"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 140], [1, 0])
+                  opacity: useTransform(scrollY, [0, 100], [1, 0])
                 }}
               >
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                  className="text-sm text-gray-600 mb-2"
+                  className="text-sm text-white bg-black bg-opacity-50 px-3 py-1 rounded-full mb-2"
                 >
                   Scroll to explore
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 }}
-                  className="w-6 h-10 border-2 border-gray-400 rounded-full mx-auto relative"
+                  className="w-6 h-10 border-2 border-white bg-black bg-opacity-50 rounded-full mx-auto relative"
                 >
                   <motion.div
                     animate={{ y: [0, 16, 0] }}
                     transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                    className="w-1 h-3 bg-gray-400 rounded-full absolute left-1/2 top-1 transform -translate-x-1/2"
+                    className="w-1 h-3 bg-white rounded-full absolute left-1/2 top-1 transform -translate-x-1/2"
                   />
                 </motion.div>
               </motion.div>
@@ -320,7 +320,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [168, 196, 224, 252], ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [120, 140, 160, 180], ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
