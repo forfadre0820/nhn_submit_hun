@@ -212,7 +212,7 @@ export default function CombinedLanding() {
           transform: useTransform(scrollY, [350, 360, 370, 380, 390, 400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
-        {/* About Section - Professional Resume Style */}
+        {/* About Section - Ross Mason Style */}
         <motion.div 
           className="py-16 bg-white"
           initial={{ opacity: 0, y: 30 }}
@@ -221,82 +221,90 @@ export default function CombinedLanding() {
           viewport={{ once: true }}
         >
           <div className="container mx-auto px-4">
-            {/* Header with section number */}
-            <div className="flex justify-between items-center mb-16">
-              <motion.div
+            {/* Main Title */}
+            <div className="mb-16">
+              <motion.h2 
+                className="text-4xl md:text-6xl font-bold uppercase leading-tight"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                3D ARTIST
+              </motion.h2>
+              <motion.h2 
+                className="text-4xl md:text-6xl font-light italic leading-tight"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                passionate
+              </motion.h2>
+            </div>
+
+            {/* About Teaching Section */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+              <motion.div 
+                className="md:col-span-3"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-sm font-medium text-gray-500 tracking-wide mb-4">ABOUT BRIAN MILLER</h2>
-                <div className="w-16 h-px bg-gray-300"></div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-2xl font-light text-gray-400">01</span>
-              </motion.div>
-            </div>
-
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Left Column - Main Description */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                  Digital product designer focused on development.
-                </h1>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Currently improving users experience and interface design as lead designer 
-                  director at crafto theme agency.
-                </p>
+                <div className="mb-8">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
+                    alt="Ross Mason"
+                    className="w-20 h-20 rounded-full object-cover"
+                  />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold uppercase leading-tight mb-8">
+                  ABOUT<br />TEACHING
+                </h3>
               </motion.div>
 
-              {/* Right Column - Services */}
-              <motion.div
+              <motion.div 
+                className="md:col-span-6"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="space-y-12">
+                <div className="space-y-8">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Discover</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Working at the sweet spot between minimalism and sustainability to 
-                      develop visual solutions that inform and persuade.
-                    </p>
+                    <h4 className="text-2xl font-bold uppercase mb-4">
+                      FROM STUDYING GRAPHIC<br />
+                      DESIGN TO <em className="italic font-light">becoming</em> A<br />
+                      SELF <em className="italic font-light">taught</em> 3D ARTIST
+                    </h4>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Prototyping</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      We spend enough time to uncover business goals and client needs by 
-                      understanding market trends and unlocking opportunities.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Creation</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Development is heart of our business. Our skilled designers and 
-                      developers make sure to deliver tried-tested efficient, scalable.
-                    </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <h5 className="text-sm font-medium text-gray-500 mb-4">[PERSONAL STORY]</h5>
+                      <p className="text-gray-700 leading-relaxed">
+                        I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
+                      </p>
+                    </div>
+                    <div>
+                      <h5 className="text-sm font-medium text-gray-500 mb-4">Forever learning.</h5>
+                      <p className="text-gray-700 leading-relaxed">
+                        Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
+                      </p>
+                      <p className="text-gray-700 leading-relaxed mt-4">
+                        I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
             </div>
 
-            {/* Services List Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16 pt-16 border-t border-gray-200">
-              {/* Left Column - Services List */}
-              <motion.div
+            {/* Services Section with Interactive Images */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+              <motion.div 
+                className="md:col-span-6"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -355,51 +363,58 @@ export default function CombinedLanding() {
                     </div>
                     <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
                   </motion.div>
+                  
+                  <motion.div 
+                    className="group cursor-pointer opacity-75 hover:opacity-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                        ANIMATION
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500">04.</span>
+                    </div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                  </motion.div>
                 </div>
+
+                <motion.div 
+                  className="mt-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <p className="text-lg font-medium mb-4">Bring your ideas to life</p>
+                  <p className="text-gray-600 leading-relaxed">
+                    Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality that would be impossible in the real world.
+                  </p>
+                </motion.div>
               </motion.div>
 
-              {/* Right Column - Service Image */}
-              <motion.div
+              <motion.div 
+                className="md:col-span-6"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="h-full flex flex-col justify-between">
-                  <motion.div 
-                    className="mb-8 relative overflow-hidden rounded-lg"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                      alt="3D Design work example"
-                      className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700"
-                    />
-                  </motion.div>
-
-                  <div>
-                    <motion.p 
-                      className="text-xl font-medium mb-6"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5, duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      Bring your ideas to life
-                    </motion.p>
-                    <motion.p 
-                      className="text-gray-600 leading-relaxed text-lg"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6, duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality.
-                    </motion.p>
-                  </div>
-                </div>
+                <motion.div 
+                  className="relative overflow-hidden rounded-lg h-full min-h-[500px]"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                    alt="3D Design work example"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </motion.div>
               </motion.div>
             </div>
           </div>
