@@ -49,9 +49,8 @@ export default function CombinedLanding() {
               </div>
               
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black">
-                <div className="flex flex-wrap items-baseline justify-center gap-3">
-                  <div className="mb-4">aux idées</div>
-                  
+                <div className="mb-4">aux idées</div>
+                <div className="flex items-baseline justify-center gap-3 mb-4">
                   {/* Inline Video */}
                   <motion.div 
                     className="inline-block"
@@ -76,7 +75,7 @@ export default function CombinedLanding() {
                     />
                   </motion.div>
                   
-                  &nbsp;qui
+                  <span>qui</span>
                 </div>
                 <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                 <div>la vie des gens<span className="text-red-500">.</span></div>
