@@ -6,8 +6,17 @@ export default function CombinedLanding() {
   const { scrollY } = useScroll();
 
   // 더 단순한 스크롤 기반 트랜스폼
-  const videoScale = useTransform(scrollY, [0, 800], [1, 20]);
-  const videoOpacity = useTransform(scrollY, [0, 400, 800], [1, 1, 0]);
+  const videoScale = useTransform(scrollY, [0, 800], [1, 15]);
+  const videoOpacity = useTransform(scrollY, [0, 600, 800], [1, 1, 0]);
+  const videoPosition = useTransform(scrollY, [500, 600], ["static", "fixed"]);
+  const videoTop = useTransform(scrollY, [500, 600], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [500, 600], ["auto", "50%"]);
+  const videoTransform = useTransform(scrollY, [0, 300, 600, 800], [
+    "translate(0%, 0%) scale(1)", 
+    "translate(0%, 0%) scale(3)",
+    "translate(-50%, -50%) scale(12)", 
+    "translate(-50%, -50%) scale(12)"
+  ]);
   const fullScreenOpacity = useTransform(scrollY, [700, 900], [0, 1]);
   const rossSectionY = useTransform(scrollY, [800, 1200], ["100vh", "0vh"]);
 
@@ -47,9 +56,13 @@ export default function CombinedLanding() {
                   <motion.div 
                     className="inline-block"
                     style={{
-                      scale: videoScale,
+                      position: videoPosition,
+                      top: videoTop,
+                      left: videoLeft,
+                      transform: videoTransform,
                       opacity: videoOpacity,
-                      transformOrigin: "center"
+                      transformOrigin: "center",
+                      zIndex: 9999
                     }}
                   >
                     <video
