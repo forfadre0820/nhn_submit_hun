@@ -231,19 +231,19 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
-                                "translate(0px, 0px) scale(10)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -60%) scale(10)",
-                                "translate(-50%, -80%) scale(10)",
-                                "translate(-50%, -100%) scale(10)",
-                                "translate(-50%, -120%) scale(10)"
+                                "translate(0px, 0px) scale(15)",
+                                "translate(-50%, -50%) scale(15)",
+                                "translate(-50%, -50%) scale(15)",
+                                "translate(-50%, -60%) scale(15)",
+                                "translate(-50%, -80%) scale(15)",
+                                "translate(-50%, -100%) scale(15)",
+                                "translate(-50%, -120%) scale(15)"
                               ]),
-                              position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
-                              top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                              left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [1800, 2000, 2200], [1, 0.5, 0]),
+                              position: useTransform(scrollY, [599, 600, 2000, 2001], ["static", "fixed", "fixed", "relative"]),
+                              zIndex: useTransform(scrollY, [599, 600, 2000, 2001], [1, 9999, 9999, 1]),
+                              top: useTransform(scrollY, [599, 600, 2000, 2001], ["auto", "50%", "50%", "auto"]),
+                              left: useTransform(scrollY, [599, 600, 2000, 2001], ["auto", "50%", "50%", "auto"]),
+
                               transformOrigin: "center"
                             }}
                           >
@@ -259,8 +259,7 @@ export default function CombinedLanding() {
                                 left: "0px",
                                 height: "87px",
                                 width: "230px",
-                                objectFit: "cover",
-                                opacity: useTransform(scrollY, [1700, 1900, 2100], [1, 0.3, 0])
+                                objectFit: "cover"
                               }}
                             />
                           </motion.div>

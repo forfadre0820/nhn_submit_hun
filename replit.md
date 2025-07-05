@@ -155,6 +155,9 @@ Changelog:
 - July 04, 2025. Added dissolve effect to video fade-out with dual opacity transforms on container and video element
 - July 04, 2025. Implemented smooth transition CSS for natural dissolve appearance during scroll exit
 - July 04, 2025. Created layered opacity animation: container (1→0.5→0) and video (1→0.3→0) for gradual dissolution
+- July 05, 2025. Enhanced video scaling to 15x for complete screen coverage and maintained fixed positioning
+- July 05, 2025. Removed fade-out effects and implemented upward scroll movement synchronized with other elements
+- July 05, 2025. Modified video exit behavior to transition from fixed to relative positioning for natural scroll flow
 ```
 
 ## User Preferences
