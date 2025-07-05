@@ -9,9 +9,9 @@ export default function CombinedLanding() {
   const videoScale = useTransform(scrollY, [0, 300, 600, 900], [1, 2, 8, 15]);
   
   // 비디오 위치 - 화면 중앙으로 이동
-  const videoPosition = useTransform(scrollY, [200, 400], ["absolute", "fixed"]);
-  const videoLeft = useTransform(scrollY, [200, 400], ["50%", "50%"]);
-  const videoTop = useTransform(scrollY, [200, 400], ["50%", "50%"]);
+  const videoPosition = useTransform(scrollY, [200, 400], ["relative", "fixed"]);
+  const videoLeft = useTransform(scrollY, [200, 400], ["0", "50%"]);
+  const videoTop = useTransform(scrollY, [200, 400], ["0", "50%"]);
   
   // 비디오 투명도
   const videoOpacity = useTransform(scrollY, [0, 900, 1200], [1, 1, 0]);
@@ -51,13 +51,13 @@ export default function CombinedLanding() {
                 <div className="mb-4 relative">
                   aux idées{" "}
                   {/* 비디오 컨테이너 */}
-                  <motion.div
+                  <motion.span
                     className="inline-block relative"
                     style={{
                       width: "200px",
                       height: "75px",
                       margin: "0 10px",
-                      verticalAlign: "middle"
+                      verticalAlign: "baseline"
                     }}
                   >
                     <motion.video
@@ -78,11 +78,11 @@ export default function CombinedLanding() {
                         transformOrigin: "center",
                         scale: videoScale,
                         opacity: videoOpacity,
-                        transform: `translate(-50%, -50%)`,
-                        zIndex: 9999
+                        transform: videoPosition === "fixed" ? `translate(-50%, -50%)` : "none",
+                        zIndex: videoPosition === "fixed" ? 9999 : 1
                       }}
                     />
-                  </motion.div>
+                  </motion.span>
                   {" "}qui
                 </div>
                 <div className="mb-4 relative z-5">transforment <sup className="text-sm">(vraiment)</sup></div>
