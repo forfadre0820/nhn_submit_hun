@@ -5,18 +5,11 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 3단계 분기 시스템 - 하나의 영상이 변환됨
-  // 1단계: 영상이 중앙으로 이동하면서 커지기 (0-800px)
-  const videoScale = useTransform(scrollY, [0, 800], [1, 15]);
-  const videoX = useTransform(scrollY, [0, 800], [0, -50]); // 중앙으로 이동
-  const videoY = useTransform(scrollY, [0, 800], [0, -50]); // 중앙으로 이동
-  const videoPosition = useTransform(scrollY, [700, 800], ["static", "fixed"]);
-  const videoZIndex = useTransform(scrollY, [700, 800], [1, 9999]);
-  
-  // 2단계: 전체화면 고정 (800-1600px) - 같은 영상 계속 사용
-  
-  // 3단계: 화면과 함께 올라가기 (1600px~)
-  const rossSectionY = useTransform(scrollY, [1600, 2000], ["100vh", "0vh"]);
+  // 더 단순한 스크롤 기반 트랜스폼
+  const videoScale = useTransform(scrollY, [0, 800], [1, 20]);
+  const videoOpacity = useTransform(scrollY, [0, 400, 800], [1, 1, 0]);
+  const fullScreenOpacity = useTransform(scrollY, [700, 900], [0, 1]);
+  const rossSectionY = useTransform(scrollY, [800, 1200], ["100vh", "0vh"]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -37,7 +30,7 @@ export default function CombinedLanding() {
         </div>
       </header>
 
-      {/* 1단계: McCann Section with Video */}
+      {/* McCann Section with Video */}
       <section className="h-screen relative bg-white">
         <div className="min-h-screen flex items-center justify-center pt-20">
           <div className="container mx-auto px-4">
@@ -47,37 +40,30 @@ export default function CombinedLanding() {
               </div>
               
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black">
-                <div className="flex flex-wrap items-center justify-center gap-6">
-                  <div>aux idées</div>
+                <div className="flex flex-wrap items-baseline justify-center gap-3">
+                  <div className="mb-4">aux idées</div>
                   
-                  {/* 하나의 영상 - 커지면서 전체화면으로 변환 */}
+                  {/* Inline Video */}
                   <motion.div 
-                    className="inline-block relative"
+                    className="inline-block"
                     style={{
                       scale: videoScale,
-                      x: videoX + "%",
-                      y: videoY + "%",
-                      position: videoPosition,
-                      zIndex: videoZIndex,
-                      top: "50%",
-                      left: "50%",
+                      opacity: videoOpacity,
                       transformOrigin: "center"
                     }}
                   >
-                    <div className="w-[200px] h-[113px] overflow-hidden rounded-lg shadow-lg">
-                      <video
-                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                        loop
-                        playsInline
-                        muted
-                        autoPlay
-                        crossOrigin="anonymous"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <video
+                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      loop
+                      playsInline
+                      muted
+                      autoPlay
+                      crossOrigin="anonymous"
+                      className="w-[230px] h-[87px] object-cover rounded-lg"
+                    />
                   </motion.div>
                   
-                  <div>qui</div>
+                  &nbsp;qui
                 </div>
                 <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                 <div>la vie des gens<span className="text-red-500">.</span></div>
@@ -87,12 +73,28 @@ export default function CombinedLanding() {
         </div>
       </section>
 
-      {/* 2단계: Video Full Screen Section - 전체화면 고정 */}
-      <section className="h-[800px] bg-black relative"></section>
+      {/* Spacer Section */}
+      <section className="h-screen bg-black"></section>
 
+      {/* Full Screen Video Target */}
+      <motion.div 
+        className="fixed inset-0 z-[9999] pointer-events-none"
+        style={{
+          opacity: fullScreenOpacity
+        }}
+      >
+        <video
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          loop
+          playsInline
+          muted
+          autoPlay
+          crossOrigin="anonymous"
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
 
-
-      {/* 3단계: Ross Mason Section - 화면과 함께 올라가기 */}
+      {/* Ross Mason Section */}
       <motion.div 
         className="bg-white text-black relative z-20 min-h-screen"
         style={{

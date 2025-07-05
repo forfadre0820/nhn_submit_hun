@@ -169,13 +169,6 @@ Changelog:
 - July 05, 2025. Added 10-point position transition system for smoother fixed/static positioning
 - July 05, 2025. Created 9-point Ross Mason section reveal with gradual translateY progression
 - July 05, 2025. Removed CSS transitions and scroll-smooth for direct scroll-based control
-- July 05, 2025. Redesigned with clear 3-stage video transition system to eliminate jerky movements
-- July 05, 2025. Stage 1: Video scales toward screen center while moving from inline to fixed position
-- July 05, 2025. Stage 2: Full-screen video overlay with fixed positioning during scroll pause
-- July 05, 2025. Stage 3: Video and content scroll upward together revealing Ross Mason section
-- July 05, 2025. Created 16:9 independent video container (200x113px) positioned between text elements
-- July 05, 2025. Improved text alignment with centered flex layout and proper gap spacing
-- July 05, 2025. Added shadow and rounded corners to video container for better visual separation
 ```
 
 ## User Preferences
