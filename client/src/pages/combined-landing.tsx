@@ -225,7 +225,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 700, 800, 900, 1000, 1100], [
+                              transform: useTransform(scrollY, [0, 120, 240, 360, 480, 599, 600, 700, 800, 900, 1000, 1100, 1200], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -237,13 +237,14 @@ export default function CombinedLanding() {
                                 "translate(-50%, -50%) scale(10)",
                                 "translate(-50%, -70%) scale(10)",
                                 "translate(-50%, -100%) scale(10)",
-                                "translate(-50%, -150%) scale(10)"
+                                "translate(-50%, -150%) scale(10)",
+                                "translate(-50%, -200%) scale(10)"
                               ]),
                               position: useTransform(scrollY, [599, 600], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
                               top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
                               left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [1000, 1100, 1200], [1, 0.5, 0]),
+                              opacity: useTransform(scrollY, [1000, 1100, 1200], [1, 1, 1]),
                               transformOrigin: "center"
                             }}
                           >
@@ -260,7 +261,7 @@ export default function CombinedLanding() {
                                 height: "87px",
                                 width: "230px",
                                 objectFit: "cover",
-                                opacity: useTransform(scrollY, [950, 1050, 1150], [1, 0.3, 0]),
+                                opacity: useTransform(scrollY, [950, 1050, 1150], [1, 1, 1]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
