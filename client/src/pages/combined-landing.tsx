@@ -154,7 +154,7 @@ export default function CombinedLanding() {
   ];
 
   return (
-    <div className="bg-white text-black scroll-smooth">
+    <div className="bg-white text-black">
       {/* McCann Section */}
       <section className="min-h-[150vh] relative">
         {/* Header */}
@@ -225,19 +225,29 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600], [
+                              transform: useTransform(scrollY, [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600], [
                                 "translate(0px, 0px) scale(1)",
+                                "translate(0px, 0px) scale(1.2)",
                                 "translate(0px, 0px) scale(1.5)",
+                                "translate(0px, 0px) scale(2)",
                                 "translate(0px, 0px) scale(2.5)",
+                                "translate(0px, 0px) scale(3)",
                                 "translate(0px, 0px) scale(4)",
+                                "translate(0px, 0px) scale(5)",
                                 "translate(0px, 0px) scale(6)",
-                                "translate(0px, 0px) scale(10)",
+                                "translate(0px, 0px) scale(7)",
+                                "translate(0px, 0px) scale(8)",
+                                "translate(0px, 0px) scale(9)",
                                 "translate(-50%, -50%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [599, 600, 800, 900], ["static", "fixed", "fixed", "static"]),
-                              zIndex: useTransform(scrollY, [599, 600], [1, 9999]),
-                              top: useTransform(scrollY, [599, 600], ["auto", "50%"]),
-                              left: useTransform(scrollY, [599, 600], ["auto", "50%"]),
+                              position: useTransform(scrollY, [
+                                590, 595, 600, 605, 610, 700, 750, 800, 850, 900
+                              ], [
+                                "static", "static", "fixed", "fixed", "fixed", "fixed", "fixed", "fixed", "fixed", "static"
+                              ]),
+                              zIndex: useTransform(scrollY, [590, 600, 900, 910], [1, 9999, 9999, 1]),
+                              top: useTransform(scrollY, [590, 600, 900, 910], ["auto", "50%", "50%", "auto"]),
+                              left: useTransform(scrollY, [590, 600, 900, 910], ["auto", "50%", "50%", "auto"]),
 
                               transformOrigin: "center"
                             }}
@@ -278,7 +288,11 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [600, 750, 900], ["translateY(100vh)", "translateY(50vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [
+            600, 650, 700, 750, 800, 850, 900, 950, 1000
+          ], [
+            "translateY(100vh)", "translateY(85vh)", "translateY(70vh)", "translateY(55vh)", "translateY(40vh)", "translateY(25vh)", "translateY(10vh)", "translateY(5vh)", "translateY(0vh)"
+          ])
         }}
       >
         {/* About Section - Ross Mason Style */}

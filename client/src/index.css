@@ -109,8 +109,9 @@
     overflow: hidden;
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
-    transition: all 0.1s ease-out;
+    transition: none;
     will-change: transform, position, opacity;
+    transform-origin: center;
   }
 
   @media (min-width: 768px) {

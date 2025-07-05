@@ -165,6 +165,10 @@ Changelog:
 - July 05, 2025. Simplified position transitions to prevent sudden Y-axis position changes
 - July 05, 2025. Reduced McCann section height from 300vh to 150vh to minimize empty space
 - July 05, 2025. Optimized Ross Mason section entry timing for smoother content flow
+- July 05, 2025. Implemented granular 1-pixel scroll detection with 13-point transform progression
+- July 05, 2025. Added 10-point position transition system for smoother fixed/static positioning
+- July 05, 2025. Created 9-point Ross Mason section reveal with gradual translateY progression
+- July 05, 2025. Removed CSS transitions and scroll-smooth for direct scroll-based control
 ```
 
 ## User Preferences
