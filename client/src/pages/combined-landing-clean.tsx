@@ -52,9 +52,9 @@ export default function CombinedLanding() {
                         ]),
                         position: useTransform(scrollY, [209, 210], ["static", "fixed"]),
                         zIndex: useTransform(scrollY, [209, 210], [1, 9999]),
-                        top: useTransform(scrollY, [209, 210], ["auto", "50%"]),
+                        top: useTransform(scrollY, [209, 210, 350, 420], ["auto", "50%", "50%", "-100%"]),
                         left: useTransform(scrollY, [209, 210], ["auto", "50%"]),
-                        opacity: useTransform(scrollY, [1000, 1100, 1200], [1, 1, 1]),
+                        opacity: useTransform(scrollY, [400, 420], [1, 0]),
                         transformOrigin: "center"
                       }}
                     >
@@ -121,24 +121,24 @@ export default function CombinedLanding() {
       {/* Video Full Screen Section */}
       <section className="relative bg-white" style={{ height: "70vh" }}>
         <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
-          {/* Additional Scroll Indicator during video animation */}
+          {/* Full Screen Video Scroll Indicator */}
           <motion.div 
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10"
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-50"
             style={{
-              opacity: useTransform(scrollY, [210, 350], [0, 1])
+              opacity: useTransform(scrollY, [280, 320, 380], [0, 1, 0])
             }}
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="text-sm text-white mb-2"
+              className="text-sm text-white font-medium mb-2 drop-shadow-lg"
             >
               Continue scrolling
             </motion.div>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 }}
-              className="w-6 h-10 border-2 border-white rounded-full mx-auto relative"
+              className="w-6 h-10 border-2 border-white rounded-full mx-auto relative bg-black bg-opacity-20 backdrop-blur-sm"
             >
               <motion.div
                 animate={{ y: [0, 16, 0] }}
@@ -154,7 +154,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [315, 350, 385, 420, 455, 490], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [420, 450, 480, 510, 540, 570], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Brian Miller Style */}
