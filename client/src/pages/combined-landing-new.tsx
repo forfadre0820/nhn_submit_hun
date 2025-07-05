@@ -6,19 +6,20 @@ export default function CombinedLanding() {
   const { scrollY } = useScroll();
 
   // 더 단순한 스크롤 기반 트랜스폼
-  const videoScale = useTransform(scrollY, [0, 800], [1, 15]);
-  const videoOpacity = useTransform(scrollY, [0, 600, 800], [1, 1, 0]);
-  const videoPosition = useTransform(scrollY, [500, 600], ["static", "fixed"]);
-  const videoTop = useTransform(scrollY, [500, 600], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [500, 600], ["auto", "50%"]);
-  const videoTransform = useTransform(scrollY, [0, 300, 600, 800], [
+  const videoPosition = useTransform(scrollY, [400, 500], ["static", "fixed"]);
+  const videoTop = useTransform(scrollY, [400, 500], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [400, 500], ["auto", "50%"]);
+  const videoTransform = useTransform(scrollY, [0, 200, 400, 500, 800, 1000, 1200], [
     "translate(0%, 0%) scale(1)", 
-    "translate(0%, 0%) scale(3)",
-    "translate(-50%, -50%) scale(12)", 
-    "translate(-50%, -50%) scale(12)"
+    "translate(0%, 0%) scale(2)",
+    "translate(0%, 0%) scale(4)",
+    "translate(-50%, -50%) scale(15)", 
+    "translate(-50%, -50%) scale(15)",
+    "translate(-50%, -50%) scale(15)",
+    "translate(-50%, -100%) scale(15)"
   ]);
-  const fullScreenOpacity = useTransform(scrollY, [700, 900], [0, 1]);
-  const rossSectionY = useTransform(scrollY, [800, 1200], ["100vh", "0vh"]);
+  const videoOpacity = useTransform(scrollY, [0, 800, 1200], [1, 1, 0]);
+  const rossSectionY = useTransform(scrollY, [1000, 1400], ["100vh", "0vh"]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -50,7 +51,7 @@ export default function CombinedLanding() {
               
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black">
                 <div className="mb-4">aux idées</div>
-                <div className="flex items-baseline justify-center gap-3 mb-4">
+                <div className="flex items-baseline justify-between gap-3 mb-4 max-w-4xl mx-auto">
                   {/* Inline Video */}
                   <motion.div 
                     className="inline-block"
@@ -71,11 +72,11 @@ export default function CombinedLanding() {
                       muted
                       autoPlay
                       crossOrigin="anonymous"
-                      className="w-[230px] h-[87px] object-cover rounded-lg"
+                      className="w-[230px] h-[87px] object-cover"
                     />
                   </motion.div>
                   
-                  <span>qui</span>
+                  <span className="ml-auto">qui</span>
                 </div>
                 <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                 <div>la vie des gens<span className="text-red-500">.</span></div>
@@ -86,25 +87,7 @@ export default function CombinedLanding() {
       </section>
 
       {/* Spacer Section */}
-      <section className="h-screen bg-black"></section>
-
-      {/* Full Screen Video Target */}
-      <motion.div 
-        className="fixed inset-0 z-[9999] pointer-events-none"
-        style={{
-          opacity: fullScreenOpacity
-        }}
-      >
-        <video
-          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          loop
-          playsInline
-          muted
-          autoPlay
-          crossOrigin="anonymous"
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
+      <section className="h-[200vh] bg-black"></section>
 
       {/* Ross Mason Section */}
       <motion.div 

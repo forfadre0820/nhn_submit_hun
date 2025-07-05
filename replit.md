@@ -173,6 +173,10 @@ Changelog:
 - July 05, 2025. Implemented center-based video scaling with translate(-50%, -50%) positioning for browser center
 - July 05, 2025. Added proper fixed positioning system to ensure video stays centered during scaling
 - July 05, 2025. Optimized video scale progression: 1x → 3x → 12x with smooth transition timing
+- July 05, 2025. Repositioned second line text to right side with justify-between layout
+- July 05, 2025. Enhanced video scaling: 1x → 2x → 4x → 15x with fixed position at screen center
+- July 05, 2025. Removed border-radius from video for sharp corners instead of rounded edges
+- July 05, 2025. Added 3-scroll exit sequence with upward translation for smooth Ross Mason section reveal
 ```
 
 ## User Preferences
