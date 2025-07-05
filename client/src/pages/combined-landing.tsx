@@ -226,7 +226,7 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 20, 40, 60, 80, 100, 120, 140, 160, 180], [
+                              transform: useTransform(scrollY, [0, 15, 30, 45, 60, 75, 90, 105, 120, 135], [
                                 "translate(0px, 0px) scale(1)",
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
@@ -238,10 +238,10 @@ export default function CombinedLanding() {
                                 "translate(-50%, -160%) scale(10)",
                                 "translate(-50%, -200%) scale(10)"
                               ]),
-                              position: useTransform(scrollY, [99, 100], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [99, 100], [1, 9999]),
-                              top: useTransform(scrollY, [99, 100], ["auto", "50%"]),
-                              left: useTransform(scrollY, [99, 100], ["auto", "50%"]),
+                              position: useTransform(scrollY, [74, 75], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [74, 75], [1, 9999]),
+                              top: useTransform(scrollY, [74, 75], ["auto", "50%"]),
+                              left: useTransform(scrollY, [74, 75], ["auto", "50%"]),
                               transformOrigin: "center"
                             }}
                           >
@@ -277,12 +277,13 @@ export default function CombinedLanding() {
               
               {/* Scroll Indicator */}
               <motion.div 
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-50"
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center scroll-indicator"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 100], [1, 0])
+                  opacity: useTransform(scrollY, [0, 75], [1, 0]),
+                  zIndex: 99999
                 }}
               >
                 <motion.div
@@ -320,7 +321,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [120, 140, 160, 180], ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [90, 105, 120, 135], ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}

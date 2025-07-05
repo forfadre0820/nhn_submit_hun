@@ -168,6 +168,11 @@ video.video-always-visible {
     text-decoration-style: double;
     text-underline-offset: 4px;
   }
+  
+  .scroll-indicator {
+    z-index: 99999 !important;
+    position: relative !important;
+  }
 
   .overflow-hidden-text {
     overflow: hidden;
