@@ -293,43 +293,113 @@ export default function CombinedLanding() {
               </motion.div>
             </div>
 
-            {/* Bottom Info Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16 pt-16 border-t border-gray-200">
+            {/* Services List Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16 pt-16 border-t border-gray-200">
+              {/* Left Column - Services List */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-sm font-medium text-gray-500 mb-2">Expertise</h4>
-                <p className="text-gray-900">Designing and web</p>
+                <h4 className="text-base uppercase tracking-wide text-gray-600 mb-8">[Services list]</h4>
+                
+                <div className="space-y-6">
+                  <motion.div 
+                    className="group cursor-pointer opacity-75 hover:opacity-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                        3D DESIGN
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500">01.</span>
+                    </div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="group cursor-pointer opacity-75 hover:opacity-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                        ART DIRECTION
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500">02.</span>
+                    </div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="group cursor-pointer opacity-75 hover:opacity-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                        ANIMATION
+                      </h3>
+                      <span className="ml-4 text-xs text-gray-500">03.</span>
+                    </div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                  </motion.div>
+                </div>
               </motion.div>
+
+              {/* Right Column - Service Image */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-sm font-medium text-gray-500 mb-2">Born in</h4>
-                <p className="text-gray-900">London, UK</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="text-sm font-medium text-gray-500 mb-2">Date of birth</h4>
-                <p className="text-gray-900">26 December 1984</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="text-sm font-medium text-gray-500 mb-2">Education</h4>
-                <p className="text-gray-900">Master of design</p>
+                <div className="h-full flex flex-col justify-between">
+                  <motion.div 
+                    className="mb-8 relative overflow-hidden rounded-lg"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                      alt="3D Design work example"
+                      className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </motion.div>
+
+                  <div>
+                    <motion.p 
+                      className="text-xl font-medium mb-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5, duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      Bring your ideas to life
+                    </motion.p>
+                    <motion.p 
+                      className="text-gray-600 leading-relaxed text-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6, duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality.
+                    </motion.p>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
