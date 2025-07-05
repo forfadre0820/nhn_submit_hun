@@ -5,25 +5,28 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 더 단순한 스크롤 기반 트랜스폼
-  const videoPosition = useTransform(scrollY, [400, 500], ["static", "fixed"]);
-  const videoTop = useTransform(scrollY, [400, 500], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [400, 500], ["auto", "50%"]);
-  const videoTransform = useTransform(scrollY, [0, 200, 400, 500, 800, 1000, 1200], [
-    "translate(0%, 0%) scale(1)", 
-    "translate(0%, 0%) scale(2)",
-    "translate(0%, 0%) scale(4)",
-    "translate(-50%, -50%) scale(15)", 
-    "translate(-50%, -50%) scale(15)",
-    "translate(-50%, -50%) scale(15)",
-    "translate(-50%, -100%) scale(15)"
-  ]);
-  const videoOpacity = useTransform(scrollY, [0, 800, 1200], [1, 1, 0]);
-  const rossSectionY = useTransform(scrollY, [1000, 1400], ["100vh", "0vh"]);
+  // 비디오 스케일 애니메이션 (점진적으로 증가)
+  const videoScale = useTransform(scrollY, [0, 300, 600, 900, 1200], [1, 1.5, 3, 6, 12]);
+  
+  // 비디오 중앙 정렬을 위한 변환 (스크롤에 따라 원래 위치에서 중앙으로 이동)
+  const videoTransformX = useTransform(scrollY, [0, 300, 600], ["0%", "-25%", "-50%"]);
+  const videoTransformY = useTransform(scrollY, [0, 300, 600], ["0%", "-25%", "-50%"]);
+  
+  // 비디오 포지션 (일정 스크롤 이후 고정)
+  const videoPosition = useTransform(scrollY, [600, 700], ["static", "fixed"]);
+  const videoTop = useTransform(scrollY, [600, 700], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [600, 700], ["auto", "50%"]);
+  const videoZIndex = useTransform(scrollY, [600, 700], [1, 9999]);
+  
+  // 비디오 투명도 및 종료 애니메이션
+  const videoOpacity = useTransform(scrollY, [0, 1200, 1500], [1, 1, 0]);
+  
+  // Ross Mason 섹션 진입 애니메이션
+  const rossSectionY = useTransform(scrollY, [1200, 1600], ["100vh", "0vh"]);
   
   // 스크롤 표시기
-  const scrollIndicatorOpacity = useTransform(scrollY, [500, 600, 1000, 1100], [0, 1, 1, 0]);
-  const scrollIndicatorY = useTransform(scrollY, [500, 1100], [0, -50]);
+  const scrollIndicatorOpacity = useTransform(scrollY, [600, 700, 1200, 1300], [0, 1, 1, 0]);
+  const scrollIndicatorY = useTransform(scrollY, [600, 1300], [0, -50]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -63,10 +66,12 @@ export default function CombinedLanding() {
                       position: videoPosition,
                       top: videoTop,
                       left: videoLeft,
-                      transform: videoTransform,
                       opacity: videoOpacity,
                       transformOrigin: "center",
-                      zIndex: 9999
+                      zIndex: videoZIndex,
+                      x: videoTransformX,
+                      y: videoTransformY,
+                      scale: videoScale
                     }}
                   >
                     <video
@@ -79,7 +84,7 @@ export default function CombinedLanding() {
                       className="w-[230px] h-[87px] object-cover"
                     />
                   </motion.div>
-                  <span>qui</span>
+                  <span className="absolute right-0">qui</span>
                 </div>
                 <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                 <div>la vie des gens<span className="text-red-500">.</span></div>
