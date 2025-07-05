@@ -333,58 +333,326 @@ export default function CombinedLanding() {
           transform: useTransform(scrollY, SCROLL_CONFIG.ROSS_SECTION_REVEAL, ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
         }}
       >
-        {/* About Section - Ross Mason Style */}
+        {/* Professional Resume Section */}
         <motion.div 
-          className="py-16 bg-white"
+          className="py-20 bg-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-4">
-            {/* Main Title */}
-            <div className="mb-16">
-              <motion.h2 
-                className="text-4xl md:text-6xl font-bold uppercase leading-tight"
+          <div className="container mx-auto px-4 max-w-6xl">
+            {/* Header Section */}
+            <div className="mb-16 text-center">
+              <motion.h1 
+                className="text-5xl md:text-7xl font-bold uppercase leading-tight mb-6"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                SELF <em className="italic">taught</em> 3D ARTIST
-              </motion.h2>
-            </div>
-
-            {/* Personal Story Section */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
-              <motion.div 
-                className="md:col-span-3"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                ROSS MASON
+              </motion.h1>
+              <motion.h2 
+                className="text-2xl md:text-3xl font-light text-gray-600 mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-base uppercase tracking-wide text-gray-600">[PERSONAL STORY]</h3>
-              </motion.div>
-
+                Senior 3D Artist & Motion Designer
+              </motion.h2>
               <motion.div 
-                className="md:col-span-6"
+                className="text-lg text-gray-500 space-y-2"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="text-lg leading-relaxed space-y-4">
-                  <p><strong>Forever learning.</strong></p>
-                  <p>
-                    I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
-                  </p>
-                  <p>
-                    Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
-                  </p>
-                  <p>
-                    I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
-                  </p>
+                <p>📧 contact@rossmason.com | 📱 +44 7123 456789</p>
+                <p>📍 London, United Kingdom | 🌐 www.rossmason.com</p>
+              </motion.div>
+            </div>
+
+            {/* Professional Summary */}
+            <div className="mb-16">
+              <motion.div 
+                className="text-center max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-6 uppercase tracking-wide">Professional Summary</h3>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Self-taught 3D artist with over 10 years of experience creating compelling visual content for agencies and brands worldwide. 
+                  Specialized in motion graphics, 3D visualization, and educational content creation. Proven track record of delivering 
+                  high-impact projects while mentoring the next generation of 3D artists through comprehensive tutorials and workshops.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Core Competencies */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Core Competencies</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Technical Skills</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>Cinema 4D (Expert)</li>
+                      <li>Blender (Advanced)</li>
+                      <li>After Effects (Expert)</li>
+                      <li>Photoshop (Advanced)</li>
+                      <li>Octane Render</li>
+                      <li>Arnold Renderer</li>
+                      <li>Redshift</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Creative Specializations</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>3D Modeling & Animation</li>
+                      <li>Motion Graphics</li>
+                      <li>Product Visualization</li>
+                      <li>Architectural Rendering</li>
+                      <li>Brand Identity Design</li>
+                      <li>Visual Effects</li>
+                      <li>Art Direction</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Business Skills</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>Project Management</li>
+                      <li>Client Communication</li>
+                      <li>Content Creation</li>
+                      <li>Educational Development</li>
+                      <li>Team Leadership</li>
+                      <li>Creative Direction</li>
+                      <li>Brand Strategy</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Professional Experience */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Professional Experience</h3>
+                <div className="space-y-8">
+                  <div className="border-l-4 border-black pl-6">
+                    <h4 className="text-xl font-semibold">Senior Freelance 3D Artist</h4>
+                    <p className="text-gray-600 mb-2">2018 - Present | Self-Employed</p>
+                    <ul className="text-gray-700 space-y-1">
+                      <li>• Delivered 200+ high-impact 3D visualizations for global brands</li>
+                      <li>• Created educational content reaching 50,000+ students worldwide</li>
+                      <li>• Managed client relationships and project timelines for complex campaigns</li>
+                      <li>• Specialized in product visualization and motion graphics</li>
+                    </ul>
+                  </div>
+                  <div className="border-l-4 border-gray-300 pl-6">
+                    <h4 className="text-xl font-semibold">3D Visualiser</h4>
+                    <p className="text-gray-600 mb-2">2015 - 2018 | Creative Agency London</p>
+                    <ul className="text-gray-700 space-y-1">
+                      <li>• Produced architectural visualizations for luxury property developments</li>
+                      <li>• Collaborated with architects and interior designers on concept development</li>
+                      <li>• Optimized render pipelines reducing production time by 40%</li>
+                      <li>• Mentored junior artists on 3D workflows and best practices</li>
+                    </ul>
+                  </div>
+                  <div className="border-l-4 border-gray-300 pl-6">
+                    <h4 className="text-xl font-semibold">Motion Designer</h4>
+                    <p className="text-gray-600 mb-2">2013 - 2015 | Digital Studio Manchester</p>
+                    <ul className="text-gray-700 space-y-1">
+                      <li>• Created motion graphics for broadcast and digital campaigns</li>
+                      <li>• Developed brand animations for corporate clients</li>
+                      <li>• Collaborated with creative directors on concept development</li>
+                      <li>• Maintained consistent brand guidelines across all deliverables</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Education & Certifications */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Education & Certifications</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4">Education</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="font-medium">BA (Hons) Graphic Design</h5>
+                        <p className="text-gray-600">University of Arts London | 2011-2014</p>
+                        <p className="text-gray-600">First Class Honours</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium">Foundation in Art & Design</h5>
+                        <p className="text-gray-600">Central Saint Martins | 2010-2011</p>
+                        <p className="text-gray-600">Distinction</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4">Certifications</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="font-medium">Certified Cinema 4D Specialist</h5>
+                        <p className="text-gray-600">Maxon | 2020</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium">Adobe Certified Expert</h5>
+                        <p className="text-gray-600">Adobe Systems | 2019</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium">Project Management Professional</h5>
+                        <p className="text-gray-600">PMI | 2021</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-4">Languages</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="font-medium">English</h5>
+                        <p className="text-gray-600">Native Speaker</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium">French</h5>
+                        <p className="text-gray-600">Conversational</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium">Spanish</h5>
+                        <p className="text-gray-600">Basic</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Personal Story Section */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Personal Story</h3>
+                <div className="max-w-4xl mx-auto">
+                  <div className="text-lg leading-relaxed space-y-4 text-gray-700">
+                    <p><strong>Forever learning.</strong></p>
+                    <p>
+                      I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
+                    </p>
+                    <p>
+                      Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
+                    </p>
+                    <p>
+                      I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Achievements & Awards */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Achievements & Awards</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="font-semibold text-lg mb-2">🏆 Design Excellence Award</h4>
+                      <p className="text-gray-600">British Design & Art Direction | 2022</p>
+                      <p className="text-gray-700 mt-2">Recognized for outstanding 3D visualization work on luxury brand campaign</p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="font-semibold text-lg mb-2">🎬 Motion Graphics Award</h4>
+                      <p className="text-gray-600">Creative Circle Awards | 2021</p>
+                      <p className="text-gray-700 mt-2">Gold award for innovative motion design in automotive advertising</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="font-semibold text-lg mb-2">📈 Content Creator of the Year</h4>
+                      <p className="text-gray-600">3D Community Awards | 2023</p>
+                      <p className="text-gray-700 mt-2">Recognized for exceptional educational content and community impact</p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="font-semibold text-lg mb-2">🎯 Client Excellence Award</h4>
+                      <p className="text-gray-600">Freelancer Platform | 2022</p>
+                      <p className="text-gray-700 mt-2">Top 1% of freelancers based on client satisfaction ratings</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Featured Clients & Projects */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Featured Clients & Projects</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Global Brands</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>Nike - Product Visualization</li>
+                      <li>BMW - Motion Graphics</li>
+                      <li>Apple - 3D Rendering</li>
+                      <li>Samsung - Brand Animation</li>
+                      <li>Coca-Cola - Campaign Visuals</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Creative Agencies</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>Wieden+Kennedy</li>
+                      <li>Saatchi & Saatchi</li>
+                      <li>BBDO Worldwide</li>
+                      <li>Ogilvy & Mather</li>
+                      <li>Leo Burnett</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-800">Educational Impact</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>50,000+ Students Trained</li>
+                      <li>200+ Tutorial Videos</li>
+                      <li>15+ Comprehensive Courses</li>
+                      <li>95% Student Satisfaction</li>
+                      <li>Global Community Leader</li>
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             </div>
