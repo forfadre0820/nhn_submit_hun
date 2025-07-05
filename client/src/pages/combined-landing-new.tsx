@@ -1,31 +1,22 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
-
-  // McCann.fr 스타일 비디오 애니메이션
-  const videoTranslateX = useTransform(scrollY, [0, 200, 400, 600], [0, -100, -300, -500]);
-  const videoTranslateY = useTransform(scrollY, [0, 200, 400, 600], [0, -50, -200, -350]);
-  const videoLeft = useTransform(scrollY, [0, 200, 400, 600], ["auto", "600px", "50vw", "50vw"]);
-  const videoTop = useTransform(scrollY, [0, 200, 400, 600], ["auto", "400px", "50vh", "50vh"]);
-  const videoWidth = useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["230px", "300px", "15vw", "25vw", "50vw", "100vw"]);
-  const videoHeight = useTransform(scrollY, [0, 200, 400, 600, 800, 1000], ["87px", "120px", "8vh", "15vh", "30vh", "100vh"]);
   
-  // 비디오 포지션
-  const videoPosition = useTransform(scrollY, [200, 300], ["static", "fixed"]);
-  const videoZIndex = useTransform(scrollY, [200, 300], [1, 9999]);
+  // 비디오 스케일링 - 웹페이지 꽉 차면 멈춤
+  const videoScale = useTransform(scrollY, [0, 300, 600, 900], [1, 2, 8, 15]);
   
-  // 비디오 투명도 및 종료 애니메이션
-  const videoOpacity = useTransform(scrollY, [0, 1200, 1500], [1, 1, 0]);
+  // 비디오 위치 - 화면 중앙으로 이동
+  const videoX = useTransform(scrollY, [0, 300, 600], [0, -200, -400]);
+  const videoY = useTransform(scrollY, [0, 300, 600], [0, -150, -300]);
   
-  // Ross Mason 섹션 진입 애니메이션
-  const rossSectionY = useTransform(scrollY, [1200, 1600], ["100vh", "0vh"]);
+  // 비디오 투명도
+  const videoOpacity = useTransform(scrollY, [0, 900, 1200], [1, 1, 0]);
   
-  // 스크롤 표시기
-  const scrollIndicatorOpacity = useTransform(scrollY, [600, 700, 1200, 1300], [0, 1, 1, 0]);
-  const scrollIndicatorY = useTransform(scrollY, [600, 1300], [0, -50]);
+  // 다음 섹션 등장
+  const nextSectionY = useTransform(scrollY, [1000, 1400], ["100vh", "0vh"]);
 
   return (
     <div className="bg-white text-black" ref={containerRef}>
@@ -46,9 +37,9 @@ export default function CombinedLanding() {
         </div>
       </header>
 
-      {/* McCann Section with Video */}
-      <section className="h-screen relative bg-white">
-        <div className="min-h-screen flex items-center justify-center pt-20">
+      {/* 메인 섹션 */}
+      <section className="min-h-screen relative bg-white pt-20">
+        <div className="flex items-center justify-center min-h-screen">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <div className="mb-6">
@@ -58,84 +49,58 @@ export default function CombinedLanding() {
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative">
                 <div className="mb-4 relative">
                   aux idées{" "}
-                  {/* Pin Spacer Container */}
-                  <motion.span
-                    className="pin-spacer inline-block"
+                  {/* 비디오 컨테이너 */}
+                  <motion.div
+                    className="inline-block relative"
                     style={{
-                      order: 0,
-                      placeSelf: "auto",
-                      gridArea: "auto",
-                      zIndex: 1,
-                      float: "none",
-                      flexShrink: 1,
-                      display: "inline-block",
-                      margin: "0px",
-                      inset: "auto",
-                      position: "relative",
-                      flexBasis: "auto",
-                      overflow: "visible",
-                      boxSizing: "border-box",
-                      width: "230px",
-                      height: "87px",
-                      padding: "0px"
+                      width: "200px",
+                      height: "75px",
+                      margin: "0 10px",
+                      verticalAlign: "middle"
                     }}
                   >
-                    {/* Home Hero Video Container */}
-                    <motion.div
-                      className="home__hero__video"
+                    <motion.video
+                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      loop
+                      playsInline
+                      muted
+                      autoPlay
+                      crossOrigin="anonymous"
                       style={{
-                        translate: "none",
-                        rotate: "none",
-                        scale: "none",
-                        left: videoLeft,
-                        top: videoTop,
-                        margin: "0px",
-                        maxWidth: "230px",
-                        width: videoWidth,
-                        maxHeight: "87px",
-                        height: videoHeight,
-                        padding: "0px",
-                        boxSizing: "border-box",
-                        position: videoPosition,
-                        transform: `translate(${videoTranslateX}px, ${videoTranslateY}px)`,
-                        zIndex: videoZIndex,
-                        opacity: videoOpacity
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "4px",
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transformOrigin: "center",
+                        scale: videoScale,
+                        x: videoX,
+                        y: videoY,
+                        opacity: videoOpacity,
+                        transform: `translate(-50%, -50%)`,
+                        zIndex: 10
                       }}
-                    >
-                      <video
-                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                        loop
-                        playsInline
-                        muted
-                        autoPlay
-                        crossOrigin="anonymous"
-                        style={{
-                          top: "-59px",
-                          left: "-85px",
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover"
-                        }}
-                      />
-                    </motion.div>
-                  </motion.span>
+                    />
+                  </motion.div>
+                  {" "}qui
                 </div>
-                <div className="mb-4 relative z-10">transforment <sup className="text-sm">(vraiment)</sup></div>
-                <div className="relative z-10">la vie des gens<span className="text-red-500">.</span></div>
+                <div className="mb-4 relative z-5">transforment <sup className="text-sm">(vraiment)</sup></div>
+                <div className="relative z-5">la vie des gens<span className="text-red-500">.</span></div>
               </h1>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Spacer Section */}
-      <section className="h-[200vh] bg-black relative">
+      {/* 스페이서 섹션 */}
+      <section className="h-[150vh] bg-black relative">
         {/* 스크롤 표시기 */}
         <motion.div 
           className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white z-50"
           style={{
-            opacity: scrollIndicatorOpacity,
-            y: scrollIndicatorY
+            opacity: useTransform(scrollY, [600, 700, 1200, 1300], [0, 1, 1, 0])
           }}
         >
           <div className="text-sm mb-2 opacity-75">스크롤 계속</div>
@@ -146,11 +111,11 @@ export default function CombinedLanding() {
         </motion.div>
       </section>
 
-      {/* Ross Mason Section */}
+      {/* Ross Mason 섹션 */}
       <motion.div 
         className="bg-white text-black relative z-20 min-h-screen"
         style={{
-          y: rossSectionY
+          y: nextSectionY
         }}
       >
         <div className="container mx-auto px-4 py-20">
