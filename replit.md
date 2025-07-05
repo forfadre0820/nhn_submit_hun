@@ -164,6 +164,9 @@ Changelog:
 - July 05, 2025. Added animated scroll indicator with "Scroll to explore" text and mouse icon
 - July 05, 2025. Implemented smooth ease-out-in animations for video movement using cubic-bezier transitions
 - July 05, 2025. Enhanced video container with smooth CSS transitions for natural movement feel
+- July 05, 2025. Fixed video opacity to never fade to 0, ensuring video stays visible throughout scroll
+- July 05, 2025. Improved video upward movement animation with gradual translate progression
+- July 05, 2025. Reduced scroll distances for faster section transitions and smoother user experience
 ```
 
 ## User Preferences
