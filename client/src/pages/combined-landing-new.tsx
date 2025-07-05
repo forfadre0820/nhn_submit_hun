@@ -56,10 +56,10 @@ export default function CombinedLanding() {
                   <motion.span
                     className="inline-block relative"
                     style={{
-                      width: "200px",
-                      height: "75px",
-                      margin: "0 10px",
-                      verticalAlign: "baseline"
+                      width: "150px",
+                      height: "60px",
+                      margin: "0 15px",
+                      verticalAlign: "middle"
                     }}
                   >
                     <motion.video
