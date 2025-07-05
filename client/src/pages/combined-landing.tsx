@@ -657,6 +657,173 @@ export default function CombinedLanding() {
               </motion.div>
             </div>
 
+            {/* Portfolio Gallery - Inspired by Patreon Page */}
+            <div className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wide">Featured Portfolio</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                  {/* Portfolio Items */}
+                  {[...Array(12)].map((_, index) => (
+                    <motion.div
+                      key={index}
+                      className="relative group cursor-pointer"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
+                        <img
+                          src={`https://images.unsplash.com/photo-${1600000000000 + index * 123456}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500`}
+                          alt={`Portfolio piece ${index + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                          <div className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <div className="mb-2">3D Visualization</div>
+                            <div className="text-xs">[C4D • REDSHIFT]</div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="text-center mt-12">
+                  <motion.a
+                    href="#"
+                    className="inline-block text-lg font-medium underline decoration-2 underline-offset-4 hover:decoration-4 transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    View Full Portfolio
+                  </motion.a>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Tutorial Gallery Section */}
+            <div className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                  <div className="md:col-span-3">
+                    <h3 className="text-base uppercase tracking-wide text-gray-600">[Latest Tutorial]</h3>
+                  </div>
+                  <div className="md:col-span-6">
+                    <h2 className="text-3xl md:text-4xl font-bold uppercase">
+                      Creating Interiors
+                    </h2>
+                    <div className="text-lg text-gray-600 mt-2">[C4D & REDSHIFT]</div>
+                  </div>
+                  <div className="md:col-span-3 flex items-center justify-end">
+                    <div className="text-right">
+                      <div className="text-lg font-medium">02:12:58</div>
+                      <a href="#" className="uline-double text-sm">Visit Patreon</a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tutorial Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {[
+                    { title: "Architectural Lighting", tools: "C4D • Redshift", duration: "45:30" },
+                    { title: "Product Visualization", tools: "C4D • Redshift", duration: "38:45" },
+                    { title: "Motion Graphics", tools: "C4D • Redshift", duration: "52:15" },
+                    { title: "Character Modeling", tools: "C4D • Redshift", duration: "67:20" },
+                    { title: "Environment Design", tools: "C4D • Redshift", duration: "41:50" },
+                    { title: "Texture Creation", tools: "C4D • Redshift", duration: "29:35" },
+                    { title: "Animation Basics", tools: "C4D • Redshift • Timelapse", duration: "55:40" },
+                    { title: "Rendering Techniques", tools: "C4D • Redshift • Tutorial", duration: "33:25" }
+                  ].map((tutorial, index) => (
+                    <motion.div
+                      key={index}
+                      className="group cursor-pointer"
+                      whileHover={{ y: -5 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden mb-4">
+                        <img
+                          src={`https://images.unsplash.com/photo-${1650000000000 + index * 234567}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500`}
+                          alt={tutorial.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="text-sm font-medium mb-1">{tutorial.title}</div>
+                      <div className="text-xs text-gray-600 mb-2">[{tutorial.tools}]</div>
+                      <div className="text-xs text-gray-500">{tutorial.duration}</div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="text-center mt-12">
+                  <motion.div
+                    className="inline-block"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <h3 className="text-xl font-semibold mb-4 uppercase tracking-wide">[Why Join?]</h3>
+                    <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
+                      LEVEL UP YOUR 3D SKILLS AND DO <em>the work </em>YOU'VE <em>always </em>WANTED TO DO.
+                    </h2>
+                    <a
+                      href="#"
+                      className="inline-block text-lg font-medium underline decoration-double underline-offset-4 hover:decoration-4 transition-all duration-300"
+                    >
+                      Unlock your 3D capabilities - Patreon
+                    </a>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Download Section */}
+            <div className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">
+                      DOWNLOAD <em>free </em>SAMPLE TUTORIAL.
+                    </h2>
+                    <p className="text-lg text-gray-700 mb-8">
+                      Get started with a comprehensive sample tutorial that showcases the quality and depth of content available in our premium courses.
+                    </p>
+                    <motion.a
+                      href="#"
+                      className="inline-block bg-black text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Get Free Tutorial Sample
+                    </motion.a>
+                  </div>
+                  <div className="relative">
+                    <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450"
+                        alt="Free tutorial sample"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
+                          <div className="w-0 h-0 border-l-[12px] border-l-black border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
             {/* Services Section with Interactive Images */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
               <motion.div 

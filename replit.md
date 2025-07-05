@@ -181,6 +181,9 @@ Changelog:
 - July 05, 2025. Added education, certifications, and languages sections
 - July 05, 2025. Included achievements & awards section with recognition highlights
 - July 05, 2025. Created featured clients & projects showcase with global brands and agencies
+- July 05, 2025. Added Patreon-inspired portfolio gallery with interactive hover effects and grid layout
+- July 05, 2025. Implemented tutorial gallery section with featured content and tool specifications
+- July 05, 2025. Created download section for free tutorial samples with video preview
 ```
 
 ## User Preferences
