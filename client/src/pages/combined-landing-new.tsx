@@ -5,16 +5,15 @@ export default function CombinedLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // 3단계 분기 시스템
+  // 3단계 분기 시스템 - 하나의 영상이 변환됨
   // 1단계: 영상이 중앙으로 이동하면서 커지기 (0-800px)
-  const videoScale = useTransform(scrollY, [0, 800], [1, 12]);
+  const videoScale = useTransform(scrollY, [0, 800], [1, 15]);
   const videoX = useTransform(scrollY, [0, 800], [0, -50]); // 중앙으로 이동
   const videoY = useTransform(scrollY, [0, 800], [0, -50]); // 중앙으로 이동
   const videoPosition = useTransform(scrollY, [700, 800], ["static", "fixed"]);
   const videoZIndex = useTransform(scrollY, [700, 800], [1, 9999]);
   
-  // 2단계: 전체화면 고정 (800-1600px)
-  const fullScreenOpacity = useTransform(scrollY, [800, 900, 1500, 1600], [0, 1, 1, 0]);
+  // 2단계: 전체화면 고정 (800-1600px) - 같은 영상 계속 사용
   
   // 3단계: 화면과 함께 올라가기 (1600px~)
   const rossSectionY = useTransform(scrollY, [1600, 2000], ["100vh", "0vh"]);
@@ -51,7 +50,7 @@ export default function CombinedLanding() {
                 <div className="flex flex-wrap items-center justify-center gap-6">
                   <div>aux idées</div>
                   
-                  {/* 16:9 Independent Video Container - 텍스트 사이에 배치 */}
+                  {/* 하나의 영상 - 커지면서 전체화면으로 변환 */}
                   <motion.div 
                     className="inline-block relative"
                     style={{
@@ -65,7 +64,7 @@ export default function CombinedLanding() {
                       transformOrigin: "center"
                     }}
                   >
-                    <div className="w-[200px] h-[113px] relative overflow-hidden rounded-lg bg-black shadow-lg">
+                    <div className="w-[200px] h-[113px] overflow-hidden rounded-lg shadow-lg">
                       <video
                         src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                         loop
@@ -91,23 +90,7 @@ export default function CombinedLanding() {
       {/* 2단계: Video Full Screen Section - 전체화면 고정 */}
       <section className="h-[800px] bg-black relative"></section>
 
-      {/* 2단계: Full Screen Video Fixed Overlay */}
-      <motion.div 
-        className="fixed inset-0 z-[9999] pointer-events-none"
-        style={{
-          opacity: fullScreenOpacity
-        }}
-      >
-        <video
-          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          loop
-          playsInline
-          muted
-          autoPlay
-          crossOrigin="anonymous"
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
+
 
       {/* 3단계: Ross Mason Section - 화면과 함께 올라가기 */}
       <motion.div 
