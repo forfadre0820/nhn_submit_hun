@@ -56,40 +56,37 @@ export default function CombinedLanding() {
                 <div className="text-sm uppercase tracking-[0.5em] mb-4 opacity-75">Nous donnons vie</div>
               </div>
               
-              {/* 텍스트는 고정, 비디오만 변형 */}
-              <div className="relative">
-                <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative z-10">
-                  <div className="mb-4">aux idées</div>
-                  <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
-                  <div>la vie des gens<span className="text-red-500">.</span></div>
-                </h1>
-                
-                {/* 비디오는 절대 위치로 "aux idées" 뒤에 배치 */}
-                <motion.div
-                  className="absolute"
-                  style={{
-                    top: "0px",
-                    left: "calc(50% + 180px)", // "aux idées" 텍스트 뒤 위치
-                    position: videoPosition,
-                    opacity: videoOpacity,
-                    transformOrigin: "center",
-                    zIndex: videoZIndex,
-                    x: videoTransformX,
-                    y: videoTransformY,
-                    scale: videoScale
-                  }}
-                >
-                  <video
-                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                    loop
-                    playsInline
-                    muted
-                    autoPlay
-                    crossOrigin="anonymous"
-                    className="w-[230px] h-[87px] object-cover"
-                  />
-                </motion.div>
-              </div>
+              <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black relative">
+                <div className="mb-4 relative">
+                  aux idées{" "}
+                  <motion.span
+                    className="inline-block align-middle"
+                    style={{
+                      position: videoPosition,
+                      top: videoTop,
+                      left: videoLeft,
+                      opacity: videoOpacity,
+                      transformOrigin: "center",
+                      zIndex: videoZIndex,
+                      x: videoTransformX,
+                      y: videoTransformY,
+                      scale: videoScale
+                    }}
+                  >
+                    <video
+                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      loop
+                      playsInline
+                      muted
+                      autoPlay
+                      crossOrigin="anonymous"
+                      className="w-[230px] h-[87px] object-cover"
+                    />
+                  </motion.span>
+                </div>
+                <div className="mb-4 relative z-10">transforment <sup className="text-sm">(vraiment)</sup></div>
+                <div className="relative z-10">la vie des gens<span className="text-red-500">.</span></div>
+              </h1>
             </div>
           </div>
         </div>
