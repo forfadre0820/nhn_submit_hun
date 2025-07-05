@@ -172,6 +172,9 @@ Changelog:
 - July 05, 2025. Further reduced scroll distances by 50% for even faster section transitions (180px total)
 - July 05, 2025. Enhanced scroll indicator visibility with white text on semi-transparent background
 - July 05, 2025. Increased scroll indicator z-index to appear above video during scaling animation
+- July 05, 2025. Comprehensive code refactoring with centralized scroll configuration for maintainability
+- July 05, 2025. Reduced total scroll distance to 90px for ultra-fast section transitions
+- July 05, 2025. Optimized video section height to 50vh for quicker Ross Mason section reveal
 ```
 
 ## User Preferences

@@ -10,6 +10,26 @@ export default function CombinedLanding() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [selectedService, setSelectedService] = useState<string>('3D_DESIGN');
 
+  // Optimized scroll points for very fast transitions
+  const SCROLL_CONFIG = {
+    VIDEO_SCALING: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90],
+    VIDEO_TRANSFORMS: [
+      "translate(0px, 0px) scale(1)",
+      "translate(0px, 0px) scale(1.5)",
+      "translate(0px, 0px) scale(2.5)",
+      "translate(0px, 0px) scale(4)",
+      "translate(0px, 0px) scale(6)",
+      "translate(-50%, -50%) scale(10)",
+      "translate(-50%, -80%) scale(10)",
+      "translate(-50%, -120%) scale(10)",
+      "translate(-50%, -160%) scale(10)",
+      "translate(-50%, -200%) scale(10)"
+    ],
+    VIDEO_FIXED_POINT: 45,
+    ROSS_SECTION_REVEAL: [60, 70, 80, 90],
+    INDICATOR_FADE: 50
+  };
+
   // Helper functions for service content
   const getServiceImage = (service: string) => {
     switch (service) {
@@ -226,22 +246,11 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 15, 30, 45, 60, 75, 90, 105, 120, 135], [
-                                "translate(0px, 0px) scale(1)",
-                                "translate(0px, 0px) scale(1.5)",
-                                "translate(0px, 0px) scale(2.5)",
-                                "translate(0px, 0px) scale(4)",
-                                "translate(0px, 0px) scale(6)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -80%) scale(10)",
-                                "translate(-50%, -120%) scale(10)",
-                                "translate(-50%, -160%) scale(10)",
-                                "translate(-50%, -200%) scale(10)"
-                              ]),
-                              position: useTransform(scrollY, [74, 75], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [74, 75], [1, 9999]),
-                              top: useTransform(scrollY, [74, 75], ["auto", "50%"]),
-                              left: useTransform(scrollY, [74, 75], ["auto", "50%"]),
+                              transform: useTransform(scrollY, SCROLL_CONFIG.VIDEO_SCALING, SCROLL_CONFIG.VIDEO_TRANSFORMS),
+                              position: useTransform(scrollY, [SCROLL_CONFIG.VIDEO_FIXED_POINT - 1, SCROLL_CONFIG.VIDEO_FIXED_POINT], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [SCROLL_CONFIG.VIDEO_FIXED_POINT - 1, SCROLL_CONFIG.VIDEO_FIXED_POINT], [1, 9999]),
+                              top: useTransform(scrollY, [SCROLL_CONFIG.VIDEO_FIXED_POINT - 1, SCROLL_CONFIG.VIDEO_FIXED_POINT], ["auto", "50%"]),
+                              left: useTransform(scrollY, [SCROLL_CONFIG.VIDEO_FIXED_POINT - 1, SCROLL_CONFIG.VIDEO_FIXED_POINT], ["auto", "50%"]),
                               transformOrigin: "center"
                             }}
                           >
@@ -282,7 +291,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 75], [1, 0]),
+                  opacity: useTransform(scrollY, [0, SCROLL_CONFIG.INDICATOR_FADE], [1, 0]),
                   zIndex: 99999
                 }}
               >
@@ -311,7 +320,7 @@ export default function CombinedLanding() {
       </section>
 
       {/* Video Full Screen Section */}
-      <section className="relative bg-white" style={{ height: "100vh" }}>
+      <section className="relative bg-white" style={{ height: "50vh" }}>
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           {/* This section provides scroll space for video animations */}
         </div>
@@ -321,7 +330,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [90, 105, 120, 135], ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, SCROLL_CONFIG.ROSS_SECTION_REVEAL, ["translateY(100vh)", "translateY(50vh)", "translateY(20vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
