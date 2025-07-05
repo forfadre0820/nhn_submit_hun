@@ -48,12 +48,12 @@ export default function CombinedLanding() {
               </div>
               
               <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-black">
-                <div className="flex flex-wrap items-baseline justify-center gap-3">
-                  <div className="mb-4">aux idées</div>
+                <div className="flex flex-wrap items-center justify-center gap-6">
+                  <div>aux idées</div>
                   
-                  {/* Inline Video - 중앙으로 이동하면서 커지기 */}
+                  {/* 16:9 Independent Video Container - 텍스트 사이에 배치 */}
                   <motion.div 
-                    className="inline-block"
+                    className="inline-block relative"
                     style={{
                       scale: videoScale,
                       x: videoX + "%",
@@ -65,18 +65,20 @@ export default function CombinedLanding() {
                       transformOrigin: "center"
                     }}
                   >
-                    <video
-                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                      loop
-                      playsInline
-                      muted
-                      autoPlay
-                      crossOrigin="anonymous"
-                      className="w-[230px] h-[87px] object-cover rounded-lg"
-                    />
+                    <div className="w-[200px] h-[113px] relative overflow-hidden rounded-lg bg-black shadow-lg">
+                      <video
+                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        loop
+                        playsInline
+                        muted
+                        autoPlay
+                        crossOrigin="anonymous"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </motion.div>
                   
-                  &nbsp;qui
+                  <div>qui</div>
                 </div>
                 <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
                 <div>la vie des gens<span className="text-red-500">.</span></div>
