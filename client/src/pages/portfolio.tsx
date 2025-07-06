@@ -34,11 +34,10 @@ export default function Portfolio() {
   }, []);
 
   const navItems = [
-    { id: 'home', label: '홈' },
-    { id: 'about', label: '소개' },
-    { id: 'expertise', label: '전문성' },
-    { id: 'work', label: '작업' },
-    { id: 'contact', label: '연락처' }
+    { id: 'home', label: 'HOME' },
+    { id: 'about', label: 'ABOUT' },
+    { id: 'expertise', label: 'EXPERTISE' },
+    { id: 'work', label: 'WORK' }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -50,22 +49,22 @@ export default function Portfolio() {
   };
 
   // 스크롤 기반 비디오 애니메이션
-  const videoScale = useTransform(scrollY, [0, 500], [1, 10]);
-  const videoPosition = useTransform(scrollY, [0, 500], ['0%', '-100%']);
+  const videoScale = useTransform(scrollY, [0, 800], [1, 15]);
+  const videoPosition = useTransform(scrollY, [500, 800], ['0%', '-150%']);
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
       {/* 고정 네비게이션 */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-gray-200 dark:border-gray-800">
-        <div className="flex items-center space-x-6">
+      <nav className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md px-8 py-4 shadow-sm">
+        <div className="flex items-center space-x-12">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
+              className={`text-sm font-medium tracking-wide transition-all duration-300 ${
                 currentSection === item.id
-                  ? 'bg-black dark:bg-white text-white dark:text-black shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white'
+                  ? 'text-black dark:text-white border-b-2 border-black dark:border-white pb-1'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
               }`}
             >
               {item.label}
@@ -75,55 +74,64 @@ export default function Portfolio() {
       </nav>
 
       {/* 홈 섹션 - 비디오 애니메이션 */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden px-6">
-        <div className="text-center z-10 max-w-5xl mx-auto">
+      <section id="home" className="relative h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+        <div className="text-center z-10 max-w-6xl mx-auto">
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-0 leading-tight"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-black dark:text-white mb-0 leading-tight tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             메시지를 넘어
             <br />
-            <span className="inline-flex items-center">
+            <span className="inline-flex items-center justify-center">
               시청자의 경험까지
               <motion.div 
-                className="mx-4 bg-black dark:bg-white rounded-sm shadow-lg overflow-hidden"
+                className="mx-6 bg-black dark:bg-white rounded-sm shadow-lg overflow-hidden"
                 style={{ 
-                  width: isPortrait ? '80px' : '120px',
-                  height: isPortrait ? '80px' : '45px',
+                  width: isPortrait ? '100px' : '140px',
+                  height: isPortrait ? '100px' : '80px',
                   scale: videoScale,
                   y: videoPosition
                 }}
               >
                 <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-100 dark:to-gray-200 flex items-center justify-center">
-                  <Camera className="w-4 h-4 text-white dark:text-black" />
+                  <span className="text-white dark:text-black text-xs font-mono">1.00</span>
                 </div>
               </motion.div>
               설계하는
             </span>
             <br />
-            <span className="text-black dark:text-white">
-              콘텐츠 제작자 이승훈 입니다
-            </span>
-            <span className="text-blue-500 text-6xl md:text-8xl">.</span>
+            콘텐츠 제작자 이승훈 입니다
+            <span className="text-red-500 text-7xl md:text-9xl">.</span>
           </motion.h1>
         </div>
+        
+        {/* 스크롤 인디케이터 */}
+        <motion.div 
+          className="absolute bottom-12 flex flex-col items-center text-gray-600 dark:text-gray-400"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <span className="text-sm font-light mb-2 tracking-wide">Scroll to explore</span>
+          <div className="w-px h-8 bg-gray-400 dark:bg-gray-600"></div>
+        </motion.div>
       </section>
 
       {/* 소개 섹션 */}
-      <section id="about" className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+      <section id="about" className="py-16 px-6 bg-white dark:bg-black">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
-              콘텐츠 제작 전문가
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+              ABOUT
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               기획부터 송출까지 전 과정을 직접 수행하는 원스톱 제작 역량
             </p>
           </motion.div>
@@ -181,18 +189,18 @@ export default function Portfolio() {
       </section>
 
       {/* 전문성 섹션 */}
-      <section id="expertise" className="py-20 px-6 bg-white dark:bg-black">
+      <section id="expertise" className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
-              전문 기술 역량
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+              EXPERTISE
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               제작 환경과 기술을 안정적으로 운영
             </p>
           </motion.div>
@@ -286,7 +294,7 @@ export default function Portfolio() {
       </section>
 
       {/* 작업 섹션 */}
-      <section id="work" className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+      <section id="work" className="py-20 px-6 bg-white dark:bg-black">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -294,10 +302,10 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
-              주요 프로젝트
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+              WORK
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               다양한 분야의 콘텐츠 제작 경험
             </p>
           </motion.div>
@@ -458,94 +466,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* 연락처 섹션 */}
-      <section id="contact" className="py-20 px-6 bg-white dark:bg-black">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
-              연락처
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              프로젝트 문의 및 협업 제안을 환영합니다
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-3">
-                    <Mail className="w-6 h-6 text-blue-500" />
-                    <span>연락처 정보</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-slate-500" />
-                    <span className="text-slate-600 dark:text-slate-300">contact@example.com</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-slate-500" />
-                    <span className="text-slate-600 dark:text-slate-300">서울, 대한민국</span>
-                  </div>
-                  <Separator />
-                  <div className="flex space-x-4">
-                    <Button size="sm" variant="outline">
-                      <Github className="w-4 h-4 mr-2" />
-                      GitHub
-                    </Button>
-                    <Button size="sm" variant="outline">
-                      <Linkedin className="w-4 h-4 mr-2" />
-                      LinkedIn
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle>주요 역량</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">NPS 고객 만족도</span>
-                      <Badge>4.5+</Badge>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">완료된 프로젝트</span>
-                      <Badge>50+</Badge>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">예산 절감률</span>
-                      <Badge>30%</Badge>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">기술 전문성</span>
-                      <Badge>전문가급</Badge>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
