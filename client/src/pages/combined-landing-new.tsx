@@ -162,7 +162,7 @@ export default function CombinedLanding() {
                               height: "87px",
                               padding: "0px",
                               transform: useTransform(scrollY, 
-                                [0, 80, 160, 240, 320, 400, 480, 560], 
+                                [0, 100, 200, 300, 400, 500, 600, 700], 
                                 [
                                   "translate(0px, 0px) scale(1)",
                                   "translate(0px, 0px) scale(1.5)", 
@@ -174,13 +174,12 @@ export default function CombinedLanding() {
                                   `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
                                 ]
                               ),
-                              position: useTransform(scrollY, [399, 400], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [399, 400], [1, 9999]),
-                              top: useTransform(scrollY, [399, 400], ["auto", "50%"]),
-                              left: useTransform(scrollY, [399, 400], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [560, 640], [1, 0]),
-                              transformOrigin: "center",
-                              transition: "all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                              position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
+                              top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [700, 750], [1, 0]),
+                              transformOrigin: "center"
                             }}
                           >
                             <motion.video
@@ -197,10 +196,9 @@ export default function CombinedLanding() {
                                 width: "230px",
                                 objectFit: "cover",
                                 objectPosition: "center",
-                                opacity: useTransform(scrollY, [560, 640], [1, 0]),
+                                opacity: useTransform(scrollY, [700, 750], [1, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
-                                borderRadius: "0",
-                                transition: "all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                                borderRadius: "0"
                               }}
                             />
                           </motion.div>
@@ -221,7 +219,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 160], [1, 0])
+                  opacity: useTransform(scrollY, [0, 200], [1, 0])
                 }}
               >
                 <motion.div
@@ -252,38 +250,92 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [480, 500, 520, 540, 560, 580], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [480, 500, 520, 540, 560, 580], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"]),
+          mixBlendMode: 'multiply'
         }}
       >
-        {/* About Section - Ross Mason Style */}
+        {/* Learn 3D Wizardry Layout */}
         <motion.div 
-          className="py-4 bg-white"
+          className="py-20 bg-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-4">
-            {/* Main Title */}
-            <div className="mb-4">
-              <motion.h2 
-                className="text-3xl md:text-5xl font-bold uppercase leading-tight"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                3D ARTIST
-              </motion.h2>
-              <motion.h2 
-                className="text-3xl md:text-5xl font-light italic leading-tight"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                passionate
-              </motion.h2>
+          <div className="container mx-auto px-8">
+            {/* Main Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+              {/* Left Column - Main Title & About Teaching */}
+              <div className="space-y-12">
+                {/* Main Title */}
+                <div>
+                  <motion.h1 
+                    className="text-6xl md:text-8xl font-bold leading-tight mb-4"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="block">LEARN 3D</span>
+                    <span className="block italic font-light">wizardry</span>
+                  </motion.h1>
+                </div>
+                
+                {/* About Teaching Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="space-y-6">
+                    <p className="text-lg leading-relaxed">
+                      I will be covering a whole range of content from<br/>
+                      Lighting and Shading Techniques to Animation<br/>
+                      and everything in-between.
+                    </p>
+                    <div className="pt-4">
+                      <a 
+                        href="#" 
+                        className="text-lg underline hover:no-underline decoration-2 underline-offset-4"
+                      >
+                        Get a free patreon tutorial sample
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column - Image & Tools */}
+              <div className="space-y-8">
+                <motion.div 
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-orange-100 p-6 rounded-lg">
+                    <img 
+                      src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" 
+                      alt="3D Render Sample" 
+                      className="w-full h-48 object-cover rounded"
+                    />
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+                    <span className="block">C4D &</span>
+                    <span className="block">REDSHIFT</span>
+                  </h2>
+                </motion.div>
+              </div>
             </div>
 
             {/* About Teaching Section - Compact Layout */}
