@@ -155,12 +155,12 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
                                 `translate(-50%, -50%) scale(${viewportScale})`,
-                                `translate(-50%, -100%) scale(${viewportScale})`,
-                                `translate(-50%, -200%) scale(${viewportScale})`
+                                `translate(-50%, -50%) scale(${viewportScale})`,
+                                `translate(-50%, -50%) scale(${viewportScale})`
                               ]),
                               position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
-                              top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              top: useTransform(scrollY, [499, 500, 600, 650, 700], ["auto", "50%", "50%", "25%", "0%"]),
                               left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
                               opacity: useTransform(scrollY, [700, 750], [1, 0]),
                               transformOrigin: "center"
