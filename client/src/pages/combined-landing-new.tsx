@@ -7,24 +7,11 @@ export default function CombinedLanding() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [viewportScale, setViewportScale] = useState(10);
   const [finalPosition, setFinalPosition] = useState({ x: -50, y: -200 });
-  const [isPortrait, setIsPortrait] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationStarted(true);
     }, 500);
-
-    // 마우스 휠 감도 조절
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      const delta = e.deltaY;
-      // 스크롤 감도를 1/3로 줄임
-      const reducedDelta = delta * 0.3;
-      window.scrollBy(0, reducedDelta);
-    };
-
-    // 휠 이벤트 리스너 추가
-    window.addEventListener('wheel', handleWheel, { passive: false });
 
     // Calculate viewport scale and final position for fullscreen video
     const calculateScaleAndPosition = () => {
@@ -33,30 +20,17 @@ export default function CombinedLanding() {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
       
-      // 너비가 높이보다 좁을 때 (세로 화면) 정사각형으로 처리
-      const portraitMode = viewportWidth < viewportHeight;
-      setIsPortrait(portraitMode);
+      // Calculate scale to fit viewport
+      const scaleX = viewportWidth / videoWidth;
+      const scaleY = viewportHeight / videoHeight;
       
-      let targetVideoSize, targetScale;
+      // Use scaleX (width-based) as the primary scale
+      const finalScale = scaleX;
+      setViewportScale(Math.max(finalScale, Math.min(8, scaleX)));
       
-      if (portraitMode) {
-        // 세로 화면: 정사각형으로 크롭하여 계산
-        const squareSize = Math.min(videoWidth, videoHeight); // 87px (더 작은 값)
-        targetScale = viewportWidth / squareSize; // 너비 기준으로 스케일
-        targetVideoSize = { width: squareSize, height: squareSize };
-      } else {
-        // 가로 화면: 기존 로직
-        targetScale = viewportWidth / videoWidth;
-        targetVideoSize = { width: videoWidth, height: videoHeight };
-      }
-      
-      setViewportScale(Math.max(targetScale, Math.min(8, targetScale)));
-      
-      // Calculate final position based on viewport size and orientation
-      const finalYPosition = portraitMode 
-        ? -150 - (targetScale * 1.5) // 세로 화면에서는 덜 위로
-        : -200 - (targetScale * 2); // 가로 화면에서는 더 위로
-        
+      // Calculate final position based on viewport size
+      // 최종 목표 포지션을 뷰포트 크기에 맞춰 계산
+      const finalYPosition = -200 - (finalScale * 2); // 스케일이 클수록 더 위로
       setFinalPosition({ x: -50, y: finalYPosition });
     };
 
@@ -71,7 +45,6 @@ export default function CombinedLanding() {
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('wheel', handleWheel);
     };
   }, []);
 
@@ -169,7 +142,7 @@ export default function CombinedLanding() {
                             flexBasis: "auto",
                             overflow: "visible",
                             boxSizing: "border-box",
-                            width: isPortrait ? "87px" : "230px",
+                            width: "230px",
                             height: "87px",
                             padding: "0px"
                           }}
@@ -183,13 +156,13 @@ export default function CombinedLanding() {
                               rotate: "none",
                               inset: "0px auto auto 0px",
                               margin: "0px",
-                              maxWidth: isPortrait ? "87px" : "230px",
-                              width: isPortrait ? "87px" : "230px",
+                              maxWidth: "230px",
+                              width: "230px",
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
                               transform: useTransform(scrollY, 
-                                [0, 50, 100, 150, 200, 250, 300, 350], 
+                                [0, 100, 200, 300, 400, 500, 600, 700], 
                                 [
                                   "translate(0px, 0px) scale(1)",
                                   "translate(0px, 0px) scale(1.5)", 
@@ -201,11 +174,11 @@ export default function CombinedLanding() {
                                   `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
                                 ]
                               ),
-                              position: useTransform(scrollY, [249, 250], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [249, 250], [1, 9999]),
-                              top: useTransform(scrollY, [249, 250], ["auto", "50%"]),
-                              left: useTransform(scrollY, [249, 250], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [350, 400], [1, 0]),
+                              position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
+                              top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [700, 800], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -219,11 +192,11 @@ export default function CombinedLanding() {
                               style={{
                                 top: "0px",
                                 left: "0px",
-                                height: isPortrait ? "87px" : "87px", // 세로 화면에서는 정사각형
-                                width: isPortrait ? "87px" : "230px", // 세로 화면에서는 정사각형
+                                height: "87px",
+                                width: "230px",
                                 objectFit: "cover",
                                 objectPosition: "center",
-                                opacity: useTransform(scrollY, [350, 400], [1, 0]),
+                                opacity: useTransform(scrollY, [700, 800], [1, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
@@ -246,7 +219,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 100], [1, 0])
+                  opacity: useTransform(scrollY, [0, 200], [1, 0])
                 }}
               >
                 <motion.div
@@ -277,7 +250,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [300, 320, 340, 360, 380, 400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [600, 630, 660, 690, 720, 750], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
