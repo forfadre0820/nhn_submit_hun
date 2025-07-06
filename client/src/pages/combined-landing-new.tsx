@@ -151,10 +151,8 @@ export default function CombinedLanding() {
                               rotate: "none",
                               inset: "0px auto auto 0px",
                               margin: "0px",
-                              maxWidth: "230px",
-                              width: "230px",
-                              maxHeight: "87px",
-                              height: "87px",
+                              maxWidth: useTransform(scrollY, [499, 500], ["230px", "100vw"]),
+                              maxHeight: useTransform(scrollY, [499, 500], ["87px", "100vh"]),
                               padding: "0px",
                               transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700], [
                                 "translate(0px, 0px) scale(1)",
@@ -162,14 +160,16 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(" + Math.min(6, viewportScale) + ")",
-                                "translate(-50%, -50%) scale(" + viewportScale + ")",
-                                "translate(-50%, -100%) scale(" + viewportScale + ")",
-                                "translate(-50%, -200%) scale(" + viewportScale + ")"
+                                "translate(-50%, -50%) scale(1)",
+                                "translate(-50%, -100%) scale(1)",
+                                "translate(-50%, -200%) scale(1)"
                               ]),
                               position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
                               top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
                               left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              width: useTransform(scrollY, [499, 500], ["230px", "100vw"]),
+                              height: useTransform(scrollY, [499, 500], ["87px", "100vh"]),
                               opacity: useTransform(scrollY, [700, 750], [1, 0]),
                               transformOrigin: "center"
                             }}
