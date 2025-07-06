@@ -54,9 +54,9 @@ export default function Portfolio() {
   const videoPosition = useTransform(scrollY, [0, 500], ['0%', '-100%']);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white dark:bg-black">
       {/* 고정 네비게이션 */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-slate-200 dark:border-slate-700">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-gray-200 dark:border-gray-800">
         <div className="flex items-center space-x-6">
           {navItems.map((item) => (
             <button
@@ -64,8 +64,8 @@ export default function Portfolio() {
               onClick={() => scrollToSection(item.id)}
               className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                 currentSection === item.id
-                  ? 'bg-blue-500 text-white shadow-md'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400'
+                  ? 'bg-black dark:bg-white text-white dark:text-black shadow-md'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white'
               }`}
             >
               {item.label}
@@ -75,46 +75,44 @@ export default function Portfolio() {
       </nav>
 
       {/* 홈 섹션 - 비디오 애니메이션 */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="text-center z-10">
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden px-6">
+        <div className="text-center z-10 max-w-5xl mx-auto">
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold text-slate-800 dark:text-slate-100 mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-0 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            메시지 전달을 위한
+            메시지를 넘어
             <br />
-            <span className="text-blue-500">4가지 차별화 역량</span>
+            <span className="inline-flex items-center">
+              시청자의 경험까지
+              <motion.div 
+                className="mx-4 bg-black dark:bg-white rounded-sm shadow-lg overflow-hidden"
+                style={{ 
+                  width: isPortrait ? '80px' : '120px',
+                  height: isPortrait ? '80px' : '45px',
+                  scale: videoScale,
+                  y: videoPosition
+                }}
+              >
+                <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-100 dark:to-gray-200 flex items-center justify-center">
+                  <Camera className="w-4 h-4 text-white dark:text-black" />
+                </div>
+              </motion.div>
+              설계하는
+            </span>
+            <br />
+            <span className="text-black dark:text-white">
+              콘텐츠 제작자 이승훈 입니다
+            </span>
+            <span className="text-blue-500 text-6xl md:text-8xl">.</span>
           </motion.h1>
-          <motion.p 
-            className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            콘텐츠 제작 전반의 기획, 메시지 전달/솔루션 제공부터 콘텐츠 PD
-          </motion.p>
-          
-          {/* 비디오 플레이스홀더 */}
-          <motion.div 
-            className="mx-auto bg-slate-800 rounded-lg shadow-2xl overflow-hidden"
-            style={{ 
-              width: isPortrait ? '150px' : '230px',
-              height: isPortrait ? '150px' : '87px',
-              scale: videoScale,
-              y: videoPosition
-            }}
-          >
-            <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-              <Camera className="w-8 h-8 text-white" />
-            </div>
-          </motion.div>
         </div>
       </section>
 
       {/* 소개 섹션 */}
-      <section id="about" className="py-20 px-6">
+      <section id="about" className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -122,10 +120,10 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
               콘텐츠 제작 전문가
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               기획부터 송출까지 전 과정을 직접 수행하는 원스톱 제작 역량
             </p>
           </motion.div>
@@ -136,21 +134,21 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-6">
                 솔루션 기획부터
               </h3>
               <div className="space-y-4">
-                <div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
-                  <h4 className="font-semibold text-slate-800 dark:text-slate-100 mb-2">사업개발/분석·구현</h4>
-                  <p className="text-slate-600 dark:text-slate-300">브랜드 마케팅 전략 수립</p>
+                <div className="p-4 bg-white dark:bg-black rounded-lg shadow-sm border border-gray-200 dark:border-gray-800">
+                  <h4 className="font-semibold text-black dark:text-white mb-2">사업개발/분석·구현</h4>
+                  <p className="text-gray-600 dark:text-gray-300">브랜드 마케팅 전략 수립</p>
                 </div>
-                <div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
-                  <h4 className="font-semibold text-slate-800 dark:text-slate-100 mb-2">콘텐츠 기획·구현</h4>
-                  <p className="text-slate-600 dark:text-slate-300">핵심 메시지 전달</p>
+                <div className="p-4 bg-white dark:bg-black rounded-lg shadow-sm border border-gray-200 dark:border-gray-800">
+                  <h4 className="font-semibold text-black dark:text-white mb-2">콘텐츠 기획·구현</h4>
+                  <p className="text-gray-600 dark:text-gray-300">핵심 메시지 전달</p>
                 </div>
-                <div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
-                  <h4 className="font-semibold text-slate-800 dark:text-slate-100 mb-2">제작 관리·실행</h4>
-                  <p className="text-slate-600 dark:text-slate-300">다양한 플랫폼 최적화</p>
+                <div className="p-4 bg-white dark:bg-black rounded-lg shadow-sm border border-gray-200 dark:border-gray-800">
+                  <h4 className="font-semibold text-black dark:text-white mb-2">제작 관리·실행</h4>
+                  <p className="text-gray-600 dark:text-gray-300">다양한 플랫폼 최적화</p>
                 </div>
               </div>
             </motion.div>
@@ -160,21 +158,21 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-6">
                 타겟 기반 콘텐츠 PD
               </h3>
               <div className="space-y-4">
-                <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">마케팅 기획 전문성</h4>
-                  <p className="text-blue-600 dark:text-blue-300">타겟 분석부터 콘텐츠 기획까지</p>
+                <div className="p-4 bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800">
+                  <h4 className="font-semibold text-black dark:text-white mb-2">마케팅 기획 전문성</h4>
+                  <p className="text-gray-600 dark:text-gray-300">타겟 분석부터 콘텐츠 기획까지</p>
                 </div>
-                <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                  <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">OpenCV 영상 처리</h4>
-                  <p className="text-purple-600 dark:text-purple-300">AI 기반 영상 전처리</p>
+                <div className="p-4 bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800">
+                  <h4 className="font-semibold text-black dark:text-white mb-2">OpenCV 영상 처리</h4>
+                  <p className="text-gray-600 dark:text-gray-300">AI 기반 영상 전처리</p>
                 </div>
-                <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                  <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">FFmpeg 자동화</h4>
-                  <p className="text-green-600 dark:text-green-300">배치 렌더링 최적화</p>
+                <div className="p-4 bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800">
+                  <h4 className="font-semibold text-black dark:text-white mb-2">FFmpeg 자동화</h4>
+                  <p className="text-gray-600 dark:text-gray-300">배치 렌더링 최적화</p>
                 </div>
               </div>
             </motion.div>
@@ -183,7 +181,7 @@ export default function Portfolio() {
       </section>
 
       {/* 전문성 섹션 */}
-      <section id="expertise" className="py-20 px-6 bg-slate-50 dark:bg-slate-900">
+      <section id="expertise" className="py-20 px-6 bg-white dark:bg-black">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,10 +189,10 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
               전문 기술 역량
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               제작 환경과 기술을 안정적으로 운영
             </p>
           </motion.div>
@@ -288,7 +286,7 @@ export default function Portfolio() {
       </section>
 
       {/* 작업 섹션 */}
-      <section id="work" className="py-20 px-6">
+      <section id="work" className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -296,10 +294,10 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
               주요 프로젝트
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               다양한 분야의 콘텐츠 제작 경험
             </p>
           </motion.div>
@@ -461,7 +459,7 @@ export default function Portfolio() {
       </section>
 
       {/* 연락처 섹션 */}
-      <section id="contact" className="py-20 px-6 bg-slate-50 dark:bg-slate-900">
+      <section id="contact" className="py-20 px-6 bg-white dark:bg-black">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -469,10 +467,10 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
               연락처
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               프로젝트 문의 및 협업 제안을 환영합니다
             </p>
           </motion.div>
