@@ -19,26 +19,16 @@ export default function CombinedLanding() {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
       
-      // Calculate scale to cover the entire viewport
+      // Calculate scale to fit viewport
       const scaleX = viewportWidth / videoWidth;
       const scaleY = viewportHeight / videoHeight;
       
-      // Use the larger scale to ensure full coverage (crop to fill)
-      const finalScale = Math.max(scaleX, scaleY);
+      // Use scaleX (width-based) as the primary scale
+      // This ensures video never gets wider than browser width
+      const finalScale = scaleX;
       
-      // Cap the scale based on viewport aspect ratio
-      // For square or tall screens, limit scaling to prevent distortion
-      const viewportRatio = viewportWidth / viewportHeight;
-      const videoRatio = videoWidth / videoHeight;
-      
-      let cappedScale = finalScale;
-      
-      // If viewport is square or taller than video ratio, cap the scale
-      if (viewportRatio <= videoRatio) {
-        cappedScale = Math.min(finalScale, scaleX * 1.1);
-      }
-      
-      setViewportScale(Math.max(cappedScale, 8));
+      // Ensure minimum scale for visibility but don't exceed width limit
+      setViewportScale(Math.max(finalScale, Math.min(8, scaleX)));
     };
 
     calculateScale();
