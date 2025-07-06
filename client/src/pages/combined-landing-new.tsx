@@ -243,236 +243,215 @@ export default function CombinedLanding() {
               </motion.h2>
             </div>
 
-            {/* About Teaching Section */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+            {/* About Teaching Section - Compact Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
               <motion.div 
-                className="md:col-span-3"
+                className="lg:col-span-3"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="mb-8">
+                <div className="mb-6">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
                     alt="Ross Mason"
-                    className="w-20 h-20 rounded-full object-cover"
+                    className="w-16 h-16 rounded-full object-cover"
                   />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold uppercase leading-tight mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold uppercase leading-tight mb-6">
                   ABOUT<br />TEACHING
                 </h3>
               </motion.div>
 
               <motion.div 
-                className="md:col-span-6"
+                className="lg:col-span-9"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
-                    <h4 className="text-2xl font-bold uppercase mb-4">
-                      FROM STUDYING GRAPHIC<br />
-                      DESIGN TO <em className="italic font-light">becoming</em> A<br />
-                      SELF <em className="italic font-light">taught</em> 3D ARTIST
+                    <h4 className="text-xl md:text-2xl font-bold uppercase mb-4">
+                      FROM STUDYING GRAPHIC DESIGN TO <em className="italic font-light">becoming</em> A SELF <em className="italic font-light">taught</em> 3D ARTIST
                     </h4>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h5 className="text-sm font-medium text-gray-500 mb-4">[PERSONAL STORY]</h5>
-                      <p className="text-gray-700 leading-relaxed">
+                      <h5 className="text-sm font-medium text-gray-500 mb-3">[PERSONAL STORY]</h5>
+                      <p className="text-gray-700 leading-relaxed text-sm">
                         I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
                       </p>
                     </div>
                     <div>
-                      <h5 className="text-sm font-medium text-gray-500 mb-4">Forever learning.</h5>
-                      <p className="text-gray-700 leading-relaxed">
+                      <h5 className="text-sm font-medium text-gray-500 mb-3">Forever learning.</h5>
+                      <p className="text-gray-700 leading-relaxed text-sm">
                         Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
                       </p>
-                      <p className="text-gray-700 leading-relaxed mt-4">
+                      <p className="text-gray-700 leading-relaxed text-sm mt-3">
                         I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
                       </p>
                     </div>
                   </div>
                   
-                  {/* Professional Resume Information */}
-                  <div className="mt-16 pt-12 border-t border-gray-200">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                  {/* Compact Professional Resume Information */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {/* Contact Information */}
                       <div>
-                        <h5 className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">[CONTACT INFO]</h5>
-                        <div className="space-y-2">
-                          <p className="text-gray-700">Ross Mason</p>
-                          <p className="text-gray-700">3D Artist & Motion Designer</p>
-                          <p className="text-gray-700">London, UK</p>
-                          <p className="text-gray-700">ross@example.com</p>
-                          <p className="text-gray-700">+44 7xxx xxx xxx</p>
+                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[CONTACT INFO]</h5>
+                        <div className="space-y-1 text-sm">
+                          <p className="text-gray-700 font-medium">Ross Mason</p>
+                          <p className="text-gray-600">3D Artist & Motion Designer</p>
+                          <p className="text-gray-600">London, UK</p>
+                          <p className="text-gray-600">ross@example.com</p>
+                          <p className="text-gray-600">+44 7xxx xxx xxx</p>
                         </div>
                       </div>
                       
                       {/* Education */}
                       <div>
-                        <h5 className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">[EDUCATION]</h5>
-                        <div className="space-y-4">
+                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[EDUCATION]</h5>
+                        <div className="space-y-3 text-sm">
                           <div>
                             <h6 className="font-medium text-gray-900">BA Graphic Design</h6>
-                            <p className="text-sm text-gray-600">University of Arts London</p>
-                            <p className="text-sm text-gray-500">2010 - 2014</p>
+                            <p className="text-xs text-gray-600">University of Arts London</p>
+                            <p className="text-xs text-gray-500">2010 - 2014</p>
                           </div>
                           <div>
                             <h6 className="font-medium text-gray-900">Self-taught 3D Artist</h6>
-                            <p className="text-sm text-gray-600">Cinema 4D, Blender, Maya</p>
-                            <p className="text-sm text-gray-500">2011 - Present</p>
+                            <p className="text-xs text-gray-600">Cinema 4D, Blender, Maya</p>
+                            <p className="text-xs text-gray-500">2011 - Present</p>
                           </div>
                         </div>
                       </div>
                       
                       {/* Languages */}
                       <div>
-                        <h5 className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">[LANGUAGES]</h5>
-                        <div className="space-y-2">
+                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[LANGUAGES]</h5>
+                        <div className="space-y-1 text-sm">
                           <div className="flex justify-between">
                             <span className="text-gray-700">English</span>
-                            <span className="text-sm text-gray-500">Native</span>
+                            <span className="text-xs text-gray-500">Native</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-gray-700">French</span>
-                            <span className="text-sm text-gray-500">Fluent</span>
+                            <span className="text-xs text-gray-500">Fluent</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-gray-700">Spanish</span>
-                            <span className="text-sm text-gray-500">Basic</span>
+                            <span className="text-xs text-gray-500">Basic</span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Professional Experience */}
-                  <div className="mt-16 pt-12 border-t border-gray-200">
-                    <h5 className="text-sm font-medium text-gray-500 mb-8 uppercase tracking-wide">[PROFESSIONAL EXPERIENCE]</h5>
-                    <div className="space-y-8">
-                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div className="md:col-span-1">
-                          <p className="text-sm text-gray-500">2020 - Present</p>
+                  {/* Compact Professional Experience, Skills & Awards */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      {/* Left Column - Experience & Skills */}
+                      <div className="space-y-6">
+                        <div>
+                          <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-wide">[PROFESSIONAL EXPERIENCE]</h5>
+                          <div className="space-y-4 text-sm">
+                            <div>
+                              <div className="flex justify-between items-start mb-1">
+                                <h6 className="font-medium text-gray-900">Senior 3D Artist & Content Creator</h6>
+                                <span className="text-xs text-gray-500">2020 - Present</span>
+                              </div>
+                              <p className="text-xs text-gray-600">Freelance / Patreon</p>
+                            </div>
+                            
+                            <div>
+                              <div className="flex justify-between items-start mb-1">
+                                <h6 className="font-medium text-gray-900">3D Visualiser</h6>
+                                <span className="text-xs text-gray-500">2018 - 2020</span>
+                              </div>
+                              <p className="text-xs text-gray-600">Creative Agency London</p>
+                            </div>
+                            
+                            <div>
+                              <div className="flex justify-between items-start mb-1">
+                                <h6 className="font-medium text-gray-900">Motion Designer</h6>
+                                <span className="text-xs text-gray-500">2015 - 2018</span>
+                              </div>
+                              <p className="text-xs text-gray-600">Digital Studio UK</p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="md:col-span-3">
-                          <h6 className="font-medium text-gray-900 mb-2">Senior 3D Artist & Content Creator</h6>
-                          <p className="text-sm text-gray-600 mb-2">Freelance / Patreon</p>
-                          <p className="text-gray-700 leading-relaxed">
-                            Creating premium 3D tutorials and educational content for 1000+ subscribers. 
-                            Specializing in Cinema 4D workflows, rendering techniques, and motion graphics.
-                          </p>
+                        
+                        {/* Technical Skills - Compact */}
+                        <div>
+                          <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[TECHNICAL SKILLS]</h5>
+                          <div className="grid grid-cols-2 gap-4 text-xs">
+                            <div>
+                              <h6 className="font-medium text-gray-900 mb-2">3D Software</h6>
+                              <div className="space-y-1">
+                                <div className="flex justify-between">
+                                  <span className="text-gray-700">Cinema 4D</span>
+                                  <span className="text-gray-500">Expert</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-gray-700">Blender</span>
+                                  <span className="text-gray-500">Advanced</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-gray-700">Maya</span>
+                                  <span className="text-gray-500">Intermediate</span>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div>
+                              <h6 className="font-medium text-gray-900 mb-2">Rendering & Post</h6>
+                              <div className="space-y-1">
+                                <div className="flex justify-between">
+                                  <span className="text-gray-700">Octane Render</span>
+                                  <span className="text-gray-500">Expert</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-gray-700">Redshift</span>
+                                  <span className="text-gray-500">Advanced</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-gray-700">After Effects</span>
+                                  <span className="text-gray-500">Expert</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div className="md:col-span-1">
-                          <p className="text-sm text-gray-500">2018 - 2020</p>
-                        </div>
-                        <div className="md:col-span-3">
-                          <h6 className="font-medium text-gray-900 mb-2">3D Visualiser</h6>
-                          <p className="text-sm text-gray-600 mb-2">Creative Agency London</p>
-                          <p className="text-gray-700 leading-relaxed">
-                            Developed high-quality 3D visualizations for architectural projects and product launches. 
-                            Collaborated with design teams to create compelling visual narratives.
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div className="md:col-span-1">
-                          <p className="text-sm text-gray-500">2015 - 2018</p>
-                        </div>
-                        <div className="md:col-span-3">
-                          <h6 className="font-medium text-gray-900 mb-2">Motion Designer</h6>
-                          <p className="text-sm text-gray-600 mb-2">Digital Studio UK</p>
-                          <p className="text-gray-700 leading-relaxed">
-                            Created dynamic motion graphics and animations for brand campaigns. 
-                            Worked with major clients including Nike, Adidas, and Samsung.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Technical Skills */}
-                  <div className="mt-16 pt-12 border-t border-gray-200">
-                    <h5 className="text-sm font-medium text-gray-500 mb-8 uppercase tracking-wide">[TECHNICAL SKILLS]</h5>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {/* Right Column - Awards */}
                       <div>
-                        <h6 className="font-medium text-gray-900 mb-4">3D Software</h6>
-                        <div className="space-y-2">
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">Cinema 4D</span>
-                            <span className="text-sm text-gray-500">Expert</span>
+                        <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-wide">[AWARDS & RECOGNITION]</h5>
+                        <div className="space-y-3 text-sm">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <h6 className="font-medium text-gray-900">Best Motion Graphics</h6>
+                              <p className="text-xs text-gray-600">Creative Awards London</p>
+                            </div>
+                            <span className="text-xs text-gray-500">2019</span>
                           </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">Blender</span>
-                            <span className="text-sm text-gray-500">Advanced</span>
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <h6 className="font-medium text-gray-900">Featured Artist</h6>
+                              <p className="text-xs text-gray-600">3D Artist Magazine</p>
+                            </div>
+                            <span className="text-xs text-gray-500">2020</span>
                           </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">Maya</span>
-                            <span className="text-sm text-gray-500">Intermediate</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">Houdini</span>
-                            <span className="text-sm text-gray-500">Basic</span>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h6 className="font-medium text-gray-900 mb-4">Rendering & Post</h6>
-                        <div className="space-y-2">
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">Octane Render</span>
-                            <span className="text-sm text-gray-500">Expert</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">Redshift</span>
-                            <span className="text-sm text-gray-500">Advanced</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">After Effects</span>
-                            <span className="text-sm text-gray-500">Expert</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-700">Photoshop</span>
-                            <span className="text-sm text-gray-500">Advanced</span>
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <h6 className="font-medium text-gray-900">Top Creator</h6>
+                              <p className="text-xs text-gray-600">Patreon Platform</p>
+                            </div>
+                            <span className="text-xs text-gray-500">2021</span>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Awards & Recognition */}
-                  <div className="mt-16 pt-12 border-t border-gray-200">
-                    <h5 className="text-sm font-medium text-gray-500 mb-8 uppercase tracking-wide">[AWARDS & RECOGNITION]</h5>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h6 className="font-medium text-gray-900">Best Motion Graphics</h6>
-                          <p className="text-sm text-gray-600">Creative Awards London</p>
-                        </div>
-                        <span className="text-sm text-gray-500">2019</span>
-                      </div>
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h6 className="font-medium text-gray-900">Featured Artist</h6>
-                          <p className="text-sm text-gray-600">3D Artist Magazine</p>
-                        </div>
-                        <span className="text-sm text-gray-500">2020</span>
-                      </div>
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h6 className="font-medium text-gray-900">Top Creator</h6>
-                          <p className="text-sm text-gray-600">Patreon Platform</p>
-                        </div>
-                        <span className="text-sm text-gray-500">2021</span>
                       </div>
                     </div>
                   </div>
@@ -480,33 +459,33 @@ export default function CombinedLanding() {
               </motion.div>
             </div>
 
-            {/* Services Section with Interactive Images */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+            {/* Services Section - Compact */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
               <motion.div 
-                className="md:col-span-6"
+                className="lg:col-span-5"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-base uppercase tracking-wide text-gray-600 mb-8">[Services list]</h4>
+                <h4 className="text-xs uppercase tracking-wide text-gray-600 mb-6">[Services list]</h4>
                 
-                <div className="space-y-6">
+                <div className="space-y-3">
                   <motion.div 
                     className="group cursor-pointer opacity-75 hover:opacity-100"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
-                    whileHover={{ x: 10 }}
+                    whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
                         3D DESIGN
                       </h3>
-                      <span className="ml-4 text-xs text-gray-500">01.</span>
+                      <span className="ml-3 text-xs text-gray-500">01.</span>
                     </div>
-                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
 
                   <motion.div 
@@ -515,15 +494,15 @@ export default function CombinedLanding() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                     viewport={{ once: true }}
-                    whileHover={{ x: 10 }}
+                    whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
                         ART DIRECTION
                       </h3>
-                      <span className="ml-4 text-xs text-gray-500">02.</span>
+                      <span className="ml-3 text-xs text-gray-500">02.</span>
                     </div>
-                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
 
                   <motion.div 
@@ -532,15 +511,15 @@ export default function CombinedLanding() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
                     viewport={{ once: true }}
-                    whileHover={{ x: 10 }}
+                    whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
                         ANIMATION
                       </h3>
-                      <span className="ml-4 text-xs text-gray-500">03.</span>
+                      <span className="ml-3 text-xs text-gray-500">03.</span>
                     </div>
-                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
                   
                   <motion.div 
@@ -549,41 +528,41 @@ export default function CombinedLanding() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
                     viewport={{ once: true }}
-                    whileHover={{ x: 10 }}
+                    whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-3xl md:text-4xl font-bold uppercase transition-opacity">
+                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
                         ANIMATION
                       </h3>
-                      <span className="ml-4 text-xs text-gray-500">04.</span>
+                      <span className="ml-3 text-xs text-gray-500">04.</span>
                     </div>
-                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-2"></div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
                 </div>
 
                 <motion.div 
-                  className="mt-12"
+                  className="mt-8"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <p className="text-lg font-medium mb-4">Bring your ideas to life</p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-base font-medium mb-3">Bring your ideas to life</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality that would be impossible in the real world.
                   </p>
                 </motion.div>
               </motion.div>
 
               <motion.div 
-                className="md:col-span-6"
+                className="lg:col-span-7"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="relative overflow-hidden rounded-lg h-full min-h-[500px]"
+                  className="relative overflow-hidden rounded-lg h-full min-h-[350px]"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
