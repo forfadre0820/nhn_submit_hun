@@ -28,9 +28,10 @@ export default function CombinedLanding() {
       const finalScale = scaleX;
       setViewportScale(Math.max(finalScale, Math.min(8, scaleX)));
       
-      // 화면 중앙은 항상 -50%, -50%
-      // 최종 위치는 화면 중앙에서 약간 위로만 이동
-      setFinalPosition({ x: -50, y: -60 }); // 화면 중앙에서 10% 위로
+      // Calculate final position based on viewport size
+      // 최종 목표 포지션을 뷰포트 크기에 맞춰 계산
+      const finalYPosition = -200 - (finalScale * 2); // 스케일이 클수록 더 위로
+      setFinalPosition({ x: -50, y: finalYPosition });
     };
 
     calculateScaleAndPosition();
@@ -110,8 +111,8 @@ export default function CombinedLanding() {
         </header>
 
         {/* Hero Section with Video */}
-        <div className="relative home__video" style={{ height: "60vh" }}>
-          <div className="min-h-[60vh] flex items-center justify-center pt-20">
+        <div className="relative home__video" style={{ height: "100vh" }}>
+          <div className="min-h-screen flex items-center justify-center pt-20">
             <div className="container mx-auto px-4">
               <motion.div
                 className="text-center max-w-4xl mx-auto"
@@ -161,23 +162,23 @@ export default function CombinedLanding() {
                               height: "87px",
                               padding: "0px",
                               transform: useTransform(scrollY, 
-                                [0, 50, 100, 150, 200, 250, 300, 350], 
+                                [0, 100, 200, 300, 400, 500, 600, 700], 
                                 [
                                   "translate(0px, 0px) scale(1)",
                                   "translate(0px, 0px) scale(1.5)", 
                                   "translate(0px, 0px) scale(2.5)",
                                   "translate(0px, 0px) scale(4)",
                                   `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
-                                  `translate(-50%, -50%) scale(${viewportScale})`, // 화면 정중앙
-                                  `translate(-50%, -55%) scale(${viewportScale})`, // 중앙에서 5% 위로
-                                  `translate(-50%, -60%) scale(${viewportScale})`  // 중앙에서 10% 위로
+                                  `translate(-50%, -50%) scale(${viewportScale})`,
+                                  `translate(${finalPosition.x}%, ${finalPosition.y * 0.5}%) scale(${viewportScale})`,
+                                  `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
                                 ]
                               ),
-                              position: useTransform(scrollY, [249, 250], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [249, 250], [1, 9999]),
-                              top: useTransform(scrollY, [249, 250], ["auto", "50%"]),
-                              left: useTransform(scrollY, [249, 250], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [350, 400], [1, 0]),
+                              position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
+                              top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [700, 800], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -195,7 +196,7 @@ export default function CombinedLanding() {
                                 width: "230px",
                                 objectFit: "cover",
                                 objectPosition: "center",
-                                opacity: useTransform(scrollY, [350, 400], [1, 0]),
+                                opacity: useTransform(scrollY, [700, 800], [1, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
@@ -218,7 +219,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 100], [1, 0])
+                  opacity: useTransform(scrollY, [0, 200], [1, 0])
                 }}
               >
                 <motion.div
@@ -249,12 +250,12 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [300, 320, 340, 360, 380, 400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [600, 630, 660, 690, 720, 750], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
         <motion.div 
-          className="py-2 bg-white"
+          className="py-4 bg-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
