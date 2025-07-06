@@ -210,7 +210,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [400, 420, 440, 460, 480, 500], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [350, 370, 390, 410, 430, 450], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
@@ -260,7 +260,7 @@ export default function CombinedLanding() {
                     className="w-16 h-16 rounded-full object-cover"
                   />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold uppercase leading-tight mb-6">
+                <h3 className="text-xl md:text-2xl font-bold uppercase leading-tight mb-6 tracking-wide">
                   ABOUT<br />TEACHING
                 </h3>
               </motion.div>
@@ -274,20 +274,20 @@ export default function CombinedLanding() {
               >
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xl md:text-2xl font-bold uppercase mb-4">
+                    <h4 className="text-lg md:text-xl font-bold uppercase mb-4 tracking-wide">
                       FROM STUDYING GRAPHIC DESIGN TO <em className="italic font-light">becoming</em> A SELF <em className="italic font-light">taught</em> 3D ARTIST
                     </h4>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h5 className="text-sm font-medium text-gray-500 mb-3">[PERSONAL STORY]</h5>
+                      <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[PERSONAL STORY]</h5>
                       <p className="text-gray-700 leading-relaxed text-sm">
                         I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
                       </p>
                     </div>
                     <div>
-                      <h5 className="text-sm font-medium text-gray-500 mb-3">Forever learning.</h5>
+                      <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">Forever learning.</h5>
                       <p className="text-gray-700 leading-relaxed text-sm">
                         Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
                       </p>
@@ -302,7 +302,7 @@ export default function CombinedLanding() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {/* Contact Information */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[CONTACT INFO]</h5>
+                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[CONTACT INFO]</h5>
                         <div className="space-y-1 text-sm">
                           <p className="text-gray-700 font-medium">Ross Mason</p>
                           <p className="text-gray-600">3D Artist & Motion Designer</p>
@@ -314,7 +314,7 @@ export default function CombinedLanding() {
                       
                       {/* Education */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[EDUCATION]</h5>
+                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[EDUCATION]</h5>
                         <div className="space-y-3 text-sm">
                           <div>
                             <h6 className="font-medium text-gray-900">BA Graphic Design</h6>
@@ -331,7 +331,7 @@ export default function CombinedLanding() {
                       
                       {/* Languages */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[LANGUAGES]</h5>
+                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[LANGUAGES]</h5>
                         <div className="space-y-1 text-sm">
                           <div className="flex justify-between">
                             <span className="text-gray-700">English</span>
@@ -356,7 +356,7 @@ export default function CombinedLanding() {
                       {/* Left Column - Experience & Skills */}
                       <div className="space-y-6">
                         <div>
-                          <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-wide">[PROFESSIONAL EXPERIENCE]</h5>
+                          <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-widest">[PROFESSIONAL EXPERIENCE]</h5>
                           <div className="space-y-4 text-sm">
                             <div>
                               <div className="flex justify-between items-start mb-1">
@@ -386,7 +386,7 @@ export default function CombinedLanding() {
                         
                         {/* Technical Skills - Compact */}
                         <div>
-                          <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-wide">[TECHNICAL SKILLS]</h5>
+                          <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[TECHNICAL SKILLS]</h5>
                           <div className="grid grid-cols-2 gap-4 text-xs">
                             <div>
                               <h6 className="font-medium text-gray-900 mb-2">3D Software</h6>
@@ -429,7 +429,7 @@ export default function CombinedLanding() {
                       
                       {/* Right Column - Awards */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-wide">[AWARDS & RECOGNITION]</h5>
+                        <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-widest">[AWARDS & RECOGNITION]</h5>
                         <div className="space-y-3 text-sm">
                           <div className="flex justify-between items-start">
                             <div>
@@ -469,7 +469,7 @@ export default function CombinedLanding() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-xs uppercase tracking-wide text-gray-600 mb-6">[Services list]</h4>
+                <h4 className="text-xs uppercase tracking-widest text-gray-600 mb-6">[Services list]</h4>
                 
                 <div className="space-y-3">
                   <motion.div 
@@ -481,7 +481,7 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
+                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
                         3D DESIGN
                       </h3>
                       <span className="ml-3 text-xs text-gray-500">01.</span>
@@ -498,7 +498,7 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
+                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
                         ART DIRECTION
                       </h3>
                       <span className="ml-3 text-xs text-gray-500">02.</span>
@@ -515,7 +515,7 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
+                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
                         ANIMATION
                       </h3>
                       <span className="ml-3 text-xs text-gray-500">03.</span>
@@ -532,7 +532,7 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-xl md:text-2xl font-bold uppercase transition-opacity">
+                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
                         ANIMATION
                       </h3>
                       <span className="ml-3 text-xs text-gray-500">04.</span>
