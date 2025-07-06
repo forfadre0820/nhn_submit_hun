@@ -161,7 +161,7 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(1.5)",
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
-                                "translate(0px, 0px) scale(6)",
+                                "translate(0px, 0px) scale(" + Math.min(6, viewportScale) + ")",
                                 "translate(-50%, -50%) scale(" + viewportScale + ")",
                                 "translate(-50%, -100%) scale(" + viewportScale + ")",
                                 "translate(-50%, -200%) scale(" + viewportScale + ")"
