@@ -7,6 +7,7 @@ export default function CombinedLanding() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [viewportScale, setViewportScale] = useState(10);
   const [finalPosition, setFinalPosition] = useState({ x: -50, y: -200 });
+  const [isPortrait, setIsPortrait] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,17 +21,30 @@ export default function CombinedLanding() {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
       
-      // Calculate scale to fit viewport
-      const scaleX = viewportWidth / videoWidth;
-      const scaleY = viewportHeight / videoHeight;
+      // 너비가 높이보다 좁을 때 (세로 화면) 정사각형으로 처리
+      const portraitMode = viewportWidth < viewportHeight;
+      setIsPortrait(portraitMode);
       
-      // Use scaleX (width-based) as the primary scale
-      const finalScale = scaleX;
-      setViewportScale(Math.max(finalScale, Math.min(8, scaleX)));
+      let targetVideoSize, targetScale;
       
-      // Calculate final position based on viewport size
-      // 최종 목표 포지션을 뷰포트 크기에 맞춰 계산
-      const finalYPosition = -200 - (finalScale * 2); // 스케일이 클수록 더 위로
+      if (portraitMode) {
+        // 세로 화면: 정사각형으로 크롭하여 계산
+        const squareSize = Math.min(videoWidth, videoHeight); // 87px (더 작은 값)
+        targetScale = viewportWidth / squareSize; // 너비 기준으로 스케일
+        targetVideoSize = { width: squareSize, height: squareSize };
+      } else {
+        // 가로 화면: 기존 로직
+        targetScale = viewportWidth / videoWidth;
+        targetVideoSize = { width: videoWidth, height: videoHeight };
+      }
+      
+      setViewportScale(Math.max(targetScale, Math.min(8, targetScale)));
+      
+      // Calculate final position based on viewport size and orientation
+      const finalYPosition = portraitMode 
+        ? -150 - (targetScale * 1.5) // 세로 화면에서는 덜 위로
+        : -200 - (targetScale * 2); // 가로 화면에서는 더 위로
+        
       setFinalPosition({ x: -50, y: finalYPosition });
     };
 
@@ -142,7 +156,7 @@ export default function CombinedLanding() {
                             flexBasis: "auto",
                             overflow: "visible",
                             boxSizing: "border-box",
-                            width: "230px",
+                            width: isPortrait ? "87px" : "230px",
                             height: "87px",
                             padding: "0px"
                           }}
@@ -156,8 +170,8 @@ export default function CombinedLanding() {
                               rotate: "none",
                               inset: "0px auto auto 0px",
                               margin: "0px",
-                              maxWidth: "230px",
-                              width: "230px",
+                              maxWidth: isPortrait ? "87px" : "230px",
+                              width: isPortrait ? "87px" : "230px",
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
@@ -192,8 +206,8 @@ export default function CombinedLanding() {
                               style={{
                                 top: "0px",
                                 left: "0px",
-                                height: "87px",
-                                width: "230px",
+                                height: isPortrait ? "87px" : "87px", // 세로 화면에서는 정사각형
+                                width: isPortrait ? "87px" : "230px", // 세로 화면에서는 정사각형
                                 objectFit: "cover",
                                 objectPosition: "center",
                                 opacity: useTransform(scrollY, [700, 800], [1, 0]),
