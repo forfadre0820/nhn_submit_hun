@@ -47,6 +47,31 @@
   --ring: hsl(0, 0%, 84%);
 }
 
+/* 마우스 휠 스크롤 감도 조절 */
+html {
+  scroll-behavior: smooth;
+  /* Firefox에서 스크롤 감도 조절 */
+  scrollbar-width: thin;
+}
+
+body {
+  /* 스크롤 감도를 더 세밀하게 조절 */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 전체 페이지에 스크롤 감도 조절 적용 */
+* {
+  scroll-behavior: smooth;
+}
+
+/* 마우스 휠 이벤트 감도 조절을 위한 CSS */
+body, html {
+  /* Chrome/Safari에서 스크롤 감도 조절 */
+  scroll-snap-type: none;
+  scroll-behavior: smooth;
+}
+
 /* Force video visibility */
 .video-always-visible {
   opacity: 1 !important;

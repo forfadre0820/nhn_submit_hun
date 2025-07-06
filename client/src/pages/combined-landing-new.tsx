@@ -14,6 +14,18 @@ export default function CombinedLanding() {
       setAnimationStarted(true);
     }, 500);
 
+    // 마우스 휠 감도 조절
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const delta = e.deltaY;
+      // 스크롤 감도를 1/3로 줄임
+      const reducedDelta = delta * 0.3;
+      window.scrollBy(0, reducedDelta);
+    };
+
+    // 휠 이벤트 리스너 추가
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
     // Calculate viewport scale and final position for fullscreen video
     const calculateScaleAndPosition = () => {
       const videoWidth = 230;
@@ -59,6 +71,7 @@ export default function CombinedLanding() {
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('wheel', handleWheel);
     };
   }, []);
 
