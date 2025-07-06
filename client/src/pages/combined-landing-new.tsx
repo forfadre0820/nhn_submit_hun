@@ -45,6 +45,34 @@ export default function CombinedLanding() {
     };
   }, []);
 
+  // Calculate transform values based on scroll position with dynamic positioning
+  const getTransformValue = (scrollPosition: number) => {
+    const scale = viewportScale;
+    const minScale = Math.min(6, scale);
+    
+    // Progressive positioning calculation
+    const getPositionOffset = (progress: number) => {
+      // Calculate dynamic positioning based on viewport scale and scroll progress
+      const baseOffset = 50; // Base 50% center offset
+      const additionalOffset = progress * (scale * 10); // Scale-based additional offset
+      return baseOffset + additionalOffset;
+    };
+    
+    if (scrollPosition < 100) return "translate(0px, 0px) scale(1)";
+    if (scrollPosition < 200) return "translate(0px, 0px) scale(1.5)";
+    if (scrollPosition < 300) return "translate(0px, 0px) scale(2.5)";
+    if (scrollPosition < 400) return "translate(0px, 0px) scale(4)";
+    if (scrollPosition < 500) return `translate(0px, 0px) scale(${minScale})`;
+    
+    // Dynamic positioning based on scroll progress
+    const progress = (scrollPosition - 500) / 200; // 0 to 1 over 200px range
+    const yOffset = getPositionOffset(progress);
+    
+    if (scrollPosition < 600) return `translate(-50%, -50%) scale(${scale})`;
+    if (scrollPosition < 700) return `translate(-50%, -${yOffset}%) scale(${scale})`;
+    return `translate(-50%, -${yOffset + 50}%) scale(${scale})`;
+  };
+
   // Latest works images data
   const latestWorks = [
     {
@@ -156,16 +184,19 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700], [
-                                "translate(0px, 0px) scale(1)",
-                                "translate(0px, 0px) scale(1.5)",
-                                "translate(0px, 0px) scale(2.5)",
-                                "translate(0px, 0px) scale(4)",
-                                "translate(0px, 0px) scale(" + Math.min(6, viewportScale) + ")",
-                                "translate(-50%, -50%) scale(" + viewportScale + ")",
-                                "translate(-50%, -100%) scale(" + viewportScale + ")",
-                                "translate(-50%, -200%) scale(" + viewportScale + ")"
-                              ]),
+                              transform: useTransform(scrollY, 
+                                [0, 100, 200, 300, 400, 500, 600, 700], 
+                                [
+                                  "translate(0px, 0px) scale(1)",
+                                  "translate(0px, 0px) scale(1.5)",
+                                  "translate(0px, 0px) scale(2.5)",
+                                  "translate(0px, 0px) scale(4)",
+                                  `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
+                                  `translate(-50%, -50%) scale(${viewportScale})`,
+                                  `translate(-50%, -${50 + (viewportScale * 5)}%) scale(${viewportScale})`,
+                                  `translate(-50%, -${100 + (viewportScale * 10)}%) scale(${viewportScale})`
+                                ]
+                              ),
                               position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
                               top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
