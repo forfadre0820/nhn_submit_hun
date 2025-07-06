@@ -15,14 +15,12 @@ export default function CombinedLanding() {
     // Calculate viewport scale for fullscreen video
     const calculateScale = () => {
       const videoWidth = 230;
-      const videoHeight = 87;
       const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
       
-      const scaleX = viewportWidth / videoWidth;
-      const scaleY = viewportHeight / videoHeight;
+      // Scale to match browser width exactly
+      const scale = viewportWidth / videoWidth;
       
-      setViewportScale(Math.max(scaleX, scaleY));
+      setViewportScale(scale);
     };
 
     calculateScale();
