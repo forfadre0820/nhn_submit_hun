@@ -5,13 +5,38 @@ import { ChevronDown } from "lucide-react";
 export default function CombinedLanding() {
   const { scrollY } = useScroll();
   const [animationStarted, setAnimationStarted] = useState(false);
+  const [viewportScale, setViewportScale] = useState(10);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationStarted(true);
     }, 500);
 
-    return () => clearTimeout(timer);
+    // Calculate viewport scale for fullscreen video
+    const calculateScale = () => {
+      const videoWidth = 230;
+      const videoHeight = 87;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      
+      const scaleX = viewportWidth / videoWidth;
+      const scaleY = viewportHeight / videoHeight;
+      
+      setViewportScale(Math.max(scaleX, scaleY));
+    };
+
+    calculateScale();
+    
+    const handleResize = () => {
+      calculateScale();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   // Latest works images data
@@ -131,9 +156,9 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
-                                "translate(-50%, -50%) scale(10)",
-                                "translate(-50%, -100%) scale(10)",
-                                "translate(-50%, -200%) scale(10)"
+                                `translate(-50%, -50%) scale(${viewportScale})`,
+                                `translate(-50%, -100%) scale(${viewportScale})`,
+                                `translate(-50%, -200%) scale(${viewportScale})`
                               ]),
                               position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
