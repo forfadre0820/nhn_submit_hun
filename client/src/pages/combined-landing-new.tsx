@@ -23,11 +23,22 @@ export default function CombinedLanding() {
       const scaleX = viewportWidth / videoWidth;
       const scaleY = viewportHeight / videoHeight;
       
-      // Use the larger scale to ensure full coverage of viewport
+      // Use the larger scale to ensure full coverage (crop to fill)
       const finalScale = Math.max(scaleX, scaleY);
       
-      // Ensure minimum scale for full coverage
-      setViewportScale(Math.max(finalScale, 8));
+      // Cap the scale based on viewport aspect ratio
+      // For square or tall screens, limit scaling to prevent distortion
+      const viewportRatio = viewportWidth / viewportHeight;
+      const videoRatio = videoWidth / videoHeight;
+      
+      let cappedScale = finalScale;
+      
+      // If viewport is square or taller than video ratio, cap the scale
+      if (viewportRatio <= videoRatio) {
+        cappedScale = Math.min(finalScale, scaleX * 1.1);
+      }
+      
+      setViewportScale(Math.max(cappedScale, 8));
     };
 
     calculateScale();
@@ -186,6 +197,7 @@ export default function CombinedLanding() {
                                 height: "87px",
                                 width: "230px",
                                 objectFit: "cover",
+                                objectPosition: "center",
                                 opacity: useTransform(scrollY, [700, 750], [1, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
