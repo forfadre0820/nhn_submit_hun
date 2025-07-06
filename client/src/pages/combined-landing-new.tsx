@@ -19,10 +19,15 @@ export default function CombinedLanding() {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
       
+      // Calculate scale to cover the entire viewport
       const scaleX = viewportWidth / videoWidth;
       const scaleY = viewportHeight / videoHeight;
       
-      setViewportScale(Math.max(scaleX, scaleY));
+      // Use the larger scale to ensure full coverage of viewport
+      const finalScale = Math.max(scaleX, scaleY);
+      
+      // Ensure minimum scale for full coverage
+      setViewportScale(Math.max(finalScale, 8));
     };
 
     calculateScale();
@@ -156,9 +161,9 @@ export default function CombinedLanding() {
                                 "translate(0px, 0px) scale(2.5)",
                                 "translate(0px, 0px) scale(4)",
                                 "translate(0px, 0px) scale(6)",
-                                `translate(-50%, -50%) scale(${viewportScale})`,
-                                `translate(-50%, -100%) scale(${viewportScale})`,
-                                `translate(-50%, -200%) scale(${viewportScale})`
+                                "translate(-50%, -50%) scale(" + viewportScale + ")",
+                                "translate(-50%, -100%) scale(" + viewportScale + ")",
+                                "translate(-50%, -200%) scale(" + viewportScale + ")"
                               ]),
                               position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
