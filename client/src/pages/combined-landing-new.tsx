@@ -1,91 +1,62 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 export default function CombinedLanding() {
   const { scrollY } = useScroll();
   const [animationStarted, setAnimationStarted] = useState(false);
 
-  // 스크롤 구성 설정
-  const SCROLL_CONFIG = {
-    VIDEO_START: 0,
-    VIDEO_SCALE_END: 400,
-    VIDEO_FIXED_START: 300,
-    VIDEO_FIXED_END: 600,
-    VIDEO_EXIT_START: 600,
-    VIDEO_EXIT_END: 800,
-    ROSS_SECTION_START: 400,
-    SCROLL_INDICATOR_FADE: 100
-  };
-
-  // 비디오 변환 애니메이션
-  const videoTransform = useTransform(
-    scrollY,
-    [0, 150, 300, 400, 500, 600],
-    [
-      "translate(-50%, -50%) scale(1)",
-      "translate(-50%, -50%) scale(2)",
-      "translate(-50%, -50%) scale(4)",
-      "translate(-50%, -50%) scale(6)",
-      "translate(-50%, -50%) scale(8)",
-      "translate(-50%, -50%) scale(10)"
-    ]
-  );
-
-  const videoPosition = useTransform(
-    scrollY,
-    [0, 300, 600, 800],
-    ["static", "fixed", "fixed", "absolute"]
-  );
-
-  const videoZIndex = useTransform(
-    scrollY,
-    [0, 300, 600, 800],
-    [1, 9999, 9999, 1]
-  );
-
-  const videoTop = useTransform(
-    scrollY,
-    [0, 300, 600, 800],
-    ["auto", "50%", "50%", "-100vh"]
-  );
-
-  const videoLeft = useTransform(
-    scrollY,
-    [0, 300, 600, 800],
-    ["auto", "50%", "50%", "50%"]
-  );
-
-  const videoOpacity = useTransform(
-    scrollY,
-    [0, 300, 700, 800],
-    [1, 1, 1, 0]
-  );
-
-  // 스크롤 인디케이터 애니메이션
-  const scrollIndicatorOpacity = useTransform(
-    scrollY,
-    [0, SCROLL_CONFIG.SCROLL_INDICATOR_FADE],
-    [1, 0]
-  );
-
-  // Ross Mason 섹션 애니메이션
-  const rossSectionY = useTransform(
-    scrollY,
-    [SCROLL_CONFIG.ROSS_SECTION_START, 600, 800],
-    ["100vh", "0vh", "0vh"]
-  );
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationStarted(true);
     }, 500);
+
     return () => clearTimeout(timer);
   }, []);
 
+  // Latest works images data
+  const latestWorks = [
+    {
+      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800",
+      bg: "from-blue-100 to-blue-200",
+      span: ""
+    },
+    {
+      image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800",
+      bg: "from-gray-100 to-gray-200",
+      span: ""
+    },
+    {
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1600",
+      bg: "from-orange-100 to-orange-200",
+      span: "row-span-2"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800",
+      bg: "from-green-100 to-green-200",
+      span: ""
+    },
+    {
+      image: "https://images.unsplash.com/photo-1556760544-74068565f05c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800",
+      bg: "from-pink-100 to-pink-200",
+      span: ""
+    },
+    {
+      image: "https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800",
+      bg: "from-yellow-100 to-yellow-200",
+      span: ""
+    },
+    {
+      image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800",
+      bg: "from-blue-100 to-blue-200",
+      span: ""
+    }
+  ];
+
   return (
-    <div className="bg-white text-black">
+    <div className="bg-white text-black scroll-smooth">
       {/* McCann Section */}
-      <section className="relative" style={{ height: "200vh" }}>
+      <section className="min-h-[180vh] relative">
         {/* Header */}
         <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
@@ -94,6 +65,7 @@ export default function CombinedLanding() {
                 <a href="#" className="text-base uppercase tracking-wide hover:opacity-75">Agence</a>
                 <a href="#" className="text-base uppercase tracking-wide hover:opacity-75">Creations</a>
               </nav>
+              
               <nav className="flex items-center space-x-6">
                 <a href="#" className="text-base uppercase tracking-wide hover:opacity-75">Equipe</a>
                 <a href="#" className="text-base uppercase tracking-wide hover:opacity-75">Contact</a>
@@ -103,96 +75,144 @@ export default function CombinedLanding() {
         </header>
 
         {/* Hero Section with Video */}
-        <div className="relative min-h-screen flex items-center justify-center pt-20">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
-                <div className="mb-4">Dites bonjour</div>
-                <div className="mb-4 flex items-center justify-center flex-wrap">
-                  <span>aux idées&nbsp;</span>
-                  
-                  {/* 비디오 컨테이너 - 수정된 부분 */}
-                  <motion.div
-                    className="inline-block relative"
-                    style={{
-                      width: "230px",
-                      height: "87px",
-                      position: videoPosition,
-                      zIndex: videoZIndex,
-                      top: videoTop,
-                      left: videoLeft,
-                      transform: videoTransform,
-                      transformOrigin: "center center"
-                    }}
-                  >
-                    <motion.video
-                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                      loop
-                      playsInline
-                      muted
-                      autoPlay
-                      crossOrigin="anonymous"
-                      style={{
-                        width: "230px",
-                        height: "87px",
-                        objectFit: "cover",
-                        opacity: videoOpacity,
-                        border: "2px solid rgba(255, 255, 255, 0.8)",
-                        borderRadius: "0"
-                      }}
-                    />
-                  </motion.div>
-                  
-                  <span>&nbsp;qui</span>
+        <div className="relative home__video" style={{ height: "100vh" }}>
+          <div className="min-h-screen flex items-center justify-center pt-20">
+            <div className="container mx-auto px-4">
+              <motion.div
+                className="text-center max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="sentence relative">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-12">
+                    <div className="mb-4">Dites bonjour</div>
+                    <div className="mb-4 home__hero__line">
+                      <div className="sentence">
+                        aux idées&nbsp;
+                        <motion.div 
+                          className="pin-spacer"
+                          style={{
+                            order: 0,
+                            placeSelf: "auto",
+                            gridArea: "auto",
+                            zIndex: 1,
+                            float: "none",
+                            flexShrink: 1,
+                            display: "inline-block",
+                            margin: "0px",
+                            inset: "auto",
+                            position: "relative",
+                            flexBasis: "auto",
+                            overflow: "visible",
+                            boxSizing: "border-box",
+                            width: "230px",
+                            height: "87px",
+                            padding: "0px"
+                          }}
+                        >
+                          <motion.div 
+                            className="home__hero__video"
+                            data-cursor="sound on"
+                            data-cursor-click="sound off"
+                            style={{
+                              translate: "none",
+                              rotate: "none",
+                              inset: "0px auto auto 0px",
+                              margin: "0px",
+                              maxWidth: "230px",
+                              width: "230px",
+                              maxHeight: "87px",
+                              height: "87px",
+                              padding: "0px",
+                              transform: useTransform(scrollY, [0, 60, 120, 180, 240, 299, 360], [
+                                "translate(0px, 0px) scale(1)",
+                                "translate(0px, 0px) scale(1.5)",
+                                "translate(0px, 0px) scale(2.5)",
+                                "translate(0px, 0px) scale(4)",
+                                "translate(0px, 0px) scale(6)",
+                                "translate(-50%, -50%) scale(10)",
+                                "translate(-50%, -200%) scale(10)"
+                              ]),
+                              position: useTransform(scrollY, [299, 300], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [299, 300], [1, 9999]),
+                              top: useTransform(scrollY, [299, 300], ["auto", "50%"]),
+                              left: useTransform(scrollY, [299, 300], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [350, 360], [1, 0]),
+                              transformOrigin: "center"
+                            }}
+                          >
+                            <motion.video
+                              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                              loop
+                              playsInline
+                              muted
+                              autoPlay
+                              crossOrigin="anonymous"
+                              style={{
+                                top: "0px",
+                                left: "0px",
+                                height: "87px",
+                                width: "230px",
+                                objectFit: "cover",
+                                opacity: useTransform(scrollY, [350, 360], [1, 0]),
+                                border: "2px solid rgba(255, 255, 255, 0.8)",
+                                borderRadius: "0"
+                              }}
+                            />
+                          </motion.div>
+                        </motion.div>
+                        &nbsp;qui
+                      </div>
+                    </div>
+                    <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
+                    <div>la vie des gens<span className="text-red-500">.</span></div>
+                  </h1>
                 </div>
-                <div className="mb-4">transforment <sup className="text-sm">(vraiment)</sup></div>
-                <div>la vie des gens<span className="text-red-500">.</span></div>
-              </h1>
-            </motion.div>
+              </motion.div>
+              
+              {/* Scroll Indicator */}
+              <motion.div 
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2, duration: 1 }}
+                style={{
+                  opacity: useTransform(scrollY, [0, 200], [1, 0])
+                }}
+              >
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  className="text-sm text-gray-600 mb-2"
+                >
+                  Scroll to explore
+                </motion.div>
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 }}
+                  className="w-6 h-10 border-2 border-gray-400 rounded-full mx-auto relative"
+                >
+                  <motion.div
+                    animate={{ y: [0, 16, 0] }}
+                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                    className="w-1 h-3 bg-gray-400 rounded-full absolute left-1/2 top-1 transform -translate-x-1/2"
+                  />
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
-        
-        {/* 스크롤 인디케이터 - 수정된 부분 */}
-        <motion.div 
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-center z-40"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          style={{ opacity: scrollIndicatorOpacity }}
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="text-sm text-white bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm mb-2"
-          >
-            Scroll to explore
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 }}
-            className="w-6 h-10 border-2 border-white bg-black/30 rounded-full mx-auto relative backdrop-blur-sm"
-          >
-            <motion.div
-              animate={{ y: [0, 16, 0] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="w-1 h-3 bg-white rounded-full absolute left-1/2 top-1 transform -translate-x-1/2"
-            />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Ross Mason Section */}
-      <motion.section
-        className="relative z-10 bg-white"
+      <motion.div 
+        className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [400, 600, 800], ["translateY(100vh)", "translateY(0vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [350, 360, 370, 380, 390, 400], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
+        {/* About Section - Ross Mason Style */}
         <motion.div 
           className="py-16 bg-white"
           initial={{ opacity: 0, y: 30 }}
@@ -557,7 +577,92 @@ export default function CombinedLanding() {
             </div>
           </div>
         </motion.div>
-      </motion.section>
+
+        {/* Latest Works Section */}
+        <motion.div 
+          className="py-16 bg-gray-50"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="container mx-auto px-4">
+            {/* Header */}
+            <div className="flex justify-between items-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-sm font-medium text-gray-500 tracking-wide mb-4">LATEST WORKS</h2>
+                <div className="w-16 h-px bg-gray-300"></div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-2xl font-light text-gray-400">02</span>
+              </motion.div>
+            </div>
+
+            {/* Works Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {latestWorks.map((work, index) => (
+                <motion.div
+                  key={index}
+                  className={`group cursor-pointer ${work.span}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.8 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className={`bg-gradient-to-br ${work.bg} ${work.span === 'row-span-2' ? 'aspect-[1/2]' : 'aspect-square'} rounded-lg overflow-hidden mb-4`}>
+                    <img
+                      src={work.image}
+                      alt={`Work ${index + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Footer */}
+        <footer className="py-12 bg-gray-900 text-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Ross Mason</h3>
+                <p className="text-gray-400 mb-6 text-base">
+                  3D Artist & Educator specializing in Cinema 4D and Redshift rendering techniques.
+                </p>
+              </div>
+              <div className="flex flex-col md:items-end">
+                <div className="flex space-x-6 mb-4">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-base">
+                    Patreon
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-base">
+                    Instagram
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-base">
+                    Twitter
+                  </a>
+                </div>
+                <p className="text-gray-500 text-sm">
+                  © 2024 Ross Mason. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </motion.div>
     </div>
   );
 }
