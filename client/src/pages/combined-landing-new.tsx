@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { Card3D } from "../components/Card3D";
 
 export default function CombinedLanding() {
   const { scrollY } = useScroll();
@@ -250,38 +251,44 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [480, 500, 520, 540, 560, 580], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"]),
-          mixBlendMode: 'multiply'
+          transform: useTransform(scrollY, [600, 620, 640, 660, 680, 700], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
-        {/* Learn 3D Wizardry Layout */}
-        <motion.div 
-          className="py-20 bg-white"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="container mx-auto px-8">
-            {/* Main Grid Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-              {/* Left Column - Main Title & About Teaching */}
-              <div className="space-y-12">
-                {/* Main Title */}
-                <div>
-                  <motion.h1 
-                    className="text-6xl md:text-8xl font-bold leading-tight mb-4"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                  >
-                    <span className="block">LEARN 3D</span>
-                    <span className="block italic font-light">wizardry</span>
-                  </motion.h1>
-                </div>
-                
-                {/* About Teaching Section */}
+        {/* Hero Section with Background Image and Text Overlay */}
+        <div className="relative min-h-screen">
+          {/* Background Image */}
+          <div className="relative h-96 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400"
+              alt="3D Animation Scene" 
+              className="w-full h-full object-cover"
+            />
+            
+            {/* Title Overlay with Blending */}
+            <div 
+              className="absolute inset-0 flex items-center justify-start pl-8 md:pl-16"
+              style={{ mixBlendMode: 'difference' }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <h1 className="text-6xl md:text-8xl font-bold leading-tight text-white">
+                  <span className="block">LEARN 3D</span>
+                  <span className="block italic font-light">wizardry</span>
+                </h1>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Content Section with White Background */}
+          <div className="bg-white">
+            <div className="container mx-auto px-8 py-16">
+              {/* Content Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+                {/* Left Column - About Teaching */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -289,7 +296,7 @@ export default function CombinedLanding() {
                   viewport={{ once: true }}
                 >
                   <div className="space-y-6">
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-lg leading-relaxed text-black">
                       I will be covering a whole range of content from<br/>
                       Lighting and Shading Techniques to Animation<br/>
                       and everything in-between.
@@ -297,46 +304,79 @@ export default function CombinedLanding() {
                     <div className="pt-4">
                       <a 
                         href="#" 
-                        className="text-lg underline hover:no-underline decoration-2 underline-offset-4"
+                        className="text-lg text-black underline hover:no-underline decoration-2 underline-offset-4"
                       >
                         Get a free patreon tutorial sample
                       </a>
                     </div>
                   </div>
                 </motion.div>
-              </div>
 
-              {/* Right Column - Image & Tools */}
-              <div className="space-y-8">
-                <motion.div 
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="bg-orange-100 p-6 rounded-lg">
-                    <img 
-                      src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" 
-                      alt="3D Render Sample" 
-                      className="w-full h-48 object-cover rounded"
-                    />
-                  </div>
-                </motion.div>
-                
+                {/* Right Column - C4D & Redshift */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-5xl md:text-6xl font-bold leading-tight">
-                    <span className="block">C4D &</span>
-                    <span className="block">REDSHIFT</span>
-                  </h2>
+                  <div className="flex flex-col items-center">
+                    <div className="bg-orange-100 p-6 rounded-lg mb-8">
+                      <img 
+                        src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200" 
+                        alt="C4D Render" 
+                        className="w-full h-32 object-cover rounded"
+                      />
+                    </div>
+                    
+                    <h2 className="text-5xl md:text-6xl font-bold leading-tight text-center text-black">
+                      <span className="block">C4D &</span>
+                      <span className="block">REDSHIFT</span>
+                    </h2>
+                  </div>
                 </motion.div>
               </div>
+
+              {/* From Studying Section */}
+              <motion.div
+                className="mb-16"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold uppercase mb-8 tracking-wide text-black">
+                  FROM STUDYING GRAPHIC DESIGN TO <em className="italic font-light">BECOMING</em> A SELF <em className="italic font-light">TAUGHT</em> 3D ARTIST
+                </h3>
+              </motion.div>
+
+              {/* 3D Cards Grid */}
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <Card3D 
+                  title="DARK CSS (3D UI)"
+                  description="Get all Html, CSS And JavaScript projects"
+                />
+                <Card3D 
+                  title="DARK CSS (3D UI)"
+                  description="Get all Html, CSS And JavaScript projects"
+                />
+                <Card3D 
+                  title="DARK CSS (3D UI)"
+                  description="Get all Html, CSS And JavaScript projects"
+                />
+                <Card3D 
+                  title="DARK CSS (3D UI)"
+                  description="Get all Html, CSS And JavaScript projects"
+                />
+              </motion.div>
             </div>
+          </div>
+        </div>
 
             {/* About Teaching Section - Compact Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">

@@ -263,3 +263,257 @@ video.video-always-visible {
     min-height: 100dvh;
   }
 }
+
+/* 3D Card Styles */
+.card-wrapper {
+  width: 290px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card-3d {
+  height: 100%;
+  border-radius: 50px;
+  background: #ecf0f1;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0) 40px 50px 25px -40px,
+              rgba(0, 0, 0, 0.2) 0px 25px 25px -5px;
+  position: relative;
+}
+
+.glass-overlay {
+  transform-style: preserve-3d;
+  position: absolute;
+  inset: 8px;
+  border-radius: 55px;
+  border-top-right-radius: 100%;
+  background: linear-gradient(0deg, #e9e9e9 0%, #fff 100%);
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-content {
+  padding: 100px 60px 0px 30px;
+  transform: translate3d(0, 0, 26px);
+}
+
+.card-title {
+  display: block;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.card-description {
+  display: block;
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.card-bottom {
+  padding: 10px 12px;
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translate3d(0, 0, 26px);
+}
+
+.view-more {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  width: 40%;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-more:hover {
+  transform: translate3d(0, 0, 10px);
+}
+
+.view-more-btn {
+  border: 0;
+  background: none;
+  font-weight: bolder;
+  color: #727272;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  transform-style: preserve-3d;
+}
+
+.social-btn {
+  width: 30px;
+  aspect-ratio: 1;
+  padding: 5px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) -10px 10px 20px 0;
+  cursor: pointer;
+}
+
+.logo-circles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-style: preserve-3d;
+}
+
+.circle {
+  display: block;
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) -10px 10px 20px 0px;
+  backdrop-filter: blur(5px);
+  background: rgba(225, 224, 224, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.circle-1 {
+  width: 170px;
+  transform: translate3d(0, 0, 20px);
+  top: 8px;
+  right: 8px;
+}
+
+.circle-2 {
+  width: 140px;
+  transform: translate3d(0, 0, 40px);
+  top: 10px;
+  right: 10px;
+  backdrop-filter: blur(1px);
+  transition-delay: 0.4s;
+}
+
+.circle-3 {
+  width: 110px;
+  transform: translate3d(0, 0, 60px);
+  top: 17px;
+  right: 17px;
+  transition-delay: 0.8s;
+}
+
+.circle-4 {
+  width: 80px;
+  transform: translate3d(0, 0, 80px);
+  top: 23px;
+  right: 23px;
+  transition-delay: 1.2s;
+}
+
+.circle-5 {
+  width: 50px;
+  transform: translate3d(0, 0, 100px);
+  top: 30px;
+  right: 30px;
+  display: grid;
+  place-content: center;
+  transition-delay: 1.6s;
+}
+
+.card-wrapper:hover .card-3d {
+  transform: rotate3d(1, 1, 0, 30deg);
+  box-shadow: rgba(61, 61, 61, 0.3) 30px 50px 25px -40px,
+              rgba(0, 0, 0, 0.1) 0px 25px 30px 0px;
+}
+
+.card-wrapper:hover .social-btn {
+  transform: translate3d(0, 0, 50px);
+  box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+}
+
+.card-wrapper:hover .circle-2 {
+  transform: translate3d(0, 0, 60px);
+}
+
+.card-wrapper:hover .circle-3 {
+  transform: translate3d(0, 0, 80px);
+}
+
+.card-wrapper:hover .circle-4 {
+  transform: translate3d(0, 0, 100px);
+}
+
+.card-wrapper:hover .circle-5 {
+  transform: translate3d(0, 0, 120px);
+}
+
+/* Responsive 3D Card */
+@media (max-width: 768px) {
+  .card-wrapper {
+    width: 240px;
+    height: 260px;
+  }
+  
+  .card-3d {
+    border-radius: 30px;
+  }
+  
+  .glass-overlay {
+    inset: 5px;
+    border-radius: 35px;
+  }
+  
+  .card-content {
+    padding: 80px 40px 0px 20px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-description {
+    font-size: 10px;
+    margin-top: 15px;
+  }
+  
+  .circle-1 {
+    width: 120px;
+    top: 6px;
+    right: 6px;
+  }
+  
+  .circle-2 {
+    width: 100px;
+    top: 8px;
+    right: 8px;
+  }
+  
+  .circle-3 {
+    width: 80px;
+    top: 13px;
+    right: 13px;
+  }
+  
+  .circle-4 {
+    width: 60px;
+    top: 18px;
+    right: 18px;
+  }
+  
+  .circle-5 {
+    width: 40px;
+    top: 22px;
+    right: 22px;
+  }
+}
