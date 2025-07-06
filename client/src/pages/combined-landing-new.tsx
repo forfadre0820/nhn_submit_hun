@@ -28,10 +28,9 @@ export default function CombinedLanding() {
       const finalScale = scaleX;
       setViewportScale(Math.max(finalScale, Math.min(8, scaleX)));
       
-      // Calculate final position based on viewport size
-      // 최종 목표 포지션을 뷰포트 크기에 맞춰 계산
-      const finalYPosition = -200 - (finalScale * 2); // 스케일이 클수록 더 위로
-      setFinalPosition({ x: -50, y: finalYPosition });
+      // 화면 중앙은 항상 -50%, -50%
+      // 최종 위치는 화면 중앙에서 약간 위로만 이동
+      setFinalPosition({ x: -50, y: -60 }); // 화면 중앙에서 10% 위로
     };
 
     calculateScaleAndPosition();
@@ -169,9 +168,9 @@ export default function CombinedLanding() {
                                   "translate(0px, 0px) scale(2.5)",
                                   "translate(0px, 0px) scale(4)",
                                   `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
-                                  `translate(-50%, -50%) scale(${viewportScale})`,
-                                  `translate(-50%, ${-50 - (viewportScale * 3)}%) scale(${viewportScale})`,
-                                  `translate(-50%, ${-50 - (viewportScale * 6)}%) scale(${viewportScale})`
+                                  `translate(-50%, -50%) scale(${viewportScale})`, // 화면 정중앙
+                                  `translate(-50%, -55%) scale(${viewportScale})`, // 중앙에서 5% 위로
+                                  `translate(-50%, -60%) scale(${viewportScale})`  // 중앙에서 10% 위로
                                 ]
                               ),
                               position: useTransform(scrollY, [249, 250], ["static", "fixed"]),
