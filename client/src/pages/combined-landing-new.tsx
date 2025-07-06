@@ -56,7 +56,7 @@ export default function CombinedLanding() {
   return (
     <div className="bg-white text-black scroll-smooth">
       {/* McCann Section */}
-      <section className="min-h-[120vh] relative">
+      <section className="min-h-[100vh] relative">
         {/* Header */}
         <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white/80 backdrop-blur-md rounded-full px-8 py-3 shadow-lg">
@@ -215,7 +215,7 @@ export default function CombinedLanding() {
       >
         {/* About Section - Ross Mason Style */}
         <motion.div 
-          className="py-8 bg-white"
+          className="py-4 bg-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -223,7 +223,7 @@ export default function CombinedLanding() {
         >
           <div className="container mx-auto px-4">
             {/* Main Title */}
-            <div className="mb-8">
+            <div className="mb-4">
               <motion.h2 
                 className="text-3xl md:text-5xl font-bold uppercase leading-tight"
                 initial={{ opacity: 0, y: 50 }}
@@ -245,7 +245,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* About Teaching Section - Compact Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
               <motion.div 
                 className="lg:col-span-3"
                 initial={{ opacity: 0, x: -30 }}
@@ -469,7 +469,7 @@ export default function CombinedLanding() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-xs uppercase tracking-widest text-gray-600 mb-6">[Services list]</h4>
+                <h4 className="text-xs uppercase tracking-widest text-gray-600 mb-3">[Services list]</h4>
                 
                 <div className="space-y-3">
                   <motion.div 
@@ -635,17 +635,17 @@ export default function CombinedLanding() {
         </motion.div>
 
         {/* Footer */}
-        <footer className="py-12 bg-gray-900 text-white">
+        <footer className="py-8 bg-gray-900 text-white">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-2xl font-bold mb-4">Ross Mason</h3>
-                <p className="text-gray-400 mb-6 text-base">
+                <h3 className="text-2xl font-bold mb-2">Ross Mason</h3>
+                <p className="text-gray-400 mb-4 text-base">
                   3D Artist & Educator specializing in Cinema 4D and Redshift rendering techniques.
                 </p>
               </div>
               <div className="flex flex-col md:items-end">
-                <div className="flex space-x-6 mb-4">
+                <div className="flex space-x-6 mb-2">
                   <a href="#" className="text-gray-400 hover:text-white transition-colors text-base">
                     Patreon
                   </a>
