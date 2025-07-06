@@ -6,14 +6,15 @@ export default function CombinedLanding() {
   const { scrollY } = useScroll();
   const [animationStarted, setAnimationStarted] = useState(false);
   const [viewportScale, setViewportScale] = useState(10);
+  const [finalPosition, setFinalPosition] = useState({ x: -50, y: -200 });
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationStarted(true);
     }, 500);
 
-    // Calculate viewport scale for fullscreen video
-    const calculateScale = () => {
+    // Calculate viewport scale and final position for fullscreen video
+    const calculateScaleAndPosition = () => {
       const videoWidth = 230;
       const videoHeight = 87;
       const viewportWidth = window.innerWidth;
@@ -24,17 +25,19 @@ export default function CombinedLanding() {
       const scaleY = viewportHeight / videoHeight;
       
       // Use scaleX (width-based) as the primary scale
-      // This ensures video never gets wider than browser width
       const finalScale = scaleX;
-      
-      // Ensure minimum scale for visibility but don't exceed width limit
       setViewportScale(Math.max(finalScale, Math.min(8, scaleX)));
+      
+      // Calculate final position based on viewport size
+      // 최종 목표 포지션을 뷰포트 크기에 맞춰 계산
+      const finalYPosition = -200 - (finalScale * 2); // 스케일이 클수록 더 위로
+      setFinalPosition({ x: -50, y: finalYPosition });
     };
 
-    calculateScale();
+    calculateScaleAndPosition();
     
     const handleResize = () => {
-      calculateScale();
+      calculateScaleAndPosition();
     };
 
     window.addEventListener('resize', handleResize);
@@ -45,33 +48,7 @@ export default function CombinedLanding() {
     };
   }, []);
 
-  // Calculate transform values based on scroll position with dynamic positioning
-  const getTransformValue = (scrollPosition: number) => {
-    const scale = viewportScale;
-    const minScale = Math.min(6, scale);
-    
-    // Progressive positioning calculation
-    const getPositionOffset = (progress: number) => {
-      // Calculate dynamic positioning based on viewport scale and scroll progress
-      const baseOffset = 50; // Base 50% center offset
-      const additionalOffset = progress * (scale * 10); // Scale-based additional offset
-      return baseOffset + additionalOffset;
-    };
-    
-    if (scrollPosition < 100) return "translate(0px, 0px) scale(1)";
-    if (scrollPosition < 200) return "translate(0px, 0px) scale(1.5)";
-    if (scrollPosition < 300) return "translate(0px, 0px) scale(2.5)";
-    if (scrollPosition < 400) return "translate(0px, 0px) scale(4)";
-    if (scrollPosition < 500) return `translate(0px, 0px) scale(${minScale})`;
-    
-    // Dynamic positioning based on scroll progress
-    const progress = (scrollPosition - 500) / 200; // 0 to 1 over 200px range
-    const yOffset = getPositionOffset(progress);
-    
-    if (scrollPosition < 600) return `translate(-50%, -50%) scale(${scale})`;
-    if (scrollPosition < 700) return `translate(-50%, -${yOffset}%) scale(${scale})`;
-    return `translate(-50%, -${yOffset + 50}%) scale(${scale})`;
-  };
+
 
   // Latest works images data
   const latestWorks = [
@@ -188,13 +165,13 @@ export default function CombinedLanding() {
                                 [0, 100, 200, 300, 400, 500, 600, 700], 
                                 [
                                   "translate(0px, 0px) scale(1)",
-                                  "translate(0px, 0px) scale(1.5)",
+                                  "translate(0px, 0px) scale(1.5)", 
                                   "translate(0px, 0px) scale(2.5)",
                                   "translate(0px, 0px) scale(4)",
                                   `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
                                   `translate(-50%, -50%) scale(${viewportScale})`,
-                                  `translate(-50%, -${50 + (viewportScale * 5)}%) scale(${viewportScale})`,
-                                  `translate(-50%, -${100 + (viewportScale * 10)}%) scale(${viewportScale})`
+                                  `translate(${finalPosition.x}%, ${finalPosition.y * 0.5}%) scale(${viewportScale})`,
+                                  `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
                                 ]
                               ),
                               position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
