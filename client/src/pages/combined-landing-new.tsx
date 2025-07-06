@@ -250,8 +250,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [480, 500, 520, 540, 560, 580], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"]),
-          mixBlendMode: 'multiply'
+          transform: useTransform(scrollY, [600, 620, 640, 660, 680, 700], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* Learn 3D Wizardry Layout */}
@@ -276,8 +275,24 @@ export default function CombinedLanding() {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                   >
-                    <span className="block">LEARN 3D</span>
-                    <span className="block italic font-light">wizardry</span>
+                    <motion.span 
+                      className="block"
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      LEARN 3D
+                    </motion.span>
+                    <motion.span 
+                      className="block italic font-light"
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    >
+                      wizardry
+                    </motion.span>
                   </motion.h1>
                 </div>
                 
@@ -289,18 +304,28 @@ export default function CombinedLanding() {
                   viewport={{ once: true }}
                 >
                   <div className="space-y-6">
-                    <p className="text-lg leading-relaxed">
+                    <motion.p 
+                      className="text-lg leading-relaxed"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
                       I will be covering a whole range of content from<br/>
                       Lighting and Shading Techniques to Animation<br/>
                       and everything in-between.
-                    </p>
+                    </motion.p>
                     <div className="pt-4">
-                      <a 
+                      <motion.a 
                         href="#" 
                         className="text-lg underline hover:no-underline decoration-2 underline-offset-4"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        viewport={{ once: true }}
                       >
                         Get a free patreon tutorial sample
-                      </a>
+                      </motion.a>
                     </div>
                   </div>
                 </motion.div>
@@ -322,6 +347,15 @@ export default function CombinedLanding() {
                       className="w-full h-48 object-cover rounded"
                     />
                   </div>
+                  <motion.div 
+                    className="mt-4 text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <p className="text-lg font-medium">3D Render Sample</p>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div
@@ -331,8 +365,24 @@ export default function CombinedLanding() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-5xl md:text-6xl font-bold leading-tight">
-                    <span className="block">C4D &</span>
-                    <span className="block">REDSHIFT</span>
+                    <motion.span 
+                      className="block"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      C4D &
+                    </motion.span>
+                    <motion.span 
+                      className="block"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.7 }}
+                      viewport={{ once: true }}
+                    >
+                      REDSHIFT
+                    </motion.span>
                   </h2>
                 </motion.div>
               </div>
