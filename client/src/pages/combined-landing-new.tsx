@@ -7,8 +7,6 @@ export default function CombinedLanding() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [viewportScale, setViewportScale] = useState(10);
   const [finalPosition, setFinalPosition] = useState({ x: -50, y: -200 });
-  const [isPortrait, setIsPortrait] = useState(false);
-  const [videoAspectRatio, setVideoAspectRatio] = useState({ width: 230, height: 87 });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,28 +15,22 @@ export default function CombinedLanding() {
 
     // Calculate viewport scale and final position for fullscreen video
     const calculateScaleAndPosition = () => {
+      const videoWidth = 230;
+      const videoHeight = 87;
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
-      const isPortraitMode = viewportWidth < viewportHeight;
-      
-      setIsPortrait(isPortraitMode);
-      
-      // 세로 모드일 때는 정사각형 비디오 사용
-      const videoWidth = isPortraitMode ? 150 : 230;
-      const videoHeight = isPortraitMode ? 150 : 87;
-      
-      setVideoAspectRatio({ width: videoWidth, height: videoHeight });
       
       // Calculate scale to fit viewport
       const scaleX = viewportWidth / videoWidth;
       const scaleY = viewportHeight / videoHeight;
       
-      // Use appropriate scale based on orientation
-      const finalScale = isPortraitMode ? Math.min(scaleX, scaleY) : scaleX;
-      setViewportScale(Math.max(finalScale, Math.min(8, finalScale)));
+      // Use scaleX (width-based) as the primary scale
+      const finalScale = scaleX;
+      setViewportScale(Math.max(finalScale, Math.min(8, scaleX)));
       
       // Calculate final position based on viewport size
-      const finalYPosition = isPortraitMode ? -100 : -200 - (finalScale * 2);
+      // 최종 목표 포지션을 뷰포트 크기에 맞춰 계산
+      const finalYPosition = -200 - (finalScale * 2); // 스케일이 클수록 더 위로
       setFinalPosition({ x: -50, y: finalYPosition });
     };
 
@@ -164,57 +156,29 @@ export default function CombinedLanding() {
                               rotate: "none",
                               inset: "0px auto auto 0px",
                               margin: "0px",
-                              maxWidth: `${videoAspectRatio.width}px`,
-                              width: `${videoAspectRatio.width}px`,
-                              maxHeight: `${videoAspectRatio.height}px`,
-                              height: `${videoAspectRatio.height}px`,
+                              maxWidth: "230px",
+                              width: "230px",
+                              maxHeight: "87px",
+                              height: "87px",
                               padding: "0px",
                               transform: useTransform(scrollY, 
-                                isPortrait 
-                                  ? [0, 80, 160, 240, 320, 400, 480, 560]
-                                  : [0, 100, 200, 300, 400, 500, 600, 700],
-                                isPortrait 
-                                  ? [
-                                      "translate(0px, 0px) scale(1)",
-                                      "translate(0px, 0px) scale(1.5)", 
-                                      "translate(0px, 0px) scale(2.5)",
-                                      "translate(0px, 0px) scale(4)",
-                                      `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
-                                      `translate(-50%, -50%) scale(${viewportScale})`,
-                                      `translate(-50%, -75%) scale(${viewportScale})`,
-                                      `translate(-50%, -100%) scale(${viewportScale})`
-                                    ]
-                                  : [
-                                      "translate(0px, 0px) scale(1)",
-                                      "translate(0px, 0px) scale(1.5)", 
-                                      "translate(0px, 0px) scale(2.5)",
-                                      "translate(0px, 0px) scale(4)",
-                                      `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
-                                      `translate(-50%, -50%) scale(${viewportScale})`,
-                                      `translate(-50%, -125%) scale(${viewportScale})`,
-                                      `translate(-50%, -200%) scale(${viewportScale})`
-                                    ]
+                                [0, 100, 200, 300, 400, 500, 600, 700], 
+                                [
+                                  "translate(0px, 0px) scale(1)",
+                                  "translate(0px, 0px) scale(1.5)", 
+                                  "translate(0px, 0px) scale(2.5)",
+                                  "translate(0px, 0px) scale(4)",
+                                  `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
+                                  `translate(-50%, -50%) scale(${viewportScale})`,
+                                  `translate(${finalPosition.x}%, ${finalPosition.y * 0.5}%) scale(${viewportScale})`,
+                                  `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
+                                ]
                               ),
-                              position: useTransform(scrollY, 
-                                isPortrait ? [399, 400] : [499, 500], 
-                                ["static", "fixed"]
-                              ),
-                              zIndex: useTransform(scrollY, 
-                                isPortrait ? [399, 400] : [499, 500], 
-                                [1, 9999]
-                              ),
-                              top: useTransform(scrollY, 
-                                isPortrait ? [399, 400] : [499, 500], 
-                                ["auto", "50%"]
-                              ),
-                              left: useTransform(scrollY, 
-                                isPortrait ? [399, 400] : [499, 500], 
-                                ["auto", "50%"]
-                              ),
-                              opacity: useTransform(scrollY, 
-                                isPortrait ? [560, 640] : [700, 800], 
-                                [1, 0]
-                              ),
+                              position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
+                              top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [700, 800], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -228,14 +192,11 @@ export default function CombinedLanding() {
                               style={{
                                 top: "0px",
                                 left: "0px",
-                                height: `${videoAspectRatio.height}px`,
-                                width: `${videoAspectRatio.width}px`,
-                                objectFit: isPortrait ? "cover" : "cover",
+                                height: "87px",
+                                width: "230px",
+                                objectFit: "cover",
                                 objectPosition: "center",
-                                opacity: useTransform(scrollY, 
-                                  isPortrait ? [560, 640] : [700, 800], 
-                                  [1, 0]
-                                ),
+                                opacity: useTransform(scrollY, [700, 800], [1, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
@@ -258,10 +219,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, 
-                    isPortrait ? [0, 160] : [0, 200], 
-                    [1, 0]
-                  )
+                  opacity: useTransform(scrollY, [0, 200], [1, 0])
                 }}
               >
                 <motion.div
@@ -292,12 +250,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, 
-            isPortrait 
-              ? [480, 500, 520, 540, 560, 580]  // 모바일: 20px 간격으로 더 세밀하게
-              : [600, 630, 660, 690, 720, 750], // 데스크톱: 30px 간격
-            ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"]
-          )
+          transform: useTransform(scrollY, [600, 630, 660, 690, 720, 750], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
