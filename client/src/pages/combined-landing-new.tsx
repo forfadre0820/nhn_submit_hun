@@ -173,16 +173,23 @@ export default function CombinedLanding() {
                                 isPortrait 
                                   ? [0, 80, 160, 240, 320, 400, 480, 560]  // 모바일: 더 세밀한 80px 간격
                                   : [0, 100, 200, 300, 400, 500, 600, 700], // 데스크톱: 100px 간격
-                                [
-                                  "translate(0px, 0px) scale(1)",
-                                  "translate(0px, 0px) scale(1.5)", 
-                                  "translate(0px, 0px) scale(2.5)",
-                                  "translate(0px, 0px) scale(4)",
-                                  `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
-                                  `translate(-50%, -50%) scale(${viewportScale})`,
-                                  `translate(${finalPosition.x}%, ${finalPosition.y * 0.5}%) scale(${viewportScale})`,
-                                  `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
-                                ]
+                                (value) => {
+                                  const scrollRanges = isPortrait 
+                                    ? [0, 80, 160, 240, 320, 400, 480, 560]
+                                    : [0, 100, 200, 300, 400, 500, 600, 700];
+                                  
+                                  if (value <= scrollRanges[0]) return "translate(0px, 0px) scale(1)";
+                                  if (value <= scrollRanges[1]) return "translate(0px, 0px) scale(1.5)";
+                                  if (value <= scrollRanges[2]) return "translate(0px, 0px) scale(2.5)";
+                                  if (value <= scrollRanges[3]) return "translate(0px, 0px) scale(4)";
+                                  if (value <= scrollRanges[4]) return `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`;
+                                  if (value <= scrollRanges[5]) return `translate(-50%, -50%) scale(${viewportScale})`;
+                                  
+                                  // 마지막 두 단계에서 목표 지점으로 직선 보간
+                                  const progress = (value - scrollRanges[5]) / (scrollRanges[7] - scrollRanges[5]);
+                                  const currentY = -50 + (finalPosition.y + 50) * progress;
+                                  return `translate(-50%, ${currentY}%) scale(${viewportScale})`;
+                                }
                               ),
                               position: useTransform(scrollY, 
                                 isPortrait ? [399, 400] : [499, 500], 
