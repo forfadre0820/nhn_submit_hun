@@ -15,12 +15,14 @@ export default function CombinedLanding() {
     // Calculate viewport scale for fullscreen video
     const calculateScale = () => {
       const videoWidth = 230;
+      const videoHeight = 87;
       const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
       
-      // Scale to match browser width exactly
-      const scale = viewportWidth / videoWidth;
+      const scaleX = viewportWidth / videoWidth;
+      const scaleY = viewportHeight / videoHeight;
       
-      setViewportScale(scale);
+      setViewportScale(Math.max(scaleX, scaleY));
     };
 
     calculateScale();
@@ -148,34 +150,19 @@ export default function CombinedLanding() {
                               maxHeight: "87px",
                               height: "87px",
                               padding: "0px",
-                              transform: useTransform(scrollY, [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 600, 700], [
+                              transform: useTransform(scrollY, [0, 100, 200, 300, 400, 500, 600, 700], [
                                 "translate(0px, 0px) scale(1)",
-                                "translate(0px, 0px) scale(1.1)",
-                                "translate(0px, 0px) scale(1.2)",
-                                "translate(0px, 0px) scale(1.3)",
-                                "translate(0px, 0px) scale(1.4)",
                                 "translate(0px, 0px) scale(1.5)",
-                                "translate(0px, 0px) scale(1.7)",
-                                "translate(0px, 0px) scale(1.9)",
-                                "translate(0px, 0px) scale(2.1)",
-                                "translate(0px, 0px) scale(2.3)",
                                 "translate(0px, 0px) scale(2.5)",
-                                "translate(0px, 0px) scale(2.8)",
-                                "translate(0px, 0px) scale(3.1)",
-                                "translate(0px, 0px) scale(3.4)",
-                                "translate(0px, 0px) scale(3.7)",
-                                "translate(0px, 0px) scale(4.0)",
-                                "translate(0px, 0px) scale(4.5)",
-                                "translate(0px, 0px) scale(5.0)",
-                                "translate(0px, 0px) scale(5.5)",
-                                "translate(0px, 0px) scale(6.0)",
-                                "translate(-50%, -50%) scale(12)",
-                                "translate(-50%, -50%) scale(12)",
-                                "translate(-50%, -50%) scale(12)"
+                                "translate(0px, 0px) scale(4)",
+                                "translate(0px, 0px) scale(6)",
+                                `translate(-50%, -50%) scale(${viewportScale})`,
+                                `translate(-50%, -100%) scale(${viewportScale})`,
+                                `translate(-50%, -200%) scale(${viewportScale})`
                               ]),
                               position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
                               zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
-                              top: useTransform(scrollY, [499, 500, 600, 650, 700], ["auto", "50%", "50%", "25%", "0%"]),
+                              top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
                               left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
                               opacity: useTransform(scrollY, [700, 750], [1, 0]),
                               transformOrigin: "center"
