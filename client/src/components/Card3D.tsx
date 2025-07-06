@@ -38,22 +38,10 @@ export const Card3D: React.FC<Card3DProps> = ({ title, description, className = 
           <p className="card-description">{description}</p>
         </div>
         
-        {/* Bottom section */}
+        {/* Bottom section - simplified */}
         <div className="card-bottom">
-          <div className="social-buttons">
-            <button className="social-btn">
-              <Instagram className="w-4 h-4 text-white" />
-            </button>
-            <button className="social-btn">
-              <Twitter className="w-4 h-4 text-white" />
-            </button>
-            <button className="social-btn">
-              <Github className="w-4 h-4 text-white" />
-            </button>
-          </div>
-          <div className="view-more">
-            <button className="view-more-btn">view more</button>
-            <ChevronDown className="w-4 h-4 text-gray-500" />
+          <div className="flex justify-center w-full">
+            <div className="h-px bg-gray-300 w-16"></div>
           </div>
         </div>
       </div>
