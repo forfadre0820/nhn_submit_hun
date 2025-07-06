@@ -215,7 +215,7 @@ export default function CombinedLanding() {
       >
         {/* About Section - Ross Mason Style */}
         <motion.div 
-          className="py-16 bg-white"
+          className="py-8 bg-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -223,9 +223,9 @@ export default function CombinedLanding() {
         >
           <div className="container mx-auto px-4">
             {/* Main Title */}
-            <div className="mb-16">
+            <div className="mb-8">
               <motion.h2 
-                className="text-4xl md:text-6xl font-bold uppercase leading-tight"
+                className="text-3xl md:text-5xl font-bold uppercase leading-tight"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -234,7 +234,7 @@ export default function CombinedLanding() {
                 3D ARTIST
               </motion.h2>
               <motion.h2 
-                className="text-4xl md:text-6xl font-light italic leading-tight"
+                className="text-3xl md:text-5xl font-light italic leading-tight"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -245,7 +245,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* About Teaching Section - Compact Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
               <motion.div 
                 className="lg:col-span-3"
                 initial={{ opacity: 0, x: -30 }}
@@ -461,7 +461,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* Services Section - Compact */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
               <motion.div 
                 className="lg:col-span-5"
                 initial={{ opacity: 0, x: -30 }}
