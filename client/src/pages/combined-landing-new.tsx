@@ -178,7 +178,7 @@ export default function CombinedLanding() {
                               zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
                               top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
                               left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [700, 750], [1, 0]),
+                              opacity: useTransform(scrollY, [700, 800], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -196,7 +196,7 @@ export default function CombinedLanding() {
                                 width: "230px",
                                 objectFit: "cover",
                                 objectPosition: "center",
-                                opacity: useTransform(scrollY, [700, 750], [1, 0]),
+                                opacity: useTransform(scrollY, [700, 800], [1, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
@@ -250,142 +250,38 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [600, 620, 640, 660, 680, 700], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [600, 630, 660, 690, 720, 750], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
-        {/* Learn 3D Wizardry Layout */}
+        {/* About Section - Ross Mason Style */}
         <motion.div 
-          className="py-20 bg-white"
+          className="py-4 bg-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-8">
-            {/* Main Grid Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-              {/* Left Column - Main Title & About Teaching */}
-              <div className="space-y-12">
-                {/* Main Title */}
-                <div>
-                  <motion.h1 
-                    className="text-6xl md:text-8xl font-bold leading-tight mb-4"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.span 
-                      className="block"
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      LEARN 3D
-                    </motion.span>
-                    <motion.span 
-                      className="block italic font-light"
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.2 }}
-                      viewport={{ once: true }}
-                    >
-                      wizardry
-                    </motion.span>
-                  </motion.h1>
-                </div>
-                
-                {/* About Teaching Section */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="space-y-6">
-                    <motion.p 
-                      className="text-lg leading-relaxed"
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      I will be covering a whole range of content from<br/>
-                      Lighting and Shading Techniques to Animation<br/>
-                      and everything in-between.
-                    </motion.p>
-                    <div className="pt-4">
-                      <motion.a 
-                        href="#" 
-                        className="text-lg underline hover:no-underline decoration-2 underline-offset-4"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        viewport={{ once: true }}
-                      >
-                        Get a free patreon tutorial sample
-                      </motion.a>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Right Column - Image & Tools */}
-              <div className="space-y-8">
-                <motion.div 
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="bg-orange-100 p-6 rounded-lg">
-                    <img 
-                      src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" 
-                      alt="3D Render Sample" 
-                      className="w-full h-48 object-cover rounded"
-                    />
-                  </div>
-                  <motion.div 
-                    className="mt-4 text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <p className="text-lg font-medium">3D Render Sample</p>
-                  </motion.div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <h2 className="text-5xl md:text-6xl font-bold leading-tight">
-                    <motion.span 
-                      className="block"
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      C4D &
-                    </motion.span>
-                    <motion.span 
-                      className="block"
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.7 }}
-                      viewport={{ once: true }}
-                    >
-                      REDSHIFT
-                    </motion.span>
-                  </h2>
-                </motion.div>
-              </div>
+          <div className="container mx-auto px-4">
+            {/* Main Title */}
+            <div className="mb-4">
+              <motion.h2 
+                className="text-3xl md:text-5xl font-bold uppercase leading-tight"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                3D ARTIST
+              </motion.h2>
+              <motion.h2 
+                className="text-3xl md:text-5xl font-light italic leading-tight"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                passionate
+              </motion.h2>
             </div>
 
             {/* About Teaching Section - Compact Layout */}
