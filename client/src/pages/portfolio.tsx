@@ -17,6 +17,7 @@ import {
   Github,
   Linkedin
 } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function Portfolio() {
   const [currentSection, setCurrentSection] = useState('home');
@@ -317,36 +318,42 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle>온오프라인 실시간 행사/교육 기획·진행</CardTitle>
-                    <Badge>PROJECT 1</Badge>
-                  </div>
-                  <CardDescription>
-                    2023.09 - 2024.11 (14개월)
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    콘텐츠 제작 역량을 기반으로 실시간 기술 이슈 대응과 진행 전반으로 NPS 4.5+ 달성
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2">
-                      <Award className="w-4 h-4 text-blue-500" />
-                      <span className="text-sm">NPS 4.5+ 달성</span>
+              <Link href="/project/online-education">
+                <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle>온오프라인 실시간 행사/교육 기획·진행</CardTitle>
+                      <Badge>PROJECT 1</Badge>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4 text-green-500" />
-                      <span className="text-sm">50+ 행사 진행</span>
+                    <CardDescription>
+                      2023.09 - 2024.11 (14개월)
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 dark:text-slate-300 mb-4">
+                      콘텐츠 제작 역량을 기반으로 실시간 기술 이슈 대응과 진행 전반으로 NPS 4.5+ 달성
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Award className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm">NPS 4.5+ 달성</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-4 h-4 text-green-500" />
+                        <span className="text-sm">50+ 행사 진행</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Monitor className="w-4 h-4 text-purple-500" />
+                        <span className="text-sm">실시간 기술 대응</span>
+                      </div>
+                      <div className="flex items-center space-x-2 mt-4">
+                        <ExternalLink className="w-4 h-4 text-gray-500" />
+                        <span className="text-sm text-gray-500">자세히 보기</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Monitor className="w-4 h-4 text-purple-500" />
-                      <span className="text-sm">실시간 기술 대응</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
 
             {/* 라이브 현장 직접 진행 & 밴드 PM */}
@@ -355,36 +362,42 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle>라이브 현장 직접 진행 & 밴드 PM</CardTitle>
-                    <Badge>PROJECT 2</Badge>
-                  </div>
-                  <CardDescription>
-                    제작 전반을 기반으로 밴드 디자인 · 송출로 모든 플랫폼 조응조율
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    현장 경험을 바탕으로 한 전체적인 제작 관리 및 팀 리더십
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2">
-                      <Camera className="w-4 h-4 text-blue-500" />
-                      <span className="text-sm">밴드 통합 디자인</span>
+              <Link href="/project/live-streaming">
+                <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle>라이브 현장 직접 진행 & 밴드 PM</CardTitle>
+                      <Badge>PROJECT 2</Badge>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Monitor className="w-4 h-4 text-green-500" />
-                      <span className="text-sm">영상 편집</span>
+                    <CardDescription>
+                      제작 전반을 기반으로 밴드 디자인 · 송출로 모든 플랫폼 조응조율
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 dark:text-slate-300 mb-4">
+                      현장 경험을 바탕으로 한 전체적인 제작 관리 및 팀 리더십
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Camera className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm">밴드 통합 디자인</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Monitor className="w-4 h-4 text-green-500" />
+                        <span className="text-sm">영상 편집</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Code className="w-4 h-4 text-purple-500" />
+                        <span className="text-sm">통합 플랫폼 관리</span>
+                      </div>
+                      <div className="flex items-center space-x-2 mt-4">
+                        <ExternalLink className="w-4 h-4 text-gray-500" />
+                        <span className="text-sm text-gray-500">자세히 보기</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Code className="w-4 h-4 text-purple-500" />
-                      <span className="text-sm">통합 플랫폼 관리</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
 
             {/* 삼성물산 고객기반 진단 */}
@@ -393,36 +406,42 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle>삼성물산 고객기반 진단</CardTitle>
-                    <Badge>PROJECT 3</Badge>
-                  </div>
-                  <CardDescription>
-                    2023.02 - 2023.08 (6개월)
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    업계 최고 수준의 콘텐츠 회사 성능 분석하고 역량 솔루션 제공
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2">
-                      <Award className="w-4 h-4 text-blue-500" />
-                      <span className="text-sm">40% 예산 절감</span>
+              <Link href="/project/samsung-project">
+                <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle>삼성물산 고객기반 진단</CardTitle>
+                      <Badge>PROJECT 3</Badge>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4 text-green-500" />
-                      <span className="text-sm">5초 내 이탈 방지</span>
+                    <CardDescription>
+                      2023.02 - 2023.08 (6개월)
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 dark:text-slate-300 mb-4">
+                      업계 최고 수준의 콘텐츠 회사 성능 분석하고 역량 솔루션 제공
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Award className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm">40% 예산 절감</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-4 h-4 text-green-500" />
+                        <span className="text-sm">5초 내 이탈 방지</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Monitor className="w-4 h-4 text-purple-500" />
+                        <span className="text-sm">Screen Life 포맷 구현</span>
+                      </div>
+                      <div className="flex items-center space-x-2 mt-4">
+                        <ExternalLink className="w-4 h-4 text-gray-500" />
+                        <span className="text-sm text-gray-500">자세히 보기</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Monitor className="w-4 h-4 text-purple-500" />
-                      <span className="text-sm">Screen Life 포맷 구현</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
 
             {/* 영상 제작 전문성 */}
@@ -431,36 +450,42 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle>영상 제작 전문성</CardTitle>
-                    <Badge>CREATIVE</Badge>
-                  </div>
-                  <CardDescription>
-                    전체 제작 과정을 수행하는 원스톱 솔루션
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    기획, 촬영, 편집, 컬러 그레이딩, 시네마틱 효과 등 전 과정 담당
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2">
-                      <Camera className="w-4 h-4 text-blue-500" />
-                      <span className="text-sm">기획 및 전제작</span>
+              <Link href="/project/snapask">
+                <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle>Snapask 영상 제작</CardTitle>
+                      <Badge>PROJECT 4</Badge>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Palette className="w-4 h-4 text-green-500" />
-                      <span className="text-sm">컬러 그레이딩</span>
+                    <CardDescription>
+                      2022.01 - 2022.07 (7개월)
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 dark:text-slate-300 mb-4">
+                      기획, 촬영, 편집, 컬러 그레이딩, 시네마틱 효과 등 전 과정 담당
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Camera className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm">BMPCC 6K 시네마틱 촬영</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Palette className="w-4 h-4 text-green-500" />
+                        <span className="text-sm">Python + FFmpeg 자동화</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Monitor className="w-4 h-4 text-purple-500" />
+                        <span className="text-sm">40% 예산 절감</span>
+                      </div>
+                      <div className="flex items-center space-x-2 mt-4">
+                        <ExternalLink className="w-4 h-4 text-gray-500" />
+                        <span className="text-sm text-gray-500">자세히 보기</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Monitor className="w-4 h-4 text-purple-500" />
-                      <span className="text-sm">편집 및 모션 워크</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
           </div>
         </div>

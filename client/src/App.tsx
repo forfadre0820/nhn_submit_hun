@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import CombinedLanding from "@/pages/combined-landing-new";
 import RossMason from "@/pages/ross-mason";
 import Portfolio from "@/pages/portfolio";
+import ProjectDetail from "@/pages/project-detail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Portfolio} />
       <Route path="/combined-landing" component={CombinedLanding} />
       <Route path="/ross-mason" component={RossMason} />
+      <Route path="/project/:id" component={ProjectDetail} />
       <Route component={NotFound} />
     </Switch>
   );
