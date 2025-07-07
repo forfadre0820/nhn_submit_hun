@@ -79,14 +79,14 @@ export default function CombinedLanding() {
           {/* Hero Content */}
           <div className="flex flex-col justify-center items-center min-h-screen text-center">
             <motion.h1 
-              className="text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] font-bold leading-[0.85] mb-8"
+              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 px-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <span className="block">Nous donnons forme</span>
-              <span className="block flex items-center justify-center gap-4 md:gap-8">
-                aux idées
+              <span className="block">메세지를 넘어</span>
+              <span className="block flex items-center justify-center gap-4 md:gap-6 flex-wrap">
+                <span className="whitespace-nowrap">시청자의 경험까지</span>
                 {/* Video Element */}
                 <motion.div
                   className="inline-block relative"
@@ -119,9 +119,9 @@ export default function CombinedLanding() {
                     }}
                   />
                 </motion.div>
-                qui
+                <span className="whitespace-nowrap">설계하는</span>
               </span>
-              <span className="block">comptent.</span>
+              <span className="block">콘텐츠 제작자 이승훈 입니다.</span>
             </motion.h1>
 
             {/* Scroll Indicator */}
