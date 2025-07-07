@@ -53,6 +53,14 @@ export default function CombinedLanding() {
               ? 4 * scaleProgress * scaleProgress * scaleProgress
               : 1 - Math.pow(-2 * scaleProgress + 2, 3) / 2;
             const currentScale = 1 + (scale - 1) * easedProgress; // 1에서 최종 scale까지 점진적
+            
+            // Add scaling class to remove clip-path when video starts growing
+            if (progress > 0.05) {
+              videoWrap.classList.add('scaling');
+            } else {
+              videoWrap.classList.remove('scaling');
+            }
+            
             gsap.set(videoWrap, {
               x: x * easedProgress,      // 점진적 중앙 이동
               y: y * easedProgress,
@@ -64,6 +72,9 @@ export default function CombinedLanding() {
           }
           // Hold fullscreen for viewing (83% to 95%)
           else if (progress <= 0.95) {
+            // Keep scaling class active for fullscreen
+            videoWrap.classList.add('scaling');
+            
             gsap.set(videoWrap, {
               x: x,
               y: y,

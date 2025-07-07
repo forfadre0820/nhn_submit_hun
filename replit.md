@@ -283,6 +283,7 @@ Changelog:
 - July 07, 2025. Applied ease-in-out cubic interpolation for smooth scale progression (slow-fast-slow pattern)
 - July 07, 2025. Adjusted scaling phase to 83% for precisely 10 scroll actions to reach fullscreen
 - July 07, 2025. Reduced hold phase to 83%-95% and exit phase to 95%-100% for better timing
+- July 07, 2025. Added dynamic clip-path removal during video scaling to show full video content when expanded
 ```
 
 ## User Preferences

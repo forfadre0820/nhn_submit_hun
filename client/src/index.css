@@ -80,8 +80,14 @@ body {
   filter: brightness(1.05);
   border-radius: 0;
   transform-origin: 50% 50%;
-  /* Subtle cinematic aspect ratio crop */
+  /* Clip-path for small size, removed when scaling */
   clip-path: inset(8% 0);
+  transition: clip-path 0.5s ease-out;
+}
+
+.hero__videoWrap.scaling video {
+  /* Remove clip-path when video is scaling up */
+  clip-path: inset(0% 0);
 }
 
 /* Hero section */
