@@ -95,7 +95,7 @@ body {
 /* Next section */
 .next {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   isolation: isolate;
   margin: 0;
   padding: 0;

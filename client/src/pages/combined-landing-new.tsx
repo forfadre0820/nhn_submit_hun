@@ -33,63 +33,66 @@ export default function CombinedLanding() {
       const x = centerX - currentCenterX;
       const y = centerY - currentCenterY;
 
-      // Create single timeline with extended viewing time
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "+=800%", // Much longer scroll distance for viewing
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-          pinSpacing: false
+      // Create ScrollTrigger with manual progress control to prevent next section interference
+      ScrollTrigger.create({
+        trigger: hero,
+        start: "top top",
+        end: "+=400vh", // Reduced scroll distance for better control
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+        pinSpacing: true, // Allow natural document flow
+        onUpdate: (self) => {
+          const progress = self.progress;
+          
+          // Phase 1: Scale up to fullscreen (0% to 40%)
+          if (progress <= 0.4) {
+            const scaleProgress = progress / 0.4;
+            gsap.set(videoWrap, {
+              x: x * scaleProgress,
+              y: y * scaleProgress,
+              scale: 1 + (scale - 1) * scaleProgress,
+              transformOrigin: "50% 50%",
+              zIndex: progress > 0.1 ? 99999 : 1,
+              force3D: true
+            });
+          }
+          // Phase 2: Hold fullscreen for viewing (40% to 85%)
+          else if (progress <= 0.85) {
+            gsap.set(videoWrap, {
+              x: x,
+              y: y,
+              scale: scale,
+              transformOrigin: "50% 50%",
+              zIndex: 99999,
+              force3D: true
+            });
+            
+            // Show/hide scroll indicator
+            const indicator = document.getElementById('video-scroll-indicator');
+            if (indicator) {
+              if (progress >= 0.45 && progress <= 0.8) {
+                gsap.set(indicator, { opacity: 1 });
+              } else {
+                gsap.set(indicator, { opacity: 0 });
+              }
+            }
+          }
+          // Phase 3: Fade out video (85% to 100%)
+          else {
+            const exitProgress = (progress - 0.85) / 0.15;
+            gsap.set(videoWrap, {
+              x: x,
+              y: y - vh * 0.3 * exitProgress,
+              scale: scale * (1 - exitProgress * 0.3),
+              opacity: 1 - exitProgress,
+              transformOrigin: "50% 50%",
+              zIndex: 99999,
+              force3D: true
+            });
+          }
         }
       });
-
-      // Phase 1: Move to center and scale (25% of timeline)
-      tl.to(videoWrap, {
-        x: x,
-        y: y,
-        scale: scale,
-        transformOrigin: "50% 50%",
-        ease: "none",
-        duration: 2,
-        force3D: true,
-        zIndex: 99999
-      })
-      // Phase 2: Hold fullscreen position for extended viewing (70% of timeline)  
-      .to(videoWrap, {
-        duration: 5.6,
-        ease: "none",
-        zIndex: 99999,
-        onStart: () => {
-          // Show video scroll indicator when fully scaled
-          const indicator = document.getElementById('video-scroll-indicator');
-          if (indicator) {
-            gsap.to(indicator, { opacity: 1, duration: 0.5 });
-          }
-        }
-      })
-      // Phase 3: Move up and fade in next section (5% of timeline)
-      .to(videoWrap, {
-        y: y - vh * 1.2,
-        ease: "power1.out",
-        duration: 0.4,
-        zIndex: 1,
-        onStart: () => {
-          // Hide video scroll indicator when exiting
-          const indicator = document.getElementById('video-scroll-indicator');
-          if (indicator) {
-            gsap.to(indicator, { opacity: 0, duration: 0.3 });
-          }
-        }
-      }, ">")
-      .to(nextSection, {
-        opacity: 1,
-        y: 0,
-        ease: "power1.out",
-        duration: 0.4
-      }, "<0.2"); // Slight delay before next section appears
 
     }, 100);
 
@@ -213,7 +216,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Next Section - Portfolio */}
-      <section className="next bg-white text-black relative z-10 min-h-screen mt-[200vh]">
+      <section className="next bg-white text-black relative z-1 min-h-screen">
         <div className="container mx-auto px-4 py-32">
           <motion.div 
             className="max-w-6xl mx-auto"
