@@ -48,15 +48,13 @@ export default function CombinedLanding() {
           // Ultra-extremely gradual scaling from 0% to 10%
           if (progress <= 0.1) {
             const scaleProgress = progress / 0.1; // 0~1로 정규화
-            // Ease-in-out cubic for smooth acceleration/deceleration
-            const easedProgress = scaleProgress < 0.5 
-              ? 4 * scaleProgress * scaleProgress * scaleProgress
-              : 1 - Math.pow(-2 * scaleProgress + 2, 3) / 2;
-            const currentScale = 1 + (scale - 1) * easedProgress; // 1에서 최종 scale까지 점진적
+            // Calculate incremental scale: 1 → 1.5 → 2.25 → 3.375 → etc.
+            const steps = Math.floor(scaleProgress * 10); // 0-10 steps
+            const currentScale = Math.pow(1.5, steps); // 1.5^steps for progressive scaling
             gsap.set(videoWrap, {
-              x: x * easedProgress,      // 점진적 중앙 이동
-              y: y * easedProgress,
-              scale: currentScale,       // 1에서 최종 scale까지 점진적
+              x: x * scaleProgress,      // 점진적 중앙 이동
+              y: y * scaleProgress,
+              scale: currentScale,       // 1.5씩 점진적 증가
               transformOrigin: "50% 50%",
               zIndex: progress > 0.05 ? 99999 : 1,
               force3D: true
