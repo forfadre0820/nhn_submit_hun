@@ -137,8 +137,8 @@ export default function CombinedLanding() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <div className="space-y-2">
-                <div className="block text-[62px] mt-[18px] mb-[18px] text-left">메세지를 넘어</div>
-                <div className="block text-[62px] text-left mt-[18px] mb-[18px]">시청자의 경험까지</div>
+                <div className="block text-[62px] text-left mt-[20px] mb-[20px]">메세지를 넘어</div>
+                <div className="block text-[62px] text-left mt-[20px] mb-[20px]">시청자의 경험까지</div>
                 <div className="flex items-center justify-center gap-4 flex-wrap mt-[18px] mb-[18px]">
                   <span className="whitespace-nowrap text-[62px]">설계하는</span>
                   {/* Video Element positioned after "설계하는" */}
@@ -185,7 +185,7 @@ export default function CombinedLanding() {
                     />
                   </motion.div>
                 </div>
-                <div className="block text-[62px] mt-[18px] mb-[18px]">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
+                <div className="block text-[62px] mt-[20px] mb-[20px]">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
               </div>
             </motion.h1>
 
