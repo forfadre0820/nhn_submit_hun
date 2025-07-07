@@ -1,0 +1,114 @@
+Thought for 44 seconds
+요약 — 핵심은 (1) 글자 안에 영상을 “마스크”로 넣고, (2) 스크롤에 맞춰 그 영상을 transform-scale·position-fixed 로 풀스크린으로 키우며 고정(pinning) 하는 것입니다. 대개 GSAP ScrollTrigger(또는 Intersection Observer + CSS transition)로 스크롤 위치를 감지하고, clip-path / background-clip:text / SVG mask 로 텍스트-마스킹을, object-fit:cover 로 영상 크기 대응을 처리하면 McCann Paris 첫 화면과 똑같은 흐름을 구현할 수 있습니다. 
+greensock.com
+blog.olivierlarose.com
+
+1. 동작 구조 분해
+단계	화면 상태	기술 포인트
+① Hero 인트로	h1 문장 안에만 영상이 보임(텍스트가 마스크)	CSS 마스크: background-clip:text 또는 mask-image:url(svg) 
+stackoverflow.com
+developer.mozilla.org
+② 스크롤 시작	문장이 뷰포트 중앙에 도달	GSAP ScrollTrigger start:"top center" 로 트리거 설정 
+greensock.com
+③ 확대 애니메이션	영상이 단어 박스 → 화면 전체로 스무스하게 scale	gsap.to(videoWrap,{scale, x, y, scrub:true}) + pin:true 
+gsap.com
+gsap.com
+④ 고정 구간	영상이 풀스크린 상태로 한동안 고정	ScrollTrigger end:"+=200%" 식으로 구간 길이 조절
+⑤ 해제/다음 섹션	핀 해제 후 일반 스크롤 복귀	pinSpacing:false 로 다음 섹션 자연 연결
+
+2. 필수 기술 요소
+2-1 텍스트 마스킹 방법
+css
+Copy
+Edit
+.hero__heading{
+  font:700 9vw/1 "Montserrat",sans-serif;
+  color:transparent;
+  background:url(hero.mp4) center/cover no-repeat;
+  -webkit-background-clip:text;  /* 크로스브라우저 */
+          background-clip:text;
+}
+배경을 영상으로 넣어 글자가 영상 창처럼 보이게 함 
+dev.to
+sitepoint.com
+
+SVG <clipPath>를 써도 동일 효과 구현 가능 
+developer.mozilla.org
+developer.mozilla.org
+
+2-2 스크롤 트리거 & 핀
+js
+Copy
+Edit
+gsap.registerPlugin(ScrollTrigger);
+
+// 글자 영역의 실제 위치·크기 계산
+const box = document.querySelector('.hero__videoWrap')
+                 .getBoundingClientRect();
+const vw  = window.innerWidth,
+      vh  = window.innerHeight;
+const scaleX = vw / box.width,
+      scaleY = vh / box.height,
+      scale  = Math.max(scaleX, scaleY);
+
+gsap.timeline({
+  scrollTrigger:{
+    trigger:".hero",
+    start:"top center",
+    end:"+=200%",
+    scrub:true,
+    pin:true
+  }
+})
+.fromTo(".hero__videoWrap",
+  {scale:1, x:0, y:0},
+  {scale, x:-box.left, y:-box.top, ease:"power1.out"}
+);
+scrub:true → 스크롤 위치 = 애니메이션 진행도 
+gsap.com
+greensock.com
+
+pin:true 로 영상 고정 후 다음 섹션 넘어가도 자연스럽게 해제 
+greensock.com
+
+2-3 퍼포먼스 & 접근성
+will-change:transform; 로 GPU 가속, object-fit:cover; 로 해상도 유지 
+gsap.com
+
+@media (prefers-reduced-motion:reduce){ … } 조건문으로 모션 최소화 버전 제공
+
+영상은 playsinline muted autoplay loop 속성으로 모바일 자동 재생 보장
+
+3. 전체 뼈대 예시
+html
+Copy
+Edit
+<section class="hero">
+  <h1 class="hero__heading">
+    Say&nbsp;hello<br>to&nbsp;ideas 
+    <span class="hero__videoWrap">
+      <video src="hero.mp4" autoplay loop muted playsinline></video>
+    </span>
+    that<br>actually&nbsp;work
+  </h1>
+</section>
+<section class="next">…</section>
+css
+Copy
+Edit
+.hero{position:relative;min-height:120vh;background:#000;color:#fff}
+.hero__videoWrap{display:inline-block;position:relative;vertical-align:middle}
+.hero__videoWrap video{
+  width:100%;height:100%;object-fit:cover;
+  display:block;filter:brightness(1.05);
+}
+.next{height:120vh;background:#111;}
+위 HTML/CSS + GSAP 스크립트를 붙여 실행하면 McCann Paris와 유사한 “텍스트 안 → 풀스크린” 전환이 구현됩니다.
+
+4. 대체(바닐라) 접근
+Intersection Observer로 트리거 감지 → position:fixed 클래스 토글, CSS transition:transform 0.8s cubic-bezier… 이용. 성능은 좋지만 스크롤-구간 비례 제어(스크럽)가 어렵습니다.
+
+Lenis / Smooth-Scroll + CSS sticky 조합도 가능하지만, 고정(pin)·스크럽을 동시에 쓰려면 결국 GSAP ScrollTrigger가 가장 쉬운 선택입니다. 
+blog.olivierlarose.com
+m.youtube.com
+
