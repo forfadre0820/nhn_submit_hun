@@ -214,7 +214,7 @@ export default function CombinedLanding() {
       </section>
       {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-10 min-h-screen mt-[200vh]">
-        <div className="container mx-auto px-4 py-32">
+        <div className="container mx-auto px-4 py-32 pt-[0px] pb-[0px] mt-[3000px] mb-[3000px]">
           <motion.div 
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
