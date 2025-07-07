@@ -430,8 +430,6 @@ export default function CombinedLanding() {
                   </motion.div>
 
                   {/* Row 2: Second row */}
-                  {/* Empty space for tall item continuation */}
-                  <div></div>
 
                   {/* Project 4 - Square bottom center */}
                   <motion.div 
@@ -509,8 +507,7 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Empty space for tall item continuation */}
-                  <div></div>
+                  
                 </div>
               </div>
             </div>
