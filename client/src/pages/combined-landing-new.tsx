@@ -137,10 +137,11 @@ export default function CombinedLanding() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <div className="space-y-2">
-                <div className="block text-[62px] text-left">메세지를 넘어</div>
-                <div className="block text-left text-[62px]">시청자의 경험까지</div>
-                {/* Video Element positioned between text lines */}
-                <div className="flex justify-center my-4">
+                <div className="block">메세지를 넘어</div>
+                <div className="block">시청자의 경험까지</div>
+                <div className="flex items-center justify-center gap-4 flex-wrap">
+                  <span className="whitespace-nowrap">설계하는</span>
+                  {/* Video Element positioned after "설계하는" */}
                   <motion.div
                     className="inline-block relative"
                     style={{
@@ -173,7 +174,7 @@ export default function CombinedLanding() {
                         objectFit: "cover",
                         objectPosition: "center",
                         opacity: videoOpacity,
-                        borderRadius: "4px",
+                        borderRadius: "0",
                         willChange: "opacity, transform",
                         backfaceVisibility: "hidden",
                         transformOrigin: "center center",
@@ -181,11 +182,10 @@ export default function CombinedLanding() {
                         transform: "translateZ(0)", // GPU 가속 강제
                         contain: "layout style paint" // 렌더링 최적화
                       }}
-                      className="mt-[-4px] mb-[-4px] ml-[-105px] mr-[-105px]" />
+                    />
                   </motion.div>
                 </div>
-                <div className="block text-left text-[62px]">설계하는</div>
-                <div className="block text-[62px]">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
+                <div className="block">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
               </div>
             </motion.h1>
 
