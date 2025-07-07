@@ -309,6 +309,7 @@ Changelog:
 - July 07, 2025. Redesigned Contact section with flipped layout: left image column, right content with detailed PD background and organic process description
 - July 07, 2025. Completely redesigned footer based on reference HTML: main content area with call-to-action text, email contact, social links, and portrait image on right side
 - July 07, 2025. Updated footer layout to match main content alignment and removed social media links, keeping only email contact
+- July 07, 2025. Finalized footer with email-only contact, proper inner line alignment, and "LEESEUNGHUN 2025" copyright format
 ```
 
 ## User Preferences
