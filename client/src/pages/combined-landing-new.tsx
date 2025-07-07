@@ -111,7 +111,7 @@ export default function CombinedLanding() {
         </header>
 
         {/* Hero Section with Video */}
-        <div className="relative home__video" style={{ height: "100vh" }}>
+        <div className="relative home__video" style={{ height: "50vh" }}>
           <div className="min-h-screen flex items-center justify-center pt-20">
             <div className="container mx-auto px-4">
               <motion.div
@@ -162,23 +162,23 @@ export default function CombinedLanding() {
                               height: "87px",
                               padding: "0px",
                               transform: useTransform(scrollY, 
-                                [0, 100, 200, 300, 400, 500, 600, 700], 
+                                [0, 20, 40, 60, 80, 100, 120, 140], 
                                 [
                                   "translate(0px, 0px) scale(1)",
-                                  "translate(0px, 0px) scale(1.5)", 
+                                  "translate(0px, 0px) scale(1.2)", 
+                                  "translate(0px, 0px) scale(1.8)",
                                   "translate(0px, 0px) scale(2.5)",
-                                  "translate(0px, 0px) scale(4)",
-                                  `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
+                                  `translate(0px, 0px) scale(${Math.min(4, viewportScale)})`,
                                   `translate(-50%, -50%) scale(${viewportScale})`,
                                   `translate(${finalPosition.x}%, ${finalPosition.y * 0.5}%) scale(${viewportScale})`,
                                   `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
                                 ]
                               ),
-                              position: useTransform(scrollY, [499, 500], ["static", "fixed"]),
-                              zIndex: useTransform(scrollY, [499, 500], [1, 9999]),
-                              top: useTransform(scrollY, [499, 500], ["auto", "50%"]),
-                              left: useTransform(scrollY, [499, 500], ["auto", "50%"]),
-                              opacity: useTransform(scrollY, [700, 800], [1, 0]),
+                              position: useTransform(scrollY, [99, 100], ["static", "fixed"]),
+                              zIndex: useTransform(scrollY, [99, 100], [1, 9999]),
+                              top: useTransform(scrollY, [99, 100], ["auto", "50%"]),
+                              left: useTransform(scrollY, [99, 100], ["auto", "50%"]),
+                              opacity: useTransform(scrollY, [140, 160], [1, 0]),
                               transformOrigin: "center"
                             }}
                           >
@@ -196,7 +196,7 @@ export default function CombinedLanding() {
                                 width: "230px",
                                 objectFit: "cover",
                                 objectPosition: "center",
-                                opacity: useTransform(scrollY, [700, 800], [1, 0]),
+                                opacity: useTransform(scrollY, [140, 160], [1, 0]),
                                 border: "2px solid rgba(255, 255, 255, 0.8)",
                                 borderRadius: "0"
                               }}
@@ -219,7 +219,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 style={{
-                  opacity: useTransform(scrollY, [0, 200], [1, 0])
+                  opacity: useTransform(scrollY, [0, 40], [1, 0])
                 }}
               >
                 <motion.div
@@ -250,7 +250,7 @@ export default function CombinedLanding() {
       <motion.div 
         className="bg-white text-black relative z-20"
         style={{
-          transform: useTransform(scrollY, [600, 630, 660, 690, 720, 750], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
+          transform: useTransform(scrollY, [120, 126, 132, 138, 144, 150], ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"])
         }}
       >
         {/* About Section - Ross Mason Style */}
@@ -261,20 +261,20 @@ export default function CombinedLanding() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-4">
-            {/* Main Title - Much Larger */}
-            <div className="mb-12">
-              <motion.h2 
-                className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase leading-none mb-4"
+          <div className="container mx-auto px-6 md:px-8">
+            {/* Main Title - Proper Template Sizing */}
+            <div className="mb-16 md:mb-20">
+              <motion.h1 
+                className="text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold uppercase leading-[0.85] mb-6 tracking-tight"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
                 3D ARTIST
-              </motion.h2>
+              </motion.h1>
               <motion.h2 
-                className="text-4xl md:text-6xl lg:text-7xl font-light italic leading-none"
+                className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light italic leading-[0.9] tracking-wide"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -284,54 +284,54 @@ export default function CombinedLanding() {
               </motion.h2>
             </div>
 
-            {/* About Teaching Section - Compact Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+            {/* About Teaching Section - Template Style */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16">
               <motion.div 
-                className="lg:col-span-3"
+                className="lg:col-span-4"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="mb-6">
+                <div className="mb-8">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
                     alt="Ross Mason"
-                    className="w-16 h-16 rounded-full object-cover"
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover"
                   />
                 </div>
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight mb-8 tracking-wide">
+                <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase leading-[0.9] mb-10 tracking-wide">
                   ABOUT<br />TEACHING
                 </h3>
               </motion.div>
 
               <motion.div 
-                className="lg:col-span-9"
+                className="lg:col-span-8"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="space-y-6">
+                <div className="space-y-8">
                   <div>
-                    <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-6 tracking-wide leading-tight">
+                    <h4 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase mb-8 tracking-wide leading-[0.95]">
                       FROM STUDYING GRAPHIC DESIGN TO <em className="italic font-light">becoming</em> A SELF <em className="italic font-light">taught</em> 3D ARTIST
                     </h4>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                     <div>
-                      <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[PERSONAL STORY]</h5>
-                      <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                      <h5 className="text-base md:text-lg font-medium text-gray-500 mb-6 uppercase tracking-widest">[PERSONAL STORY]</h5>
+                      <p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">
                         I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
                       </p>
                     </div>
                     <div>
-                      <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">Forever learning.</h5>
-                      <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                      <h5 className="text-base md:text-lg font-medium text-gray-500 mb-6 uppercase tracking-widest">Forever learning.</h5>
+                      <p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl">
                         Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
                       </p>
-                      <p className="text-gray-700 leading-relaxed text-base md:text-lg mt-4">
+                      <p className="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl mt-6">
                         I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
                       </p>
                     </div>
@@ -500,18 +500,18 @@ export default function CombinedLanding() {
               </motion.div>
             </div>
 
-            {/* Services Section - Compact */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+            {/* Services Section - Template Style */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-20">
               <motion.div 
-                className="lg:col-span-5"
+                className="lg:col-span-6"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-sm md:text-base uppercase tracking-widest text-gray-600 mb-6">[Services list]</h4>
+                <h4 className="text-lg md:text-xl uppercase tracking-widest text-gray-600 mb-10">[Services list]</h4>
                 
-                <div className="space-y-3">
+                <div className="space-y-6">
                   <motion.div 
                     className="group cursor-pointer opacity-75 hover:opacity-100"
                     initial={{ opacity: 0, y: 20 }}
@@ -521,12 +521,12 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase transition-opacity tracking-wide">
+                      <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase transition-opacity tracking-wide">
                         3D DESIGN
                       </h3>
-                      <span className="ml-4 text-sm text-gray-500">01.</span>
+                      <span className="ml-6 text-lg text-gray-500">01.</span>
                     </div>
-                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
+                    <div className="h-px bg-gray-200 transition-colors duration-300 mt-3"></div>
                   </motion.div>
 
                   <motion.div 
