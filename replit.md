@@ -267,6 +267,8 @@ Changelog:
 - July 07, 2025. Removed opacity changes and maintained smooth continuous scaling transitions
 - July 07, 2025. Extended scroll distance to 500vh with 3-phase smooth animation: scale (25%) → hold (50%) → exit (25%)
 - July 07, 2025. Changed video exit behavior from scaling down to moving upward while maintaining fullscreen size
+- July 07, 2025. Reduced scroll distance to 200vh and increased scrub to 2 for more gradual, controlled scaling
+- July 07, 2025. Extended scaling phase to 50% of timeline for slower, more natural video growth
 ```
 
 ## User Preferences
