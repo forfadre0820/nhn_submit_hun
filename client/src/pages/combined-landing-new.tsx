@@ -184,7 +184,7 @@ export default function CombinedLanding() {
                     />
                   </motion.div>
                 </div>
-                <div className="block">설계하는</div>
+                <div className="block text-left">설계하는</div>
                 <div className="block">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
               </div>
             </motion.h1>
