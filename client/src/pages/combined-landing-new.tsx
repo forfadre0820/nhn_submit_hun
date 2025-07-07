@@ -92,33 +92,23 @@ export default function CombinedLanding() {
               force3D: true
             });
             
-            // Immersive blackout effect before letterbox
+            // Immersive blackout effect for transition
             const blackoutOverlay = document.getElementById('blackout-overlay');
-            const letterboxTop = document.getElementById('letterbox-top');
-            const letterboxBottom = document.getElementById('letterbox-bottom');
             
-            if (blackoutOverlay && letterboxTop && letterboxBottom) {
+            if (blackoutOverlay) {
               // Blackout phase: 80-83%
               if (progress >= 0.8 && progress < 0.83) {
                 const blackoutProgress = (progress - 0.8) / 0.03;
                 gsap.set(blackoutOverlay, { opacity: blackoutProgress * 0.8 });
-                gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
               }
               // Recovery phase: 83-85%
               else if (progress >= 0.83 && progress < 0.85) {
                 const recoveryProgress = (progress - 0.83) / 0.02;
                 gsap.set(blackoutOverlay, { opacity: 0.8 * (1 - recoveryProgress) });
-                gsap.set([letterboxTop, letterboxBottom], { opacity: recoveryProgress });
               }
-              // Full letterbox: 85%+
-              else if (progress >= 0.85) {
-                gsap.set(blackoutOverlay, { opacity: 0 });
-                gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
-              }
-              // Normal state: <80%
+              // Normal state
               else {
                 gsap.set(blackoutOverlay, { opacity: 0 });
-                gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
               }
             }
             
@@ -240,17 +230,7 @@ export default function CombinedLanding() {
             style={{ transition: 'opacity 0.3s ease-in-out' }}
           />
           
-          {/* Letterbox Bars */}
-          <div 
-            id="letterbox-top"
-            className="fixed top-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
-            style={{ transition: 'opacity 0.5s ease-in-out' }}
-          />
-          <div 
-            id="letterbox-bottom"
-            className="fixed bottom-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
-            style={{ transition: 'opacity 0.5s ease-in-out' }}
-          />
+
 
           {/* Video Scroll Indicator - Shows when video is fullscreen */}
           <motion.div 
