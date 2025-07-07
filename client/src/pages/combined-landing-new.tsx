@@ -19,105 +19,56 @@ export default function CombinedLanding() {
       const videoWrap = videoWrapRef.current;
       const nextSection = document.querySelector('.next');
 
-      // Calculate scale and position for browser width coverage
-      const calculateTransform = () => {
-        const box = videoWrap.getBoundingClientRect();
-        const vw = window.innerWidth;
-        const vh = window.innerHeight;
-        
-        // Scale to browser width (maintain aspect ratio)
-        const scaleX = vw / box.width;
-        const scaleY = vh / box.height;
-        const scale = Math.max(scaleX, scaleY); // Use max to cover full browser
-        
-        // Calculate translation to center the video
-        const translateX = (vw / 2) - (box.left + box.width / 2);
-        const translateY = (vh / 2) - (box.top + box.height / 2);
-        
-        return { scale, translateX, translateY };
-      };
+      // Get initial rect and calculate transforms (cache these values)
+      const rect = videoWrap.getBoundingClientRect();
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const scale = Math.max(vw / rect.width, vh / rect.height);
+      
+      // Calculate translation to center the video
+      const x = vw * 0.5 - (rect.left + rect.width * 0.5);
+      const y = vh * 0.5 - (rect.top + rect.height * 0.5);
 
-      // Create ScrollTrigger for video scaling (Phase 1: Scale to browser width)
-      ScrollTrigger.create({
-        trigger: hero,
-        start: "top top",
-        end: "+=100vh",
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const { scale, translateX, translateY } = calculateTransform();
-          
-          // Scale to browser width
-          const currentScale = 1 + (scale - 1) * progress;
-          const currentX = translateX * progress;
-          const currentY = translateY * progress;
-          
-          gsap.set(videoWrap, {
-            scale: currentScale,
-            x: currentX,
-            y: currentY,
-            transformOrigin: "center center",
-            force3D: true,
-            zIndex: progress > 0.3 ? 9999 : 1
-          });
+      // Create single timeline with proper sequence
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: hero,
+          start: "top center",
+          end: "+=300%",
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          pinSpacing: true
         }
       });
 
-      // Create ScrollTrigger for video hold (Phase 2: Stay in place)
-      ScrollTrigger.create({
-        trigger: hero,
-        start: "+=100vh",
-        end: "+=100vh",
-        scrub: 1,
-        onUpdate: (self) => {
-          const { scale, translateX, translateY } = calculateTransform();
-          
-          // Keep video at full scale and position
-          gsap.set(videoWrap, {
-            scale: scale,
-            x: translateX,
-            y: translateY,
-            transformOrigin: "center center",
-            force3D: true,
-            zIndex: 9999
-          });
-        }
-      });
+      // Phase 1: Move to center and scale simultaneously
+      tl.to(videoWrap, {
+        x: x,
+        y: y,
+        scale: scale,
+        transformOrigin: "center center",
+        ease: "none",
+        duration: 1
+      })
+      // Phase 2: Hold position
+      .to(videoWrap, {
+        duration: 1,
+        ease: "none"
+      })
+      // Phase 3: Move up and fade in next section
+      .to(videoWrap, {
+        y: y - vh * 1.2,
+        ease: "power1.out",
+        duration: 0.8
+      }, ">")
+      .to(nextSection, {
+        opacity: 1,
+        y: 0,
+        ease: "power1.out",
+        duration: 0.8
+      }, "<");
 
-      // Create ScrollTrigger for video exit (Phase 3: Move up and next section)
-      ScrollTrigger.create({
-        trigger: hero,
-        start: "+=200vh",
-        end: "+=80vh",
-        scrub: 1,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const { scale, translateX, translateY } = calculateTransform();
-          
-          // Move video upward
-          const upwardTranslate = -window.innerHeight * 1.5 * progress;
-          
-          gsap.set(videoWrap, {
-            scale: scale,
-            x: translateX,
-            y: translateY + upwardTranslate,
-            transformOrigin: "center center",
-            force3D: true,
-            zIndex: 9999
-          });
-
-          // Fade in next section
-          if (nextSection) {
-            gsap.set(nextSection, {
-              opacity: progress,
-              y: 50 * (1 - progress),
-              zIndex: 20
-            });
-          }
-        }
-      });
     }, 100);
 
     // Cleanup function

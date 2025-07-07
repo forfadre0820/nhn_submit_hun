@@ -232,6 +232,11 @@ Changelog:
 - July 07, 2025. Adjusted video dimensions to 140x59px for better proportion with text
 - July 07, 2025. Reduced clip-path cropping from 20% to 10% inset for less aggressive crop
 - July 07, 2025. Increased video height to 68px for better visibility after crop adjustment
+- July 07, 2025. Implemented proper GSAP timeline based on official documentation guide
+- July 07, 2025. Fixed video scaling logic using cached getBoundingClientRect values and Math.max calculation
+- July 07, 2025. Created single timeline with proper sequence: move to center + scale → hold → move up + fade next section
+- July 07, 2025. Added anticipatePin property to prevent jumping during pin start
+- July 07, 2025. Used proper duration-based timeline instead of onUpdate for smoother animations
 ```
 
 ## User Preferences
