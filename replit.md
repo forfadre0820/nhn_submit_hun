@@ -273,6 +273,8 @@ Changelog:
 - July 07, 2025. Implemented simultaneous position and scale transforms using "<" timeline positioning
 - July 07, 2025. Added proper transform-origin: center center and anticipatePin for smooth pin behavior
 - July 07, 2025. Set trigger to "top center" and extended scroll range to 300% for gradual scaling
+- July 07, 2025. Restored original 800% scroll range and quick scaling with extended hold duration
+- July 07, 2025. Maintained proper timeline structure while removing gradual scaling behavior
 ```
 
 ## User Preferences

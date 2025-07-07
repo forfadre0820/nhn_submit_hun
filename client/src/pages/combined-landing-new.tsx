@@ -35,7 +35,7 @@ export default function CombinedLanding() {
         scrollTrigger: {
           trigger: hero,
           start: "top center", // Start when hero hits center of viewport
-          end: "+=300%", // Extended scroll range for gradual scaling
+          end: "+=800%", // Original extended scroll range
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -43,27 +43,27 @@ export default function CombinedLanding() {
         }
       });
 
-      // Phase 1: Position correction and scaling (simultaneous)
+      // Phase 1: Position correction and scaling (simultaneous) - Quick scaling
       tl.to(wrap, {
         x: x,
         y: y,
         ease: "none",
-        duration: 0.6
+        duration: 2
       })
       .to(wrap, {
         scale: scale,
         transformOrigin: "center center",
-        ease: "power1.out",
-        duration: 0.6,
+        ease: "none",
+        duration: 2,
         onStart: () => {
           // Ensure video is on top when scaling starts
           gsap.set(wrap, { zIndex: 99999 });
         }
       }, "<") // Start simultaneously with position
       
-      // Phase 2: Hold fullscreen for viewing
+      // Phase 2: Hold fullscreen for extended viewing
       .to(wrap, {
-        duration: 1.2, // Extended hold duration
+        duration: 5.6, // Original extended hold duration
         ease: "none",
         onStart: () => {
           // Show scroll indicator
@@ -78,7 +78,7 @@ export default function CombinedLanding() {
       .to(wrap, {
         y: y - vh * 1.2,
         ease: "power2.out",
-        duration: 0.6,
+        duration: 0.4,
         onStart: () => {
           // Hide scroll indicator
           const indicator = document.getElementById('video-scroll-indicator');
