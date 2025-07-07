@@ -62,9 +62,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   filter: brightness(1.05);
   border-radius: 0;
   transform-origin: center center;
+  /* Cinematic aspect ratio crop */
+  clip-path: inset(20% 0);
 }
 
 /* Smooth transitions for video animations */

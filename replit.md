@@ -225,6 +225,11 @@ Changelog:
 - July 07, 2025. Repositioned video directly after "설계하는" text for exact layout match
 - July 07, 2025. Reduced video size to 120x67px and adjusted margins for better text flow
 - July 07, 2025. Added subtle border-radius to video for refined appearance
+- July 07, 2025. Removed video border-radius for clean rectangular appearance
+- July 07, 2025. Implemented cinematic aspect ratio using clip-path for widescreen crop effect
+- July 07, 2025. Fixed video vertical alignment to baseline for proper text positioning
+- July 07, 2025. Centered entire text layout with text-center and mx-auto classes
+- July 07, 2025. Adjusted video dimensions to 140x59px for better proportion with text
 ```
 
 ## User Preferences

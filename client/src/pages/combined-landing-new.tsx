@@ -156,7 +156,7 @@ export default function CombinedLanding() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <div className="space-y-2 text-left max-w-4xl">
+            <div className="space-y-2 text-center max-w-4xl mx-auto">
               <div className="block" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
               <div className="block" style={{ lineHeight: "1.1" }}>시청자의 경험까지</div>
               <div className="block" style={{ lineHeight: "1.1" }}>
@@ -164,9 +164,9 @@ export default function CombinedLanding() {
                   ref={videoWrapRef}
                   className="hero__videoWrap inline-block relative"
                   style={{
-                    width: "120px",
-                    height: "67px",
-                    verticalAlign: "middle",
+                    width: "140px",
+                    height: "59px",
+                    verticalAlign: "baseline",
                     willChange: "transform",
                     marginLeft: "12px",
                     marginRight: "0px"
@@ -185,7 +185,7 @@ export default function CombinedLanding() {
                       objectFit: "cover",
                       display: "block",
                       filter: "brightness(1.05)",
-                      borderRadius: "4px"
+                      borderRadius: "0"
                     }}
                   />
                 </span>
