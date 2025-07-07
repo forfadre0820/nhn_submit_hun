@@ -139,7 +139,6 @@ export default function CombinedLanding() {
           </div>
         </div>
       </nav>
-
       {/* Hero Section with Text Masking */}
       <section 
         ref={heroRef}
@@ -187,7 +186,7 @@ export default function CombinedLanding() {
                       filter: "brightness(1.05)",
                       borderRadius: "0"
                     }}
-                  />
+                    className="mt-[10px] mb-[10px]" />
                 </span>
               </div>
               <div className="block" style={{ lineHeight: "1.1" }}>콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
@@ -218,7 +217,6 @@ export default function CombinedLanding() {
           </motion.div>
         </div>
       </section>
-
       {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-20 min-h-screen" style={{ opacity: 0 }}>
         <div className="container mx-auto px-4 py-8">
