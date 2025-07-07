@@ -1,9 +1,8 @@
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CombinedLanding() {
@@ -13,19 +12,17 @@ export default function CombinedLanding() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (!heroRef.current || !videoWrapRef.current || !videoRef.current) return;
+      if (!heroRef.current || !videoWrapRef.current) return;
 
       const hero = heroRef.current;
       const videoWrap = videoWrapRef.current;
-      const nextSection = document.querySelector('.next');
 
-      // Get initial rect and calculate transforms (cache these values)
+      // Cache initial video position and calculate transforms
       const rect = videoWrap.getBoundingClientRect();
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      const scale = Math.max(vw / rect.width, vh / rect.height);
       
-      // Calculate translation to center the video precisely
+      // Calculate translation to center the video
       const centerX = vw / 2;
       const centerY = vh / 2;
       const currentCenterX = rect.left + rect.width / 2;
@@ -33,11 +30,11 @@ export default function CombinedLanding() {
       const x = centerX - currentCenterX;
       const y = centerY - currentCenterY;
 
-      // Create ScrollTrigger with smooth continuous progress control
+      // Create ScrollTrigger for 12 scroll actions to fullscreen
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=1200vh", // Scroll distance for 12 scroll actions to fullscreen
+        end: "+=1200vh",
         scrub: 2,
         pin: true,
         anticipatePin: 1,
@@ -45,89 +42,70 @@ export default function CombinedLanding() {
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Gradual scaling from 0% to 100% (12 scroll actions = 1200vh)
-          if (progress <= 1.0) {
-            const scaleProgress = progress; // 0~1로 정규화
-            
-            // Ease-in-out cubic for smooth acceleration/deceleration
-            const easedProgress = scaleProgress < 0.5 
-              ? 4 * scaleProgress * scaleProgress * scaleProgress
-              : 1 - Math.pow(-2 * scaleProgress + 2, 3) / 2;
-            
-            // Calculate target scale and handle aspect ratio cropping
-            const videoAspectRatio = 16 / 9; // Assuming 16:9 video
-            const viewportAspectRatio = window.innerWidth / window.innerHeight;
-            
-            // Apply square crop for portrait/square viewports
-            if (viewportAspectRatio <= 1.0) {
-              videoWrap.classList.add('square-crop');
+          // Ease-in-out cubic interpolation for smooth scaling
+          const easedProgress = progress < 0.5 
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+          
+          // Dynamic aspect ratio handling
+          const viewportAspectRatio = window.innerWidth / window.innerHeight;
+          
+          // Apply square crop for portrait/square viewports
+          if (viewportAspectRatio <= 1.0) {
+            videoWrap.classList.add('square-crop');
+          } else {
+            videoWrap.classList.remove('square-crop');
+          }
+          
+          // Calculate target scale to fit viewport
+          const targetScale = Math.max(
+            window.innerWidth / 140,
+            window.innerHeight / 68
+          );
+          
+          const currentScale = 1 + (targetScale - 1) * easedProgress;
+          
+          // Add scaling class to remove clip-path
+          if (progress > 0.05) {
+            videoWrap.classList.add('scaling');
+          } else {
+            videoWrap.classList.remove('scaling');
+          }
+          
+          // Apply transforms
+          gsap.set(videoWrap, {
+            x: x * easedProgress,
+            y: y * easedProgress,
+            scale: currentScale,
+            transformOrigin: "50% 50%",
+            zIndex: progress > 0.1 ? 99999 : 1,
+            force3D: true
+          });
+          
+          // Blackout transition effect
+          const blackoutOverlay = document.getElementById('blackout-overlay');
+          if (blackoutOverlay) {
+            if (progress >= 0.8 && progress < 0.83) {
+              const blackoutProgress = (progress - 0.8) / 0.03;
+              gsap.set(blackoutOverlay, { opacity: blackoutProgress * 0.8 });
+            } else if (progress >= 0.83 && progress < 0.85) {
+              const recoveryProgress = (progress - 0.83) / 0.02;
+              gsap.set(blackoutOverlay, { opacity: 0.8 * (1 - recoveryProgress) });
             } else {
-              videoWrap.classList.remove('square-crop');
+              gsap.set(blackoutOverlay, { opacity: 0 });
             }
-            
-            let targetScale;
-            if (viewportAspectRatio > videoAspectRatio) {
-              // Viewport is wider - scale to fill width
-              targetScale = window.innerWidth / 140;
-            } else {
-              // Viewport is taller - scale to fill height  
-              targetScale = window.innerHeight / 68;
-            }
-            
-            const currentScale = 1 + (targetScale - 1) * easedProgress;
-            
-            // Add scaling class to remove clip-path when video starts growing
-            if (progress > 0.05) {
-              videoWrap.classList.add('scaling');
-            } else {
-              videoWrap.classList.remove('scaling');
-            }
-            
-            gsap.set(videoWrap, {
-              x: x * easedProgress,
-              y: y * easedProgress,
-              scale: currentScale,
-              transformOrigin: "50% 50%",
-              zIndex: progress > 0.1 ? 99999 : 1,
-              force3D: true
-            });
-            
-            // Immersive blackout effect for transition
-            const blackoutOverlay = document.getElementById('blackout-overlay');
-            
-            if (blackoutOverlay) {
-              // Blackout phase: 80-83%
-              if (progress >= 0.8 && progress < 0.83) {
-                const blackoutProgress = (progress - 0.8) / 0.03;
-                gsap.set(blackoutOverlay, { opacity: blackoutProgress * 0.8 });
-              }
-              // Recovery phase: 83-85%
-              else if (progress >= 0.83 && progress < 0.85) {
-                const recoveryProgress = (progress - 0.83) / 0.02;
-                gsap.set(blackoutOverlay, { opacity: 0.8 * (1 - recoveryProgress) });
-              }
-              // Normal state
-              else {
-                gsap.set(blackoutOverlay, { opacity: 0 });
-              }
-            }
-            
-            // Show scroll indicator during viewing period
-            const indicator = document.getElementById('video-scroll-indicator');
-            if (indicator) {
-              if (progress >= 0.9) {
-                gsap.set(indicator, { opacity: 1 });
-              } else {
-                gsap.set(indicator, { opacity: 0 });
-              }
-            }
+          }
+          
+          // Show scroll indicator when near fullscreen
+          const indicator = document.getElementById('video-scroll-indicator');
+          if (indicator) {
+            gsap.set(indicator, { opacity: progress >= 0.9 ? 1 : 0 });
           }
         }
       });
 
     }, 100);
 
-    // Cleanup function
     return () => {
       clearTimeout(timer);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -223,16 +201,14 @@ export default function CombinedLanding() {
             </motion.div>
           </motion.div>
 
-          {/* Screen Blackout Overlay for Immersion */}
+          {/* Blackout Overlay for Immersive Transition */}
           <div 
             id="blackout-overlay"
             className="fixed inset-0 w-full h-full bg-black z-[99997] opacity-0 pointer-events-none"
             style={{ transition: 'opacity 0.3s ease-in-out' }}
           />
-          
 
-
-          {/* Video Scroll Indicator - Shows when video is fullscreen */}
+          {/* Video Scroll Indicator */}
           <motion.div 
             id="video-scroll-indicator"
             className="fixed top-1/2 right-8 transform -translate-y-1/2 text-center z-[10000] opacity-0"
