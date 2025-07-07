@@ -366,13 +366,119 @@ export default function CombinedLanding() {
               </div>
             </div>
 
+            {/* Education & Career Section */}
+            <div className="mb-16">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
+                  학력 & 경력
+                </h3>
+                <span className="text-sm font-medium text-gray-500">02</span>
+              </div>
+
+              {/* Separator Line */}
+              <div className="separator-wrap mb-8">
+                <div className="separator-line h-px bg-gray-200"></div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Education Section */}
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-6">학력</h4>
+                  <div className="space-y-6">
+                    <div className="border-l-2 border-red-500 pl-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h5 className="text-base font-medium text-gray-900">디지털미디어학과</h5>
+                        <span className="text-sm text-gray-500">2018-2022</span>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-1">서울디지털대학교</p>
+                      <p className="text-gray-500 text-xs">콘텐츠 제작 및 미디어 기획 전공</p>
+                    </div>
+                    
+                    <div className="border-l-2 border-gray-300 pl-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h5 className="text-base font-medium text-gray-900">영상제작 전문과정</h5>
+                        <span className="text-sm text-gray-500">2017</span>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-1">한국방송통신대학교 평생교육원</p>
+                      <p className="text-gray-500 text-xs">영상 편집 및 후반작업 집중 교육</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Career Section */}
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-6">주요 경력</h4>
+                  <div className="space-y-6">
+                    <div className="border-l-2 border-red-500 pl-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h5 className="text-base font-medium text-gray-900">콘텐츠 크리에이터</h5>
+                        <span className="text-sm text-gray-500">2020-현재</span>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-1">개인 YouTube 채널 운영</p>
+                      <p className="text-gray-500 text-xs">교육 콘텐츠 제작 및 창작자 멘토링</p>
+                    </div>
+                    
+                    <div className="border-l-2 border-gray-300 pl-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h5 className="text-base font-medium text-gray-900">프리랜서 영상 제작자</h5>
+                        <span className="text-sm text-gray-500">2019-2020</span>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-1">다양한 기업 및 개인 프로젝트</p>
+                      <p className="text-gray-500 text-xs">브랜드 영상, 교육 콘텐츠, 광고 제작</p>
+                    </div>
+                    
+                    <div className="border-l-2 border-gray-300 pl-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h5 className="text-base font-medium text-gray-900">영상 편집자</h5>
+                        <span className="text-sm text-gray-500">2018-2019</span>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-1">미디어 제작사 ㈜크리에이티브스튜디오</p>
+                      <p className="text-gray-500 text-xs">TV 프로그램 및 온라인 콘텐츠 후반작업</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Certifications & Skills */}
+              <div className="mt-12 pt-8 border-t border-gray-100">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div>
+                    <h5 className="text-base font-medium text-gray-900 mb-3">보유 자격증</h5>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      <li>• 컴퓨터그래픽스운용기능사</li>
+                      <li>• 멀티미디어콘텐츠제작전문가</li>
+                      <li>• Adobe Certified Expert (Premiere Pro)</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="text-base font-medium text-gray-900 mb-3">전문 기술</h5>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      <li>• Adobe Creative Suite (전문가)</li>
+                      <li>• Final Cut Pro (고급)</li>
+                      <li>• DaVinci Resolve (중급)</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="text-base font-medium text-gray-900 mb-3">언어 능력</h5>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      <li>• 한국어 (모국어)</li>
+                      <li>• 영어 (업무 수준)</li>
+                      <li>• 일본어 (기초 회화)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Featured Work Section */}
             <div className="mb-16">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   주요 작업
                 </h3>
-                <span className="text-sm font-medium text-gray-500">02</span>
+                <span className="text-sm font-medium text-gray-500">03</span>
               </div>
 
               {/* Separator Line */}
@@ -513,7 +619,7 @@ export default function CombinedLanding() {
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   연락하기
                 </h3>
-                <span className="text-sm font-medium text-gray-500">03</span>
+                <span className="text-sm font-medium text-gray-500">04</span>
               </div>
 
               {/* Separator Line */}
