@@ -48,13 +48,17 @@ export default function CombinedLanding() {
           // Ultra-extremely gradual scaling from 0% to 10%
           if (progress <= 0.1) {
             const scaleProgress = progress / 0.1; // 0~1로 정규화
-            const currentScale = 1 + (scale - 1) * scaleProgress; // 1에서 최종 scale까지 점진적
+            // Ease-in-out cubic for smooth acceleration/deceleration
+            const easedProgress = scaleProgress < 0.5 
+              ? 4 * scaleProgress * scaleProgress * scaleProgress
+              : 1 - Math.pow(-2 * scaleProgress + 2, 3) / 2;
+            const currentScale = 1 + (scale - 1) * easedProgress; // 1에서 최종 scale까지 점진적
             gsap.set(videoWrap, {
-              x: x * scaleProgress,      // 점진적 중앙 이동
-              y: y * scaleProgress,
+              x: x * easedProgress,      // 점진적 중앙 이동
+              y: y * easedProgress,
               scale: currentScale,       // 1에서 최종 scale까지 점진적
               transformOrigin: "50% 50%",
-              zIndex: progress > 0.1 ? 99999 : 1,
+              zIndex: progress > 0.05 ? 99999 : 1,
               force3D: true
             });
           }

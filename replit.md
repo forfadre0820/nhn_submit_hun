@@ -280,6 +280,7 @@ Changelog:
 - July 07, 2025. Reduced scaling phase to 25% for much slower video expansion to full screen
 - July 07, 2025. Updated navigation z-index to 99999 to appear above letterbox bars during fullscreen video
 - July 07, 2025. Reduced scaling phase to 10% for ultra-extremely gradual video expansion requiring 15+ scroll actions
+- July 07, 2025. Applied ease-in-out cubic interpolation for smooth scale progression (slow-fast-slow pattern)
 ```
 
 ## User Preferences
