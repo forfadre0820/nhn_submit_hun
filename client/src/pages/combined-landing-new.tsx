@@ -7,13 +7,24 @@ export default function CombinedLanding() {
   
   // Viewport calculations for video scaling
   const [viewportDimensions, setViewportDimensions] = useState({ width: 0, height: 0 });
+  const [scrollMultiplier, setScrollMultiplier] = useState(1);
   
   useEffect(() => {
     const updateDimensions = () => {
+      const newWidth = window.innerWidth;
+      const newHeight = window.innerHeight;
+      
       setViewportDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight
+        width: newWidth,
+        height: newHeight
       });
+      
+      // Adjust scroll multiplier based on viewport size for consistency
+      const baseViewport = { width: 1920, height: 1080 };
+      const widthRatio = newWidth / baseViewport.width;
+      const heightRatio = newHeight / baseViewport.height;
+      const avgRatio = (widthRatio + heightRatio) / 2;
+      setScrollMultiplier(Math.max(0.5, Math.min(2, avgRatio)));
     };
     
     updateDimensions();
@@ -45,32 +56,54 @@ export default function CombinedLanding() {
     y: -50  // Center vertically
   };
 
-  // Improved scroll-based transforms with interpolation
+  // Calculate scroll points based on viewport multiplier for consistency
+  const getScrollPoint = (basePoint: number) => basePoint * scrollMultiplier;
+  
+  // Smoother scroll-based transforms with viewport-adjusted interpolation points
   const videoTransform = useTransform(scrollY, 
-    [0, 75, 150, 225, 300, 400, 500, 600], 
+    [
+      0, 
+      getScrollPoint(50), 
+      getScrollPoint(100), 
+      getScrollPoint(150), 
+      getScrollPoint(200), 
+      getScrollPoint(250), 
+      getScrollPoint(300), 
+      getScrollPoint(350), 
+      getScrollPoint(400), 
+      getScrollPoint(450), 
+      getScrollPoint(500), 
+      getScrollPoint(550), 
+      getScrollPoint(600)
+    ], 
     [
       "translate(0px, 0px) scale(1)",
-      "translate(0px, 0px) scale(1.2)", 
+      "translate(0px, 0px) scale(1.1)", 
+      "translate(0px, 0px) scale(1.3)",
       "translate(0px, 0px) scale(1.6)",
-      "translate(0px, 0px) scale(2.2)",
-      `translate(0px, 0px) scale(3.2)`,
-      `translate(-50%, -50%) scale(${viewportScale * 0.6})`,
-      `translate(-50%, -50%) scale(${viewportScale * 0.8})`,
+      "translate(0px, 0px) scale(2.0)",
+      "translate(0px, 0px) scale(2.5)",
+      "translate(0px, 0px) scale(3.2)",
+      `translate(-25%, -25%) scale(${viewportScale * 0.4})`,
+      `translate(-37.5%, -37.5%) scale(${viewportScale * 0.6})`,
+      `translate(-43.75%, -43.75%) scale(${viewportScale * 0.8})`,
+      `translate(-46.875%, -46.875%) scale(${viewportScale * 0.9})`,
+      `translate(-48.4375%, -48.4375%) scale(${viewportScale * 0.95})`,
       `translate(-50%, -50%) scale(${viewportScale})`
     ]
   );
 
-  const videoPosition = useTransform(scrollY, [399, 400], ["static", "fixed"]);
-  const videoZIndex = useTransform(scrollY, [399, 400], [1, 9999]);
-  const videoTop = useTransform(scrollY, [399, 400], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [399, 400], ["auto", "50%"]);
-  const videoOpacity = useTransform(scrollY, [600, 700], [1, 0]);
+  const videoPosition = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], ["static", "fixed"]);
+  const videoZIndex = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], [1, 9999]);
+  const videoTop = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], ["auto", "50%"]);
+  const videoOpacity = useTransform(scrollY, [getScrollPoint(600), getScrollPoint(650), getScrollPoint(700)], [1, 0.7, 0]);
 
-  const scrollIndicatorOpacity = useTransform(scrollY, [0, 150], [1, 0]);
+  const scrollIndicatorOpacity = useTransform(scrollY, [0, getScrollPoint(100), getScrollPoint(150)], [1, 0.5, 0]);
   
   const rossMasonTransform = useTransform(scrollY, 
-    [500, 550, 600, 650, 700, 750], 
-    ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"]
+    [getScrollPoint(550), getScrollPoint(580), getScrollPoint(610), getScrollPoint(640), getScrollPoint(670), getScrollPoint(700), getScrollPoint(730)], 
+    ["translateY(100vh)", "translateY(85vh)", "translateY(70vh)", "translateY(50vh)", "translateY(25vh)", "translateY(10vh)", "translateY(0vh)"]
   );
 
   return (
@@ -90,51 +123,56 @@ export default function CombinedLanding() {
           {/* Hero Content */}
           <div className="flex flex-col justify-center items-center min-h-screen text-center">
             <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.2] mb-8 px-4"
+              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 px-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <span className="block mb-4">메세지를 넘어</span>
-              <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap mb-4">
-                <span className="whitespace-nowrap">시청자의 경험까지</span>
-                {/* Video Element */}
-                <motion.div
-                  className="inline-block relative"
-                  style={{
-                    width: "230px",
-                    maxHeight: "87px",
-                    height: "87px",
-                    padding: "0px",
-                    transform: videoTransform,
-                    position: videoPosition,
-                    zIndex: videoZIndex,
-                    top: videoTop,
-                    left: videoLeft,
-                    transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
-                  }}
-                >
-                  <motion.video
-                    src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+              <div className="space-y-2">
+                <div className="block">메세지를 넘어</div>
+                <div className="block">시청자의 경험까지</div>
+                {/* Video Element positioned between text lines */}
+                <div className="flex justify-center my-4">
+                  <motion.div
+                    className="inline-block relative"
                     style={{
-                      height: "87px",
                       width: "230px",
-                      objectFit: "cover",
-                      objectPosition: "center",
-                      opacity: videoOpacity,
-                      border: "2px solid rgba(0, 0, 0, 0.8)",
-                      borderRadius: "0",
-                      transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                      maxHeight: "87px",
+                      height: "87px",
+                      padding: "0px",
+                      transform: videoTransform,
+                      position: videoPosition,
+                      zIndex: videoZIndex,
+                      top: videoTop,
+                      left: videoLeft,
+                      willChange: "transform, position",
+                      backfaceVisibility: "hidden",
+                      transformStyle: "preserve-3d"
                     }}
-                  />
-                </motion.div>
-                <span className="whitespace-nowrap">설계하는</span>
+                  >
+                    <motion.video
+                      src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      style={{
+                        height: "87px",
+                        width: "230px",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        opacity: videoOpacity,
+                        border: "2px solid rgba(0, 0, 0, 0.8)",
+                        borderRadius: "0",
+                        willChange: "opacity, transform",
+                        backfaceVisibility: "hidden"
+                      }}
+                    />
+                  </motion.div>
+                </div>
+                <div className="block">설계하는</div>
+                <div className="block">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
               </div>
-              <span className="block">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></span>
             </motion.h1>
 
             {/* Scroll Indicator */}
