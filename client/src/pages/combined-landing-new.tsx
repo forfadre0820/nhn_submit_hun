@@ -69,6 +69,17 @@ export default function CombinedLanding() {
               force3D: true
             });
             
+            // Show letterbox when video reaches fullscreen
+            const letterboxTop = document.getElementById('letterbox-top');
+            const letterboxBottom = document.getElementById('letterbox-bottom');
+            if (letterboxTop && letterboxBottom) {
+              if (progress >= 0.4) {
+                gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
+              } else {
+                gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
+              }
+            }
+            
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
@@ -91,6 +102,13 @@ export default function CombinedLanding() {
               zIndex: 99999,
               force3D: true
             });
+            
+            // Fade out letterbox during exit
+            const letterboxTop = document.getElementById('letterbox-top');
+            const letterboxBottom = document.getElementById('letterbox-bottom');
+            if (letterboxTop && letterboxBottom) {
+              gsap.set([letterboxTop, letterboxBottom], { opacity: 1 - exitProgress });
+            }
           }
         }
       });
@@ -192,6 +210,18 @@ export default function CombinedLanding() {
               <div className="w-1 h-3 bg-black/50 rounded-full mt-2"></div>
             </motion.div>
           </motion.div>
+
+          {/* Letterbox Bars */}
+          <div 
+            id="letterbox-top"
+            className="fixed top-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
+            style={{ transition: 'opacity 0.5s ease-in-out' }}
+          />
+          <div 
+            id="letterbox-bottom"
+            className="fixed bottom-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
+            style={{ transition: 'opacity 0.5s ease-in-out' }}
+          />
 
           {/* Video Scroll Indicator - Shows when video is fullscreen */}
           <motion.div 

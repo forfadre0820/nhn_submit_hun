@@ -274,6 +274,8 @@ Changelog:
 - July 07, 2025. Increased scroll distance to 800vh with scrub: 8 for ultra-gradual scaling
 - July 07, 2025. Reduced scaling phase to 40% and extended hold phase to 45% for longer fixed viewing
 - July 07, 2025. Applied cubic easing for ultra-smooth upward movement with gentler 0.6vh displacement
+- July 07, 2025. Added cinematic letterbox bars (12vh top/bottom) with fade-in effect during fullscreen video
+- July 07, 2025. Letterbox bars appear at 40% progress and fade out during video exit with smooth transitions
 ```
 
 ## User Preferences
