@@ -85,13 +85,32 @@ export default function CombinedLanding() {
               force3D: true
             });
             
-            // Show letterbox when video reaches near fullscreen
+            // Immersive blackout effect before letterbox
+            const blackoutOverlay = document.getElementById('blackout-overlay');
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
-            if (letterboxTop && letterboxBottom) {
-              if (progress >= 0.85) {
+            
+            if (blackoutOverlay && letterboxTop && letterboxBottom) {
+              // Blackout phase: 80-83%
+              if (progress >= 0.8 && progress < 0.83) {
+                const blackoutProgress = (progress - 0.8) / 0.03;
+                gsap.set(blackoutOverlay, { opacity: blackoutProgress * 0.8 });
+                gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
+              }
+              // Recovery phase: 83-85%
+              else if (progress >= 0.83 && progress < 0.85) {
+                const recoveryProgress = (progress - 0.83) / 0.02;
+                gsap.set(blackoutOverlay, { opacity: 0.8 * (1 - recoveryProgress) });
+                gsap.set([letterboxTop, letterboxBottom], { opacity: recoveryProgress });
+              }
+              // Full letterbox: 85%+
+              else if (progress >= 0.85) {
+                gsap.set(blackoutOverlay, { opacity: 0 });
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
-              } else {
+              }
+              // Normal state: <80%
+              else {
+                gsap.set(blackoutOverlay, { opacity: 0 });
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
               }
             }
@@ -207,6 +226,13 @@ export default function CombinedLanding() {
             </motion.div>
           </motion.div>
 
+          {/* Screen Blackout Overlay for Immersion */}
+          <div 
+            id="blackout-overlay"
+            className="fixed inset-0 w-full h-full bg-black z-[99997] opacity-0 pointer-events-none"
+            style={{ transition: 'opacity 0.3s ease-in-out' }}
+          />
+          
           {/* Letterbox Bars */}
           <div 
             id="letterbox-top"
