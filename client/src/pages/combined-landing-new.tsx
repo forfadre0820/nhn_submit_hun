@@ -470,7 +470,6 @@ export default function CombinedLanding() {
           </motion.div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="relative bg-white">
         <div className="max-w-6xl mx-auto pb-20 md:pb-50">
@@ -494,7 +493,7 @@ export default function CombinedLanding() {
             </div>
             
             {/* Copyright */}
-            <p className="md:order-2">Copyright © 이승훈 2025</p>
+            <p className="md:order-2 mt-[5px] mb-[5px]">Copyright © 이승훈 2025</p>
           </div>
           
           {/* Logo SVG */}
