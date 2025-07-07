@@ -213,6 +213,13 @@ Changelog:
 - July 07, 2025. Limited video scaling to 95% of viewport size instead of full screen
 - July 07, 2025. Implemented two-phase scroll animation: video scaling first, then video moving up with next section fade-in
 - July 07, 2025. Fixed navigation spacing and positioning to match user's reference image
+- July 07, 2025. Fixed useScroll import error from framer-motion
+- July 07, 2025. Enhanced video fullscreen scaling from 95% to 100% viewport size
+- July 07, 2025. Fixed text line spacing consistency by applying uniform line-height to all text blocks
+- July 07, 2025. Improved video positioning with middle vertical alignment for better text flow
+- July 07, 2025. Optimized ScrollTrigger timings for smoother video scaling transitions
+- July 07, 2025. Added video opacity fade-out and z-index layering for natural section transitions
+- July 07, 2025. Enhanced CSS isolation and transform-origin properties for better performance
 ```
 
 ## User Preferences

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,9 +25,9 @@ export default function CombinedLanding() {
         const vw = window.innerWidth;
         const vh = window.innerHeight;
         
-        // Scale to 95% of viewport size
-        const targetWidth = vw * 0.95;
-        const targetHeight = vh * 0.95;
+        // Scale to 100% of viewport size for true fullscreen
+        const targetWidth = vw;
+        const targetHeight = vh;
         const scaleX = targetWidth / box.width;
         const scaleY = targetHeight / box.height;
         const scale = Math.min(scaleX, scaleY);
@@ -42,8 +42,8 @@ export default function CombinedLanding() {
       // Create ScrollTrigger for video scaling (first phase)
       ScrollTrigger.create({
         trigger: hero,
-        start: "top center",
-        end: "+=200%",
+        start: "top top",
+        end: "+=150vh",
         scrub: 1,
         pin: true,
         pinSpacing: true,
@@ -51,17 +51,18 @@ export default function CombinedLanding() {
           const progress = self.progress;
           const { scale, translateX, translateY } = calculateTransform();
           
-          // Interpolate scale and position based on scroll progress
-          const currentScale = 1 + (scale - 1) * progress;
-          const currentX = translateX * progress;
-          const currentY = translateY * progress;
+          // More aggressive scaling for true fullscreen
+          const currentScale = 1 + (scale - 1) * Math.min(progress, 1);
+          const currentX = translateX * Math.min(progress, 1);
+          const currentY = translateY * Math.min(progress, 1);
           
           gsap.set(videoWrap, {
             scale: currentScale,
             x: currentX,
             y: currentY,
             transformOrigin: "center center",
-            force3D: true
+            force3D: true,
+            zIndex: progress > 0.5 ? 9999 : 1
           });
         }
       });
@@ -69,29 +70,33 @@ export default function CombinedLanding() {
       // Create ScrollTrigger for video exit and next section fade-in (second phase)
       ScrollTrigger.create({
         trigger: hero,
-        start: "+=200%",
-        end: "+=300%",
+        start: "+=150vh",
+        end: "+=100vh",
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
           const { scale, translateX, translateY } = calculateTransform();
           
-          // Move video upward
-          const upwardTranslate = -window.innerHeight * progress;
+          // Move video upward and fade out
+          const upwardTranslate = -window.innerHeight * 1.2 * progress;
+          const opacity = 1 - progress * 0.8;
           
           gsap.set(videoWrap, {
             scale: scale,
             x: translateX,
             y: translateY + upwardTranslate,
+            opacity: opacity,
             transformOrigin: "center center",
-            force3D: true
+            force3D: true,
+            zIndex: 9999
           });
 
           // Fade in next section
           if (nextSection) {
             gsap.set(nextSection, {
               opacity: progress,
-              y: 50 * (1 - progress)
+              y: 30 * (1 - progress),
+              zIndex: 20
             });
           }
         }
@@ -134,16 +139,16 @@ export default function CombinedLanding() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <div className="space-y-1 text-left max-w-4xl">
-              <div className="block">메세지를 넘어</div>
-              <div className="block">시청자의 경험까지</div>
-              <div className="block">설계하는 <span 
+            <div className="space-y-2 text-left max-w-4xl">
+              <div className="block" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
+              <div className="block" style={{ lineHeight: "1.1" }}>시청자의 경험까지</div>
+              <div className="block" style={{ lineHeight: "1.1" }}>설계하는 <span 
                   ref={videoWrapRef}
                   className="hero__videoWrap inline-block relative"
                   style={{
                     width: "230px",
                     height: "87px",
-                    verticalAlign: "baseline",
+                    verticalAlign: "middle",
                     willChange: "transform",
                     marginLeft: "8px",
                     marginRight: "8px"
@@ -166,7 +171,7 @@ export default function CombinedLanding() {
                     }}
                   />
                 </span></div>
-              <div className="block">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
+              <div className="block" style={{ lineHeight: "1.1" }}>콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
             </div>
           </motion.h1>
 
