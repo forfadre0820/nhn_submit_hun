@@ -57,6 +57,15 @@ export default function CombinedLanding() {
               zIndex: progress > 0.1 ? 99999 : 1,
               force3D: true
             });
+            
+            // Keep letterbox and nav hidden during scaling
+            const letterboxTop = document.getElementById('letterbox-top');
+            const letterboxBottom = document.getElementById('letterbox-bottom');
+            const navbar = document.querySelector('.navbar');
+            if (letterboxTop && letterboxBottom && navbar) {
+              gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
+              gsap.set(navbar, { opacity: 1 });
+            }
           }
           // Hold fullscreen for extended viewing (40% to 85%)
           else if (progress <= 0.85) {
@@ -69,14 +78,17 @@ export default function CombinedLanding() {
               force3D: true
             });
             
-            // Show letterbox when video reaches fullscreen
+            // Show letterbox and hide nav when video reaches fullscreen
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
-            if (letterboxTop && letterboxBottom) {
+            const navbar = document.querySelector('.navbar');
+            if (letterboxTop && letterboxBottom && navbar) {
               if (progress >= 0.4) {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
+                gsap.set(navbar, { opacity: 0 });
               } else {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
+                gsap.set(navbar, { opacity: 1 });
               }
             }
             
@@ -103,11 +115,13 @@ export default function CombinedLanding() {
               force3D: true
             });
             
-            // Fade out letterbox during exit
+            // Fade out letterbox and show nav during exit
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
-            if (letterboxTop && letterboxBottom) {
+            const navbar = document.querySelector('.navbar');
+            if (letterboxTop && letterboxBottom && navbar) {
               gsap.set([letterboxTop, letterboxBottom], { opacity: 1 - exitProgress });
+              gsap.set(navbar, { opacity: exitProgress });
             }
           }
         }
