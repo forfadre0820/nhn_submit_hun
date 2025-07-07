@@ -129,7 +129,7 @@ export default function CombinedLanding() {
           </nav>
 
           {/* Hero Content */}
-          <div className="flex flex-col justify-center items-center min-h-screen text-center">
+          <div className="flex flex-col justify-center items-center min-h-screen text-center mt-[-91px] mb-[-91px] pl-[0px] pr-[0px]">
             <motion.h1 
               className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 px-4"
               initial={{ opacity: 0, y: 50 }}
