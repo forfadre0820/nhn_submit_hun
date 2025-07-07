@@ -271,6 +271,9 @@ Changelog:
 - July 07, 2025. Extended scaling phase to 50% of timeline for slower, more natural video growth
 - July 07, 2025. Increased scroll distance to 500vh with scrub: 5 for ultra-gradual scaling animation
 - July 07, 2025. Extended scaling phase to 70% of timeline and added quadratic easing for smooth upward movement
+- July 07, 2025. Increased scroll distance to 800vh with scrub: 8 for ultra-gradual scaling
+- July 07, 2025. Reduced scaling phase to 40% and extended hold phase to 45% for longer fixed viewing
+- July 07, 2025. Applied cubic easing for ultra-smooth upward movement with gentler 0.6vh displacement
 ```
 
 ## User Preferences
