@@ -260,6 +260,9 @@ Changelog:
 - July 07, 2025. Set video z-index to 99999 and next section to z-10 for proper layering
 - July 07, 2025. Added CSS rules to handle position transitions smoothly
 - July 07, 2025. Ensured video stays on top with top: 0, left: 0 positioning during fullscreen
+- July 07, 2025. Corrected video animation to maintain original position while only adjusting z-index
+- July 07, 2025. Removed position: fixed changes to keep video in natural text flow location
+- July 07, 2025. Video now scales from original inline position with z-index elevation only
 ```
 
 ## User Preferences

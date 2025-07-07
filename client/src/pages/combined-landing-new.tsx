@@ -55,19 +55,13 @@ export default function CombinedLanding() {
         ease: "none",
         duration: 2,
         force3D: true,
-        zIndex: 99999,
-        position: "fixed",
-        top: 0,
-        left: 0
+        zIndex: 99999
       })
       // Phase 2: Hold fullscreen position for extended viewing (70% of timeline)  
       .to(videoWrap, {
         duration: 5.6,
         ease: "none",
         zIndex: 99999,
-        position: "fixed",
-        top: 0,
-        left: 0,
         onStart: () => {
           // Show video scroll indicator when fully scaled
           const indicator = document.getElementById('video-scroll-indicator');
@@ -81,9 +75,6 @@ export default function CombinedLanding() {
         y: y - vh * 1.2,
         ease: "power1.out",
         duration: 0.4,
-        position: "relative",
-        top: "auto",
-        left: "auto",
         zIndex: 1,
         onStart: () => {
           // Hide video scroll indicator when exiting

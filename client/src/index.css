@@ -111,15 +111,10 @@ body {
   z-index: 99999 !important;
 }
 
-/* Ensure video wrapper can handle position changes */
+/* Ensure video wrapper can handle z-index changes smoothly */
 .hero__videoWrap {
   transition: none !important;
-}
-
-/* Force video to stay on top when scaled */
-.hero__videoWrap[style*="scale"] {
-  position: fixed !important;
-  z-index: 99999 !important;
+  position: relative;
 }
 
 @layer base {
