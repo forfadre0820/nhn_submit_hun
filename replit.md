@@ -276,6 +276,9 @@ Changelog:
 - July 07, 2025. Applied cubic easing for ultra-smooth upward movement with gentler 0.6vh displacement
 - July 07, 2025. Added cinematic letterbox bars (12vh top/bottom) with fade-in effect during fullscreen video
 - July 07, 2025. Letterbox bars appear at 40% progress and fade out during video exit with smooth transitions
+- July 07, 2025. Increased scroll distance to 1200vh with scrub: 12 for extremely gradual scaling (10+ scroll actions)
+- July 07, 2025. Reduced scaling phase to 25% for much slower video expansion to full screen
+- July 07, 2025. Updated navigation z-index to 99999 to appear above letterbox bars during fullscreen video
 ```
 
 ## User Preferences

@@ -37,17 +37,17 @@ export default function CombinedLanding() {
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=800vh", // Ultra-long scroll distance for ultra-gradual scaling
-        scrub: 8,
+        end: "+=1200vh", // Extremely long scroll distance for ultra-gradual scaling
+        scrub: 12,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Ultra-gradual scaling from 0% to 40%
-          if (progress <= 0.4) {
-            const scaleProgress = progress / 0.4; // 0~1로 정규화
+          // Extremely gradual scaling from 0% to 25%
+          if (progress <= 0.25) {
+            const scaleProgress = progress / 0.25; // 0~1로 정규화
             const currentScale = 1 + (scale - 1) * scaleProgress; // 1에서 최종 scale까지 점진적
             gsap.set(videoWrap, {
               x: x * scaleProgress,      // 점진적 중앙 이동
@@ -58,8 +58,8 @@ export default function CombinedLanding() {
               force3D: true
             });
           }
-          // Hold fullscreen for extended viewing (40% to 85%)
-          else if (progress <= 0.85) {
+          // Hold fullscreen for extended viewing (25% to 80%)
+          else if (progress <= 0.8) {
             gsap.set(videoWrap, {
               x: x,
               y: y,
@@ -73,7 +73,7 @@ export default function CombinedLanding() {
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
             if (letterboxTop && letterboxBottom) {
-              if (progress >= 0.4) {
+              if (progress >= 0.25) {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
               } else {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
@@ -83,16 +83,16 @@ export default function CombinedLanding() {
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
-              if (progress >= 0.45 && progress <= 0.8) {
+              if (progress >= 0.3 && progress <= 0.75) {
                 gsap.set(indicator, { opacity: 1 });
               } else {
                 gsap.set(indicator, { opacity: 0 });
               }
             }
           }
-          // Ultra-smooth upward movement (85% to 100%)
+          // Ultra-smooth upward movement (80% to 100%)
           else {
-            const exitProgress = (progress - 0.85) / 0.15;
+            const exitProgress = (progress - 0.8) / 0.2;
             const smoothExit = exitProgress * exitProgress * exitProgress; // Cubic easing for ultra-smooth movement
             gsap.set(videoWrap, {
               x: x,
@@ -125,7 +125,7 @@ export default function CombinedLanding() {
   return (
     <div className="bg-white text-black overflow-x-hidden">
       {/* Navigation Bar */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
         <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
           <div className="flex items-center space-x-8">
             <a href="#work" className="text-sm text-gray-700 hover:text-black transition-colors">Work</a>
