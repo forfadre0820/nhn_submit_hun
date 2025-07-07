@@ -380,137 +380,103 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Portfolio Grid - Masonry Layout inspired by reference */}
+              {/* Portfolio Grid - Reference Image Layout (2x3 Grid) */}
               <div className="portfolio-container relative">
-                <div className="grid grid-cols-4 gap-3">
-                  {/* Row 1: Top row - tall left, two squares center, tall right */}
-                  {/* Project 1 - Tall left */}
+                <div className="grid grid-cols-2 gap-3">
+                  {/* Left Column - Tall vertical layout */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer row-span-2"
+                    className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '380px' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-blue-100 rounded-lg" style={{ height: '580px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-blue-400 to-blue-600"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">콘텐츠 기획</span>
-                        <span className="subtitle block text-sm opacity-80">Branding</span>
+                      <div className="portfolio-caption absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-xl font-medium">콘텐츠 기획</span>
+                        <span className="subtitle block text-sm opacity-80">Strategy & Planning</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 2 - Square top center */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '185px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-gray-300 to-gray-500"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">교육 콘텐츠</span>
-                        <span className="subtitle block text-sm opacity-80">Digital</span>
-                      </div>
+                  {/* Right Column - Stacked layout */}
+                  <div className="space-y-3">
+                    {/* Top Right - Two squares */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <motion.div 
+                        className="portfolio-item group cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '185px' }}>
+                          <div className="portfolio-image w-full h-full bg-gradient-to-br from-gray-300 to-gray-500"></div>
+                          <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="title block text-lg font-medium">교육 콘텐츠</span>
+                            <span className="subtitle block text-sm opacity-80">Digital</span>
+                          </div>
+                        </div>
+                      </motion.div>
+
+                      <motion.div 
+                        className="portfolio-item group cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="portfolio-box relative overflow-hidden bg-orange-100 rounded-lg" style={{ height: '185px' }}>
+                          <div className="portfolio-image w-full h-full bg-gradient-to-br from-orange-400 to-orange-600"></div>
+                          <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="title block text-lg font-medium">영상 제작</span>
+                            <span className="subtitle block text-sm opacity-80">Production</span>
+                          </div>
+                        </div>
+                      </motion.div>
                     </div>
-                  </motion.div>
 
-                  {/* Project 3 - Wide center (spans 2 columns) */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-2"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '185px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-pink-400 to-pink-600"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">영상 제작</span>
-                        <span className="subtitle block text-sm opacity-80">Production</span>
+                    {/* Middle Right - Wide horizontal */}
+                    <motion.div 
+                      className="portfolio-item group cursor-pointer"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="portfolio-box relative overflow-hidden bg-pink-100 rounded-lg" style={{ height: '185px' }}>
+                        <div className="portfolio-image w-full h-full bg-gradient-to-br from-pink-400 to-pink-600"></div>
+                        <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="title block text-lg font-medium">YouTube 채널</span>
+                          <span className="subtitle block text-sm opacity-80">Content Strategy</span>
+                        </div>
                       </div>
+                    </motion.div>
+
+                    {/* Bottom Right - Two more squares */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <motion.div 
+                        className="portfolio-item group cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="portfolio-box relative overflow-hidden bg-green-100 rounded-lg" style={{ height: '185px' }}>
+                          <div className="portfolio-image w-full h-full bg-gradient-to-br from-green-400 to-green-600"></div>
+                          <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="title block text-lg font-medium">브랜드 컨설팅</span>
+                            <span className="subtitle block text-sm opacity-80">Identity</span>
+                          </div>
+                        </div>
+                      </motion.div>
+
+                      <motion.div 
+                        className="portfolio-item group cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="portfolio-box relative overflow-hidden bg-white rounded-lg border border-gray-200" style={{ height: '185px' }}>
+                          <div className="portfolio-image w-full h-full bg-gradient-to-br from-white to-gray-100"></div>
+                          <div className="portfolio-caption absolute bottom-4 left-4 text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="title block text-lg font-medium">워크샵 운영</span>
+                            <span className="subtitle block text-sm opacity-80">Education</span>
+                          </div>
+                        </div>
+                      </motion.div>
                     </div>
-                  </motion.div>
-
-                  {/* Row 2: Second row */}
-                  {/* Empty space for tall item continuation */}
-                  <div></div>
-
-                  {/* Project 4 - Square bottom center */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '185px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-orange-400 to-pink-500"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">YouTube 채널</span>
-                        <span className="subtitle block text-sm opacity-80">Content Strategy</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Project 5 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '185px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-gray-400 to-gray-600"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">브랜드 컨설팅</span>
-                        <span className="subtitle block text-sm opacity-80">Identity</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Project 6 - Tall right */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer row-span-2"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '380px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-blue-500 to-gray-600"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">워크샵 운영</span>
-                        <span className="subtitle block text-sm opacity-80">Education</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Row 3: Bottom row */}
-                  {/* Project 7 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '185px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-orange-500 to-red-600"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">라이브 스트리밍</span>
-                        <span className="subtitle block text-sm opacity-80">Live Content</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Project 8 - Wide bottom (spans 2 columns) */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-2"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '185px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-white to-gray-200"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">디지털 마케팅</span>
-                        <span className="subtitle block text-sm opacity-80">Marketing</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Empty space for tall item continuation */}
-                  <div></div>
+                  </div>
                 </div>
               </div>
             </div>
