@@ -282,6 +282,9 @@ Changelog:
 - July 07, 2025. Applied ease-out quadratic to video exit movement for natural upward motion
 - July 07, 2025. Changed scrub from numeric to true for better mouse wheel control
 - July 07, 2025. Fixed letterbox visibility by simplifying fullscreen state management
+- July 07, 2025. Reduced scroll distance to 400vh and applied ease-in-out to both scaling and exit animations
+- July 07, 2025. Extended scaling phase to 60% with gradual letterbox fade-in starting at 50% progress
+- July 07, 2025. Improved letterbox timing to appear as video fills empty screen areas during scaling
 ```
 
 ## User Preferences
