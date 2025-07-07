@@ -59,22 +59,22 @@ export default function CombinedLanding() {
   // Calculate scroll points based on viewport multiplier for consistency
   const getScrollPoint = (basePoint: number) => basePoint * scrollMultiplier;
   
-  // Smoother scroll-based transforms with viewport-adjusted interpolation points
+  // Much larger scroll distances for slower, more controlled animations
   const videoTransform = useTransform(scrollY, 
     [
       0, 
-      getScrollPoint(50), 
-      getScrollPoint(100), 
-      getScrollPoint(150), 
-      getScrollPoint(200), 
-      getScrollPoint(250), 
-      getScrollPoint(300), 
-      getScrollPoint(350), 
-      getScrollPoint(400), 
-      getScrollPoint(450), 
-      getScrollPoint(500), 
-      getScrollPoint(550), 
-      getScrollPoint(600)
+      200,  // 마우스 휠 2번 정도
+      400,  // 마우스 휠 4번 정도
+      600,  // 마우스 휠 6번 정도
+      800,  // 마우스 휠 8번 정도
+      1000, // 마우스 휠 10번 정도
+      1200, // 마우스 휠 12번 정도
+      1400, // 마우스 휠 14번 정도
+      1600, // 마우스 휠 16번 정도
+      1800, // 마우스 휠 18번 정도
+      2000, // 마우스 휠 20번 정도
+      2200, // 마우스 휠 22번 정도
+      2400  // 마우스 휠 24번 정도
     ], 
     [
       "translate(0px, 0px) scale(1)",
@@ -93,16 +93,16 @@ export default function CombinedLanding() {
     ]
   );
 
-  const videoPosition = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], ["static", "fixed"]);
-  const videoZIndex = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], [1, 9999]);
-  const videoTop = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [getScrollPoint(349), getScrollPoint(350)], ["auto", "50%"]);
-  const videoOpacity = useTransform(scrollY, [getScrollPoint(600), getScrollPoint(650), getScrollPoint(700)], [1, 0.7, 0]);
+  const videoPosition = useTransform(scrollY, [1399, 1400], ["static", "fixed"]);
+  const videoZIndex = useTransform(scrollY, [1399, 1400], [1, 9999]);
+  const videoTop = useTransform(scrollY, [1399, 1400], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [1399, 1400], ["auto", "50%"]);
+  const videoOpacity = useTransform(scrollY, [2400, 2600, 2800], [1, 0.7, 0]);
 
-  const scrollIndicatorOpacity = useTransform(scrollY, [0, getScrollPoint(100), getScrollPoint(150)], [1, 0.5, 0]);
+  const scrollIndicatorOpacity = useTransform(scrollY, [0, 400, 600], [1, 0.5, 0]);
   
   const rossMasonTransform = useTransform(scrollY, 
-    [getScrollPoint(550), getScrollPoint(580), getScrollPoint(610), getScrollPoint(640), getScrollPoint(670), getScrollPoint(700), getScrollPoint(730)], 
+    [2200, 2300, 2400, 2500, 2600, 2700, 2800], 
     ["translateY(100vh)", "translateY(85vh)", "translateY(70vh)", "translateY(50vh)", "translateY(25vh)", "translateY(10vh)", "translateY(0vh)"]
   );
 
@@ -205,8 +205,8 @@ export default function CombinedLanding() {
       </section>
 
       {/* Full Screen Video Section */}
-      <section className="h-[150vh] relative">
-        {/* This creates space for the video scaling animation */}
+      <section className="h-[400vh] relative">
+        {/* This creates space for the video scaling animation - 마우스 휠 약 40번 정도의 스크롤 공간 */}
       </section>
 
       {/* Ross Mason Portfolio Section */}
