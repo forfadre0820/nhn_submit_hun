@@ -284,6 +284,7 @@ Changelog:
 - July 07, 2025. Changed to incremental scaling: 1.5x per scroll step for gradual progression (1→1.5→2.25→3.375...)
 - July 07, 2025. Increased scroll distance to 2000vh with scrub: 20 for ultra-slow wheel sensitivity
 - July 07, 2025. Reduced scaling phase to 5% and changed to 1.3x multiplier with 15 steps for finer control
+- July 07, 2025. Drastically reduced scroll distance to 20vh with scrub: 1 for precise wheel control
 ```
 
 ## User Preferences

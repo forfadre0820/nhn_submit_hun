@@ -37,8 +37,8 @@ export default function CombinedLanding() {
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=2000vh", // Extremely long scroll distance for ultra-gradual scaling
-        scrub: 20,
+        end: "+=20vh", // Short scroll distance for controlled scaling
+        scrub: 1,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
