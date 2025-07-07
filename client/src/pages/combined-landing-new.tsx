@@ -37,50 +37,28 @@ export default function CombinedLanding() {
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=400vh", // Reduced scroll distance for more responsive scaling
-        scrub: 1,
+        end: "+=800vh", // Ultra-long scroll distance for ultra-gradual scaling
+        scrub: 8,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Scaling from 0% to 60% with ease-in-out
-          if (progress <= 0.6) {
-            const scaleProgress = progress / 0.6; // 0~1로 정규화
-            // Ease-in-out function: slow start, fast middle, slow end
-            const easedProgress = scaleProgress < 0.5 
-              ? 2 * scaleProgress * scaleProgress 
-              : 1 - Math.pow(-2 * scaleProgress + 2, 2) / 2;
-            const currentScale = 1 + (scale - 1) * easedProgress;
-            
+          // Ultra-gradual scaling from 0% to 40%
+          if (progress <= 0.4) {
+            const scaleProgress = progress / 0.4; // 0~1로 정규화
+            const currentScale = 1 + (scale - 1) * scaleProgress; // 1에서 최종 scale까지 점진적
             gsap.set(videoWrap, {
-              x: x * easedProgress,
-              y: y * easedProgress,
-              scale: currentScale,
+              x: x * scaleProgress,      // 점진적 중앙 이동
+              y: y * scaleProgress,
+              scale: currentScale,       // 1에서 최종 scale까지 점진적
               transformOrigin: "50% 50%",
               zIndex: progress > 0.1 ? 99999 : 1,
               force3D: true
             });
-            
-            // Start showing letterbox as video scales up (after 50% scaling)
-            const letterboxTop = document.getElementById('letterbox-top');
-            const letterboxBottom = document.getElementById('letterbox-bottom');
-            const navbar = document.querySelector('.navbar');
-            
-            if (letterboxTop && letterboxBottom && navbar) {
-              if (progress >= 0.5) {
-                const letterboxProgress = (progress - 0.5) / 0.1; // Fade in over 10% progress
-                const letterboxOpacity = Math.min(letterboxProgress, 1);
-                gsap.set([letterboxTop, letterboxBottom], { opacity: letterboxOpacity });
-                gsap.set(navbar, { opacity: 1 - letterboxOpacity });
-              } else {
-                gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
-                gsap.set(navbar, { opacity: 1 });
-              }
-            }
           }
-          // Hold fullscreen for extended viewing (60% to 85%)
+          // Hold fullscreen for extended viewing (40% to 85%)
           else if (progress <= 0.85) {
             gsap.set(videoWrap, {
               x: x,
@@ -91,49 +69,45 @@ export default function CombinedLanding() {
               force3D: true
             });
             
-            // Keep letterbox fully visible and nav hidden during fullscreen hold
+            // Show letterbox when video reaches fullscreen
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
-            const navbar = document.querySelector('.navbar');
-            if (letterboxTop && letterboxBottom && navbar) {
-              gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
-              gsap.set(navbar, { opacity: 0 });
+            if (letterboxTop && letterboxBottom) {
+              if (progress >= 0.4) {
+                gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
+              } else {
+                gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
+              }
             }
             
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
-              if (progress >= 0.65 && progress <= 0.8) {
+              if (progress >= 0.45 && progress <= 0.8) {
                 gsap.set(indicator, { opacity: 1 });
               } else {
                 gsap.set(indicator, { opacity: 0 });
               }
             }
           }
-          // Smooth upward movement with ease-in-out (85% to 100%)
+          // Ultra-smooth upward movement (85% to 100%)
           else {
             const exitProgress = (progress - 0.85) / 0.15;
-            // Ease-in-out for smooth exit
-            const easedExit = exitProgress < 0.5 
-              ? 2 * exitProgress * exitProgress 
-              : 1 - Math.pow(-2 * exitProgress + 2, 2) / 2;
-              
+            const smoothExit = exitProgress * exitProgress * exitProgress; // Cubic easing for ultra-smooth movement
             gsap.set(videoWrap, {
               x: x,
-              y: y - vh * 0.8 * easedExit, // Upward movement with easing
+              y: y - vh * 0.6 * smoothExit, // Very gentle upward movement
               scale: scale, // Keep fullscreen size
               transformOrigin: "50% 50%",
               zIndex: 99999,
               force3D: true
             });
             
-            // Fade out letterbox and show nav during exit
+            // Fade out letterbox during exit
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
-            const navbar = document.querySelector('.navbar');
-            if (letterboxTop && letterboxBottom && navbar) {
+            if (letterboxTop && letterboxBottom) {
               gsap.set([letterboxTop, letterboxBottom], { opacity: 1 - exitProgress });
-              gsap.set(navbar, { opacity: exitProgress });
             }
           }
         }
@@ -241,10 +215,12 @@ export default function CombinedLanding() {
           <div 
             id="letterbox-top"
             className="fixed top-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
+            style={{ transition: 'opacity 0.5s ease-in-out' }}
           />
           <div 
             id="letterbox-bottom"
             className="fixed bottom-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
+            style={{ transition: 'opacity 0.5s ease-in-out' }}
           />
 
           {/* Video Scroll Indicator - Shows when video is fullscreen */}

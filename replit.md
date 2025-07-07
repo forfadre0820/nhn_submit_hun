@@ -276,15 +276,6 @@ Changelog:
 - July 07, 2025. Applied cubic easing for ultra-smooth upward movement with gentler 0.6vh displacement
 - July 07, 2025. Added cinematic letterbox bars (12vh top/bottom) with fade-in effect during fullscreen video
 - July 07, 2025. Letterbox bars appear at 40% progress and fade out during video exit with smooth transitions
-- July 07, 2025. Added navigation bar fade control - nav disappears during fullscreen video and reappears on scroll up
-- July 07, 2025. Implemented bidirectional scroll support - letterbox and nav states respond to forward/backward scrolling
-- July 07, 2025. Added ease-out cubic easing to video scaling for smoother mouse wheel responsiveness
-- July 07, 2025. Applied ease-out quadratic to video exit movement for natural upward motion
-- July 07, 2025. Changed scrub from numeric to true for better mouse wheel control
-- July 07, 2025. Fixed letterbox visibility by simplifying fullscreen state management
-- July 07, 2025. Reduced scroll distance to 400vh and applied ease-in-out to both scaling and exit animations
-- July 07, 2025. Extended scaling phase to 60% with gradual letterbox fade-in starting at 50% progress
-- July 07, 2025. Improved letterbox timing to appear as video fills empty screen areas during scaling
 ```
 
 ## User Preferences
