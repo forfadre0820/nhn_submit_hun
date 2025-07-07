@@ -262,10 +262,10 @@ export default function CombinedLanding() {
           viewport={{ once: true }}
         >
           <div className="container mx-auto px-4">
-            {/* Main Title */}
-            <div className="mb-4">
+            {/* Main Title - Much Larger */}
+            <div className="mb-12">
               <motion.h2 
-                className="text-3xl md:text-5xl font-bold uppercase leading-tight"
+                className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase leading-none mb-4"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -274,7 +274,7 @@ export default function CombinedLanding() {
                 3D ARTIST
               </motion.h2>
               <motion.h2 
-                className="text-3xl md:text-5xl font-light italic leading-tight"
+                className="text-4xl md:text-6xl lg:text-7xl font-light italic leading-none"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -300,7 +300,7 @@ export default function CombinedLanding() {
                     className="w-16 h-16 rounded-full object-cover"
                   />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold uppercase leading-tight mb-6 tracking-wide">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight mb-8 tracking-wide">
                   ABOUT<br />TEACHING
                 </h3>
               </motion.div>
@@ -314,24 +314,24 @@ export default function CombinedLanding() {
               >
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-lg md:text-xl font-bold uppercase mb-4 tracking-wide">
+                    <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-6 tracking-wide leading-tight">
                       FROM STUDYING GRAPHIC DESIGN TO <em className="italic font-light">becoming</em> A SELF <em className="italic font-light">taught</em> 3D ARTIST
                     </h4>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[PERSONAL STORY]</h5>
-                      <p className="text-gray-700 leading-relaxed text-sm">
+                      <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[PERSONAL STORY]</h5>
+                      <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                         I remember first opening Cinema 4D back in 2011(-ish) when I was just a little teen. Who would've thought over 10 years later it would've turned into a career? Along the way, I studied Graphic Design, worked as a Motion Designer, a 3D Visualiser, and eventually, turned to the life of a Freelance 3D Artist.
                       </p>
                     </div>
                     <div>
-                      <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">Forever learning.</h5>
-                      <p className="text-gray-700 leading-relaxed text-sm">
+                      <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">Forever learning.</h5>
+                      <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                         Over the years, I've had the pleasure to work with some great agencies and clients, learning from some of the greats and slowly but surely honing my craft. Over recent years, I decided to give back to the very community I learnt from - making short tutorials on YouTube, before shifting to Patreon for the more premium and longer-form content.
                       </p>
-                      <p className="text-gray-700 leading-relaxed text-sm mt-3">
+                      <p className="text-gray-700 leading-relaxed text-base md:text-lg mt-4">
                         I now like to strike a balance between working with great people whilst passing on my knowledge to those just getting into the industry.
                       </p>
                     </div>
@@ -342,9 +342,9 @@ export default function CombinedLanding() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {/* Contact Information */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[CONTACT INFO]</h5>
-                        <div className="space-y-1 text-sm">
-                          <p className="text-gray-700 font-medium">Ross Mason</p>
+                        <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[CONTACT INFO]</h5>
+                        <div className="space-y-2 text-base md:text-lg">
+                          <p className="text-gray-700 font-medium text-xl">Ross Mason</p>
                           <p className="text-gray-600">3D Artist & Motion Designer</p>
                           <p className="text-gray-600">London, UK</p>
                           <p className="text-gray-600">ross@example.com</p>
@@ -354,36 +354,36 @@ export default function CombinedLanding() {
                       
                       {/* Education */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[EDUCATION]</h5>
-                        <div className="space-y-3 text-sm">
+                        <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[EDUCATION]</h5>
+                        <div className="space-y-4 text-base md:text-lg">
                           <div>
-                            <h6 className="font-medium text-gray-900">BA Graphic Design</h6>
-                            <p className="text-xs text-gray-600">University of Arts London</p>
-                            <p className="text-xs text-gray-500">2010 - 2014</p>
+                            <h6 className="font-medium text-gray-900 text-lg">BA Graphic Design</h6>
+                            <p className="text-sm text-gray-600">University of Arts London</p>
+                            <p className="text-sm text-gray-500">2010 - 2014</p>
                           </div>
                           <div>
-                            <h6 className="font-medium text-gray-900">Self-taught 3D Artist</h6>
-                            <p className="text-xs text-gray-600">Cinema 4D, Blender, Maya</p>
-                            <p className="text-xs text-gray-500">2011 - Present</p>
+                            <h6 className="font-medium text-gray-900 text-lg">Self-taught 3D Artist</h6>
+                            <p className="text-sm text-gray-600">Cinema 4D, Blender, Maya</p>
+                            <p className="text-sm text-gray-500">2011 - Present</p>
                           </div>
                         </div>
                       </div>
                       
                       {/* Languages */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[LANGUAGES]</h5>
-                        <div className="space-y-1 text-sm">
+                        <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[LANGUAGES]</h5>
+                        <div className="space-y-3 text-base md:text-lg">
                           <div className="flex justify-between">
                             <span className="text-gray-700">English</span>
-                            <span className="text-xs text-gray-500">Native</span>
+                            <span className="text-sm text-gray-500">Native</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-gray-700">French</span>
-                            <span className="text-xs text-gray-500">Fluent</span>
+                            <span className="text-sm text-gray-500">Fluent</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-gray-700">Spanish</span>
-                            <span className="text-xs text-gray-500">Basic</span>
+                            <span className="text-sm text-gray-500">Basic</span>
                           </div>
                         </div>
                       </div>
@@ -396,70 +396,70 @@ export default function CombinedLanding() {
                       {/* Left Column - Experience & Skills */}
                       <div className="space-y-6">
                         <div>
-                          <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-widest">[PROFESSIONAL EXPERIENCE]</h5>
-                          <div className="space-y-4 text-sm">
+                          <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[PROFESSIONAL EXPERIENCE]</h5>
+                          <div className="space-y-4 text-base md:text-lg">
                             <div>
-                              <div className="flex justify-between items-start mb-1">
-                                <h6 className="font-medium text-gray-900">Senior 3D Artist & Content Creator</h6>
-                                <span className="text-xs text-gray-500">2020 - Present</span>
+                              <div className="flex justify-between items-start mb-2">
+                                <h6 className="font-medium text-gray-900 text-lg">Senior 3D Artist & Content Creator</h6>
+                                <span className="text-sm text-gray-500">2020 - Present</span>
                               </div>
-                              <p className="text-xs text-gray-600">Freelance / Patreon</p>
+                              <p className="text-sm text-gray-600">Freelance / Patreon</p>
                             </div>
                             
                             <div>
-                              <div className="flex justify-between items-start mb-1">
-                                <h6 className="font-medium text-gray-900">3D Visualiser</h6>
-                                <span className="text-xs text-gray-500">2018 - 2020</span>
+                              <div className="flex justify-between items-start mb-2">
+                                <h6 className="font-medium text-gray-900 text-lg">3D Visualiser</h6>
+                                <span className="text-sm text-gray-500">2018 - 2020</span>
                               </div>
-                              <p className="text-xs text-gray-600">Creative Agency London</p>
+                              <p className="text-sm text-gray-600">Creative Agency London</p>
                             </div>
                             
                             <div>
-                              <div className="flex justify-between items-start mb-1">
-                                <h6 className="font-medium text-gray-900">Motion Designer</h6>
-                                <span className="text-xs text-gray-500">2015 - 2018</span>
+                              <div className="flex justify-between items-start mb-2">
+                                <h6 className="font-medium text-gray-900 text-lg">Motion Designer</h6>
+                                <span className="text-sm text-gray-500">2015 - 2018</span>
                               </div>
-                              <p className="text-xs text-gray-600">Digital Studio UK</p>
+                              <p className="text-sm text-gray-600">Digital Studio UK</p>
                             </div>
                           </div>
                         </div>
                         
                         {/* Technical Skills - Compact */}
                         <div>
-                          <h5 className="text-xs font-medium text-gray-500 mb-3 uppercase tracking-widest">[TECHNICAL SKILLS]</h5>
-                          <div className="grid grid-cols-2 gap-4 text-xs">
+                          <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[TECHNICAL SKILLS]</h5>
+                          <div className="grid grid-cols-2 gap-4 text-base">
                             <div>
-                              <h6 className="font-medium text-gray-900 mb-2">3D Software</h6>
-                              <div className="space-y-1">
+                              <h6 className="font-medium text-gray-900 mb-3 text-lg">3D Software</h6>
+                              <div className="space-y-2">
                                 <div className="flex justify-between">
                                   <span className="text-gray-700">Cinema 4D</span>
-                                  <span className="text-gray-500">Expert</span>
+                                  <span className="text-gray-500 text-sm">Expert</span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span className="text-gray-700">Blender</span>
-                                  <span className="text-gray-500">Advanced</span>
+                                  <span className="text-gray-500 text-sm">Advanced</span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span className="text-gray-700">Maya</span>
-                                  <span className="text-gray-500">Intermediate</span>
+                                  <span className="text-gray-500 text-sm">Intermediate</span>
                                 </div>
                               </div>
                             </div>
                             
                             <div>
-                              <h6 className="font-medium text-gray-900 mb-2">Rendering & Post</h6>
-                              <div className="space-y-1">
+                              <h6 className="font-medium text-gray-900 mb-3 text-lg">Rendering & Post</h6>
+                              <div className="space-y-2">
                                 <div className="flex justify-between">
                                   <span className="text-gray-700">Octane Render</span>
-                                  <span className="text-gray-500">Expert</span>
+                                  <span className="text-gray-500 text-sm">Expert</span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span className="text-gray-700">Redshift</span>
-                                  <span className="text-gray-500">Advanced</span>
+                                  <span className="text-gray-500 text-sm">Advanced</span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span className="text-gray-700">After Effects</span>
-                                  <span className="text-gray-500">Expert</span>
+                                  <span className="text-gray-500 text-sm">Expert</span>
                                 </div>
                               </div>
                             </div>
@@ -469,28 +469,28 @@ export default function CombinedLanding() {
                       
                       {/* Right Column - Awards */}
                       <div>
-                        <h5 className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-widest">[AWARDS & RECOGNITION]</h5>
-                        <div className="space-y-3 text-sm">
+                        <h5 className="text-sm md:text-base font-medium text-gray-500 mb-4 uppercase tracking-widest">[AWARDS & RECOGNITION]</h5>
+                        <div className="space-y-4 text-base">
                           <div className="flex justify-between items-start">
                             <div>
-                              <h6 className="font-medium text-gray-900">Best Motion Graphics</h6>
-                              <p className="text-xs text-gray-600">Creative Awards London</p>
+                              <h6 className="font-medium text-gray-900 text-lg">Best Motion Graphics</h6>
+                              <p className="text-sm text-gray-600">Creative Awards London</p>
                             </div>
-                            <span className="text-xs text-gray-500">2019</span>
+                            <span className="text-sm text-gray-500">2019</span>
                           </div>
                           <div className="flex justify-between items-start">
                             <div>
-                              <h6 className="font-medium text-gray-900">Featured Artist</h6>
-                              <p className="text-xs text-gray-600">3D Artist Magazine</p>
+                              <h6 className="font-medium text-gray-900 text-lg">Featured Artist</h6>
+                              <p className="text-sm text-gray-600">3D Artist Magazine</p>
                             </div>
-                            <span className="text-xs text-gray-500">2020</span>
+                            <span className="text-sm text-gray-500">2020</span>
                           </div>
                           <div className="flex justify-between items-start">
                             <div>
-                              <h6 className="font-medium text-gray-900">Top Creator</h6>
-                              <p className="text-xs text-gray-600">Patreon Platform</p>
+                              <h6 className="font-medium text-gray-900 text-lg">Top Creator</h6>
+                              <p className="text-sm text-gray-600">Patreon Platform</p>
                             </div>
-                            <span className="text-xs text-gray-500">2021</span>
+                            <span className="text-sm text-gray-500">2021</span>
                           </div>
                         </div>
                       </div>
@@ -509,7 +509,7 @@ export default function CombinedLanding() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-xs uppercase tracking-widest text-gray-600 mb-3">[Services list]</h4>
+                <h4 className="text-sm md:text-base uppercase tracking-widest text-gray-600 mb-6">[Services list]</h4>
                 
                 <div className="space-y-3">
                   <motion.div 
@@ -521,10 +521,10 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase transition-opacity tracking-wide">
                         3D DESIGN
                       </h3>
-                      <span className="ml-3 text-xs text-gray-500">01.</span>
+                      <span className="ml-4 text-sm text-gray-500">01.</span>
                     </div>
                     <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
@@ -538,10 +538,10 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase transition-opacity tracking-wide">
                         ART DIRECTION
                       </h3>
-                      <span className="ml-3 text-xs text-gray-500">02.</span>
+                      <span className="ml-4 text-sm text-gray-500">02.</span>
                     </div>
                     <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
@@ -555,10 +555,10 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase transition-opacity tracking-wide">
                         ANIMATION
                       </h3>
-                      <span className="ml-3 text-xs text-gray-500">03.</span>
+                      <span className="ml-4 text-sm text-gray-500">03.</span>
                     </div>
                     <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
@@ -572,10 +572,10 @@ export default function CombinedLanding() {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center">
-                      <h3 className="text-lg md:text-xl font-bold uppercase transition-opacity tracking-wide">
-                        ANIMATION
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase transition-opacity tracking-wide">
+                        MOTION DESIGN
                       </h3>
-                      <span className="ml-3 text-xs text-gray-500">04.</span>
+                      <span className="ml-4 text-sm text-gray-500">04.</span>
                     </div>
                     <div className="h-px bg-gray-200 transition-colors duration-300 mt-1"></div>
                   </motion.div>
@@ -588,8 +588,8 @@ export default function CombinedLanding() {
                   transition={{ delay: 0.5, duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <p className="text-base font-medium mb-3">Bring your ideas to life</p>
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <p className="text-xl md:text-2xl font-medium mb-4">Bring your ideas to life</p>
+                  <p className="text-gray-600 leading-relaxed text-base md:text-lg">
                     Pushing beyond reality and creating visuals beyond physicality, 3D allows us to explore and create without boundaries. Whether it's product visualization, architectural renders, or abstract art, I help bring your vision to reality that would be impossible in the real world.
                   </p>
                 </motion.div>
