@@ -137,7 +137,7 @@ export default function CombinedLanding() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <div className="space-y-2">
-                <div className="block">메세지를 넘어</div>
+                <div className="block text-left">메세지를 넘어</div>
                 <div className="block">시청자의 경험까지</div>
                 {/* Video Element positioned between text lines */}
                 <div className="flex justify-center my-4">
@@ -217,12 +217,10 @@ export default function CombinedLanding() {
           </div>
         </div>
       </section>
-
       {/* Full Screen Video Section */}
       <section className="h-[500vh] relative">
         {/* This creates space for the video scaling animation - 동적 스크롤 속도에 맞춘 공간 */}
       </section>
-
       {/* Ross Mason Portfolio Section */}
       <motion.section 
         className="bg-white text-black relative z-20 min-h-screen"
