@@ -441,32 +441,72 @@ export default function CombinedLanding() {
 
               {/* Certifications & Skills */}
               <div className="mt-12 pt-8 border-t border-gray-100">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div>
-                    <h5 className="text-base font-medium text-gray-900 mb-3">보유 자격증</h5>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                      <li>• 컴퓨터그래픽스운용기능사</li>
-                      <li>• 멀티미디어콘텐츠제작전문가</li>
-                      <li>• Adobe Certified Expert (Premiere Pro)</li>
-                    </ul>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                  {/* Left Column */}
+                  <div className="space-y-8">
+                    <div>
+                      <h5 className="text-base font-medium text-gray-900 mb-3">보유 자격증</h5>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li>• 컴퓨터그래픽스운용기능사</li>
+                        <li>• 멀티미디어콘텐츠제작전문가</li>
+                        <li>• Adobe Certified Expert (Premiere Pro)</li>
+                        <li>• Google Analytics 자격인증</li>
+                        <li>• YouTube Creator Academy 수료</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h5 className="text-base font-medium text-gray-900 mb-3">언어 능력</h5>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li>• 한국어 (모국어)</li>
+                        <li>• 영어 (업무 수준)</li>
+                        <li>• 일본어 (기초 회화)</li>
+                      </ul>
+                    </div>
                   </div>
                   
+                  {/* Right Column */}
                   <div>
                     <h5 className="text-base font-medium text-gray-900 mb-3">전문 기술</h5>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                      <li>• Adobe Creative Suite (전문가)</li>
-                      <li>• Final Cut Pro (고급)</li>
-                      <li>• DaVinci Resolve (중급)</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h5 className="text-base font-medium text-gray-900 mb-3">언어 능력</h5>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                      <li>• 한국어 (모국어)</li>
-                      <li>• 영어 (업무 수준)</li>
-                      <li>• 일본어 (기초 회화)</li>
-                    </ul>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h6 className="text-sm font-medium text-gray-800 mb-2">영상 편집</h6>
+                        <ul className="space-y-1 text-sm text-gray-600">
+                          <li>• Adobe Premiere Pro (전문가)</li>
+                          <li>• Final Cut Pro (고급)</li>
+                          <li>• DaVinci Resolve (중급)</li>
+                          <li>• Adobe After Effects (고급)</li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h6 className="text-sm font-medium text-gray-800 mb-2">그래픽 디자인</h6>
+                        <ul className="space-y-1 text-sm text-gray-600">
+                          <li>• Adobe Photoshop (전문가)</li>
+                          <li>• Adobe Illustrator (고급)</li>
+                          <li>• Figma (중급)</li>
+                          <li>• Canva Pro (전문가)</li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h6 className="text-sm font-medium text-gray-800 mb-2">오디오 제작</h6>
+                        <ul className="space-y-1 text-sm text-gray-600">
+                          <li>• Adobe Audition (고급)</li>
+                          <li>• Logic Pro (중급)</li>
+                          <li>• Audacity (전문가)</li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h6 className="text-sm font-medium text-gray-800 mb-2">기타 도구</h6>
+                        <ul className="space-y-1 text-sm text-gray-600">
+                          <li>• OBS Studio (전문가)</li>
+                          <li>• Notion (고급)</li>
+                          <li>• Google Workspace (전문가)</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
