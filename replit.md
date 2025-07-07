@@ -286,6 +286,8 @@ Changelog:
 - July 07, 2025. Added dynamic clip-path removal during video scaling to show full video content when expanded
 - July 07, 2025. Fixed container sizing to match video dimensions during scaling, eliminating whitespace around fullscreen video
 - July 07, 2025. Simplified scroll configuration: 1000vh total distance with 100% scaling phase for exactly 10 scroll actions to fullscreen
+- July 07, 2025. Changed to 12 scroll actions (1200vh) and refactored scaling logic to prevent over-scaling beyond viewport
+- July 07, 2025. Improved scale calculation based on viewport aspect ratio for proper fullscreen fit
 ```
 
 ## User Preferences

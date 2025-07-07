@@ -37,22 +37,37 @@ export default function CombinedLanding() {
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=1000vh", // Scroll distance for 10 scroll actions to fullscreen
-        scrub: 1,
+        end: "+=1200vh", // Scroll distance for 12 scroll actions to fullscreen
+        scrub: 2,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Gradual scaling from 0% to 100% (10 scroll actions = 1000vh)
+          // Gradual scaling from 0% to 100% (12 scroll actions = 1200vh)
           if (progress <= 1.0) {
             const scaleProgress = progress; // 0~1로 정규화
+            
             // Ease-in-out cubic for smooth acceleration/deceleration
             const easedProgress = scaleProgress < 0.5 
               ? 4 * scaleProgress * scaleProgress * scaleProgress
               : 1 - Math.pow(-2 * scaleProgress + 2, 3) / 2;
-            const currentScale = 1 + (scale - 1) * easedProgress; // 1에서 최종 scale까지 점진적
+            
+            // Calculate target scale to fit viewport exactly
+            const videoAspectRatio = 16 / 9; // Assuming 16:9 video
+            const viewportAspectRatio = window.innerWidth / window.innerHeight;
+            
+            let targetScale;
+            if (viewportAspectRatio > videoAspectRatio) {
+              // Viewport is wider - scale to fill width
+              targetScale = window.innerWidth / 140;
+            } else {
+              // Viewport is taller - scale to fill height  
+              targetScale = window.innerHeight / 68;
+            }
+            
+            const currentScale = 1 + (targetScale - 1) * easedProgress;
             
             // Add scaling class to remove clip-path when video starts growing
             if (progress > 0.05) {
@@ -61,26 +76,20 @@ export default function CombinedLanding() {
               videoWrap.classList.remove('scaling');
             }
             
-            // Scale the container width and height along with the video
-            const currentWidth = 140 + (window.innerWidth - 140) * easedProgress;
-            const currentHeight = 68 + (window.innerHeight - 68) * easedProgress;
-            
             gsap.set(videoWrap, {
-              x: x * easedProgress,      // 점진적 중앙 이동
+              x: x * easedProgress,
               y: y * easedProgress,
-              scale: currentScale,       // 1에서 최종 scale까지 점진적
-              width: currentWidth + "px",
-              height: currentHeight + "px",
+              scale: currentScale,
               transformOrigin: "50% 50%",
               zIndex: progress > 0.1 ? 99999 : 1,
               force3D: true
             });
             
-            // Show letterbox when video reaches fullscreen
+            // Show letterbox when video reaches near fullscreen
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
             if (letterboxTop && letterboxBottom) {
-              if (progress >= 0.9) {
+              if (progress >= 0.85) {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
               } else {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
@@ -90,7 +99,7 @@ export default function CombinedLanding() {
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
-              if (progress >= 0.95) {
+              if (progress >= 0.9) {
                 gsap.set(indicator, { opacity: 1 });
               } else {
                 gsap.set(indicator, { opacity: 0 });
