@@ -471,7 +471,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="relative bg-white">
+      <footer className="relative bg-white pt-[0px] pb-[0px] mt-[21px] mb-[21px]">
         <div className="max-w-6xl mx-auto md:pb-50 pt-[0px] pb-[0px]">
           <div className="flex gap-y-5 md:gap-y-0 flex-col md:flex-row items-center md:justify-center pb-30 text-center md:text-left px-4">
             {/* Back to top button */}
