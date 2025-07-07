@@ -298,6 +298,7 @@ Changelog:
 - July 07, 2025. Completely removed blackout overlay effect to eliminate any remaining letterbox-like visual artifacts
 - July 07, 2025. Changed main scroll indicator text from "Scroll to explore" to "Keep to explore" when video is fullscreen, with dynamic color switching (black→white)
 - July 07, 2025. Removed "쇼릴 감상중 계속 스크롤하세요" motion div, simplified sound control to icon-only, added video area click for sound toggle
+- July 07, 2025. Added footer section with "Back to top" button, Seoul time display, copyright "이승훈 2025", and Ross Mason logo SVG
 ```
 
 ## User Preferences
