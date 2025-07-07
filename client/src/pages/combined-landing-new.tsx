@@ -380,31 +380,31 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Portfolio Grid - Uniform Multi-item Layout */}
+              {/* Portfolio Grid - Flexible Masonry Layout */}
               <div className="portfolio-container relative">
-                <div className="grid grid-cols-3 gap-4">
-                  {/* Project 1 */}
+                <div className="grid grid-cols-4 gap-4">
+                  {/* Project 1 - Wide horizontal */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer"
+                    className="portfolio-item group cursor-pointer col-span-2"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">콘텐츠 기획</span>
-                        <span className="subtitle block text-sm opacity-80">Strategy</span>
+                        <span className="subtitle block text-sm opacity-80">Strategy & Planning</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 2 */}
+                  {/* Project 2 - Square */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-green-500 to-teal-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">교육 콘텐츠</span>
@@ -413,58 +413,58 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 3 */}
+                  {/* Project 3 - Tall vertical */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer"
+                    className="portfolio-item group cursor-pointer row-span-2"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '416px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-orange-500 to-red-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">영상 제작</span>
-                        <span className="subtitle block text-sm opacity-80">Production</span>
+                        <span className="subtitle block text-sm opacity-80">Video Production</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 4 */}
+                  {/* Project 4 - Square */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-purple-500 to-pink-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">YouTube 채널</span>
-                        <span className="subtitle block text-sm opacity-80">Channel</span>
+                        <span className="subtitle block text-sm opacity-80">Channel Management</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 5 */}
+                  {/* Project 5 - Square */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-indigo-500 to-blue-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">브랜드 컨설팅</span>
-                        <span className="subtitle block text-sm opacity-80">Branding</span>
+                        <span className="subtitle block text-sm opacity-80">Brand Strategy</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 6 */}
+                  {/* Project 6 - Square */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-yellow-500 to-orange-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">워크샵 운영</span>
@@ -473,47 +473,33 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 7 */}
+                  {/* Row 3: Bottom row */}
+                  {/* Project 7 - Wide horizontal */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer"
+                    className="portfolio-item group cursor-pointer col-span-3"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-red-500 to-pink-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">라이브 스트리밍</span>
-                        <span className="subtitle block text-sm opacity-80">Live</span>
+                        <span className="subtitle block text-sm opacity-80">Live Content</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 8 */}
+                  {/* Project 8 - Square */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-teal-500 to-cyan-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="title block text-lg font-medium">디지털 마케팅</span>
-                        <span className="subtitle block text-sm opacity-80">Marketing</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Project 9 */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-gray-500 to-gray-700"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">기업 교육</span>
-                        <span className="subtitle block text-sm opacity-80">Corporate</span>
+                        <span className="subtitle block text-sm opacity-80">Digital Marketing</span>
                       </div>
                     </div>
                   </motion.div>
