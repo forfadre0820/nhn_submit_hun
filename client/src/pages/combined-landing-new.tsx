@@ -138,7 +138,7 @@ export default function CombinedLanding() {
             >
               <div className="space-y-2">
                 <div className="block text-[62px]">메세지를 넘어</div>
-                <div className="block mt-[0px] mb-[0px]">시청자의 경험까지</div>
+                <div className="block mt-[0px] mb-[0px] text-[62px]">시청자의 경험까지</div>
                 <div className="flex items-center justify-center gap-4 flex-wrap mt-[0px] mb-[0px]">
                   <span className="whitespace-nowrap">설계하는</span>
                   {/* Video Element positioned after "설계하는" */}
