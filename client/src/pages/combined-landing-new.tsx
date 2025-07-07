@@ -25,9 +25,13 @@ export default function CombinedLanding() {
       const vh = window.innerHeight;
       const scale = Math.max(vw / rect.width, vh / rect.height);
       
-      // Calculate translation to center the video
-      const x = vw * 0.5 - (rect.left + rect.width * 0.5);
-      const y = vh * 0.5 - (rect.top + rect.height * 0.5);
+      // Calculate translation to center the video precisely
+      const centerX = vw / 2;
+      const centerY = vh / 2;
+      const currentCenterX = rect.left + rect.width / 2;
+      const currentCenterY = rect.top + rect.height / 2;
+      const x = centerX - currentCenterX;
+      const y = centerY - currentCenterY;
 
       // Create single timeline with extended viewing time
       const tl = gsap.timeline({
@@ -47,9 +51,10 @@ export default function CombinedLanding() {
         x: x,
         y: y,
         scale: scale,
-        transformOrigin: "center center",
+        transformOrigin: "50% 50%",
         ease: "none",
-        duration: 2
+        duration: 2,
+        force3D: true
       })
       // Phase 2: Hold fullscreen position for extended viewing (70% of timeline)  
       .to(videoWrap, {
@@ -205,8 +210,8 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Next Section - Portfolio */}
-      <section className="next bg-white text-black relative z-20 min-h-screen">
-        <div className="container mx-auto px-4 py-8">
+      <section className="next bg-white text-black relative z-20 min-h-screen mt-[200vh]">
+        <div className="container mx-auto px-4 py-32">
           <motion.div 
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 50 }}

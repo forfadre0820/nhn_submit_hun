@@ -251,6 +251,10 @@ Changelog:
 - July 07, 2025. Adjusted timeline phases: scale (25%) → hold fullscreen (70%) → exit (5%)
 - July 07, 2025. Increased scaling duration to 2 seconds and hold duration to 5.6 seconds
 - July 07, 2025. Moved scroll indicator trigger to onStart of hold phase for better timing
+- July 07, 2025. Fixed video centering calculation using precise center coordinates
+- July 07, 2025. Added 200vh margin-top to next section for extended viewing space
+- July 07, 2025. Updated transform-origin to 50% 50% for consistent centering
+- July 07, 2025. Increased next section padding to py-32 for better spacing
 ```
 
 ## User Preferences
