@@ -220,6 +220,11 @@ Changelog:
 - July 07, 2025. Optimized ScrollTrigger timings for smoother video scaling transitions
 - July 07, 2025. Added video opacity fade-out and z-index layering for natural section transitions
 - July 07, 2025. Enhanced CSS isolation and transform-origin properties for better performance
+- July 07, 2025. Redesigned video scaling algorithm to cover full browser width using Math.max for scale calculation
+- July 07, 2025. Implemented 3-phase scroll animation: scaling (100vh) → hold position (100vh) → move up (80vh)
+- July 07, 2025. Repositioned video directly after "설계하는" text for exact layout match
+- July 07, 2025. Reduced video size to 120x67px and adjusted margins for better text flow
+- July 07, 2025. Added subtle border-radius to video for refined appearance
 ```
 
 ## User Preferences

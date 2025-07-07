@@ -19,18 +19,16 @@ export default function CombinedLanding() {
       const videoWrap = videoWrapRef.current;
       const nextSection = document.querySelector('.next');
 
-      // Calculate scale and position for 95% viewport coverage
+      // Calculate scale and position for browser width coverage
       const calculateTransform = () => {
         const box = videoWrap.getBoundingClientRect();
         const vw = window.innerWidth;
         const vh = window.innerHeight;
         
-        // Scale to 100% of viewport size for true fullscreen
-        const targetWidth = vw;
-        const targetHeight = vh;
-        const scaleX = targetWidth / box.width;
-        const scaleY = targetHeight / box.height;
-        const scale = Math.min(scaleX, scaleY);
+        // Scale to browser width (maintain aspect ratio)
+        const scaleX = vw / box.width;
+        const scaleY = vh / box.height;
+        const scale = Math.max(scaleX, scaleY); // Use max to cover full browser
         
         // Calculate translation to center the video
         const translateX = (vw / 2) - (box.left + box.width / 2);
@@ -39,11 +37,11 @@ export default function CombinedLanding() {
         return { scale, translateX, translateY };
       };
 
-      // Create ScrollTrigger for video scaling (first phase)
+      // Create ScrollTrigger for video scaling (Phase 1: Scale to browser width)
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=150vh",
+        end: "+=100vh",
         scrub: 1,
         pin: true,
         pinSpacing: true,
@@ -51,10 +49,10 @@ export default function CombinedLanding() {
           const progress = self.progress;
           const { scale, translateX, translateY } = calculateTransform();
           
-          // More aggressive scaling for true fullscreen
-          const currentScale = 1 + (scale - 1) * Math.min(progress, 1);
-          const currentX = translateX * Math.min(progress, 1);
-          const currentY = translateY * Math.min(progress, 1);
+          // Scale to browser width
+          const currentScale = 1 + (scale - 1) * progress;
+          const currentX = translateX * progress;
+          const currentY = translateY * progress;
           
           gsap.set(videoWrap, {
             scale: currentScale,
@@ -62,30 +60,49 @@ export default function CombinedLanding() {
             y: currentY,
             transformOrigin: "center center",
             force3D: true,
-            zIndex: progress > 0.5 ? 9999 : 1
+            zIndex: progress > 0.3 ? 9999 : 1
           });
         }
       });
 
-      // Create ScrollTrigger for video exit and next section fade-in (second phase)
+      // Create ScrollTrigger for video hold (Phase 2: Stay in place)
       ScrollTrigger.create({
         trigger: hero,
-        start: "+=150vh",
+        start: "+=100vh",
         end: "+=100vh",
+        scrub: 1,
+        onUpdate: (self) => {
+          const { scale, translateX, translateY } = calculateTransform();
+          
+          // Keep video at full scale and position
+          gsap.set(videoWrap, {
+            scale: scale,
+            x: translateX,
+            y: translateY,
+            transformOrigin: "center center",
+            force3D: true,
+            zIndex: 9999
+          });
+        }
+      });
+
+      // Create ScrollTrigger for video exit (Phase 3: Move up and next section)
+      ScrollTrigger.create({
+        trigger: hero,
+        start: "+=200vh",
+        end: "+=80vh",
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
           const { scale, translateX, translateY } = calculateTransform();
           
-          // Move video upward and fade out
-          const upwardTranslate = -window.innerHeight * 1.2 * progress;
-          const opacity = 1 - progress * 0.8;
+          // Move video upward
+          const upwardTranslate = -window.innerHeight * 1.5 * progress;
           
           gsap.set(videoWrap, {
             scale: scale,
             x: translateX,
             y: translateY + upwardTranslate,
-            opacity: opacity,
             transformOrigin: "center center",
             force3D: true,
             zIndex: 9999
@@ -95,7 +112,7 @@ export default function CombinedLanding() {
           if (nextSection) {
             gsap.set(nextSection, {
               opacity: progress,
-              y: 30 * (1 - progress),
+              y: 50 * (1 - progress),
               zIndex: 20
             });
           }
@@ -142,16 +159,17 @@ export default function CombinedLanding() {
             <div className="space-y-2 text-left max-w-4xl">
               <div className="block" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
               <div className="block" style={{ lineHeight: "1.1" }}>시청자의 경험까지</div>
-              <div className="block" style={{ lineHeight: "1.1" }}>설계하는 <span 
+              <div className="block" style={{ lineHeight: "1.1" }}>
+                설계하는<span 
                   ref={videoWrapRef}
                   className="hero__videoWrap inline-block relative"
                   style={{
-                    width: "230px",
-                    height: "87px",
+                    width: "120px",
+                    height: "67px",
                     verticalAlign: "middle",
                     willChange: "transform",
-                    marginLeft: "8px",
-                    marginRight: "8px"
+                    marginLeft: "12px",
+                    marginRight: "0px"
                   }}
                 >
                   <video
@@ -167,10 +185,11 @@ export default function CombinedLanding() {
                       objectFit: "cover",
                       display: "block",
                       filter: "brightness(1.05)",
-                      borderRadius: "0"
+                      borderRadius: "4px"
                     }}
                   />
-                </span></div>
+                </span>
+              </div>
               <div className="block" style={{ lineHeight: "1.1" }}>콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
             </div>
           </motion.h1>
