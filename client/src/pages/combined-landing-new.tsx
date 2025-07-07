@@ -45,9 +45,9 @@ export default function CombinedLanding() {
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Extremely gradual scaling from 0% to 25%
-          if (progress <= 0.25) {
-            const scaleProgress = progress / 0.25; // 0~1로 정규화
+          // Ultra-extremely gradual scaling from 0% to 10%
+          if (progress <= 0.1) {
+            const scaleProgress = progress / 0.1; // 0~1로 정규화
             const currentScale = 1 + (scale - 1) * scaleProgress; // 1에서 최종 scale까지 점진적
             gsap.set(videoWrap, {
               x: x * scaleProgress,      // 점진적 중앙 이동
@@ -58,8 +58,8 @@ export default function CombinedLanding() {
               force3D: true
             });
           }
-          // Hold fullscreen for extended viewing (25% to 80%)
-          else if (progress <= 0.8) {
+          // Hold fullscreen for extended viewing (10% to 85%)
+          else if (progress <= 0.85) {
             gsap.set(videoWrap, {
               x: x,
               y: y,
@@ -73,7 +73,7 @@ export default function CombinedLanding() {
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
             if (letterboxTop && letterboxBottom) {
-              if (progress >= 0.25) {
+              if (progress >= 0.1) {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
               } else {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
@@ -83,16 +83,16 @@ export default function CombinedLanding() {
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
-              if (progress >= 0.3 && progress <= 0.75) {
+              if (progress >= 0.15 && progress <= 0.8) {
                 gsap.set(indicator, { opacity: 1 });
               } else {
                 gsap.set(indicator, { opacity: 0 });
               }
             }
           }
-          // Ultra-smooth upward movement (80% to 100%)
+          // Ultra-smooth upward movement (85% to 100%)
           else {
-            const exitProgress = (progress - 0.8) / 0.2;
+            const exitProgress = (progress - 0.85) / 0.15;
             const smoothExit = exitProgress * exitProgress * exitProgress; // Cubic easing for ultra-smooth movement
             gsap.set(videoWrap, {
               x: x,
