@@ -29,12 +29,12 @@ export default function CombinedLanding() {
       const x = vw * 0.5 - (rect.left + rect.width * 0.5);
       const y = vh * 0.5 - (rect.top + rect.height * 0.5);
 
-      // Create single timeline with proper sequence
+      // Create single timeline with extended viewing time
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: hero,
           start: "top top",
-          end: "+=200%",
+          end: "+=500%", // Much longer scroll distance for viewing
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -42,31 +42,45 @@ export default function CombinedLanding() {
         }
       });
 
-      // Phase 1: Move to center and scale simultaneously
+      // Phase 1: Move to center and scale (20% of timeline)
       tl.to(videoWrap, {
         x: x,
         y: y,
         scale: scale,
         transformOrigin: "center center",
         ease: "none",
-        duration: 1
-      })
-      // Phase 2: Hold position
-      .to(videoWrap, {
         duration: 1,
+        onComplete: () => {
+          // Show video scroll indicator when fullscreen
+          const indicator = document.getElementById('video-scroll-indicator');
+          if (indicator) {
+            gsap.to(indicator, { opacity: 1, duration: 0.5 });
+          }
+        }
+      })
+      // Phase 2: Hold fullscreen position for extended viewing (60% of timeline)
+      .to(videoWrap, {
+        duration: 3,
         ease: "none"
       })
-      // Phase 3: Move up and fade in next section
+      // Phase 3: Move up and fade in next section (20% of timeline)
       .to(videoWrap, {
         y: y - vh * 1.2,
         ease: "power1.out",
-        duration: 0.8
+        duration: 1,
+        onStart: () => {
+          // Hide video scroll indicator when exiting
+          const indicator = document.getElementById('video-scroll-indicator');
+          if (indicator) {
+            gsap.to(indicator, { opacity: 0, duration: 0.5 });
+          }
+        }
       }, ">")
       .to(nextSection, {
         opacity: 1,
         y: 0,
         ease: "power1.out",
-        duration: 0.8
+        duration: 1
       }, "<");
 
     }, 100);
@@ -164,6 +178,28 @@ export default function CombinedLanding() {
               className="w-6 h-10 border-2 border-black/30 rounded-full flex justify-center"
             >
               <div className="w-1 h-3 bg-black/50 rounded-full mt-2"></div>
+            </motion.div>
+          </motion.div>
+
+          {/* Video Scroll Indicator - Shows when video is fullscreen */}
+          <motion.div 
+            id="video-scroll-indicator"
+            className="fixed top-1/2 right-8 transform -translate-y-1/2 text-center z-[10000] opacity-0"
+            style={{ pointerEvents: 'none' }}
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="text-white/90 text-sm mb-4 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full"
+            >
+              쇼릴 감상 중 • 계속 스크롤하세요
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
+              className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center mx-auto"
+            >
+              <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
             </motion.div>
           </motion.div>
         </div>

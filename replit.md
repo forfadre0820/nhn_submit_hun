@@ -242,6 +242,11 @@ Changelog:
 - July 07, 2025. Changed hero section from min-h-screen to h-screen with overflow-hidden
 - July 07, 2025. Cleaned up CSS file to remove conflicting styles and syntax errors
 - July 07, 2025. Adjusted clip-path to 8% for better video visibility
+- July 07, 2025. Extended scroll timeline to 500% for longer showreel viewing time
+- July 07, 2025. Restructured timeline phases: scale (20%) → hold fullscreen (60%) → exit (20%)
+- July 07, 2025. Added dedicated video scroll indicator that appears during fullscreen viewing
+- July 07, 2025. Implemented indicator visibility controls with onComplete/onStart callbacks
+- July 07, 2025. Enhanced user experience for showreel presentation with extended viewing duration
 ```
 
 ## User Preferences
