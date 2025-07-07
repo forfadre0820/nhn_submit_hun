@@ -286,11 +286,16 @@ export default function CombinedLanding() {
           >
             {/* Main About Section */}
             <div className="mb-12">
-              <div className="flex justify-between items-start mb-8">
+              <div className="flex justify-between items-start mb-6">
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   ABOUT 이승훈
                 </h3>
                 <span className="text-sm font-medium text-gray-500">01</span>
+              </div>
+
+              {/* Separator Line */}
+              <div className="separator-wrap mb-8">
+                <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
               {/* Main Content Grid */}
