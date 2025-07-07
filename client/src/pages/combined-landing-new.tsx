@@ -473,7 +473,7 @@ export default function CombinedLanding() {
       {/* Footer */}
       <footer className="relative bg-white pt-[0px] pb-[0px] mt-[21px] mb-[21px]">
         <div className="max-w-6xl mx-auto md:pb-50 pt-[0px] pb-[0px]">
-          <div className="flex gap-y-5 md:gap-y-0 flex-col md:flex-row items-center md:justify-center pb-30 text-center md:text-left px-4">
+          <div className="flex gap-y-5 md:gap-y-0 flex-col md:flex-row items-center md:justify-center text-center md:text-left px-4 pt-[0px] pb-[0px] mt-[11px] mb-[11px]">
             {/* Back to top button */}
             <button 
               type="button" 
