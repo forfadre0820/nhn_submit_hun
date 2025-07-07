@@ -306,8 +306,6 @@ Changelog:
 - July 07, 2025. Changed to uniform 3x3 grid layout with equal-sized square project cards for better content visibility
 - July 07, 2025. Redesigned with flexible masonry grid using 4-column base with varied cell spans (1x1, 2x1, 3x1, 1x2) for dynamic layout
 - July 07, 2025. Added comprehensive Education & Career section with detailed academic background, professional experience, certifications, and skills
-- July 07, 2025. Reorganized skills section layout from 3-column to 2-column grid to accommodate 6+ technical skills with subcategories
-- July 07, 2025. Reverted to original 3-column layout and simplified technical skills list to user-specified tools: 프리미어, 애프터 이펙트, 일러스트, 포토샵, 다빈치 리졸브, 파이썬, 컴피유아이 (removed language abilities section)
 ```
 
 ## User Preferences

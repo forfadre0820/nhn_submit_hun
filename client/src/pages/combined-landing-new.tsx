@@ -454,23 +454,18 @@ export default function CombinedLanding() {
                   <div>
                     <h5 className="text-base font-medium text-gray-900 mb-3">전문 기술</h5>
                     <ul className="space-y-2 text-sm text-gray-600">
-                      <li>• 프리미어</li>
-                      <li>• 애프터 이펙트</li>
-                      <li>• 일러스트</li>
-                      <li>• 포토샵</li>
-                      <li>• 다빈치 리졸브</li>
-                      <li>• 파이썬</li>
-                      <li>• 컴피유아이</li>
+                      <li>• Adobe Creative Suite (전문가)</li>
+                      <li>• Final Cut Pro (고급)</li>
+                      <li>• DaVinci Resolve (중급)</li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h5 className="text-base font-medium text-gray-900 mb-3">기타 역량</h5>
+                    <h5 className="text-base font-medium text-gray-900 mb-3">언어 능력</h5>
                     <ul className="space-y-2 text-sm text-gray-600">
-                      <li>• 콘텐츠 기획 및 구성</li>
-                      <li>• 영상 연출 및 편집</li>
-                      <li>• 그래픽 디자인</li>
-                      <li>• 교육 콘텐츠 제작</li>
+                      <li>• 한국어 (모국어)</li>
+                      <li>• 영어 (업무 수준)</li>
+                      <li>• 일본어 (기초 회화)</li>
                     </ul>
                   </div>
                 </div>
