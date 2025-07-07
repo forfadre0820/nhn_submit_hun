@@ -255,6 +255,11 @@ Changelog:
 - July 07, 2025. Added 200vh margin-top to next section for extended viewing space
 - July 07, 2025. Updated transform-origin to 50% 50% for consistent centering
 - July 07, 2025. Increased next section padding to py-32 for better spacing
+- July 07, 2025. Fixed video overlay issue by setting position: fixed during fullscreen phase
+- July 07, 2025. Added dynamic positioning changes: relative → fixed → relative throughout animation
+- July 07, 2025. Set video z-index to 99999 and next section to z-10 for proper layering
+- July 07, 2025. Added CSS rules to handle position transitions smoothly
+- July 07, 2025. Ensured video stays on top with top: 0, left: 0 positioning during fullscreen
 ```
 
 ## User Preferences
