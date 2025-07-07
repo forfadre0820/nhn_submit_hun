@@ -289,6 +289,7 @@ Changelog:
 - July 07, 2025. Changed to 12 scroll actions (1200vh) and refactored scaling logic to prevent over-scaling beyond viewport
 - July 07, 2025. Improved scale calculation based on viewport aspect ratio for proper fullscreen fit
 - July 07, 2025. Added immersive blackout effect before letterbox appearance (80-85% progress) for enhanced cinematic transition
+- July 07, 2025. Added square crop for video when viewport aspect ratio is portrait or square (width ≤ height)
 ```
 
 ## User Preferences

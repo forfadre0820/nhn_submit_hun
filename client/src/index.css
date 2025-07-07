@@ -90,6 +90,12 @@ body {
   clip-path: inset(0% 0);
 }
 
+/* Square crop for portrait/square viewports */
+.hero__videoWrap.square-crop video {
+  clip-path: inset(12.5% 0);
+  object-fit: cover;
+}
+
 /* Hero section */
 .hero {
   position: relative;

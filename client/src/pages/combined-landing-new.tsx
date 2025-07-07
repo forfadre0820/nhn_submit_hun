@@ -54,9 +54,16 @@ export default function CombinedLanding() {
               ? 4 * scaleProgress * scaleProgress * scaleProgress
               : 1 - Math.pow(-2 * scaleProgress + 2, 3) / 2;
             
-            // Calculate target scale to fit viewport exactly
+            // Calculate target scale and handle aspect ratio cropping
             const videoAspectRatio = 16 / 9; // Assuming 16:9 video
             const viewportAspectRatio = window.innerWidth / window.innerHeight;
+            
+            // Apply square crop for portrait/square viewports
+            if (viewportAspectRatio <= 1.0) {
+              videoWrap.classList.add('square-crop');
+            } else {
+              videoWrap.classList.remove('square-crop');
+            }
             
             let targetScale;
             if (viewportAspectRatio > videoAspectRatio) {
