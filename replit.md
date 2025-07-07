@@ -266,6 +266,7 @@ Changelog:
 - July 07, 2025. Complete ScrollTrigger refactoring with onUpdate for precise progress control
 - July 07, 2025. Removed opacity changes and maintained smooth continuous scaling transitions
 - July 07, 2025. Extended scroll distance to 500vh with 3-phase smooth animation: scale (25%) → hold (50%) → exit (25%)
+- July 07, 2025. Changed video exit behavior from scaling down to moving upward while maintaining fullscreen size
 ```
 
 ## User Preferences

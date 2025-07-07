@@ -79,14 +79,13 @@ export default function CombinedLanding() {
               }
             }
           }
-          // Smooth exit transition (75% to 100%)
+          // Move video upward while maintaining fullscreen size (75% to 100%)
           else {
             const exitProgress = (progress - 0.75) / 0.25;
-            const currentScale = scale * (1 - exitProgress * 0.5);
             gsap.set(videoWrap, {
               x: x,
-              y: y - vh * 0.4 * exitProgress,
-              scale: currentScale,
+              y: y - vh * 1.5 * exitProgress, // Move up more dramatically
+              scale: scale, // Keep fullscreen size
               transformOrigin: "50% 50%",
               zIndex: 99999,
               force3D: true
