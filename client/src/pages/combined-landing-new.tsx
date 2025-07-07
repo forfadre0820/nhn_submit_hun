@@ -157,7 +157,7 @@ export default function CombinedLanding() {
           >
             <div className="space-y-2 text-center max-w-4xl mx-auto">
               <div className="block" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
-              <div className="block mt-[0px] mb-[0px]" style={{ lineHeight: "1.1" }}>시청자의 경험까지</div>
+              <div className="block mt-[0px] mb-[0px]" style={{ lineHeight: "1.1" }}>      시청자의 경험까지</div>
               <div className="block mt-[-2px] mb-[-2px]" style={{ lineHeight: "1.1" }}>
                 설계하는<span 
                   ref={videoWrapRef}
