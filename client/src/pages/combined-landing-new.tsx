@@ -12,89 +12,91 @@ export default function CombinedLanding() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
     const timer = setTimeout(() => {
       if (!heroRef.current || !videoWrapRef.current || !videoRef.current) return;
 
-      const wrap = videoWrapRef.current;
       const hero = heroRef.current;
-      
-      // Cache initial values as recommended
-      const rect = wrap.getBoundingClientRect();
+      const videoWrap = videoWrapRef.current;
+      const nextSection = document.querySelector('.next');
+
+      // Get initial rect and calculate transforms (cache these values)
+      const rect = videoWrap.getBoundingClientRect();
       const vw = window.innerWidth;
       const vh = window.innerHeight;
       const scale = Math.max(vw / rect.width, vh / rect.height);
       
-      // Calculate center translation values
-      const x = vw * 0.5 - (rect.left + rect.width * 0.5);
-      const y = vh * 0.5 - (rect.top + rect.height * 0.5);
+      // Calculate translation to center the video precisely
+      const centerX = vw / 2;
+      const centerY = vh / 2;
+      const currentCenterX = rect.left + rect.width / 2;
+      const currentCenterY = rect.top + rect.height / 2;
+      const x = centerX - currentCenterX;
+      const y = centerY - currentCenterY;
 
-      // Create timeline following the reference guide
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: hero,
-          start: "top center", // Start when hero hits center of viewport
-          end: "+=800%", // Original extended scroll range
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-          pinSpacing: false
-        }
-      });
-
-      // Phase 1: Position correction and scaling (simultaneous) - Quick scaling
-      tl.to(wrap, {
-        x: x,
-        y: y,
-        ease: "none",
-        duration: 2
-      })
-      .to(wrap, {
-        scale: scale,
-        transformOrigin: "center center",
-        ease: "none",
-        duration: 2,
-        onStart: () => {
-          // Ensure video is on top when scaling starts
-          gsap.set(wrap, { zIndex: 99999 });
-        }
-      }, "<") // Start simultaneously with position
-      
-      // Phase 2: Hold fullscreen for extended viewing
-      .to(wrap, {
-        duration: 5.6, // Original extended hold duration
-        ease: "none",
-        onStart: () => {
-          // Show scroll indicator
-          const indicator = document.getElementById('video-scroll-indicator');
-          if (indicator) {
-            gsap.to(indicator, { opacity: 1, duration: 0.5 });
+      // Create ScrollTrigger with smooth continuous progress control
+      ScrollTrigger.create({
+        trigger: hero,
+        start: "top top",
+        end: "+=200vh", // Reduced scroll distance for more gradual scaling
+        scrub: 2,
+        pin: true,
+        anticipatePin: 1,
+        pinSpacing: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          
+          // Smooth scaling from 0% to 50% (more gradual)
+          if (progress <= 0.5) {
+            const scaleProgress = progress / 0.5;
+            const currentScale = 1 + (scale - 1) * scaleProgress;
+            gsap.set(videoWrap, {
+              x: x * scaleProgress,
+              y: y * scaleProgress,
+              scale: currentScale,
+              transformOrigin: "50% 50%",
+              zIndex: progress > 0.05 ? 99999 : 1,
+              force3D: true
+            });
           }
-        }
-      })
-      
-      // Phase 3: Move upward transition
-      .to(wrap, {
-        y: y - vh * 1.2,
-        ease: "power2.out",
-        duration: 0.4,
-        onStart: () => {
-          // Hide scroll indicator
-          const indicator = document.getElementById('video-scroll-indicator');
-          if (indicator) {
-            gsap.to(indicator, { opacity: 0, duration: 0.3 });
+          // Hold fullscreen for viewing (50% to 80%)
+          else if (progress <= 0.8) {
+            gsap.set(videoWrap, {
+              x: x,
+              y: y,
+              scale: scale,
+              transformOrigin: "50% 50%",
+              zIndex: 99999,
+              force3D: true
+            });
+            
+            // Show scroll indicator during viewing period
+            const indicator = document.getElementById('video-scroll-indicator');
+            if (indicator) {
+              if (progress >= 0.55 && progress <= 0.75) {
+                gsap.set(indicator, { opacity: 1 });
+              } else {
+                gsap.set(indicator, { opacity: 0 });
+              }
+            }
           }
-        },
-        onComplete: () => {
-          // Reset z-index after animation
-          gsap.set(wrap, { zIndex: 1 });
+          // Move video upward while maintaining fullscreen size (80% to 100%)
+          else {
+            const exitProgress = (progress - 0.8) / 0.2;
+            gsap.set(videoWrap, {
+              x: x,
+              y: y - vh * 1.5 * exitProgress, // Move up more dramatically
+              scale: scale, // Keep fullscreen size
+              transformOrigin: "50% 50%",
+              zIndex: 99999,
+              force3D: true
+            });
+          }
         }
       });
 
     }, 100);
 
-    // Cleanup with proper ScrollTrigger management
+    // Cleanup function
     return () => {
       clearTimeout(timer);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());

@@ -60,15 +60,14 @@ body {
   overflow-x: hidden;
 }
 
-/* Hero Video Styles - Following reference guide */
+/* Hero Video Styles */
 .hero__videoWrap {
   display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
+  vertical-align: baseline;
   position: relative;
   isolation: isolate;
-  transform-origin: center center;
-  will-change: transform;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity;
   z-index: 1;
 }
 
@@ -112,12 +111,10 @@ body {
   z-index: 99999 !important;
 }
 
-/* Video element styling */
-.hero__videoWrap video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* Ensure video wrapper can handle z-index changes smoothly */
+.hero__videoWrap {
+  transition: none !important;
+  position: relative;
 }
 
 @layer base {

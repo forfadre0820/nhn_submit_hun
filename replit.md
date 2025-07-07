@@ -269,12 +269,6 @@ Changelog:
 - July 07, 2025. Changed video exit behavior from scaling down to moving upward while maintaining fullscreen size
 - July 07, 2025. Reduced scroll distance to 200vh and increased scrub to 2 for more gradual, controlled scaling
 - July 07, 2025. Extended scaling phase to 50% of timeline for slower, more natural video growth
-- July 07, 2025. Complete refactoring following GSAP reference guide with proper timeline structure
-- July 07, 2025. Implemented simultaneous position and scale transforms using "<" timeline positioning
-- July 07, 2025. Added proper transform-origin: center center and anticipatePin for smooth pin behavior
-- July 07, 2025. Set trigger to "top center" and extended scroll range to 300% for gradual scaling
-- July 07, 2025. Restored original 800% scroll range and quick scaling with extended hold duration
-- July 07, 2025. Maintained proper timeline structure while removing gradual scaling behavior
 ```
 
 ## User Preferences
