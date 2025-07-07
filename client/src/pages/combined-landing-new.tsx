@@ -38,20 +38,21 @@ export default function CombinedLanding() {
         trigger: hero,
         start: "top top",
         end: "+=800vh", // Ultra-long scroll distance for ultra-gradual scaling
-        scrub: 8,
+        scrub: true,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Ultra-gradual scaling from 0% to 40%
+          // Ultra-gradual scaling from 0% to 40% with ease-out
           if (progress <= 0.4) {
             const scaleProgress = progress / 0.4; // 0~1로 정규화
-            const currentScale = 1 + (scale - 1) * scaleProgress; // 1에서 최종 scale까지 점진적
+            const easedProgress = 1 - Math.pow(1 - scaleProgress, 3); // Ease-out cubic
+            const currentScale = 1 + (scale - 1) * easedProgress; // 1에서 최종 scale까지 점진적
             gsap.set(videoWrap, {
-              x: x * scaleProgress,      // 점진적 중앙 이동
-              y: y * scaleProgress,
+              x: x * easedProgress,      // 점진적 중앙 이동
+              y: y * easedProgress,
               scale: currentScale,       // 1에서 최종 scale까지 점진적
               transformOrigin: "50% 50%",
               zIndex: progress > 0.1 ? 99999 : 1,
@@ -83,13 +84,8 @@ export default function CombinedLanding() {
             const letterboxBottom = document.getElementById('letterbox-bottom');
             const navbar = document.querySelector('.navbar');
             if (letterboxTop && letterboxBottom && navbar) {
-              if (progress >= 0.4) {
-                gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
-                gsap.set(navbar, { opacity: 0 });
-              } else {
-                gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
-                gsap.set(navbar, { opacity: 1 });
-              }
+              gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
+              gsap.set(navbar, { opacity: 0 });
             }
             
             // Show scroll indicator during viewing period
@@ -102,13 +98,13 @@ export default function CombinedLanding() {
               }
             }
           }
-          // Ultra-smooth upward movement (85% to 100%)
+          // Ultra-smooth upward movement with ease-out (85% to 100%)
           else {
             const exitProgress = (progress - 0.85) / 0.15;
-            const smoothExit = exitProgress * exitProgress * exitProgress; // Cubic easing for ultra-smooth movement
+            const easedExit = 1 - Math.pow(1 - exitProgress, 2); // Ease-out quadratic
             gsap.set(videoWrap, {
               x: x,
-              y: y - vh * 0.6 * smoothExit, // Very gentle upward movement
+              y: y - vh * 0.6 * easedExit, // Very gentle upward movement with easing
               scale: scale, // Keep fullscreen size
               transformOrigin: "50% 50%",
               zIndex: 99999,
@@ -229,12 +225,10 @@ export default function CombinedLanding() {
           <div 
             id="letterbox-top"
             className="fixed top-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
-            style={{ transition: 'opacity 0.5s ease-in-out' }}
           />
           <div 
             id="letterbox-bottom"
             className="fixed bottom-0 left-0 w-full h-[12vh] bg-black z-[99998] opacity-0 pointer-events-none"
-            style={{ transition: 'opacity 0.5s ease-in-out' }}
           />
 
           {/* Video Scroll Indicator - Shows when video is fullscreen */}

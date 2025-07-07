@@ -278,6 +278,10 @@ Changelog:
 - July 07, 2025. Letterbox bars appear at 40% progress and fade out during video exit with smooth transitions
 - July 07, 2025. Added navigation bar fade control - nav disappears during fullscreen video and reappears on scroll up
 - July 07, 2025. Implemented bidirectional scroll support - letterbox and nav states respond to forward/backward scrolling
+- July 07, 2025. Added ease-out cubic easing to video scaling for smoother mouse wheel responsiveness
+- July 07, 2025. Applied ease-out quadratic to video exit movement for natural upward motion
+- July 07, 2025. Changed scrub from numeric to true for better mouse wheel control
+- July 07, 2025. Fixed letterbox visibility by simplifying fullscreen state management
 ```
 
 ## User Preferences
