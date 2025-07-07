@@ -198,6 +198,12 @@ Changelog:
 - July 07, 2025. Enhanced video viewport coverage with better interpolation calculations
 - July 07, 2025. Reduced full-screen video section height to 150vh for better pacing
 - July 07, 2025. Updated all scroll trigger points to match new reduced scroll distances
+- July 07, 2025. Implemented dynamic scroll speed with variable acceleration/deceleration
+- July 07, 2025. Removed video border stroke and added subtle border-radius
+- July 07, 2025. Enhanced video scaling to 97% viewport size with proper aspect ratio handling
+- July 07, 2025. Added GPU acceleration and rendering optimizations to prevent animation glitches
+- July 07, 2025. Extended scroll animation sequence with upward video movement and resume section reveal
+- July 07, 2025. Implemented isolation and transform-origin properties for smoother transitions
 ```
 
 ## User Preferences
