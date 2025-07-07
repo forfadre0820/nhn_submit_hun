@@ -263,6 +263,9 @@ Changelog:
 - July 07, 2025. Corrected video animation to maintain original position while only adjusting z-index
 - July 07, 2025. Removed position: fixed changes to keep video in natural text flow location
 - July 07, 2025. Video now scales from original inline position with z-index elevation only
+- July 07, 2025. Complete ScrollTrigger refactoring with onUpdate for precise progress control
+- July 07, 2025. Removed opacity changes and maintained smooth continuous scaling transitions
+- July 07, 2025. Extended scroll distance to 500vh with 3-phase smooth animation: scale (25%) → hold (50%) → exit (25%)
 ```
 
 ## User Preferences
