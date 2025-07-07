@@ -204,6 +204,11 @@ Changelog:
 - July 07, 2025. Added GPU acceleration and rendering optimizations to prevent animation glitches
 - July 07, 2025. Extended scroll animation sequence with upward video movement and resume section reveal
 - July 07, 2025. Implemented isolation and transform-origin properties for smoother transitions
+- July 07, 2025. Rebuilt using GSAP ScrollTrigger for proper video scaling animation
+- July 07, 2025. Added navigation bar with backdrop blur effect
+- July 07, 2025. Updated text layout to match Korean design specification with 62px font size
+- July 07, 2025. Enhanced video scaling to fill entire viewport width and height
+- July 07, 2025. Positioned video inline with "설계하는" text for natural flow
 ```
 
 ## User Preferences

@@ -12,94 +12,117 @@ export default function CombinedLanding() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!heroRef.current || !videoWrapRef.current || !videoRef.current) return;
+    const timer = setTimeout(() => {
+      if (!heroRef.current || !videoWrapRef.current || !videoRef.current) return;
 
-    const hero = heroRef.current;
-    const videoWrap = videoWrapRef.current;
-    const video = videoRef.current;
+      const hero = heroRef.current;
+      const videoWrap = videoWrapRef.current;
 
-    // Calculate scale and position for fullscreen video
-    const calculateTransform = () => {
-      const box = videoWrap.getBoundingClientRect();
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      
-      const scaleX = vw / box.width;
-      const scaleY = vh / box.height;
-      const scale = Math.max(scaleX, scaleY);
-      
-      // Calculate translation to center the video
-      const translateX = (vw / 2) - (box.left + box.width / 2);
-      const translateY = (vh / 2) - (box.top + box.height / 2);
-      
-      return { scale, translateX, translateY };
-    };
-
-    // Create ScrollTrigger animation
-    ScrollTrigger.create({
-      trigger: hero,
-      start: "top center",
-      end: "+=300%",
-      scrub: 1,
-      pin: true,
-      pinSpacing: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const { scale, translateX, translateY } = calculateTransform();
+      // Calculate scale and position for fullscreen video
+      const calculateTransform = () => {
+        const box = videoWrap.getBoundingClientRect();
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
         
-        // Interpolate scale and position based on scroll progress
-        const currentScale = 1 + (scale - 1) * progress;
-        const currentX = translateX * progress;
-        const currentY = translateY * progress;
+        // Scale to fill viewport width
+        const scaleX = vw / box.width;
+        const scaleY = vh / box.height;
+        const scale = Math.max(scaleX, scaleY); // Use larger scale to cover entire viewport
         
-        gsap.set(videoWrap, {
-          scale: currentScale,
-          x: currentX,
-          y: currentY,
-          transformOrigin: "center center",
-          force3D: true
-        });
-      }
-    });
+        // Calculate translation to center the video
+        const translateX = (vw / 2) - (box.left + box.width / 2);
+        const translateY = (vh / 2) - (box.top + box.height / 2);
+        
+        return { scale, translateX, translateY };
+      };
+
+      // Create ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: hero,
+        start: "top center",
+        end: "+=300%",
+        scrub: 1,
+        pin: true,
+        pinSpacing: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const { scale, translateX, translateY } = calculateTransform();
+          
+          // Interpolate scale and position based on scroll progress
+          const currentScale = 1 + (scale - 1) * progress;
+          const currentX = translateX * progress;
+          const currentY = translateY * progress;
+          
+          gsap.set(videoWrap, {
+            scale: currentScale,
+            x: currentX,
+            y: currentY,
+            transformOrigin: "center center",
+            force3D: true
+          });
+        }
+      });
+    }, 100);
 
     // Cleanup function
     return () => {
+      clearTimeout(timer);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
   return (
     <div className="bg-white text-black overflow-x-hidden">
+      {/* Navigation Bar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-8">
+              <a href="#" className="text-lg font-bold text-black">이승훈</a>
+              <div className="hidden md:flex space-x-6">
+                <a href="#about" className="text-sm text-gray-600 hover:text-black transition-colors">소개</a>
+                <a href="#work" className="text-sm text-gray-600 hover:text-black transition-colors">작업</a>
+                <a href="#contact" className="text-sm text-gray-600 hover:text-black transition-colors">연락</a>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <button className="text-sm text-gray-600 hover:text-black transition-colors">
+                메뉴
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section with Text Masking */}
       <section 
         ref={heroRef}
-        className="hero min-h-screen flex items-center justify-center relative bg-white"
+        className="hero min-h-screen flex items-center justify-center relative bg-white pt-16"
       >
         <div className="container mx-auto px-4 text-center">
           <motion.h1 
-            className="hero__heading text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8"
+            className="hero__heading font-bold leading-[1.1] mb-8"
             style={{
-              fontSize: "clamp(3rem, 8vw, 8rem)",
+              fontSize: "62px",
               lineHeight: "1.1"
             }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <div className="space-y-2">
+            <div className="space-y-1 text-left max-w-4xl">
               <div className="block">메세지를 넘어</div>
               <div className="block">시청자의 경험까지</div>
-              <div className="flex items-center justify-center gap-4 flex-wrap">
-                <span className="whitespace-nowrap">설계하는</span>
-                {/* Video Element with Text Masking */}
-                <span 
+              <div className="block">설계하는 <span 
                   ref={videoWrapRef}
                   className="hero__videoWrap inline-block relative"
                   style={{
                     width: "230px",
                     height: "87px",
-                    verticalAlign: "middle",
-                    willChange: "transform"
+                    verticalAlign: "baseline",
+                    willChange: "transform",
+                    marginLeft: "8px",
+                    marginRight: "8px"
                   }}
                 >
                   <video
@@ -118,8 +141,7 @@ export default function CombinedLanding() {
                       borderRadius: "0"
                     }}
                   />
-                </span>
-              </div>
+                </span></div>
               <div className="block">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
             </div>
           </motion.h1>
@@ -149,10 +171,9 @@ export default function CombinedLanding() {
         </div>
       </section>
 
-      {/* Next Section - Ross Mason Portfolio */}
+      {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-20 min-h-screen">
         <div className="container mx-auto px-4 py-20">
-          {/* About Header */}
           <motion.div 
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
