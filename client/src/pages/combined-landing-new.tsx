@@ -213,7 +213,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Next Section - Portfolio */}
-      <section className="next bg-white text-black relative z-10 min-h-screen mt-[2000px] mb-[2000px]">
+      <section className="next bg-white text-black relative z-10 min-h-screen mt-[200vh]">
         <div className="container mx-auto px-4 py-32">
           <motion.div 
             className="max-w-6xl mx-auto"
