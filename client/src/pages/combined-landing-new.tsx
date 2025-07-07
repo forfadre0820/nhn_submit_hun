@@ -85,19 +85,7 @@ export default function CombinedLanding() {
             force3D: true
           });
           
-          // Blackout transition effect
-          const blackoutOverlay = document.getElementById('blackout-overlay');
-          if (blackoutOverlay) {
-            if (progress >= 0.8 && progress < 0.83) {
-              const blackoutProgress = (progress - 0.8) / 0.03;
-              gsap.set(blackoutOverlay, { opacity: blackoutProgress * 0.8 });
-            } else if (progress >= 0.83 && progress < 0.85) {
-              const recoveryProgress = (progress - 0.83) / 0.02;
-              gsap.set(blackoutOverlay, { opacity: 0.8 * (1 - recoveryProgress) });
-            } else {
-              gsap.set(blackoutOverlay, { opacity: 0 });
-            }
-          }
+
           
           // Show scroll indicator when near fullscreen
           const indicator = document.getElementById('video-scroll-indicator');
@@ -227,32 +215,20 @@ export default function CombinedLanding() {
             </motion.div>
           </motion.div>
 
-          {/* Blackout Overlay for Immersive Transition */}
-          <div 
-            id="blackout-overlay"
-            className="fixed inset-0 w-full h-full bg-black z-[9997] opacity-0 pointer-events-none"
-            style={{ transition: 'opacity 0.3s ease-in-out' }}
-          />
+
 
           {/* Video Scroll Indicator */}
           <motion.div 
             id="video-scroll-indicator"
-            className="fixed top-1/2 right-8 transform -translate-y-1/2 text-center z-[99999] opacity-0"
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-[99999] opacity-0"
             style={{ pointerEvents: 'none' }}
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="text-white/90 text-sm mb-4 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full"
+              className="text-white text-2xl font-light tracking-wider"
             >
-              쇼릴 감상 중 • 계속 스크롤하세요
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-              className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center mx-auto"
-            >
-              <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
+              Keep
             </motion.div>
           </motion.div>
 
@@ -265,7 +241,7 @@ export default function CombinedLanding() {
               style={{ pointerEvents: 'auto' }}
             >
               <motion.div
-                className="absolute top-8 right-8 bg-black/70 backdrop-blur-sm rounded-full p-4 cursor-pointer shadow-lg"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-full p-4 cursor-pointer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ 
                   opacity: showSoundControl ? 1 : 0,
@@ -276,39 +252,45 @@ export default function CombinedLanding() {
                 style={{ pointerEvents: 'auto' }}
               >
                 {isVideoMuted ? (
-                  <svg 
-                    className="w-6 h-6 text-white" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
-                    />
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" 
-                    />
-                  </svg>
+                  <div className="flex flex-col items-center">
+                    <svg 
+                      className="w-8 h-8 text-white mb-2" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
+                      />
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" 
+                      />
+                    </svg>
+                    <span className="text-white text-sm">SOUND ON</span>
+                  </div>
                 ) : (
-                  <svg 
-                    className="w-6 h-6 text-white" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
-                    />
-                  </svg>
+                  <div className="flex flex-col items-center">
+                    <svg 
+                      className="w-8 h-8 text-white mb-2" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
+                      />
+                    </svg>
+                    <span className="text-white text-sm">SOUND OFF</span>
+                  </div>
                 )}
               </motion.div>
             </motion.div>

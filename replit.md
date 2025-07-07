@@ -294,6 +294,8 @@ Changelog:
 - July 07, 2025. Complete code refactoring: cleaned up unused imports, optimized scroll logic, removed all letterbox references, streamlined video scaling algorithm
 - July 07, 2025. Added fullscreen video sound control overlay with mouse hover activation and SOUND ON/OFF toggle functionality
 - July 07, 2025. Fixed z-index layering issues: reduced video z-index to 9999, elevated sound control and scroll indicators to z-[99999] for proper visibility
+- July 07, 2025. Redesigned sound control to center position with SOUND ON/OFF text labels, replaced complex scroll indicator with simple "Keep" text
+- July 07, 2025. Completely removed blackout overlay effect to eliminate any remaining letterbox-like visual artifacts
 ```
 
 ## User Preferences
