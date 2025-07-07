@@ -37,29 +37,29 @@ export default function CombinedLanding() {
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=200vh", // Reduced scroll distance for more gradual scaling
-        scrub: 2,
+        end: "+=300vh", // Increased scroll distance for very gradual scaling
+        scrub: 3,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Smooth scaling from 0% to 50% (more gradual)
-          if (progress <= 0.5) {
-            const scaleProgress = progress / 0.5;
-            const currentScale = 1 + (scale - 1) * scaleProgress;
+          // Very gradual scaling from 0% to 60%
+          if (progress <= 0.6) {
+            const scaleProgress = progress / 0.6; // 0~1로 정규화
+            const currentScale = 1 + (scale - 1) * scaleProgress; // 1에서 최종 scale까지 점진적
             gsap.set(videoWrap, {
-              x: x * scaleProgress,
+              x: x * scaleProgress,      // 점진적 중앙 이동
               y: y * scaleProgress,
-              scale: currentScale,
+              scale: currentScale,       // 1에서 최종 scale까지 점진적
               transformOrigin: "50% 50%",
-              zIndex: progress > 0.05 ? 99999 : 1,
+              zIndex: progress > 0.1 ? 99999 : 1,
               force3D: true
             });
           }
-          // Hold fullscreen for viewing (50% to 80%)
-          else if (progress <= 0.8) {
+          // Hold fullscreen for viewing (60% to 85%)
+          else if (progress <= 0.85) {
             gsap.set(videoWrap, {
               x: x,
               y: y,
@@ -72,16 +72,16 @@ export default function CombinedLanding() {
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
-              if (progress >= 0.55 && progress <= 0.75) {
+              if (progress >= 0.65 && progress <= 0.8) {
                 gsap.set(indicator, { opacity: 1 });
               } else {
                 gsap.set(indicator, { opacity: 0 });
               }
             }
           }
-          // Move video upward while maintaining fullscreen size (80% to 100%)
+          // Move video upward while maintaining fullscreen size (85% to 100%)
           else {
-            const exitProgress = (progress - 0.8) / 0.2;
+            const exitProgress = (progress - 0.85) / 0.15;
             gsap.set(videoWrap, {
               x: x,
               y: y - vh * 1.5 * exitProgress, // Move up more dramatically
