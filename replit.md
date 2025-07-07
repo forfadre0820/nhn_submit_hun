@@ -301,6 +301,7 @@ Changelog:
 - July 07, 2025. Added footer section with "Back to top" button, Seoul time display, copyright "이승훈 2025", and Ross Mason logo SVG
 - July 07, 2025. Redesigned portfolio section with masonry grid layout, separator lines, reduced text spacing, and portfolio-style project cards with hover captions
 - July 07, 2025. Added separator lines to all main sections (About, Featured Work, Contact) for consistent visual hierarchy
+- July 07, 2025. Redesigned portfolio grid with true masonry layout using manual positioning to eliminate gaps and create puzzle-like arrangement
 ```
 
 ## User Preferences
