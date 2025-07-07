@@ -181,7 +181,7 @@ export default function CombinedLanding() {
                         transform: "translateZ(0)", // GPU 가속 강제
                         contain: "layout style paint" // 렌더링 최적화
                       }}
-                    />
+                      className="mt-[-4px] mb-[-4px] ml-[-105px] mr-[-105px]" />
                   </motion.div>
                 </div>
                 <div className="block text-left">설계하는</div>
