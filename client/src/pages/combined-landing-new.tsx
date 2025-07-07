@@ -137,7 +137,7 @@ export default function CombinedLanding() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <div className="space-y-2">
-                <div className="block text-center text-[62px]">메세지를 넘어</div>
+                <div className="block text-[62px] text-left">메세지를 넘어</div>
                 <div className="block text-left text-[62px]">시청자의 경험까지</div>
                 {/* Video Element positioned between text lines */}
                 <div className="flex justify-center my-4">
