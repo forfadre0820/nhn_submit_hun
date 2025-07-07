@@ -81,7 +81,7 @@ export default function CombinedLanding() {
             y: y * easedProgress,
             scale: currentScale,
             transformOrigin: "50% 50%",
-            zIndex: progress > 0.1 ? 99999 : 1,
+            zIndex: progress > 0.1 ? 9999 : 1,
             force3D: true
           });
           
@@ -206,7 +206,7 @@ export default function CombinedLanding() {
 
           {/* Scroll Indicator */}
           <motion.div 
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-50"
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-[99999]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 1 }}
@@ -230,14 +230,14 @@ export default function CombinedLanding() {
           {/* Blackout Overlay for Immersive Transition */}
           <div 
             id="blackout-overlay"
-            className="fixed inset-0 w-full h-full bg-black z-[99997] opacity-0 pointer-events-none"
+            className="fixed inset-0 w-full h-full bg-black z-[9997] opacity-0 pointer-events-none"
             style={{ transition: 'opacity 0.3s ease-in-out' }}
           />
 
           {/* Video Scroll Indicator */}
           <motion.div 
             id="video-scroll-indicator"
-            className="fixed top-1/2 right-8 transform -translate-y-1/2 text-center z-[10000] opacity-0"
+            className="fixed top-1/2 right-8 transform -translate-y-1/2 text-center z-[99999] opacity-0"
             style={{ pointerEvents: 'none' }}
           >
             <motion.div
@@ -259,13 +259,13 @@ export default function CombinedLanding() {
           {/* Sound Control Overlay */}
           {isVideoFullscreen && (
             <motion.div 
-              className="fixed inset-0 z-[99998] pointer-events-none"
+              className="fixed inset-0 z-[99999] pointer-events-none"
               onMouseEnter={handleVideoMouseEnter}
               onMouseLeave={handleVideoMouseLeave}
               style={{ pointerEvents: 'auto' }}
             >
               <motion.div
-                className="absolute top-8 right-8 bg-black/50 backdrop-blur-sm rounded-full p-4 cursor-pointer"
+                className="absolute top-8 right-8 bg-black/70 backdrop-blur-sm rounded-full p-4 cursor-pointer shadow-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ 
                   opacity: showSoundControl ? 1 : 0,
