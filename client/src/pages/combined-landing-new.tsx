@@ -189,7 +189,7 @@ export default function CombinedLanding() {
                     className="mt-[10px] mb-[10px]" />
                 </span>
               </div>
-              <div className="block" style={{ lineHeight: "1.1" }}>콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
+              <div className="block pt-[3px] pb-[3px]" style={{ lineHeight: "1.1" }}>콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></div>
             </div>
           </motion.h1>
 
