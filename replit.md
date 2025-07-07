@@ -308,6 +308,7 @@ Changelog:
 - July 07, 2025. Added comprehensive Education & Career section with detailed academic background, professional experience, certifications, and skills
 - July 07, 2025. Redesigned Contact section with flipped layout: left image column, right content with detailed PD background and organic process description
 - July 07, 2025. Completely redesigned footer based on reference HTML: main content area with call-to-action text, email contact, social links, and portrait image on right side
+- July 07, 2025. Updated footer layout to match main content alignment and removed social media links, keeping only email contact
 ```
 
 ## User Preferences

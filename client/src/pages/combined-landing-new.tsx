@@ -671,82 +671,65 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-gray-50 py-20 mt-32">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column - Main Content */}
-            <div className="lg:col-span-8">
-              <div className="mb-8">
-                <p className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6">
-                  무언가 훌륭한 것을 만들어보세요.
-                </p>
-                
-                {/* Contact Info */}
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-4 h-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-                    </svg>
+      <footer className="bg-white py-20 mt-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="relative">
+            {/* Main Content Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 items-start">
+              {/* Left Column - Main Content */}
+              <div className="lg:col-span-4">
+                <div className="mb-8">
+                  <p className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6">
+                    무언가 훌륭한 것을 만들어보세요.
+                  </p>
+                  
+                  {/* Contact Info */}
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-4 h-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                      </svg>
+                    </div>
+                    <a href="mailto:seunghun@example.com" className="text-gray-900 hover:text-gray-600 transition-colors">
+                      seunghun@example.com
+                    </a>
                   </div>
-                  <a href="mailto:seunghun@example.com" className="text-gray-900 hover:text-gray-600 transition-colors">
-                    seunghun@example.com
-                  </a>
                 </div>
               </div>
 
-              {/* Social Links */}
-              <div className="flex gap-8">
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" 
-                   className="text-gray-900 hover:text-gray-600 transition-colors font-medium">
-                  Ig.
-                </a>
-                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" 
-                   className="text-gray-900 hover:text-gray-600 transition-colors font-medium">
-                  Yt.
-                </a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" 
-                   className="text-gray-900 hover:text-gray-600 transition-colors font-medium">
-                  Tw.
-                </a>
-                <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" 
-                   className="text-gray-900 hover:text-gray-600 transition-colors font-medium">
-                  Be.
-                </a>
-              </div>
-            </div>
-
-            {/* Right Column - Portrait Image */}
-            <div className="lg:col-span-4 hidden lg:block">
-              <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-gray-300 to-gray-500 rounded-lg overflow-hidden">
-                  {/* Placeholder for portrait image */}
-                  <div className="w-full h-full bg-gradient-to-br from-blue-100/30 to-purple-100/30"></div>
+              {/* Right Column - Portrait Image (Absolute positioned) */}
+              <div className="lg:col-span-2 hidden lg:block">
+                <div className="absolute right-0 top-0">
+                  <div className="w-48 h-48 bg-gradient-to-br from-gray-300 to-gray-500 rounded-lg overflow-hidden">
+                    {/* Placeholder for portrait image */}
+                    <div className="w-full h-full bg-gradient-to-br from-blue-100/30 to-purple-100/30"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Bottom Section */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <button 
-                type="button" 
-                className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                ↑ 맨 위로
-              </button>
-              
-              <div className="text-center">
-                <p className="text-gray-600 text-sm">Copyright © 이승훈 2025</p>
-              </div>
-              
-              <div className="text-gray-600 text-sm">
-                Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
-                  hour: '2-digit', 
-                  minute: '2-digit',
-                  hour12: false 
-                })}
+            {/* Bottom Section */}
+            <div className="mt-16 pt-8 border-t border-gray-200">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <button 
+                  type="button" 
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  ↑ 맨 위로
+                </button>
+                
+                <div className="text-center">
+                  <p className="text-gray-600 text-sm">Copyright © 이승훈 2025</p>
+                </div>
+                
+                <div className="text-gray-600 text-sm">
+                  Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
+                    hour: '2-digit', 
+                    minute: '2-digit',
+                    hour12: false 
+                  })}
+                </div>
               </div>
             </div>
           </div>
