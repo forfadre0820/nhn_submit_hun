@@ -189,6 +189,15 @@ Changelog:
 - July 05, 2025. Implemented professional experience timeline with detailed job descriptions
 - July 05, 2025. Added technical skills section with 3D software and rendering expertise levels
 - July 05, 2025. Included awards & recognition section with industry achievements
+- July 07, 2025. Updated title to Korean text matching user's image specification
+- July 07, 2025. Changed background from black to white with black text and pink accent dot
+- July 07, 2025. Restructured Korean text layout: "메세지를 넘어" / "시청자의 경험까지 [video] 설계하는" / "콘텐츠 제작자 이승훈 입니다."
+- July 07, 2025. Reduced scroll sensitivity by 50% for slower, more controlled animations
+- July 07, 2025. Improved video scaling algorithm with proper aspect ratio handling
+- July 07, 2025. Added CSS transitions with cubic-bezier easing for smooth scroll animations
+- July 07, 2025. Enhanced video viewport coverage with better interpolation calculations
+- July 07, 2025. Reduced full-screen video section height to 150vh for better pacing
+- July 07, 2025. Updated all scroll trigger points to match new reduced scroll distances
 ```
 
 ## User Preferences

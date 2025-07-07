@@ -21,71 +21,82 @@ export default function CombinedLanding() {
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
-  // Calculate scale needed to fill viewport
+  // Calculate scale needed to fill viewport with better aspect ratio handling
   const baseWidth = 230;
   const baseHeight = 87;
-  const scaleX = viewportDimensions.width / baseWidth;
-  const scaleY = viewportDimensions.height / baseHeight;
-  const viewportScale = Math.max(scaleX, scaleY, 1);
+  const aspectRatio = baseWidth / baseHeight;
+  const viewportAspectRatio = viewportDimensions.width / viewportDimensions.height;
+  
+  // Use proper scaling for viewport coverage
+  let finalScale;
+  if (viewportAspectRatio > aspectRatio) {
+    // Viewport is wider than video, scale to fill width
+    finalScale = viewportDimensions.width / baseWidth;
+  } else {
+    // Viewport is taller than video, scale to fill height
+    finalScale = viewportDimensions.height / baseHeight;
+  }
+  
+  const viewportScale = Math.max(finalScale, 1);
 
-  // Position calculations for centering
+  // Position calculations for perfect centering
   const finalPosition = {
-    x: ((viewportDimensions.width - baseWidth) / 2 - baseWidth / 2) / baseWidth * 100,
-    y: ((viewportDimensions.height - baseHeight) / 2 - baseHeight / 2) / baseHeight * 100
+    x: -50, // Center horizontally
+    y: -50  // Center vertically
   };
 
-  // Scroll-based transforms
+  // Improved scroll-based transforms with interpolation
   const videoTransform = useTransform(scrollY, 
-    [0, 200, 400, 600, 800, 1000, 1200, 1400], 
+    [0, 75, 150, 225, 300, 400, 500, 600], 
     [
       "translate(0px, 0px) scale(1)",
-      "translate(0px, 0px) scale(1.5)", 
-      "translate(0px, 0px) scale(2.5)",
-      "translate(0px, 0px) scale(4)",
-      `translate(0px, 0px) scale(${Math.min(6, viewportScale)})`,
-      `translate(-50%, -50%) scale(${viewportScale})`,
-      `translate(${finalPosition.x}%, ${finalPosition.y * 0.5}%) scale(${viewportScale})`,
-      `translate(${finalPosition.x}%, ${finalPosition.y}%) scale(${viewportScale})`
+      "translate(0px, 0px) scale(1.2)", 
+      "translate(0px, 0px) scale(1.6)",
+      "translate(0px, 0px) scale(2.2)",
+      `translate(0px, 0px) scale(3.2)`,
+      `translate(-50%, -50%) scale(${viewportScale * 0.6})`,
+      `translate(-50%, -50%) scale(${viewportScale * 0.8})`,
+      `translate(-50%, -50%) scale(${viewportScale})`
     ]
   );
 
-  const videoPosition = useTransform(scrollY, [999, 1000], ["static", "fixed"]);
-  const videoZIndex = useTransform(scrollY, [999, 1000], [1, 9999]);
-  const videoTop = useTransform(scrollY, [999, 1000], ["auto", "50%"]);
-  const videoLeft = useTransform(scrollY, [999, 1000], ["auto", "50%"]);
-  const videoOpacity = useTransform(scrollY, [1400, 1600], [1, 0]);
+  const videoPosition = useTransform(scrollY, [399, 400], ["static", "fixed"]);
+  const videoZIndex = useTransform(scrollY, [399, 400], [1, 9999]);
+  const videoTop = useTransform(scrollY, [399, 400], ["auto", "50%"]);
+  const videoLeft = useTransform(scrollY, [399, 400], ["auto", "50%"]);
+  const videoOpacity = useTransform(scrollY, [600, 700], [1, 0]);
 
-  const scrollIndicatorOpacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const scrollIndicatorOpacity = useTransform(scrollY, [0, 150], [1, 0]);
   
   const rossMasonTransform = useTransform(scrollY, 
-    [1200, 1300, 1400, 1500, 1600, 1700], 
+    [500, 550, 600, 650, 700, 750], 
     ["translateY(100vh)", "translateY(80vh)", "translateY(60vh)", "translateY(30vh)", "translateY(10vh)", "translateY(0vh)"]
   );
 
   return (
     <div ref={containerRef} className="relative">
       {/* McCann Hero Section */}
-      <section className="min-h-screen bg-black text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 py-20">
+      <section className="min-h-screen bg-white text-black relative overflow-hidden">
+        <div className="container mx-auto px-4 py-12">
           {/* Navigation */}
-          <nav className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-white/10 backdrop-blur-md rounded-full px-8 py-4">
+          <nav className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-black/10 backdrop-blur-md rounded-full px-8 py-4">
             <div className="flex items-center space-x-8">
-              <a href="#" className="text-white hover:text-gray-300 transition-colors font-medium">Work</a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors font-medium">About</a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors font-medium">Contact</a>
+              <a href="#" className="text-black hover:text-gray-600 transition-colors font-medium">Work</a>
+              <a href="#" className="text-black hover:text-gray-600 transition-colors font-medium">About</a>
+              <a href="#" className="text-black hover:text-gray-600 transition-colors font-medium">Contact</a>
             </div>
           </nav>
 
           {/* Hero Content */}
           <div className="flex flex-col justify-center items-center min-h-screen text-center">
             <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 px-4"
+              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.2] mb-8 px-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <span className="block">메세지를 넘어</span>
-              <span className="block flex items-center justify-center gap-4 md:gap-6 flex-wrap">
+              <span className="block mb-4">메세지를 넘어</span>
+              <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap mb-4">
                 <span className="whitespace-nowrap">시청자의 경험까지</span>
                 {/* Video Element */}
                 <motion.div
@@ -100,6 +111,7 @@ export default function CombinedLanding() {
                     zIndex: videoZIndex,
                     top: videoTop,
                     left: videoLeft,
+                    transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
                   }}
                 >
                   <motion.video
@@ -114,14 +126,15 @@ export default function CombinedLanding() {
                       objectFit: "cover",
                       objectPosition: "center",
                       opacity: videoOpacity,
-                      border: "2px solid rgba(255, 255, 255, 0.8)",
-                      borderRadius: "0"
+                      border: "2px solid rgba(0, 0, 0, 0.8)",
+                      borderRadius: "0",
+                      transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
                     }}
                   />
                 </motion.div>
                 <span className="whitespace-nowrap">설계하는</span>
-              </span>
-              <span className="block">콘텐츠 제작자 이승훈 입니다.</span>
+              </div>
+              <span className="block">콘텐츠 제작자 이승훈 입니다<span className="text-pink-500">.</span></span>
             </motion.h1>
 
             {/* Scroll Indicator */}
@@ -137,16 +150,16 @@ export default function CombinedLanding() {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="text-white/80 text-sm mb-4"
+                className="text-black/80 text-sm mb-4"
               >
                 Scroll to explore
               </motion.div>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-                className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+                className="w-6 h-10 border-2 border-black/30 rounded-full flex justify-center"
               >
-                <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+                <div className="w-1 h-3 bg-black/50 rounded-full mt-2"></div>
               </motion.div>
             </motion.div>
           </div>
@@ -154,7 +167,7 @@ export default function CombinedLanding() {
       </section>
 
       {/* Full Screen Video Section */}
-      <section className="h-[300vh] relative">
+      <section className="h-[150vh] relative">
         {/* This creates space for the video scaling animation */}
       </section>
 
