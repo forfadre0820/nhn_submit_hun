@@ -34,7 +34,7 @@ export default function CombinedLanding() {
         scrollTrigger: {
           trigger: hero,
           start: "top top",
-          end: "+=500%", // Much longer scroll distance for viewing
+          end: "+=800%", // Much longer scroll distance for viewing
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -42,37 +42,37 @@ export default function CombinedLanding() {
         }
       });
 
-      // Phase 1: Move to center and scale (20% of timeline)
+      // Phase 1: Move to center and scale (25% of timeline)
       tl.to(videoWrap, {
         x: x,
         y: y,
         scale: scale,
         transformOrigin: "center center",
         ease: "none",
-        duration: 1,
-        onComplete: () => {
-          // Show video scroll indicator when fullscreen
+        duration: 2
+      })
+      // Phase 2: Hold fullscreen position for extended viewing (70% of timeline)  
+      .to(videoWrap, {
+        duration: 5.6,
+        ease: "none",
+        onStart: () => {
+          // Show video scroll indicator when fully scaled
           const indicator = document.getElementById('video-scroll-indicator');
           if (indicator) {
             gsap.to(indicator, { opacity: 1, duration: 0.5 });
           }
         }
       })
-      // Phase 2: Hold fullscreen position for extended viewing (60% of timeline)
-      .to(videoWrap, {
-        duration: 3,
-        ease: "none"
-      })
-      // Phase 3: Move up and fade in next section (20% of timeline)
+      // Phase 3: Move up and fade in next section (5% of timeline)
       .to(videoWrap, {
         y: y - vh * 1.2,
         ease: "power1.out",
-        duration: 1,
+        duration: 0.4,
         onStart: () => {
           // Hide video scroll indicator when exiting
           const indicator = document.getElementById('video-scroll-indicator');
           if (indicator) {
-            gsap.to(indicator, { opacity: 0, duration: 0.5 });
+            gsap.to(indicator, { opacity: 0, duration: 0.3 });
           }
         }
       }, ">")
@@ -80,8 +80,8 @@ export default function CombinedLanding() {
         opacity: 1,
         y: 0,
         ease: "power1.out",
-        duration: 1
-      }, "<");
+        duration: 0.4
+      }, "<0.2"); // Slight delay before next section appears
 
     }, 100);
 

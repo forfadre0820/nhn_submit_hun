@@ -247,6 +247,10 @@ Changelog:
 - July 07, 2025. Added dedicated video scroll indicator that appears during fullscreen viewing
 - July 07, 2025. Implemented indicator visibility controls with onComplete/onStart callbacks
 - July 07, 2025. Enhanced user experience for showreel presentation with extended viewing duration
+- July 07, 2025. Fixed premature next section appearance by extending scroll distance to 800%
+- July 07, 2025. Adjusted timeline phases: scale (25%) → hold fullscreen (70%) → exit (5%)
+- July 07, 2025. Increased scaling duration to 2 seconds and hold duration to 5.6 seconds
+- July 07, 2025. Moved scroll indicator trigger to onStart of hold phase for better timing
 ```
 
 ## User Preferences
