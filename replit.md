@@ -296,7 +296,7 @@ Changelog:
 - July 07, 2025. Fixed z-index layering issues: reduced video z-index to 9999, elevated sound control and scroll indicators to z-[99999] for proper visibility
 - July 07, 2025. Redesigned sound control to center position with SOUND ON/OFF text labels, replaced complex scroll indicator with simple "Keep" text
 - July 07, 2025. Completely removed blackout overlay effect to eliminate any remaining letterbox-like visual artifacts
-- July 07, 2025. Changed main scroll indicator text from "Scroll to explore" to "Keep" with dynamic color switching (black→white when video fullscreen)
+- July 07, 2025. Changed main scroll indicator text from "Scroll to explore" to "Keep to explore" when video is fullscreen, with dynamic color switching (black→white)
 ```
 
 ## User Preferences

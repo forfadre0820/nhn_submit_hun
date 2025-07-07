@@ -205,7 +205,7 @@ export default function CombinedLanding() {
               transition={{ repeat: Infinity, duration: 2 }}
               className={`text-sm mb-4 transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
             >
-              Keep
+              {isVideoFullscreen ? 'Keep to explore' : 'Scroll to explore'}
             </motion.div>
             <motion.div
               animate={{ y: [0, 10, 0] }}
