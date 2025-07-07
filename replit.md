@@ -209,6 +209,10 @@ Changelog:
 - July 07, 2025. Updated text layout to match Korean design specification with 62px font size
 - July 07, 2025. Enhanced video scaling to fill entire viewport width and height
 - July 07, 2025. Positioned video inline with "설계하는" text for natural flow
+- July 07, 2025. Restored original rounded navigation bar with Work/About/Contact menu items
+- July 07, 2025. Limited video scaling to 95% of viewport size instead of full screen
+- July 07, 2025. Implemented two-phase scroll animation: video scaling first, then video moving up with next section fade-in
+- July 07, 2025. Fixed navigation spacing and positioning to match user's reference image
 ```
 
 ## User Preferences

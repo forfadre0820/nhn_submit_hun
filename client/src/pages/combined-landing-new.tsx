@@ -17,17 +17,20 @@ export default function CombinedLanding() {
 
       const hero = heroRef.current;
       const videoWrap = videoWrapRef.current;
+      const nextSection = document.querySelector('.next');
 
-      // Calculate scale and position for fullscreen video
+      // Calculate scale and position for 95% viewport coverage
       const calculateTransform = () => {
         const box = videoWrap.getBoundingClientRect();
         const vw = window.innerWidth;
         const vh = window.innerHeight;
         
-        // Scale to fill viewport width
-        const scaleX = vw / box.width;
-        const scaleY = vh / box.height;
-        const scale = Math.max(scaleX, scaleY); // Use larger scale to cover entire viewport
+        // Scale to 95% of viewport size
+        const targetWidth = vw * 0.95;
+        const targetHeight = vh * 0.95;
+        const scaleX = targetWidth / box.width;
+        const scaleY = targetHeight / box.height;
+        const scale = Math.min(scaleX, scaleY);
         
         // Calculate translation to center the video
         const translateX = (vw / 2) - (box.left + box.width / 2);
@@ -36,11 +39,11 @@ export default function CombinedLanding() {
         return { scale, translateX, translateY };
       };
 
-      // Create ScrollTrigger animation
+      // Create ScrollTrigger for video scaling (first phase)
       ScrollTrigger.create({
         trigger: hero,
         start: "top center",
-        end: "+=300%",
+        end: "+=200%",
         scrub: 1,
         pin: true,
         pinSpacing: true,
@@ -62,6 +65,37 @@ export default function CombinedLanding() {
           });
         }
       });
+
+      // Create ScrollTrigger for video exit and next section fade-in (second phase)
+      ScrollTrigger.create({
+        trigger: hero,
+        start: "+=200%",
+        end: "+=300%",
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const { scale, translateX, translateY } = calculateTransform();
+          
+          // Move video upward
+          const upwardTranslate = -window.innerHeight * progress;
+          
+          gsap.set(videoWrap, {
+            scale: scale,
+            x: translateX,
+            y: translateY + upwardTranslate,
+            transformOrigin: "center center",
+            force3D: true
+          });
+
+          // Fade in next section
+          if (nextSection) {
+            gsap.set(nextSection, {
+              opacity: progress,
+              y: 50 * (1 - progress)
+            });
+          }
+        }
+      });
     }, 100);
 
     // Cleanup function
@@ -74,22 +108,12 @@ export default function CombinedLanding() {
   return (
     <div className="bg-white text-black overflow-x-hidden">
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-8">
-              <a href="#" className="text-lg font-bold text-black">이승훈</a>
-              <div className="hidden md:flex space-x-6">
-                <a href="#about" className="text-sm text-gray-600 hover:text-black transition-colors">소개</a>
-                <a href="#work" className="text-sm text-gray-600 hover:text-black transition-colors">작업</a>
-                <a href="#contact" className="text-sm text-gray-600 hover:text-black transition-colors">연락</a>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <button className="text-sm text-gray-600 hover:text-black transition-colors">
-                메뉴
-              </button>
-            </div>
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
+          <div className="flex items-center space-x-8">
+            <a href="#work" className="text-sm text-gray-700 hover:text-black transition-colors">Work</a>
+            <a href="#about" className="text-sm text-gray-700 hover:text-black transition-colors">About</a>
+            <a href="#contact" className="text-sm text-gray-700 hover:text-black transition-colors">Contact</a>
           </div>
         </div>
       </nav>
@@ -97,7 +121,7 @@ export default function CombinedLanding() {
       {/* Hero Section with Text Masking */}
       <section 
         ref={heroRef}
-        className="hero min-h-screen flex items-center justify-center relative bg-white pt-16"
+        className="hero min-h-screen flex items-center justify-center relative bg-white"
       >
         <div className="container mx-auto px-4 text-center">
           <motion.h1 
@@ -172,7 +196,7 @@ export default function CombinedLanding() {
       </section>
 
       {/* Next Section - Portfolio */}
-      <section className="next bg-white text-black relative z-20 min-h-screen">
+      <section className="next bg-white text-black relative z-20 min-h-screen" style={{ opacity: 0 }}>
         <div className="container mx-auto px-4 py-20">
           <motion.div 
             className="max-w-6xl mx-auto"
