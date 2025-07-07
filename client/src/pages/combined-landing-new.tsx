@@ -37,31 +37,33 @@ export default function CombinedLanding() {
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=20vh", // Short scroll distance for controlled scaling
-        scrub: 1,
+        end: "+=1200vh", // Extremely long scroll distance for ultra-gradual scaling
+        scrub: 12,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Ultra-extremely gradual scaling from 0% to 5%
-          if (progress <= 0.05) {
-            const scaleProgress = progress / 0.05; // 0~1로 정규화
-            // Calculate incremental scale: 1 → 1.5 → 2.25 → 3.375 → etc.
-            const steps = Math.floor(scaleProgress * 15); // 0-15 steps for more granular scaling
-            const currentScale = Math.pow(1.3, steps); // 1.3^steps for progressive scaling
+          // Ultra-extremely gradual scaling from 0% to 10%
+          if (progress <= 0.1) {
+            const scaleProgress = progress / 0.1; // 0~1로 정규화
+            // Ease-in-out cubic for smooth acceleration/deceleration
+            const easedProgress = scaleProgress < 0.5 
+              ? 4 * scaleProgress * scaleProgress * scaleProgress
+              : 1 - Math.pow(-2 * scaleProgress + 2, 3) / 2;
+            const currentScale = 1 + (scale - 1) * easedProgress; // 1에서 최종 scale까지 점진적
             gsap.set(videoWrap, {
-              x: x * scaleProgress,      // 점진적 중앙 이동
-              y: y * scaleProgress,
-              scale: currentScale,       // 1.5씩 점진적 증가
+              x: x * easedProgress,      // 점진적 중앙 이동
+              y: y * easedProgress,
+              scale: currentScale,       // 1에서 최종 scale까지 점진적
               transformOrigin: "50% 50%",
               zIndex: progress > 0.05 ? 99999 : 1,
               force3D: true
             });
           }
-          // Hold fullscreen for extended viewing (5% to 90%)
-          else if (progress <= 0.9) {
+          // Hold fullscreen for extended viewing (10% to 85%)
+          else if (progress <= 0.85) {
             gsap.set(videoWrap, {
               x: x,
               y: y,
@@ -75,7 +77,7 @@ export default function CombinedLanding() {
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
             if (letterboxTop && letterboxBottom) {
-              if (progress >= 0.05) {
+              if (progress >= 0.1) {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
               } else {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
@@ -85,16 +87,16 @@ export default function CombinedLanding() {
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
-              if (progress >= 0.1 && progress <= 0.85) {
+              if (progress >= 0.15 && progress <= 0.8) {
                 gsap.set(indicator, { opacity: 1 });
               } else {
                 gsap.set(indicator, { opacity: 0 });
               }
             }
           }
-          // Ultra-smooth upward movement (90% to 100%)
+          // Ultra-smooth upward movement (85% to 100%)
           else {
-            const exitProgress = (progress - 0.9) / 0.1;
+            const exitProgress = (progress - 0.85) / 0.15;
             const smoothExit = exitProgress * exitProgress * exitProgress; // Cubic easing for ultra-smooth movement
             gsap.set(videoWrap, {
               x: x,
