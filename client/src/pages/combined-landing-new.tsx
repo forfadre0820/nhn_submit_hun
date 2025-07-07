@@ -294,13 +294,13 @@ export default function CombinedLanding() {
               </div>
 
               {/* Main Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
                     콘텐츠 제작자이자 크리에이터를 위한 교육자
                   </h2>
-                  <p className="text-gray-700 text-lg leading-relaxed">
+                  <p className="text-gray-700 text-base leading-relaxed">
                     시청자의 경험을 최우선으로 생각하며, 메시지 전달을 넘어 
                     깊이 있는 인상을 남기는 콘텐츠를 설계합니다. 
                     창작자들에게 실질적인 도움을 주는 교육 콘텐츠를 제작하고 있습니다.
@@ -309,26 +309,26 @@ export default function CombinedLanding() {
 
                 {/* Right Column - Services */}
                 <div className="lg:col-span-6">
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-medium text-gray-900 mb-2">콘텐츠 기획</h4>
-                      <p className="text-gray-600 leading-relaxed">
+                      <h4 className="text-base font-medium text-gray-900 mb-1">콘텐츠 기획</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         시청자의 니즈를 파악하고 메시지를 효과적으로 전달하는 
                         콘텐츠 구조와 스토리텔링을 설계합니다.
                       </p>
                     </div>
                     
                     <div>
-                      <h4 className="text-lg font-medium text-gray-900 mb-2">영상 제작</h4>
-                      <p className="text-gray-600 leading-relaxed">
+                      <h4 className="text-base font-medium text-gray-900 mb-1">영상 제작</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         기획부터 촬영, 편집까지 일관된 비전으로 완성도 높은 
                         영상 콘텐츠를 제작합니다.
                       </p>
                     </div>
                     
                     <div>
-                      <h4 className="text-lg font-medium text-gray-900 mb-2">교육 & 멘토링</h4>
-                      <p className="text-gray-600 leading-relaxed">
+                      <h4 className="text-base font-medium text-gray-900 mb-1">교육 & 멘토링</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         창작자들이 성장할 수 있도록 실무 경험을 바탕으로 한 
                         체계적인 교육과 개별 멘토링을 제공합니다.
                       </p>
@@ -338,104 +338,179 @@ export default function CombinedLanding() {
               </div>
 
               {/* Bottom Info Grid */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-8 pt-6 border-t border-gray-100">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-6 pt-4 border-t border-gray-100">
                 <div>
-                  <h5 className="text-sm font-medium text-gray-500 mb-4">전문 분야</h5>
-                  <p className="text-gray-900 font-medium">콘텐츠 제작 & 교육</p>
+                  <h5 className="text-xs font-medium text-gray-500 mb-2">전문 분야</h5>
+                  <p className="text-gray-900 font-medium text-sm">콘텐츠 제작 & 교육</p>
                 </div>
                 
                 <div>
-                  <h5 className="text-sm font-medium text-gray-500 mb-4">활동 지역</h5>
-                  <p className="text-gray-900 font-medium">대한민국</p>
+                  <h5 className="text-xs font-medium text-gray-500 mb-2">활동 지역</h5>
+                  <p className="text-gray-900 font-medium text-sm">대한민국</p>
                 </div>
                 
                 <div>
-                  <h5 className="text-sm font-medium text-gray-500 mb-4">경력</h5>
-                  <p className="text-gray-900 font-medium">5+ years</p>
+                  <h5 className="text-xs font-medium text-gray-500 mb-2">경력</h5>
+                  <p className="text-gray-900 font-medium text-sm">5+ years</p>
                 </div>
                 
                 <div>
-                  <h5 className="text-sm font-medium text-gray-500 mb-4">플랫폼</h5>
-                  <p className="text-gray-900 font-medium">YouTube & 온라인</p>
+                  <h5 className="text-xs font-medium text-gray-500 mb-2">플랫폼</h5>
+                  <p className="text-gray-900 font-medium text-sm">YouTube & 온라인</p>
                 </div>
               </div>
             </div>
 
             {/* Featured Work Section */}
-            <div className="mb-12">
-              <div className="flex justify-between items-start mb-8">
+            <div className="mb-16">
+              <div className="flex justify-between items-start mb-6">
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   주요 작업
                 </h3>
                 <span className="text-sm font-medium text-gray-500">02</span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* Content Cards */}
-                <motion.div 
-                  className="group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="aspect-video bg-gray-100 rounded-lg mb-4 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                      <span className="text-white font-medium">콘텐츠 기획</span>
-                    </div>
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">체계적인 콘텐츠 설계</h4>
-                  <p className="text-gray-600 text-sm">시청자 중심의 콘텐츠 기획과 구조 설계</p>
-                </motion.div>
+              {/* Separator Line */}
+              <div className="separator-wrap mb-8">
+                <div className="separator-line h-px bg-gray-200"></div>
+              </div>
 
-                <motion.div 
-                  className="group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="aspect-video bg-gray-100 rounded-lg mb-4 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-                      <span className="text-white font-medium">교육 콘텐츠</span>
+              {/* Portfolio Grid - Masonry Layout */}
+              <div className="portfolio-container relative">
+                <div className="grid grid-cols-3 gap-4">
+                  {/* Project 1 - Tall */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100" style={{ aspectRatio: '3/4' }}>
+                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-lg font-medium">콘텐츠 기획</span>
+                        <span className="subtitle block text-sm opacity-80">Branding</span>
+                      </div>
                     </div>
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">창작자 교육</h4>
-                  <p className="text-gray-600 text-sm">실무 중심의 체계적인 교육 프로그램</p>
-                </motion.div>
+                  </motion.div>
 
-                <motion.div 
-                  className="group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="aspect-video bg-gray-100 rounded-lg mb-4 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                      <span className="text-white font-medium">영상 제작</span>
+                  {/* Project 2 - Square */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100" style={{ aspectRatio: '1/1' }}>
+                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-green-500 to-teal-600"></div>
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-lg font-medium">교육 콘텐츠</span>
+                        <span className="subtitle block text-sm opacity-80">Digital</span>
+                      </div>
                     </div>
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">영상 콘텐츠</h4>
-                  <p className="text-gray-600 text-sm">고품질 영상 제작과 편집</p>
-                </motion.div>
+                  </motion.div>
+
+                  {/* Project 3 - Tall */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100" style={{ aspectRatio: '3/4' }}>
+                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-orange-500 to-red-600"></div>
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-lg font-medium">영상 제작</span>
+                        <span className="subtitle block text-sm opacity-80">Production</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 4 - Wide */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer col-span-2"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100" style={{ aspectRatio: '16/9' }}>
+                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-purple-500 to-pink-600"></div>
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-lg font-medium">YouTube 채널</span>
+                        <span className="subtitle block text-sm opacity-80">Content Strategy</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 5 - Square */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100" style={{ aspectRatio: '1/1' }}>
+                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-indigo-500 to-blue-600"></div>
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-lg font-medium">브랜드 컨설팅</span>
+                        <span className="subtitle block text-sm opacity-80">Identity</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 6 - Square */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100" style={{ aspectRatio: '1/1' }}>
+                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-yellow-500 to-orange-600"></div>
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-lg font-medium">워크샵 운영</span>
+                        <span className="subtitle block text-sm opacity-80">Education</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 7 - Square */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100" style={{ aspectRatio: '1/1' }}>
+                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-red-500 to-pink-600"></div>
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="title block text-lg font-medium">라이브 스트리밍</span>
+                        <span className="subtitle block text-sm opacity-80">Live Content</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
 
             {/* Contact Section */}
-            <div className="pt-8 border-t border-gray-200">
-              <div className="flex justify-between items-start mb-8">
+            <div className="pt-6 border-t border-gray-200">
+              <div className="flex justify-between items-start mb-6">
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   연락하기
                 </h3>
                 <span className="text-sm font-medium text-gray-500">03</span>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              {/* Separator Line */}
+              <div className="separator-wrap mb-6">
+                <div className="separator-line h-px bg-gray-200"></div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
                     함께 만들어가는 콘텐츠
                   </h2>
-                  <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  <p className="text-gray-700 text-base leading-relaxed mb-6">
                     시청자에게 의미 있는 경험을 전달하는 콘텐츠를 함께 만들어보세요. 
                     기획부터 제작까지 전 과정을 지원합니다.
                   </p>
                   <motion.button 
-                    className="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-colors"
+                    className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors text-sm"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -443,24 +518,24 @@ export default function CombinedLanding() {
                   </motion.button>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
-                    <h4 className="text-lg font-medium text-gray-900 mb-2">YouTube</h4>
-                    <p className="text-gray-600">
+                    <h4 className="text-base font-medium text-gray-900 mb-1">YouTube</h4>
+                    <p className="text-gray-600 text-sm">
                       교육 콘텐츠와 창작 과정을 공유하는 메인 채널
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-medium text-gray-900 mb-2">이메일</h4>
-                    <p className="text-gray-600">
+                    <h4 className="text-base font-medium text-gray-900 mb-1">이메일</h4>
+                    <p className="text-gray-600 text-sm">
                       협업 문의와 개별 상담을 위한 연락처
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-medium text-gray-900 mb-2">SNS</h4>
-                    <p className="text-gray-600">
+                    <h4 className="text-base font-medium text-gray-900 mb-1">SNS</h4>
+                    <p className="text-gray-600 text-sm">
                       일상과 작업 과정을 공유하는 소통 창구
                     </p>
                   </div>
