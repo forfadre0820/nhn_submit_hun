@@ -194,6 +194,7 @@ export default function CombinedLanding() {
 
           {/* Scroll Indicator */}
           <motion.div 
+            id="main-scroll-indicator"
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-[99999]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -202,16 +203,16 @@ export default function CombinedLanding() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="text-black/80 text-sm mb-4"
+              className={`text-sm mb-4 transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
             >
-              Scroll to explore
+              Keep
             </motion.div>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-              className="w-6 h-10 border-2 border-black/30 rounded-full flex justify-center ml-[39px] mr-[39px]"
+              className={`w-6 h-10 border-2 rounded-full flex justify-center ml-[39px] mr-[39px] transition-colors duration-300 ${isVideoFullscreen ? 'border-white/40' : 'border-black/30'}`}
             >
-              <div className="w-1 h-3 bg-black/50 rounded-full mt-2"></div>
+              <div className={`w-1 h-3 rounded-full mt-2 transition-colors duration-300 ${isVideoFullscreen ? 'bg-white/60' : 'bg-black/50'}`}></div>
             </motion.div>
           </motion.div>
 
@@ -220,15 +221,22 @@ export default function CombinedLanding() {
           {/* Video Scroll Indicator */}
           <motion.div 
             id="video-scroll-indicator"
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-[99999] opacity-0"
+            className="fixed top-1/2 right-8 transform -translate-y-1/2 text-center z-[99999] opacity-0"
             style={{ pointerEvents: 'none' }}
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="text-white text-2xl font-light tracking-wider"
+              className="text-white/90 text-sm mb-4 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full"
             >
-              Keep
+              쇼릴 감상 중 • 계속 스크롤하세요
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
+              className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center mx-auto"
+            >
+              <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
             </motion.div>
           </motion.div>
 
