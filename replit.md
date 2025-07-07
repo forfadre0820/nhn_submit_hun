@@ -269,6 +269,8 @@ Changelog:
 - July 07, 2025. Changed video exit behavior from scaling down to moving upward while maintaining fullscreen size
 - July 07, 2025. Reduced scroll distance to 200vh and increased scrub to 2 for more gradual, controlled scaling
 - July 07, 2025. Extended scaling phase to 50% of timeline for slower, more natural video growth
+- July 07, 2025. Increased scroll distance to 500vh with scrub: 5 for ultra-gradual scaling animation
+- July 07, 2025. Extended scaling phase to 70% of timeline and added quadratic easing for smooth upward movement
 ```
 
 ## User Preferences
