@@ -627,45 +627,43 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-                    함께 만들어가는 콘텐츠
+              {/* Image-Text Layout (Flipped) */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                {/* Left Column - Image */}
+                <div className="lg:col-span-6 order-2 lg:order-1">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <div className="aspect-[4/5] bg-gradient-to-br from-gray-200 to-gray-400"></div>
+                    {/* Placeholder for portrait image */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 to-purple-100/20"></div>
+                  </div>
+                </div>
+
+                {/* Right Column - Content */}
+                <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 lg:mt-0">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
+                    결국, <em className="italic">무엇을</em>, <em className="italic">어떻게</em> 보여줄 것인가
                   </h2>
-                  <p className="text-gray-700 text-base leading-relaxed mb-6">
-                    시청자에게 의미 있는 경험을 전달하는 콘텐츠를 함께 만들어보세요. 
-                    기획부터 제작까지 전 과정을 지원합니다.
-                  </p>
+                  
+                  <div className="text-gray-700 text-base leading-relaxed mb-8 space-y-4">
+                    <p>
+                      기획·연출·촬영·편집·UX까지 모든 공정을 설계해 온 콘텐츠 PD입니다. 
+                      라이브 콘텐츠에선 출연자의 긴장을 풀어주는 사전 커뮤니케이션과 키 메시지 카드로 
+                      자연스러운 퍼포먼스를 이끌어냈습니다.
+                    </p>
+                    
+                    <p>
+                      완성 후에는 시청 패턴과 이탈 지점을 데이터로 분석해 UI·UX 개선안을 제안하며 
+                      사용자의 몰입도를 높였습니다. 각 역량을 유기적으로 연결해 사람을 위한 콘텐츠를 제작하겠습니다.
+                    </p>
+                  </div>
+                  
                   <motion.button 
-                    className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors text-sm"
+                    className="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-colors text-base border-b-2 border-transparent hover:border-gray-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    협업 문의하기
+                    함께 작업하기
                   </motion.button>
-                </div>
-
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-base font-medium text-gray-900 mb-1">YouTube</h4>
-                    <p className="text-gray-600 text-sm">
-                      교육 콘텐츠와 창작 과정을 공유하는 메인 채널
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-base font-medium text-gray-900 mb-1">이메일</h4>
-                    <p className="text-gray-600 text-sm">
-                      협업 문의와 개별 상담을 위한 연락처
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-base font-medium text-gray-900 mb-1">SNS</h4>
-                    <p className="text-gray-600 text-sm">
-                      일상과 작업 과정을 공유하는 소통 창구
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
