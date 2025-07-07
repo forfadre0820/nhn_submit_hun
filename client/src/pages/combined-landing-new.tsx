@@ -674,10 +674,6 @@ export default function CombinedLanding() {
       <footer className="bg-white py-20 mt-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-8">
-            <p className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6">
-              무언가 훌륭한 것을 만들어보세요.
-            </p>
-            
             {/* Contact Info */}
             <div className="flex items-center gap-4 mb-8">
               <div className="w-4 h-4">
@@ -685,8 +681,8 @@ export default function CombinedLanding() {
                   <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
                 </svg>
               </div>
-              <a href="mailto:leeseunghun@example.com" className="text-gray-900 hover:text-gray-600 transition-colors">
-                leeseunghun@example.com
+              <a href="mailto:buen136003@gmail.com" className="text-gray-900 hover:text-gray-600 transition-colors">
+                buen136003@gmail.com
               </a>
             </div>
           </div>
