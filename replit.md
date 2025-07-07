@@ -230,6 +230,8 @@ Changelog:
 - July 07, 2025. Fixed video vertical alignment to baseline for proper text positioning
 - July 07, 2025. Centered entire text layout with text-center and mx-auto classes
 - July 07, 2025. Adjusted video dimensions to 140x59px for better proportion with text
+- July 07, 2025. Reduced clip-path cropping from 20% to 10% inset for less aggressive crop
+- July 07, 2025. Increased video height to 68px for better visibility after crop adjustment
 ```
 
 ## User Preferences

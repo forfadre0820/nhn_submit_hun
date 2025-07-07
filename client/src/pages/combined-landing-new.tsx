@@ -165,7 +165,7 @@ export default function CombinedLanding() {
                   className="hero__videoWrap inline-block relative"
                   style={{
                     width: "140px",
-                    height: "59px",
+                    height: "68px",
                     verticalAlign: "baseline",
                     willChange: "transform",
                     marginLeft: "12px",

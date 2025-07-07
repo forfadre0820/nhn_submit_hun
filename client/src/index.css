@@ -66,8 +66,8 @@
   filter: brightness(1.05);
   border-radius: 0;
   transform-origin: center center;
-  /* Cinematic aspect ratio crop */
-  clip-path: inset(20% 0);
+  /* Subtle cinematic aspect ratio crop */
+  clip-path: inset(10% 0);
 }
 
 /* Smooth transitions for video animations */
