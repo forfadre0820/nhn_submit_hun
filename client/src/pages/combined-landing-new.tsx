@@ -37,17 +37,17 @@ export default function CombinedLanding() {
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=1200vh", // Extremely long scroll distance for ultra-gradual scaling
-        scrub: 12,
+        end: "+=1000vh", // Scroll distance for 10 scroll actions to fullscreen
+        scrub: 1,
         pin: true,
         anticipatePin: 1,
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
           
-          // Gradual scaling from 0% to 83% (10 scroll actions)
-          if (progress <= 0.83) {
-            const scaleProgress = progress / 0.83; // 0~1로 정규화
+          // Gradual scaling from 0% to 100% (10 scroll actions = 1000vh)
+          if (progress <= 1.0) {
+            const scaleProgress = progress; // 0~1로 정규화
             // Ease-in-out cubic for smooth acceleration/deceleration
             const easedProgress = scaleProgress < 0.5 
               ? 4 * scaleProgress * scaleProgress * scaleProgress
@@ -75,28 +75,12 @@ export default function CombinedLanding() {
               zIndex: progress > 0.1 ? 99999 : 1,
               force3D: true
             });
-          }
-          // Hold fullscreen for viewing (83% to 95%)
-          else if (progress <= 0.95) {
-            // Keep scaling class active for fullscreen
-            videoWrap.classList.add('scaling');
-            
-            gsap.set(videoWrap, {
-              x: x,
-              y: y,
-              scale: scale,
-              width: window.innerWidth + "px",
-              height: window.innerHeight + "px",
-              transformOrigin: "50% 50%",
-              zIndex: 99999,
-              force3D: true
-            });
             
             // Show letterbox when video reaches fullscreen
             const letterboxTop = document.getElementById('letterbox-top');
             const letterboxBottom = document.getElementById('letterbox-bottom');
             if (letterboxTop && letterboxBottom) {
-              if (progress >= 0.83) {
+              if (progress >= 0.9) {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 1 });
               } else {
                 gsap.set([letterboxTop, letterboxBottom], { opacity: 0 });
@@ -106,33 +90,11 @@ export default function CombinedLanding() {
             // Show scroll indicator during viewing period
             const indicator = document.getElementById('video-scroll-indicator');
             if (indicator) {
-              if (progress >= 0.85 && progress <= 0.92) {
+              if (progress >= 0.95) {
                 gsap.set(indicator, { opacity: 1 });
               } else {
                 gsap.set(indicator, { opacity: 0 });
               }
-            }
-          }
-          // Ultra-smooth upward movement (95% to 100%)
-          else {
-            const exitProgress = (progress - 0.95) / 0.05;
-            const smoothExit = exitProgress * exitProgress * exitProgress; // Cubic easing for ultra-smooth movement
-            gsap.set(videoWrap, {
-              x: x,
-              y: y - vh * 0.6 * smoothExit, // Very gentle upward movement
-              scale: scale, // Keep fullscreen size
-              width: window.innerWidth + "px",
-              height: window.innerHeight + "px",
-              transformOrigin: "50% 50%",
-              zIndex: 99999,
-              force3D: true
-            });
-            
-            // Fade out letterbox during exit
-            const letterboxTop = document.getElementById('letterbox-top');
-            const letterboxBottom = document.getElementById('letterbox-bottom');
-            if (letterboxTop && letterboxBottom) {
-              gsap.set([letterboxTop, letterboxBottom], { opacity: 1 - exitProgress });
             }
           }
         }
