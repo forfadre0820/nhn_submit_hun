@@ -237,6 +237,11 @@ Changelog:
 - July 07, 2025. Created single timeline with proper sequence: move to center + scale → hold → move up + fade next section
 - July 07, 2025. Added anticipatePin property to prevent jumping during pin start
 - July 07, 2025. Used proper duration-based timeline instead of onUpdate for smoother animations
+- July 07, 2025. Fixed major whitespace issue by setting pinSpacing: false to prevent layout gaps
+- July 07, 2025. Added CSS reset styles to eliminate default margins and padding
+- July 07, 2025. Changed hero section from min-h-screen to h-screen with overflow-hidden
+- July 07, 2025. Cleaned up CSS file to remove conflicting styles and syntax errors
+- July 07, 2025. Adjusted clip-path to 8% for better video visibility
 ```
 
 ## User Preferences

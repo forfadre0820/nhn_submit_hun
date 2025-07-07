@@ -33,12 +33,12 @@ export default function CombinedLanding() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: hero,
-          start: "top center",
-          end: "+=300%",
+          start: "top top",
+          end: "+=200%",
           scrub: true,
           pin: true,
           anticipatePin: 1,
-          pinSpacing: true
+          pinSpacing: false
         }
       });
 
@@ -93,7 +93,7 @@ export default function CombinedLanding() {
       {/* Hero Section with Text Masking */}
       <section 
         ref={heroRef}
-        className="hero min-h-screen flex items-center justify-center relative bg-white"
+        className="hero h-screen flex items-center justify-center relative bg-white overflow-hidden"
       >
         <div className="container mx-auto px-4 text-center">
           <motion.h1 
@@ -169,7 +169,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Next Section - Portfolio */}
-      <section className="next bg-white text-black relative z-20 min-h-screen" style={{ opacity: 0 }}>
+      <section className="next bg-white text-black relative z-20 min-h-screen">
         <div className="container mx-auto px-4 py-8">
           <motion.div 
             className="max-w-6xl mx-auto"

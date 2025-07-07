@@ -47,10 +47,23 @@
   --ring: hsl(0, 0%, 84%);
 }
 
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* Hero Video Styles */
 .hero__videoWrap {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: baseline;
   position: relative;
   isolation: isolate;
   transform-origin: center center;
@@ -67,44 +80,24 @@
   border-radius: 0;
   transform-origin: center center;
   /* Subtle cinematic aspect ratio crop */
-  clip-path: inset(10% 0);
+  clip-path: inset(8% 0);
 }
 
-/* Smooth transitions for video animations */
+/* Hero section */
 .hero {
   position: relative;
   isolation: isolate;
+  margin: 0;
+  padding: 0;
 }
 
-/* Ensure proper layering */
+/* Next section */
 .next {
   position: relative;
   z-index: 20;
   isolation: isolate;
-}
-.video-always-visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.video-container-visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Override any motion transforms on video elements */
-.home__hero__video,
-.home__hero__video *,
-.home__hero__video video,
-video.video-always-visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Ensure video stays visible during any animation */
-[data-cursor="sound on"] video,
-[data-cursor="sound off"] video {
-  opacity: 1 !important;
+  margin: 0;
+  padding: 0;
 }
 
 @layer base {
