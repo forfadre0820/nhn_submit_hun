@@ -87,11 +87,7 @@ export default function CombinedLanding() {
           
 
           
-          // Show scroll indicator when near fullscreen
-          const indicator = document.getElementById('video-scroll-indicator');
-          if (indicator) {
-            gsap.set(indicator, { opacity: progress >= 0.9 ? 1 : 0 });
-          }
+
           
           // Update video fullscreen state for sound control
           setIsVideoFullscreen(progress >= 0.8);
@@ -158,7 +154,7 @@ export default function CombinedLanding() {
               <div className="block pt-[0px] pb-[0px] mt-[-4px] mb-[-4px]" style={{ lineHeight: "1.1" }}>
                 설계하는<span 
                   ref={videoWrapRef}
-                  className="hero__videoWrap inline-block relative"
+                  className="hero__videoWrap inline-block relative cursor-pointer"
                   style={{
                     width: "140px",
                     height: "68px",
@@ -169,6 +165,7 @@ export default function CombinedLanding() {
                   }}
                   onMouseEnter={handleVideoMouseEnter}
                   onMouseLeave={handleVideoMouseLeave}
+                  onClick={toggleSound}
                 >
                   <video
                     ref={videoRef}
@@ -218,87 +215,59 @@ export default function CombinedLanding() {
 
 
 
-          {/* Video Scroll Indicator */}
-          <motion.div 
-            id="video-scroll-indicator"
-            className="fixed top-1/2 right-8 transform -translate-y-1/2 text-center z-[99999] opacity-0"
-            style={{ pointerEvents: 'none' }}
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="text-white/90 text-sm mb-4 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full"
-            >
-              쇼릴 감상 중 • 계속 스크롤하세요
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-              className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center mx-auto"
-            >
-              <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
-            </motion.div>
-          </motion.div>
+
 
           {/* Sound Control Overlay */}
           {isVideoFullscreen && (
             <motion.div 
-              className="fixed inset-0 z-[99999] pointer-events-none"
+              className="fixed inset-0 z-[99999] pointer-events-auto cursor-pointer"
+              onClick={toggleSound}
               onMouseEnter={handleVideoMouseEnter}
               onMouseLeave={handleVideoMouseLeave}
-              style={{ pointerEvents: 'auto' }}
             >
               <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-full p-4 cursor-pointer"
+                className="absolute top-8 right-8 bg-white/10 backdrop-blur-sm rounded-full p-3"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ 
                   opacity: showSoundControl ? 1 : 0,
                   scale: showSoundControl ? 1 : 0.8
                 }}
                 transition={{ duration: 0.3 }}
-                onClick={toggleSound}
-                style={{ pointerEvents: 'auto' }}
               >
                 {isVideoMuted ? (
-                  <div className="flex flex-col items-center">
-                    <svg 
-                      className="w-8 h-8 text-white mb-2" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
-                      />
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" 
-                      />
-                    </svg>
-                    <span className="text-white text-sm">SOUND ON</span>
-                  </div>
+                  <svg 
+                    className="w-6 h-6 text-white" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
+                    />
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" 
+                    />
+                  </svg>
                 ) : (
-                  <div className="flex flex-col items-center">
-                    <svg 
-                      className="w-8 h-8 text-white mb-2" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
-                      />
-                    </svg>
-                    <span className="text-white text-sm">SOUND OFF</span>
-                  </div>
+                  <svg 
+                    className="w-6 h-6 text-white" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" 
+                    />
+                  </svg>
                 )}
               </motion.div>
             </motion.div>

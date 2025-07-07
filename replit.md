@@ -297,6 +297,7 @@ Changelog:
 - July 07, 2025. Redesigned sound control to center position with SOUND ON/OFF text labels, replaced complex scroll indicator with simple "Keep" text
 - July 07, 2025. Completely removed blackout overlay effect to eliminate any remaining letterbox-like visual artifacts
 - July 07, 2025. Changed main scroll indicator text from "Scroll to explore" to "Keep to explore" when video is fullscreen, with dynamic color switching (black→white)
+- July 07, 2025. Removed "쇼릴 감상중 계속 스크롤하세요" motion div, simplified sound control to icon-only, added video area click for sound toggle
 ```
 
 ## User Preferences
