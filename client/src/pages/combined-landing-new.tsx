@@ -138,7 +138,7 @@ export default function CombinedLanding() {
             >
               <div className="space-y-2">
                 <div className="block text-center">메세지를 넘어</div>
-                <div className="block">시청자의 경험까지</div>
+                <div className="block text-left">시청자의 경험까지</div>
                 {/* Video Element positioned between text lines */}
                 <div className="flex justify-center my-4">
                   <motion.div
