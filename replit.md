@@ -292,6 +292,7 @@ Changelog:
 - July 07, 2025. Added square crop for video when viewport aspect ratio is portrait or square (width ≤ height)
 - July 07, 2025. Removed letterbox bars, keeping only the immersive blackout transition effect
 - July 07, 2025. Complete code refactoring: cleaned up unused imports, optimized scroll logic, removed all letterbox references, streamlined video scaling algorithm
+- July 07, 2025. Added fullscreen video sound control overlay with mouse hover activation and SOUND ON/OFF toggle functionality
 ```
 
 ## User Preferences
