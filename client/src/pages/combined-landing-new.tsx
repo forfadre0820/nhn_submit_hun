@@ -61,10 +61,16 @@ export default function CombinedLanding() {
               videoWrap.classList.remove('scaling');
             }
             
+            // Scale the container width and height along with the video
+            const currentWidth = 140 + (window.innerWidth - 140) * easedProgress;
+            const currentHeight = 68 + (window.innerHeight - 68) * easedProgress;
+            
             gsap.set(videoWrap, {
               x: x * easedProgress,      // 점진적 중앙 이동
               y: y * easedProgress,
               scale: currentScale,       // 1에서 최종 scale까지 점진적
+              width: currentWidth + "px",
+              height: currentHeight + "px",
               transformOrigin: "50% 50%",
               zIndex: progress > 0.1 ? 99999 : 1,
               force3D: true
@@ -79,6 +85,8 @@ export default function CombinedLanding() {
               x: x,
               y: y,
               scale: scale,
+              width: window.innerWidth + "px",
+              height: window.innerHeight + "px",
               transformOrigin: "50% 50%",
               zIndex: 99999,
               force3D: true
@@ -113,6 +121,8 @@ export default function CombinedLanding() {
               x: x,
               y: y - vh * 0.6 * smoothExit, // Very gentle upward movement
               scale: scale, // Keep fullscreen size
+              width: window.innerWidth + "px",
+              height: window.innerHeight + "px",
               transformOrigin: "50% 50%",
               zIndex: 99999,
               force3D: true
