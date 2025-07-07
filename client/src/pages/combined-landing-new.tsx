@@ -197,7 +197,7 @@ export default function CombinedLanding() {
 
       {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-20 min-h-screen" style={{ opacity: 0 }}>
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-4 py-8">
           <motion.div 
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
@@ -206,8 +206,8 @@ export default function CombinedLanding() {
             viewport={{ once: true }}
           >
             {/* Main About Section */}
-            <div className="mb-20">
-              <div className="flex justify-between items-start mb-12">
+            <div className="mb-12">
+              <div className="flex justify-between items-start mb-8">
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   ABOUT 이승훈
                 </h3>
@@ -218,7 +218,7 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     콘텐츠 제작자이자 크리에이터를 위한 교육자
                   </h2>
                   <p className="text-gray-700 text-lg leading-relaxed">
@@ -259,7 +259,7 @@ export default function CombinedLanding() {
               </div>
 
               {/* Bottom Info Grid */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16 pt-8 border-t border-gray-100">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-8 pt-6 border-t border-gray-100">
                 <div>
                   <h5 className="text-sm font-medium text-gray-500 mb-4">전문 분야</h5>
                   <p className="text-gray-900 font-medium">콘텐츠 제작 & 교육</p>
@@ -283,8 +283,8 @@ export default function CombinedLanding() {
             </div>
 
             {/* Featured Work Section */}
-            <div className="mb-20">
-              <div className="flex justify-between items-start mb-12">
+            <div className="mb-12">
+              <div className="flex justify-between items-start mb-8">
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   주요 작업
                 </h3>
@@ -338,8 +338,8 @@ export default function CombinedLanding() {
             </div>
 
             {/* Contact Section */}
-            <div className="pt-16 border-t border-gray-200">
-              <div className="flex justify-between items-start mb-12">
+            <div className="pt-8 border-t border-gray-200">
+              <div className="flex justify-between items-start mb-8">
                 <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
                   연락하기
                 </h3>
