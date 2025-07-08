@@ -506,11 +506,11 @@ export default function CombinedLanding() {
               </div>
 
               {/* Portfolio Grid - Masonry Layout (8 items) */}
-              <div className="portfolio-container relative w-full" style={{ position: 'relative', height: '620px' }}>
+              <div className="portfolio-container relative w-full" style={{ position: 'relative', height: '680px' }}>
                 {/* Item 1 - Tall Portrait */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '0%', top: '0px', width: '23%' }}
+                  style={{ position: 'absolute', left: '0%', top: '0px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
@@ -543,7 +543,7 @@ export default function CombinedLanding() {
                 {/* Item 2 - Square */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '25%', top: '0px', width: '23%' }}
+                  style={{ position: 'absolute', left: '26%', top: '0px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
@@ -576,7 +576,7 @@ export default function CombinedLanding() {
                 {/* Item 3 - Tall Portrait */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '50%', top: '0px', width: '23%' }}
+                  style={{ position: 'absolute', left: '52%', top: '0px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
@@ -609,7 +609,7 @@ export default function CombinedLanding() {
                 {/* Item 4 - Square */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '75%', top: '0px', width: '23%' }}
+                  style={{ position: 'absolute', left: '78%', top: '0px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
@@ -642,7 +642,7 @@ export default function CombinedLanding() {
                 {/* Item 5 - Tall Portrait */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '25%', top: '240px', width: '23%' }}
+                  style={{ position: 'absolute', left: '26%', top: '260px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
@@ -675,7 +675,7 @@ export default function CombinedLanding() {
                 {/* Item 6 - Tall Portrait */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '75%', top: '240px', width: '23%' }}
+                  style={{ position: 'absolute', left: '78%', top: '260px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
@@ -708,7 +708,7 @@ export default function CombinedLanding() {
                 {/* Item 7 - Square */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '0%', top: '432px', width: '23%' }}
+                  style={{ position: 'absolute', left: '0%', top: '470px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
@@ -741,7 +741,7 @@ export default function CombinedLanding() {
                 {/* Item 8 - Square */}
                 <motion.div 
                   className="portfolio-item grid-item group cursor-pointer"
-                  style={{ position: 'absolute', left: '50%', top: '432px', width: '23%' }}
+                  style={{ position: 'absolute', left: '52%', top: '470px', width: '22%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
