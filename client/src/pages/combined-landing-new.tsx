@@ -1045,64 +1045,50 @@ NH농협, 삼성교육재단</p>
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                {/* 프로젝트 1: 삼성SDS */}
+                {/* 프로젝트 개요 */}
                 <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">프로젝트 1: 삼성SDS | 온·오프라인 실시간 행사/교육 기획·진행</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">프로젝트 개요</h2>
                 </div>
                 <div className="bg-gray-50 p-4 rounded mb-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">기간: 2023.09 ~ 2024.11 (14개월)</div>
+                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">성과: NPS 지수 4.5 이상 달성</div>
+                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">성과: 기업 고객사 수주 5개, NPS 4.5+ 달성</div>
                     </div>
                   </div>
                   <p className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                    제작 역량을 기반으로 한 실시간 기술 이슈 대응, 직접 진행 및 운영을 통해 고객 만족도 달성
-                  </p>
-                </div>
-
-                {/* 프로젝트 2: 메타버스 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">프로젝트 2: 게임형 메타버스 기반 실시간 라이브 콘텐츠 환경 구축</h2>
-                </div>
-                <div className="bg-gray-50 p-4 rounded mb-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">기간: 2023.01 ~ 2023.08 (6개월)</div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">성과: NH농협, 삼성교육재단 등 5개 고객사 수주</div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                    자체 플랫폼 확장 기획을 통해 실질적인 임직원 참여 데이터 확보 및 실시간 인터랙션 기반 몰입도 확보
+                    삼성SDS의 온·오프라인 실시간 행사/교육 기획·진행 및 메타버스 기반 라이브 콘텐츠 환경 구축을 통해 
+                    실시간 기술 이슈 대응, 협력사 커뮤니케이션, 고객 만족도 달성을 수행했습니다.
                   </p>
                 </div>
                 
-                {/* 통합 역할 */}
+                {/* 주요 역할 */}
                 <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">주요 역할 및 업무</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">주요 역할</h2>
                 </div>
-                <div className="space-y-6 mb-8">
+                <div className="space-y-4 mb-8">
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 1: 삼성SDS 역할</h3>
-                    <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li className="tracking-tight leading-relaxed">• 대규모 행사 시 <strong>협력사(영상, 음향, 송출)</strong>와의 커뮤니케이션 주도하여 앵글, 트랜지션, 음향 밸런스 등 품질 확보</li>
-                      <li className="tracking-tight leading-relaxed">• <strong>Midjourney·Stable Diffusion ComfyUI</strong>으로 그래픽 리소스 생성 및 <strong>Python 기반 후보정</strong>으로 인공지능 생성 흔적을 최소화한 실사용급 그래픽 자원 완성</li>
-                      <li className="tracking-tight leading-relaxed">• <strong>Python, OCR 화면 인식 자동화 프로그램</strong>을 개발하여 영상, 음악 송출 타이밍 오류 최소화</li>
-                      <li className="tracking-tight leading-relaxed">• 출연자 돌발 상황(지각, 건강 이상 등)에 대비해 <strong>큐시트 수정 및 직접 대체 진행</strong></li>
-                    </ul>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                      대규모 행사 시 협력사(영상, 음향, 송출)와의 커뮤니케이션을 주도하여 앵글, 트랜지션, 음향 밸런스 등 품질을 확보하고, 
+                      출연자 돌발 상황에 대비한 큐시트 수정 및 직접 대체 진행을 수행했습니다.
+                    </p>
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 2: 메타버스 플랫폼 역할</h3>
-                    <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li className="tracking-tight leading-relaxed">• 자체 플랫폼을 확장 기획하여 실질적인 임직원들의 참여 데이터 확보</li>
-                      <li className="tracking-tight leading-relaxed">• 현실 조직 공간을 반영한 맵 디자인 제작해 사용자의 자율 탐색 유도</li>
-                      <li className="tracking-tight leading-relaxed">• 의도적인 퀘스트 시스템 미구현으로 실시간 진행자 인터랙션으로 몰입도와 흐름 동시 확보</li>
-                      <li className="tracking-tight leading-relaxed">• <strong>SnowFlake 기반 행동 로그 수집 구조 설계</strong> 및 API 연동 협의</li>
-                    </ul>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                      Midjourney·Stable Diffusion ComfyUI으로 그래픽 리소스를 생성하고 Python 기반 후보정으로 실사용급 그래픽 자원을 완성했으며, 
+                      Python, OCR 화면 인식 자동화 프로그램을 개발하여 영상, 음악 송출 타이밍 오류를 최소화했습니다.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                      자체 플랫폼 확장 기획을 통해 실질적인 임직원 참여 데이터를 확보하고, 현실 조직 공간을 반영한 맵 디자인 제작으로 
+                      사용자의 자율 탐색을 유도했습니다. SnowFlake 기반 행동 로그 수집 구조 설계 및 API 연동 협의를 담당했습니다.
+                    </p>
                   </div>
                 </div>
 
@@ -1110,24 +1096,22 @@ NH농협, 삼성교육재단</p>
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">활용 기술</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 1: 삼성SDS 기술</h3>
-                    <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li className="tracking-tight leading-relaxed">• <strong>Premiere Pro, After Effects</strong>를 활용한 VOD 자료 재편집 후 내부 플랫폼 업로드</li>
-                      <li className="tracking-tight leading-relaxed">• <strong>Photoshop, 생성형 AI (Stable Diffusion, Midjourney)</strong> 그래픽 리소스 생성</li>
-                      <li className="tracking-tight leading-relaxed">• 출연자의 자연스러운 퍼포먼스를 유도하기 위한 사전 커뮤니케이션</li>
-                      <li className="tracking-tight leading-relaxed">• <strong>Python, OCR</strong> 기반 화면 인식 자동화 프로그램 개발</li>
-                    </ul>
+                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">Adobe Creative Suite</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects, Photoshop</div>
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 2: 메타버스 플랫폼 기술</h3>
-                    <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li className="tracking-tight leading-relaxed">• <strong>Photoshop, Midjourney</strong> 활용 그래픽 리소스 생성</li>
-                      <li className="tracking-tight leading-relaxed">• <strong>SnowFlake 기반 행동 로그 수집 구조 설계</strong> 및 API 연동 협의</li>
-                      <li className="tracking-tight leading-relaxed">• 인터랙션 기반 실시간 콘텐츠 운영, 진행</li>
-                      <li className="tracking-tight leading-relaxed">• 게임형 메타버스 환경 맵 디자인 및 UX 설계</li>
-                    </ul>
+                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">생성형 AI</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Midjourney, Stable Diffusion ComfyUI</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">자동화 개발</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OCR 화면 인식</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">데이터 설계</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">SnowFlake, API 연동</div>
                   </div>
                 </div>
 
