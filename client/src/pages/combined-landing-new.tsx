@@ -1089,7 +1089,7 @@ export default function CombinedLanding() {
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li className="mt-[4px] mb-[4px]">• 영상: 앵글, 트랜지션 품질 확보</li>
-                          <li>• 음향: 밸런스 조정 및 품질 관리</li>
+                          <li className="mt-[4px] mb-[4px]">• 음향: 밸런스 조정 및 품질 관리</li>
                           <li>• 송출: 실시간 기술 이슈 대응</li>
                         </ul>
                       </div>
