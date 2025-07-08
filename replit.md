@@ -372,6 +372,7 @@ Changelog:
 - July 08, 2025. Enhanced modal close functionality with dissolve effect and smooth navigation: added isClosingModal state, closeModal function with 400ms delay, handleNavigation function that closes modal then scrolls to target section after 500ms delay
 - July 08, 2025. Simplified portfolio layout: reduced from 9 to 4 projects in 2x2 grid, kept Gallery section with same 4 projects, updated section numbering properly
 - July 08, 2025. Updated portfolio projects to match user specifications: Samsung 온·오프라인 콘텐츠 기획, Snapask 프리미엄 콘텐츠 영상 제작, Samsung 교육 콘텐츠 기획 제작, Jinair 베트남 인플루언서 프로모션 콘텐츠 제작 with corresponding thumbnail images
+- July 08, 2025. Updated Samsung 교육 콘텐츠 기획 제작 project thumbnail to professional video production studio image showing filming setup
 ```
 
 ## User Preferences

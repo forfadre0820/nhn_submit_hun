@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Snapask from "@assets/Snapask.jpg";
 import SamsungOfflineImage from "@assets/오프라인 운영_1752012039625.png";
 import SnapaskContentImage from "@assets/image_1752012210723.png";
-import SamsungEducationImage from "@assets/4_1752012227084.jpg";
+import SamsungEducationImage from "@assets/1_1752012693958.jpg";
 import JinairPromoImage from "@assets/image_1752012255292.png";
 import IntegratedOperationImage from "@assets/온 오프라인 통합운영_1752007176743.jpg";
 import TechSupportImage from "@assets/현장 기술 대응_1752007178380.jpg";
