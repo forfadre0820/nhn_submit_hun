@@ -891,33 +891,26 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Image-Text Layout - Site Grid */}
-              <div className="grid grid-cols-12 gap-4 items-start mb-1">
+              {/* Image-Text Layout - Simplified Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-8">
                 {/* Left Column - Image */}
-                <div className="col-span-12 lg:col-span-6">
+                <div className="lg:order-1">
                   <div className="relative overflow-hidden">
-                    <div className="absolute left-0 right-0 -inset-y-24" style={{ transform: 'translate3d(0px, 0.9888rem, 0px)' }}>
-                      <figure className="overflow-hidden absolute top-0 left-0 h-full w-full">
-                        <picture className="absolute inset-0">
-                          <img 
-                            src={Snapask}
-                            loading="lazy" 
-                            decoding="async" 
-                            draggable="false" 
-                            width="2076" 
-                            height="2595" 
-                            alt="Content Creator Workspace" 
-                            className="object-cover w-full h-full"
-                          />
-                        </picture>
-                      </figure>
+                    <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
+                      <img 
+                        src={Snapask}
+                        loading="lazy" 
+                        decoding="async" 
+                        draggable="false" 
+                        alt="Content Creator Workspace" 
+                        className="object-cover w-full h-full"
+                      />
                     </div>
-                    <div className="pt-[125%]"></div>
                   </div>
                 </div>
 
                 {/* Right Column - Content */}
-                <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
+                <div className="lg:order-2">
                   <motion.h2 
                     className="text-black mb-10 lg:mb-16 leading-tight uppercase"
                     style={{ 
@@ -942,7 +935,7 @@ export default function CombinedLanding() {
                     CONTENT
                   </motion.h2>
                   
-                  <div className={`col-span-4 text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-10 lg:mt-18 lg:pr-12`}>
+                  <div className={`text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-8`}>
                     <p className="text-[14px]">
                       콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 
                       저는 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다. 
@@ -964,7 +957,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-white py-4 mt-2">
+      <footer className="bg-white py-8 mt-8">
         <div className="max-w-6xl mx-auto px-6">
           {/* Bottom Section */}
           <div className="pt-2 border-t border-gray-200">

@@ -364,6 +364,7 @@ Changelog:
 - July 08, 2025. Added new "갤러리" section with same 3x3 grid layout as Featured Work section, positioned between Work and Contact sections
 - July 08, 2025. Updated Contact section numbering from 04 to 05 to accommodate new Gallery section
 - July 08, 2025. Enhanced modal transition animations with smoother dissolve effects: increased duration to 0.6s for main modal, added cubic-bezier easing, and improved scale/opacity transitions for professional feel
+- July 08, 2025. Reduced excessive spacing between Contact section and Footer to improve layout flow and visual hierarchy
 ```
 
 ## User Preferences
