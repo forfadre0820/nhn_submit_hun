@@ -956,8 +956,7 @@ export default function CombinedLanding() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
-                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">삼성SDS | 온·오프라인 실시간 행사/교육 기획·진행
-                    <br />+ 게임형 메타버스 기반 실시간 라이브 콘텐츠 환경 구축</h1>
+                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">온·오프라인 실시간 행사/교육 기획·진행</h1>
                   </div>
                 </div>
 
@@ -966,25 +965,22 @@ export default function CombinedLanding() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
-                      <p className="text-sm text-[#282623]">행사, 교육 기획
-메타버스 콘텐츠</p>
+                      <p className="text-sm text-[#282623]">행사, 교육 기획</p>
                     </div>
                     
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
-                      <p className="text-sm text-[#282623]">삼성SDS
-NH농협, 삼성교육재단</p>
+                      <p className="text-sm text-[#282623]">삼성 그룹</p>
                     </div>
                     
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
-                      <p className="text-sm text-[#282623]">기획, 운영
-플랫폼 구축</p>
+                      <p className="text-sm text-[#282623]">기획, 운영, 제작</p>
                     </div>
                   </div>
 
                   <div>
-                    <p className="text-[#282623] text-[14px]">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행과 게임형 메타버스 기반 라이브 콘텐츠 환경 구축 프로젝트를 담당했습니다. 실시간 기술 이슈 대응, 협력사 커뮤니케이션, AI 기반 그래픽 제작, 자동화 시스템 개발까지 전 과정을 수행했습니다.</p>
+                    <p className="text-[#282623] text-[14px]">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 실시간 기술 이슈 대응, 협력사 커뮤니케이션, AI 기반 그래픽 제작, 자동화 시스템 개발까지 전 과정을 수행했습니다.</p>
                   </div>
                 </div>
               </motion.div>
@@ -1049,35 +1045,69 @@ NH농협, 삼성교육재단</p>
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">프로젝트 개요</h2>
                 </div>
-                <div className="bg-gray-50 p-4 rounded mb-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">성과: 기업 고객사 수주 5개, NPS 4.5+ 달성</div>
-                    </div>
+                <p className="text-sm text-[#282623] mb-8 tracking-tight leading-relaxed">
+                  삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당하여 
+                  실시간 기술 이슈 대응, 협력사 커뮤니케이션, 고객 만족도 달성을 수행했습니다.
+                </p>
+
+                {/* 기간 */}
+                <div className="mb-6">
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">기간</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  <div>
+                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
                   </div>
-                  <p className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                    삼성SDS의 온·오프라인 실시간 행사/교육 기획·진행 및 메타버스 기반 라이브 콘텐츠 환경 구축을 통해 
-                    실시간 기술 이슈 대응, 협력사 커뮤니케이션, 고객 만족도 달성을 수행했습니다.
-                  </p>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">주요 활동: 월 3-4회 대규모 행사 진행</div>
+                  </div>
+                </div>
+
+                {/* 성과 */}
+                <div className="mb-6">
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">성과</h2>
+                </div>
+                <div className="space-y-4 mb-8">
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">50개 이상 행사에서 일관된 고품질 서비스 제공</p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 메타버스 프로젝트 수주</p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
+                  </div>
                 </div>
                 
                 {/* 주요 역할 */}
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">주요 역할</h2>
                 </div>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-6 mb-8">
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
+                    <div className="bg-gray-50 p-3 rounded mb-3">
+                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">
+                        <strong>배경:</strong> 삼성 그룹의 대규모 행사에서는 영상, 음향, 송출 등 여러 협력사가 동시에 작업하며, 
+                        실시간으로 발생하는 기술적 이슈와 출연자 변수에 즉각적인 대응이 필요했습니다.
+                      </p>
+                    </div>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                      대규모 행사 시 협력사(영상, 음향, 송출)와의 커뮤니케이션을 주도하여 앵글, 트랜지션, 음향 밸런스 등 품질을 확보하고, 
-                      출연자 돌발 상황에 대비한 큐시트 수정 및 직접 대체 진행을 수행했습니다.
+                      협력사(영상, 음향, 송출)와의 커뮤니케이션을 주도하여 앵글, 트랜지션, 음향 밸런스 등 품질을 확보하고, 
+                      출연자 돌발 상황(지각, 건강 이상 등)에 대비한 큐시트 수정 및 직접 대체 진행을 수행했습니다.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
+                    <div className="bg-gray-50 p-3 rounded mb-3">
+                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">
+                        <strong>배경:</strong> 행사별로 다양한 그래픽 리소스가 필요하고, 송출 타이밍 오류가 행사 품질에 직접적인 영향을 미치기 때문에 
+                        효율적인 제작 시스템과 자동화 프로그램이 필요했습니다.
+                      </p>
+                    </div>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
                       Midjourney·Stable Diffusion ComfyUI으로 그래픽 리소스를 생성하고 Python 기반 후보정으로 실사용급 그래픽 자원을 완성했으며, 
                       Python, OCR 화면 인식 자동화 프로그램을 개발하여 영상, 음악 송출 타이밍 오류를 최소화했습니다.
@@ -1085,6 +1115,12 @@ NH농협, 삼성교육재단</p>
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
+                    <div className="bg-gray-50 p-3 rounded mb-3">
+                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">
+                        <strong>배경:</strong> 기존 플랫폼으로는 임직원들의 실질적인 참여 데이터를 확보하기 어려웠고, 
+                        메타버스 환경에서 사용자의 자연스러운 몰입과 참여를 유도할 수 있는 새로운 접근이 필요했습니다.
+                      </p>
+                    </div>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
                       자체 플랫폼 확장 기획을 통해 실질적인 임직원 참여 데이터를 확보하고, 현실 조직 공간을 반영한 맵 디자인 제작으로 
                       사용자의 자율 탐색을 유도했습니다. SnowFlake 기반 행동 로그 수집 구조 설계 및 API 연동 협의를 담당했습니다.
