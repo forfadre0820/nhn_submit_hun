@@ -4,10 +4,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Snapask from "@assets/Snapask.jpg";
-import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_1752007078868.jpg";
-import OfflineOperationImage from "@assets/오프라인 운영_1752007078869.jpg";
-import TechSupportImage from "@assets/현장 기술 대응_1752007078870.jpg";
-import IntegratedOperationImage from "@assets/온 오프라인 통합운영_1752007078870.jpg";
+import OfflineOperationImage from "@assets/오프라인 운영_1752007166250.png";
+import IntegratedOperationImage from "@assets/온 오프라인 통합운영_1752007176743.jpg";
+import TechSupportImage from "@assets/현장 기술 대응_1752007178380.jpg";
+import OverseasEventImage from "@assets/오프라인 운영_1752007181258.jpg";
+import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_1752007184273.jpg";
 import EsportsImage from "@assets/image_1751953797146.png";
 import WorkspaceImage from "@assets/image_1751953806704.png";
 import CalligraphyImage from "@assets/image_1751953823504.png";
@@ -997,8 +998,8 @@ export default function CombinedLanding() {
             >
               <div className="w-full aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
                 <img
-                  src={OnlineEventImage}
-                  alt="온·오프라인 실시간 행사/교육 기획·진행"
+                  src={OfflineOperationImage}
+                  alt="오프라인 운영 - 강의실에서 진행 중인 교육 프로그램"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -1017,15 +1018,15 @@ export default function CombinedLanding() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
                     <img
-                      src={OfflineOperationImage}
-                      alt="오프라인 행사 진행 모습"
+                      src={IntegratedOperationImage}
+                      alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
                     <img
                       src={TechSupportImage}
-                      alt="현장 기술 대응 및 모니터링"
+                      alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -1034,15 +1035,25 @@ export default function CombinedLanding() {
                 <div className="mb-8">
                   <div className="aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
                     <img
-                      src={IntegratedOperationImage}
-                      alt="온·오프라인 통합 운영"
+                      src={OverseasEventImage}
+                      alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                <div className="mb-8">
+                  <div className="aspect-[3/2] bg-[#b9b8b6] overflow-hidden max-w-md mx-auto">
+                    <img
+                      src={OnlineEventImage}
+                      alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
                 
                 <div className="text-center mb-8">
-                  <p className="text-sm text-[#58534e] italic">현장진행부터 기술구현까지</p>
+                  <p className="text-sm text-[#58534e] italic">오프라인 교육부터 온라인 이벤트까지 통합 운영</p>
                 </div>
               </motion.div>
 
