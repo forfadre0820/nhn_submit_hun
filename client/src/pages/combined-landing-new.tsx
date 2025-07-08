@@ -674,8 +674,8 @@ export default function CombinedLanding() {
                       fontFamily: "'Playfair Display', serif",
                       fontWeight: '700',
                       fontSize: '54px',
-                      letterSpacing: '0.01em',
-                      lineHeight: '1.1'
+                      letterSpacing: '-0.02em',
+                      lineHeight: '0.9'
                     }}
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}

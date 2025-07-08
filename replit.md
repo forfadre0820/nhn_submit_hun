@@ -326,6 +326,7 @@ Changelog:
 - July 08, 2025. Updated title typography to 64px size with uppercase styling and adjusted line height for better visual impact
 - July 08, 2025. Changed Contact section title font to Inter (similar to Noh Optique) and reduced size to 54px with medium weight
 - July 08, 2025. Updated Contact section title font to Playfair Display serif for elegant and sophisticated typography
+- July 08, 2025. Tightened Contact section title spacing: reduced line height to 0.9 and letter spacing to -0.02em for compact layout
 - July 08, 2025. Updated Contact section title to "I Keep Challenging Myself to Make Good and Meaningful Content"
 - July 08, 2025. Implemented smooth bottom-to-top ease-out animation for Contact section title using Framer Motion
 ```
