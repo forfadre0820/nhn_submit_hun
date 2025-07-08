@@ -1008,7 +1008,8 @@ export default function CombinedLanding() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
-                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">온·오프라인 실시간 행사/교육 기획·진행</h1>
+                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">온·오프라인 실시간 행사
+                    /교육 기획·진행</h1>
                   </div>
                 </div>
 
