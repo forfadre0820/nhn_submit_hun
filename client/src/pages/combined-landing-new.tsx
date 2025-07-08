@@ -63,13 +63,15 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
 
   // Function to handle image load and measure height
   const handleImageLoad = useCallback((id: string, event: React.SyntheticEvent<HTMLImageElement>) => {
-    // Use varied heights for masonry layout
-    const heights = [250, 300, 350, 400, 450, 500];
-    const randomHeight = heights[Math.floor(Math.random() * heights.length)];
+    // Use 16:9 aspect ratio for all images
+    const containerWidth = window.innerWidth <= 768 ? 
+      (window.innerWidth - 48) : // Mobile: full width minus padding
+      (1152 - 48) / 2; // Desktop: half container width minus gap
+    const height = containerWidth * (9 / 16); // 16:9 ratio
     
     setImageHeights(prev => ({
       ...prev,
-      [id]: randomHeight
+      [id]: height
     }));
   }, []);
 
