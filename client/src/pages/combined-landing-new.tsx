@@ -1058,47 +1058,51 @@ export default function CombinedLanding() {
             {/* Content Container */}
             <div className="px-8 lg:px-16 pb-12">
 
-              {/* Additional Project Images */}
+              {/* Additional Project Images - Horizontal Gallery */}
               <motion.div 
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
-                    <img
-                      src={IntegratedOperationImage}
-                      alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
-                    <img
-                      src={TechSupportImage}
-                      alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                
+                {/* 수평 스크롤 이미지 갤러리 */}
                 <div className="mb-8">
-                  <div className="aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
-                    <img
-                      src={OverseasEventImage}
-                      alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                
-                <div className="mb-8">
-                  <div className="aspect-[3/2] bg-[#b9b8b6] overflow-hidden max-w-md mx-auto">
-                    <img
-                      src={OnlineEventImage}
-                      alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4" style={{ scrollSnapType: 'x mandatory' }}>
+                    {/* 첫 번째 이미지 - 통합 운영 */}
+                    <div className="flex-shrink-0 w-80 aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg" style={{ scrollSnapAlign: 'start' }}>
+                      <img
+                        src={IntegratedOperationImage}
+                        alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    
+                    {/* 두 번째 이미지 - 기술 대응 */}
+                    <div className="flex-shrink-0 w-80 aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg" style={{ scrollSnapAlign: 'start' }}>
+                      <img
+                        src={TechSupportImage}
+                        alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    
+                    {/* 세 번째 이미지 - 해외 이벤트 (와이드) */}
+                    <div className="flex-shrink-0 w-96 aspect-[16/9] bg-[#b9b8b6] overflow-hidden rounded-lg" style={{ scrollSnapAlign: 'start' }}>
+                      <img
+                        src={OverseasEventImage}
+                        alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    
+                    {/* 네 번째 이미지 - 온라인 이벤트 (스몰) */}
+                    <div className="flex-shrink-0 w-64 aspect-[3/2] bg-[#b9b8b6] overflow-hidden rounded-lg" style={{ scrollSnapAlign: 'start' }}>
+                      <img
+                        src={OnlineEventImage}
+                        alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
                   </div>
                 </div>
                 

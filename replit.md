@@ -357,6 +357,9 @@ Changelog:
 - July 08, 2025. Updated portfolio images with authentic project content: offline operations, integrated operations, technical support, overseas events, and online event planning
 - July 08, 2025. Implemented proper image ordering and sizing with fifth image (online event planning) as smallest size as requested
 - July 08, 2025. Added comprehensive code comments and improved grid spacing for better visual hierarchy
+- July 08, 2025. Redesigned detailed project modal to horizontal scrolling gallery layout with dynamic image sizing
+- July 08, 2025. Implemented single-row image display with varied aspect ratios: standard 4:3, wide 16:9, and small 3:2 for online event image
+- July 08, 2025. Added scroll snap functionality and hover scale effects to horizontal image gallery for better user experience
 ```
 
 ## User Preferences
