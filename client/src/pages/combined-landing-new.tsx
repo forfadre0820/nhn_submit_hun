@@ -1045,21 +1045,29 @@ export default function CombinedLanding() {
 
 
 
-                {/* 성과 */}
+                {/* 기간 */}
                 <div className="mb-6">
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">기간</h2>
+                </div>
+                <div className="mb-8">
+                  <div className="text-sm text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
+                </div>
+
+                {/* 성과 */}
+                <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">성과</h2>
                 </div>
                 <div className="space-y-6 mb-8">
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">50개 이상 행사에서 일관된 고품질 서비스 제공</p>
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
                   </div>
                 </div>
@@ -1078,7 +1086,7 @@ export default function CombinedLanding() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">협력사 커뮤니케이션</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">협력사 커뮤니케이션</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• 영상: 앵글, 트랜지션 품질 확보</li>
                           <li>• 음향: 밸런스 조정 및 품질 관리</li>
@@ -1086,7 +1094,7 @@ export default function CombinedLanding() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">돌발 상황 대응</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">돌발 상황 대응</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• 출연자 지각, 건강 이상 등</li>
                           <li>• 큐시트 실시간 수정</li>
@@ -1105,7 +1113,7 @@ export default function CombinedLanding() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">그래픽 제작 시스템</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">그래픽 제작 시스템</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
                           <li>• Python 기반 후보정</li>
@@ -1113,7 +1121,7 @@ export default function CombinedLanding() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 프로그램</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 프로그램</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• Python + OCR 화면 인식</li>
                           <li>• 영상, 음악 송출 타이밍 제어</li>
@@ -1132,7 +1140,7 @@ export default function CombinedLanding() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 확장 기획</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 확장 기획</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• 자체 플랫폼 확장 설계</li>
                           <li>• 실질적 임직원 참여 데이터 확보</li>
@@ -1140,7 +1148,7 @@ export default function CombinedLanding() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">데이터 구조 설계</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">데이터 구조 설계</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• SnowFlake 기반 행동 로그 수집</li>
                           <li>• API 연동 구조 협의</li>
@@ -1157,19 +1165,19 @@ export default function CombinedLanding() {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                   <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">Adobe Creative Suite</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">Adobe Creative Suite</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects, Photoshop</div>
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">생성형 AI</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">생성형 AI</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Midjourney, Stable Diffusion ComfyUI</div>
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">자동화 개발</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">자동화 개발</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OCR 화면 인식</div>
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">데이터 설계</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">데이터 설계</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">SnowFlake, API 연동</div>
                   </div>
                 </div>
