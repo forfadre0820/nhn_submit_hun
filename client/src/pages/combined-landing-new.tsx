@@ -44,15 +44,22 @@ interface PortfolioItem {
   alt: string;
   title: string;
   subtitle: string;
+  description: string;
+  category: string;
+  year: string;
+  client: string;
+  role: string;
+  tools: string[];
+  images: string[];
 }
 
 // MasonryGrid component
 interface MasonryGridProps {
   items: PortfolioItem[];
-  onImageClick: (item: PortfolioItem) => void;
+  onProjectClick: (item: PortfolioItem) => void;
 }
 
-const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
+const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onProjectClick }) => {
   const [columns, setColumns] = useState<{ left: PortfolioItem[], right: PortfolioItem[], center?: PortfolioItem[] }>({
     left: [],
     right: [],
@@ -136,7 +143,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
           className="group cursor-pointer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
-          onClick={() => onImageClick(item)}
+          onClick={() => onProjectClick(item)}
         >
           <div 
             className="relative overflow-hidden bg-gray-100 rounded-lg"
@@ -188,7 +195,7 @@ export default function CombinedLanding() {
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const [showSoundControl, setShowSoundControl] = useState(false);
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title: string } | null>(null);
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -197,56 +204,112 @@ export default function CombinedLanding() {
       src: EsportsImage,
       alt: "E-sports Event Production",
       title: "E-sports 중계",
-      subtitle: "Live Broadcasting"
+      subtitle: "Live Broadcasting",
+      description: "실시간 E-sports 대회 중계 제작으로 시청자들에게 몰입감 있는 경험을 제공했습니다. 다각도 카메라 설정과 실시간 편집을 통해 게임의 긴장감을 극대화하고, 해설진과의 협업으로 전문적인 중계 콘텐츠를 완성했습니다.",
+      category: "Broadcasting",
+      year: "2023",
+      client: "Samsung Multicampus",
+      role: "Production Director",
+      tools: ["Adobe Premiere Pro", "OBS Studio", "Multi-camera Setup"],
+      images: [EsportsImage]
     },
     {
       id: "2", 
       src: WorkspaceImage,
       alt: "Content Creator Workspace",
       title: "작업 공간 설계",
-      subtitle: "Workspace Design"
+      subtitle: "Workspace Design",
+      description: "콘텐츠 제작자를 위한 최적화된 작업 공간을 설계하고 구축했습니다. 촬영 환경, 조명 설정, 장비 배치를 체계적으로 계획하여 효율적인 제작 워크플로우를 구현했습니다.",
+      category: "Space Design",
+      year: "2023",
+      client: "Individual Creator",
+      role: "Space Planner & Designer",
+      tools: ["Space Planning", "Lighting Design", "Equipment Setup"],
+      images: [WorkspaceImage]
     },
     {
       id: "3",
       src: CalligraphyImage,
       alt: "Typography Design", 
       title: "브랜드 타이포그래피",
-      subtitle: "Brand Typography"
+      subtitle: "Brand Typography",
+      description: "브랜드의 정체성을 반영하는 타이포그래피 디자인 작업입니다. 한글 캘리그래피의 전통적 아름다움과 현대적 감각을 조화시켜 독창적인 브랜드 폰트를 개발했습니다.",
+      category: "Brand Design",
+      year: "2022",
+      client: "Cultural Brand",
+      role: "Typography Designer",
+      tools: ["Adobe Illustrator", "Calligraphy", "Font Development"],
+      images: [CalligraphyImage]
     },
     {
       id: "4",
       src: InterviewImage,
       alt: "Corporate Interview",
       title: "기업 인터뷰", 
-      subtitle: "Corporate Interview"
+      subtitle: "Corporate Interview",
+      description: "기업의 핵심 인물들과의 인터뷰를 통해 브랜드 스토리와 비전을 효과적으로 전달하는 영상을 제작했습니다. 자연스러운 대화 분위기 연출과 전문적인 촬영 기법으로 신뢰감 있는 콘텐츠를 완성했습니다.",
+      category: "Corporate Content",
+      year: "2023",
+      client: "Tech Company",
+      role: "Director & Producer",
+      tools: ["Sony FX6", "Professional Lighting", "Interview Setup"],
+      images: [InterviewImage]
     },
     {
       id: "5",
       src: PerfumeImage,
       alt: "Product Photography",
       title: "제품 촬영",
-      subtitle: "Product Photography"
+      subtitle: "Product Photography",
+      description: "럭셔리 제품의 프리미엄 이미지를 구현하기 위한 제품 촬영 프로젝트입니다. 정교한 조명 설정과 구도를 통해 제품의 고급스러움과 디테일을 극대화했습니다.",
+      category: "Product Photography",
+      year: "2023",
+      client: "Luxury Brand",
+      role: "Product Photographer",
+      tools: ["Canon R5", "Studio Lighting", "Macro Lens"],
+      images: [PerfumeImage]
     },
     {
       id: "6",
       src: TravelImage,
       alt: "Travel Content",
       title: "여행 콘텐츠",
-      subtitle: "Travel Content"
+      subtitle: "Travel Content",
+      description: "여행지의 매력을 생생하게 담아내는 콘텐츠 제작 프로젝트입니다. 현지의 문화와 풍경을 자연스럽게 기록하며, 시청자들에게 몰입감 있는 여행 경험을 제공했습니다.",
+      category: "Travel Content",
+      year: "2022",
+      client: "Tourism Board",
+      role: "Content Creator",
+      tools: ["DJI Drone", "GoPro", "Gimbal Stabilizer"],
+      images: [TravelImage]
     },
     {
       id: "7",
       src: EducationImage,
       alt: "Educational Content",
       title: "교육 콘텐츠",
-      subtitle: "Educational Content"
+      subtitle: "Educational Content",
+      description: "효과적인 학습을 위한 교육 콘텐츠 기획 및 제작을 담당했습니다. 복잡한 개념을 시각적으로 쉽게 이해할 수 있도록 구성하고, 학습자의 참여도를 높이는 인터랙티브 요소를 추가했습니다.",
+      category: "Educational Content",
+      year: "2023",
+      client: "Samsung Multicampus",
+      role: "Educational Content Producer",
+      tools: ["After Effects", "Motion Graphics", "Interactive Design"],
+      images: [EducationImage]
     },
     {
       id: "8", 
       src: SnapaskInterviewImage,
       alt: "Snapask Team Interview",
       title: "팀 인터뷰",
-      subtitle: "Team Interview"
+      subtitle: "Team Interview",
+      description: "Snapask Korea 팀원들과의 인터뷰를 통해 기업 문화와 비전을 소개하는 콘텐츠를 제작했습니다. 자연스러운 팀 분위기를 담아내며 회사의 인재상과 가치관을 효과적으로 전달했습니다.",
+      category: "Corporate Content",
+      year: "2022",
+      client: "Snapask Korea",
+      role: "Assistant Production Manager",
+      tools: ["Multi-camera Setup", "Interview Lighting", "Post Production"],
+      images: [SnapaskInterviewImage]
     }
   ];
 
@@ -714,11 +777,7 @@ export default function CombinedLanding() {
               {/* Portfolio Grid - Balanced Masonry Layout */}
               <MasonryGrid 
                 items={portfolioItems}
-                onImageClick={(item) => setSelectedImage({ 
-                  src: item.src, 
-                  alt: item.alt, 
-                  title: item.title 
-                })}
+                onProjectClick={setSelectedProject}
               />
             </div>
 
@@ -838,45 +897,120 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Lightbox Modal */}
-      {selectedImage && (
+      {/* Project Detail Modal */}
+      {selectedProject && (
         <motion.div 
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[99999] p-4"
+          className="fixed inset-0 bg-white z-[99999] overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={() => setSelectedImage(null)}
         >
-          <motion.div 
-            className="relative max-w-[90vw] max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 w-8 h-8 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all z-10"
-              onClick={() => setSelectedImage(null)}
-            >
-              <span className="text-lg leading-none">×</span>
-            </button>
-            
-            {/* Image */}
-            <img 
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full h-full object-contain"
-              style={{ maxWidth: '90vw', maxHeight: '80vh' }}
-            />
-            
-            {/* Caption */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-              <h3 className="text-white text-xl font-medium">{selectedImage.title}</h3>
-              <p className="text-gray-300 text-sm mt-1">{selectedImage.alt}</p>
+          <div className="min-h-screen bg-white">
+            {/* Navigation */}
+            <nav className="sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+              <div className="max-w-6xl mx-auto px-6 py-4">
+                <div className="flex justify-between items-center">
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="text-gray-600 hover:text-black transition-colors"
+                  >
+                    ← Back to Work
+                  </button>
+                  <div className="flex space-x-8">
+                    <span className="text-gray-700">Archive</span>
+                    <span className="text-gray-700">Selected</span>
+                    <span className="text-gray-700">Studio</span>
+                    <span className="text-gray-700">Contact</span>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+            {/* Project Content */}
+            <div className="max-w-4xl mx-auto px-6 py-16">
+              {/* Project Title */}
+              <div className="text-center mb-16">
+                <h1 className="text-6xl font-bold text-black mb-4">
+                  {selectedProject.title.toUpperCase()}
+                </h1>
+              </div>
+
+              {/* Main Project Image */}
+              <div className="mb-16">
+                <img
+                  src={selectedProject.src}
+                  alt={selectedProject.alt}
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+
+              {/* Project Info Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                {/* Left Column - Description */}
+                <div>
+                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">Description</h3>
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    {selectedProject.description}
+                  </p>
+                </div>
+
+                {/* Right Column - Project Details */}
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Category</h4>
+                    <p className="text-gray-900 font-medium">{selectedProject.category}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Year</h4>
+                    <p className="text-gray-900 font-medium">{selectedProject.year}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Client</h4>
+                    <p className="text-gray-900 font-medium">{selectedProject.client}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Role</h4>
+                    <p className="text-gray-900 font-medium">{selectedProject.role}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Tools Used</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.tools.map((tool, index) => (
+                        <span 
+                          key={index}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation to other projects */}
+              <div className="border-t border-gray-200 pt-16">
+                <div className="flex justify-between items-center">
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="text-gray-600 hover:text-black transition-colors"
+                  >
+                    ← Back to Portfolio
+                  </button>
+                  <div className="text-center">
+                    <p className="text-gray-500 text-sm">
+                      Project {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} of {portfolioItems.length}
+                    </p>
+                  </div>
+                  <div className="w-20"></div> {/* Spacer for balance */}
+                </div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </div>
