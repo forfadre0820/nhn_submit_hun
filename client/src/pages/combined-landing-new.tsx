@@ -1331,17 +1331,17 @@ export default function CombinedLanding() {
                   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <button 
                       type="button" 
-                      className={`text-gray-600 hover:text-gray-900 transition-colors ${FONT_SIZES.body}`}
+                      className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
                       onClick={() => handleNavigation('home')}
                     >
                       ↑ 맨 위로
                     </button>
                     
                     <div className="text-center">
-                      <p className={`text-gray-500 ${FONT_SIZES.body}`}>Copyright © LEESEUNGHUN 2025</p>
+                      <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
                     </div>
                     
-                    <div className={`text-gray-600 ${FONT_SIZES.body}`}>
+                    <div className="text-sm text-[#58534e]">
                       Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
                         hour: '2-digit', 
                         minute: '2-digit',

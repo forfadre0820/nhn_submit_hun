@@ -381,6 +381,7 @@ Changelog:
 - July 08, 2025. Fixed Contact section layout to match reference image: left image, right text content with "Collaboration" title, proper 2-column grid layout with gray background
 - July 08, 2025. Updated Contact section title structure to match HTML reference: h3 element with heading-huge, color-orange, font-light classes, separate span for arrow symbol
 - July 08, 2025. Unified footer styling across all pages and modals using consistent FONT_SIZES and color schemes
+- July 08, 2025. Reverted modal footer to original styling with #58534e color scheme for better visual consistency
 - July 08, 2025. Expanded Visual Gallery section to display 8 images in 4x2 grid layout instead of 2x2
 ```
 
