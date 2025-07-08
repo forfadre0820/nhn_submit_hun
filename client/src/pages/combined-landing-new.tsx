@@ -1079,7 +1079,7 @@ export default function CombinedLanding() {
                 <div className="space-y-5 mb-8">
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 py-3 mb-4">
+                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
                         삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생
                       </p>
@@ -1106,7 +1106,7 @@ export default function CombinedLanding() {
 
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 py-3 mb-4">
+                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
                         행사별 다양한 그래픽 필요 + 송출 타이밍 오류 = 행사 품질 직접 영향 → 효율적 제작 & 자동화 필요
                       </p>
@@ -1133,7 +1133,7 @@ export default function CombinedLanding() {
 
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 py-3 mb-4">
+                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
                         기존 플랫폼 한계 → 임직원 참여 데이터 확보 어려움 → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요
                       </p>
