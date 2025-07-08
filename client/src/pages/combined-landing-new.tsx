@@ -880,19 +880,19 @@ export default function CombinedLanding() {
             </div>
 
             {/* Contact Section */}
-            <div className="pt-2 border-t border-gray-200" data-section="contact">
-              <div className="flex justify-between items-start mb-4">
+            <div className={SPACING.sectionGap} data-section="contact">
+              <div className="flex justify-between items-start mb-6">
                 <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Wtih me</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
               </div>
 
               {/* Separator Line */}
-              <div className="separator-wrap mb-3">
+              <div className="separator-wrap mb-8">
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
               {/* Image-Text Layout - Simplified Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start mb-8">
                 {/* Left Column - Image */}
                 <div className="lg:order-1">
                   <div className="relative overflow-hidden">
