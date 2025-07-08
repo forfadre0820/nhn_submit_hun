@@ -456,7 +456,7 @@ export default function CombinedLanding() {
                         <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>프리랜서</h5>
                         <span className={`${FONT_SIZES.small} text-gray-500`}>2019.01 - 2020.01</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 (1년 1개월)</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 </p>
                       <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
                         다양한 B2B 클라이언트 대상 콘텐츠 기획·연출, 촬영·조명·미술, 후반 제작 및 품질관리
                       </div>
@@ -705,7 +705,7 @@ export default function CombinedLanding() {
                   </motion.h2>
                   
                   <div className={`col-span-4 text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-10 lg:mt-18 lg:pr-12`}>
-                    <p>
+                    <p className="text-[14px]">
                       콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 
                       저는 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다. 
                       라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
