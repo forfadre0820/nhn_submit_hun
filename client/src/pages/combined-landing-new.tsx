@@ -1002,7 +1002,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           onClick={() => setSelectedProject(null)}
         >
           {/* Navigation Bar */}
@@ -1024,10 +1024,10 @@ export default function CombinedLanding() {
 
           <motion.div 
             className="bg-white w-full max-w-4xl mx-auto min-h-screen relative tracking-tight leading-relaxed"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            initial={{ scale: 0.98, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.98, opacity: 0, y: -20 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Page Header */}
@@ -1358,14 +1358,15 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
           onClick={() => setSelectedProject(null)}
         >
           <motion.div 
             className="relative max-w-3xl max-h-[80vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
-            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+            initial={{ scale: 0.9, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.95, opacity: 0, y: 20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            exit={{ scale: 0.9, opacity: 0, y: -30 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
