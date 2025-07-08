@@ -1092,6 +1092,41 @@ export default function CombinedLanding() {
                 </div>
               </motion.div>
 
+              {/* 핵심 서비스 */}
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                <h2 className="text-base mb-6 text-[#282623] font-medium">주요 서비스 영역</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="flex flex-col">
+                    <span className="text-xs text-[#58534e] mb-2">01.</span>
+                    <h3 className="text-base font-medium text-[#282623] mb-3">현장 진행 & 관리</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed">
+                      IT 전문성을 바탕으로 한 실시간 행사 진행과 벤더 관리. 출연자 컨셉 이상의 진행력과 현장 대응능력으로 안정적인 행사 운영을 보장합니다.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col">
+                    <span className="text-xs text-[#58534e] mb-2">02.</span>
+                    <h3 className="text-base font-medium text-[#282623] mb-3">기술 개발 & 자동화</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed">
+                      Python과 OpenCV 기반의 실시간 처리 시스템 구축. 제약환경에서도 안정적인 송출을 위한 AI 솔루션과 자동화 시스템을 개발합니다.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col">
+                    <span className="text-xs text-[#58534e] mb-2">03.</span>
+                    <h3 className="text-base font-medium text-[#282623] mb-3">통합 플랫폼 설계</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed">
+                      온·오프라인 하이브리드 환경을 위한 통합 플랫폼 아키텍처 설계. VOD 제작부터 디지털콘텐츠 관리까지 end-to-end 솔루션을 제공합니다.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
             </div>
           </motion.div>
         </motion.div>
