@@ -224,7 +224,7 @@ export default function CombinedLanding() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className={`${FONT_SIZES.small} ${SPACING.smallGap} transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
+              className="mb-4 transition-colors duration-300 text-black/80 text-[18px]"
             >
               {isVideoFullscreen ? 'Keep to explore' : 'Scroll to explore'}
             </motion.div>

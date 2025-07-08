@@ -333,6 +333,7 @@ Changelog:
 - July 08, 2025. Corrected education details: Sangmyung University Computer Science graduated 2022.07, Graduate school Emotional Engineering (on leave), Korea Animation High School with Video Direction major and Computer Game Production minor, simplified career descriptions
 - July 08, 2025. Fixed font size consistency throughout the site using FONT_SIZES constants, corrected company name to "Snapask Korea"
 - July 08, 2025. Reduced h3 section title letter spacing from tracking-widest to tracking-wide for better readability
+- July 08, 2025. Updated portfolio section with 10 real work images from user's projects: E-sports broadcasting, portrait photography, product visualization, content creation, typography design, education content, video production, event content, marketing campaigns, and beauty content
 ```
 
 ## User Preferences
