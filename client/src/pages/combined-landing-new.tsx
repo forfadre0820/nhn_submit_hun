@@ -5,6 +5,25 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Constants for consistent styling
+const FONT_SIZES = {
+  hero: "text-6xl", // 62px equivalent
+  sectionTitle: "text-4xl lg:text-5xl",
+  subsectionTitle: "text-2xl lg:text-3xl",
+  heading: "text-xl lg:text-2xl",
+  subheading: "text-lg",
+  body: "text-base",
+  small: "text-sm",
+  tiny: "text-xs"
+};
+
+const SPACING = {
+  sectionGap: "mb-20",
+  subsectionGap: "mb-12",
+  itemGap: "mb-8",
+  smallGap: "mb-4"
+};
+
 export default function CombinedLanding() {
   const heroRef = useRef<HTMLElement>(null);
   const videoWrapRef = useRef<HTMLSpanElement>(null);
@@ -122,9 +141,9 @@ export default function CombinedLanding() {
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
         <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
           <div className="flex items-center space-x-8">
-            <a href="#work" className="text-sm text-gray-700 hover:text-black transition-colors">Work</a>
-            <a href="#about" className="text-sm text-gray-700 hover:text-black transition-colors">About</a>
-            <a href="#contact" className="text-sm text-gray-700 hover:text-black transition-colors">Contact</a>
+            <a href="#work" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>Work</a>
+            <a href="#about" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>About</a>
+            <a href="#contact" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>Contact</a>
           </div>
         </div>
       </nav>
@@ -135,11 +154,8 @@ export default function CombinedLanding() {
       >
         <div className="container mx-auto px-4 text-center">
           <motion.h1 
-            className="hero__heading font-bold leading-[1.1] mb-8"
-            style={{
-              fontSize: "62px",
-              lineHeight: "1.1"
-            }}
+            className={`hero__heading font-bold leading-tight ${SPACING.itemGap}`}
+            style={{ fontSize: "62px", lineHeight: "1.1" }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -196,7 +212,7 @@ export default function CombinedLanding() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className={`text-sm mb-4 transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
+              className={`${FONT_SIZES.small} ${SPACING.smallGap} transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
             >
               {isVideoFullscreen ? 'Keep to explore' : 'Scroll to explore'}
             </motion.div>
@@ -272,7 +288,7 @@ export default function CombinedLanding() {
       </section>
       {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-1 min-h-screen">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-20">
           <motion.div 
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
@@ -281,12 +297,12 @@ export default function CombinedLanding() {
             viewport={{ once: true }}
           >
             {/* Main About Section */}
-            <div className="mb-12">
+            <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
                   ABOUT 이승훈
                 </h3>
-                <span className="text-sm font-medium text-gray-500">01</span>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>01</span>
               </div>
 
               {/* Separator Line */}
@@ -298,10 +314,10 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                  <h2 className={`${FONT_SIZES.sectionTitle} font-bold text-gray-900 leading-tight ${SPACING.smallGap}`}>
                     콘텐츠 제작자이자 크리에이터를 위한 교육자
                   </h2>
-                  <p className="text-gray-700 text-base leading-relaxed">
+                  <p className={`text-gray-700 ${FONT_SIZES.body} leading-relaxed`}>
                     시청자의 경험을 최우선으로 생각하며, 메시지 전달을 넘어 
                     깊이 있는 인상을 남기는 콘텐츠를 설계합니다. 
                     창작자들에게 실질적인 도움을 주는 교육 콘텐츠를 제작하고 있습니다.
@@ -312,24 +328,24 @@ export default function CombinedLanding() {
                 <div className="lg:col-span-6">
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-base font-medium text-gray-900 mb-1">콘텐츠 기획</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>콘텐츠 기획</h4>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
                         시청자의 니즈를 파악하고 메시지를 효과적으로 전달하는 
                         콘텐츠 구조와 스토리텔링을 설계합니다.
                       </p>
                     </div>
                     
                     <div>
-                      <h4 className="text-base font-medium text-gray-900 mb-1">영상 제작</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>영상 제작</h4>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
                         기획부터 촬영, 편집까지 일관된 비전으로 완성도 높은 
                         영상 콘텐츠를 제작합니다.
                       </p>
                     </div>
                     
                     <div>
-                      <h4 className="text-base font-medium text-gray-900 mb-1">교육 & 멘토링</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>교육 & 멘토링</h4>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
                         창작자들이 성장할 수 있도록 실무 경험을 바탕으로 한 
                         체계적인 교육과 개별 멘토링을 제공합니다.
                       </p>
@@ -341,34 +357,34 @@ export default function CombinedLanding() {
               {/* Bottom Info Grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-6 pt-4 border-t border-gray-100">
                 <div>
-                  <h5 className="text-xs font-medium text-gray-500 mb-2">전문 분야</h5>
-                  <p className="text-gray-900 font-medium text-sm">콘텐츠 제작 & 교육</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>전문 분야</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>콘텐츠 제작 & 교육</p>
                 </div>
                 
                 <div>
-                  <h5 className="text-xs font-medium text-gray-500 mb-2">활동 지역</h5>
-                  <p className="text-gray-900 font-medium text-sm">대한민국</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>활동 지역</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>대한민국</p>
                 </div>
                 
                 <div>
-                  <h5 className="text-xs font-medium text-gray-500 mb-2">경력</h5>
-                  <p className="text-gray-900 font-medium text-sm">5+ years</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>경력</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>5+ years</p>
                 </div>
                 
                 <div>
-                  <h5 className="text-xs font-medium text-gray-500 mb-2">플랫폼</h5>
-                  <p className="text-gray-900 font-medium text-sm">YouTube & 온라인</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>플랫폼</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>YouTube & 온라인</p>
                 </div>
               </div>
             </div>
 
             {/* Education & Career Section */}
-            <div className="mb-16">
+            <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
                   학력 & 경력
                 </h3>
-                <span className="text-sm font-medium text-gray-500">02</span>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>02</span>
               </div>
 
               {/* Separator Line */}
@@ -379,31 +395,31 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Education Section */}
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-6">학력</h4>
+                  <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-6`}>학력</h4>
                   <div className="space-y-6">
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className="text-base font-medium text-gray-900">디지털미디어학과</h5>
-                        <span className="text-sm text-gray-500">2018-2022</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>디지털미디어학과</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2018-2022</span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-1">서울디지털대학교</p>
-                      <p className="text-gray-500 text-xs">콘텐츠 제작 및 미디어 기획 전공</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>서울디지털대학교</p>
+                      <p className={`text-gray-500 ${FONT_SIZES.tiny}`}>콘텐츠 제작 및 미디어 기획 전공</p>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className="text-base font-medium text-gray-900">영상제작 전문과정</h5>
-                        <span className="text-sm text-gray-500">2017</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>영상제작 전문과정</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2017</span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-1">한국방송통신대학교 평생교육원</p>
-                      <p className="text-gray-500 text-xs">영상 편집 및 후반작업 집중 교육</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>한국방송통신대학교 평생교육원</p>
+                      <p className={`text-gray-500 ${FONT_SIZES.tiny}`}>영상 편집 및 후반작업 집중 교육</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Career Section */}
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-6">주요 경력</h4>
+                  <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-6`}>주요 경력</h4>
                   <div className="space-y-6">
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
@@ -439,8 +455,8 @@ export default function CombinedLanding() {
               <div className="mt-12 pt-8 border-t border-gray-100">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div>
-                    <h5 className="text-base font-medium text-gray-900 mb-3">보유 자격증</h5>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>보유 자격증</h5>
+                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
                       <li>• 컴퓨터그래픽스운용기능사</li>
                       <li>• 멀티미디어콘텐츠제작전문가</li>
                       <li>• Adobe Certified Expert (Premiere Pro)</li>
@@ -448,8 +464,8 @@ export default function CombinedLanding() {
                   </div>
                   
                   <div>
-                    <h5 className="text-base font-medium text-gray-900 mb-3">전문 기술</h5>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>전문 기술</h5>
+                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
                       <li>• Adobe Creative Suite (전문가)</li>
                       <li>• Final Cut Pro (고급)</li>
                       <li>• DaVinci Resolve (중급)</li>
@@ -457,8 +473,8 @@ export default function CombinedLanding() {
                   </div>
                   
                   <div>
-                    <h5 className="text-base font-medium text-gray-900 mb-3">언어 능력</h5>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>언어 능력</h5>
+                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
                       <li>• 한국어 (모국어)</li>
                       <li>• 영어 (업무 수준)</li>
                       <li>• 일본어 (기초 회화)</li>
@@ -469,12 +485,12 @@ export default function CombinedLanding() {
             </div>
 
             {/* Featured Work Section */}
-            <div className="mb-16">
+            <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
                   주요 작업
                 </h3>
-                <span className="text-sm font-medium text-gray-500">03</span>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
               </div>
 
               {/* Separator Line */}
@@ -494,8 +510,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">콘텐츠 기획</span>
-                        <span className="subtitle block text-sm opacity-80">Strategy & Planning</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>콘텐츠 기획</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Strategy & Planning</span>
                       </div>
                     </div>
                   </motion.div>
@@ -509,8 +525,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-green-500 to-teal-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">교육 콘텐츠</span>
-                        <span className="subtitle block text-sm opacity-80">Education</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>교육 콘텐츠</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Education</span>
                       </div>
                     </div>
                   </motion.div>
@@ -524,8 +540,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '416px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-orange-500 to-red-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">영상 제작</span>
-                        <span className="subtitle block text-sm opacity-80">Video Production</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>영상 제작</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Video Production</span>
                       </div>
                     </div>
                   </motion.div>
@@ -539,8 +555,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-purple-500 to-pink-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">YouTube 채널</span>
-                        <span className="subtitle block text-sm opacity-80">Channel Management</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>YouTube 채널</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Channel Management</span>
                       </div>
                     </div>
                   </motion.div>
@@ -554,8 +570,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-indigo-500 to-blue-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">브랜드 컨설팅</span>
-                        <span className="subtitle block text-sm opacity-80">Brand Strategy</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>브랜드 컨설팅</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Brand Strategy</span>
                       </div>
                     </div>
                   </motion.div>
@@ -569,8 +585,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-yellow-500 to-orange-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">워크샵 운영</span>
-                        <span className="subtitle block text-sm opacity-80">Workshop</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>워크샵 운영</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Workshop</span>
                       </div>
                     </div>
                   </motion.div>
@@ -585,8 +601,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-red-500 to-pink-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">라이브 스트리밍</span>
-                        <span className="subtitle block text-sm opacity-80">Live Content</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>라이브 스트리밍</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Live Content</span>
                       </div>
                     </div>
                   </motion.div>
@@ -600,8 +616,8 @@ export default function CombinedLanding() {
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
                       <div className="portfolio-image w-full h-full bg-gradient-to-br from-teal-500 to-cyan-600"></div>
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="title block text-lg font-medium">디지털 마케팅</span>
-                        <span className="subtitle block text-sm opacity-80">Digital Marketing</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>디지털 마케팅</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Digital Marketing</span>
                       </div>
                     </div>
                   </motion.div>
@@ -612,10 +628,10 @@ export default function CombinedLanding() {
             {/* Contact Section */}
             <div className="pt-6 border-t border-gray-200">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-sm font-medium text-red-500 uppercase tracking-widest">
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
                   연락하기
                 </h3>
-                <span className="text-sm font-medium text-gray-500">04</span>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
               </div>
 
               {/* Separator Line */}
@@ -650,7 +666,7 @@ export default function CombinedLanding() {
 
                 {/* Right Column - Content */}
                 <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-10 lg:mb-16">
+                  <h2 className={`${FONT_SIZES.subsectionTitle} font-bold text-gray-900 leading-tight mb-10 lg:mb-16`}>
                     Want to<br />
                     <em className="italic">work</em><br />
                     together<br />
@@ -658,7 +674,7 @@ export default function CombinedLanding() {
                     project?
                   </h2>
                   
-                  <div className="col-span-4 text-gray-700 text-base leading-relaxed mt-10 lg:mt-18 lg:pr-12">
+                  <div className={`col-span-4 text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-10 lg:mt-18 lg:pr-12`}>
                     <p>
                       콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 
                       저는 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다. 
@@ -671,7 +687,7 @@ export default function CombinedLanding() {
                   
                   <a 
                     href="mailto:buen136003@gmail.com"
-                    className="mt-10 lg:mt-15 text-gray-900 font-medium text-base border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1 inline-block"
+                    className={`mt-10 lg:mt-15 text-gray-900 font-medium ${FONT_SIZES.body} border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1 inline-block`}
                   >
                     buen136003@gmail.com
                   </a>
@@ -689,17 +705,17 @@ export default function CombinedLanding() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <button 
                 type="button" 
-                className="text-gray-600 hover:text-gray-900 transition-colors text-base"
+                className={`text-gray-600 hover:text-gray-900 transition-colors ${FONT_SIZES.body}`}
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 ↑ 맨 위로
               </button>
               
               <div className="text-center">
-                <p className="text-gray-500 text-[16px]">Copyright © LEESEUNGHUN 2025</p>
+                <p className={`text-gray-500 ${FONT_SIZES.small}`}>Copyright © LEESEUNGHUN 2025</p>
               </div>
               
-              <div className="text-gray-600 text-base">
+              <div className={`text-gray-600 ${FONT_SIZES.body}`}>
                 Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
                   hour: '2-digit', 
                   minute: '2-digit',
