@@ -4,6 +4,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Snapask from "@assets/Snapask.jpg";
+import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_1752007078868.jpg";
+import OfflineOperationImage from "@assets/오프라인 운영_1752007078869.jpg";
+import TechSupportImage from "@assets/현장 기술 대응_1752007078870.jpg";
+import IntegratedOperationImage from "@assets/온 오프라인 통합운영_1752007078870.jpg";
 import EsportsImage from "@assets/image_1751953797146.png";
 import WorkspaceImage from "@assets/image_1751953806704.png";
 import CalligraphyImage from "@assets/image_1751953823504.png";
@@ -928,7 +932,7 @@ export default function CombinedLanding() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Page Header */}
-            <div className="px-8 lg:px-16 py-12 pt-24">
+            <div className="px-8 lg:px-16 py-12 pt-32">
               
               {/* Back Link */}
               <motion.div 
@@ -993,7 +997,7 @@ export default function CombinedLanding() {
             >
               <div className="w-full aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=450&fit=crop"
+                  src={OnlineEventImage}
                   alt="온·오프라인 실시간 행사/교육 기획·진행"
                   className="w-full h-full object-cover"
                 />
@@ -1013,15 +1017,25 @@ export default function CombinedLanding() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=450&fit=crop"
-                      alt="온라인 행사 진행 모습"
+                      src={OfflineOperationImage}
+                      alt="오프라인 행사 진행 모습"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=600&h=450&fit=crop"
-                      alt="현장 진행 및 모니터링"
+                      src={TechSupportImage}
+                      alt="현장 기술 대응 및 모니터링"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                <div className="mb-8">
+                  <div className="aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
+                    <img
+                      src={IntegratedOperationImage}
+                      alt="온·오프라인 통합 운영"
                       className="w-full h-full object-cover"
                     />
                   </div>
