@@ -780,7 +780,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* Contact Section */}
-            <div className="pt-6 border-t border-gray-200">
+            <div className="pt-4 border-t border-gray-200">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Wtih me</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
@@ -855,7 +855,7 @@ export default function CombinedLanding() {
                   
                   <a 
                     href="mailto:buen136003@gmail.com"
-                    className={`mt-10 lg:mt-15 text-gray-900 font-medium ${FONT_SIZES.body} border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1 inline-block`}
+                    className={`mt-6 lg:mt-8 text-gray-900 font-medium ${FONT_SIZES.body} border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1 inline-block`}
                   >Contact with Me</a>
                 </div>
               </div>
@@ -864,7 +864,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-white py-12 mt-16">
+      <footer className="bg-white py-8 mt-8">
         <div className="max-w-6xl mx-auto px-6">
           {/* Bottom Section */}
           <div className="pt-6 border-t border-gray-200">
