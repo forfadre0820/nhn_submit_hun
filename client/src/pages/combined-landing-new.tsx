@@ -908,7 +908,7 @@ export default function CombinedLanding() {
           onClick={() => setSelectedProject(null)}
         >
           <motion.div 
-            className="bg-white w-full max-w-5xl max-h-[95vh] overflow-y-auto relative"
+            className="bg-white w-full max-w-5xl max-h-[95vh] overflow-y-auto relative rounded-3xl scrollbar-hide"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
