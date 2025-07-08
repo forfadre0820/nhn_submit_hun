@@ -897,10 +897,10 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Project Detail Modal - Minimalist Style */}
+      {/* Project Detail Modal - Professional Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
-          className="fixed inset-0 bg-[#dad9d8] z-[99999] flex items-center justify-center"
+          className="fixed inset-0 bg-white z-[99999] flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -908,7 +908,7 @@ export default function CombinedLanding() {
           onClick={() => setSelectedProject(null)}
         >
           <motion.div 
-            className="bg-[#dad9d8] w-full max-w-5xl max-h-[100vh] overflow-y-auto relative scrollbar-hide"
+            className="bg-white w-full max-w-6xl max-h-[100vh] overflow-y-auto relative scrollbar-hide"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -916,7 +916,7 @@ export default function CombinedLanding() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Content Container */}
-            <div className="px-12 lg:px-20 py-12">
+            <div className="px-8 lg:px-16 py-12">
               
               {/* Back Link */}
               <motion.div 
@@ -927,7 +927,7 @@ export default function CombinedLanding() {
               >
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-sm text-[#282623] hover:text-[#58534e] transition-colors"
+                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors border-b border-[#58534e] pb-1"
                 >
                   ← Back To All Work
                 </button>
@@ -935,12 +935,12 @@ export default function CombinedLanding() {
 
               {/* Project Title */}
               <motion.div 
-                className="mb-12"
+                className="mb-16"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h1 className="text-5xl lg:text-6xl font-bold text-[#282623] tracking-tight leading-[1.1]">
+                <h1 className="text-6xl lg:text-7xl font-black text-[#282623] tracking-tight leading-[0.9] uppercase">
                   온·오프라인 실시간<br />
                   행사/교육 기획·진행
                 </h1>
@@ -948,12 +948,12 @@ export default function CombinedLanding() {
 
               {/* Cover Image */}
               <motion.div 
-                className="mb-16"
+                className="mb-20"
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
               >
-                <div className="w-full aspect-[16/10] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                <div className="w-full aspect-[16/10] bg-[#b9b8b6] overflow-hidden">
                   <img
                     src={selectedProject.src}
                     alt="온·오프라인 실시간 행사/교육 기획·진행"
@@ -964,111 +964,253 @@ export default function CombinedLanding() {
 
               {/* Credits Section */}
               <motion.div 
-                className="mb-16"
+                className="grid grid-cols-12 gap-12 mb-20"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <h2 className="text-xl font-medium text-[#282623] mb-6">Credits</h2>
-                <div className="text-base text-[#58534e] leading-relaxed space-y-2">
-                  <div><strong className="text-[#282623]">Agency:</strong> Samsung Multicampus</div>
-                  <div><strong className="text-[#282623]">Project Lead:</strong> 이승훈</div>
-                  <div><strong className="text-[#282623]">Creative Director:</strong> 이승훈</div>
-                  <div><strong className="text-[#282623]">Project Manager:</strong> 이승훈</div>
-                  <div><strong className="text-[#282623]">Technical Development:</strong> Python, OpenCV</div>
-                  <div><strong className="text-[#282623]">3D Animation Supervisor:</strong> 이승훈</div>
-                  <div><strong className="text-[#282623]">Post-production:</strong> 이승훈</div>
+                <div className="col-span-12 lg:col-span-6">
+                  <div className="flex items-center mb-6">
+                    <div className="w-3 h-3 bg-[#282623] rounded-full mr-3"></div>
+                    <h2 className="text-lg font-bold text-[#282623]">Credits</h2>
+                  </div>
+                  <div className="space-y-4 text-[#282623] leading-relaxed text-base">
+                    <div>
+                      <strong>Agency:</strong> Samsung Multicampus<br/>
+                      <strong>Project Lead:</strong> 이승훈<br/>
+                      <strong>Creative Director:</strong> 이승훈<br/>
+                      <strong>Project Manager:</strong> 이승훈<br/>
+                      <strong>Technical Development:</strong> Python, OpenCV<br/>
+                      <strong>3D Animation Supervisor:</strong> 이승훈<br/>
+                      <strong>Post-production:</strong> 이승훈
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
               {/* Introduction Section */}
               <motion.div 
-                className="mb-16"
+                className="grid grid-cols-12 gap-12 mb-20"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
               >
-                <h2 className="text-xl font-medium text-[#282623] mb-6">Introduction</h2>
-                <p className="text-base text-[#58534e] leading-relaxed">
-                  온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다. Python과 OpenCV를 활용한 자동화 솔루션으로 효율적인 VOD 제작과 디지털콘텐츠 관리를 실현했습니다.
-                </p>
+                <div className="col-span-12 lg:col-span-6">
+                  <div className="flex items-center mb-6">
+                    <div className="w-3 h-3 bg-[#282623] rounded-full mr-3"></div>
+                    <h2 className="text-lg font-bold text-[#282623]">Introduction</h2>
+                  </div>
+                  <p className="text-lg leading-relaxed text-[#282623]">
+                    온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다. Python과 OpenCV를 활용한 자동화 솔루션으로 효율적인 VOD 제작과 디지털콘텐츠 관리를 실현했습니다.
+                  </p>
+                </div>
               </motion.div>
 
-              {/* 주요 역할 */}
+              {/* The Process Behind The Creation */}
               <motion.div 
-                className="mb-16"
+                className="mb-20"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <h2 className="text-xl font-medium text-[#282623] mb-6">주요 역할</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-[#b9b8b6] p-6 rounded-lg">
-                    <h3 className="font-medium text-[#282623] mb-3">직접 현장진행 & 벤더 관리</h3>
-                    <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li>• IT 전문성 바탕으로 행사진행</li>
-                      <li>• 출연자 컨셉 이상으로 직접 대해 진행 및 큐시트 수정</li>
-                      <li>• 실시간 모니터링 및 현장 대응</li>
+                <div className="flex items-center mb-8">
+                  <div className="w-3 h-3 bg-[#282623] rounded-full mr-3"></div>
+                  <h2 className="text-lg font-bold text-[#282623] uppercase">주요 역할</h2>
+                </div>
+                <p className="text-base text-[#282623] mb-12 leading-relaxed">
+                  온·오프라인 통합 플랫폼의 전체적인 시스템 구조를 설계하고, Python과 OpenCV를 활용한 실시간 처리 아키텍처를 구축했습니다. 50+ 행사에서의 실시간 모니터링, 돌발상황 대응, 그리고 참가자들의 만족도를 높이기 위한 체계적인 운영 프로세스를 개발했습니다.
+                </p>
+                
+                {/* 직접 현장진행 & 벤더 관리 */}
+                <div className="mb-20">
+                  <h3 className="text-2xl font-bold text-[#282623] mb-8">직접 현장진행 & 벤더 관리</h3>
+                  
+                  {/* 현장경험 하이라이트 */}
+                  <div className="bg-[#dad9d8] p-8 rounded-2xl mb-8">
+                    <div className="flex items-center mb-4">
+                      <div className="w-8 h-8 bg-[#282623] rounded-full flex items-center justify-center mr-3">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                      </div>
+                      <h4 className="text-lg font-bold text-[#282623]">현장경험 하이라이트</h4>
+                    </div>
+                    <ul className="space-y-2 text-[#282623]">
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-[#282623] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        IT 전문성 바탕으로 행사진행
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-[#282623] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        출연자 컨셉 이상으로 직접 대해 진행 및 큐시트 수정
+                      </li>
                     </ul>
                   </div>
-                  <div className="bg-[#b9b8b6] p-6 rounded-lg">
-                    <h3 className="font-medium text-[#282623] mb-3">기술 개발 & 자동화</h3>
-                    <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li>• Python과 OpenCV 기반 시스템 구축</li>
-                      <li>• AI 라운드학습 플랫폼 개발</li>
-                      <li>• VOD 제작 및 디지털콘텐츠 관리</li>
-                    </ul>
+
+                  {/* 기술 태그들 */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div className="bg-[#282623] text-white px-4 py-2 rounded-lg text-center text-sm font-medium">실시간 모니터링</div>
+                    <div className="bg-[#58534e] text-white px-4 py-2 rounded-lg text-center text-sm font-medium">현장 대응</div>
+                    <div className="bg-[#898681] text-white px-4 py-2 rounded-lg text-center text-sm font-medium">벤더 관리</div>
+                    <div className="bg-[#b9b8b6] text-white px-4 py-2 rounded-lg text-center text-sm font-medium">품질 관리</div>
+                  </div>
+
+                  {/* 영상팀과 음향팀 */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-white border border-[#b9b8b6] p-6 rounded-2xl">
+                      <div className="flex items-center mb-4">
+                        <div className="w-8 h-8 bg-[#282623] rounded-full flex items-center justify-center mr-3">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                          </svg>
+                        </div>
+                        <h4 className="text-lg font-bold text-[#282623]">영상팀</h4>
+                      </div>
+                      <ul className="space-y-2 text-sm text-[#58534e]">
+                        <li>• 촬영 경험 기반양웅구도 디렉팅</li>
+                        <li>• 스토리텔링 중심 전환 효과 가이드</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-white border border-[#b9b8b6] p-6 rounded-2xl">
+                      <div className="flex items-center mb-4">
+                        <div className="w-8 h-8 bg-[#282623] rounded-full flex items-center justify-center mr-3">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.788L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.797-3.788a1 1 0 011.617.788zM11 7.116V12.884a5.002 5.002 0 000-5.768zm2 2.768a3.001 3.001 0 000-1.768v1.768z" clipRule="evenodd"/>
+                          </svg>
+                        </div>
+                        <h4 className="text-lg font-bold text-[#282623]">음향팀</h4>
+                      </div>
+                      <ul className="space-y-2 text-sm text-[#58534e]">
+                        <li>• 환경별 최적 마이크 배치 가이드</li>
+                        <li>• 실시간 오디오 밸런싱 디렉팅</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </motion.div>
 
               {/* 핵심성과 */}
               <motion.div 
-                className="mb-16"
+                className="mb-20"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
-                <h2 className="text-xl font-medium text-[#282623] mb-6">핵심성과</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-[#898681] text-white p-6 rounded-lg">
-                    <div className="text-2xl font-bold mb-2">NPS 4.5+ 달성</div>
-                    <div className="text-sm opacity-90">50+ 행사에서 일관된 고객만족도 유지</div>
+                <h3 className="text-2xl font-bold text-[#282623] mb-8">핵심성과</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="bg-[#282623] text-white p-6 rounded-2xl flex items-center">
+                    <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">NPS 4.5+ 달성</div>
+                      <div className="text-sm opacity-80">50+ 행사에서 일관된 고객만족도 유지</div>
+                    </div>
                   </div>
                   
-                  <div className="bg-[#898681] text-white p-6 rounded-lg">
-                    <div className="text-2xl font-bold mb-2">50+ 행사진행</div>
-                    <div className="text-sm opacity-90">온·오프라인 하이브리드 대규모 행사 운영</div>
+                  <div className="bg-[#58534e] text-white p-6 rounded-2xl flex items-center">
+                    <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">50+ 행사진행</div>
+                      <div className="text-sm opacity-80">온·오프라인 하이브리드 대규모 행사 운영</div>
+                    </div>
                   </div>
 
-                  <div className="bg-[#58534e] text-white p-6 rounded-lg">
-                    <div className="text-2xl font-bold mb-2">실시간 솔루션</div>
-                    <div className="text-sm opacity-90">제작역량기반 통합적 프로젝트 리드</div>
+                  <div className="bg-[#898681] text-white p-6 rounded-2xl flex items-center">
+                    <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 7H7v6h6V7z"/>
+                        <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5v10h10V5H5z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">실시간 & 벤더 관리</div>
+                      <div className="text-sm opacity-80">제작역량기반통합적 프로젝트리드</div>
+                    </div>
                   </div>
 
-                  <div className="bg-[#282623] text-white p-6 rounded-lg">
-                    <div className="text-2xl font-bold mb-2">기술 자동화</div>
-                    <div className="text-sm opacity-90">OpenCV와 Python으로 제약환경 극복</div>
+                  <div className="bg-[#b9b8b6] text-white p-6 rounded-2xl flex items-center">
+                    <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">제약환경솔루션</div>
+                      <div className="text-sm opacity-80">OpenCV와 Python으로 제약환경 구축</div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
 
               {/* 활용 기술 스택 */}
               <motion.div 
-                className="mb-16"
+                className="mb-20"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
               >
-                <h2 className="text-xl font-medium text-[#282623] mb-6">활용 기술 스택</h2>
+                <h3 className="text-2xl font-bold text-[#282623] mb-8">활용 기술 스택</h3>
                 <div className="flex flex-wrap gap-3">
-                  <span className="bg-[#898681] text-white px-4 py-2 rounded text-sm">Python</span>
-                  <span className="bg-[#898681] text-white px-4 py-2 rounded text-sm">OpenCV</span>
-                  <span className="bg-[#898681] text-white px-4 py-2 rounded text-sm">실시간 스트리밍</span>
-                  <span className="bg-[#58534e] text-white px-4 py-2 rounded text-sm">VOD 제작</span>
-                  <span className="bg-[#58534e] text-white px-4 py-2 rounded text-sm">AI 솔루션</span>
-                  <span className="bg-[#58534e] text-white px-4 py-2 rounded text-sm">프로젝트 관리</span>
-                  <span className="bg-[#282623] text-white px-4 py-2 rounded text-sm">현장 운영</span>
+                  <span className="bg-[#282623] text-white px-6 py-3 rounded-full text-sm font-medium">Python</span>
+                  <span className="bg-[#58534e] text-white px-6 py-3 rounded-full text-sm font-medium">OpenCV</span>
+                  <span className="bg-[#898681] text-white px-6 py-3 rounded-full text-sm font-medium">실시간 스트리밍</span>
+                  <span className="bg-[#b9b8b6] text-white px-6 py-3 rounded-full text-sm font-medium">VOD 제작</span>
+                  <span className="bg-[#282623] text-white px-6 py-3 rounded-full text-sm font-medium">AI 솔루션</span>
+                  <span className="bg-[#58534e] text-white px-6 py-3 rounded-full text-sm font-medium">프로젝트 관리</span>
+                  <span className="bg-[#898681] text-white px-6 py-3 rounded-full text-sm font-medium">현장 운영</span>
+                </div>
+              </motion.div>
+
+              {/* 제약환경에서 기술로 안정적 송출 구현 */}
+              <motion.div 
+                className="mb-32"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+              >
+                <h3 className="text-2xl font-bold text-[#282623] mb-8">제약환경에서 기술로 안정적 송출 구현</h3>
+                
+                {/* OpenCV 솔루션 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="bg-[#dad9d8] border border-[#b9b8b6] p-6 rounded-2xl">
+                    <div className="flex items-center mb-4">
+                      <div className="w-8 h-8 bg-[#282623] rounded-full flex items-center justify-center mr-3">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <h4 className="text-lg font-bold text-[#282623]">기술적 도전</h4>
+                    </div>
+                    <ul className="space-y-2 text-sm text-[#58534e]">
+                      <li>• 외부 API 사용 불가 폐쇄망</li>
+                      <li>• 기본 솔루션 시설 좋은 불가</li>
+                      <li>• 정확한타이밍 확보 필수</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-[#dad9d8] border border-[#b9b8b6] p-6 rounded-2xl">
+                    <div className="flex items-center mb-4">
+                      <div className="w-8 h-8 bg-[#58534e] rounded-full flex items-center justify-center mr-3">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <h4 className="text-lg font-bold text-[#282623]">OpenCV 솔루션</h4>
+                    </div>
+                    <ul className="space-y-2 text-sm text-[#58534e]">
+                      <li>• 로컬 기반 OpenCV로 롱대페면 인식</li>
+                      <li>• 쿠폰얼드 포착, 이른 얼굴영역 없자동화</li>
+                      <li>• 화면 인식 패턴 감지</li>
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
 
