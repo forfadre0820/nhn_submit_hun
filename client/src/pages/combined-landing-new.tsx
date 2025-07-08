@@ -429,9 +429,30 @@ export default function CombinedLanding() {
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
         <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
           <div className="flex items-center space-x-8">
-            <a href="#work" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>Work</a>
-            <a href="#about" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>About</a>
-            <a href="#contact" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>Contact</a>
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => document.querySelector('.next')?.scrollIntoView({ behavior: 'smooth' })}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+            >
+              About
+            </button>
+            <button 
+              onClick={() => document.querySelector('[data-section="work"]')?.scrollIntoView({ behavior: 'smooth' })}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+            >
+              Work
+            </button>
+            <button 
+              onClick={() => document.querySelector('[data-section="contact"]')?.scrollIntoView({ behavior: 'smooth' })}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+            >
+              Contact
+            </button>
           </div>
         </div>
       </nav>
@@ -575,7 +596,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Next Section - Portfolio */}
-      <section className="next bg-white text-black relative z-1 min-h-screen">
+      <section className="next bg-white text-black relative z-1 min-h-screen" data-section="about">
         <div className="container mx-auto px-4 py-20">
           <motion.div 
             className="max-w-6xl mx-auto"
@@ -764,7 +785,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* Featured Work Section */}
-            <div className={SPACING.sectionGap}>
+            <div className={SPACING.sectionGap} data-section="work">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">
                   주요 작업
@@ -777,15 +798,43 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Portfolio Grid - Balanced Masonry Layout */}
-              <MasonryGrid 
-                items={portfolioItems}
-                onProjectClick={setSelectedProject}
-              />
+              {/* Portfolio Grid - 3x3 Grid Layout */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {portfolioItems.slice(0, 9).map((item, index) => (
+                  <motion.div
+                    key={item.id}
+                    className="group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    onClick={() => setSelectedProject(item)}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {/* 프로젝트 이미지 카드 */}
+                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {/* 호버 오버레이 */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                          <span className={`subtitle block ${FONT_SIZES.small} opacity-90`}>{item.subtitle}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             {/* Contact Section */}
-            <div className="pt-2 border-t border-gray-200">
+            <div className="pt-2 border-t border-gray-200" data-section="contact">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Wtih me</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
