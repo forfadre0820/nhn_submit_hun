@@ -431,9 +431,7 @@ export default function CombinedLanding() {
                         <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 재직중</span>
                       </div>
                       <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Professional</p>
-                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
-                        콘텐츠 기획 및 제작 총괄, 프로젝트 관리, 라이브 콘텐츠 운영, 클라이언트 협력사 관리
-                      </div>
+                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>온, 오프라인 콘텐츠 기획 및 제작 총괄, 프로젝트 관리, 라이브 콘텐츠 운영, 클라이언트 협력사 관리</div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
