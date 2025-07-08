@@ -221,7 +221,7 @@ export default function CombinedLanding() {
       alt: "Samsung 온·오프라인 콘텐츠 기획",
       title: "Samsung 온·오프라인 콘텐츠 기획",
       subtitle: "통합 교육 프로그램 운영",
-      description: "온 오프라인 콘텐츠 기획. 운영\nSAMSUNG",
+      description: "SAMSUNG\n온 오프라인 콘텐츠 기획. 운영",
       category: "Event Planning",
       year: "2023-2024",
       client: "삼성 그룹",
@@ -235,7 +235,7 @@ export default function CombinedLanding() {
       alt: "Snapask 프리미엄 콘텐츠 영상 제작",
       title: "Snapask 프리미엄 콘텐츠 영상 제작",
       subtitle: "교육 콘텐츠 기획 및 제작",
-      description: "프리미엄 콘텐츠 영상 제작\nSNAPASK KOREA",
+      description: "SNAPASK KOREA\n프리미엄 콘텐츠 영상 제작",
       category: "Content Production",
       year: "2022-2023",
       client: "Snapask Korea",
@@ -249,7 +249,7 @@ export default function CombinedLanding() {
       alt: "Samsung 교육 콘텐츠 기획 제작",
       title: "Samsung 교육 콘텐츠 기획 제작",
       subtitle: "기업 교육 프로그램 개발",
-      description: "교육형 영상 콘텐츠 기획, 제작\nSAMSUNG",
+      description: "SAMSUNG\n교육형 영상 콘텐츠 기획, 제작",
       category: "Educational Content",
       year: "2023",
       client: "삼성교육재단",
@@ -263,7 +263,7 @@ export default function CombinedLanding() {
       alt: "Jinair 베트남 인플루언서 프로모션 콘텐츠 제작",
       title: "Jinair 베트남 인플루언서 프로모션 콘텐츠 제작",
       subtitle: "해외 마케팅 콘텐츠 기획",
-      description: "베트남 인플루언서 홍보 콘텐츠 제작\nJINAIR",
+      description: "JINAIR\n베트남 인플루언서 홍보 콘텐츠 제작",
       category: "Marketing Content",
       year: "2023",
       client: "Jinair",
@@ -806,8 +806,8 @@ export default function CombinedLanding() {
                       {/* 호버 오버레이 */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
                         <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
-                          <span className={`subtitle block ${FONT_SIZES.small} opacity-90`}>{item.subtitle}</span>
+                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
+                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
                         </div>
                       </div>
                     </div>
@@ -853,8 +853,8 @@ export default function CombinedLanding() {
                       {/* 호버 오버레이 */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
                         <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
-                          <span className={`subtitle block ${FONT_SIZES.small} opacity-90`}>{item.subtitle}</span>
+                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
+                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
                         </div>
                       </div>
                     </div>
