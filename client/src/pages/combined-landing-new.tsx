@@ -12,17 +12,16 @@ import IntegratedOperationImage from "@assets/온 오프라인 통합운영_1752
 import TechSupportImage from "@assets/현장 기술 대응_1752007178380.jpg";
 import OverseasEventImage from "@assets/오프라인 운영_1752007181258.jpg";
 import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_1752007184273.jpg";
-import EsportsImage from "@assets/image_1751953797146.png";
-import WorkspaceImage from "@assets/image_1751953806704.png";
-import CalligraphyImage from "@assets/image_1751953823504.png";
-import InterviewImage from "@assets/image_1751953828507.png";
-import PerfumeImage from "@assets/image_1751953840186.png";
-import TravelImage from "@assets/image_1751953842744.png";
-import EducationImage from "@assets/image_1751953845629.png";
-import SnapaskOfficeImage from "@assets/image_1751953847874.png";
-import JinairEventImage from "@assets/image_1751953850208.png";
-import SnapaskInterviewImage from "@assets/image_1751953852561.png";
-import ModelPortraitImage from "@assets/image_1751953866736.png";
+
+// Gallery images
+import GalleryCalligraphyImage from "@assets/image_1752014631972.png";
+import GalleryBeautyImage from "@assets/image_1752014636911.png";
+import GalleryWorkspaceImage from "@assets/image_1752014643264.png";
+import GalleryInterviewImage from "@assets/image_1752014659090.png";
+import GalleryLuxuryBagImage from "@assets/image_1752014666138.png";
+import GalleryMalePortraitImage from "@assets/image_1752014670363.png";
+import GalleryCasualPortraitImage from "@assets/image_1752014672407.png";
+import GalleryJinairPromotionImage from "@assets/image_1752014683656.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -270,6 +269,122 @@ export default function CombinedLanding() {
       role: "마케팅 콘텐츠 기획",
       tools: ["Influencer Marketing", "Brand Content", "Video Production"],
       images: [IntegratedOperationImage, TechSupportImage, OverseasEventImage, OnlineEventImage]
+    }
+  ];
+
+  // Gallery items
+  const galleryItems: PortfolioItem[] = [
+    {
+      id: "gallery-1",
+      src: GalleryCalligraphyImage,
+      alt: "영성의 시각화된 표현",
+      title: "캘리그래피 아트",
+      subtitle: "전통 서예와 현대 디자인의 만남",
+      description: "영성을 시각화한 서예 작품으로 전통과 현대의 조화를 추구합니다.",
+      category: "Typography",
+      year: "2024",
+      client: "개인 작업",
+      role: "디자인, 서예",
+      tools: ["Traditional Calligraphy", "Digital Design"],
+      images: []
+    },
+    {
+      id: "gallery-2",
+      src: GalleryBeautyImage,
+      alt: "뷰티 브랜드 모델 촬영",
+      title: "뷰티 포트레이트",
+      subtitle: "화장품 브랜드 광고 촬영",
+      description: "자연스러운 뷰티 룩을 강조한 제품 광고 콘텐츠입니다.",
+      category: "Beauty Photography",
+      year: "2024",
+      client: "ETUDE",
+      role: "포토그래피, 리터칭",
+      tools: ["Studio Photography", "Photoshop"],
+      images: []
+    },
+    {
+      id: "gallery-3",
+      src: GalleryWorkspaceImage,
+      alt: "창작 작업 공간 스냅",
+      title: "워크스페이스",
+      subtitle: "집중과 창의성이 만나는 공간",
+      description: "업무와 창작이 이루어지는 개인 작업 공간의 모습입니다.",
+      category: "Lifestyle",
+      year: "2024",
+      client: "개인 기록",
+      role: "스냅 사진",
+      tools: ["Natural Light", "Candid Photography"],
+      images: []
+    },
+    {
+      id: "gallery-4",
+      src: GalleryInterviewImage,
+      alt: "인터뷰 현장 촬영",
+      title: "인터뷰 세팅",
+      subtitle: "진솔한 대화의 순간",
+      description: "자연스러운 인터뷰 분위기를 담은 현장 스냅입니다.",
+      category: "Documentary",
+      year: "2024",
+      client: "언론사",
+      role: "현장 촬영",
+      tools: ["Documentary Style", "Natural Setting"],
+      images: []
+    },
+    {
+      id: "gallery-5",
+      src: GalleryLuxuryBagImage,
+      alt: "럭셔리 제품 촬영",
+      title: "제품 포토그래피",
+      subtitle: "고급스러운 브랜드 이미지",
+      description: "럭셔리 브랜드의 제품 특성을 극대화한 스튜디오 촬영입니다.",
+      category: "Product Photography",
+      year: "2024",
+      client: "Louis Vuitton",
+      role: "제품 촬영, 후보정",
+      tools: ["Studio Setup", "Product Photography"],
+      images: []
+    },
+    {
+      id: "gallery-6",
+      src: GalleryMalePortraitImage,
+      alt: "남성 포트레이트 촬영",
+      title: "남성 포트레이트",
+      subtitle: "클래식한 매력의 표현",
+      description: "세련된 남성의 매력을 담은 클래식 포트레이트입니다.",
+      category: "Portrait",
+      year: "2024",
+      client: "개인 촬영",
+      role: "포트레이트 촬영",
+      tools: ["Studio Portrait", "Classic Lighting"],
+      images: []
+    },
+    {
+      id: "gallery-7",
+      src: GalleryCasualPortraitImage,
+      alt: "캐주얼 포트레이트",
+      title: "자연스러운 매력",
+      subtitle: "편안한 분위기의 인물 사진",
+      description: "자연스럽고 편안한 분위기를 담은 캐주얼 포트레이트입니다.",
+      category: "Casual Portrait",
+      year: "2024",
+      client: "개인 촬영",
+      role: "포트레이트 촬영",
+      tools: ["Natural Light", "Casual Setup"],
+      images: []
+    },
+    {
+      id: "gallery-8",
+      src: GalleryJinairPromotionImage,
+      alt: "진에어 프로모션 콘텐츠",
+      title: "항공사 프로모션",
+      subtitle: "여행의 설렘을 담은 비주얼",
+      description: "진에어의 쿠폰 대방출 프로모션을 위한 그래픽 디자인입니다.",
+      category: "Promotion Design",
+      year: "2024",
+      client: "JIN AIR",
+      role: "그래픽 디자인",
+      tools: ["Graphic Design", "Promotion Material"],
+      images: []
     }
   ];
 
@@ -830,8 +945,7 @@ export default function CombinedLanding() {
 
               {/* Gallery Grid - 4x2 Grid Layout (8 images) */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {/* First Row - 4 images */}
-                {portfolioItems.slice(0, 4).map((item, index) => (
+                {galleryItems.map((item, index) => (
                   <motion.div
                     key={`gallery-${item.id}`}
                     className="group cursor-pointer"
@@ -854,39 +968,8 @@ export default function CombinedLanding() {
                       {/* 호버 오버레이 */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
                         <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`company block text-xs opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
-                          <span className={`content block text-sm font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-                {/* Second Row - 4 more images (repeat the same items for gallery) */}
-                {portfolioItems.slice(0, 4).map((item, index) => (
-                  <motion.div
-                    key={`gallery-second-${item.id}`}
-                    className="group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    onClick={() => setSelectedProject(item)}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: (index + 4) * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    {/* 갤러리 이미지 카드 */}
-                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      {/* 호버 오버레이 */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                        <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`company block text-xs opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
-                          <span className={`content block text-sm font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
+                          <span className={`company block text-xs opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
+                          <span className={`content block text-sm font-medium drop-shadow-lg`}>{item.title}</span>
                         </div>
                       </div>
                     </div>
@@ -1002,6 +1085,58 @@ export default function CombinedLanding() {
           </div>
         </div>
       </footer>
+      {/* Gallery Item Simple Modal */}
+      {selectedProject && selectedProject.id.startsWith("gallery-") && (
+        <motion.div 
+          className="fixed inset-0 bg-black/70 z-[99999] flex items-center justify-center p-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isClosingModal ? 0 : 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: ANIMATION_DURATIONS.modal }}
+          onClick={closeModal}
+        >
+          <motion.div 
+            className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: isClosingModal ? 0.9 : 1, opacity: isClosingModal ? 0 : 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: ANIMATION_DURATIONS.modal }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-10 bg-black/20 hover:bg-black/40 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+            >
+              ×
+            </button>
+            
+            {/* Image */}
+            <div className="relative">
+              <img
+                src={selectedProject.src}
+                alt={selectedProject.alt}
+                className="w-full h-auto max-h-[60vh] object-cover"
+              />
+            </div>
+            
+            {/* Content */}
+            <div className="p-6">
+              <h3 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
+              <p className={`${FONT_SIZES.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
+              <p className={`${FONT_SIZES.small} text-gray-700 leading-relaxed`}>{selectedProject.description}</p>
+              
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <div className="flex justify-between items-center text-sm text-gray-500">
+                  <span>{selectedProject.client}</span>
+                  <span>{selectedProject.year}</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+      
       {/* Project Detail Modal - Professional Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
