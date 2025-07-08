@@ -1085,15 +1085,15 @@ export default function CombinedLanding() {
 
               {/* Project Images Gallery */}
               <motion.div 
-                className="mb-6"
+                className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 {/* 두 줄 이미지 그리드 */}
-                <div className="mb-6">
+                <div className="mb-8">
                   {/* 첫 번째 줄 - 2개 이미지 */}
-                  <div className="grid grid-cols-2 gap-2 mb-2">
+                  <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                       <img
                         src={IntegratedOperationImage}
@@ -1111,7 +1111,7 @@ export default function CombinedLanding() {
                   </div>
                   
                   {/* 두 번째 줄 - 2개 이미지 */}
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-4">
                     <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                       <img
                         src={OverseasEventImage}
@@ -1129,7 +1129,7 @@ export default function CombinedLanding() {
                   </div>
                 </div>
                 
-                <div className="text-center mb-4">
+                <div className="text-center mb-8">
                   <p className="text-sm text-[#58534e] italic">오프라인 교육부터 온라인 이벤트까지 통합 운영</p>
                 </div>
               </motion.div>
