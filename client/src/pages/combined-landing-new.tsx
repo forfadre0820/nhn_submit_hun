@@ -684,7 +684,7 @@ export default function CombinedLanding() {
                     viewport={{ once: true, margin: "-100px" }}
                   >
                     I Keep Challenging<br />
-                    <em className="italic">Myself</em> to Make<br />
+                    <em className="italic">Myself </em> to Make<br />
                     Good and<br />
                     <em className="italic">Meaningful</em><br />
                     Content
