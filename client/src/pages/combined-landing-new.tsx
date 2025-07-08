@@ -1078,31 +1078,17 @@ export default function CombinedLanding() {
               </motion.div>
             </div>
 
-            {/* Cover Image */}
-            <motion.div 
-              className="mb-16 px-8 lg:px-16"
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-            >
-              <div className="w-full aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
-                <img
-                  src={OfflineOperationImage}
-                  alt="오프라인 운영 - 강의실에서 진행 중인 교육 프로그램"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
+
 
             {/* Content Container */}
             <div className="px-8 lg:px-16 pb-12">
 
-              {/* Additional Project Images - Horizontal Gallery */}
+              {/* Project Images Gallery */}
               <motion.div 
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               >
                 {/* 두 줄 이미지 그리드 */}
                 <div className="mb-8">
@@ -1153,7 +1139,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
 
 

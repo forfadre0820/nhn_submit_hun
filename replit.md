@@ -366,6 +366,7 @@ Changelog:
 - July 08, 2025. Enhanced modal transition animations with smoother dissolve effects: increased duration to 0.6s for main modal, added cubic-bezier easing, and improved scale/opacity transitions for professional feel
 - July 08, 2025. Reduced excessive spacing between Contact section and Footer to improve layout flow and visual hierarchy
 - July 08, 2025. Standardized Contact section spacing to match other sections using SPACING.sectionGap and consistent margin values
+- July 08, 2025. Removed large cover image from project detail modal, keeping only the 4-image grid for cleaner layout
 ```
 
 ## User Preferences
