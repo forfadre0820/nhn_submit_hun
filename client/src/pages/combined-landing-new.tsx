@@ -696,7 +696,7 @@ export default function CombinedLanding() {
               </button>
               
               <div className="text-center">
-                <p className="text-gray-500 text-sm">Copyright © LEESEUNGHUN 2025</p>
+                <p className="text-gray-500 text-[16px]">Copyright © LEESEUNGHUN 2025</p>
               </div>
               
               <div className="text-gray-600 text-base">
