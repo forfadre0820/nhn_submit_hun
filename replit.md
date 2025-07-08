@@ -361,6 +361,8 @@ Changelog:
 - July 08, 2025. Implemented single-row image display with varied aspect ratios: standard 4:3, wide 16:9, and small 3:2 for online event image
 - July 08, 2025. Added scroll snap functionality and hover scale effects to horizontal image gallery for better user experience
 - July 08, 2025. Redesigned image layout to 2x2 grid with uniform aspect ratios and equal width distribution for better visual balance
+- July 08, 2025. Added new "갤러리" section with same 3x3 grid layout as Featured Work section, positioned between Work and Contact sections
+- July 08, 2025. Updated Contact section numbering from 04 to 05 to accommodate new Gallery section
 ```
 
 ## User Preferences
