@@ -974,10 +974,10 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-white py-8 mt-8">
+      <footer className="bg-white mt-16">
         <div className="max-w-6xl mx-auto px-6">
           {/* Bottom Section */}
-          <div className="pt-2 border-t border-gray-200">
+          <div className="pt-12 border-t border-gray-200">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <button 
                 type="button" 
