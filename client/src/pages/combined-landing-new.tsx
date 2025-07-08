@@ -7,7 +7,7 @@ import Snapask from "@assets/Snapask.jpg";
 import SamsungOfflineImage from "@assets/오프라인 운영_1752012039625.png";
 import SnapaskContentImage from "@assets/image_1752012210723.png";
 import SamsungEducationImage from "@assets/1_1752012693958.jpg";
-import JinairPromoImage from "@assets/image_1752012255292.png";
+import JinairPromoImage from "@assets/image_1752012778140.png";
 import IntegratedOperationImage from "@assets/온 오프라인 통합운영_1752007176743.jpg";
 import TechSupportImage from "@assets/현장 기술 대응_1752007178380.jpg";
 import OverseasEventImage from "@assets/오프라인 운영_1752007181258.jpg";
@@ -221,7 +221,7 @@ export default function CombinedLanding() {
       alt: "Samsung 온·오프라인 콘텐츠 기획",
       title: "Samsung 온·오프라인 콘텐츠 기획",
       subtitle: "통합 교육 프로그램 운영",
-      description: "온·오프라인 콘텐츠 기획\n삼성 그룹",
+      description: "온 오프라인 콘텐츠 기획. 운영\nSAMSUNG",
       category: "Event Planning",
       year: "2023-2024",
       client: "삼성 그룹",
@@ -235,7 +235,7 @@ export default function CombinedLanding() {
       alt: "Snapask 프리미엄 콘텐츠 영상 제작",
       title: "Snapask 프리미엄 콘텐츠 영상 제작",
       subtitle: "교육 콘텐츠 기획 및 제작",
-      description: "프리미엄 콘텐츠 영상 제작\nSnapask Korea",
+      description: "프리미엄 콘텐츠 영상 제작\nSNAPASK KOREA",
       category: "Content Production",
       year: "2022-2023",
       client: "Snapask Korea",
@@ -249,7 +249,7 @@ export default function CombinedLanding() {
       alt: "Samsung 교육 콘텐츠 기획 제작",
       title: "Samsung 교육 콘텐츠 기획 제작",
       subtitle: "기업 교육 프로그램 개발",
-      description: "교육 콘텐츠 기획 제작\n삼성교육재단",
+      description: "교육형 영상 콘텐츠 기획, 제작\nSAMSUNG",
       category: "Educational Content",
       year: "2023",
       client: "삼성교육재단",
@@ -263,7 +263,7 @@ export default function CombinedLanding() {
       alt: "Jinair 베트남 인플루언서 프로모션 콘텐츠 제작",
       title: "Jinair 베트남 인플루언서 프로모션 콘텐츠 제작",
       subtitle: "해외 마케팅 콘텐츠 기획",
-      description: "베트남 인플루언서 프로모션 콘텐츠 제작\nJinair",
+      description: "베트남 인플루언서 홍보 콘텐츠 제작\nJINAIR",
       category: "Marketing Content",
       year: "2023",
       client: "Jinair",
