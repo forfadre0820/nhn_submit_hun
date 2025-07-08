@@ -340,10 +340,7 @@ export default function CombinedLanding() {
                     
                     <div>
                       <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>온, 오프라인 콘텐츠 운영</h4>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
-                        창작자들이 성장할 수 있도록 실무 경험을 바탕으로 한 
-                        체계적인 교육과 개별 멘토링을 제공합니다.
-                      </p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>라이브 콘텐츠를 직접 운영하며 출연자 관리와 제작 능력을 기반으로 한 기술적 이슈 대응을 통해 1년간 NPS 4.5 이상의 안정적인 성과를 달성합니다. </p>
                     </div>
                   </div>
                 </div>
