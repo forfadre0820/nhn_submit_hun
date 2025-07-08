@@ -1191,9 +1191,7 @@ export default function CombinedLanding() {
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
                     <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생
-                      </p>
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">폐쇄망 환경에서의 영상, 음향, 송출 등 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
