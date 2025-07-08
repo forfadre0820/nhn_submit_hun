@@ -445,7 +445,7 @@ export default function CombinedLanding() {
                         <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>Snapask Korea</h5>
                         <span className={`${FONT_SIZES.small} text-gray-500`}>2022.01 - 2022.07</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Contents·대리 (7개월)</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Assistant Production Manager</p>
                       <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
                         홍콩 기반 에듀테크 기업, 콘텐츠 기획·설계, 현장 촬영 연출, 콘텐츠 편집·배포
                       </div>
