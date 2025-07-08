@@ -1033,7 +1033,7 @@ export default function CombinedLanding() {
                   </div>
 
                   <div>
-                    <p className="text-[#282623] text-sm tracking-tight leading-relaxed">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응,  커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다.</p>
+                    <p className="text-[#282623] text-sm tracking-tight leading-relaxed">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응,  커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, <br />온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다.</p>
                   </div>
                 </div>
               </motion.div>
