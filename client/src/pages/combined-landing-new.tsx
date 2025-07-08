@@ -897,165 +897,250 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Project Detail Modal - Clean & Simple */}
+      {/* Project Detail Modal - Enhanced Professional Layout */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
-          className="fixed inset-0 bg-gray-50 bg-opacity-95 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
+          className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelectedProject(null)}
         >
           <motion.div 
-            className="relative max-w-5xl max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
-            initial={{ scale: 0.95, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.95, opacity: 0, y: 20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative max-w-6xl max-h-[95vh] bg-white rounded-none overflow-hidden shadow-2xl overflow-y-auto"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header */}
-            <div className="bg-blue-50 px-8 py-6 border-b border-gray-100">
-              <div className="flex justify-between items-start">
-                <div>
-                  <div className="inline-block bg-blue-500 text-white px-3 py-1 rounded text-sm font-medium mb-3">
-                    PROJECT 1
+            {/* Close Button */}
+            <button
+              className="absolute top-8 right-8 w-12 h-12 bg-black bg-opacity-10 hover:bg-opacity-20 text-black rounded-full flex items-center justify-center transition-all z-20"
+              onClick={() => setSelectedProject(null)}
+            >
+              <span className="text-2xl leading-none">×</span>
+            </button>
+
+            {/* Header Section */}
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-12 py-10 relative">
+              <div className="max-w-4xl">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    PROJECT 01
                   </div>
-                  <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                    온·오프라인 실시간 <span className="text-blue-600">행사/교육</span> 기획·진행
-                  </h1>
-                  <p className="text-gray-600 text-sm">
-                    <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs mr-2">📅 2023.09 ~ 2024.11 (14개월)</span>
-                  </p>
+                  <div className="text-gray-500 text-sm">
+                    2023.09 ~ 2024.11 (14개월)
+                  </div>
                 </div>
-                <button
-                  className="w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-all"
-                  onClick={() => setSelectedProject(null)}
-                >
-                  <span className="text-lg leading-none">×</span>
-                </button>
+                
+                <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                  온·오프라인 실시간<br />
+                  <span className="text-blue-600">행사/교육 기획·진행</span>
+                </h1>
+                
+                <p className="text-xl text-gray-600 max-w-3xl leading-relaxed">
+                  콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표 달성
+                </p>
               </div>
             </div>
 
-            {/* Content */}
-            <div className="p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Left Column - Project Overview */}
-                <div className="lg:col-span-2 space-y-8">
+            {/* Main Content */}
+            <div className="px-12 py-10">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                {/* Left Column - Main Content */}
+                <div className="lg:col-span-3 space-y-12">
+                  
+                  {/* Project Overview */}
                   <div>
-                    <p className="text-gray-700 leading-relaxed">
-                      콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상 대상하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표 달성
-                    </p>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 개요</h2>
+                    <div className="prose prose-lg max-w-none">
+                      <p className="text-gray-700 leading-relaxed mb-6">
+                        온라인과 오프라인을 연계한 실시간 행사 및 교육 콘텐츠 기획부터 실행까지 전 과정을 담당하며, 
+                        고객 만족도 4.5+ 달성과 함께 50회 이상의 성공적인 행사 운영을 통해 브랜드 가치 제고에 기여했습니다.
+                      </p>
+                    </div>
                   </div>
 
                   {/* Key Achievements */}
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-4">핵심성과</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">핵심 성과</h2>
+                    <div className="space-y-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white text-sm font-bold">1</span>
+                        </div>
                         <div>
-                          <div className="flex items-center space-x-3 mb-1">
-                            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-sm font-medium">NPS 4.5+ 달성</span>
-                          </div>
-                          <p className="text-gray-600 text-sm">50명+ 행사진행, 교육 콘텐츠 운영 총괄</p>
+                          <h3 className="font-semibold text-gray-900 text-lg mb-2">NPS 4.5+ 고객 만족도 달성</h3>
+                          <p className="text-gray-600 leading-relaxed">
+                            50명 이상 규모의 행사 진행 및 교육 콘텐츠 운영을 통해 높은 고객 만족도를 지속적으로 유지했습니다.
+                          </p>
                         </div>
                       </div>
-                      <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white text-sm font-bold">2</span>
+                        </div>
                         <div>
-                          <div className="flex items-center space-x-3 mb-1">
-                            <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-medium">50+ 행사진행</span>
-                          </div>
-                          <p className="text-gray-600 text-sm">종합적이고 체계적인 이벤트 기획·운영, 출연진 관리</p>
+                          <h3 className="font-semibold text-gray-900 text-lg mb-2">50+ 행사 성공적 진행</h3>
+                          <p className="text-gray-600 leading-relaxed">
+                            종합적이고 체계적인 이벤트 기획·운영 및 출연진 관리를 통해 다양한 규모의 행사를 성공적으로 진행했습니다.
+                          </p>
                         </div>
                       </div>
-                      <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white text-sm font-bold">3</span>
+                        </div>
                         <div>
-                          <div className="flex items-center space-x-3 mb-1">
-                            <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-sm font-medium">작업진행율 벤더 관리</span>
-                          </div>
-                          <p className="text-gray-600 text-sm">외부 협력업체 총괄 PM 역할 및 프로젝트 품질 관리</p>
+                          <h3 className="font-semibold text-gray-900 text-lg mb-2">벤더 관리 및 품질 관리</h3>
+                          <p className="text-gray-600 leading-relaxed">
+                            외부 협력업체 총괄 PM 역할을 수행하며 프로젝트 품질 관리 및 일정 관리를 효율적으로 수행했습니다.
+                          </p>
                         </div>
                       </div>
-                      <div className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white text-sm font-bold">4</span>
+                        </div>
                         <div>
-                          <div className="flex items-center space-x-3 mb-1">
-                            <span className="bg-red-100 text-red-700 px-2 py-1 rounded text-sm font-medium">페어별기간프로무선</span>
-                          </div>
-                          <p className="text-gray-600 text-sm">OpenCV와 Python을 연계한 워크플로우 설계</p>
+                          <h3 className="font-semibold text-gray-900 text-lg mb-2">기술 혁신 및 워크플로우 설계</h3>
+                          <p className="text-gray-600 leading-relaxed">
+                            OpenCV와 Python을 연계한 자동화 워크플로우 설계로 업무 효율성을 크게 향상시켰습니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Process & Methodology */}
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">프로세스 & 방법론</h2>
+                    <div className="bg-gray-50 p-8 rounded-lg">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3">기획 단계</h4>
+                          <ul className="space-y-2 text-gray-600">
+                            <li>• 타겟 오디언스 분석</li>
+                            <li>• 콘텐츠 전략 수립</li>
+                            <li>• 예산 및 일정 계획</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3">실행 단계</h4>
+                          <ul className="space-y-2 text-gray-600">
+                            <li>• 멀티채널 운영</li>
+                            <li>• 실시간 모니터링</li>
+                            <li>• 품질 관리</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Right Column - Project Details */}
-                <div className="space-y-6">
-                  {/* Skills & Tech Stack */}
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-4">활용기술 스택</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <span className="text-sm font-medium text-gray-700">핵심기술</span>
-                        <div className="flex flex-wrap gap-2 mt-1">
-                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">라이브</span>
-                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">OpenCV</span>
-                          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">AI 코칭</span>
-                          <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">실 영상솔루션</span>
-                          <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded text-xs">온라인시스템</span>
-                        </div>
-                      </div>
-                      <div>
-                        <span className="text-sm font-medium text-gray-700">프로젝트 툴셋</span>
-                        <div className="flex flex-wrap gap-2 mt-1">
-                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">콘텐츠시스템</span>
-                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">영업 및 이벤트</span>
-                          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">기술지원</span>
-                          <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">AI 솔루션 타겟팅</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
+                {/* Right Column - Technical Details & Metrics */}
+                <div className="lg:col-span-2 space-y-8">
+                  
                   {/* Project Metrics */}
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
-                    <h4 className="font-semibold text-gray-900 mb-4">프로젝트 성과</h4>
-                    <div className="space-y-3">
-                      <div className="bg-white p-3 rounded border">
-                        <div className="text-2xl font-bold text-blue-600">4.5+</div>
-                        <div className="text-xs text-gray-600">고객만족도</div>
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                    <h3 className="font-bold text-gray-900 mb-6">프로젝트 지표</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="bg-white p-6 rounded-lg shadow-sm">
+                        <div className="text-3xl font-bold text-blue-600 mb-2">4.5+</div>
+                        <div className="text-sm text-gray-600">NPS 고객만족도</div>
+                        <div className="text-xs text-gray-500 mt-1">Industry Average: 3.2</div>
                       </div>
-                      <div className="bg-white p-3 rounded border">
-                        <div className="text-2xl font-bold text-green-600">50+</div>
-                        <div className="text-xs text-gray-600">온·오프라인 행사 운영 건수</div>
+                      <div className="bg-white p-6 rounded-lg shadow-sm">
+                        <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
+                        <div className="text-sm text-gray-600">온·오프라인 행사 운영</div>
+                        <div className="text-xs text-gray-500 mt-1">14개월 기간</div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Quote Section */}
-                  <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <p className="text-sm text-gray-700 italic">
-                      "개인 및 기업 브랜딩 위주로 애플리케이션 이용하여 시청자 및 교육생과 고품질 콘텐츠 및 사료화 학습 프로젝트 성과를 활용하여 실시간으로 제안 및 피드백을 제공할 수 있습니다."
-                    </p>
-                    <div className="text-xs text-gray-500 mt-2">- 프로젝트 → 솔루션 록지니어</div>
+                  {/* Tech Stack */}
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h3 className="font-bold text-gray-900 mb-4">기술 스택</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 mb-2">핵심 기술</h4>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">라이브 스트리밍</span>
+                          <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">OpenCV</span>
+                          <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">AI 코칭</span>
+                          <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-medium">영상 솔루션</span>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 mb-2">관리 도구</h4>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">콘텐츠 시스템</span>
+                          <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">이벤트 관리</span>
+                          <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">기술 지원</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Client Testimonial */}
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-lg border-l-4 border-blue-600">
+                    <h3 className="font-bold text-gray-900 mb-4">클라이언트 피드백</h3>
+                    <blockquote className="text-gray-700 italic mb-4">
+                      "개인 및 기업 브랜딩 위주로 애플리케이션을 이용하여 시청자 및 교육생과 고품질 콘텐츠를 통해 실시간으로 소통하고 피드백을 제공할 수 있게 되었습니다."
+                    </blockquote>
+                    <div className="text-sm text-gray-600">
+                      — 솔루션 엔지니어, 파트너사
+                    </div>
+                  </div>
+
+                  {/* Skills Development */}
+                  <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                    <h3 className="font-bold text-gray-900 mb-4">스킬 개발</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-700">프로젝트 관리</span>
+                        <div className="w-24 bg-gray-200 rounded-full h-2">
+                          <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-700">기술 혁신</span>
+                        <div className="w-24 bg-gray-200 rounded-full h-2">
+                          <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-700">클라이언트 관리</span>
+                        <div className="w-24 bg-gray-200 rounded-full h-2">
+                          <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '92%' }}></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Bottom Navigation */}
-              <div className="border-t border-gray-200 pt-6 mt-8">
+              <div className="border-t border-gray-200 pt-8 mt-12">
                 <div className="flex justify-between items-center">
-                  <div className="text-gray-500 text-sm">
-                    PROJECT 1 of {portfolioItems.length}
+                  <div className="flex items-center space-x-4">
+                    <div className="text-gray-500 text-sm">
+                      PROJECT 01 of {portfolioItems.length}
+                    </div>
+                    <div className="w-px h-4 bg-gray-300"></div>
+                    <div className="text-gray-500 text-sm">
+                      2023-2024
+                    </div>
                   </div>
                   <button 
                     onClick={() => setSelectedProject(null)}
-                    className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm"
+                    className="px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-sm font-medium"
                   >
-                    돌아가기
+                    Close Project
                   </button>
                 </div>
               </div>
