@@ -1021,7 +1021,7 @@ export default function CombinedLanding() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Page Header */}
-            <div className="px-8 lg:px-16 pb-6 pt-32">
+            <div className="px-8 lg:px-16 pb-2 pt-32">
               
               {/* Back Link */}
               <motion.div 
