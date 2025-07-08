@@ -339,6 +339,8 @@ Changelog:
 - July 08, 2025. Updated all portfolio items to use CSS aspect-ratio instead of fixed heights for perfect image fit without empty spaces
 - July 08, 2025. Applied proper aspect ratios: 16:9 for wide content, 4:3 for standard, 1:1 for square, and 3:2 for portraits to match original image proportions
 - July 08, 2025. Redesigned portfolio grid to balanced 3-column layout ensuring minimum 3 images per row with uniform 4:3 aspect ratio for consistent sizing
+- July 08, 2025. Removed 진에어 이벤트 and 사무실 환경 촬영 images from portfolio as requested
+- July 08, 2025. Added lightbox modal functionality for portfolio images with click-to-view-large feature, including close button and image captions on semi-transparent background
 ```
 
 ## User Preferences

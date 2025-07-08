@@ -44,6 +44,7 @@ export default function CombinedLanding() {
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const [showSoundControl, setShowSoundControl] = useState(false);
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title: string } | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -513,6 +514,11 @@ export default function CombinedLanding() {
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: EsportsImage, 
+                      alt: "E-sports Event Production", 
+                      title: "E-sports 중계" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -536,6 +542,11 @@ export default function CombinedLanding() {
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: WorkspaceImage, 
+                      alt: "Content Creator Workspace", 
+                      title: "작업 공간 설계" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -559,6 +570,11 @@ export default function CombinedLanding() {
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: CalligraphyImage, 
+                      alt: "Typography Design", 
+                      title: "브랜드 타이포그래피" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -583,6 +599,11 @@ export default function CombinedLanding() {
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: InterviewImage, 
+                      alt: "Corporate Interview", 
+                      title: "기업 인터뷰" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -606,6 +627,11 @@ export default function CombinedLanding() {
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: PerfumeImage, 
+                      alt: "Product Photography", 
+                      title: "제품 촬영" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -629,6 +655,11 @@ export default function CombinedLanding() {
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: TravelImage, 
+                      alt: "Travel Content", 
+                      title: "여행 콘텐츠" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -653,6 +684,11 @@ export default function CombinedLanding() {
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: EducationImage, 
+                      alt: "Educational Content", 
+                      title: "교육 콘텐츠" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -671,58 +707,16 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 8 - Snapask Office */}
+                  {/* Project 8 - Snapask Interview */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
-                      <img 
-                        src={SnapaskOfficeImage}
-                        alt="Snapask Office Environment"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        width="400"
-                        height="300"
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>사무실 환경 촬영</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Office Documentation</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Project 9 - Jinair Event */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
-                      <img 
-                        src={JinairEventImage}
-                        alt="Jinair Aviation Event"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        width="400"
-                        height="300"
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>진에어 이벤트</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Aviation Event</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Row 4 */}
-                  {/* Project 10 - Snapask Interview */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: SnapaskInterviewImage, 
+                      alt: "Snapask Team Interview", 
+                      title: "팀 인터뷰" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -741,11 +735,16 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 11 - Model Portrait */}
+                  {/* Project 9 - Model Portrait */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    onClick={() => setSelectedImage({ 
+                      src: ModelPortraitImage, 
+                      alt: "Professional Portrait Photography", 
+                      title: "인물 사진 촬영" 
+                    })}
                   >
                     <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
@@ -763,9 +762,6 @@ export default function CombinedLanding() {
                       </div>
                     </div>
                   </motion.div>
-
-                  {/* Empty space for visual balance */}
-                  <div className="portfolio-item"></div>
                 </div>
               </div>
             </div>
@@ -885,6 +881,48 @@ export default function CombinedLanding() {
           </div>
         </div>
       </footer>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <motion.div 
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[99999] p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.div 
+            className="relative max-w-[90vw] max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-2xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 w-8 h-8 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all z-10"
+              onClick={() => setSelectedImage(null)}
+            >
+              <span className="text-lg leading-none">×</span>
+            </button>
+            
+            {/* Image */}
+            <img 
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="w-full h-full object-contain"
+              style={{ maxWidth: '90vw', maxHeight: '80vh' }}
+            />
+            
+            {/* Caption */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 className="text-white text-xl font-medium">{selectedImage.title}</h3>
+              <p className="text-gray-300 text-sm mt-1">{selectedImage.alt}</p>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }
