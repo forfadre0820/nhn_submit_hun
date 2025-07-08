@@ -1125,7 +1125,7 @@ export default function CombinedLanding() {
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">그래픽 제작 시스템</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
-                          <li>• Python 기반 후보정</li>
+                          <li>• Python , 오픈소스 (Pulid, Ipadater, Flux) 활용 후보정</li>
                           <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
                         </ul>
                       </div>
