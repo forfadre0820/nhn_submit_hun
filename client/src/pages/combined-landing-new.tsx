@@ -79,7 +79,10 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
-      // Two columns for mobile
+      // Single column for mobile
+      setColumns({ left: items, right: [] });
+    } else {
+      // Two columns for desktop
       const leftColumn: PortfolioItem[] = [];
       const rightColumn: PortfolioItem[] = [];
       let leftHeight = 0;
@@ -97,32 +100,6 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
       });
 
       setColumns({ left: leftColumn, right: rightColumn });
-    } else {
-      // Three columns for desktop
-      const leftColumn: PortfolioItem[] = [];
-      const centerColumn: PortfolioItem[] = [];
-      const rightColumn: PortfolioItem[] = [];
-      let leftHeight = 0;
-      let centerHeight = 0;
-      let rightHeight = 0;
-
-      items.forEach(item => {
-        const height = imageHeights[item.id] || 300;
-        
-        // Find the column with minimum height
-        if (leftHeight <= centerHeight && leftHeight <= rightHeight) {
-          leftColumn.push(item);
-          leftHeight += height;
-        } else if (centerHeight <= rightHeight) {
-          centerColumn.push(item);
-          centerHeight += height;
-        } else {
-          rightColumn.push(item);
-          rightHeight += height;
-        }
-      });
-
-      setColumns({ left: leftColumn, right: rightColumn, center: centerColumn });
     }
   }, [items, imageHeights]);
 
@@ -188,17 +165,12 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
         {renderColumn(columns.left)}
       </div>
       
-      {/* Center Column (Desktop only) */}
-      {columns.center && (
+      {/* Right Column (Desktop only) */}
+      {columns.right.length > 0 && (
         <div className="flex-1 hidden md:block">
-          {renderColumn(columns.center)}
+          {renderColumn(columns.right)}
         </div>
       )}
-      
-      {/* Right Column */}
-      <div className="flex-1">
-        {renderColumn(columns.right)}
-      </div>
     </div>
   );
 };
