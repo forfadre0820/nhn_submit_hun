@@ -1047,7 +1047,10 @@ export default function CombinedLanding() {
 
                 {/* 기간 */}
                 <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">■ 기간</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold mr-2">1</span>
+                    기간
+                  </h2>
                 </div>
                 <div className="space-y-5 mb-8">
                   <div>
@@ -1057,7 +1060,10 @@ export default function CombinedLanding() {
 
                 {/* 성과 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">■ 성과</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold mr-2">2</span>
+                    성과
+                  </h2>
                 </div>
                 <div className="space-y-5 mb-8">
                   <div>
