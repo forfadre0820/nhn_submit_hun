@@ -932,7 +932,7 @@ export default function CombinedLanding() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Page Header */}
-            <div className="px-8 lg:px-16 py-12">
+            <div className="px-8 lg:px-16 py-12 pt-24">
               
               {/* Back Link */}
               <motion.div 
