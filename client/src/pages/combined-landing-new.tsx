@@ -42,6 +42,13 @@ const SPACING = {
   smallGap: "mb-4"
 };
 
+// Animation constants
+const ANIMATION_DURATIONS = {
+  modal: 0.4,
+  modalContent: 0.5,
+  stagger: 0.1
+};
+
 // Portfolio item interface
 interface PortfolioItem {
   id: string;
@@ -992,7 +999,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
           onClick={() => setSelectedProject(null)}
         >
           {/* Navigation Bar */}
@@ -1000,39 +1007,53 @@ export default function CombinedLanding() {
             <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
               <div className="flex items-center space-x-8">
                 <button 
-                  onClick={() => setSelectedProject(null)} 
-                  className="text-sm text-gray-700 hover:text-black transition-colors cursor-pointer"
+                  onClick={() => setSelectedProject(null)}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Home
                 </button>
-                <a href="#work" className="text-sm text-gray-700 hover:text-black transition-colors">Work</a>
-                <a href="#about" className="text-sm text-gray-700 hover:text-black transition-colors">About</a>
-                <a href="#contact" className="text-sm text-gray-700 hover:text-black transition-colors">Contact</a>
+                <button 
+                  onClick={() => setSelectedProject(null)}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                >
+                  About
+                </button>
+                <button 
+                  onClick={() => setSelectedProject(null)}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                >
+                  Work
+                </button>
+                <button 
+                  onClick={() => setSelectedProject(null)}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                >
+                  Contact
+                </button>
               </div>
             </div>
           </nav>
 
           <motion.div 
             className="bg-white w-full max-w-4xl mx-auto min-h-screen relative tracking-tight leading-relaxed"
-            initial={{ scale: 0.98, opacity: 0, y: 20 }}
+            initial={{ scale: 0.95, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.98, opacity: 0, y: -20 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            exit={{ scale: 0.95, opacity: 0, y: -30 }}
+            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Page Header */}
             <div className="px-8 lg:px-16 pb-2 pt-32">
-              
               {/* Back Link */}
               <motion.div 
                 className="mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
               >
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
+                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors flex items-center gap-1"
                 >
                   ← Back To All Work
                 </button>
@@ -1043,12 +1064,14 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 2 }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
-                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">온·오프라인 실시간 행사
-                    /교육 기획·진행</h1>
+                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">
+                      온·오프라인 실시간 행사<br />
+                      /교육 기획·진행
+                    </h1>
                   </div>
                 </div>
 
@@ -1072,23 +1095,22 @@ export default function CombinedLanding() {
                   </div>
 
                   <div>
-                    <p className="text-[#282623] text-sm tracking-tight leading-relaxed">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응,  커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, <br />온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다.</p>
+                    <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
+                      삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다.
+                    </p>
                   </div>
                 </div>
               </motion.div>
             </div>
 
-
-
             {/* Content Container */}
             <div className="px-8 lg:px-16 pb-12">
-
               {/* Project Images Gallery */}
               <motion.div 
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
               >
                 {/* 두 줄 이미지 그리드 */}
                 <div className="mb-8">
@@ -1139,44 +1161,42 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
               >
-
-
-
-
-                {/* 기간 */}
+                {/* 프로젝트 기간 */}
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                     <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                    기간
+                    프로젝트 기간
                   </h2>
                 </div>
                 <div className="space-y-5 mb-8">
                   <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                      전체 기간: 2023.01 ~ 2024.11 (23개월)
+                    </div>
                   </div>
                 </div>
 
-                {/* 성과 */}
+                {/* 주요 성과 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                     <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                    성과
+                    주요 성과
                   </h2>
                 </div>
                 <div className="space-y-5 mb-8">
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">30+ 온 오프라인 행사, 교육에서 일관된 고품질 서비스 제공</p>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 고객 만족도 NPS 4.5+ 달성</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">30+ 온 오프라인 행사, 교육에서 일관된 고품질 서비스 제공</p>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 기업 고객사 수주 5개</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 개선</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 운영 효율성 개선</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
                   </div>
                 </div>
                 
@@ -1191,11 +1211,11 @@ export default function CombinedLanding() {
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
                     <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">폐쇄망 환경에서의 영상, 음향, 송출 등 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생</p>
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">벤더사 커뮤니케이션</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• 영상: 앵글, 트랜지션 품질 확보</li>
                           <li>• 음향: 밸런스 조정 및 품질 관리</li>
@@ -1332,7 +1352,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
           onClick={() => setSelectedProject(null)}
         >
           <motion.div 
@@ -1340,7 +1360,7 @@ export default function CombinedLanding() {
             initial={{ scale: 0.9, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: -30 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
