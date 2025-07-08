@@ -231,7 +231,7 @@ export default function CombinedLanding() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-              className={`w-6 h-10 border-2 rounded-full flex justify-center ml-[39px] mr-[39px] transition-colors duration-300 ${isVideoFullscreen ? 'border-white/40' : 'border-black/30'}`}
+              className="w-6 h-10 border-2 rounded-full flex justify-center transition-colors duration-300 border-black/30 ml-[57px] mr-[57px]"
             >
               <div className={`w-1 h-3 rounded-full mt-2 transition-colors duration-300 ${isVideoFullscreen ? 'bg-white/60' : 'bg-black/50'}`}></div>
             </motion.div>
