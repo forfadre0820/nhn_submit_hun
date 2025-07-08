@@ -1121,7 +1121,7 @@ export default function CombinedLanding() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 프로그램</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로그램</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• Python + OCR 화면 인식</li>
                           <li>• 영상, 음악 송출 타이밍 제어</li>
