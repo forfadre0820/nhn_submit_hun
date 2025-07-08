@@ -608,7 +608,7 @@ export default function CombinedLanding() {
             {/* Main About Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">ABOUT Hun</h3>
+                <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">ABOUT Hun</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>01</span>
               </div>
 
@@ -675,7 +675,7 @@ export default function CombinedLanding() {
             {/* Education & Career Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">
+                <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">
                   Education & Experience
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>02</span>
@@ -834,7 +834,7 @@ export default function CombinedLanding() {
             {/* Gallery Section */}
             <div className={SPACING.sectionGap} data-section="gallery">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">VISUAL GALLERY
+                <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">VISUAL GALLERY
 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
               </div>
@@ -882,7 +882,7 @@ export default function CombinedLanding() {
             {/* Contact Section */}
             <div className={SPACING.sectionGap} data-section="contact">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Wtih me</h3>
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
               </div>
 
