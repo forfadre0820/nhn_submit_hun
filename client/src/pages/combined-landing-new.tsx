@@ -1436,7 +1436,7 @@ export default function CombinedLanding() {
             </div>
             
             {/* Modal Footer - Outside content container */}
-            <div className="border-t border-gray-200 bg-white px-8 lg:px-16 py-4">
+            <div className="border-t border-gray-200 bg-white px-8 lg:px-16 py-4 pt-[32px] pb-[32px]">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <button 
                   type="button" 
