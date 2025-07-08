@@ -1056,35 +1056,7 @@ export default function CombinedLanding() {
           </motion.div>
         </div>
       </section>
-      {/* Footer */}
-      <footer className="bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          {/* Bottom Section */}
-          <div className="mt-16 pt-12 pb-12 border-t border-gray-200">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <button 
-                type="button" 
-                className={`text-gray-600 hover:text-gray-900 transition-colors ${FONT_SIZES.body}`}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                ↑ 맨 위로
-              </button>
-              
-              <div className="text-center">
-                <p className={`text-gray-500 ${FONT_SIZES.body}`}>Copyright © LEESEUNGHUN 2025</p>
-              </div>
-              
-              <div className={`text-gray-600 ${FONT_SIZES.body}`}>
-                Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
-                  hour: '2-digit', 
-                  minute: '2-digit',
-                  hour12: false 
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+
       {/* Gallery Item Simple Modal */}
       {selectedProject && selectedProject.id.startsWith("gallery-") && (
         <motion.div 
@@ -1138,7 +1110,7 @@ export default function CombinedLanding() {
       )}
       
       {/* Project Detail Modal - Professional Style */}
-      {selectedProject && selectedProject.id === "1" && (
+      {selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
           className="fixed inset-0 bg-white z-[99999] overflow-y-auto text-[14px]"
           initial={{ opacity: 0 }}
