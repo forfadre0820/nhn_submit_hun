@@ -671,8 +671,8 @@ export default function CombinedLanding() {
                   <motion.h2 
                     className="text-black mb-10 lg:mb-16 leading-tight uppercase"
                     style={{ 
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: '600',
+                      fontFamily: "'Playfair Display', serif",
+                      fontWeight: '700',
                       fontSize: '54px',
                       letterSpacing: '0.01em',
                       lineHeight: '1.1'
