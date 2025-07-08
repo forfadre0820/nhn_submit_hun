@@ -906,6 +906,23 @@ export default function CombinedLanding() {
           transition={{ duration: 0.3, ease: "easeOut" }}
           onClick={() => setSelectedProject(null)}
         >
+          {/* Navigation Bar */}
+          <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
+            <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
+              <div className="flex items-center space-x-8">
+                <button 
+                  onClick={() => setSelectedProject(null)} 
+                  className="text-sm text-gray-700 hover:text-black transition-colors cursor-pointer"
+                >
+                  Home
+                </button>
+                <a href="#work" className="text-sm text-gray-700 hover:text-black transition-colors">Work</a>
+                <a href="#about" className="text-sm text-gray-700 hover:text-black transition-colors">About</a>
+                <a href="#contact" className="text-sm text-gray-700 hover:text-black transition-colors">Contact</a>
+              </div>
+            </div>
+          </nav>
+
           <motion.div 
             className="bg-white w-full max-w-4xl mx-auto min-h-screen relative"
             initial={{ scale: 0.95, opacity: 0 }}
