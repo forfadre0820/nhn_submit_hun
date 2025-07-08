@@ -1047,10 +1047,7 @@ export default function CombinedLanding() {
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">개요</h2>
                 </div>
-                <p className="text-sm text-[#282623] mb-8 tracking-tight leading-relaxed">
-                  Samsung Multicampus의 교육 플랫폼 전담 PD로서 온라인과 오프라인 행사를 개별적으로 기획하고 직접 진행했습니다. 
-                  폐쇄망 환경에서의 온라인 교육부터 대규모 오프라인 행사까지 실시간 변수 대응과 현장 통제를 담당했습니다.
-                </p>
+                <p className="text-sm text-[#282623] mb-8 tracking-tight leading-relaxed">삼성그룹 내 30개 이상의 온·오프라인 이벤트 및 교육 프로그램을 기획·운영하며, 그래픽 제작, 자동화 시스템 도입, 하드웨어 통합 대응 등 전 과정을 수행하며 온라인 프로그램 5개 기업 판매 성공 및 오프라인 이벤트, 교육 NPS 4.5+ 점을 달성했습니다.</p>
                 
                 {/* 기간 */}
                 <div className="mb-6">
