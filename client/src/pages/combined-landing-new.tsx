@@ -637,19 +637,26 @@ export default function CombinedLanding() {
                 {/* Right Column - Content */}
                 <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 lg:mt-0">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
-                    결국, <em className="italic">무엇을</em>, <em className="italic">어떻게</em> 보여줄 것인가
+                    당신의 프로젝트와 함께<br />
+                    <em className="italic">메시지를 전달하고</em>,<br />
+                    <em className="italic">경험을 설계하는</em><br />
+                    콘텐츠를 만들어가고 싶습니다
                   </h2>
                   
                   <div className="text-gray-700 text-base leading-relaxed mb-8 space-y-4">
                     <p>
-                      기획·연출·촬영·편집·UX까지 모든 공정을 설계해 온 콘텐츠 PD입니다. 
-                      라이브 콘텐츠에선 출연자의 긴장을 풀어주는 사전 커뮤니케이션과 키 메시지 카드로 
-                      자연스러운 퍼포먼스를 이끌어냈습니다.
+                      콘텐츠 PD는 단순 제작자가 아닌 메시지 전달 할 수 있어야 하는 설계자입니다. 
+                      저는 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
                     </p>
                     
                     <p>
-                      완성 후에는 시청 패턴과 이탈 지점을 데이터로 분석해 UI·UX 개선안을 제안하며 
-                      사용자의 몰입도를 높였습니다. 각 역량을 유기적으로 연결해 사람을 위한 콘텐츠를 제작하겠습니다.
+                      라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
+                      AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다.
+                    </p>
+
+                    <p>
+                      감성과 전략, 창의성과 기술을 넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 
+                      앞으로도 명확한 메시지를 중심에 둔 콘텐츠를 만들어가겠습니다.
                     </p>
                   </div>
                   
@@ -669,8 +676,6 @@ export default function CombinedLanding() {
       {/* Footer */}
       <footer className="bg-white py-20 mt-32">
         <div className="max-w-6xl mx-auto px-6">
-          
-
           {/* Bottom Section */}
           <div className="mt-16 pt-8 border-t border-gray-200">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
