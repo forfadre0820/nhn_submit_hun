@@ -967,9 +967,9 @@ export default function CombinedLanding() {
                       />
                       {/* 호버 오버레이 */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                        <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`company block text-xs opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
-                          <span className={`content block text-sm font-medium drop-shadow-lg`}>{item.title}</span>
+                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
+                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
                         </div>
                       </div>
                     </div>

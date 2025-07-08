@@ -389,6 +389,7 @@ Changelog:
 - July 08, 2025. Implemented simple lightbox modal for gallery items with image descriptions, client information, and project details
 - July 08, 2025. Enhanced gallery interaction with hover effects showing client names and project titles
 - July 08, 2025. Changed MAIN PROJECT section to responsive grid layout: 1 column mobile, 2 columns tablet, 4 columns desktop
+- July 08, 2025. Unified hover effects and font sizes between MAIN PROJECT and VISUAL GALLERY sections for consistency
 ```
 
 ## User Preferences
