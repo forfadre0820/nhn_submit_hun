@@ -897,43 +897,206 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Project Detail Modal - Floating Card */}
-      {selectedProject && (
+      {/* Project Detail Modal - Clean & Simple */}
+      {selectedProject && selectedProject.id === "1" && (
         <motion.div 
-          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
+          className="fixed inset-0 bg-gray-50 bg-opacity-95 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelectedProject(null)}
         >
           <motion.div 
-            className="relative max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl overflow-y-auto"
-            initial={{ scale: 0.8, opacity: 0, y: 50 }}
+            className="relative max-w-5xl max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
+            initial={{ scale: 0.95, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.8, opacity: 0, y: 50 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
-            <button
-              className="absolute top-6 right-6 w-10 h-10 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full flex items-center justify-center transition-all z-10"
-              onClick={() => setSelectedProject(null)}
-            >
-              <span className="text-xl leading-none">×</span>
-            </button>
+            {/* Header */}
+            <div className="bg-blue-50 px-8 py-6 border-b border-gray-100">
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="inline-block bg-blue-500 text-white px-3 py-1 rounded text-sm font-medium mb-3">
+                    PROJECT 1
+                  </div>
+                  <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                    온·오프라인 실시간 <span className="text-blue-600">행사/교육</span> 기획·진행
+                  </h1>
+                  <p className="text-gray-600 text-sm">
+                    <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs mr-2">📅 2023.09 ~ 2024.11 (14개월)</span>
+                  </p>
+                </div>
+                <button
+                  className="w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-all"
+                  onClick={() => setSelectedProject(null)}
+                >
+                  <span className="text-lg leading-none">×</span>
+                </button>
+              </div>
+            </div>
 
-            {/* Modal Content */}
-            <div className="p-8 pt-16">
-              {/* Project Title */}
-              <div className="text-center mb-8">
-                <h1 className="text-4xl md:text-5xl font-bold text-black mb-2">
-                  {selectedProject.title}
-                </h1>
-                <p className="text-gray-500 text-lg">{selectedProject.subtitle}</p>
+            {/* Content */}
+            <div className="p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Left Column - Project Overview */}
+                <div className="lg:col-span-2 space-y-8">
+                  <div>
+                    <p className="text-gray-700 leading-relaxed">
+                      콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상 대상하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표 달성
+                    </p>
+                  </div>
+
+                  {/* Key Achievements */}
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-4">핵심성과</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <div className="flex items-center space-x-3 mb-1">
+                            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-sm font-medium">NPS 4.5+ 달성</span>
+                          </div>
+                          <p className="text-gray-600 text-sm">50명+ 행사진행, 교육 콘텐츠 운영 총괄</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <div className="flex items-center space-x-3 mb-1">
+                            <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-medium">50+ 행사진행</span>
+                          </div>
+                          <p className="text-gray-600 text-sm">종합적이고 체계적인 이벤트 기획·운영, 출연진 관리</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <div className="flex items-center space-x-3 mb-1">
+                            <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-sm font-medium">작업진행율 벤더 관리</span>
+                          </div>
+                          <p className="text-gray-600 text-sm">외부 협력업체 총괄 PM 역할 및 프로젝트 품질 관리</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <div className="flex items-center space-x-3 mb-1">
+                            <span className="bg-red-100 text-red-700 px-2 py-1 rounded text-sm font-medium">페어별기간프로무선</span>
+                          </div>
+                          <p className="text-gray-600 text-sm">OpenCV와 Python을 연계한 워크플로우 설계</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Project Details */}
+                <div className="space-y-6">
+                  {/* Skills & Tech Stack */}
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h4 className="font-semibold text-gray-900 mb-4">활용기술 스택</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">핵심기술</span>
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">라이브</span>
+                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">OpenCV</span>
+                          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">AI 코칭</span>
+                          <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">실 영상솔루션</span>
+                          <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded text-xs">온라인시스템</span>
+                        </div>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-gray-700">프로젝트 툴셋</span>
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">콘텐츠시스템</span>
+                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">영업 및 이벤트</span>
+                          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">기술지원</span>
+                          <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">AI 솔루션 타겟팅</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Project Metrics */}
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                    <h4 className="font-semibold text-gray-900 mb-4">프로젝트 성과</h4>
+                    <div className="space-y-3">
+                      <div className="bg-white p-3 rounded border">
+                        <div className="text-2xl font-bold text-blue-600">4.5+</div>
+                        <div className="text-xs text-gray-600">고객만족도</div>
+                      </div>
+                      <div className="bg-white p-3 rounded border">
+                        <div className="text-2xl font-bold text-green-600">50+</div>
+                        <div className="text-xs text-gray-600">온·오프라인 행사 운영 건수</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quote Section */}
+                  <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <p className="text-sm text-gray-700 italic">
+                      "개인 및 기업 브랜딩 위주로 애플리케이션 이용하여 시청자 및 교육생과 고품질 콘텐츠 및 사료화 학습 프로젝트 성과를 활용하여 실시간으로 제안 및 피드백을 제공할 수 있습니다."
+                    </p>
+                    <div className="text-xs text-gray-500 mt-2">- 프로젝트 → 솔루션 록지니어</div>
+                  </div>
+                </div>
               </div>
 
-              {/* Main Project Image */}
-              <div className="mb-8">
+              {/* Bottom Navigation */}
+              <div className="border-t border-gray-200 pt-6 mt-8">
+                <div className="flex justify-between items-center">
+                  <div className="text-gray-500 text-sm">
+                    PROJECT 1 of {portfolioItems.length}
+                  </div>
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm"
+                  >
+                    돌아가기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+      
+      {/* Other Projects - Simple Modal */}
+      {selectedProject && selectedProject.id !== "1" && (
+        <motion.div 
+          className="fixed inset-0 bg-gray-50 bg-opacity-95 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedProject(null)}
+        >
+          <motion.div 
+            className="relative max-w-3xl max-h-[80vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
+            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-all z-10"
+              onClick={() => setSelectedProject(null)}
+            >
+              <span className="text-lg leading-none">×</span>
+            </button>
+
+            <div className="p-8">
+              <div className="text-center mb-6">
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                  {selectedProject.title}
+                </h1>
+                <p className="text-gray-600">{selectedProject.subtitle}</p>
+              </div>
+
+              <div className="mb-6">
                 <img
                   src={selectedProject.src}
                   alt={selectedProject.alt}
@@ -941,45 +1104,30 @@ export default function CombinedLanding() {
                 />
               </div>
 
-              {/* Project Info Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Left Column - Description */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">프로젝트 설명</h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-3">프로젝트 설명</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
                     {selectedProject.description}
                   </p>
                 </div>
 
-                {/* Right Column - Project Details */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">카테고리</h4>
-                    <p className="text-gray-900 font-medium">{selectedProject.category}</p>
+                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">카테고리</h4>
+                    <p className="text-gray-900 font-medium text-sm">{selectedProject.category}</p>
                   </div>
-                  
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">제작년도</h4>
-                    <p className="text-gray-900 font-medium">{selectedProject.year}</p>
+                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">클라이언트</h4>
+                    <p className="text-gray-900 font-medium text-sm">{selectedProject.client}</p>
                   </div>
-                  
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">클라이언트</h4>
-                    <p className="text-gray-900 font-medium">{selectedProject.client}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">담당 역할</h4>
-                    <p className="text-gray-900 font-medium">{selectedProject.role}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">사용 도구</h4>
-                    <div className="flex flex-wrap gap-2">
+                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">사용 도구</h4>
+                    <div className="flex flex-wrap gap-1">
                       {selectedProject.tools.map((tool, index) => (
                         <span 
                           key={index}
-                          className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                          className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
                         >
                           {tool}
                         </span>
@@ -989,15 +1137,14 @@ export default function CombinedLanding() {
                 </div>
               </div>
 
-              {/* Bottom Navigation */}
-              <div className="border-t border-gray-200 pt-6 mt-8">
+              <div className="border-t border-gray-200 pt-4 mt-6">
                 <div className="flex justify-between items-center">
-                  <div className="text-gray-500 text-sm">
+                  <div className="text-gray-500 text-xs">
                     {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} / {portfolioItems.length}
                   </div>
                   <button 
                     onClick={() => setSelectedProject(null)}
-                    className="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+                    className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm"
                   >
                     돌아가기
                   </button>
