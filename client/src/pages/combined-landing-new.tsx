@@ -896,8 +896,8 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Portfolio Grid - 2x2 Grid Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Portfolio Grid - Single Column Layout */}
+              <div className="grid grid-cols-1 gap-6 mb-8">
                 {portfolioItems.slice(0, 4).map((item, index) => (
                   <motion.div
                     key={item.id}
@@ -910,7 +910,7 @@ export default function CombinedLanding() {
                     viewport={{ once: true }}
                   >
                     {/* 프로젝트 이미지 카드 */}
-                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
+                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[16/9]">
                       <img
                         src={item.src}
                         alt={item.alt}
