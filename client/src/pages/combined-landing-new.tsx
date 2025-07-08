@@ -85,10 +85,6 @@ export default function CombinedLanding() {
             force3D: true
           });
           
-
-          
-
-          
           // Update video fullscreen state for sound control
           setIsVideoFullscreen(progress >= 0.8);
         }
@@ -692,23 +688,30 @@ export default function CombinedLanding() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <button 
                 type="button" 
-                className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                className="text-gray-600 hover:text-gray-900 transition-colors text-base"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 ↑ 맨 위로
               </button>
               
               <div className="text-center">
-                <p className="text-gray-600 text-sm">Copyright © LEESEUNGHUN 2025</p>
+                <a href="mailto:buen136003@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors text-base">
+                  buen136003@gmail.com
+                </a>
               </div>
               
-              <div className="text-gray-600 text-sm">
+              <div className="text-gray-600 text-base">
                 Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
                   hour: '2-digit', 
                   minute: '2-digit',
                   hour12: false 
                 })}
               </div>
+            </div>
+            
+            {/* Copyright */}
+            <div className="text-center mt-6">
+              <p className="text-gray-500 text-sm">Copyright © LEESEUNGHUN 2025</p>
             </div>
           </div>
         </div>

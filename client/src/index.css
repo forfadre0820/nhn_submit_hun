@@ -96,7 +96,7 @@ body {
   object-fit: cover;
 }
 
-/* Hero section */
+/* Hero section optimizations */
 .hero {
   position: relative;
   isolation: isolate;
