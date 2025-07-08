@@ -1088,30 +1088,84 @@ export default function CombinedLanding() {
                 </div>
                 <div className="space-y-6 mb-8">
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-3">
-                      삼성 그룹의 대규모 행사에서는 영상, 음향, 송출 등 여러 협력사가 동시에 작업하며 실시간으로 발생하는 기술적 이슈와 출연자 변수에 즉각적인 대응이 필요했습니다. 
-                      이에 따라 협력사(영상, 음향, 송출)와의 커뮤니케이션을 주도하여 앵글, 트랜지션, 음향 밸런스 등 품질을 확보하고, 
-                      출연자 돌발 상황(지각, 건강 이상 등)에 대비한 큐시트 수정 및 직접 대체 진행을 수행했습니다.
-                    </p>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 mb-3">
+                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed mb-2">
+                        삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">협력사 커뮤니케이션</h4>
+                        <ul className="text-xs text-[#58534e] space-y-1">
+                          <li>• 영상: 앵글, 트랜지션 품질 확보</li>
+                          <li>• 음향: 밸런스 조정 및 품질 관리</li>
+                          <li>• 송출: 실시간 기술 이슈 대응</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">돌발 상황 대응</h4>
+                        <ul className="text-xs text-[#58534e] space-y-1">
+                          <li>• 출연자 지각, 건강 이상 등</li>
+                          <li>• 큐시트 실시간 수정</li>
+                          <li>• 직접 대체 진행 수행</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
+
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-3">
-                      행사별로 다양한 그래픽 리소스가 필요하고 송출 타이밍 오류가 행사 품질에 직접적인 영향을 미치는 상황에서, 
-                      효율적인 제작 시스템과 자동화 프로그램을 개발했습니다. 
-                      Midjourney·Stable Diffusion ComfyUI으로 그래픽 리소스를 생성하고 Python 기반 후보정으로 실사용급 그래픽 자원을 완성했으며, 
-                      Python, OCR 화면 인식 자동화 프로그램을 개발하여 영상, 음악 송출 타이밍 오류를 최소화했습니다.
-                    </p>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 mb-3">
+                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed mb-2">
+                        행사별 다양한 그래픽 필요 + 송출 타이밍 오류 = 행사 품질 직접 영향 → 효율적 제작 & 자동화 필요
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">그래픽 제작 시스템</h4>
+                        <ul className="text-xs text-[#58534e] space-y-1">
+                          <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
+                          <li>• Python 기반 후보정</li>
+                          <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 프로그램</h4>
+                        <ul className="text-xs text-[#58534e] space-y-1">
+                          <li>• Python + OCR 화면 인식</li>
+                          <li>• 영상, 음악 송출 타이밍 제어</li>
+                          <li>• 타이밍 오류 최소화</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
+
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-3">
-                      기존 플랫폼으로는 임직원들의 실질적인 참여 데이터를 확보하기 어려운 상황에서, 
-                      메타버스 환경에서 사용자의 자연스러운 몰입과 참여를 유도할 수 있는 새로운 접근을 시도했습니다. 
-                      자체 플랫폼 확장 기획을 통해 실질적인 임직원 참여 데이터를 확보하고, 현실 조직 공간을 반영한 맵 디자인 제작으로 
-                      사용자의 자율 탐색을 유도했습니다. SnowFlake 기반 행동 로그 수집 구조 설계 및 API 연동 협의를 담당했습니다.
-                    </p>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 mb-3">
+                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed mb-2">
+                        기존 플랫폼 한계 → 임직원 참여 데이터 확보 어려움 → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 확장 기획</h4>
+                        <ul className="text-xs text-[#58534e] space-y-1">
+                          <li>• 자체 플랫폼 확장 설계</li>
+                          <li>• 실질적 임직원 참여 데이터 확보</li>
+                          <li>• 현실 조직 공간 반영 맵 디자인</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">데이터 구조 설계</h4>
+                        <ul className="text-xs text-[#58534e] space-y-1">
+                          <li>• SnowFlake 기반 행동 로그 수집</li>
+                          <li>• API 연동 구조 협의</li>
+                          <li>• 사용자 자율 탐색 유도</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
