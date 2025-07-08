@@ -869,13 +869,58 @@ export default function CombinedLanding() {
               </div>
             </div>
 
+            {/* Gallery Section */}
+            <div className={SPACING.sectionGap} data-section="gallery">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">VISUAL GALLERY</h3>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
+              </div>
 
+              {/* Separator Line */}
+              <div className="separator-wrap mb-8">
+                <div className="separator-line h-px bg-gray-200"></div>
+              </div>
+
+              {/* Gallery Grid - 2x2 Grid Layout */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {portfolioItems.slice(0, 4).map((item, index) => (
+                  <motion.div
+                    key={`gallery-${item.id}`}
+                    className="group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    onClick={() => setSelectedProject(item)}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {/* 갤러리 이미지 카드 */}
+                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {/* 호버 오버레이 */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                          <span className={`subtitle block ${FONT_SIZES.small} opacity-90`}>{item.subtitle}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
 
             {/* Contact Section */}
             <div className={SPACING.sectionGap} data-section="contact">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
-                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
               </div>
 
               {/* Separator Line */}

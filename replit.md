@@ -370,7 +370,7 @@ Changelog:
 - July 08, 2025. Adjusted project detail modal header padding: restored pt-32 top padding, reduced bottom padding to pb-2 for tighter content flow
 - July 08, 2025. Comprehensive code refactoring: extracted Navigation component, standardized animation durations, improved modal animations, fixed navigation ordering in modal, removed unnecessary whitespace
 - July 08, 2025. Enhanced modal close functionality with dissolve effect and smooth navigation: added isClosingModal state, closeModal function with 400ms delay, handleNavigation function that closes modal then scrolls to target section after 500ms delay
-- July 08, 2025. Simplified portfolio layout: reduced from 9 to 4 projects in 2x2 grid, removed Gallery section entirely, updated Contact section number from 05 to 04
+- July 08, 2025. Simplified portfolio layout: reduced from 9 to 4 projects in 2x2 grid, kept Gallery section with same 4 projects, updated section numbering properly
 ```
 
 ## User Preferences
