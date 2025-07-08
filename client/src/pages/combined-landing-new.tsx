@@ -1055,7 +1055,7 @@ export default function CombinedLanding() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                   <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">2023.03 - 현재</div>
+                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">2023.03 - 2024.11</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">프로젝트 전체 기간</div>
                   </div>
                   <div>
