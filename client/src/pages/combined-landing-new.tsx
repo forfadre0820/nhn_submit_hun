@@ -669,11 +669,13 @@ export default function CombinedLanding() {
                 {/* Right Column - Content */}
                 <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
                   <motion.h2 
-                    className="lg:text-5xl text-gray-900 mb-10 lg:mb-16 text-[57px] leading-tight"
+                    className="text-black mb-10 lg:mb-16 leading-tight uppercase"
                     style={{ 
-                      fontFamily: "'Nanum Square', sans-serif",
-                      fontWeight: '800',
-                      letterSpacing: '-0.02em'
+                      fontFamily: "'Noto Sans', sans-serif",
+                      fontWeight: '700',
+                      fontSize: '64px',
+                      letterSpacing: '0.02em',
+                      lineHeight: '1.1'
                     }}
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -683,11 +685,11 @@ export default function CombinedLanding() {
                     }}
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    I Keep Challenging<br />
-                    Myself to Make<br />
-                    Good and<br />
-                    Meaningful<br />
-                    Content
+                    I KEEP CHALLENGING<br />
+                    MYSELF TO MAKE<br />
+                    GOOD AND<br />
+                    MEANINGFUL<br />
+                    CONTENT
                   </motion.h2>
                   
                   <div className={`col-span-4 text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-10 lg:mt-18 lg:pr-12`}>
