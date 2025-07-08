@@ -967,7 +967,7 @@ export default function CombinedLanding() {
                   </div>
 
                   <div>
-                    <p className="text-base text-[#282623] leading-relaxed">
+                    <p className="text-[#282623] text-[14px]">
                       온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
                     </p>
                   </div>
