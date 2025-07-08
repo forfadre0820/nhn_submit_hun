@@ -424,6 +424,7 @@ export default function CombinedLanding() {
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
         <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
           <div className="flex items-center space-x-8">
+            <a href="#" onClick={() => setSelectedProject(null)} className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}>Home</a>
             <a href="#work" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>Work</a>
             <a href="#about" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>About</a>
             <a href="#contact" className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors`}>Contact</a>
