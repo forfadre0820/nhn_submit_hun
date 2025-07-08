@@ -319,11 +319,7 @@ export default function CombinedLanding() {
                   <h2 className={`${FONT_SIZES.sectionTitle} font-bold text-gray-900 leading-tight ${SPACING.smallGap}`}>
                     콘텐츠 제작자이자 크리에이터를 위한 교육자
                   </h2>
-                  <p className={`text-gray-700 ${FONT_SIZES.body} leading-relaxed`}>
-                    시청자의 경험을 최우선으로 생각하며, 메시지 전달을 넘어 
-                    깊이 있는 인상을 남기는 콘텐츠를 설계합니다. 
-                    창작자들에게 실질적인 도움을 주는 교육 콘텐츠를 제작하고 있습니다.
-                  </p>
+                  <p className={`text-gray-700 ${FONT_SIZES.body} leading-relaxed`}>10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제 출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등 제작 전반의 워크플로우를 체계적으로 수행해왔습니다. 다양한 프로젝트를 총괄하며 제작 전 과정에 대한 깊이 있는 이해를 바탕으로 일정, 예산, 품질을 효과적으로 관리했습니다.</p>
                 </div>
 
                 {/* Right Column - Services */}
