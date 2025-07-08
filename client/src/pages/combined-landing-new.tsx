@@ -327,10 +327,8 @@ export default function CombinedLanding() {
                   <div className="space-y-6">
                     <div>
                       <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>콘텐츠 기획, 제작</h4>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
-                        시청자의 니즈를 파악하고 메시지를 효과적으로 전달하는 
-                        콘텐츠 구조와 스토리텔링을 설계합니다.
-                      </p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>시청자의 시청환경까지 생각하는 세밀한 기획과 촬영·편집·조명·미술까지 전 제작 과정을 직접 수행할 수 있는 올라운드 역량을 통해 고품질의 콘텐츠를 제작합니다.
+</p>
                     </div>
                     
                     <div>
