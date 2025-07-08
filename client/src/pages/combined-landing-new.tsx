@@ -671,9 +671,9 @@ export default function CombinedLanding() {
                   <h2 
                     className="lg:text-5xl text-gray-900 mb-10 lg:mb-16 text-[57px] leading-tight"
                     style={{ 
-                      fontFamily: "'League Mono', monospace",
-                      fontWeight: 'bold',
-                      letterSpacing: '0.02em'
+                      fontFamily: "'Nanum Square', sans-serif",
+                      fontWeight: '800',
+                      letterSpacing: '-0.02em'
                     }}
                   >
                     {["I", "Keep", "Challenging"].map((word, index) => (
