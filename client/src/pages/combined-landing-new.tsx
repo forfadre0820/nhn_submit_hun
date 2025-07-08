@@ -669,12 +669,12 @@ export default function CombinedLanding() {
                     </p>
                   </div>
                   
-                  <button 
-                    type="button"
-                    className="mt-10 lg:mt-15 text-gray-900 font-medium text-base border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1"
+                  <a 
+                    href="mailto:buen136003@gmail.com"
+                    className="mt-10 lg:mt-15 text-gray-900 font-medium text-base border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1 inline-block"
                   >
-                    함께 작업하기
-                  </button>
+                    buen136003@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -694,12 +694,6 @@ export default function CombinedLanding() {
               >
                 ↑ 맨 위로
               </button>
-              
-              <div className="text-center">
-                <a href="mailto:buen136003@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors text-base">
-                  buen136003@gmail.com
-                </a>
-              </div>
               
               <div className="text-gray-600 text-base">
                 Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 

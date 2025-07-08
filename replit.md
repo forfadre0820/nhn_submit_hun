@@ -313,6 +313,7 @@ Changelog:
 - July 07, 2025. Updated Contact section content with comprehensive PD philosophy and work approach, restructured title to emphasize collaboration and message delivery focus
 - July 07, 2025. Redesigned Contact section to match exact HTML structure with site-grid layout, added professional workspace image from Unsplash, implemented proper spacing and typography matching reference design
 - July 08, 2025. Reduced excessive spacing between Contact section and Footer to improve layout flow and visual hierarchy
+- July 08, 2025. Moved email contact from footer to Contact section button, simplified footer layout to focus on navigation and copyright
 ```
 
 ## User Preferences
