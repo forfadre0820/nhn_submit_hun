@@ -15,6 +15,7 @@ import SnapaskOfficeImage from "@assets/image_1751953847874.png";
 import JinairEventImage from "@assets/image_1751953850208.png";
 import SnapaskInterviewImage from "@assets/image_1751953852561.png";
 import ModelPortraitImage from "@assets/image_1751953866736.png";
+import BrandContentImage from "@assets/image_1751960388464.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -241,6 +242,13 @@ export default function CombinedLanding() {
       alt: "Snapask Team Interview",
       title: "팀 인터뷰",
       subtitle: "Team Interview"
+    },
+    {
+      id: "9",
+      src: BrandContentImage,
+      alt: "Brand Content Creation",
+      title: "브랜드 콘텐츠 제작",
+      subtitle: "Brand Content"
     }
   ];
 
