@@ -763,7 +763,7 @@ export default function CombinedLanding() {
             {/* Featured Work Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-wide`}>
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">
                   주요 작업
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
