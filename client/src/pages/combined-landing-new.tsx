@@ -676,7 +676,7 @@ export default function CombinedLanding() {
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
                 <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">
-                  학력 & 경력
+                  Education & Experience
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>02</span>
               </div>
@@ -787,9 +787,7 @@ export default function CombinedLanding() {
             {/* Featured Work Section */}
             <div className={SPACING.sectionGap} data-section="work">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">
-                  주요 작업
-                </h3>
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">MAIN PROJECT</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
               </div>
 
