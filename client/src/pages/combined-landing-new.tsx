@@ -784,9 +784,7 @@ export default function CombinedLanding() {
             {/* Contact Section */}
             <div className="pt-6 border-t border-gray-200">
               <div className="flex justify-between items-start mb-6">
-                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-wide`}>
-                  연락하기
-                </h3>
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Wtih me</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
               </div>
 
