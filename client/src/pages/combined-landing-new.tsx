@@ -1109,450 +1109,64 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       
-      {/* Project Detail Modal - Professional Style */}
+      {/* Project Detail Modal - Simple Lightbox Style (Portfolio Items) */}
       {selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
-          className="fixed inset-0 bg-white z-[99999] overflow-y-auto text-[14px]"
+          className="fixed inset-0 bg-black/70 z-[99999] flex items-center justify-center p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
-          onClick={closeModal}
-        >
-          {/* Navigation Bar */}
-          <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
-            <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
-              <div className="flex items-center space-x-8">
-                <button 
-                  onClick={() => handleNavigation('home')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
-                >
-                  Home
-                </button>
-                <button 
-                  onClick={() => handleNavigation('about')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
-                >
-                  About
-                </button>
-                <button 
-                  onClick={() => handleNavigation('work')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
-                >
-                  Work
-                </button>
-                <button 
-                  onClick={() => handleNavigation('contact')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
-                >
-                  Contact
-                </button>
-              </div>
-            </div>
-          </nav>
-
-          <motion.div 
-            className="bg-white w-full max-w-4xl mx-auto min-h-screen relative tracking-tight leading-relaxed"
-            initial={{ scale: 0.95, opacity: 0, y: 30 }}
-            animate={{ 
-              scale: isClosingModal ? 0.95 : 1, 
-              opacity: isClosingModal ? 0 : 1, 
-              y: isClosingModal ? -30 : 0 
-            }}
-            exit={{ scale: 0.95, opacity: 0, y: -30 }}
-            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Page Header */}
-            <div className="px-8 lg:px-16 pb-2 pt-32">
-              {/* Back Link */}
-              <motion.div 
-                className="mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
-              >
-                <button
-                  onClick={closeModal}
-                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors flex items-center gap-1"
-                >
-                  ← Back To All Work
-                </button>
-              </motion.div>
-
-              {/* Header Body */}
-              <motion.div 
-                className="mb-12"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 2 }}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                  <div className="lg:col-span-3">
-                    <h1 className="text-4xl lg:text-5xl text-[#282623] leading-tight mb-0 font-semibold">
-                      온·오프라인 실시간 행사<br />
-                      /교육 기획·진행
-                    </h1>
-                  </div>
-                </div>
-
-                {/* Header Details */}
-                <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div>
-                      <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
-                      <p className="text-sm text-[#282623]">행사, 교육 기획</p>
-                    </div>
-                    
-                    <div>
-                      <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
-                      <p className="text-sm text-[#282623]">삼성 그룹</p>
-                    </div>
-                    
-                    <div>
-                      <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
-                      <p className="text-sm text-[#282623]">기획, 운영, 제작</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                      삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Content Container */}
-            <div className="px-8 lg:px-16 pb-12">
-              {/* Project Images Gallery */}
-              <motion.div 
-                className="mb-12"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
-              >
-                {/* 두 줄 이미지 그리드 */}
-                <div className="mb-8">
-                  {/* 첫 번째 줄 - 2개 이미지 */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                      <img
-                        src={IntegratedOperationImage}
-                        alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                      <img
-                        src={TechSupportImage}
-                        alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* 두 번째 줄 - 2개 이미지 */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                      <img
-                        src={OverseasEventImage}
-                        alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                      <img
-                        src={OnlineEventImage}
-                        alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-center mb-8">
-                  <p className="text-sm text-[#58534e] italic">오프라인 교육부터 온라인 이벤트까지 통합 운영</p>
-                </div>
-              </motion.div>
-
-              {/* Project Details */}
-              <motion.div 
-                className="mb-12"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
-              >
-                {/* 프로젝트 기간 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                    프로젝트 기간
-                  </h2>
-                </div>
-                <div className="space-y-5 mb-8">
-                  <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                      전체 기간: 2023.01 ~ 2024.11 (23개월)
-                    </div>
-                  </div>
-                </div>
-
-                {/* 주요 성과 */}
-                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                    주요 성과
-                  </h2>
-                </div>
-                <div className="space-y-5 mb-8">
-                  <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 고객 만족도 NPS 4.5+ 달성</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">30+ 온 오프라인 행사, 교육에서 일관된 고품질 서비스 제공</p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 기업 고객사 수주 5개</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 운영 효율성 개선</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
-                  </div>
-                </div>
-                
-                {/* 주요 역할 */}
-                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
-                    주요 역할
-                  </h2>
-                </div>
-                <div className="space-y-5 mb-8">
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>• 영상: 앵글, 트랜지션 품질 확보</li>
-                          <li>• 음향: 밸런스 조정 및 품질 관리</li>
-                          <li>• 송출: 실시간 기술 이슈 대응</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">돌발 상황 대응</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>• 출연자 지각, 건강 이상 등</li>
-                          <li>• 큐시트 실시간 수정</li>
-                          <li>• 직접 대체 진행 수행</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        행사별 다양한 그래픽 필요 + 송출 타이밍 오류 = 행사 품질 직접 영향 → 효율적 제작 & 자동화 필요
-                      </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">그래픽 제작 시스템</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
-                          <li>• Python , 오픈소스 (Pulid, Ipadater, Flux) 활용 후보정</li>
-                          <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로그램 (폐쇄망 환경)</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>• Python + OCR 화면 인식 시스템 구축</li>
-                          <li>• 화면 인식 기반 영상, 음악 송출 타이밍 자동 제어</li>
-                          <li>• 수동 조작 대비 타이밍 오류 90% 감소</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">사용자 몰입 유도를 위한 온라인 콘텐츠 플랫폼 기획</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">기존 플랫폼 한계 (임직원 참여 데이터 확보 어려움) → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요와 RAW DATA 확보</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">플랫폼 확장 기획</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>• 외부 플랫폼 연동·상품화 </li>
-                          <li>• 실질적 임직원 참여 RAW 데이터 확보</li>
-                          <li>• 현실 조직 공간 반영 맵 디자인</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">데이터 구조 설계</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>• SnowFlake 기반 행동 로그 수집</li>
-                          <li>• API 연동 구조 협의</li>
-                          <li>• 사용자 자율 탐색 유도</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 활용 기술 */}
-                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
-                    활용 기술
-                  </h2>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-                  <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Adobe Creative Suite</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects, Photoshop</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">생성형 AI</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Midjourney, Stable Diffusion ComfyUI</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">자동화 개발</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OCR 화면 인식</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">데이터 설계</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">SnowFlake, API 연동</div>
-                  </div>
-                </div>
-
-                {/* Footer */}
-                <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px]">
-                  <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <button 
-                      type="button" 
-                      className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
-                      onClick={() => handleNavigation('home')}
-                    >
-                      ↑ 맨 위로
-                    </button>
-                    
-                    <div className="text-center">
-                      <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
-                    </div>
-                    
-                    <div className="text-sm text-[#58534e]">
-                      Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
-                        hour: '2-digit', 
-                        minute: '2-digit',
-                        hour12: false 
-                      })}
-                    </div>
-                  </div>
-                </div>
-
-              </motion.div>
-
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-      {/* Other Projects - Simple Modal */}
-      {selectedProject && selectedProject.id !== "1" && (
-        <motion.div 
-          className="fixed inset-0 bg-gray-50 bg-opacity-95 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isClosingModal ? 0 : 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
+          transition={{ duration: ANIMATION_DURATIONS.modal }}
           onClick={closeModal}
         >
           <motion.div 
-            className="relative max-w-3xl max-h-[80vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
-            initial={{ scale: 0.9, opacity: 0, y: 30 }}
-            animate={{ 
-              scale: isClosingModal ? 0.9 : 1, 
-              opacity: isClosingModal ? 0 : 1, 
-              y: isClosingModal ? -30 : 0 
-            }}
-            exit={{ scale: 0.9, opacity: 0, y: -30 }}
-            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: isClosingModal ? 0.9 : 1, opacity: isClosingModal ? 0 : 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: ANIMATION_DURATIONS.modal }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-all z-10"
+            {/* Close Button */}
+            <button 
               onClick={closeModal}
+              className="absolute top-4 right-4 z-10 bg-black/20 hover:bg-black/40 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors"
             >
-              <span className="text-lg leading-none">×</span>
+              ×
             </button>
-
-            <div className="p-8">
-              <div className="text-center mb-6">
-                <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                  {selectedProject.title}
-                </h1>
-                <p className="text-gray-600">{selectedProject.subtitle}</p>
-              </div>
-
-              <div className="mb-6">
-                <img
-                  src={selectedProject.src}
-                  alt={selectedProject.alt}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-3">프로젝트 설명</h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {selectedProject.description}
-                  </p>
-                </div>
-
+            
+            {/* Image Grid */}
+            <div className="p-6">
+              <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="space-y-4">
-                  <div>
-                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">카테고리</h4>
-                    <p className="text-gray-900 font-medium text-sm">{selectedProject.category}</p>
+                  <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1551818255-e6e10975cd17?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="교육 콘텐츠 제작" className="w-full h-full object-cover" />
                   </div>
-                  <div>
-                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">클라이언트</h4>
-                    <p className="text-gray-900 font-medium text-sm">{selectedProject.client}</p>
+                  <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[16/9]">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="팀 협업" className="w-full h-full object-cover" />
                   </div>
-                  <div>
-                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">사용 도구</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {selectedProject.tools.map((tool, index) => (
-                        <span 
-                          key={index}
-                          className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[16/9]">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="온라인 교육" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[3/2]">
+                    <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="온라인 이벤트 기획" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
-
-              <div className="border-t border-gray-200 pt-4 mt-6">
-                <div className="flex justify-between items-center">
-                  <div className="text-gray-500 text-xs">
-                    {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} / {portfolioItems.length}
-                  </div>
-                  <button 
-                    onClick={closeModal}
-                    className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm"
-                  >
-                    돌아가기
-                  </button>
+            </div>
+            
+            {/* Content */}
+            <div className="px-6 pb-6">
+              <h3 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
+              <p className={`${FONT_SIZES.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
+              <p className={`${FONT_SIZES.small} text-gray-700 leading-relaxed mb-4`}>{selectedProject.description}</p>
+              
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <div className="flex justify-between items-center text-sm text-gray-500">
+                  <span>{selectedProject.client}</span>
+                  <span>{selectedProject.year}</span>
                 </div>
               </div>
             </div>
