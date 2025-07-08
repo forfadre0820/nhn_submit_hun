@@ -915,7 +915,7 @@ export default function CombinedLanding() {
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Content Container */}
+            {/* Page Header */}
             <div className="px-8 lg:px-16 py-12">
               
               {/* Back Link */}
@@ -927,40 +927,73 @@ export default function CombinedLanding() {
               >
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors border-b border-[#58534e] pb-1"
+                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
                 >
                   ← Back To All Work
                 </button>
               </motion.div>
 
-              {/* Project Title */}
+              {/* Header Body */}
               <motion.div 
-                className="mb-16"
+                className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h1 className="text-6xl lg:text-7xl font-black text-[#282623] tracking-tight leading-[0.9] uppercase">
-                  온·오프라인 실시간<br />
-                  행사/교육 기획·진행
-                </h1>
-              </motion.div>
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                  <div className="lg:col-span-3">
+                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">
+                      온·오프라인 실시간 행사/교육 기획·진행
+                    </h1>
+                  </div>
+                </div>
 
-              {/* Cover Image */}
-              <motion.div 
-                className="mb-20"
-                initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.4 }}
-              >
-                <div className="w-full aspect-[16/10] bg-[#b9b8b6] overflow-hidden">
-                  <img
-                    src={selectedProject.src}
-                    alt="온·오프라인 실시간 행사/교육 기획·진행"
-                    className="w-full h-full object-cover"
-                  />
+                {/* Header Details */}
+                <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
+                      <p className="text-sm text-[#282623]">교육 기획</p>
+                    </div>
+                    
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
+                      <p className="text-sm text-[#282623]">Samsung Multicampus</p>
+                    </div>
+                    
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
+                      <p className="text-sm text-[#282623]">PD / Tech Lead</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-base text-[#282623] leading-relaxed">
+                      온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
+            </div>
+
+            {/* Cover Image */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              <div className="w-full aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
+                <img
+                  src={selectedProject.src}
+                  alt="온·오프라인 실시간 행사/교육 기획·진행"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
+            {/* Content Container */}
+            <div className="px-8 lg:px-16 pb-12">
 
               {/* Credits Section */}
               <motion.div 
