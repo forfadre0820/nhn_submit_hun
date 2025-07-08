@@ -875,65 +875,65 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Image-Text Layout - Simplified Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start mb-8">
-                {/* Left Column - Image */}
-                <div className="lg:order-1">
-                  <div className="relative overflow-hidden">
-                    <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                      <img 
-                        src={ContactWorkspaceImage}
-                        loading="lazy" 
-                        decoding="async" 
-                        draggable="false" 
-                        alt="Professional Content Production Workspace" 
-                        className="object-cover w-full h-full"
-                      />
+              {/* MAKE IT BETTER Section */}
+              <div className="bg-white py-16 lg:py-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                  {/* Left Column - Image */}
+                  <div className="lg:order-1">
+                    <div className="relative overflow-hidden">
+                      <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
+                        <img 
+                          src={ContactWorkspaceImage}
+                          loading="lazy" 
+                          decoding="async" 
+                          draggable="false" 
+                          alt="Professional Content Production Workspace" 
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Right Column - Content */}
-                <div className="lg:order-2">
-                  <motion.h2 
-                    className="text-black mb-10 lg:mb-16 leading-tight uppercase"
-                    style={{ 
-                      fontFamily: "'Playfair Display', serif",
-                      fontWeight: '700',
-                      fontSize: '54px',
-                      letterSpacing: '-0.02em',
-                      lineHeight: '0.9'
-                    }}
-                    initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      ease: [0.25, 0.46, 0.45, 0.94] 
-                    }}
-                    viewport={{ once: true, margin: "-100px" }}
-                  >
-                    I KEEP CHALLENGING<br />
-                    MYSELF TO MAKE<br />
-                    GOOD AND<br />
-                    MEANINGFUL<br />
-                    CONTENT
-                  </motion.h2>
-                  
-                  <div className={`text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-8`}>
-                    <p className="text-[14px]">
-                      콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 
-                      저는 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다. 
-                      라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
-                      AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 
-                      감성과 전략, 창의성과 기술을 넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 
-                      앞으로도 명확한 메시지를 중심에 둔 콘텐츠를 만들어가겠습니다.
-                    </p>
+                  {/* Right Column - Content */}
+                  <div className="lg:order-2">
+                    <motion.h1 
+                      className="text-red-500 font-black uppercase mb-8 lg:mb-12"
+                      style={{ 
+                        fontSize: '4rem',
+                        lineHeight: '0.9',
+                        letterSpacing: '-0.02em'
+                      }}
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        ease: [0.25, 0.46, 0.45, 0.94] 
+                      }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      &gt; MAKE IT BETTER
+                    </motion.h1>
+                    
+                    <div className="text-gray-700 leading-relaxed mb-8">
+                      <p className="text-[14px] mb-4">
+                        콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
+                        연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
+                      </p>
+                      <p className="text-[14px] mb-4">
+                        라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
+                        AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
+                        넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
+                        콘텐츠를 만들어가겠습니다.
+                      </p>
+                    </div>
+                    
+                    <a 
+                      href="mailto:buen136003@gmail.com"
+                      className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors"
+                    >
+                      Contact with Me
+                    </a>
                   </div>
-                  
-                  <a 
-                    href="mailto:buen136003@gmail.com"
-                    className={`mt-6 lg:mt-8 text-gray-900 font-medium ${FONT_SIZES.body} border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1 inline-block`}
-                  >Contact with Me</a>
                 </div>
               </div>
             </div>
