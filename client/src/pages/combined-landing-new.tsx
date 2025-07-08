@@ -698,7 +698,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-white py-8 mt-4">
+      <footer className="bg-white py-12 mt-16">
         <div className="max-w-6xl mx-auto px-6">
           {/* Bottom Section */}
           <div className="pt-6 border-t border-gray-200">
