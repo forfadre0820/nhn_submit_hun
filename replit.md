@@ -324,6 +324,7 @@ Changelog:
 - July 08, 2025. Simplified Contact section title animation to single fade-in effect, removing individual word animations for better readability
 - July 08, 2025. Changed Contact section title font to Noto Sans and updated text to uppercase format matching reference layout
 - July 08, 2025. Updated title typography to 64px size with uppercase styling and adjusted line height for better visual impact
+- July 08, 2025. Changed Contact section title font to Inter (similar to Noh Optique) and reduced size to 54px with medium weight
 - July 08, 2025. Updated Contact section title to "I Keep Challenging Myself to Make Good and Meaningful Content"
 - July 08, 2025. Implemented smooth bottom-to-top ease-out animation for Contact section title using Framer Motion
 ```

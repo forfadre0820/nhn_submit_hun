@@ -671,10 +671,10 @@ export default function CombinedLanding() {
                   <motion.h2 
                     className="text-black mb-10 lg:mb-16 leading-tight uppercase"
                     style={{ 
-                      fontFamily: "'Noto Sans', sans-serif",
-                      fontWeight: '700',
-                      fontSize: '64px',
-                      letterSpacing: '0.02em',
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: '600',
+                      fontSize: '54px',
+                      letterSpacing: '0.01em',
                       lineHeight: '1.1'
                     }}
                     initial={{ y: 50, opacity: 0 }}
