@@ -208,6 +208,7 @@ export default function CombinedLanding() {
   const [showSoundControl, setShowSoundControl] = useState(false);
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
+  const [isClosingModal, setIsClosingModal] = useState(false);
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -428,6 +429,36 @@ export default function CombinedLanding() {
 
   const handleVideoMouseLeave = () => {
     setShowSoundControl(false);
+  };
+
+  // Modal close with dissolve effect
+  const closeModal = () => {
+    setIsClosingModal(true);
+    setTimeout(() => {
+      setSelectedProject(null);
+      setIsClosingModal(false);
+    }, 400);
+  };
+
+  // Navigation handler with smooth scroll to section
+  const handleNavigation = (section: string) => {
+    closeModal();
+    setTimeout(() => {
+      switch(section) {
+        case 'home':
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        case 'about':
+          document.querySelector('.next')?.scrollIntoView({ behavior: 'smooth' });
+          break;
+        case 'work':
+          document.querySelector('[data-section="work"]')?.scrollIntoView({ behavior: 'smooth' });
+          break;
+        case 'contact':
+          document.querySelector('[data-section="contact"]')?.scrollIntoView({ behavior: 'smooth' });
+          break;
+      }
+    }, 500);
   };
 
   return (
@@ -997,35 +1028,35 @@ export default function CombinedLanding() {
         <motion.div 
           className="fixed inset-0 bg-white z-[99999] overflow-y-auto text-[14px]"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
-          onClick={() => setSelectedProject(null)}
+          onClick={closeModal}
         >
           {/* Navigation Bar */}
           <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
             <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
               <div className="flex items-center space-x-8">
                 <button 
-                  onClick={() => setSelectedProject(null)}
+                  onClick={() => handleNavigation('home')}
                   className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Home
                 </button>
                 <button 
-                  onClick={() => setSelectedProject(null)}
+                  onClick={() => handleNavigation('about')}
                   className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   About
                 </button>
                 <button 
-                  onClick={() => setSelectedProject(null)}
+                  onClick={() => handleNavigation('work')}
                   className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Work
                 </button>
                 <button 
-                  onClick={() => setSelectedProject(null)}
+                  onClick={() => handleNavigation('contact')}
                   className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Contact
@@ -1037,7 +1068,11 @@ export default function CombinedLanding() {
           <motion.div 
             className="bg-white w-full max-w-4xl mx-auto min-h-screen relative tracking-tight leading-relaxed"
             initial={{ scale: 0.95, opacity: 0, y: 30 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
+            animate={{ 
+              scale: isClosingModal ? 0.95 : 1, 
+              opacity: isClosingModal ? 0 : 1, 
+              y: isClosingModal ? -30 : 0 
+            }}
             exit={{ scale: 0.95, opacity: 0, y: -30 }}
             transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
@@ -1052,7 +1087,7 @@ export default function CombinedLanding() {
                 transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
               >
                 <button
-                  onClick={() => setSelectedProject(null)}
+                  onClick={closeModal}
                   className="text-sm text-[#58534e] hover:text-[#282623] transition-colors flex items-center gap-1"
                 >
                   ← Back To All Work
@@ -1318,7 +1353,7 @@ export default function CombinedLanding() {
                     <button 
                       type="button" 
                       className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
-                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      onClick={() => handleNavigation('home')}
                     >
                       ↑ 맨 위로
                     </button>
@@ -1348,22 +1383,26 @@ export default function CombinedLanding() {
         <motion.div 
           className="fixed inset-0 bg-gray-50 bg-opacity-95 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
-          onClick={() => setSelectedProject(null)}
+          onClick={closeModal}
         >
           <motion.div 
             className="relative max-w-3xl max-h-[80vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
             initial={{ scale: 0.9, opacity: 0, y: 30 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
+            animate={{ 
+              scale: isClosingModal ? 0.9 : 1, 
+              opacity: isClosingModal ? 0 : 1, 
+              y: isClosingModal ? -30 : 0 
+            }}
             exit={{ scale: 0.9, opacity: 0, y: -30 }}
             transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-all z-10"
-              onClick={() => setSelectedProject(null)}
+              onClick={closeModal}
             >
               <span className="text-lg leading-none">×</span>
             </button>
@@ -1423,7 +1462,7 @@ export default function CombinedLanding() {
                     {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} / {portfolioItems.length}
                   </div>
                   <button 
-                    onClick={() => setSelectedProject(null)}
+                    onClick={closeModal}
                     className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm"
                   >
                     돌아가기
