@@ -922,7 +922,7 @@ export default function CombinedLanding() {
           </nav>
 
           <motion.div 
-            className="bg-white w-full max-w-4xl mx-auto min-h-screen relative"
+            className="bg-white w-full max-w-4xl mx-auto min-h-screen relative tracking-tight leading-relaxed"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -1090,22 +1090,22 @@ export default function CombinedLanding() {
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
                     <div className="border-l-2 border-gray-200 pl-4 mb-3">
-                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed mb-2">
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
                         삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">협력사 커뮤니케이션</h4>
-                        <ul className="text-xs text-[#58534e] space-y-1">
+                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">협력사 커뮤니케이션</h4>
+                        <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• 영상: 앵글, 트랜지션 품질 확보</li>
                           <li>• 음향: 밸런스 조정 및 품질 관리</li>
                           <li>• 송출: 실시간 기술 이슈 대응</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">돌발 상황 대응</h4>
-                        <ul className="text-xs text-[#58534e] space-y-1">
+                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">돌발 상황 대응</h4>
+                        <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• 출연자 지각, 건강 이상 등</li>
                           <li>• 큐시트 실시간 수정</li>
                           <li>• 직접 대체 진행 수행</li>
@@ -1117,22 +1117,22 @@ export default function CombinedLanding() {
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
                     <div className="border-l-2 border-gray-200 pl-4 mb-3">
-                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed mb-2">
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
                         행사별 다양한 그래픽 필요 + 송출 타이밍 오류 = 행사 품질 직접 영향 → 효율적 제작 & 자동화 필요
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">그래픽 제작 시스템</h4>
-                        <ul className="text-xs text-[#58534e] space-y-1">
+                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">그래픽 제작 시스템</h4>
+                        <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
                           <li>• Python 기반 후보정</li>
                           <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 프로그램</h4>
-                        <ul className="text-xs text-[#58534e] space-y-1">
+                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 프로그램</h4>
+                        <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• Python + OCR 화면 인식</li>
                           <li>• 영상, 음악 송출 타이밍 제어</li>
                           <li>• 타이밍 오류 최소화</li>
@@ -1144,22 +1144,22 @@ export default function CombinedLanding() {
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
                     <div className="border-l-2 border-gray-200 pl-4 mb-3">
-                      <p className="text-xs text-[#58534e] tracking-tight leading-relaxed mb-2">
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
                         기존 플랫폼 한계 → 임직원 참여 데이터 확보 어려움 → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 확장 기획</h4>
-                        <ul className="text-xs text-[#58534e] space-y-1">
+                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 확장 기획</h4>
+                        <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• 자체 플랫폼 확장 설계</li>
                           <li>• 실질적 임직원 참여 데이터 확보</li>
                           <li>• 현실 조직 공간 반영 맵 디자인</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-xs font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">데이터 구조 설계</h4>
-                        <ul className="text-xs text-[#58534e] space-y-1">
+                        <h4 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">데이터 구조 설계</h4>
+                        <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• SnowFlake 기반 행동 로그 수집</li>
                           <li>• API 연동 구조 협의</li>
                           <li>• 사용자 자율 탐색 유도</li>
@@ -1192,6 +1192,30 @@ export default function CombinedLanding() {
                   </div>
                 </div>
 
+                {/* Footer */}
+                <div className="mt-16 pt-12 border-t border-gray-200">
+                  <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <button 
+                      type="button" 
+                      className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    >
+                      ↑ 맨 위로
+                    </button>
+                    
+                    <div className="text-center">
+                      <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
+                    </div>
+                    
+                    <div className="text-sm text-[#58534e]">
+                      Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
+                        hour: '2-digit', 
+                        minute: '2-digit',
+                        hour12: false 
+                      })}
+                    </div>
+                  </div>
+                </div>
 
               </motion.div>
 
