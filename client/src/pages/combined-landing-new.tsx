@@ -56,7 +56,7 @@ interface PortfolioItem {
 // MasonryGrid component
 interface MasonryGridProps {
   items: PortfolioItem[];
-  onProjectClick: (item: PortfolioItem) => void;
+  onProjectClick: (item: PortfolioItem, event?: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onProjectClick }) => {
@@ -143,7 +143,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onProjectClick }) => {
           className="group cursor-pointer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
-          onClick={() => onProjectClick(item)}
+          onClick={(e) => onProjectClick(item, e)}
         >
           <div 
             className="relative overflow-hidden bg-gray-100 rounded-lg"
@@ -196,6 +196,39 @@ export default function CombinedLanding() {
   const [showSoundControl, setShowSoundControl] = useState(false);
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
+  const [animatingProject, setAnimatingProject] = useState<PortfolioItem | null>(null);
+  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0, width: 0, height: 0 });
+  
+  // Handle project click with position tracking
+  const handleProjectClick = (item: PortfolioItem, event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setClickPosition({
+      x: rect.left,
+      y: rect.top,
+      width: rect.width,
+      height: rect.height
+    });
+    setAnimatingProject(item);
+    
+    // Start animation sequence
+    setTimeout(() => {
+      setSelectedProject(item);
+      setAnimatingProject(null);
+    }, 600); // Animation duration
+  };
+
+  // Handle close modal with reverse animation
+  const handleCloseModal = () => {
+    if (selectedProject) {
+      setAnimatingProject(selectedProject);
+      setSelectedProject(null);
+      
+      // Clear animating project after reverse animation
+      setTimeout(() => {
+        setAnimatingProject(null);
+      }, 600);
+    }
+  };
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -777,7 +810,7 @@ export default function CombinedLanding() {
               {/* Portfolio Grid - Balanced Masonry Layout */}
               <MasonryGrid 
                 items={portfolioItems}
-                onProjectClick={setSelectedProject}
+                onProjectClick={handleProjectClick}
               />
             </div>
 
@@ -904,7 +937,7 @@ export default function CombinedLanding() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          onClick={() => setSelectedProject(null)}
+          onClick={handleCloseModal}
         >
           <motion.div 
             className="bg-white w-full max-w-4xl mx-auto min-h-screen relative"
@@ -925,7 +958,7 @@ export default function CombinedLanding() {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <button
-                  onClick={() => setSelectedProject(null)}
+                  onClick={handleCloseModal}
                   className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
                 >
                   ← Back To All Work
@@ -1131,6 +1164,108 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
+
+      {/* Thumbnail to Full Width Animation */}
+      {animatingProject && !selectedProject && (
+        <motion.div 
+          className="fixed inset-0 z-[99999] pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="absolute bg-white shadow-lg overflow-hidden"
+            initial={{
+              x: clickPosition.x,
+              y: clickPosition.y,
+              width: clickPosition.width,
+              height: clickPosition.height,
+              borderRadius: "8px"
+            }}
+            animate={{
+              x: 0,
+              y: 0,
+              width: "100vw",
+              height: "100vh",
+              borderRadius: "0px"
+            }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
+            <motion.img
+              src={animatingProject.src}
+              alt={animatingProject.alt}
+              className="w-full h-full object-cover"
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.1 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            />
+            
+            {/* Overlay content that fades in */}
+            <motion.div
+              className="absolute inset-0 bg-black/50 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+            >
+              <div className="text-white text-center">
+                <h2 className="text-3xl font-bold mb-2">{animatingProject.title}</h2>
+                <p className="text-lg opacity-90">{animatingProject.subtitle}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
+
+      {/* Reverse Animation - Full to Thumbnail */}
+      {animatingProject && selectedProject === null && (
+        <motion.div 
+          className="fixed inset-0 z-[99999] pointer-events-none"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="absolute bg-white shadow-lg overflow-hidden"
+            initial={{
+              x: 0,
+              y: 0,
+              width: "100vw",
+              height: "100vh",
+              borderRadius: "0px"
+            }}
+            animate={{
+              x: clickPosition.x,
+              y: clickPosition.y,
+              width: clickPosition.width,
+              height: clickPosition.height,
+              borderRadius: "8px"
+            }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
+            <motion.img
+              src={animatingProject.src}
+              alt={animatingProject.alt}
+              className="w-full h-full object-cover"
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+      
       {/* Other Projects - Simple Modal */}
       {selectedProject && selectedProject.id !== "1" && (
         <motion.div 
@@ -1138,7 +1273,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={() => setSelectedProject(null)}
+          onClick={handleCloseModal}
         >
           <motion.div 
             className="relative max-w-3xl max-h-[80vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
@@ -1150,7 +1285,7 @@ export default function CombinedLanding() {
           >
             <button
               className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-all z-10"
-              onClick={() => setSelectedProject(null)}
+              onClick={handleCloseModal}
             >
               <span className="text-lg leading-none">×</span>
             </button>
@@ -1210,7 +1345,7 @@ export default function CombinedLanding() {
                     {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} / {portfolioItems.length}
                   </div>
                   <button 
-                    onClick={() => setSelectedProject(null)}
+                    onClick={handleCloseModal}
                     className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm"
                   >
                     돌아가기
