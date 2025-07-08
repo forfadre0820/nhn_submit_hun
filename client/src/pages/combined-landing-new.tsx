@@ -624,7 +624,7 @@ export default function CombinedLanding() {
               </div>
 
               {/* Image-Text Layout - Site Grid */}
-              <div className="grid grid-cols-12 gap-4 items-start mb-8">
+              <div className="grid grid-cols-12 gap-4 items-start mb-4">
                 {/* Left Column - Image */}
                 <div className="col-span-12 lg:col-span-6">
                   <div className="relative overflow-hidden">
@@ -682,10 +682,10 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-white py-12 mt-8">
+      <footer className="bg-white py-8 mt-4">
         <div className="max-w-6xl mx-auto px-6">
           {/* Bottom Section */}
-          <div className="pt-8 border-t border-gray-200">
+          <div className="pt-6 border-t border-gray-200">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <button 
                 type="button" 
