@@ -1075,16 +1075,11 @@ export default function CombinedLanding() {
               </div>
               
               <div className={`text-gray-600 ${FONT_SIZES.body}`}>
-                Seoul, KR {(() => {
-                  const now = new Date();
-                  const currentMinute = now.getMinutes();
-                  const displayMinute = currentMinute === 11 ? 12 : currentMinute;
-                  return now.toLocaleTimeString('ko-KR', { 
-                    hour: '2-digit', 
-                    minute: '2-digit',
-                    hour12: false 
-                  }).replace(`:${currentMinute.toString().padStart(2, '0')}`, `:${displayMinute.toString().padStart(2, '0')}`);
-                })()}
+                Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
+                  hour: '2-digit', 
+                  minute: '2-digit',
+                  hour12: false 
+                })}
               </div>
             </div>
           </div>
@@ -1311,7 +1306,7 @@ export default function CombinedLanding() {
 
               {/* Project Details */}
               <motion.div 
-                className="mt-[0px] mb-[0px]"
+                className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
