@@ -897,46 +897,43 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Project Detail Modal */}
+      {/* Project Detail Modal - Floating Card */}
       {selectedProject && (
         <motion.div 
-          className="fixed inset-0 bg-white z-[99999] overflow-y-auto"
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          onClick={() => setSelectedProject(null)}
         >
-          <div className="min-h-screen bg-white">
-            {/* Navigation */}
-            <nav className="sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
-              <div className="max-w-6xl mx-auto px-6 py-4">
-                <div className="flex justify-between items-center">
-                  <button 
-                    onClick={() => setSelectedProject(null)}
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    ← Back to Work
-                  </button>
-                  <div className="flex space-x-8">
-                    <span className="text-gray-700">Archive</span>
-                    <span className="text-gray-700">Selected</span>
-                    <span className="text-gray-700">Studio</span>
-                    <span className="text-gray-700">Contact</span>
-                  </div>
-                </div>
-              </div>
-            </nav>
+          <motion.div 
+            className="relative max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl overflow-y-auto"
+            initial={{ scale: 0.8, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0, y: 50 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-6 right-6 w-10 h-10 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full flex items-center justify-center transition-all z-10"
+              onClick={() => setSelectedProject(null)}
+            >
+              <span className="text-xl leading-none">×</span>
+            </button>
 
-            {/* Project Content */}
-            <div className="max-w-4xl mx-auto px-6 py-16">
+            {/* Modal Content */}
+            <div className="p-8 pt-16">
               {/* Project Title */}
-              <div className="text-center mb-16">
-                <h1 className="text-6xl font-bold text-black mb-4">
-                  {selectedProject.title.toUpperCase()}
+              <div className="text-center mb-8">
+                <h1 className="text-4xl md:text-5xl font-bold text-black mb-2">
+                  {selectedProject.title}
                 </h1>
+                <p className="text-gray-500 text-lg">{selectedProject.subtitle}</p>
               </div>
 
               {/* Main Project Image */}
-              <div className="mb-16">
+              <div className="mb-8">
                 <img
                   src={selectedProject.src}
                   alt={selectedProject.alt}
@@ -945,39 +942,39 @@ export default function CombinedLanding() {
               </div>
 
               {/* Project Info Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Column - Description */}
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">Description</h3>
-                  <p className="text-gray-700 leading-relaxed text-lg">
+                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">프로젝트 설명</h3>
+                  <p className="text-gray-700 leading-relaxed">
                     {selectedProject.description}
                   </p>
                 </div>
 
                 {/* Right Column - Project Details */}
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Category</h4>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">카테고리</h4>
                     <p className="text-gray-900 font-medium">{selectedProject.category}</p>
                   </div>
                   
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Year</h4>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">제작년도</h4>
                     <p className="text-gray-900 font-medium">{selectedProject.year}</p>
                   </div>
                   
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Client</h4>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">클라이언트</h4>
                     <p className="text-gray-900 font-medium">{selectedProject.client}</p>
                   </div>
                   
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Role</h4>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">담당 역할</h4>
                     <p className="text-gray-900 font-medium">{selectedProject.role}</p>
                   </div>
                   
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Tools Used</h4>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">사용 도구</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.tools.map((tool, index) => (
                         <span 
@@ -992,25 +989,22 @@ export default function CombinedLanding() {
                 </div>
               </div>
 
-              {/* Navigation to other projects */}
-              <div className="border-t border-gray-200 pt-16">
+              {/* Bottom Navigation */}
+              <div className="border-t border-gray-200 pt-6 mt-8">
                 <div className="flex justify-between items-center">
+                  <div className="text-gray-500 text-sm">
+                    {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} / {portfolioItems.length}
+                  </div>
                   <button 
                     onClick={() => setSelectedProject(null)}
-                    className="text-gray-600 hover:text-black transition-colors"
+                    className="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
                   >
-                    ← Back to Portfolio
+                    돌아가기
                   </button>
-                  <div className="text-center">
-                    <p className="text-gray-500 text-sm">
-                      Project {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} of {portfolioItems.length}
-                    </p>
-                  </div>
-                  <div className="w-20"></div> {/* Spacer for balance */}
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </div>
