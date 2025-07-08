@@ -991,7 +991,7 @@ export default function CombinedLanding() {
               </div>
 
               {/* MAKE IT BETTER Section */}
-              <div className="bg-white py-16 lg:py-24 pt-[0px] pb-[0px]">
+              <div className="bg-white py-16 lg:py-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]">
                   {/* Left Column - Image */}
                   <div className="relative">
@@ -1136,6 +1136,7 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
+      
       {/* Project Detail Modal - Professional Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
@@ -1252,7 +1253,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* Content Container */}
-            <div className="px-8 lg:px-16 pt-[0px] pb-[0px]">
+            <div className="px-8 lg:px-16 pb-12">
               {/* Project Images Gallery */}
               <motion.div 
                 className="mb-12"
@@ -1461,7 +1462,7 @@ export default function CombinedLanding() {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-16 border-t border-gray-200 pt-[32px] pb-[32px]">
+                <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px]">
                   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <button 
                       type="button" 
