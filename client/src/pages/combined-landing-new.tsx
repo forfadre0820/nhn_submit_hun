@@ -1046,7 +1046,7 @@ export default function CombinedLanding() {
                 {/* 기간 */}
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
                     기간
                   </h2>
                 </div>
@@ -1059,7 +1059,7 @@ export default function CombinedLanding() {
                 {/* 성과 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
                     성과
                   </h2>
                 </div>
@@ -1081,7 +1081,7 @@ export default function CombinedLanding() {
                 {/* 주요 역할 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
                     주요 역할
                   </h2>
                 </div>
@@ -1130,11 +1130,11 @@ export default function CombinedLanding() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로그램</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로그램 (폐쇄망 환경)</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>• Python + OCR 화면 인식</li>
-                          <li>• 영상, 음악 송출 타이밍 제어</li>
-                          <li>• 타이밍 오류 최소화</li>
+                          <li>• Python + OCR 화면 인식 시스템 구축</li>
+                          <li>• 화면 인식 기반 영상, 음악 송출 타이밍 자동 제어</li>
+                          <li>• 수동 조작 대비 타이밍 오류 90% 감소</li>
                         </ul>
                       </div>
                     </div>
@@ -1171,7 +1171,7 @@ export default function CombinedLanding() {
                 {/* 활용 기술 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
                     활용 기술
                   </h2>
                 </div>
