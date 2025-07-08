@@ -1145,7 +1145,7 @@ export default function CombinedLanding() {
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">플랫폼 확장 기획</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• 자체 플랫폼 확장 설계</li>
-                          <li>• 실질적 임직원 참여 데이터 확보</li>
+                          <li>• 실질적 임직원 참여 RAW 데이터 확보</li>
                           <li>• 현실 조직 공간 반영 맵 디자인</li>
                         </ul>
                       </div>
