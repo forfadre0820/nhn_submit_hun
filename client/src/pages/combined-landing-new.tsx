@@ -507,13 +507,13 @@ export default function CombinedLanding() {
               {/* Portfolio Grid - Optimized Layout with Real Images */}
               <div className="portfolio-container relative">
                 <div className="grid grid-cols-12 gap-3">
-                  {/* Project 1 - E-sports Event (Wide) */}
+                  {/* Project 1 - E-sports Event (Wide 16:9) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-8"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '16/9' }}>
                       <img 
                         src={EsportsImage}
                         alt="E-sports Event Production"
@@ -521,7 +521,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="800"
-                        height="600"
+                        height="450"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>E-sports 중계</span>
@@ -530,13 +530,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 2 - Workspace (Square) */}
+                  {/* Project 2 - Workspace (4:3) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-4"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
                         src={WorkspaceImage}
                         alt="Content Creator Workspace"
@@ -553,13 +553,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 3 - Calligraphy (Tall) */}
+                  {/* Project 3 - Calligraphy (16:9) */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-4 row-span-2"
+                    className="portfolio-item group cursor-pointer col-span-4"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-80">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '16/9' }}>
                       <img 
                         src={CalligraphyImage}
                         alt="Typography Design"
@@ -567,7 +567,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="400"
-                        height="600"
+                        height="225"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>브랜드 타이포그래피</span>
@@ -576,13 +576,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 4 - Interview (Medium) */}
+                  {/* Project 4 - Interview (4:3) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-5"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-32">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
                         src={InterviewImage}
                         alt="Corporate Interview"
@@ -590,7 +590,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="500"
-                        height="200"
+                        height="375"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>기업 인터뷰</span>
@@ -599,13 +599,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 5 - Perfume (Small) */}
+                  {/* Project 5 - Perfume (1:1) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-3"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-32">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
                       <img 
                         src={PerfumeImage}
                         alt="Product Photography"
@@ -613,7 +613,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="300"
-                        height="200"
+                        height="300"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>제품 촬영</span>
@@ -622,13 +622,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 6 - Travel Content (Wide) */}
+                  {/* Project 6 - Travel Content (16:9) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-6"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-40">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '16/9' }}>
                       <img 
                         src={TravelImage}
                         alt="Travel Content"
@@ -636,7 +636,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="600"
-                        height="250"
+                        height="338"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>여행 콘텐츠</span>
@@ -645,13 +645,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 7 - Education */}
+                  {/* Project 7 - Education (16:9) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-6"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-40">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '16/9' }}>
                       <img 
                         src={EducationImage}
                         alt="Educational Content"
@@ -659,7 +659,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="600"
-                        height="250"
+                        height="338"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>교육 콘텐츠</span>
@@ -668,13 +668,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 8 - Snapask Office */}
+                  {/* Project 8 - Snapask Office (4:3) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-4"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '4/3' }}>
                       <img 
                         src={SnapaskOfficeImage}
                         alt="Snapask Office Environment"
@@ -691,13 +691,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 9 - Jinair Event */}
+                  {/* Project 9 - Jinair Event (16:9) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-5"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '16/9' }}>
                       <img 
                         src={JinairEventImage}
                         alt="Jinair Aviation Event"
@@ -705,7 +705,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="500"
-                        height="300"
+                        height="281"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>진에어 이벤트</span>
@@ -714,13 +714,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 10 - Snapask Interview */}
+                  {/* Project 10 - Snapask Interview (1:1) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-3"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '1/1' }}>
                       <img 
                         src={SnapaskInterviewImage}
                         alt="Snapask Team Interview"
@@ -737,13 +737,13 @@ export default function CombinedLanding() {
                     </div>
                   </motion.div>
 
-                  {/* Project 11 - Model Portrait */}
+                  {/* Project 11 - Model Portrait (3:2) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-8"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-64">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ aspectRatio: '3/2' }}>
                       <img 
                         src={ModelPortraitImage}
                         alt="Professional Portrait Photography"
@@ -751,7 +751,7 @@ export default function CombinedLanding() {
                         loading="lazy"
                         decoding="async"
                         width="800"
-                        height="400"
+                        height="533"
                       />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>인물 사진 촬영</span>
