@@ -1113,7 +1113,7 @@ export default function CombinedLanding() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">그래픽 제작 시스템</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">그래픽 제작 시스템</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
                           <li>• Python 기반 후보정</li>
