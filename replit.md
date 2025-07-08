@@ -392,8 +392,6 @@ Changelog:
 - July 08, 2025. Unified hover effects and font sizes between MAIN PROJECT and VISUAL GALLERY sections for consistency
 - July 08, 2025. Removed bottom padding from main container while keeping top padding (py-20 → pt-20)
 - July 08, 2025. Changed main project detail modal to display for all portfolio items instead of only project "1", removed footer from main page
-- July 08, 2025. Converted main project modal from full-screen detailed view to simple lightbox style matching gallery items
-- July 08, 2025. Restored detailed project content in lightbox modal with comprehensive project information, achievements, responsibilities, and technologies
 ```
 
 ## User Preferences
