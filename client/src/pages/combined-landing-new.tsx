@@ -764,7 +764,7 @@ export default function CombinedLanding() {
                   <div>
                     <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>보유 자격증</h5>
                     <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
-                      <li>• 컴퓨터그래픽스운용기능사</li>
+                      <li>• 정보처리기사</li>
                       <li>• 멀티미디어콘텐츠제작전문가</li>
                       <li>• Adobe Certified Expert (Premiere Pro)</li>
                     </ul>
