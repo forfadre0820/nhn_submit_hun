@@ -894,12 +894,12 @@ export default function CombinedLanding() {
 
                   {/* Right Column - Content */}
                   <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center">
-                    <motion.h1 
-                      className="text-red-500 uppercase mb-8 lg:mb-12"
+                    <motion.h3 
+                      className="text-red-500 font-light mb-8 lg:mb-12"
                       style={{ 
                         fontFamily: "'Noto Sans', sans-serif",
                         fontWeight: '300',
-                        fontSize: '3rem',
+                        fontSize: '4rem',
                         lineHeight: '1.1',
                         letterSpacing: '-0.02em'
                       }}
@@ -911,8 +911,8 @@ export default function CombinedLanding() {
                       }}
                       viewport={{ once: true, margin: "-100px" }}
                     >
-                      &gt; Collaboration
-                    </motion.h1>
+                      <span>&gt;</span>Collaboration
+                    </motion.h3>
                     
                     <div className="text-gray-700 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
                       <p className="text-[14px] mb-4">
