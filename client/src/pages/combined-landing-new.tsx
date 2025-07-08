@@ -1086,7 +1086,7 @@ export default function CombinedLanding() {
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">주요 역할</h2>
                 </div>
-                <div className="space-y-6 mb-8">
+                <div className="space-y-8 mb-8">
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
                     <div className="border-l-2 border-gray-200 pl-4 mb-3">
@@ -1114,7 +1114,7 @@ export default function CombinedLanding() {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="pt-2">
                     <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
                     <div className="border-l-2 border-gray-200 pl-4 mb-3">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
@@ -1141,7 +1141,7 @@ export default function CombinedLanding() {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="pt-2">
                     <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
                     <div className="border-l-2 border-gray-200 pl-4 mb-3">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
@@ -1170,7 +1170,7 @@ export default function CombinedLanding() {
                 </div>
 
                 {/* 활용 기술 */}
-                <div className="mb-6">
+                <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">활용 기술</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
