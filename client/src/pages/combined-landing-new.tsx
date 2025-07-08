@@ -1057,17 +1057,17 @@ export default function CombinedLanding() {
                 <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 성과</h2>
                 </div>
-                <div className="space-y-6 mb-8">
+                <div className="space-y-4 mb-8">
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
+                    <h3 className="text-sm text-[#282623] mb-1 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">50개 이상 행사에서 일관된 고품질 서비스 제공</p>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
+                    <h3 className="text-sm text-[#282623] mb-1 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
+                    <h3 className="text-sm text-[#282623] mb-1 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
                   </div>
                 </div>
