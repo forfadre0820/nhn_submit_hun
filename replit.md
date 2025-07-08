@@ -388,7 +388,7 @@ Changelog:
 - July 08, 2025. Added new gallery images with authentic content: calligraphy art, beauty portraits, workspace shots, interview scenes, luxury product photography, male portraits, casual portraits, and Jinair promotion materials
 - July 08, 2025. Implemented simple lightbox modal for gallery items with image descriptions, client information, and project details
 - July 08, 2025. Enhanced gallery interaction with hover effects showing client names and project titles
-- July 08, 2025. Changed MAIN PROJECT section to single column layout for better image size control
+- July 08, 2025. Changed MAIN PROJECT section to horizontal scrolling single row layout with fixed width cards (320px) and snap scrolling
 ```
 
 ## User Preferences
