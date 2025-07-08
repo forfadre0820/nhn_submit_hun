@@ -329,6 +329,7 @@ Changelog:
 - July 08, 2025. Tightened Contact section title spacing: reduced line height to 0.9 and letter spacing to -0.02em for compact layout
 - July 08, 2025. Updated Contact section title to "I Keep Challenging Myself to Make Good and Meaningful Content"
 - July 08, 2025. Implemented smooth bottom-to-top ease-out animation for Contact section title using Framer Motion
+- July 08, 2025. Updated Education & Career section with authentic information from user's uploaded images: Sangmyung University graduate education, Samsung Multicampus current position, Snapask Korea previous role, and freelance experience
 ```
 
 ## User Preferences
