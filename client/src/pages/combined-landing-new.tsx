@@ -326,7 +326,7 @@ export default function CombinedLanding() {
                 <div className="lg:col-span-6">
                   <div className="space-y-6">
                     <div>
-                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>콘텐츠 기획</h4>
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>콘텐츠 기획, 제작</h4>
                       <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
                         시청자의 니즈를 파악하고 메시지를 효과적으로 전달하는 
                         콘텐츠 구조와 스토리텔링을 설계합니다.
