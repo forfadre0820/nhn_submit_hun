@@ -897,11 +897,11 @@ export default function CombinedLanding() {
               </div>
 
               {/* Portfolio Grid - Single Row Layout */}
-              <div className="flex gap-6 overflow-x-auto pb-4 mb-8 snap-x snap-mandatory">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {portfolioItems.slice(0, 4).map((item, index) => (
                   <motion.div
                     key={item.id}
-                    className="group cursor-pointer flex-shrink-0 w-80 snap-start"
+                    className="group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                     onClick={() => setSelectedProject(item)}
                     initial={{ opacity: 0, y: 20 }}
