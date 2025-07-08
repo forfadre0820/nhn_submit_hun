@@ -249,6 +249,20 @@ export default function CombinedLanding() {
       alt: "Brand Content Creation",
       title: "브랜드 콘텐츠 제작",
       subtitle: "Brand Content"
+    },
+    {
+      id: "10",
+      src: ModelPortraitImage,
+      alt: "Portrait Photography",
+      title: "인물 촬영",
+      subtitle: "Portrait Photography"
+    },
+    {
+      id: "11",
+      src: SnapaskOfficeImage,
+      alt: "Office Environment",
+      title: "오피스 환경",
+      subtitle: "Office Space"
     }
   ];
 
