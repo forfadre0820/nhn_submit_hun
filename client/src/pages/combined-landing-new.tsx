@@ -703,9 +703,7 @@ export default function CombinedLanding() {
                   <a 
                     href="mailto:buen136003@gmail.com"
                     className={`mt-10 lg:mt-15 text-gray-900 font-medium ${FONT_SIZES.body} border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1 inline-block`}
-                  >
-                    buen136003@gmail.com
-                  </a>
+                  >Contact with Me</a>
                 </div>
               </div>
             </div>
