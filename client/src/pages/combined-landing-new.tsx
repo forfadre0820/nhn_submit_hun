@@ -1047,99 +1047,200 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
+                {/* 개요 */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <h2 className="text-base text-[#282623] font-medium">프로젝트 개요</h2>
+                  <h2 className="text-base text-[#282623] font-medium">개요</h2>
                 </div>
                 <p className="text-sm leading-relaxed text-[#282623] mb-8">
-                  Samsung Multicampus의 교육 플랫폼 전담 PD로서 온·오프라인 통합 행사 시스템을 구축했습니다. 제약환경에서도 안정적인 실시간 스트리밍과 AI 기반 자동화 솔루션을 통해 50+ 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
+                  Samsung Multicampus의 교육 플랫폼 전담 PD로서 온·오프라인 통합 행사 시스템을 구축했습니다. 
+                  제약환경에서도 안정적인 실시간 스트리밍과 AI 기반 자동화 솔루션을 통해 교육 프로그램의 
+                  디지털 전환을 성공적으로 이끌었습니다.
                 </p>
                 
+                {/* 기간 */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <h2 className="text-base text-[#282623] font-medium">기술</h2>
+                  <h2 className="text-base text-[#282623] font-medium">기간</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  <div className="text-center">
-                    <div className="text-sm font-medium text-[#282623]">Python</div>
-                    <div className="text-xs text-[#58534e]">Backend</div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                  <div>
+                    <div className="text-sm font-medium text-[#282623]">2023.03 - 현재</div>
+                    <div className="text-xs text-[#58534e]">프로젝트 전체 기간</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-sm font-medium text-[#282623]">OpenCV</div>
-                    <div className="text-xs text-[#58534e]">Computer Vision</div>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623]">주 3-4회</div>
+                    <div className="text-xs text-[#58534e]">행사 진행 빈도</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-sm font-medium text-[#282623]">실시간 스트리밍</div>
-                    <div className="text-xs text-[#58534e]">Live Stream</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-sm font-medium text-[#282623]">VOD 제작</div>
-                    <div className="text-xs text-[#58534e]">Content</div>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623]">연중무휴</div>
+                    <div className="text-xs text-[#58534e]">시스템 운영</div>
                   </div>
                 </div>
 
+                {/* 성과 */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <h2 className="text-base text-[#282623] font-medium">주요 활동</h2>
+                  <h2 className="text-base text-[#282623] font-medium">성과</h2>
                 </div>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
                     <div>
-                      <h3 className="text-base font-medium text-[#282623] mb-1">AI 기반 자동화 시스템</h3>
-                      <p className="text-sm text-[#58534e]">제약환경에서 안정적인 송출을 위한 자동화 솔루션 구축</p>
+                      <h3 className="text-sm font-medium text-[#282623] mb-1">고객 만족도 NPS 4.5+ 달성</h3>
+                      <p className="text-xs text-[#58534e]">50개 이상 행사에서 일관된 고품질 서비스 제공</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
                     <div>
-                      <h3 className="text-base font-medium text-[#282623] mb-1">실시간 현장 진행</h3>
-                      <p className="text-sm text-[#58534e]">IT 전문성을 바탕으로 한 행사 진행 및 현장 대응</p>
+                      <h3 className="text-sm font-medium text-[#282623] mb-1">시스템 안정성 99.8% 달성</h3>
+                      <p className="text-xs text-[#58534e]">AI 기반 자동화로 장애 발생률 최소화</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
                     <div>
-                      <h3 className="text-base font-medium text-[#282623] mb-1">VOD 제작 및 관리</h3>
-                      <p className="text-sm text-[#58534e]">디지털콘텐츠 관리 시스템 구축 및 운영</p>
+                      <h3 className="text-sm font-medium text-[#282623] mb-1">운영 비용 30% 절감</h3>
+                      <p className="text-xs text-[#58534e]">자동화 시스템 도입으로 인건비 및 운영비 효율화</p>
                     </div>
                   </div>
                 </div>
 
+                {/* 내용 */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <h2 className="text-base text-[#282623] font-medium">성과</h2>
+                  <h2 className="text-base text-[#282623] font-medium">내용</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-[#282623]">NPS 4.5+</div>
-                    <div className="text-xs text-[#58534e]">고객만족도</div>
+                <div className="space-y-4 mb-8">
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2">온·오프라인 통합 교육 플랫폼 구축</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed">
+                      코로나19 이후 변화된 교육 환경에 맞춰 물리적 강의실과 온라인 환경을 seamless하게 
+                      연결하는 하이브리드 교육 시스템을 설계하고 구현했습니다.
+                    </p>
                   </div>
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-[#282623]">50+</div>
-                    <div className="text-xs text-[#58534e]">행사 진행</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-[#282623]">100%</div>
-                    <div className="text-xs text-[#58534e]">안정성</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-[#282623]">100%</div>
-                    <div className="text-xs text-[#58534e]">자동화</div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2">실시간 스트리밍 및 상호작용 시스템</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed">
+                      실시간 Q&A, 투표, 채팅 등 양방향 소통이 가능한 인터랙티브 교육 환경을 조성하여 
+                      원격 교육의 참여도와 몰입도를 극대화했습니다.
+                    </p>
                   </div>
                 </div>
 
+                {/* 역할 */}
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">역할</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3">현장 진행 및 관리</h3>
+                    <ul className="space-y-1 text-sm text-[#58534e]">
+                      <li>• IT 전문성을 바탕으로 한 행사 진행</li>
+                      <li>• 실시간 모니터링 및 현장 대응</li>
+                      <li>• 영상팀/음향팀 디렉팅</li>
+                      <li>• 강사 및 참가자 지원</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3">기술 개발 및 시스템 관리</h3>
+                    <ul className="space-y-1 text-sm text-[#58534e]">
+                      <li>• Python 기반 자동화 시스템 개발</li>
+                      <li>• OpenCV를 활용한 영상 처리</li>
+                      <li>• VOD 제작 및 콘텐츠 관리</li>
+                      <li>• 플랫폼 아키텍처 설계</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* 활용 기술 */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                   <h2 className="text-base text-[#282623] font-medium">활용 기술</h2>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">Python</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">OpenCV</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">실시간 스트리밍</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">VOD 제작</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">프로젝트 관리</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">이벤트 진행</span>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div>
+                    <div className="text-sm font-medium text-[#282623]">Python</div>
+                    <div className="text-xs text-[#58534e]">자동화 시스템 개발</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623]">OpenCV</div>
+                    <div className="text-xs text-[#58534e]">실시간 영상 처리</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623]">OBS Studio</div>
+                    <div className="text-xs text-[#58534e]">방송 송출 관리</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-[#282623]">FFmpeg</div>
+                    <div className="text-xs text-[#58534e]">동영상 인코딩</div>
+                  </div>
+                </div>
+
+                {/* 상세 배경 */}
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">상세 배경</h2>
+                </div>
+                <div className="space-y-4 mb-8">
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2">프로젝트 배경</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed">
+                      코로나19로 인한 교육 패러다임 변화에 대응하여 Samsung Multicampus는 기존 오프라인 
+                      중심의 교육 방식을 온·오프라인 통합 모델로 전환할 필요가 있었습니다. 특히 IT 교육의 
+                      특성상 실습과 이론을 병행해야 하는 상황에서 효과적인 하이브리드 솔루션이 요구되었습니다.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2">핵심 과제</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed">
+                      제한된 인프라 환경에서도 안정적인 실시간 스트리밍을 보장하고, 동시에 양방향 소통이 
+                      가능한 교육 환경을 구축하는 것이 주요 과제였습니다. 또한 강사의 기술적 부담을 최소화하면서도 
+                      고품질의 교육 콘텐츠를 제공할 수 있는 시스템이 필요했습니다.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 인사이트 및 수행 */}
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">인사이트 및 수행</h2>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2">AI 기반 자동화 시스템 구축</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed mb-2">
+                      OpenCV와 Python을 활용하여 실시간 영상 분석 및 자동 카메라 전환 시스템을 개발했습니다. 
+                      강사의 움직임과 제스처를 인식하여 적절한 앵글로 자동 전환되는 시스템으로 
+                      진행자의 개입 없이도 자연스러운 방송이 가능했습니다.
+                    </p>
+                    <div className="bg-gray-50 p-3 rounded text-xs text-[#58534e]">
+                      <strong>핵심 기술:</strong> YOLO 객체 인식, 얼굴 추적 알고리즘, 실시간 영상 스티칭
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2">실시간 품질 모니터링 및 대응</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed mb-2">
+                      네트워크 상태, 스트림 품질, 참가자 접속 현황을 실시간으로 모니터링하는 대시보드를 구축하여 
+                      문제 발생 시 즉시 대응할 수 있는 체계를 마련했습니다. 이를 통해 행사 중단 시간을 
+                      평균 30초 이내로 단축시켰습니다.
+                    </p>
+                    <div className="bg-gray-50 p-3 rounded text-xs text-[#58534e]">
+                      <strong>성과:</strong> 장애 복구 시간 80% 단축, 참가자 만족도 4.5/5.0 달성
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2">콘텐츠 자동 생성 및 관리</h3>
+                    <p className="text-sm text-[#58534e] leading-relaxed mb-2">
+                      행사 진행과 동시에 하이라이트 클립 자동 생성, 자막 추가, VOD 편집까지 자동화하여 
+                      행사 종료 후 1시간 이내에 완성된 교육 콘텐츠를 제공할 수 있는 시스템을 구축했습니다.
+                    </p>
+                    <div className="bg-gray-50 p-3 rounded text-xs text-[#58534e]">
+                      <strong>효과:</strong> 콘텐츠 제작 시간 90% 단축, 후편집 인력 70% 절감
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
