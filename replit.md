@@ -367,6 +367,7 @@ Changelog:
 - July 08, 2025. Reduced excessive spacing between Contact section and Footer to improve layout flow and visual hierarchy
 - July 08, 2025. Standardized Contact section spacing to match other sections using SPACING.sectionGap and consistent margin values
 - July 08, 2025. Removed large cover image from project detail modal, keeping only the 4-image grid for cleaner layout
+- July 08, 2025. Reduced project detail modal header padding from py-12 pt-32 to py-8 pt-16 for more compact layout
 ```
 
 ## User Preferences
