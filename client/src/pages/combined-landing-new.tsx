@@ -1437,7 +1437,7 @@ export default function CombinedLanding() {
           </motion.div>
           
           {/* Footer - Separate section */}
-          <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px]">
+          <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px] max-w-4xl mx-auto px-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <button 
                 type="button" 
