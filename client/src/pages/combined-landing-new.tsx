@@ -980,7 +980,7 @@ export default function CombinedLanding() {
                   </div>
 
                   <div>
-                    <p className="text-[#282623] text-[14px]">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 실시간 기술 이슈 대응, 협력사 커뮤니케이션, AI 기반 그래픽 제작, 자동화 시스템 개발까지 전 과정을 수행했습니다.</p>
+                    <p className="text-[#282623] text-sm tracking-tight leading-relaxed">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 실시간 기술 이슈 대응과 협력사 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 메타버스 플랫폼 신규 고객사 5개를 수주했습니다.</p>
                   </div>
                 </div>
               </motion.div>
@@ -1047,11 +1047,12 @@ export default function CombinedLanding() {
                 </div>
                 <p className="text-sm text-[#282623] mb-8 tracking-tight leading-relaxed">
                   삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당하여 
-                  실시간 기술 이슈 대응, 협력사 커뮤니케이션, 고객 만족도 달성을 수행했습니다.
+                  실시간 기술 이슈 대응과 협력사 커뮤니케이션을 주도했습니다. 
+                  이를 통해 고객 만족도 NPS 4.5+를 달성하고, 메타버스 플랫폼 신규 고객사 5개를 수주했습니다.
                 </p>
 
                 {/* 기간 */}
-                <div className="mb-6">
+                <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">기간</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -1064,10 +1065,10 @@ export default function CombinedLanding() {
                 </div>
 
                 {/* 성과 */}
-                <div className="mb-6">
+                <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">성과</h2>
                 </div>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-6 mb-8">
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">50개 이상 행사에서 일관된 고품질 서비스 제공</p>
@@ -1083,7 +1084,7 @@ export default function CombinedLanding() {
                 </div>
                 
                 {/* 주요 역할 */}
-                <div className="mb-6">
+                <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">주요 역할</h2>
                 </div>
                 <div className="space-y-8 mb-8">
