@@ -370,25 +370,29 @@ body {
   100% { background-position: -200% 0; }
 }
 
-/* Portfolio Grid - Uniform Layout */
+/* Portfolio Grid Masonry Layout */
 .portfolio-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-auto-rows: 15px;
+  gap: 15px;
   margin-bottom: 40px;
 }
 
 @media screen and (max-width: 768px) {
   .portfolio-grid-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 12px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .portfolio-grid-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: block;
+  }
+  
+  .portfolio-item {
+    margin-bottom: 20px;
   }
 }
 
@@ -396,22 +400,9 @@ body {
   border-radius: 12px;
   overflow: hidden;
   background: white;
-  aspect-ratio: 4/3;
-  transition: transform 0.3s ease;
 }
 
 .portfolio-item-inner {
   width: 100%;
   height: 100%;
-}
-
-.portfolio-box {
-  width: 100%;
-  height: 100%;
-}
-
-.portfolio-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
