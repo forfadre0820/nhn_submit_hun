@@ -402,7 +402,7 @@ export default function CombinedLanding() {
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
                         <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울) 대학원(석사)</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>휴학중</span>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 휴학중</span>
                       </div>
                       <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>감성공학과</p>
                     </div>
@@ -434,7 +434,7 @@ export default function CombinedLanding() {
                         <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>삼성 멀티캠퍼스</h5>
                         <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 재직중</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>프로 · PD/AI/FD</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Professional</p>
                       <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
                         콘텐츠 기획 및 제작 총괄, 프로젝트 관리, 라이브 콘텐츠 운영, 클라이언트 협력사 관리
                       </div>
