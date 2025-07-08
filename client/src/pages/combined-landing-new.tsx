@@ -1041,15 +1041,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                {/* 프로젝트 개요 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">프로젝트 개요</h2>
-                </div>
-                <p className="text-sm text-[#282623] mb-8 tracking-tight leading-relaxed">
-                  삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당하여 
-                  실시간 기술 이슈 대응과 협력사 커뮤니케이션을 주도했습니다. 
-                  이를 통해 고객 만족도 NPS 4.5+를 달성하고, 메타버스 플랫폼 신규 고객사 5개를 수주했습니다.
-                </p>
+
 
                 {/* 기간 */}
                 <div className="mb-6 mt-8">
