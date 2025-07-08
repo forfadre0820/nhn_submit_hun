@@ -1252,7 +1252,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* Content Container */}
-            <div className="px-8 lg:px-16 pb-12">
+            <div className="px-8 lg:px-16 pt-[0px] pb-[0px]">
               {/* Project Images Gallery */}
               <motion.div 
                 className="mb-12"
