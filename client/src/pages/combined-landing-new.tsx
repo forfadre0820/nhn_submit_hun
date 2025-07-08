@@ -3,6 +3,8 @@ import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import Snapask from "@assets/Snapask.jpg";
+
 gsap.registerPlugin(ScrollTrigger);
 
 // Constants for consistent styling
@@ -648,7 +650,7 @@ export default function CombinedLanding() {
                       <figure className="overflow-hidden absolute top-0 left-0 h-full w-full">
                         <picture className="absolute inset-0">
                           <img 
-                            src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80"
+                            src={Snapask}
                             loading="lazy" 
                             decoding="async" 
                             draggable="false" 
