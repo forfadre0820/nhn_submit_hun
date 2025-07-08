@@ -393,7 +393,6 @@ Changelog:
 - July 08, 2025. Removed bottom padding from main container while keeping top padding (py-20 → pt-20)
 - July 08, 2025. Changed main project detail modal to display for all portfolio items instead of only project "1", removed footer from main page
 - July 08, 2025. Moved project modal footer outside content container for better layout separation
-- July 08, 2025. Removed unnecessary padding from modal content container to eliminate blank space
 ```
 
 ## User Preferences
