@@ -506,7 +506,7 @@ export default function CombinedLanding() {
               </div>
 
               {/* Portfolio Grid - Absolute Positioned Masonry Layout (8 items) */}
-              <div className="portfolio-container relative" style={{ height: '640px' }}>
+              <div className="portfolio-container relative" style={{ height: '620px' }}>
                 {/* Item 1 - Tall Portrait (left: 0%, top: 0px) */}
                 <motion.div 
                   className="portfolio-item group cursor-pointer absolute"
@@ -703,10 +703,10 @@ export default function CombinedLanding() {
                   </div>
                 </motion.div>
 
-                {/* Item 8 - Square (left: 50%, top: 310px) */}
+                {/* Item 8 - Square (left: 50%, top: 370px) */}
                 <motion.div 
                   className="portfolio-item group cursor-pointer absolute"
-                  style={{ left: '50%', top: '310px', width: '23%' }}
+                  style={{ left: '50%', top: '370px', width: '23%' }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setSelectedImage({ 
