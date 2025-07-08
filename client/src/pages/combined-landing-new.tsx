@@ -984,7 +984,7 @@ export default function CombinedLanding() {
             >
               <div className="w-full aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
                 <img
-                  src={selectedProject.src}
+                  src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=450&fit=crop"
                   alt="온·오프라인 실시간 행사/교육 기획·진행"
                   className="w-full h-full object-cover"
                 />
@@ -1002,14 +1002,14 @@ export default function CombinedLanding() {
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded">
+                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
                     <img
                       src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=450&fit=crop"
                       alt="온라인 행사 진행 모습"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded">
+                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden">
                     <img
                       src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=600&h=450&fit=crop"
                       alt="현장 진행 및 모니터링"
@@ -1030,65 +1030,99 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <h2 className="text-base mb-3 text-[#282623] font-medium">프로젝트 개요</h2>
-                <p className="text-sm leading-relaxed text-[#282623] mb-6">
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">프로젝트 개요</h2>
+                </div>
+                <p className="text-sm leading-relaxed text-[#282623] mb-8">
                   Samsung Multicampus의 교육 플랫폼 전담 PD로서 온·오프라인 통합 행사 시스템을 구축했습니다. 제약환경에서도 안정적인 실시간 스트리밍과 AI 기반 자동화 솔루션을 통해 50+ 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
                 </p>
                 
-                {/* 핵심 역할 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h3 className="text-base mb-2 text-[#282623] font-medium">현장진행 & 관리</h3>
-                    <ul className="space-y-1 text-sm text-[#58534e]">
-                      <li>• IT 전문성 바탕 행사진행</li>
-                      <li>• 실시간 모니터링 및 현장 대응</li>
-                      <li>• 영상팀/음향팀 디렉팅</li>
-                    </ul>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">기술</h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-[#282623]">Python</div>
+                    <div className="text-xs text-[#58534e]">Backend</div>
                   </div>
-                  
-                  <div>
-                    <h3 className="text-base mb-2 text-[#282623] font-medium">기술 개발</h3>
-                    <ul className="space-y-1 text-sm text-[#58534e]">
-                      <li>• Python과 OpenCV 시스템 구축</li>
-                      <li>• VOD 제작 및 콘텐츠 관리</li>
-                      <li>• 제약환경 안정적 송출 구현</li>
-                    </ul>
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-[#282623]">OpenCV</div>
+                    <div className="text-xs text-[#58534e]">Computer Vision</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-[#282623]">실시간 스트리밍</div>
+                    <div className="text-xs text-[#58534e]">Live Stream</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-[#282623]">VOD 제작</div>
+                    <div className="text-xs text-[#58534e]">Content</div>
                   </div>
                 </div>
 
-                {/* 핵심성과 */}
-                <div className="mb-6">
-                  <h3 className="text-base mb-3 text-[#282623] font-medium">핵심성과</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <div className="text-center">
-                      <div className="text-sm font-medium text-[#282623]">NPS 4.5+</div>
-                      <div className="text-xs text-[#58534e]">고객만족도</div>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">주요 활동</h2>
+                </div>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
+                    <div>
+                      <h3 className="text-base font-medium text-[#282623] mb-1">AI 기반 자동화 시스템</h3>
+                      <p className="text-sm text-[#58534e]">제약환경에서 안정적인 송출을 위한 자동화 솔루션 구축</p>
                     </div>
-                    <div className="text-center">
-                      <div className="text-sm font-medium text-[#282623]">50+ 행사</div>
-                      <div className="text-xs text-[#58534e]">진행완료</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
+                    <div>
+                      <h3 className="text-base font-medium text-[#282623] mb-1">실시간 현장 진행</h3>
+                      <p className="text-sm text-[#58534e]">IT 전문성을 바탕으로 한 행사 진행 및 현장 대응</p>
                     </div>
-                    <div className="text-center">
-                      <div className="text-sm font-medium text-[#282623]">실시간</div>
-                      <div className="text-xs text-[#58534e]">솔루션</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-sm font-medium text-[#282623]">자동화</div>
-                      <div className="text-xs text-[#58534e]">시스템</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
+                    <div>
+                      <h3 className="text-base font-medium text-[#282623] mb-1">VOD 제작 및 관리</h3>
+                      <p className="text-sm text-[#58534e]">디지털콘텐츠 관리 시스템 구축 및 운영</p>
                     </div>
                   </div>
                 </div>
 
-                {/* 기술 스택 */}
-                <div>
-                  <h3 className="text-base mb-3 text-[#282623] font-medium">활용 기술</h3>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">Python</span>
-                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">OpenCV</span>
-                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">실시간 스트리밍</span>
-                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">VOD 제작</span>
-                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">프로젝트 관리</span>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">성과</h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-[#282623]">NPS 4.5+</div>
+                    <div className="text-xs text-[#58534e]">고객만족도</div>
                   </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-[#282623]">50+</div>
+                    <div className="text-xs text-[#58534e]">행사 진행</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-[#282623]">100%</div>
+                    <div className="text-xs text-[#58534e]">안정성</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-[#282623]">100%</div>
+                    <div className="text-xs text-[#58534e]">자동화</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <h2 className="text-base text-[#282623] font-medium">활용 기술</h2>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">Python</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">OpenCV</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">실시간 스트리밍</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">VOD 제작</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">프로젝트 관리</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-sm rounded">이벤트 진행</span>
                 </div>
               </motion.div>
 
