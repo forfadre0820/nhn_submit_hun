@@ -991,7 +991,7 @@ export default function CombinedLanding() {
               </div>
 
               {/* MAKE IT BETTER Section */}
-              <div className="bg-white py-16 lg:py-24">
+              <div className="bg-white py-16 lg:py-24 pt-[0px] pb-[0px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]">
                   {/* Left Column - Image */}
                   <div className="relative">
@@ -1136,7 +1136,6 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
-      
       {/* Project Detail Modal - Professional Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
