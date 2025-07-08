@@ -318,6 +318,7 @@ Changelog:
 - July 08, 2025. Standardized typography hierarchy: hero (62px), section titles (text-4xl lg:text-5xl), headings (text-xl lg:text-2xl), body (text-base), small (text-sm), tiny (text-xs)
 - July 08, 2025. Improved code maintainability with centralized styling constants and consistent component structure
 - July 08, 2025. Added custom Recia Serif Display Bold font for Contact section title
+- July 08, 2025. Changed Contact section title font to League Mono Medium for modern monospace appearance
 - July 08, 2025. Updated Contact section title to "I Keep Challenging Myself to Make Good and Meaningful Content"
 - July 08, 2025. Implemented smooth bottom-to-top ease-out animation for Contact section title using Framer Motion
 ```
