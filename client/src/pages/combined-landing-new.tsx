@@ -896,11 +896,10 @@ export default function CombinedLanding() {
           </div>
         </div>
       </footer>
-
       {/* Project Detail Modal - Professional Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
-          className="fixed inset-0 bg-white z-[99999] overflow-y-auto"
+          className="fixed inset-0 bg-white z-[99999] overflow-y-auto text-[14px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -1146,7 +1145,6 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
-      
       {/* Other Projects - Simple Modal */}
       {selectedProject && selectedProject.id !== "1" && (
         <motion.div 
