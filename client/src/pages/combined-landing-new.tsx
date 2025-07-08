@@ -15,6 +15,7 @@ import SnapaskOfficeImage from "@assets/image_1751953847874.png";
 import JinairEventImage from "@assets/image_1751953850208.png";
 import SnapaskInterviewImage from "@assets/image_1751953852561.png";
 import ModelPortraitImage from "@assets/image_1751953866736.png";
+import BeautyBrandingImage from "@assets/image_1751956100933.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,57 +132,18 @@ export default function CombinedLanding() {
     };
   }, []);
 
-  // Masonry layout effect
+  // Image loading optimization effect
   useEffect(() => {
-    const masonryLayout = () => {
-      const container = document.querySelector('.portfolio-grid-container');
-      if (!container) return;
-
-      const containerStyle = getComputedStyle(container);
-      const autoRows = parseInt(containerStyle.getPropertyValue('grid-auto-rows'));
-      const gap = parseInt(containerStyle.getPropertyValue('gap'));
-
-      const items = document.querySelectorAll('.portfolio-item');
-      items.forEach((item) => {
-        const inner = item.querySelector('.portfolio-item-inner');
-        if (inner) {
-          const itemHeight = inner.scrollHeight;
-          const rowSpan = Math.ceil((itemHeight + gap) / (autoRows + gap));
-          (item as HTMLElement).style.gridRowEnd = `span ${rowSpan}`;
-        }
-      });
-    };
-
-    // Initial layout
-    setTimeout(masonryLayout, 100);
+    // Preload portfolio images for better performance
+    const images = [
+      EsportsImage, WorkspaceImage, CalligraphyImage, InterviewImage, 
+      PerfumeImage, TravelImage, EducationImage, SnapaskInterviewImage, BeautyBrandingImage
+    ];
     
-    // Listen for events
-    const handleEvents = () => {
-      setTimeout(masonryLayout, 100);
-    };
-    
-    window.addEventListener('resize', handleEvents);
-    window.addEventListener('load', handleEvents);
-    
-    // Setup intersection observer for when images load
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(masonryLayout, 200);
-        }
-      });
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
     });
-
-    const portfolioSection = document.querySelector('.portfolio-grid-container');
-    if (portfolioSection) {
-      observer.observe(portfolioSection);
-    }
-    
-    return () => {
-      window.removeEventListener('resize', handleEvents);
-      window.removeEventListener('load', handleEvents);
-      observer.disconnect();
-    };
   }, []);
 
   // Sound control handlers
@@ -771,6 +733,33 @@ export default function CombinedLanding() {
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>팀 인터뷰</span>
                         <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Team Interview</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="portfolio-item group cursor-pointer"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: BeautyBrandingImage, 
+                    alt: "Beauty Branding", 
+                    title: "뷰티 브랜딩" 
+                  })}
+                >
+                  <div className="portfolio-item-inner">
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                      <img 
+                        src={BeautyBrandingImage}
+                        alt="Beauty Branding"
+                        className="w-full h-auto object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>뷰티 브랜딩</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Beauty Branding</span>
                       </div>
                     </div>
                   </div>
