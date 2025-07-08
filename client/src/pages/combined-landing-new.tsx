@@ -1056,7 +1056,7 @@ export default function CombinedLanding() {
                 </div>
 
                 {/* 성과 */}
-                <div className="mb-6 mt-8">
+                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 성과</h2>
                 </div>
                 <div className="space-y-5 mb-8">
@@ -1075,7 +1075,7 @@ export default function CombinedLanding() {
                 </div>
                 
                 {/* 주요 역할 */}
-                <div className="mb-6 mt-8">
+                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 주요 역할</h2>
                 </div>
                 <div className="space-y-5 mb-8">
@@ -1162,7 +1162,7 @@ export default function CombinedLanding() {
                 </div>
 
                 {/* 활용 기술 */}
-                <div className="mb-6 mt-8">
+                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 활용 기술</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
