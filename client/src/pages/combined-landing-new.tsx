@@ -1086,7 +1086,7 @@ export default function CombinedLanding() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">협력사 커뮤니케이션</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li className="mt-[4px] mb-[4px]">• 영상: 앵글, 트랜지션 품질 확보</li>
                           <li>• 음향: 밸런스 조정 및 품질 관리</li>
