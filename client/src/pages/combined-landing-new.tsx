@@ -150,9 +150,11 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
               decoding="async"
               onLoad={(e) => handleImageLoad(item.id, e)}
             />
-            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
-              <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>{item.subtitle}</span>
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                <span className={`subtitle block ${FONT_SIZES.small} opacity-90`}>{item.subtitle}</span>
+              </div>
             </div>
           </div>
         </motion.div>
