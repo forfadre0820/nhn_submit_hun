@@ -994,6 +994,35 @@ export default function CombinedLanding() {
             {/* Content Container */}
             <div className="px-8 lg:px-16 pb-12">
 
+              {/* Additional Project Images */}
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded">
+                    <img
+                      src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=450&fit=crop"
+                      alt="온라인 행사 진행 모습"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded">
+                    <img
+                      src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=600&h=450&fit=crop"
+                      alt="현장 진행 및 모니터링"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                <div className="text-center mb-8">
+                  <p className="text-sm text-[#58534e] italic">현장진행부터 기술구현까지</p>
+                </div>
+              </motion.div>
+
               {/* Project Details */}
               <motion.div 
                 className="mb-12"
@@ -1003,7 +1032,7 @@ export default function CombinedLanding() {
               >
                 <h2 className="text-base mb-3 text-[#282623] font-medium">프로젝트 개요</h2>
                 <p className="text-sm leading-relaxed text-[#282623] mb-6">
-                  Python과 OpenCV를 활용한 실시간 처리 아키텍처를 구축하여 50+ 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
+                  Samsung Multicampus의 교육 플랫폼 전담 PD로서 온·오프라인 통합 행사 시스템을 구축했습니다. 제약환경에서도 안정적인 실시간 스트리밍과 AI 기반 자동화 솔루션을 통해 50+ 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
                 </p>
                 
                 {/* 핵심 역할 */}
