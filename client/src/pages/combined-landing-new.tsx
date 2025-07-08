@@ -4,6 +4,17 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Snapask from "@assets/Snapask.jpg";
+import EsportsImage from "@assets/image_1751953797146.png";
+import WorkspaceImage from "@assets/image_1751953806704.png";
+import CalligraphyImage from "@assets/image_1751953823504.png";
+import InterviewImage from "@assets/image_1751953828507.png";
+import PerfumeImage from "@assets/image_1751953840186.png";
+import TravelImage from "@assets/image_1751953842744.png";
+import EducationImage from "@assets/image_1751953845629.png";
+import SnapaskOfficeImage from "@assets/image_1751953847874.png";
+import JinairEventImage from "@assets/image_1751953850208.png";
+import SnapaskInterviewImage from "@assets/image_1751953852561.png";
+import ModelPortraitImage from "@assets/image_1751953866736.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -493,126 +504,258 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Portfolio Grid - Flexible Masonry Layout */}
+              {/* Portfolio Grid - Optimized Layout with Real Images */}
               <div className="portfolio-container relative">
-                <div className="grid grid-cols-4 gap-4">
-                  {/* Project 1 - Wide horizontal */}
+                <div className="grid grid-cols-12 gap-3">
+                  {/* Project 1 - E-sports Event (Wide) */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-2"
+                    className="portfolio-item group cursor-pointer col-span-8"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                      <img 
+                        src={EsportsImage}
+                        alt="E-sports Event Production"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="800"
+                        height="600"
+                      />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>콘텐츠 기획</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Strategy & Planning</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>E-sports 중계</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Live Broadcasting</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 2 - Square */}
+                  {/* Project 2 - Workspace (Square) */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer"
+                    className="portfolio-item group cursor-pointer col-span-4"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-green-500 to-teal-600"></div>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                      <img 
+                        src={WorkspaceImage}
+                        alt="Content Creator Workspace"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="400"
+                        height="300"
+                      />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>교육 콘텐츠</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Education</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>작업 공간 설계</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Workspace Design</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 3 - Tall vertical */}
+                  {/* Project 3 - Calligraphy (Tall) */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer row-span-2"
+                    className="portfolio-item group cursor-pointer col-span-4 row-span-2"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '416px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-orange-500 to-red-600"></div>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-80">
+                      <img 
+                        src={CalligraphyImage}
+                        alt="Typography Design"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="400"
+                        height="600"
+                      />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>영상 제작</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Video Production</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>브랜드 타이포그래피</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Brand Typography</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 4 - Square */}
+                  {/* Project 4 - Interview (Medium) */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer"
+                    className="portfolio-item group cursor-pointer col-span-5"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-purple-500 to-pink-600"></div>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-32">
+                      <img 
+                        src={InterviewImage}
+                        alt="Corporate Interview"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="500"
+                        height="200"
+                      />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>YouTube 채널</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Channel Management</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>기업 인터뷰</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Corporate Interview</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 5 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-indigo-500 to-blue-600"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>브랜드 컨설팅</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Brand Strategy</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Project 6 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-yellow-500 to-orange-600"></div>
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>워크샵 운영</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Workshop</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Row 3: Bottom row */}
-                  {/* Project 7 - Wide horizontal */}
+                  {/* Project 5 - Perfume (Small) */}
                   <motion.div 
                     className="portfolio-item group cursor-pointer col-span-3"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-red-500 to-pink-600"></div>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-32">
+                      <img 
+                        src={PerfumeImage}
+                        alt="Product Photography"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="300"
+                        height="200"
+                      />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>라이브 스트리밍</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Live Content</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>제품 촬영</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Product Photography</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Project 8 - Square */}
+                  {/* Project 6 - Travel Content (Wide) */}
                   <motion.div 
-                    className="portfolio-item group cursor-pointer"
+                    className="portfolio-item group cursor-pointer col-span-6"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg" style={{ height: '200px' }}>
-                      <div className="portfolio-image w-full h-full bg-gradient-to-br from-teal-500 to-cyan-600"></div>
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-40">
+                      <img 
+                        src={TravelImage}
+                        alt="Travel Content"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="250"
+                      />
                       <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium`}>디지털 마케팅</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Digital Marketing</span>
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>여행 콘텐츠</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Travel Content</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 7 - Education */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer col-span-6"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-40">
+                      <img 
+                        src={EducationImage}
+                        alt="Educational Content"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="250"
+                      />
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>교육 콘텐츠</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Educational Content</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 8 - Snapask Office */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer col-span-4"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                      <img 
+                        src={SnapaskOfficeImage}
+                        alt="Snapask Office Environment"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="400"
+                        height="300"
+                      />
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>사무실 환경 촬영</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Office Documentation</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 9 - Jinair Event */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer col-span-5"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                      <img 
+                        src={JinairEventImage}
+                        alt="Jinair Aviation Event"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="500"
+                        height="300"
+                      />
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>진에어 이벤트</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Aviation Event</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 10 - Snapask Interview */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer col-span-3"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-48">
+                      <img 
+                        src={SnapaskInterviewImage}
+                        alt="Snapask Team Interview"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="300"
+                        height="300"
+                      />
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>팀 인터뷰</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Team Interview</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Project 11 - Model Portrait */}
+                  <motion.div 
+                    className="portfolio-item group cursor-pointer col-span-8"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-64">
+                      <img 
+                        src={ModelPortraitImage}
+                        alt="Professional Portrait Photography"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width="800"
+                        height="400"
+                      />
+                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>인물 사진 촬영</span>
+                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Portrait Photography</span>
                       </div>
                     </div>
                   </motion.div>
