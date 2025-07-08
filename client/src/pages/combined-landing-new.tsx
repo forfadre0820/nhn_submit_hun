@@ -505,236 +505,231 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Portfolio Grid - Masonry Layout (8 items) */}
-              <div className="portfolio-container relative">
-                {/* CSS Grid with 4 columns for masonry layout */}
-                <div className="grid grid-cols-4 gap-3 portfolio-masonry">
-                  {/* Column 1 - Position: left: 0% */}
-                  {/* Item 1 - Tall Portrait */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-1 row-span-2"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: EsportsImage, 
-                      alt: "E-sports Event Production", 
-                      title: "E-sports 중계" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-full">
-                      <img 
-                        src={EsportsImage}
-                        alt="E-sports Event Production"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '800/1166' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>E-sports 중계</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Live Broadcasting</span>
-                      </div>
+              {/* Portfolio Grid - Absolute Positioned Masonry Layout (8 items) */}
+              <div className="portfolio-container relative" style={{ height: '640px' }}>
+                {/* Item 1 - Tall Portrait (left: 0%, top: 0px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '0%', top: '0px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: EsportsImage, 
+                    alt: "E-sports Event Production", 
+                    title: "E-sports 중계" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={EsportsImage}
+                      alt="E-sports Event Production"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '800/1166', height: '350px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>E-sports 중계</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Live Broadcasting</span>
                     </div>
-                  </motion.div>
+                  </div>
+                </motion.div>
 
-                  {/* Column 2 - Position: left: 25% */}
-                  {/* Item 2 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-1"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: WorkspaceImage, 
-                      alt: "Content Creator Workspace", 
-                      title: "작업 공간 설계" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
-                      <img 
-                        src={WorkspaceImage}
-                        alt="Content Creator Workspace"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '800/775' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>작업 공간 설계</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Workspace Design</span>
-                      </div>
+                {/* Item 2 - Square (left: 25%, top: 0px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '25%', top: '0px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: WorkspaceImage, 
+                    alt: "Content Creator Workspace", 
+                    title: "작업 공간 설계" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={WorkspaceImage}
+                      alt="Content Creator Workspace"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '800/775', height: '220px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>작업 공간 설계</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Workspace Design</span>
                     </div>
-                  </motion.div>
+                  </div>
+                </motion.div>
 
-                  {/* Column 3 - Position: left: 50% */}
-                  {/* Item 3 - Wide Rectangle */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-2"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: CalligraphyImage, 
-                      alt: "Typography Design", 
-                      title: "브랜드 타이포그래피" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
-                      <img 
-                        src={CalligraphyImage}
-                        alt="Typography Design"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '16/9' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>브랜드 타이포그래피</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Brand Typography</span>
-                      </div>
+                {/* Item 3 - Tall Portrait (left: 50%, top: 0px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '50%', top: '0px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: CalligraphyImage, 
+                    alt: "Typography Design", 
+                    title: "브랜드 타이포그래피" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={CalligraphyImage}
+                      alt="Typography Design"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '800/1166', height: '290px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>브랜드 타이포그래피</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Brand Typography</span>
                     </div>
-                  </motion.div>
+                  </div>
+                </motion.div>
 
-                  {/* Row 2 */}
-                  {/* Column 4 - Position: left: 75% */}
-                  {/* Item 4 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-1"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: InterviewImage, 
-                      alt: "Corporate Interview", 
-                      title: "기업 인터뷰" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
-                      <img 
-                        src={InterviewImage}
-                        alt="Corporate Interview"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '800/775' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>기업 인터뷰</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Corporate Interview</span>
-                      </div>
+                {/* Item 4 - Square (left: 75%, top: 0px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '75%', top: '0px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: InterviewImage, 
+                    alt: "Corporate Interview", 
+                    title: "기업 인터뷰" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={InterviewImage}
+                      alt="Corporate Interview"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '800/775', height: '180px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>기업 인터뷰</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Corporate Interview</span>
                     </div>
-                  </motion.div>
+                  </div>
+                </motion.div>
 
-                  {/* Column 2 - Position: left: 25% (second row) */}
-                  {/* Item 5 - Tall Portrait */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-1 row-span-2"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: PerfumeImage, 
-                      alt: "Product Photography", 
-                      title: "제품 촬영" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-full">
-                      <img 
-                        src={PerfumeImage}
-                        alt="Product Photography"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '800/1166' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>제품 촬영</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Product Photography</span>
-                      </div>
+                {/* Item 5 - Tall Portrait (left: 25%, top: 240px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '25%', top: '240px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: PerfumeImage, 
+                    alt: "Product Photography", 
+                    title: "제품 촬영" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={PerfumeImage}
+                      alt="Product Photography"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '800/1166', height: '390px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>제품 촬영</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Product Photography</span>
                     </div>
-                  </motion.div>
+                  </div>
+                </motion.div>
 
-                  {/* Column 3 - Position: left: 50% (second row) */}
-                  {/* Item 6 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-1"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: TravelImage, 
-                      alt: "Travel Content", 
-                      title: "여행 콘텐츠" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
-                      <img 
-                        src={TravelImage}
-                        alt="Travel Content"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '1/1' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>여행 콘텐츠</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Travel Content</span>
-                      </div>
+                {/* Item 6 - Tall Portrait (left: 75%, top: 200px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '75%', top: '200px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: TravelImage, 
+                    alt: "Travel Content", 
+                    title: "여행 콘텐츠" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={TravelImage}
+                      alt="Travel Content"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '800/1166', height: '430px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>여행 콘텐츠</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Travel Content</span>
                     </div>
-                  </motion.div>
+                  </div>
+                </motion.div>
 
-                  {/* Column 4 - Position: left: 75% (second row) */}
-                  {/* Item 7 - Tall Portrait */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-1 row-span-2"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: EducationImage, 
-                      alt: "Educational Content", 
-                      title: "교육 콘텐츠" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg h-full">
-                      <img 
-                        src={EducationImage}
-                        alt="Educational Content"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '800/1166' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>교육 콘텐츠</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Educational Content</span>
-                      </div>
+                {/* Item 7 - Square (left: 0%, top: 370px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '0%', top: '370px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: EducationImage, 
+                    alt: "Educational Content", 
+                    title: "교육 콘텐츠" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={EducationImage}
+                      alt="Educational Content"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '800/775', height: '200px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>교육 콘텐츠</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Educational Content</span>
                     </div>
-                  </motion.div>
+                  </div>
+                </motion.div>
 
-                  {/* Row 3 */}
-                  {/* Column 1 - Position: left: 0% (third row) */}
-                  {/* Item 8 - Square */}
-                  <motion.div 
-                    className="portfolio-item group cursor-pointer col-span-1"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setSelectedImage({ 
-                      src: SnapaskInterviewImage, 
-                      alt: "Snapask Team Interview", 
-                      title: "팀 인터뷰" 
-                    })}
-                  >
-                    <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
-                      <img 
-                        src={SnapaskInterviewImage}
-                        alt="Snapask Team Interview"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        style={{ aspectRatio: '800/775' }}
-                      />
-                      <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>팀 인터뷰</span>
-                        <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Team Interview</span>
-                      </div>
+                {/* Item 8 - Square (left: 50%, top: 310px) */}
+                <motion.div 
+                  className="portfolio-item group cursor-pointer absolute"
+                  style={{ left: '50%', top: '310px', width: '23%' }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedImage({ 
+                    src: SnapaskInterviewImage, 
+                    alt: "Snapask Team Interview", 
+                    title: "팀 인터뷰" 
+                  })}
+                >
+                  <div className="portfolio-box relative overflow-hidden bg-gray-100 rounded-lg">
+                    <img 
+                      src={SnapaskInterviewImage}
+                      alt="Snapask Team Interview"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ aspectRatio: '1/1', height: '180px' }}
+                    />
+                    <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>팀 인터뷰</span>
+                      <span className={`subtitle block ${FONT_SIZES.small} opacity-80`}>Team Interview</span>
                     </div>
-                  </motion.div>
-                </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
