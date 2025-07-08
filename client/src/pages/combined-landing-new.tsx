@@ -956,8 +956,8 @@ export default function CombinedLanding() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
-                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">온·오프라인 실시간 행사/
-                    교육 기획·운영</h1>
+                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">삼성SDS | 온·오프라인 실시간 행사/교육 기획·진행
+                    <br />+ 게임형 메타버스 기반 실시간 라이브 콘텐츠 환경 구축</h1>
                   </div>
                 </div>
 
@@ -967,22 +967,24 @@ export default function CombinedLanding() {
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
                       <p className="text-sm text-[#282623]">행사, 교육 기획
-</p>
+메타버스 콘텐츠</p>
                     </div>
                     
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
-                      <p className="text-sm text-[#282623]">Samsung</p>
+                      <p className="text-sm text-[#282623]">삼성SDS
+NH농협, 삼성교육재단</p>
                     </div>
                     
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
-                      <p className="text-sm text-[#282623]">기획, 운영</p>
+                      <p className="text-sm text-[#282623]">기획, 운영
+플랫폼 구축</p>
                     </div>
                   </div>
 
                   <div>
-                    <p className="text-[#282623] text-[14px]">삼성 그룹의 다양한 이벤트와 교육 프로그램을 온라인과 오프라인으로 기획 및 운영하였습니다 30+ 이상의 행사, 교육을 담당하며 기획, 현장 운영, 기술 시스템 개발까지 전반적인 업무를 수행했습니다.</p>
+                    <p className="text-[#282623] text-[14px]">삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행과 게임형 메타버스 기반 라이브 콘텐츠 환경 구축 프로젝트를 담당했습니다. 실시간 기술 이슈 대응, 협력사 커뮤니케이션, AI 기반 그래픽 제작, 자동화 시스템 개발까지 전 과정을 수행했습니다.</p>
                   </div>
                 </div>
               </motion.div>
@@ -1043,104 +1045,63 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                {/* 개요 */}
+                {/* 프로젝트 1: 삼성SDS */}
                 <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">개요</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">프로젝트 1: 삼성SDS | 온·오프라인 실시간 행사/교육 기획·진행</h2>
                 </div>
-                <p className="text-sm text-[#282623] mb-8 tracking-tight leading-relaxed">삼성그룹 내 30개 이상의 온·오프라인 이벤트 및 교육 프로그램을 기획·운영하며, 그래픽 제작, 자동화 시스템 도입, 하드웨어 통합 대응 등 전 과정을 수행하며 온라인 프로그램 5개 기업 판매 성공 및 오프라인 이벤트, 교육 NPS 4.5+ 점을 달성했습니다.</p>
+                <div className="bg-gray-50 p-4 rounded mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">기간: 2023.09 ~ 2024.11 (14개월)</div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">성과: NPS 지수 4.5 이상 달성</div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                    제작 역량을 기반으로 한 실시간 기술 이슈 대응, 직접 진행 및 운영을 통해 고객 만족도 달성
+                  </p>
+                </div>
+
+                {/* 프로젝트 2: 메타버스 */}
+                <div className="mb-6">
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">프로젝트 2: 게임형 메타버스 기반 실시간 라이브 콘텐츠 환경 구축</h2>
+                </div>
+                <div className="bg-gray-50 p-4 rounded mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">기간: 2023.01 ~ 2023.08 (6개월)</div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">성과: NH농협, 삼성교육재단 등 5개 고객사 수주</div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                    자체 플랫폼 확장 기획을 통해 실질적인 임직원 참여 데이터 확보 및 실시간 인터랙션 기반 몰입도 확보
+                  </p>
+                </div>
                 
-                {/* 기간 */}
+                {/* 통합 역할 */}
                 <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">기간</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                  <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">2023.03 - 현재</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">프로젝트 전체 기간</div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">주 3-4회</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">행사 진행 빈도</div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">50+ 행사</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">총 진행 건수</div>
-                  </div>
-                </div>
-
-                {/* 성과 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">성과</h2>
-                </div>
-                <div className="space-y-4 mb-8">
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">50개 이상 행사에서 일관된 고품질 서비스 제공으로 높은 만족도 유지</p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">현장 장애 대응 시간 30초 이내</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자체 개발한 모니터링 시스템으로 실시간 문제 감지 및 즉시 해결</p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
-                  </div>
-                </div>
-
-                {/* 내용 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">내용</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">주요 역할 및 업무</h2>
                 </div>
                 <div className="space-y-6 mb-8">
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">온라인 교육 플랫폼 운영</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                      폐쇄망 환경에서 실시간 자막 생성, 채팅 로그 관리, 콘텐츠 제어 시스템을 구축하고 운영했습니다. 
-                      벤더사와의 원활한 커뮤니케이션을 통해 기술적 이슈를 사전에 예방하고 해결했습니다.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">오프라인 현장 행사 관리</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                      대규모 오프라인 행사의 현장 통제와 전체적인 진행을 담당했습니다. 
-                      음악, 화면 전환 등을 실시간으로 제어할 수 있는 프로그램을 직접 개발하여 현장에서 활용했습니다.
-                    </p>
-                  </div>
-                </div>
-
-                {/* 역할 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">역할</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">온라인 환경</h3>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 1: 삼성SDS 역할</h3>
                     <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li className="tracking-tight leading-relaxed">• 폐쇄망 환경 실시간 자막 관리</li>
-                      <li className="tracking-tight leading-relaxed">• 채팅 로그 모니터링 및 관리</li>
-                      <li className="tracking-tight leading-relaxed">• 콘텐츠 제어 시스템 운영</li>
-                      <li className="tracking-tight leading-relaxed">• 벤더사 기술 커뮤니케이션</li>
-                      <li className="tracking-tight leading-relaxed">• 그래픽 리소스 제작 및 관리</li>
+                      <li className="tracking-tight leading-relaxed">• 대규모 행사 시 <strong>협력사(영상, 음향, 송출)</strong>와의 커뮤니케이션 주도하여 앵글, 트랜지션, 음향 밸런스 등 품질 확보</li>
+                      <li className="tracking-tight leading-relaxed">• <strong>Midjourney·Stable Diffusion ComfyUI</strong>으로 그래픽 리소스 생성 및 <strong>Python 기반 후보정</strong>으로 인공지능 생성 흔적을 최소화한 실사용급 그래픽 자원 완성</li>
+                      <li className="tracking-tight leading-relaxed">• <strong>Python, OCR 화면 인식 자동화 프로그램</strong>을 개발하여 영상, 음악 송출 타이밍 오류 최소화</li>
+                      <li className="tracking-tight leading-relaxed">• 출연자 돌발 상황(지각, 건강 이상 등)에 대비해 <strong>큐시트 수정 및 직접 대체 진행</strong></li>
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">오프라인 환경</h3>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 2: 메타버스 플랫폼 역할</h3>
                     <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li className="tracking-tight leading-relaxed">• 현장 전체 통제 및 관리</li>
-                      <li className="tracking-tight leading-relaxed">• 음악 및 화면 실시간 제어</li>
-                      <li className="tracking-tight leading-relaxed">• 현장 제어 프로그램 개발</li>
-                      <li className="tracking-tight leading-relaxed">• 그래픽 리소스 제작</li>
-                      <li className="tracking-tight leading-relaxed">• 장비 및 인력 관리</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">공통 업무</h3>
-                    <ul className="space-y-2 text-sm text-[#58534e]">
-                      <li className="tracking-tight leading-relaxed">• 직접 진행 (MC/사회)</li>
-                      <li className="tracking-tight leading-relaxed">• 출연자 커뮤니케이션</li>
-                      <li className="tracking-tight leading-relaxed">• 실시간 변수 대응</li>
-                      <li className="tracking-tight leading-relaxed">• 현장 문제 해결</li>
-                      <li className="tracking-tight leading-relaxed">• 행사 전체 품질 관리</li>
+                      <li className="tracking-tight leading-relaxed">• 자체 플랫폼을 확장 기획하여 실질적인 임직원들의 참여 데이터 확보</li>
+                      <li className="tracking-tight leading-relaxed">• 현실 조직 공간을 반영한 맵 디자인 제작해 사용자의 자율 탐색 유도</li>
+                      <li className="tracking-tight leading-relaxed">• 의도적인 퀘스트 시스템 미구현으로 실시간 진행자 인터랙션으로 몰입도와 흐름 동시 확보</li>
+                      <li className="tracking-tight leading-relaxed">• <strong>SnowFlake 기반 행동 로그 수집 구조 설계</strong> 및 API 연동 협의</li>
                     </ul>
                   </div>
                 </div>
@@ -1149,74 +1110,28 @@ export default function CombinedLanding() {
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">활용 기술</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">Python</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 개발</div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 1: 삼성SDS 기술</h3>
+                    <ul className="space-y-2 text-sm text-[#58534e]">
+                      <li className="tracking-tight leading-relaxed">• <strong>Premiere Pro, After Effects</strong>를 활용한 VOD 자료 재편집 후 내부 플랫폼 업로드</li>
+                      <li className="tracking-tight leading-relaxed">• <strong>Photoshop, 생성형 AI (Stable Diffusion, Midjourney)</strong> 그래픽 리소스 생성</li>
+                      <li className="tracking-tight leading-relaxed">• 출연자의 자연스러운 퍼포먼스를 유도하기 위한 사전 커뮤니케이션</li>
+                      <li className="tracking-tight leading-relaxed">• <strong>Python, OCR</strong> 기반 화면 인식 자동화 프로그램 개발</li>
+                    </ul>
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">OBS Studio</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">방송 송출 관리</div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">Adobe Suite</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">그래픽 리소스 제작</div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">Web Development</div>
-                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">현장 제어 시스템</div>
-                  </div>
-                </div>
-
-                {/* 상세 배경 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">상세 배경</h2>
-                </div>
-                <div className="space-y-4 mb-8">
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">프로젝트 배경</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                      Samsung Multicampus에서 다양한 형태의 교육과 행사가 필요해짐에 따라, 온라인과 오프라인을 구분하여 
-                      각각의 환경에 최적화된 솔루션을 개발하고 직접 운영하는 역할을 맡게 되었습니다.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">핵심 과제</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                      온라인에서는 폐쇄망이라는 제약 환경에서도 원활한 교육이 이루어질 수 있도록 하는 것이었고, 
-                      오프라인에서는 대규모 행사를 안정적으로 진행하면서 실시간으로 발생하는 다양한 변수들에 즉시 대응하는 것이었습니다.
-                    </p>
+                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">프로젝트 2: 메타버스 플랫폼 기술</h3>
+                    <ul className="space-y-2 text-sm text-[#58534e]">
+                      <li className="tracking-tight leading-relaxed">• <strong>Photoshop, Midjourney</strong> 활용 그래픽 리소스 생성</li>
+                      <li className="tracking-tight leading-relaxed">• <strong>SnowFlake 기반 행동 로그 수집 구조 설계</strong> 및 API 연동 협의</li>
+                      <li className="tracking-tight leading-relaxed">• 인터랙션 기반 실시간 콘텐츠 운영, 진행</li>
+                      <li className="tracking-tight leading-relaxed">• 게임형 메타버스 환경 맵 디자인 및 UX 설계</li>
+                    </ul>
                   </div>
                 </div>
 
-                {/* 인사이트 및 수행 */}
-                <div className="mb-6">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">인사이트 및 수행</h2>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">폐쇄망 환경 최적화 솔루션</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
-                      인터넷이 제한된 폐쇄망 환경에서도 실시간 자막, 채팅 관리, 콘텐츠 제어가 가능한 독립적인 시스템을 구축했습니다. 
-                      Python을 활용해 로컬 네트워크에서 작동하는 통합 관리 도구를 개발하여 안정적인 온라인 교육을 실현했습니다.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">현장 제어 자동화 시스템</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
-                      오프라인 행사에서 음악 재생, 화면 전환, 조명 제어 등을 통합적으로 관리할 수 있는 웹 기반 제어 시스템을 개발했습니다. 
-                      이를 통해 진행자 혼자서도 복잡한 현장 연출을 실시간으로 컨트롤할 수 있게 되었습니다.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 변수 대응 체계</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
-                      출연자 변경, 일정 조정, 기술적 문제 등 예상치 못한 상황에 즉시 대응할 수 있는 
-                      매뉴얼과 백업 시스템을 구축했습니다. 특히 출연자와의 원활한 커뮤니케이션을 통해 
-                      행사 품질을 유지하면서도 유연한 진행이 가능하도록 했습니다.
-                    </p>
-                  </div>
-                </div>
+
               </motion.div>
 
             </div>
