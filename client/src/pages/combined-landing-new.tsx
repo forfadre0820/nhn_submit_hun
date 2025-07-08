@@ -1057,17 +1057,17 @@ export default function CombinedLanding() {
                 <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 성과</h2>
                 </div>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-5 mb-8">
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-1 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">50개 이상 행사에서 일관된 고품질 서비스 제공</p>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-1 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-1 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
                   </div>
                 </div>
@@ -1076,10 +1076,10 @@ export default function CombinedLanding() {
                 <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 주요 역할</h2>
                 </div>
-                <div className="space-y-6 mb-8">
+                <div className="space-y-5 mb-8">
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 mb-3">
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 mb-2">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
                         삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생
                       </p>
@@ -1105,8 +1105,8 @@ export default function CombinedLanding() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 mb-3">
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 mb-2">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
                         행사별 다양한 그래픽 필요 + 송출 타이밍 오류 = 행사 품질 직접 영향 → 효율적 제작 & 자동화 필요
                       </p>
@@ -1132,8 +1132,8 @@ export default function CombinedLanding() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
-                    <div className="border-l-2 border-gray-200 pl-4 mb-3">
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 기획 및 데이터 설계</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 mb-2">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed mb-2">
                         기존 플랫폼 한계 → 임직원 참여 데이터 확보 어려움 → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요
                       </p>
@@ -1163,21 +1163,21 @@ export default function CombinedLanding() {
                 <div className="mb-6 mt-8">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 활용 기술</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
                   <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">Adobe Creative Suite</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Adobe Creative Suite</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects, Photoshop</div>
                   </div>
                   <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">생성형 AI</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">생성형 AI</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Midjourney, Stable Diffusion ComfyUI</div>
                   </div>
                   <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">자동화 개발</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">자동화 개발</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OCR 화면 인식</div>
                   </div>
                   <div>
-                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">데이터 설계</div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">데이터 설계</div>
                     <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">SnowFlake, API 연동</div>
                   </div>
                 </div>
