@@ -332,10 +332,7 @@ export default function CombinedLanding() {
                     
                     <div>
                       <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>프로젝트 매니지먼트</h4>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
-                        기획부터 촬영, 편집까지 일관된 비전으로 완성도 높은 
-                        영상 콘텐츠를 제작합니다.
-                      </p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>콘텐츠 제작 전문성과 IT 기술 활용 능력을 결합해 창작과 기술의 경계를 넘나들며, 혁신적인 제작 워크플로우 구축을 통해 프로젝트 성과를 극대화합니다.</p>
                     </div>
                     
                     <div>
