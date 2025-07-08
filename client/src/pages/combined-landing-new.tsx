@@ -897,7 +897,7 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Project Detail Modal - Cinematic Full Screen Layout */}
+      {/* Project Detail Modal - MAMA AFRICA 25 Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
           className="fixed inset-0 bg-white z-[99999] overflow-y-auto"
@@ -907,40 +907,40 @@ export default function CombinedLanding() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {/* Fixed Header */}
-          <div className="fixed top-0 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-sm z-50 border-b border-gray-100">
-            <div className="max-w-6xl mx-auto px-8 py-6">
+          <div className="fixed top-0 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-sm z-50">
+            <div className="max-w-5xl mx-auto px-8 py-6">
               <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-8">
-                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">Work is Play</span>
+                  <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">Work is Play</span>
                   <nav className="flex space-x-8">
-                    <span className="text-sm text-gray-700 hover:text-black cursor-pointer">Archive</span>
-                    <span className="text-sm text-gray-700 hover:text-black cursor-pointer">Solutions</span>
-                    <span className="text-sm text-gray-700 hover:text-black cursor-pointer">Studio</span>
-                    <span className="text-sm text-gray-700 hover:text-black cursor-pointer">Contact</span>
+                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Archive</span>
+                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Solutions</span>
+                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Studio</span>
+                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Contact</span>
                   </nav>
                 </div>
                 <button
-                  className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black transition-colors"
+                  className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black transition-colors"
                   onClick={() => setSelectedProject(null)}
                 >
-                  <span className="text-2xl leading-none">×</span>
+                  <span className="text-xl leading-none">×</span>
                 </button>
               </div>
             </div>
           </div>
 
           {/* Main Content */}
-          <div className="pt-24 pb-16">
-            <div className="max-w-4xl mx-auto px-8">
+          <div className="pt-20 pb-0">
+            <div className="max-w-5xl mx-auto px-8">
               
               {/* Hero Title */}
               <motion.div 
-                className="text-center mb-16"
+                className="text-center mb-12"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                <h1 className="text-6xl lg:text-7xl font-bold text-black mb-6 leading-tight tracking-tight">
+                <h1 className="text-6xl lg:text-8xl font-bold text-black mb-4 leading-none tracking-tight">
                   온·오프라인 실시간<br />
                   행사/교육 기획·진행
                 </h1>
@@ -948,165 +948,173 @@ export default function CombinedLanding() {
 
               {/* Hero Image */}
               <motion.div 
-                className="mb-20"
+                className="mb-16 overflow-hidden"
                 initial={{ y: 60, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
-                <div className="relative w-full h-[70vh] bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 overflow-hidden">
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <img
                     src={selectedProject.src}
                     alt="프로젝트 메인 이미지"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-                  <div className="absolute bottom-8 left-8 text-white">
-                    <p className="text-sm font-medium mb-2">PROJECT</p>
-                    <p className="text-lg">2023.09 ~ 2024.11 (14개월)</p>
-                  </div>
                 </div>
               </motion.div>
 
-              {/* Description */}
-              <motion.div 
-                className="mb-20"
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-              >
-                <div className="text-center max-w-3xl mx-auto">
-                  <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                    콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표를 달성했습니다. 온라인과 오프라인을 연계한 실시간 행사 및 교육 콘텐츠 기획부터 실행까지 전 과정을 담당했습니다.
-                  </p>
+              {/* Project Info & Description */}
+              <div className="grid grid-cols-12 gap-8 mb-16">
+                <div className="col-span-2">
+                  <motion.div 
+                    className="flex items-center space-x-2 text-xs text-gray-400 uppercase tracking-wider"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.8 }}
+                  >
+                    <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                    <span>Description</span>
+                  </motion.div>
                 </div>
-              </motion.div>
+                <div className="col-span-10">
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.8 }}
+                  >
+                    <p className="text-lg text-gray-800 leading-relaxed mb-6">
+                      온라인과 오프라인을 연계한 실시간 행사 및 교육 콘텐츠 기획부터 실행까지 전 과정을 담당했습니다. 콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표를 달성했습니다. 외부 협력업체 총괄 PM 역할을 수행하며 프로젝트 품질 관리 및 일정 관리를 효율적으로 수행했습니다. OpenCV와 Python을 연계한 자동화 워크플로우 설계로 업무 효율성을 크게 향상시켰습니다.
+                    </p>
+                  </motion.div>
+                </div>
+              </div>
 
-              {/* Tech Stack Visual */}
+              {/* Project Images Gallery */}
               <motion.div 
-                className="mb-20"
+                className="mb-16"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
               >
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 py-16 px-12 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-8">핵심 기술 스택</h3>
-                  <div className="flex flex-wrap justify-center gap-4">
-                    <span className="bg-white px-6 py-3 rounded-full text-gray-800 font-medium shadow-sm">라이브 스트리밍</span>
-                    <span className="bg-white px-6 py-3 rounded-full text-gray-800 font-medium shadow-sm">OpenCV</span>
-                    <span className="bg-white px-6 py-3 rounded-full text-gray-800 font-medium shadow-sm">AI 코칭</span>
-                    <span className="bg-white px-6 py-3 rounded-full text-gray-800 font-medium shadow-sm">영상 솔루션</span>
-                    <span className="bg-white px-6 py-3 rounded-full text-gray-800 font-medium shadow-sm">콘텐츠 시스템</span>
-                    <span className="bg-white px-6 py-3 rounded-full text-gray-800 font-medium shadow-sm">이벤트 관리</span>
+                <div className="w-full aspect-[16/9] bg-gradient-to-br from-blue-100 via-purple-50 to-orange-100 mb-8 overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center text-gray-600">
+                    <span className="text-sm">콘텐츠 기획 및 실행 프로세스</span>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Key Results in Large Format */}
+              {/* Large Quote */}
               <motion.div 
-                className="mb-20"
+                className="text-center mb-16"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.8 }}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                  <div className="text-center">
-                    <div className="text-8xl font-bold text-blue-600 mb-4">4.5+</div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">NPS 고객만족도</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      50명 이상 규모의 행사 진행 및 교육 콘텐츠 운영을 통해 높은 고객 만족도를 지속적으로 유지했습니다.
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-8xl font-bold text-green-600 mb-4">50+</div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">성공적 행사 진행</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      종합적이고 체계적인 이벤트 기획·운영 및 출연진 관리를 통해 다양한 규모의 행사를 성공적으로 진행했습니다.
-                    </p>
-                  </div>
-                </div>
+                <blockquote className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-8">
+                  "콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표를 달성했습니다."
+                </blockquote>
               </motion.div>
 
-              {/* Process Image Placeholder */}
+              {/* Secondary Image */}
               <motion.div 
-                className="mb-20"
+                className="mb-16"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.3, duration: 0.8 }}
               >
-                <div className="w-full h-[50vh] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-500">
-                  <div className="text-center">
-                    <h3 className="text-3xl font-bold text-gray-700 mb-4">프로세스 워크플로우</h3>
-                    <p className="text-lg">기획 → 실행 → 모니터링 → 피드백</p>
+                <div className="w-full aspect-[3/2] bg-gradient-to-br from-green-100 to-blue-100 overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center text-gray-600">
+                    <span className="text-sm">기술 스택 및 워크플로우</span>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Team Photo Placeholder */}
-              <motion.div 
-                className="mb-20"
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.5, duration: 0.8 }}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="h-80 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
-                    <span className="text-gray-600 font-medium">이벤트 현장 모습</span>
-                  </div>
-                  <div className="flex flex-col justify-center">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6">현장 경험</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                      외부 협력업체 총괄 PM 역할을 수행하며 프로젝트 품질 관리 및 일정 관리를 효율적으로 수행했습니다. OpenCV와 Python을 연계한 자동화 워크플로우 설계로 업무 효율성을 크게 향상시켰습니다.
-                    </p>
-                  </div>
+              {/* Credits Section */}
+              <div className="grid grid-cols-12 gap-8 mb-16">
+                <div className="col-span-2">
+                  <motion.div 
+                    className="flex items-center space-x-2 text-xs text-gray-400 uppercase tracking-wider"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 0.8 }}
+                  >
+                    <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                    <span>Credits</span>
+                  </motion.div>
                 </div>
-              </motion.div>
-
-              {/* Client Quote */}
-              <motion.div 
-                className="mb-20"
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.7, duration: 0.8 }}
-              >
-                <div className="text-center max-w-4xl mx-auto">
-                  <blockquote className="text-3xl lg:text-4xl text-gray-800 font-light leading-relaxed italic mb-8">
-                    "개인 및 기업 브랜딩 위주로 애플리케이션을 이용하여 시청자 및 교육생과 고품질 콘텐츠를 통해 실시간으로 소통하고 피드백을 제공할 수 있게 되었습니다."
-                  </blockquote>
-                  <div className="text-sm text-gray-500 uppercase tracking-wide">
-                    솔루션 엔지니어, 파트너사
-                  </div>
+                <div className="col-span-5">
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 0.8 }}
+                  >
+                    <h4 className="text-sm font-medium text-black mb-2">Creative Direction <span className="text-gray-500">Client Service, The Sword in the Stone Creative Direction</span></h4>
+                    <h4 className="text-sm font-medium text-black mb-2">Project Management <span className="text-gray-500">이승훈</span></h4>
+                    <h4 className="text-sm font-medium text-black mb-2">Technical Implementation <span className="text-gray-500">OpenCV, Python, AI Solutions</span></h4>
+                  </motion.div>
                 </div>
-              </motion.div>
+                <div className="col-span-5">
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 1.7, duration: 0.8 }}
+                  >
+                    <h4 className="text-sm font-medium text-black mb-2">Duration <span className="text-gray-500">2023.09 ~ 2024.11 (14개월)</span></h4>
+                    <h4 className="text-sm font-medium text-black mb-2">Achievement <span className="text-gray-500">NPS 4.5+ 고객만족도</span></h4>
+                    <h4 className="text-sm font-medium text-black mb-2">Scale <span className="text-gray-500">50+ 온·오프라인 행사 운영</span></h4>
+                  </motion.div>
+                </div>
+              </div>
 
-              {/* Final Horror Style Image */}
+              {/* Team Photos */}
               <motion.div 
-                className="mb-20"
+                className="grid grid-cols-2 gap-4 mb-16"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.9, duration: 0.8 }}
               >
-                <div className="w-full h-[60vh] bg-gradient-to-br from-orange-200 via-red-200 to-yellow-200 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
+                <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center text-gray-600">
+                    <span className="text-sm">행사 현장 모습</span>
+                  </div>
+                </div>
+                <div className="aspect-square bg-gradient-to-br from-yellow-100 to-orange-100 overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center text-gray-600">
+                    <span className="text-sm">팀 협업 프로세스</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Large Final Image */}
+              <motion.div 
+                className="mb-12"
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 2.1, duration: 0.8 }}
+              >
+                <div className="w-full aspect-[16/9] bg-gradient-to-br from-orange-200 via-red-200 to-yellow-200 overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center text-black">
-                      <h2 className="text-5xl font-bold mb-4">다음 프로젝트</h2>
-                      <p className="text-xl">라이브 환경 & 벤더 관리</p>
+                      <h2 className="text-4xl font-bold mb-4">라이브 환경 & 벤더 관리</h2>
+                      <p className="text-sm uppercase tracking-wide">다음 프로젝트 - 실시간 시스템 운영</p>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
               {/* Navigation */}
-              <div className="text-center">
-                <div className="inline-flex items-center space-x-4 text-sm text-gray-500 mb-8">
+              <div className="text-center pb-16">
+                <div className="inline-flex items-center space-x-4 text-xs text-gray-400 mb-8">
                   <span>○</span>
-                  <span>다음</span>
+                  <span className="uppercase tracking-wider">Next</span>
                 </div>
-                <button 
-                  onClick={() => setSelectedProject(null)}
-                  className="px-8 py-3 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
-                >
-                  메인으로 돌아가기
-                </button>
+                <div>
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="text-xs text-gray-600 hover:text-black transition-colors uppercase tracking-wider underline underline-offset-4"
+                  >
+                    Back to Projects
+                  </button>
+                </div>
               </div>
             </div>
           </div>
