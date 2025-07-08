@@ -339,8 +339,7 @@ export default function CombinedLanding() {
                     </div>
                     
                     <div>
-                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>콘텐츠 운영
-</h4>
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>온, 오프라인 콘텐츠 운영</h4>
                       <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
                         창작자들이 성장할 수 있도록 실무 경험을 바탕으로 한 
                         체계적인 교육과 개별 멘토링을 제공합니다.
