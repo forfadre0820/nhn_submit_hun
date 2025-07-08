@@ -668,26 +668,107 @@ export default function CombinedLanding() {
 
                 {/* Right Column - Content */}
                 <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
-                  <motion.h2 
-                    className="lg:text-5xl text-gray-900 mb-10 lg:mb-16 text-[57px]"
+                  <h2 
+                    className="lg:text-5xl text-gray-900 mb-10 lg:mb-16 text-[57px] leading-tight"
                     style={{ 
                       fontFamily: "'Recia Serif Display', serif",
                       fontWeight: 'bold'
                     }}
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ 
-                      duration: 1.2, 
-                      ease: [0.25, 0.46, 0.45, 0.94] 
-                    }}
-                    viewport={{ once: true, margin: "-100px" }}
                   >
-                    I Keep Challenging<br />
-                    <em className="italic">Myself</em> to Make<br />
-                    Good and<br />
-                    <em className="italic">Meaningful</em><br />
-                    Content
-                  </motion.h2>
+                    {["I", " ", "Keep", " ", "Challenging"].map((char, index) => (
+                      <motion.span
+                        key={index}
+                        initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ 
+                          duration: 0.6, 
+                          delay: index * 0.1,
+                          ease: [0.25, 0.46, 0.45, 0.94] 
+                        }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        style={{ display: 'inline-block' }}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                    <br />
+                    <motion.em 
+                      className="italic"
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: 0.5,
+                        ease: [0.25, 0.46, 0.45, 0.94] 
+                      }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      style={{ display: 'inline-block' }}
+                    >
+                      Myself
+                    </motion.em>
+                    {[" ", "to", " ", "Make"].map((char, index) => (
+                      <motion.span
+                        key={`line2-${index}`}
+                        initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ 
+                          duration: 0.6, 
+                          delay: (index + 6) * 0.1,
+                          ease: [0.25, 0.46, 0.45, 0.94] 
+                        }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        style={{ display: 'inline-block' }}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                    <br />
+                    {["Good", " ", "and"].map((char, index) => (
+                      <motion.span
+                        key={`line3-${index}`}
+                        initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ 
+                          duration: 0.6, 
+                          delay: (index + 10) * 0.1,
+                          ease: [0.25, 0.46, 0.45, 0.94] 
+                        }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        style={{ display: 'inline-block' }}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                    <br />
+                    <motion.em 
+                      className="italic"
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: 1.3,
+                        ease: [0.25, 0.46, 0.45, 0.94] 
+                      }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      style={{ display: 'inline-block' }}
+                    >
+                      Meaningful
+                    </motion.em>
+                    <br />
+                    <motion.span
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: 1.4,
+                        ease: [0.25, 0.46, 0.45, 0.94] 
+                      }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      style={{ display: 'inline-block' }}
+                    >
+                      Content
+                    </motion.span>
+                  </h2>
                   
                   <div className={`col-span-4 text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-10 lg:mt-18 lg:pr-12`}>
                     <p>
