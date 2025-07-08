@@ -668,13 +668,26 @@ export default function CombinedLanding() {
 
                 {/* Right Column - Content */}
                 <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
-                  <h2 className={`${FONT_SIZES.subsectionTitle} font-bold text-gray-900 leading-tight mb-10 lg:mb-16`}>
-                    Want to<br />
-                    <em className="italic">work</em><br />
-                    together<br />
-                    on <em className="italic">your</em><br />
-                    project?
-                  </h2>
+                  <motion.h2 
+                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-10 lg:mb-16"
+                    style={{ 
+                      fontFamily: "'Recia Serif Display', serif",
+                      fontWeight: 'bold'
+                    }}
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ 
+                      duration: 1.2, 
+                      ease: [0.25, 0.46, 0.45, 0.94] 
+                    }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    I Keep Challenging<br />
+                    <em className="italic">Myself</em> to Make<br />
+                    Good and<br />
+                    <em className="italic">Meaningful</em><br />
+                    Content
+                  </motion.h2>
                   
                   <div className={`col-span-4 text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-10 lg:mt-18 lg:pr-12`}>
                     <p>
