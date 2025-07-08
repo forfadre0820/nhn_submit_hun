@@ -672,23 +672,24 @@ export default function CombinedLanding() {
                     className="lg:text-5xl text-gray-900 mb-10 lg:mb-16 text-[57px] leading-tight"
                     style={{ 
                       fontFamily: "'League Mono', monospace",
-                      fontWeight: '500'
+                      fontWeight: 'bold',
+                      letterSpacing: '0.02em'
                     }}
                   >
-                    {["I", " ", "Keep", " ", "Challenging"].map((char, index) => (
+                    {["I", "Keep", "Challenging"].map((word, index) => (
                       <motion.span
                         key={index}
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ 
                           duration: 0.6, 
-                          delay: index * 0.1,
+                          delay: index * 0.15,
                           ease: [0.25, 0.46, 0.45, 0.94] 
                         }}
                         viewport={{ once: true, margin: "-100px" }}
-                        style={{ display: 'inline-block' }}
+                        style={{ display: 'inline-block', marginRight: index < 2 ? '0.5em' : '0' }}
                       >
-                        {char}
+                        {word}
                       </motion.span>
                     ))}
                     <br />
@@ -698,45 +699,45 @@ export default function CombinedLanding() {
                       whileInView={{ y: 0, opacity: 1 }}
                       transition={{ 
                         duration: 0.6, 
-                        delay: 0.5,
+                        delay: 0.45,
                         ease: [0.25, 0.46, 0.45, 0.94] 
                       }}
                       viewport={{ once: true, margin: "-100px" }}
-                      style={{ display: 'inline-block' }}
+                      style={{ display: 'inline-block', marginRight: '0.5em' }}
                     >
                       Myself
                     </motion.em>
-                    {[" ", "to", " ", "Make"].map((char, index) => (
+                    {["to", "Make"].map((word, index) => (
                       <motion.span
                         key={`line2-${index}`}
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ 
                           duration: 0.6, 
-                          delay: (index + 6) * 0.1,
+                          delay: (index + 4) * 0.15,
                           ease: [0.25, 0.46, 0.45, 0.94] 
                         }}
                         viewport={{ once: true, margin: "-100px" }}
-                        style={{ display: 'inline-block' }}
+                        style={{ display: 'inline-block', marginRight: index < 1 ? '0.5em' : '0' }}
                       >
-                        {char}
+                        {word}
                       </motion.span>
                     ))}
                     <br />
-                    {["Good", " ", "and"].map((char, index) => (
+                    {["Good", "and"].map((word, index) => (
                       <motion.span
                         key={`line3-${index}`}
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ 
                           duration: 0.6, 
-                          delay: (index + 10) * 0.1,
+                          delay: (index + 6) * 0.15,
                           ease: [0.25, 0.46, 0.45, 0.94] 
                         }}
                         viewport={{ once: true, margin: "-100px" }}
-                        style={{ display: 'inline-block' }}
+                        style={{ display: 'inline-block', marginRight: index < 1 ? '0.5em' : '0' }}
                       >
-                        {char}
+                        {word}
                       </motion.span>
                     ))}
                     <br />
@@ -746,7 +747,7 @@ export default function CombinedLanding() {
                       whileInView={{ y: 0, opacity: 1 }}
                       transition={{ 
                         duration: 0.6, 
-                        delay: 1.3,
+                        delay: 1.2,
                         ease: [0.25, 0.46, 0.45, 0.94] 
                       }}
                       viewport={{ once: true, margin: "-100px" }}
@@ -760,7 +761,7 @@ export default function CombinedLanding() {
                       whileInView={{ y: 0, opacity: 1 }}
                       transition={{ 
                         duration: 0.6, 
-                        delay: 1.4,
+                        delay: 1.35,
                         ease: [0.25, 0.46, 0.45, 0.94] 
                       }}
                       viewport={{ once: true, margin: "-100px" }}
