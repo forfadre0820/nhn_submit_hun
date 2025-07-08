@@ -897,7 +897,7 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Project Detail Modal - Section-based Layout */}
+      {/* Project Detail Modal - Professional Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
           className="fixed inset-0 bg-white z-[99999] overflow-y-auto"
@@ -908,263 +908,241 @@ export default function CombinedLanding() {
           onClick={() => setSelectedProject(null)}
         >
           <motion.div 
-            className="bg-white w-full max-w-6xl mx-auto min-h-screen relative"
+            className="bg-white w-full max-w-4xl mx-auto min-h-screen relative"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Main Single Post Section */}
-            <section className="main main--singlepost">
+            {/* Page Header */}
+            <div className="px-8 lg:px-16 py-12">
               
-              {/* Page Header */}
-              <header className="pageheader pageheader--project mt-8 mb-8">
-                <div className="pageheader__body">
-                  <div className="pageheader__bd px-8 lg:px-16">
-                    
-                    {/* Back Link */}
-                    <motion.div 
-                      className="mb-8"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                    >
-                      <button
-                        onClick={() => setSelectedProject(null)}
-                        className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
-                      >
-                        ← Back To All Work
-                      </button>
-                    </motion.div>
+              {/* Back Link */}
+              <motion.div 
+                className="mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
+                >
+                  ← Back To All Work
+                </button>
+              </motion.div>
 
-                    {/* Header Content */}
-                    <motion.div 
-                      initial={{ opacity: 0, y: 40 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-8">
-                        <div className="lg:col-span-3">
-                          <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">
-                            온·오프라인 실시간 행사/교육 기획·진행
-                          </h1>
-                        </div>
-                      </div>
-
-                      {/* Header Details */}
-                      <div className="pageheader__details">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            <div>
-                              <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
-                              <p className="text-sm text-[#282623]">교육 기획</p>
-                            </div>
-                            
-                            <div>
-                              <h5 className="opacity-50 text-base font-normal mb-2">Released</h5>
-                              <p className="text-sm text-[#282623]">2024</p>
-                            </div>
-                            
-                            <div>
-                              <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
-                              <p className="text-sm text-[#282623]">PD / Tech Lead</p>
-                            </div>
-                          </div>
-
-                          <div>
-                            <p className="text-base text-[#282623] leading-relaxed">
-                              온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
+              {/* Header Body */}
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                  <div className="lg:col-span-3">
+                    <h1 className="text-4xl lg:text-5xl font-light text-[#282623] leading-tight mb-0">
+                      온·오프라인 실시간 행사/교육 기획·진행
+                    </h1>
                   </div>
                 </div>
-              </header>
 
-              {/* Cover Image Section */}
-              <section className="module module--images mt-8 mb-8">
-                <motion.div 
-                  className="images__wrap"
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                >
-                  <div className="module__bd">
-                    <div className="w-full aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
-                      <img
-                        src={selectedProject.src}
-                        alt="온·오프라인 실시간 행사/교육 기획·진행"
-                        className="w-full h-full object-cover"
-                      />
+                {/* Header Details */}
+                <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
+                      <p className="text-sm text-[#282623]">교육 기획</p>
+                    </div>
+                    
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
+                      <p className="text-sm text-[#282623]">Samsung Multicampus</p>
+                    </div>
+                    
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
+                      <p className="text-sm text-[#282623]">PD / Tech Lead</p>
                     </div>
                   </div>
-                </motion.div>
-              </section>
+
+                  <div>
+                    <p className="text-base text-[#282623] leading-relaxed">
+                      온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Cover Image */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              <div className="w-full aspect-[16/9] bg-[#b9b8b6] overflow-hidden">
+                <img
+                  src={selectedProject.src}
+                  alt="온·오프라인 실시간 행사/교육 기획·진행"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
+            {/* Content Container */}
+            <div className="px-8 lg:px-16 pb-12">
 
               {/* Credits Section */}
-              <section className="module module--credits credits mt-8 mb-8">
-                <motion.div 
-                  className="module__bd px-8 lg:px-16"
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                  <div className="credits__header mb-6">
-                    <h4 className="text-lg font-normal text-[#282623] uppercase">Credits</h4>
-                  </div>
-
-                  <div className="credits__credit mb-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                      <div>
-                        <h5 className="font-light opacity-50 text-base mb-2">Agency</h5>
-                      </div>
-                      <div>
-                        <p className="text-base font-bold text-[#282623]">Samsung Multicampus</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="credits__credit mb-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                      <div>
-                        <h5 className="font-light opacity-50 text-base mb-2">Project Lead</h5>
-                      </div>
-                      <div>
-                        <p className="text-base font-bold text-[#282623]">이승훈</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="credits__credit mb-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                      <div>
-                        <h5 className="font-light opacity-50 text-base mb-2">Technical Development</h5>
-                      </div>
-                      <div>
-                        <p className="text-base font-bold text-[#282623]">Python, OpenCV</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="credits__credit mb-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                      <div>
-                        <h5 className="font-light opacity-50 text-base mb-2">Creative Director</h5>
-                      </div>
-                      <div>
-                        <p className="text-base font-bold text-[#282623]">이승훈</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </section>
-
-              {/* Project Overview Section */}
-              <section className="module module--content mt-8 mb-8">
-                <div className="module__bd px-8 lg:px-16">
-                  
-                  {/* Introduction */}
-                  <motion.div 
-                    className="mb-12"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                  >
-                    <h2 className="text-lg mb-4 text-[#282623] uppercase">Project Overview</h2>
-                    <p className="text-base leading-relaxed text-[#282623]">
-                      온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다. Python과 OpenCV를 활용한 자동화 솔루션으로 효율적인 VOD 제작과 디지털콘텐츠 관리를 실현했습니다.
-                    </p>
-                  </motion.div>
-
-                  {/* Key Roles */}
-                  <motion.div 
-                    className="mb-12"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                  >
-                    <h2 className="text-lg mb-6 text-[#282623] uppercase">Key Responsibilities</h2>
-                    
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-lg mb-3 text-[#282623]">현장진행 & 벤더 관리</h3>
-                        <ul className="space-y-2 text-base text-[#58534e]">
-                          <li>• IT 전문성 바탕으로 행사진행</li>
-                          <li>• 출연자 컨셉 이상으로 직접 대해 진행 및 큐시트 수정</li>
-                          <li>• 실시간 모니터링 및 현장 대응</li>
-                          <li>• 영상팀/음향팀 디렉팅</li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg mb-3 text-[#282623]">기술 개발 & 자동화</h3>
-                        <ul className="space-y-2 text-base text-[#58534e]">
-                          <li>• Python과 OpenCV 기반 시스템 구축</li>
-                          <li>• AI 라운드학습 플랫폼 개발</li>
-                          <li>• VOD 제작 및 디지털콘텐츠 관리</li>
-                          <li>• 제약환경에서 안정적 송출 구현</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Results */}
-                  <motion.div 
-                    className="mb-12"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.9 }}
-                  >
-                    <h2 className="text-lg mb-6 text-[#282623] uppercase">Results & Impact</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="text-lg mb-2 text-[#282623]">NPS 4.5+ 달성</h3>
-                        <p className="text-base text-[#58534e]">50+ 행사에서 일관된 고객만족도 유지</p>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-lg mb-2 text-[#282623]">50+ 행사진행</h3>
-                        <p className="text-base text-[#58534e]">온·오프라인 하이브리드 대규모 행사 운영</p>
-                      </div>
-
-                      <div>
-                        <h3 className="text-lg mb-2 text-[#282623]">실시간 솔루션</h3>
-                        <p className="text-base text-[#58534e]">제작역량기반 통합적 프로젝트 리드</p>
-                      </div>
-
-                      <div>
-                        <h3 className="text-lg mb-2 text-[#282623]">기술 자동화</h3>
-                        <p className="text-base text-[#58534e]">OpenCV와 Python으로 제약환경 극복</p>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Technology Stack */}
-                  <motion.div 
-                    className="mb-12"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.0 }}
-                  >
-                    <h2 className="text-lg mb-4 text-[#282623] uppercase">Technology Stack</h2>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">Python</span>
-                      <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">OpenCV</span>
-                      <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">실시간 스트리밍</span>
-                      <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">VOD 제작</span>
-                      <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">AI 솔루션</span>
-                      <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">프로젝트 관리</span>
-                      <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">현장 운영</span>
-                    </div>
-                  </motion.div>
-
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <h2 className="text-lg mb-4 text-[#282623]">Credits</h2>
+                <div className="text-base leading-relaxed text-[#282623] space-y-1">
+                  <div><strong>Agency:</strong> Samsung Multicampus</div>
+                  <div><strong>Project Lead:</strong> 이승훈</div>
+                  <div><strong>Creative Director:</strong> 이승훈</div>
+                  <div><strong>Project Manager:</strong> 이승훈</div>
+                  <div><strong>Technical Development:</strong> Python, OpenCV</div>
+                  <div><strong>3D Animation Supervisor:</strong> 이승훈</div>
+                  <div><strong>Post-production:</strong> 이승훈</div>
                 </div>
-              </section>
+              </motion.div>
 
-            </section>
+              {/* Introduction Section */}
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                <h2 className="text-lg mb-4 text-[#282623]">Introduction</h2>
+                <p className="text-base leading-relaxed text-[#282623]">
+                  온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다. Python과 OpenCV를 활용한 자동화 솔루션으로 효율적인 VOD 제작과 디지털콘텐츠 관리를 실현했습니다.
+                </p>
+              </motion.div>
+
+              {/* 주요 역할 */}
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <h2 className="text-lg mb-4 text-[#282623]">주요 역할</h2>
+                <p className="text-base text-[#282623] mb-8 leading-relaxed">
+                  온·오프라인 통합 플랫폼의 전체적인 시스템 구조를 설계하고, Python과 OpenCV를 활용한 실시간 처리 아키텍처를 구축했습니다. 50+ 행사에서의 실시간 모니터링, 돌발상황 대응, 그리고 참가자들의 만족도를 높이기 위한 체계적인 운영 프로세스를 개발했습니다.
+                </p>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg mb-3 text-[#282623]">직접 현장진행 & 벤더 관리</h3>
+                    <ul className="space-y-2 text-base text-[#58534e]">
+                      <li>• IT 전문성 바탕으로 행사진행</li>
+                      <li>• 출연자 컨셉 이상으로 직접 대해 진행 및 큐시트 수정</li>
+                      <li>• 실시간 모니터링 및 현장 대응</li>
+                      <li>• 영상팀/음향팀 디렉팅</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg mb-3 text-[#282623]">기술 개발 & 자동화</h3>
+                    <ul className="space-y-2 text-base text-[#58534e]">
+                      <li>• Python과 OpenCV 기반 시스템 구축</li>
+                      <li>• AI 라운드학습 플랫폼 개발</li>
+                      <li>• VOD 제작 및 디지털콘텐츠 관리</li>
+                      <li>• 제약환경에서 안정적 송출 구현</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 핵심성과 */}
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                <h2 className="text-lg mb-4 text-[#282623]">핵심성과</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h3 className="text-lg mb-2 text-[#282623]">NPS 4.5+ 달성</h3>
+                    <p className="text-base text-[#58534e]">50+ 행사에서 일관된 고객만족도 유지</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg mb-2 text-[#282623]">50+ 행사진행</h3>
+                    <p className="text-base text-[#58534e]">온·오프라인 하이브리드 대규모 행사 운영</p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg mb-2 text-[#282623]">실시간 솔루션</h3>
+                    <p className="text-base text-[#58534e]">제작역량기반 통합적 프로젝트 리드</p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg mb-2 text-[#282623]">기술 자동화</h3>
+                    <p className="text-base text-[#58534e]">OpenCV와 Python으로 제약환경 극복</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 활용 기술 스택 */}
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+              >
+                <h2 className="text-lg mb-4 text-[#282623]">활용 기술 스택</h2>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">Python</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">OpenCV</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">실시간 스트리밍</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">VOD 제작</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">AI 솔루션</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">프로젝트 관리</span>
+                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">현장 운영</span>
+                </div>
+              </motion.div>
+
+              {/* 제약환경 솔루션 */}
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+              >
+                <h2 className="text-lg mb-4 text-[#282623]">제약환경 솔루션</h2>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg mb-3 text-[#282623]">기술적 도전</h3>
+                    <ul className="space-y-2 text-base text-[#58534e]">
+                      <li>• 외부 API 사용 불가 폐쇄망</li>
+                      <li>• 기본 솔루션 설치 불가</li>
+                      <li>• 정확한 타이밍 확보 필수</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg mb-3 text-[#282623]">OpenCV 솔루션</h3>
+                    <ul className="space-y-2 text-base text-[#58534e]">
+                      <li>• 로컬 기반 OpenCV로 화면 인식</li>
+                      <li>• 패턴 포착 및 자동화 구현</li>
+                      <li>• 화면 인식 패턴 감지 시스템</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
           </motion.div>
         </motion.div>
       )}
