@@ -1049,8 +1049,10 @@ export default function CombinedLanding() {
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">• 기간</h2>
                 </div>
-                <div className="mb-8">
-                  <div className="text-sm text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
+                <div className="space-y-5 mb-8">
+                  <div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
+                  </div>
                 </div>
 
                 {/* 성과 */}
