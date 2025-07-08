@@ -1135,8 +1135,15 @@ export default function CombinedLanding() {
               ×
             </button>
             
-            {/* Image Grid */}
-            <div className="p-6">
+            {/* Content with scrollable detailed information */}
+            <div className="p-6 max-h-[80vh] overflow-y-auto">
+              {/* Header */}
+              <div className="mb-6">
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">{selectedProject.title}</h1>
+                <p className="text-gray-600 mb-4">{selectedProject.subtitle}</p>
+              </div>
+
+              {/* Image Grid */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="space-y-4">
                   <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[4/3]">
@@ -1155,15 +1162,138 @@ export default function CombinedLanding() {
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Content */}
-            <div className="px-6 pb-6">
-              <h3 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
-              <p className={`${FONT_SIZES.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
-              <p className={`${FONT_SIZES.small} text-gray-700 leading-relaxed mb-4`}>{selectedProject.description}</p>
+
+              {/* Project Overview */}
+              <div className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-3">프로젝트 개요</h2>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Samsung 멀티캠퍼스에서 온·오프라인 교육 콘텐츠의 전반적인 기획과 제작을 담당하며, 
+                  교육 효과 극대화를 위한 통합적 콘텐츠 전략을 수립하고 실행했습니다. 
+                  라이브 강의부터 VOD 콘텐츠까지 다양한 형태의 교육 자료를 기획·제작·운영하며 
+                  학습자 경험 향상과 교육 품질 개선에 기여했습니다.
+                </p>
+              </div>
+
+              {/* Key Achievements */}
+              <div className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-3">주요 성과</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="text-sm font-medium text-gray-900 mb-2">콘텐츠 품질 향상</h3>
+                    <ul className="text-sm text-gray-700 space-y-1">
+                      <li>• 교육 만족도 4.5/5.0 달성</li>
+                      <li>• 콘텐츠 완주율 85% 향상</li>
+                      <li>• 학습 효과 측정 시스템 구축</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="text-sm font-medium text-gray-900 mb-2">운영 효율성 개선</h3>
+                    <ul className="text-sm text-gray-700 space-y-1">
+                      <li>• 제작 프로세스 40% 단축</li>
+                      <li>• 라이브 운영 안정성 99% 유지</li>
+                      <li>• 멀티 플랫폼 동시 송출 구현</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Responsibilities */}
+              <div className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-3">담당 업무</h2>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-900 mb-2">콘텐츠 기획 및 제작</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-sm text-gray-900 mb-1">온라인 콘텐츠</h5>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• VOD 강의 콘텐츠 기획·제작</li>
+                          <li>• 인터랙티브 학습 자료 개발</li>
+                          <li>• 모바일 최적화 콘텐츠 설계</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm text-gray-900 mb-1">오프라인 콘텐츠</h5>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• 현장 교육 프로그램 기획</li>
+                          <li>• 워크샵 및 세미나 운영</li>
+                          <li>• 실습 중심 커리큘럼 설계</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-900 mb-2">라이브 콘텐츠 운영</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-sm text-gray-900 mb-1">방송 기술 관리</h5>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• 멀티 카메라 시스템 운영</li>
+                          <li>• 실시간 스트리밍 품질 관리</li>
+                          <li>• 기술적 이슈 즉시 대응</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm text-gray-900 mb-1">참여자 관리</h5>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• 강사진 출연 가이드 제공</li>
+                          <li>• 실시간 Q&A 세션 진행</li>
+                          <li>• 학습자 참여 유도 및 관리</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-900 mb-2">데이터 분석 및 개선</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-sm text-gray-900 mb-1">학습 성과 분석</h5>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• 학습 진도율 데이터 수집</li>
+                          <li>• 만족도 조사 및 피드백 분석</li>
+                          <li>• 학습 효과 측정 지표 개발</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm text-gray-900 mb-1">시스템 최적화</h5>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          <li>• SnowFlake 기반 행동 로그 수집</li>
+                          <li>• API 연동 구조 협의</li>
+                          <li>• 사용자 자율 탐색 유도</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Technologies Used */}
+              <div className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-3">활용 기술</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <div className="text-sm font-medium text-gray-900 mb-1">Adobe Creative Suite</div>
+                    <div className="text-sm text-gray-600">Premiere Pro, After Effects, Photoshop</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900 mb-1">생성형 AI</div>
+                    <div className="text-sm text-gray-600">Midjourney, Stable Diffusion ComfyUI</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900 mb-1">자동화 개발</div>
+                    <div className="text-sm text-gray-600">Python, OCR 화면 인식</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900 mb-1">데이터 설계</div>
+                    <div className="text-sm text-gray-600">SnowFlake, API 연동</div>
+                  </div>
+                </div>
+              </div>
               
-              <div className="mt-4 pt-4 border-t border-gray-100">
+              {/* Project Info */}
+              <div className="mt-6 pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-center text-sm text-gray-500">
                   <span>{selectedProject.client}</span>
                   <span>{selectedProject.year}</span>
