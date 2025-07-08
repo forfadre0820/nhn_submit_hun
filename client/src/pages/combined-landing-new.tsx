@@ -876,10 +876,10 @@ export default function CombinedLanding() {
               </div>
 
               {/* MAKE IT BETTER Section */}
-              <div className="bg-white py-16 lg:py-24 relative">
-                <div className="relative">
-                  {/* Background Image */}
-                  <div className="absolute inset-0 w-full h-full">
+              <div className="bg-white py-16 lg:py-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]">
+                  {/* Left Column - Image */}
+                  <div className="relative">
                     <div className="w-full h-full bg-gray-100 overflow-hidden">
                       <img 
                         src={ContactWorkspaceImage}
@@ -892,50 +892,48 @@ export default function CombinedLanding() {
                     </div>
                   </div>
 
-                  {/* Overlay Content */}
-                  <div className="relative z-10 bg-black bg-opacity-40 p-8 lg:p-16">
-                    <div className="max-w-2xl">
-                      <motion.h1 
-                        className="text-red-500 uppercase mb-8 lg:mb-12"
-                        style={{ 
-                          fontFamily: "'Noto Sans', sans-serif",
-                          fontWeight: '300',
-                          fontSize: '4rem',
-                          lineHeight: '0.9',
-                          letterSpacing: '-0.02em'
-                        }}
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ 
-                          duration: 0.8, 
-                          ease: [0.25, 0.46, 0.45, 0.94] 
-                        }}
-                        viewport={{ once: true, margin: "-100px" }}
-                      >
-                        &gt; MAKE IT BETTER
-                      </motion.h1>
-                      
-                      <div className="text-white leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
-                        <p className="text-[14px] mb-4">
-                          콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
-                          연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
-                        </p>
-                        <p className="text-[14px] mb-4">
-                          라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
-                          AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
-                          넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
-                          콘텐츠를 만들어가겠습니다.
-                        </p>
-                      </div>
-                      
-                      <a 
-                        href="mailto:buen136003@gmail.com"
-                        className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors"
-                        style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
-                      >
-                        Contact with Me
-                      </a>
+                  {/* Right Column - Content */}
+                  <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center">
+                    <motion.h1 
+                      className="text-red-500 uppercase mb-8 lg:mb-12"
+                      style={{ 
+                        fontFamily: "'Noto Sans', sans-serif",
+                        fontWeight: '300',
+                        fontSize: '3rem',
+                        lineHeight: '1.1',
+                        letterSpacing: '-0.02em'
+                      }}
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        ease: [0.25, 0.46, 0.45, 0.94] 
+                      }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      &gt; Collaboration
+                    </motion.h1>
+                    
+                    <div className="text-gray-700 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
+                      <p className="text-[14px] mb-4">
+                        콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
+                        연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
+                      </p>
+                      <p className="text-[14px] mb-4">
+                        라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
+                        AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
+                        넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
+                        콘텐츠를 만들어가겠습니다.
+                      </p>
                     </div>
+                    
+                    <a 
+                      href="mailto:buen136003@gmail.com"
+                      className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors rounded-full"
+                      style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
+                    >
+                      Our Work
+                    </a>
                   </div>
                 </div>
               </div>
