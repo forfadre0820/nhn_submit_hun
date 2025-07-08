@@ -669,7 +669,7 @@ export default function CombinedLanding() {
                 {/* Right Column - Content */}
                 <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
                   <motion.h2 
-                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-10 lg:mb-16"
+                    className="lg:text-5xl text-gray-900 mb-10 lg:mb-16 text-[57px]"
                     style={{ 
                       fontFamily: "'Recia Serif Display', serif",
                       fontWeight: 'bold'
