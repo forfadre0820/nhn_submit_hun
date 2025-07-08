@@ -1107,18 +1107,18 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
-      {/* Project Detail Modal - Professional Style */}
+      {/* Project Detail Modal - Floating Lightbox Style */}
       {selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
-          className="fixed inset-0 bg-white z-[99999] overflow-y-auto text-[14px]"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
           onClick={closeModal}
         >
-          {/* Navigation Bar */}
-          <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[99999]">
+          {/* Navigation Bar - Hidden in lightbox */}
+          <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[100000] opacity-0 pointer-events-none">
             <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
               <div className="flex items-center space-x-8">
                 <button 
@@ -1150,7 +1150,7 @@ export default function CombinedLanding() {
           </nav>
 
           <motion.div 
-            className="bg-white w-full max-w-4xl mx-auto min-h-screen relative tracking-tight leading-relaxed"
+            className="bg-white w-full max-w-5xl max-h-[90vh] rounded-xl shadow-2xl relative tracking-tight leading-relaxed overflow-hidden"
             initial={{ scale: 0.95, opacity: 0, y: 30 }}
             animate={{ 
               scale: isClosingModal ? 0.95 : 1, 
@@ -1161,6 +1161,8 @@ export default function CombinedLanding() {
             transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Custom Scroll Container */}
+            <div className="h-full overflow-y-auto custom-scrollbar">
             {/* Page Header */}
             <div className="px-8 lg:px-16 pb-2 pt-32">
               {/* Back Link */}
@@ -1434,30 +1436,47 @@ export default function CombinedLanding() {
               </motion.div>
 
             </div>
-          </motion.div>
-          
-          {/* Footer - Separate section */}
-          <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px] max-w-4xl mx-auto px-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <button 
-                type="button" 
-                className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
-                onClick={() => handleNavigation('home')}
-              >↑ Back To Top</button>
-              
-              <div className="text-center">
-                <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
-              </div>
-              
-              <div className="text-sm text-[#58534e]">
-                Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
-                  hour: '2-digit', 
-                  minute: '2-digit',
-                  hour12: false 
-                })}
+            
+            {/* Footer - Inside scroll container */}
+            <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px] px-8">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <button 
+                  type="button" 
+                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
+                  onClick={() => handleNavigation('home')}
+                >↑ Back To Top</button>
+                
+                <div className="text-center">
+                  <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
+                </div>
+                
+                <div className="text-sm text-[#58534e]">
+                  Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
+                    hour: '2-digit', 
+                    minute: '2-digit',
+                    hour12: false 
+                  })}
+                </div>
               </div>
             </div>
-          </div>
+            </div> {/* Close scroll container */}
+            
+            {/* Custom Scroll Indicator */}
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-2">
+              <div className="w-1 h-16 bg-gray-200 rounded-full relative">
+                <div className="w-1 h-4 bg-gray-600 rounded-full absolute top-0 transition-all duration-200"></div>
+              </div>
+              <span className="text-xs text-gray-500 writing-mode-vertical-rl transform rotate-180">SCROLL</span>
+            </div>
+            
+            {/* Close Button */}
+            <button
+              className="absolute top-6 right-6 w-10 h-10 bg-white/80 hover:bg-white text-gray-600 hover:text-gray-800 rounded-full flex items-center justify-center transition-all shadow-lg z-10"
+              onClick={closeModal}
+            >
+              <span className="text-xl leading-none">×</span>
+            </button>
+          </motion.div>
         </motion.div>
       )}
       {/* Other Projects - Simple Modal */}
