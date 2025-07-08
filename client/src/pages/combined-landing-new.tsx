@@ -582,9 +582,7 @@ export default function CombinedLanding() {
             {/* Main About Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">
-                  ABOUT 이승훈
-                </h3>
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">ABOUT Hun</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>01</span>
               </div>
 
@@ -1048,7 +1046,7 @@ export default function CombinedLanding() {
                 {/* 기간 */}
                 <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold mr-2">1</span>
+                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
                     기간
                   </h2>
                 </div>
@@ -1061,7 +1059,7 @@ export default function CombinedLanding() {
                 {/* 성과 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold mr-2">2</span>
+                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
                     성과
                   </h2>
                 </div>
@@ -1082,7 +1080,10 @@ export default function CombinedLanding() {
                 
                 {/* 주요 역할 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">■ 주요 역할</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                    주요 역할
+                  </h2>
                 </div>
                 <div className="space-y-5 mb-8">
                   <div>
@@ -1096,17 +1097,17 @@ export default function CombinedLanding() {
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>■ 영상: 앵글, 트랜지션 품질 확보</li>
-                          <li>■ 음향: 밸런스 조정 및 품질 관리</li>
-                          <li>■ 송출: 실시간 기술 이슈 대응</li>
+                          <li>• 영상: 앵글, 트랜지션 품질 확보</li>
+                          <li>• 음향: 밸런스 조정 및 품질 관리</li>
+                          <li>• 송출: 실시간 기술 이슈 대응</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">돌발 상황 대응</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>■ 출연자 지각, 건강 이상 등</li>
-                          <li>■ 큐시트 실시간 수정</li>
-                          <li>■ 직접 대체 진행 수행</li>
+                          <li>• 출연자 지각, 건강 이상 등</li>
+                          <li>• 큐시트 실시간 수정</li>
+                          <li>• 직접 대체 진행 수행</li>
                         </ul>
                       </div>
                     </div>
@@ -1123,17 +1124,17 @@ export default function CombinedLanding() {
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">그래픽 제작 시스템</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>■ Midjourney, Stable Diffusion ComfyUI 활용</li>
-                          <li>■ Python 기반 후보정</li>
-                          <li>■ AI 생성 흔적 최소화 → 실사용급 완성</li>
+                          <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
+                          <li>• Python 기반 후보정</li>
+                          <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로그램</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>■ Python + OCR 화면 인식</li>
-                          <li>■ 영상, 음악 송출 타이밍 제어</li>
-                          <li>■ 타이밍 오류 최소화</li>
+                          <li>• Python + OCR 화면 인식</li>
+                          <li>• 영상, 음악 송출 타이밍 제어</li>
+                          <li>• 타이밍 오류 최소화</li>
                         </ul>
                       </div>
                     </div>
@@ -1150,17 +1151,17 @@ export default function CombinedLanding() {
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">플랫폼 확장 기획</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>■ 외부 플랫폼 연동·상품화 </li>
-                          <li>■ 실질적 임직원 참여 RAW 데이터 확보</li>
-                          <li>■ 현실 조직 공간 반영 맵 디자인</li>
+                          <li>• 외부 플랫폼 연동·상품화 </li>
+                          <li>• 실질적 임직원 참여 RAW 데이터 확보</li>
+                          <li>• 현실 조직 공간 반영 맵 디자인</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">데이터 구조 설계</h4>
                         <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                          <li>■ SnowFlake 기반 행동 로그 수집</li>
-                          <li>■ API 연동 구조 협의</li>
-                          <li>■ 사용자 자율 탐색 유도</li>
+                          <li>• SnowFlake 기반 행동 로그 수집</li>
+                          <li>• API 연동 구조 협의</li>
+                          <li>• 사용자 자율 탐색 유도</li>
                         </ul>
                       </div>
                     </div>
@@ -1169,7 +1170,10 @@ export default function CombinedLanding() {
 
                 {/* 활용 기술 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">■ 활용 기술</h2>
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                    <span className="inline-flex items-center justify-center w-5 h-5 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                    활용 기술
+                  </h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
                   <div>
