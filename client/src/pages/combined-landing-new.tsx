@@ -402,28 +402,25 @@ export default function CombinedLanding() {
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
                         <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울) 대학원(석사)</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.09 - 재학중</span>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>휴학중</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>경영정보학과</p>
-                      <p className={`text-gray-500 ${FONT_SIZES.tiny}`}>주요과정: 후견</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>감성공학과</p>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울) 4년제</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2016.03 - 2019.02</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울)</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 졸업</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>미디어소프트웨어/융합콘텐츠학과</p>
-                      <p className={`text-gray-500 ${FONT_SIZES.tiny}`}>학위/등급: 지역 서울</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>컴퓨터과학과</p>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>한국에니메이션고등학교</h5>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>한국애니메이션고등학교</h5>
                         <span className={`${FONT_SIZES.small} text-gray-500`}>2010.06 - 2013.03</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>애니메이션영상디자인과</p>
-                      <p className={`text-gray-500 ${FONT_SIZES.tiny}`}>학위/등급: 직업계열</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>주전공: 영상연출과 | 부전공: 컴퓨터게임제작과</p>
                     </div>
                   </div>
                 </div>
@@ -438,12 +435,8 @@ export default function CombinedLanding() {
                         <span className="text-sm text-gray-500">2022.07 - 재직중</span>
                       </div>
                       <p className="text-gray-600 text-sm mb-1">프로 · PD/AI/FD</p>
-                      <p className="text-gray-500 text-xs">연봉 5,400만원 | 근무지역 서울</p>
                       <div className="text-gray-500 text-xs mt-2 leading-relaxed">
-                        • 콘텐츠 전반, 제작 총괄 (콘텐츠 기획, 경영일반 제안 수주 및 수행)<br/>
-                        • 프로젝트 관리 (컴퍼 업정 예산 통제 조직, 리스크 정비 대응)<br/>
-                        • 라이브 콘텐츠 운영·출연자 관리 (실시간 모니터링으로 방송 시간 0건)<br/>
-                        • 클라이언트 협력사 관리 (제안·보고서 작성, 협업 프로세스 표준화)
+                        콘텐츠 기획 및 제작 총괄, 프로젝트 관리, 라이브 콘텐츠 운영, 클라이언트 협력사 관리
                       </div>
                     </div>
                     
@@ -453,12 +446,8 @@ export default function CombinedLanding() {
                         <span className="text-sm text-gray-500">2022.01 - 2022.07</span>
                       </div>
                       <p className="text-gray-600 text-sm mb-1">Contents·대리 (7개월)</p>
-                      <p className="text-gray-500 text-xs">연봉 4,314만원 | 근무지역 서울 | 회사성격 중견 보사 방향</p>
                       <div className="text-gray-500 text-xs mt-2 leading-relaxed">
-                        홍콩 기반 에듀테크 기업으로 아시아 시장에서 약 450만 이용자와 35만+ 튜터를 연결하며 AI·빅데이터 기반 개인화 학습을 제공<br/>
-                        • 콘텐츠 기획·설계 (시청·타겟 리서치, 콘텐츠·세트·조정 플랫폼)<br/>
-                        • 현장 촬영 연출 (스튜디오 제작, 촬영·조정·미술·소품 디렉션)<br/>
-                        • 콘텐츠 편집·배포 (색조정·보정, 그래픽 리소스 제작)
+                        홍콩 기반 에듀테크 기업, 콘텐츠 기획·설계, 현장 촬영 연출, 콘텐츠 편집·배포
                       </div>
                     </div>
                     
@@ -467,13 +456,9 @@ export default function CombinedLanding() {
                         <h5 className="text-base font-medium text-gray-900">프리랜서</h5>
                         <span className="text-sm text-gray-500">2019.01 - 2020.01</span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-1">영상 제작·업사/PD/편집자·콘텐츠기획 (1년 1개월)</p>
-                      <p className="text-gray-500 text-xs">근무지역 서울 | 회사성격 제약업무</p>
+                      <p className="text-gray-600 text-sm mb-1">영상 제작·PD/편집자·콘텐츠기획 (1년 1개월)</p>
                       <div className="text-gray-500 text-xs mt-2 leading-relaxed">
-                        한국사이버대학교 글로벌 시층지 제조사 등 다양한 B2B 클라이언트와 협업하여 기획·연출·촬영·디자인·후반작업·편집 1인 풀 제작 프로세스 콘텐츠 납품<br/>
-                        • 콘텐츠 기획·연출 (영상 콘텐츠 설계)<br/>
-                        • 촬영·조명·미술 (로케이션 스카우트, 장비 관리)<br/>
-                        • 후반 제작 및 품질관리 (편집, 색보정, 모션 그래픽스)
+                        다양한 B2B 클라이언트 대상 콘텐츠 기획·연출, 촬영·조명·미술, 후반 제작 및 품질관리
                       </div>
                     </div>
                   </div>
