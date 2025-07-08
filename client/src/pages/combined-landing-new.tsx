@@ -994,149 +994,71 @@ export default function CombinedLanding() {
             {/* Content Container */}
             <div className="px-8 lg:px-16 pb-12">
 
-              {/* Credits Section */}
+              {/* Project Details */}
               <motion.div 
-                className="mb-16"
+                className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <h2 className="text-lg mb-4 text-[#282623]">Credits</h2>
-                <div className="text-base leading-relaxed text-[#282623] space-y-1">
-                  <div><strong>Agency:</strong> Samsung Multicampus</div>
-                  <div><strong>Project Lead:</strong> 이승훈</div>
-                  <div><strong>Creative Director:</strong> 이승훈</div>
-                  <div><strong>Project Manager:</strong> 이승훈</div>
-                  <div><strong>Technical Development:</strong> Python, OpenCV</div>
-                  <div><strong>3D Animation Supervisor:</strong> 이승훈</div>
-                  <div><strong>Post-production:</strong> 이승훈</div>
-                </div>
-              </motion.div>
-
-              {/* Introduction Section */}
-              <motion.div 
-                className="mb-16"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-              >
-                <h2 className="text-lg mb-4 text-[#282623]">Introduction</h2>
-                <p className="text-base leading-relaxed text-[#282623]">
-                  온·오프라인 통합 행사 플랫폼의 개발과 운영을 담당한 프로젝트입니다. 실시간 스트리밍 기술과 AI 기반 현장 대응 시스템을 구축하여 50개 이상의 행사에서 NPS 4.5+ 고객만족도를 달성했습니다. Python과 OpenCV를 활용한 자동화 솔루션으로 효율적인 VOD 제작과 디지털콘텐츠 관리를 실현했습니다.
-                </p>
-              </motion.div>
-
-              {/* 주요 역할 */}
-              <motion.div 
-                className="mb-16"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                <h2 className="text-lg mb-4 text-[#282623]">주요 역할</h2>
-                <p className="text-base text-[#282623] mb-8 leading-relaxed">
-                  온·오프라인 통합 플랫폼의 전체적인 시스템 구조를 설계하고, Python과 OpenCV를 활용한 실시간 처리 아키텍처를 구축했습니다. 50+ 행사에서의 실시간 모니터링, 돌발상황 대응, 그리고 참가자들의 만족도를 높이기 위한 체계적인 운영 프로세스를 개발했습니다.
+                <h2 className="text-base mb-3 text-[#282623] font-medium">프로젝트 개요</h2>
+                <p className="text-sm leading-relaxed text-[#282623] mb-6">
+                  Python과 OpenCV를 활용한 실시간 처리 아키텍처를 구축하여 50+ 행사에서 NPS 4.5+ 고객만족도를 달성했습니다.
                 </p>
                 
-                <div className="space-y-6">
+                {/* 핵심 역할 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div>
-                    <h3 className="text-lg mb-3 text-[#282623]">직접 현장진행 & 벤더 관리</h3>
-                    <ul className="space-y-2 text-base text-[#58534e]">
-                      <li>• IT 전문성 바탕으로 행사진행</li>
-                      <li>• 출연자 컨셉 이상으로 직접 대해 진행 및 큐시트 수정</li>
+                    <h3 className="text-base mb-2 text-[#282623] font-medium">현장진행 & 관리</h3>
+                    <ul className="space-y-1 text-sm text-[#58534e]">
+                      <li>• IT 전문성 바탕 행사진행</li>
                       <li>• 실시간 모니터링 및 현장 대응</li>
                       <li>• 영상팀/음향팀 디렉팅</li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg mb-3 text-[#282623]">기술 개발 & 자동화</h3>
-                    <ul className="space-y-2 text-base text-[#58534e]">
-                      <li>• Python과 OpenCV 기반 시스템 구축</li>
-                      <li>• AI 라운드학습 플랫폼 개발</li>
-                      <li>• VOD 제작 및 디지털콘텐츠 관리</li>
-                      <li>• 제약환경에서 안정적 송출 구현</li>
+                    <h3 className="text-base mb-2 text-[#282623] font-medium">기술 개발</h3>
+                    <ul className="space-y-1 text-sm text-[#58534e]">
+                      <li>• Python과 OpenCV 시스템 구축</li>
+                      <li>• VOD 제작 및 콘텐츠 관리</li>
+                      <li>• 제약환경 안정적 송출 구현</li>
                     </ul>
                   </div>
                 </div>
-              </motion.div>
 
-              {/* 핵심성과 */}
-              <motion.div 
-                className="mb-16"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-              >
-                <h2 className="text-lg mb-4 text-[#282623]">핵심성과</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h3 className="text-lg mb-2 text-[#282623]">NPS 4.5+ 달성</h3>
-                    <p className="text-base text-[#58534e]">50+ 행사에서 일관된 고객만족도 유지</p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-lg mb-2 text-[#282623]">50+ 행사진행</h3>
-                    <p className="text-base text-[#58534e]">온·오프라인 하이브리드 대규모 행사 운영</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg mb-2 text-[#282623]">실시간 솔루션</h3>
-                    <p className="text-base text-[#58534e]">제작역량기반 통합적 프로젝트 리드</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg mb-2 text-[#282623]">기술 자동화</h3>
-                    <p className="text-base text-[#58534e]">OpenCV와 Python으로 제약환경 극복</p>
+                {/* 핵심성과 */}
+                <div className="mb-6">
+                  <h3 className="text-base mb-3 text-[#282623] font-medium">핵심성과</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-[#282623]">NPS 4.5+</div>
+                      <div className="text-xs text-[#58534e]">고객만족도</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-[#282623]">50+ 행사</div>
+                      <div className="text-xs text-[#58534e]">진행완료</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-[#282623]">실시간</div>
+                      <div className="text-xs text-[#58534e]">솔루션</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-[#282623]">자동화</div>
+                      <div className="text-xs text-[#58534e]">시스템</div>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
 
-              {/* 활용 기술 스택 */}
-              <motion.div 
-                className="mb-16"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-              >
-                <h2 className="text-lg mb-4 text-[#282623]">활용 기술 스택</h2>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">Python</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">OpenCV</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">실시간 스트리밍</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">VOD 제작</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">AI 솔루션</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">프로젝트 관리</span>
-                  <span className="bg-[#dad9d8] text-[#282623] px-3 py-1 text-base">현장 운영</span>
-                </div>
-              </motion.div>
-
-              {/* 제약환경 솔루션 */}
-              <motion.div 
-                className="mb-16"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.1 }}
-              >
-                <h2 className="text-lg mb-4 text-[#282623]">제약환경 솔루션</h2>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-lg mb-3 text-[#282623]">기술적 도전</h3>
-                    <ul className="space-y-2 text-base text-[#58534e]">
-                      <li>• 외부 API 사용 불가 폐쇄망</li>
-                      <li>• 기본 솔루션 설치 불가</li>
-                      <li>• 정확한 타이밍 확보 필수</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg mb-3 text-[#282623]">OpenCV 솔루션</h3>
-                    <ul className="space-y-2 text-base text-[#58534e]">
-                      <li>• 로컬 기반 OpenCV로 화면 인식</li>
-                      <li>• 패턴 포착 및 자동화 구현</li>
-                      <li>• 화면 인식 패턴 감지 시스템</li>
-                    </ul>
+                {/* 기술 스택 */}
+                <div>
+                  <h3 className="text-base mb-3 text-[#282623] font-medium">활용 기술</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">Python</span>
+                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">OpenCV</span>
+                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">실시간 스트리밍</span>
+                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">VOD 제작</span>
+                    <span className="bg-[#dad9d8] text-[#282623] px-2 py-1 text-sm rounded">프로젝트 관리</span>
                   </div>
                 </div>
               </motion.div>
