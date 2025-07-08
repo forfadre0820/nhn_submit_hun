@@ -1434,32 +1434,32 @@ export default function CombinedLanding() {
               </motion.div>
 
             </div>
-            
-            {/* Modal Footer - Outside content container */}
-            <div className="border-t border-gray-200 bg-white px-8 lg:px-16 py-4 pt-[32px] pb-[32px]">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <button 
-                  type="button" 
-                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
-                  onClick={() => handleNavigation('home')}
-                >
-                  ↑ Back To Top
-                </button>
-                
-                <div className="text-center">
-                  <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
-                </div>
-                
-                <div className="text-sm text-[#58534e]">
-                  Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
-                    hour: '2-digit', 
-                    minute: '2-digit',
-                    hour12: false 
-                  })}
-                </div>
+          </motion.div>
+          
+          {/* Separate Footer for Modal */}
+          <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-8 lg:px-16 py-4 z-[99999]">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
+              <button 
+                type="button" 
+                className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
+                onClick={() => handleNavigation('home')}
+              >
+                ↑ Back To Top
+              </button>
+              
+              <div className="text-center">
+                <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
+              </div>
+              
+              <div className="text-sm text-[#58534e]">
+                Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
+                  hour: '2-digit', 
+                  minute: '2-digit',
+                  hour12: false 
+                })}
               </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       )}
       {/* Other Projects - Simple Modal */}
