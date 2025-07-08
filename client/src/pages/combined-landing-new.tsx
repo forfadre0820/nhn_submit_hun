@@ -828,8 +828,9 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Gallery Grid - 2x2 Grid Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Gallery Grid - 4x2 Grid Layout (8 images) */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                {/* First Row - 4 images */}
                 {portfolioItems.slice(0, 4).map((item, index) => (
                   <motion.div
                     key={`gallery-${item.id}`}
@@ -852,9 +853,40 @@ export default function CombinedLanding() {
                       />
                       {/* 호버 오버레이 */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
-                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
+                        <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className={`company block text-xs opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
+                          <span className={`content block text-sm font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+                {/* Second Row - 4 more images (repeat the same items for gallery) */}
+                {portfolioItems.slice(0, 4).map((item, index) => (
+                  <motion.div
+                    key={`gallery-second-${item.id}`}
+                    className="group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    onClick={() => setSelectedProject(item)}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: (index + 4) * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {/* 갤러리 이미지 카드 */}
+                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {/* 호버 오버레이 */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                        <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className={`company block text-xs opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
+                          <span className={`content block text-sm font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
                         </div>
                       </div>
                     </div>
@@ -1299,17 +1331,17 @@ export default function CombinedLanding() {
                   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <button 
                       type="button" 
-                      className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
+                      className={`text-gray-600 hover:text-gray-900 transition-colors ${FONT_SIZES.body}`}
                       onClick={() => handleNavigation('home')}
                     >
                       ↑ 맨 위로
                     </button>
                     
                     <div className="text-center">
-                      <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
+                      <p className={`text-gray-500 ${FONT_SIZES.body}`}>Copyright © LEESEUNGHUN 2025</p>
                     </div>
                     
-                    <div className="text-sm text-[#58534e]">
+                    <div className={`text-gray-600 ${FONT_SIZES.body}`}>
                       Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
                         hour: '2-digit', 
                         minute: '2-digit',
