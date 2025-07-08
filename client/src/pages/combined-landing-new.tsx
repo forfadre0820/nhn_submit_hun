@@ -623,50 +623,58 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Image-Text Layout (Flipped) */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              {/* Image-Text Layout - Site Grid */}
+              <div className="grid grid-cols-12 gap-4 items-start mb-32 lg:mb-52">
                 {/* Left Column - Image */}
-                <div className="lg:col-span-6 order-2 lg:order-1">
-                  <div className="relative overflow-hidden rounded-lg">
-                    <div className="aspect-[4/5] bg-gradient-to-br from-gray-200 to-gray-400"></div>
-                    {/* Placeholder for portrait image */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 to-purple-100/20"></div>
+                <div className="col-span-12 lg:col-span-6">
+                  <div className="relative overflow-hidden">
+                    <div className="absolute left-0 right-0 -inset-y-24" style={{ transform: 'translate3d(0px, 0.9888rem, 0px)' }}>
+                      <figure className="overflow-hidden absolute top-0 left-0 h-full w-full">
+                        <picture className="absolute inset-0">
+                          <img 
+                            src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80"
+                            loading="lazy" 
+                            decoding="async" 
+                            draggable="false" 
+                            width="2076" 
+                            height="2595" 
+                            alt="Content Creator Workspace" 
+                            className="object-cover w-full h-full"
+                          />
+                        </picture>
+                      </figure>
+                    </div>
+                    <div className="pt-[125%]"></div>
                   </div>
                 </div>
 
                 {/* Right Column - Content */}
-                <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 lg:mt-0">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
-                    당신의 프로젝트와 함께<br />
-                    <em className="italic">메시지를 전달하고</em>,<br />
-                    <em className="italic">경험을 설계하는</em><br />
-                    콘텐츠를 만들어가고 싶습니다
+                <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-10 lg:mb-16">
+                    Want to<br />
+                    <em className="italic">work</em><br />
+                    together<br />
+                    on <em className="italic">your</em><br />
+                    project?
                   </h2>
                   
-                  <div className="text-gray-700 text-base leading-relaxed mb-8 space-y-4">
+                  <div className="col-span-4 text-gray-700 text-base leading-relaxed mt-10 lg:mt-18 lg:pr-12">
                     <p>
-                      콘텐츠 PD는 단순 제작자가 아닌 메시지 전달 할 수 있어야 하는 설계자입니다. 
-                      저는 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
-                    </p>
-                    
-                    <p>
+                      콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 
+                      저는 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다. 
                       라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
-                      AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다.
-                    </p>
-
-                    <p>
+                      AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 
                       감성과 전략, 창의성과 기술을 넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 
                       앞으로도 명확한 메시지를 중심에 둔 콘텐츠를 만들어가겠습니다.
                     </p>
                   </div>
                   
-                  <motion.button 
-                    className="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-colors text-base border-b-2 border-transparent hover:border-gray-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <button 
+                    type="button"
+                    className="mt-10 lg:mt-15 text-gray-900 font-medium text-base border-b-2 border-gray-900 hover:border-gray-600 transition-colors pb-1"
                   >
                     함께 작업하기
-                  </motion.button>
+                  </button>
                 </div>
               </div>
             </div>
