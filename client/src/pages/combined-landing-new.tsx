@@ -1062,7 +1062,7 @@ export default function CombinedLanding() {
                 <div className="space-y-5 mb-8">
                   <div>
                     <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">고객 만족도 NPS 4.5+ 달성</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">50개 이상 행사에서 일관된 고품질 서비스 제공</p>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">30+ 온 오프라인 행사, 교육에서 일관된 고품질 서비스 제공</p>
                   </div>
                   <div>
                     <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
