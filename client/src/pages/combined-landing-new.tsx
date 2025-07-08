@@ -697,7 +697,7 @@ export default function CombinedLanding() {
       </section>
       {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-1 min-h-screen" data-section="about">
-        <div className="container mx-auto px-4 py-20 pt-[0px] pb-[0px]">
+        <div className="container mx-auto px-4 py-20">
           <motion.div 
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
@@ -1136,6 +1136,7 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
+      
       {/* Project Detail Modal - Professional Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
