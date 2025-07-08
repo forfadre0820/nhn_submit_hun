@@ -1096,7 +1096,7 @@ export default function CombinedLanding() {
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">돌발 상황 대응</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
-                          <li>• 출연자 지각, 건강 이상 등</li>
+                          <li className="mt-[4px] mb-[4px]">• 출연자 지각, 건강 이상 등</li>
                           <li>• 큐시트 실시간 수정</li>
                           <li>• 직접 대체 진행 수행</li>
                         </ul>
