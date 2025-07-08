@@ -457,9 +457,7 @@ export default function CombinedLanding() {
                         <span className={`${FONT_SIZES.small} text-gray-500`}>2019.01 - 2020.01</span>
                       </div>
                       <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 </p>
-                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
-                        다양한 B2B 클라이언트 대상 콘텐츠 기획·연출, 촬영·조명·미술, 후반 제작 및 품질관리
-                      </div>
+                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>B2B 클라이언트 대상 콘텐츠 기획·연출·제작, 촬영·조명·미술, 후반 제작 및 품질관리</div>
                     </div>
                   </div>
                 </div>
