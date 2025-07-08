@@ -63,14 +63,13 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
 
   // Function to handle image load and measure height
   const handleImageLoad = useCallback((id: string, event: React.SyntheticEvent<HTMLImageElement>) => {
-    const img = event.currentTarget;
-    const aspectRatio = img.naturalHeight / img.naturalWidth;
-    const displayWidth = window.innerWidth <= 768 ? (window.innerWidth - 48) / 2 : (1152 - 45) / 3; // Responsive width
-    const calculatedHeight = displayWidth * aspectRatio;
+    // Use varied heights for masonry layout
+    const heights = [250, 300, 350, 400, 450, 500];
+    const randomHeight = heights[Math.floor(Math.random() * heights.length)];
     
     setImageHeights(prev => ({
       ...prev,
-      [id]: calculatedHeight
+      [id]: randomHeight
     }));
   }, []);
 
@@ -137,11 +136,14 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
           transition={{ duration: 0.3 }}
           onClick={() => onImageClick(item)}
         >
-          <div className="relative overflow-hidden bg-gray-100 rounded-lg">
+          <div 
+            className="relative overflow-hidden bg-gray-100 rounded-lg"
+            style={{ height: imageHeights[item.id] || 300 }}
+          >
             <img
               src={item.src}
               alt={item.alt}
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
               loading="lazy"
               decoding="async"
               onLoad={(e) => handleImageLoad(item.id, e)}
