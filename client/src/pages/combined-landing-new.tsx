@@ -710,7 +710,7 @@ export default function CombinedLanding() {
                         <span className={`${FONT_SIZES.small} text-gray-500`}>2022.01 - 2022.07</span>
                       </div>
                       <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Assistant Production Manager</p>
-                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>홍콩 기반 에듀테크 기업, 콘텐츠 기획·제작, 현장 촬영 연출, 콘텐츠 편집·배포</div>
+                      <div className="text-gray-500 mt-2 text-[14px]">홍콩 기반 에듀테크 기업, 콘텐츠 기획·제작, 현장 촬영 연출, 콘텐츠 편집·배포</div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
