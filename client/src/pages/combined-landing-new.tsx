@@ -160,7 +160,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
 
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 items-start">
       {/* Left Column */}
       <div className="flex-1">
         {renderColumn(columns.left)}
@@ -170,6 +170,8 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
       {columns.right.length > 0 && (
         <div className="flex-1 hidden md:block">
           {renderColumn(columns.right)}
+          {/* Add spacer to match left column height */}
+          <div className="h-32 md:h-64"></div>
         </div>
       )}
     </div>
@@ -249,20 +251,6 @@ export default function CombinedLanding() {
       alt: "Brand Content Creation",
       title: "브랜드 콘텐츠 제작",
       subtitle: "Brand Content"
-    },
-    {
-      id: "10",
-      src: ModelPortraitImage,
-      alt: "Portrait Photography",
-      title: "인물 촬영",
-      subtitle: "Portrait Photography"
-    },
-    {
-      id: "11",
-      src: SnapaskOfficeImage,
-      alt: "Office Environment",
-      title: "오피스 환경",
-      subtitle: "Office Space"
     }
   ];
 
