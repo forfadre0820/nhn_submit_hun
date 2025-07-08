@@ -137,11 +137,11 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
           transition={{ duration: 0.3 }}
           onClick={() => onImageClick(item)}
         >
-          <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
+          <div className="relative overflow-hidden bg-gray-100 rounded-lg">
             <img
               src={item.src}
               alt={item.alt}
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover"
               loading="lazy"
               decoding="async"
               onLoad={(e) => handleImageLoad(item.id, e)}
