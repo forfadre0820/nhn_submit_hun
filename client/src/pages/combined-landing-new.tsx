@@ -695,6 +695,10 @@ export default function CombinedLanding() {
                 ↑ 맨 위로
               </button>
               
+              <div className="text-center">
+                <p className="text-gray-500 text-sm">Copyright © LEESEUNGHUN 2025</p>
+              </div>
+              
               <div className="text-gray-600 text-base">
                 Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
                   hour: '2-digit', 
@@ -702,11 +706,6 @@ export default function CombinedLanding() {
                   hour12: false 
                 })}
               </div>
-            </div>
-            
-            {/* Copyright */}
-            <div className="text-center mt-6">
-              <p className="text-gray-500 text-sm">Copyright © LEESEUNGHUN 2025</p>
             </div>
           </div>
         </div>
