@@ -301,7 +301,7 @@ export default function CombinedLanding() {
             {/* Main About Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-wide`}>
                   ABOUT 이승훈
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>01</span>
@@ -383,7 +383,7 @@ export default function CombinedLanding() {
             {/* Education & Career Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-wide`}>
                   학력 & 경력
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>02</span>
@@ -499,7 +499,7 @@ export default function CombinedLanding() {
             {/* Featured Work Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-wide`}>
                   주요 작업
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
@@ -640,7 +640,7 @@ export default function CombinedLanding() {
             {/* Contact Section */}
             <div className="pt-6 border-t border-gray-200">
               <div className="flex justify-between items-start mb-6">
-                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-widest`}>
+                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-wide`}>
                   연락하기
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
