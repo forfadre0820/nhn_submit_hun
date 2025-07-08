@@ -15,7 +15,6 @@ import SnapaskOfficeImage from "@assets/image_1751953847874.png";
 import JinairEventImage from "@assets/image_1751953850208.png";
 import SnapaskInterviewImage from "@assets/image_1751953852561.png";
 import ModelPortraitImage from "@assets/image_1751953866736.png";
-import BrandContentImage from "@assets/image_1751960388464.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -160,7 +159,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
 
 
   return (
-    <div className="flex gap-4 items-start">
+    <div className="flex gap-4">
       {/* Left Column */}
       <div className="flex-1">
         {renderColumn(columns.left)}
@@ -170,8 +169,6 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
       {columns.right.length > 0 && (
         <div className="flex-1 hidden md:block">
           {renderColumn(columns.right)}
-          {/* Add spacer to match left column height */}
-          <div className="h-32 md:h-64"></div>
         </div>
       )}
     </div>
@@ -244,13 +241,6 @@ export default function CombinedLanding() {
       alt: "Snapask Team Interview",
       title: "팀 인터뷰",
       subtitle: "Team Interview"
-    },
-    {
-      id: "9",
-      src: BrandContentImage,
-      alt: "Brand Content Creation",
-      title: "브랜드 콘텐츠 제작",
-      subtitle: "Brand Content"
     }
   ];
 
