@@ -431,33 +431,33 @@ export default function CombinedLanding() {
                   <div className="space-y-6">
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className="text-base font-medium text-gray-900">삼성 멀티캠퍼스</h5>
-                        <span className="text-sm text-gray-500">2022.07 - 재직중</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>삼성 멀티캠퍼스</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 재직중</span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-1">프로 · PD/AI/FD</p>
-                      <div className="text-gray-500 text-xs mt-2 leading-relaxed">
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>프로 · PD/AI/FD</p>
+                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
                         콘텐츠 기획 및 제작 총괄, 프로젝트 관리, 라이브 콘텐츠 운영, 클라이언트 협력사 관리
                       </div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className="text-base font-medium text-gray-900">스냅애스크코리아</h5>
-                        <span className="text-sm text-gray-500">2022.01 - 2022.07</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>Snapask Korea</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.01 - 2022.07</span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-1">Contents·대리 (7개월)</p>
-                      <div className="text-gray-500 text-xs mt-2 leading-relaxed">
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Contents·대리 (7개월)</p>
+                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
                         홍콩 기반 에듀테크 기업, 콘텐츠 기획·설계, 현장 촬영 연출, 콘텐츠 편집·배포
                       </div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className="text-base font-medium text-gray-900">프리랜서</h5>
-                        <span className="text-sm text-gray-500">2019.01 - 2020.01</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>프리랜서</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2019.01 - 2020.01</span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-1">영상 제작·PD/편집자·콘텐츠기획 (1년 1개월)</p>
-                      <div className="text-gray-500 text-xs mt-2 leading-relaxed">
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 (1년 1개월)</p>
+                      <div className={`text-gray-500 ${FONT_SIZES.tiny} mt-2 leading-relaxed`}>
                         다양한 B2B 클라이언트 대상 콘텐츠 기획·연출, 촬영·조명·미술, 후반 제작 및 품질관리
                       </div>
                     </div>
@@ -740,7 +740,7 @@ export default function CombinedLanding() {
               </button>
               
               <div className="text-center">
-                <p className="text-gray-500 text-[16px]">Copyright © LEESEUNGHUN 2025</p>
+                <p className={`text-gray-500 ${FONT_SIZES.body}`}>Copyright © LEESEUNGHUN 2025</p>
               </div>
               
               <div className={`text-gray-600 ${FONT_SIZES.body}`}>
