@@ -321,6 +321,7 @@ Changelog:
 - July 08, 2025. Changed Contact section title font to League Mono Medium for modern monospace appearance
 - July 08, 2025. Updated League Mono font to bold weight and fixed word spacing for better readability
 - July 08, 2025. Changed Contact section title font to Nanum Square 800 weight for Korean-style typography
+- July 08, 2025. Simplified Contact section title animation to single fade-in effect, removing individual word animations for better readability
 - July 08, 2025. Updated Contact section title to "I Keep Challenging Myself to Make Good and Meaningful Content"
 - July 08, 2025. Implemented smooth bottom-to-top ease-out animation for Contact section title using Framer Motion
 ```

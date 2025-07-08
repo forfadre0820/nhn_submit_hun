@@ -668,108 +668,27 @@ export default function CombinedLanding() {
 
                 {/* Right Column - Content */}
                 <div className="col-span-12 lg:col-span-6 lg:col-start-8 lg:-mt-15 mt-12 lg:mt-0">
-                  <h2 
+                  <motion.h2 
                     className="lg:text-5xl text-gray-900 mb-10 lg:mb-16 text-[57px] leading-tight"
                     style={{ 
                       fontFamily: "'Nanum Square', sans-serif",
                       fontWeight: '800',
                       letterSpacing: '-0.02em'
                     }}
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      ease: [0.25, 0.46, 0.45, 0.94] 
+                    }}
+                    viewport={{ once: true, margin: "-100px" }}
                   >
-                    {["I", "Keep", "Challenging"].map((word, index) => (
-                      <motion.span
-                        key={index}
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ 
-                          duration: 0.6, 
-                          delay: index * 0.15,
-                          ease: [0.25, 0.46, 0.45, 0.94] 
-                        }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        style={{ display: 'inline-block', marginRight: index < 2 ? '0.5em' : '0' }}
-                      >
-                        {word}
-                      </motion.span>
-                    ))}
-                    <br />
-                    <motion.em 
-                      className="italic"
-                      initial={{ y: 50, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ 
-                        duration: 0.6, 
-                        delay: 0.45,
-                        ease: [0.25, 0.46, 0.45, 0.94] 
-                      }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      style={{ display: 'inline-block', marginRight: '0.5em' }}
-                    >
-                      Myself
-                    </motion.em>
-                    {["to", "Make"].map((word, index) => (
-                      <motion.span
-                        key={`line2-${index}`}
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ 
-                          duration: 0.6, 
-                          delay: (index + 4) * 0.15,
-                          ease: [0.25, 0.46, 0.45, 0.94] 
-                        }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        style={{ display: 'inline-block', marginRight: index < 1 ? '0.5em' : '0' }}
-                      >
-                        {word}
-                      </motion.span>
-                    ))}
-                    <br />
-                    {["Good", "and"].map((word, index) => (
-                      <motion.span
-                        key={`line3-${index}`}
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ 
-                          duration: 0.6, 
-                          delay: (index + 6) * 0.15,
-                          ease: [0.25, 0.46, 0.45, 0.94] 
-                        }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        style={{ display: 'inline-block', marginRight: index < 1 ? '0.5em' : '0' }}
-                      >
-                        {word}
-                      </motion.span>
-                    ))}
-                    <br />
-                    <motion.em 
-                      className="italic"
-                      initial={{ y: 50, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ 
-                        duration: 0.6, 
-                        delay: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94] 
-                      }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      style={{ display: 'inline-block' }}
-                    >
-                      Meaningful
-                    </motion.em>
-                    <br />
-                    <motion.span
-                      initial={{ y: 50, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ 
-                        duration: 0.6, 
-                        delay: 1.35,
-                        ease: [0.25, 0.46, 0.45, 0.94] 
-                      }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      style={{ display: 'inline-block' }}
-                    >
-                      Content
-                    </motion.span>
-                  </h2>
+                    I Keep Challenging<br />
+                    <em className="italic">Myself</em> to Make<br />
+                    Good and<br />
+                    <em className="italic">Meaningful</em><br />
+                    Content
+                  </motion.h2>
                   
                   <div className={`col-span-4 text-gray-700 ${FONT_SIZES.body} leading-relaxed mt-10 lg:mt-18 lg:pr-12`}>
                     <p>
