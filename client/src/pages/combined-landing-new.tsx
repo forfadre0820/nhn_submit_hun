@@ -1461,7 +1461,7 @@ export default function CombinedLanding() {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px]">
+                <div className="mt-16 border-t border-gray-200 pt-[32px] pb-[32px]">
                   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <button 
                       type="button" 
