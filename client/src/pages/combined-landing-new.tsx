@@ -59,7 +59,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
     center: []
   });
   const [imageHeights, setImageHeights] = useState<Record<string, number>>({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Function to handle image load and measure height
   const handleImageLoad = useCallback((id: string, event: React.SyntheticEvent<HTMLImageElement>) => {
@@ -76,8 +76,6 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
 
   // Split images into balanced columns
   const distributeImages = useCallback(() => {
-    if (Object.keys(imageHeights).length === 0) return;
-
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
@@ -126,16 +124,19 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
 
       setColumns({ left: leftColumn, right: rightColumn, center: centerColumn });
     }
-    
-    setIsLoading(false);
   }, [items, imageHeights]);
 
-  // Redistribute when heights change
+  // Initial distribution and when heights change
   useEffect(() => {
-    if (Object.keys(imageHeights).length === items.length) {
+    distributeImages();
+  }, [distributeImages]);
+
+  // Update when image heights change
+  useEffect(() => {
+    if (Object.keys(imageHeights).length > 0) {
       distributeImages();
     }
-  }, [imageHeights, distributeImages, items.length]);
+  }, [imageHeights, distributeImages]);
 
   // Handle window resize
   useEffect(() => {
@@ -167,7 +168,6 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
               loading="lazy"
               decoding="async"
               onLoad={(e) => handleImageLoad(item.id, e)}
-              style={{ opacity: imageHeights[item.id] ? 1 : 0 }}
             />
             <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
@@ -179,15 +179,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onImageClick }) => {
     </div>
   );
 
-  if (isLoading) {
-    return (
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {items.map(item => (
-          <div key={item.id} className="bg-gray-200 animate-pulse rounded-lg h-64"></div>
-        ))}
-      </div>
-    );
-  }
+
 
   return (
     <div className="flex gap-4">
