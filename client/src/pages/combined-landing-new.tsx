@@ -1089,7 +1089,7 @@ export default function CombinedLanding() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2">
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• 영상: 앵글, 트랜지션 품질 확보</li>
                           <li>• 음향: 밸런스 조정 및 품질 관리</li>
                           <li>• 송출: 실시간 기술 이슈 대응</li>
@@ -1097,7 +1097,7 @@ export default function CombinedLanding() {
                       </div>
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">돌발 상황 대응</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2">
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• 출연자 지각, 건강 이상 등</li>
                           <li>• 큐시트 실시간 수정</li>
                           <li>• 직접 대체 진행 수행</li>
@@ -1116,7 +1116,7 @@ export default function CombinedLanding() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">그래픽 제작 시스템</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2">
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
                           <li>• Python 기반 후보정</li>
                           <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
@@ -1124,7 +1124,7 @@ export default function CombinedLanding() {
                       </div>
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로그램</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2">
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• Python + OCR 화면 인식</li>
                           <li>• 영상, 음악 송출 타이밍 제어</li>
                           <li>• 타이밍 오류 최소화</li>
@@ -1143,15 +1143,15 @@ export default function CombinedLanding() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">플랫폼 확장 기획</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2">
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• 자체 플랫폼 확장 설계</li>
                           <li>• 실질적 임직원 참여 데이터 확보</li>
                           <li>• 현실 조직 공간 반영 맵 디자인</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">데이터 구조 설계</h4>
-                        <ul className="text-sm text-[#58534e] space-y-2">
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">데이터 구조 설계</h4>
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
                           <li>• SnowFlake 기반 행동 로그 수집</li>
                           <li>• API 연동 구조 협의</li>
                           <li>• 사용자 자율 탐색 유도</li>
