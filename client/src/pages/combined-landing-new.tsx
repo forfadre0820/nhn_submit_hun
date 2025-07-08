@@ -967,7 +967,7 @@ export default function CombinedLanding() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
-                      <p className="text-sm text-[#282623]">교육 기획</p>
+                      <p className="text-sm text-[#282623]">기획, 운영</p>
                     </div>
                     
                     <div>
