@@ -1043,21 +1043,10 @@ export default function CombinedLanding() {
               >
 
 
-                {/* 기간 */}
-                <div className="mb-6 mt-8">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">기간</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">전체 기간: 2023.01 ~ 2024.11 (23개월)</div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-[#282623] tracking-tight leading-relaxed">주요 활동: 월 3-4회 대규모 행사 진행</div>
-                  </div>
-                </div>
+
 
                 {/* 성과 */}
-                <div className="mb-6 mt-8">
+                <div className="mb-6">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">성과</h2>
                 </div>
                 <div className="space-y-6 mb-8">
@@ -1067,7 +1056,7 @@ export default function CombinedLanding() {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">기업 고객사 수주 5개</h3>
-                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 메타버스 프로젝트 수주</p>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
