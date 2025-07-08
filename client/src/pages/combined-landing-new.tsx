@@ -974,10 +974,10 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-white mt-16">
+      <footer className="bg-white">
         <div className="max-w-6xl mx-auto px-6">
           {/* Bottom Section */}
-          <div className="pt-12 border-t border-gray-200">
+          <div className="mt-16 pt-12 pb-12 border-t border-gray-200">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <button 
                 type="button" 
@@ -1327,7 +1327,7 @@ export default function CombinedLanding() {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-16 pt-12 border-t border-gray-200">
+                <div className="mt-16 pt-12 pb-12 border-t border-gray-200">
                   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <button 
                       type="button" 

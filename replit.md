@@ -383,6 +383,7 @@ Changelog:
 - July 08, 2025. Unified footer styling across all pages and modals using consistent FONT_SIZES and color schemes
 - July 08, 2025. Reverted modal footer to original styling with #58534e color scheme for better visual consistency
 - July 08, 2025. Unified footer spacing across main page and modal: changed main footer to mt-16 pt-12 to match modal spacing
+- July 08, 2025. Fixed footer spacing consistency by adding pb-12 to both main page and modal footers for proper vertical padding
 - July 08, 2025. Expanded Visual Gallery section to display 8 images in 4x2 grid layout instead of 2x2
 ```
 
