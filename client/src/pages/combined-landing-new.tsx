@@ -334,7 +334,7 @@ export default function CombinedLanding() {
                     </div>
                     
                     <div>
-                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>영상 제작</h4>
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>프로젝트 매니지먼트</h4>
                       <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>
                         기획부터 촬영, 편집까지 일관된 비전으로 완성도 높은 
                         영상 콘텐츠를 제작합니다.
