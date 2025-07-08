@@ -1056,7 +1056,6 @@ export default function CombinedLanding() {
           </motion.div>
         </div>
       </section>
-
       {/* Gallery Item Simple Modal */}
       {selectedProject && selectedProject.id.startsWith("gallery-") && (
         <motion.div 
@@ -1108,7 +1107,6 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
-      
       {/* Project Detail Modal - Professional Style */}
       {selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
@@ -1440,9 +1438,7 @@ export default function CombinedLanding() {
                       type="button" 
                       className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
                       onClick={() => handleNavigation('home')}
-                    >
-                      ↑ 맨 위로
-                    </button>
+                    >↑ Back To Top</button>
                     
                     <div className="text-center">
                       <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
