@@ -1069,7 +1069,7 @@ export default function CombinedLanding() {
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
                   </div>
                   <div>
-                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 30% 개선</h3>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">운영 효율성 개선</h3>
                     <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
                   </div>
                 </div>
