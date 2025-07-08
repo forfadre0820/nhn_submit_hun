@@ -390,6 +390,7 @@ Changelog:
 - July 08, 2025. Enhanced gallery interaction with hover effects showing client names and project titles
 - July 08, 2025. Changed MAIN PROJECT section to responsive grid layout: 1 column mobile, 2 columns tablet, 4 columns desktop
 - July 08, 2025. Unified hover effects and font sizes between MAIN PROJECT and VISUAL GALLERY sections for consistency
+- July 08, 2025. Removed bottom padding from main container while keeping top padding (py-20 → pt-20)
 ```
 
 ## User Preferences
