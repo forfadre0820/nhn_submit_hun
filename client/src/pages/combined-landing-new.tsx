@@ -3,7 +3,7 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Snapask from "@assets/Snapask.jpg";
+import ContactWorkspaceImage from "@assets/image_1752013143751.png";
 import SamsungOfflineImage from "@assets/오프라인 운영_1752012039625.png";
 import SnapaskContentImage from "@assets/image_1752012210723.png";
 import SamsungEducationImage from "@assets/1_1752012693958.jpg";
@@ -882,11 +882,11 @@ export default function CombinedLanding() {
                   <div className="relative overflow-hidden">
                     <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
                       <img 
-                        src={Snapask}
+                        src={ContactWorkspaceImage}
                         loading="lazy" 
                         decoding="async" 
                         draggable="false" 
-                        alt="Content Creator Workspace" 
+                        alt="Professional Content Production Workspace" 
                         className="object-cover w-full h-full"
                       />
                     </div>

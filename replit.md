@@ -375,6 +375,7 @@ Changelog:
 - July 08, 2025. Updated Samsung 교육 콘텐츠 기획 제작 project thumbnail to professional video production studio image showing filming setup
 - July 08, 2025. Updated Jinair project thumbnail to esports event stadium image and refined all project hover descriptions to "콘텐츠 제목 + 회사명(대문자)" format
 - July 08, 2025. Fixed hover overlay layout: company name (small, top) and content description (larger, bottom) for better visual hierarchy in both Featured Work and Gallery sections
+- July 08, 2025. Updated Contact section image to professional content production workspace showing filming equipment and setup
 ```
 
 ## User Preferences
