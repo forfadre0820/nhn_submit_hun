@@ -4,7 +4,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Snapask from "@assets/Snapask.jpg";
-import OfflineOperationImage from "@assets/오프라인 운영_1752007166250.png";
+import SamsungOfflineImage from "@assets/오프라인 운영_1752012039625.png";
+import SnapaskContentImage from "@assets/image_1752012210723.png";
+import SamsungEducationImage from "@assets/4_1752012227084.jpg";
+import JinairPromoImage from "@assets/image_1752012255292.png";
 import IntegratedOperationImage from "@assets/온 오프라인 통합운영_1752007176743.jpg";
 import TechSupportImage from "@assets/현장 기술 대응_1752007178380.jpg";
 import OverseasEventImage from "@assets/오프라인 운영_1752007181258.jpg";
@@ -214,115 +217,59 @@ export default function CombinedLanding() {
   const portfolioItems: PortfolioItem[] = [
     {
       id: "1",
-      src: EsportsImage,
-      alt: "E-sports Event Production",
-      title: "E-sports 중계",
-      subtitle: "Live Broadcasting",
-      description: "실시간 E-sports 대회 중계 제작으로 시청자들에게 몰입감 있는 경험을 제공했습니다. 다각도 카메라 설정과 실시간 편집을 통해 게임의 긴장감을 극대화하고, 해설진과의 협업으로 전문적인 중계 콘텐츠를 완성했습니다.",
-      category: "Broadcasting",
-      year: "2023",
-      client: "Samsung Multicampus",
-      role: "Production Director",
-      tools: ["Adobe Premiere Pro", "OBS Studio", "Multi-camera Setup"],
-      images: [EsportsImage]
+      src: SamsungOfflineImage,
+      alt: "Samsung 온·오프라인 콘텐츠 기획",
+      title: "Samsung 온·오프라인 콘텐츠 기획",
+      subtitle: "통합 교육 프로그램 운영",
+      description: "삼성 그룹 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다.",
+      category: "Event Planning",
+      year: "2023-2024",
+      client: "삼성 그룹",
+      role: "기획, 운영, 제작",
+      tools: ["Adobe Premiere", "After Effects", "Photoshop"],
+      images: [IntegratedOperationImage, TechSupportImage, OverseasEventImage, OnlineEventImage]
     },
     {
-      id: "2", 
-      src: WorkspaceImage,
-      alt: "Content Creator Workspace",
-      title: "작업 공간 설계",
-      subtitle: "Workspace Design",
-      description: "콘텐츠 제작자를 위한 최적화된 작업 공간을 설계하고 구축했습니다. 촬영 환경, 조명 설정, 장비 배치를 체계적으로 계획하여 효율적인 제작 워크플로우를 구현했습니다.",
-      category: "Space Design",
-      year: "2023",
-      client: "Individual Creator",
-      role: "Space Planner & Designer",
-      tools: ["Space Planning", "Lighting Design", "Equipment Setup"],
-      images: [WorkspaceImage]
+      id: "2",
+      src: SnapaskContentImage,
+      alt: "Snapask 프리미엄 콘텐츠 영상 제작",
+      title: "Snapask 프리미엄 콘텐츠 영상 제작",
+      subtitle: "교육 콘텐츠 기획 및 제작",
+      description: "Snapask Korea 프리미엄 교육 콘텐츠 영상을 기획하고 제작했습니다. 학습자의 집중도를 높이는 인터랙티브 요소를 도입하고, 복잡한 개념을 시각적으로 쉽게 이해할 수 있도록 애니메이션과 그래픽을 활용했습니다.",
+      category: "Content Production",
+      year: "2022-2023",
+      client: "Snapask Korea",
+      role: "콘텐츠 기획, 영상 제작",
+      tools: ["Video Production", "Educational Content", "Mobile Platform"],
+      images: [IntegratedOperationImage, TechSupportImage, OverseasEventImage, OnlineEventImage]
     },
     {
       id: "3",
-      src: CalligraphyImage,
-      alt: "Typography Design", 
-      title: "브랜드 타이포그래피",
-      subtitle: "Brand Typography",
-      description: "브랜드의 정체성을 반영하는 타이포그래피 디자인 작업입니다. 한글 캘리그래피의 전통적 아름다움과 현대적 감각을 조화시켜 독창적인 브랜드 폰트를 개발했습니다.",
-      category: "Brand Design",
-      year: "2022",
-      client: "Cultural Brand",
-      role: "Typography Designer",
-      tools: ["Adobe Illustrator", "Calligraphy", "Font Development"],
-      images: [CalligraphyImage]
+      src: SamsungEducationImage,
+      alt: "Samsung 교육 콘텐츠 기획 제작",
+      title: "Samsung 교육 콘텐츠 기획 제작",
+      subtitle: "기업 교육 프로그램 개발",
+      description: "삼성 그룹 임직원 대상 교육 콘텐츠를 기획하고 제작했습니다. 학습 효과를 극대화하기 위해 인터랙티브 요소와 실무 사례를 결합한 맞춤형 교육 프로그램을 개발하여 높은 학습 만족도를 달성했습니다.",
+      category: "Educational Content",
+      year: "2023",
+      client: "삼성교육재단",
+      role: "교육 콘텐츠 기획",
+      tools: ["Learning Management", "Video Production", "Interactive Content"],
+      images: [IntegratedOperationImage, TechSupportImage, OverseasEventImage, OnlineEventImage]
     },
     {
       id: "4",
-      src: InterviewImage,
-      alt: "Corporate Interview",
-      title: "기업 인터뷰", 
-      subtitle: "Corporate Interview",
-      description: "기업의 핵심 인물들과의 인터뷰를 통해 브랜드 스토리와 비전을 효과적으로 전달하는 영상을 제작했습니다. 자연스러운 대화 분위기 연출과 전문적인 촬영 기법으로 신뢰감 있는 콘텐츠를 완성했습니다.",
-      category: "Corporate Content",
+      src: JinairPromoImage,
+      alt: "Jinair 베트남 인플루언서 프로모션 콘텐츠 제작",
+      title: "Jinair 베트남 인플루언서 프로모션 콘텐츠 제작",
+      subtitle: "해외 마케팅 콘텐츠 기획",
+      description: "진에어 베트남 노선 프로모션을 위한 인플루언서 콘텐츠를 기획하고 제작했습니다. 현지 문화와 트렌드를 반영한 창의적인 콘텐츠로 브랜드 인지도를 높이고 젊은 층의 관심을 성공적으로 유도했습니다.",
+      category: "Marketing Content",
       year: "2023",
-      client: "Tech Company",
-      role: "Director & Producer",
-      tools: ["Sony FX6", "Professional Lighting", "Interview Setup"],
-      images: [InterviewImage]
-    },
-    {
-      id: "5",
-      src: PerfumeImage,
-      alt: "Product Photography",
-      title: "제품 촬영",
-      subtitle: "Product Photography",
-      description: "럭셔리 제품의 프리미엄 이미지를 구현하기 위한 제품 촬영 프로젝트입니다. 정교한 조명 설정과 구도를 통해 제품의 고급스러움과 디테일을 극대화했습니다.",
-      category: "Product Photography",
-      year: "2023",
-      client: "Luxury Brand",
-      role: "Product Photographer",
-      tools: ["Canon R5", "Studio Lighting", "Macro Lens"],
-      images: [PerfumeImage]
-    },
-    {
-      id: "6",
-      src: TravelImage,
-      alt: "Travel Content",
-      title: "여행 콘텐츠",
-      subtitle: "Travel Content",
-      description: "여행지의 매력을 생생하게 담아내는 콘텐츠 제작 프로젝트입니다. 현지의 문화와 풍경을 자연스럽게 기록하며, 시청자들에게 몰입감 있는 여행 경험을 제공했습니다.",
-      category: "Travel Content",
-      year: "2022",
-      client: "Tourism Board",
-      role: "Content Creator",
-      tools: ["DJI Drone", "GoPro", "Gimbal Stabilizer"],
-      images: [TravelImage]
-    },
-    {
-      id: "7",
-      src: EducationImage,
-      alt: "Educational Content",
-      title: "교육 콘텐츠",
-      subtitle: "Educational Content",
-      description: "효과적인 학습을 위한 교육 콘텐츠 기획 및 제작을 담당했습니다. 복잡한 개념을 시각적으로 쉽게 이해할 수 있도록 구성하고, 학습자의 참여도를 높이는 인터랙티브 요소를 추가했습니다.",
-      category: "Educational Content",
-      year: "2023",
-      client: "Samsung Multicampus",
-      role: "Educational Content Producer",
-      tools: ["After Effects", "Motion Graphics", "Interactive Design"],
-      images: [EducationImage]
-    },
-    {
-      id: "8", 
-      src: SnapaskInterviewImage,
-      alt: "Snapask Team Interview",
-      title: "팀 인터뷰",
-      subtitle: "Team Interview",
-      description: "Snapask Korea 팀원들과의 인터뷰를 통해 기업 문화와 비전을 소개하는 콘텐츠를 제작했습니다. 자연스러운 팀 분위기를 담아내며 회사의 인재상과 가치관을 효과적으로 전달했습니다.",
-      category: "Corporate Content",
-      year: "2022",
-      client: "Snapask Korea",
-      role: "Assistant Production Manager",
-      tools: ["Multi-camera Setup", "Interview Lighting", "Post Production"],
-      images: [SnapaskInterviewImage]
+      client: "Jinair",
+      role: "마케팅 콘텐츠 기획",
+      tools: ["Influencer Marketing", "Brand Content", "Video Production"],
+      images: [IntegratedOperationImage, TechSupportImage, OverseasEventImage, OnlineEventImage]
     }
   ];
 
