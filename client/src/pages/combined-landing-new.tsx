@@ -1140,7 +1140,7 @@ export default function CombinedLanding() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">플랫폼 확장 기획</h4>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">플랫폼 확장 기획</h4>
                         <ul className="text-sm text-[#58534e] space-y-1">
                           <li>• 자체 플랫폼 확장 설계</li>
                           <li>• 실질적 임직원 참여 데이터 확보</li>
