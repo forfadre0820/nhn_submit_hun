@@ -368,6 +368,7 @@ Changelog:
 - July 08, 2025. Standardized Contact section spacing to match other sections using SPACING.sectionGap and consistent margin values
 - July 08, 2025. Removed large cover image from project detail modal, keeping only the 4-image grid for cleaner layout
 - July 08, 2025. Reduced spacing in 4-image grid: gap-4→gap-2, mb-4→mb-2, mb-8→mb-6 for tighter layout
+- July 08, 2025. Reduced spacing between image gallery and project details: gallery mb-12→mb-6, caption mb-6→mb-4
 ```
 
 ## User Preferences
