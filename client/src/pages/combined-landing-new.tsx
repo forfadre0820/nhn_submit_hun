@@ -1093,7 +1093,7 @@ export default function CombinedLanding() {
                 {/* 두 줄 이미지 그리드 */}
                 <div className="mb-8">
                   {/* 첫 번째 줄 - 2개 이미지 */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-2 gap-4 mb-2">
                     <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                       <img
                         src={IntegratedOperationImage}
