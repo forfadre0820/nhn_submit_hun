@@ -1263,9 +1263,7 @@ export default function CombinedLanding() {
                   <div>
                     <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">사용자 몰입 유도를 위한 온라인 콘텐츠 플랫폼 기획</h3>
                     <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        기존 플랫폼 한계 → 임직원 참여 데이터 확보 어려움 → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요
-                      </p>
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">기존 플랫폼 한계 (임직원 참여 데이터 확보 어려움) → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요와 RAW DATA 확보</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
