@@ -940,7 +940,7 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h1 className="text-6xl lg:text-7xl font-bold text-black tracking-tight leading-none">
+                <h1 className="text-6xl lg:text-7xl font-black text-black tracking-tight leading-none uppercase">
                   온·오프라인 실시간<br />
                   행사/교육 기획·진행
                 </h1>
@@ -953,143 +953,152 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
               >
-                <div className="w-full h-[688px] overflow-hidden">
-                  <img
-                    src={selectedProject.src}
-                    alt="온·오프라인 실시간 행사/교육 기획·진행"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-full h-[500px] bg-gradient-to-br from-blue-400 via-purple-500 to-purple-600 rounded flex items-center justify-center relative overflow-hidden">
+                  <span className="text-white text-xl font-semibold z-10">HYBRID EVENT MANAGEMENT PLATFORM</span>
+                  <div className="absolute inset-0 bg-black bg-opacity-10"></div>
                 </div>
               </motion.div>
 
-              {/* Project Info Grid */}
+              {/* Introduction & Details Grid */}
               <motion.div 
                 className="grid grid-cols-12 gap-8 mb-16"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
+                {/* Introduction */}
                 <div className="col-span-12 lg:col-span-8">
-                  <h2 className="text-2xl font-bold mb-6 text-black">프로젝트 개요</h2>
-                  <p className="text-lg leading-relaxed text-gray-800 mb-8">
-                    콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표를 달성했습니다. 외부 협력업체 총괄 PM 역할을 수행하며 프로젝트 품질 관리 및 일정 관리를 효율적으로 수행했습니다.
+                  <div className="text-blue-500 text-xs uppercase tracking-wide font-semibold mb-6">● Introduction</div>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    팬데믹과 디지털혁명을 기반으로 한 실시간 기술이 다가올 대학교직영업무로 큰 NPS 4.5+ 달성 주요혁명입니다. 다양한 행사 및 컨퍼런스 운영을 통해 현장과 온라인을 연결하는 혁신적인 교육 플랫폼을 구축하고 VOD 자료 제작부터 디지털콘텐츠 관리까지 통합 솔루션을 제공했습니다.
                   </p>
-                  
-                  <h3 className="text-xl font-bold mb-4 text-black">주요 역할</h3>
-                  <ul className="space-y-3 text-gray-800">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      대규모 행사 현실 상황 총괄 운영 및 라이브 관리
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      출연진 시연 커뮤니케이션 및 색인 관리
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      동영상 큐시트 목적별 일정관리 진행
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      VOD 자료 처리 및 인소스 관리
-                    </li>
-                  </ul>
                 </div>
-                
+
+                {/* Project Details */}
                 <div className="col-span-12 lg:col-span-4">
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">기간</h4>
-                      <p className="text-black font-medium">2023.09 ~ 2024.11 (14개월)</p>
+                  <h3 className="text-sm font-bold uppercase tracking-wide mb-6">Project Details</h3>
+                  <div className="space-y-4">
+                    <div className="pb-2 border-b border-gray-100">
+                      <span className="text-sm text-gray-600">기간:</span>
+                      <div className="text-sm text-gray-900">2023.09 - 2024.11 (14개월)</div>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">성과</h4>
-                      <p className="text-black font-medium">NPS 4.5+ 고객만족도</p>
+                    <div className="pb-2 border-b border-gray-100">
+                      <span className="text-sm text-gray-600">유형:</span>
+                      <div className="text-sm text-gray-900">교육/이벤트 플랫폼</div>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">규모</h4>
-                      <p className="text-black font-medium">50+ 온·오프라인 행사 운영</p>
+                    <div className="pb-2 border-b border-gray-100">
+                      <span className="text-sm text-gray-600">규모:</span>
+                      <div className="text-sm text-gray-900">50+ 온·오프라인 행사</div>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">담당</h4>
-                      <p className="text-black font-medium">이승훈</p>
+                    <div className="pb-2 border-b border-gray-100">
+                      <span className="text-sm text-gray-600">성과:</span>
+                      <div className="text-sm text-gray-900">NPS 4.5+ 달성</div>
+                    </div>
+                    <div className="pb-2">
+                      <span className="text-sm text-gray-600">역할:</span>
+                      <div className="text-sm text-gray-900">기획·개발·운영 총괄</div>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Performance Metrics */}
+              {/* Core Objectives Grid */}
+              <motion.div 
+                className="grid grid-cols-12 gap-8 mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                <div className="col-span-12 lg:col-span-6">
+                  <h3 className="text-sm font-bold uppercase tracking-wide mb-6">Project Details</h3>
+                  <ul className="space-y-3">
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">기간: 2023.09 - 2024.11 (14개월)</li>
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">유형: 교육/이벤트 플랫폼</li>
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">규모: 50+ 온·오프라인 행사</li>
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">성과: NPS 4.5+ 달성</li>
+                    <li className="pb-2 text-sm text-gray-700">역할: 기획·개발·운영 총괄</li>
+                  </ul>
+                </div>
+                <div className="col-span-12 lg:col-span-6">
+                  <h3 className="text-sm font-bold uppercase tracking-wide mb-6">Core Objectives</h3>
+                  <ul className="space-y-3">
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">실시간 하이브리드 행사 플랫폼 구축</li>
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">AI 기반 현장 대응 시스템 개발</li>
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">VOD 제작 및 디지털콘텐츠 관리</li>
+                    <li className="pb-2 border-b border-gray-100 text-sm text-gray-700">참가자 만족도 극대화</li>
+                    <li className="pb-2 text-sm text-gray-700">운영 효율성 및 안정성 확보</li>
+                  </ul>
+                </div>
+              </motion.div>
+
+              {/* Key Achievements */}
               <motion.div 
                 className="mb-16"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <h2 className="text-2xl font-bold mb-8 text-black">주요 성과</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                  <div className="text-center">
-                    <div className="text-5xl font-bold text-black mb-2">4.5+</div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wider">NPS 고객만족도</div>
+                <div className="text-blue-500 text-xs uppercase tracking-wide font-semibold mb-8">● Key Achievements</div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center bg-white p-10 rounded">
+                    <div className="text-5xl font-black text-black mb-3">4.5+</div>
+                    <div className="text-xs uppercase tracking-wide text-gray-600">NPS 자주자측량점</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-5xl font-bold text-black mb-2">50+</div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wider">행사 운영</div>
+                  <div className="text-center bg-white p-10 rounded">
+                    <div className="text-5xl font-black text-black mb-3">50+</div>
+                    <div className="text-xs uppercase tracking-wide text-gray-600">행사운영 성공률</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-5xl font-bold text-black mb-2">12+</div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wider">기업 대상</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-5xl font-bold text-black mb-2">100%</div>
-                    <div className="text-sm text-gray-600 uppercase tracking-wider">목표 달성</div>
+                  <div className="text-center bg-white p-10 rounded">
+                    <div className="text-5xl font-black text-black mb-3">100%</div>
+                    <div className="text-xs uppercase tracking-wide text-gray-600">실시간 스트리밍 안정성</div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Technical Implementation */}
+              {/* Main Work Areas */}
               <motion.div 
                 className="mb-16"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
               >
-                <h2 className="text-2xl font-bold mb-8 text-black">기술 구현</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                  
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 text-black">라이브 환경 & 벤더 PM</h3>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-semibold mb-2">출연진 & 제작진 작업 관리</h4>
-                        <p className="text-gray-700 text-sm">실시간 라이브 환경에서 자료 습득 및 기능 관리</p>
-                      </div>
-                      <div className="border-l-4 border-green-500 pl-4">
-                        <h4 className="font-semibold mb-2">벤더 프로세스 관리</h4>
-                        <p className="text-gray-700 text-sm">전체 대기업무 관리 및 연구조 활용</p>
-                      </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
-                        <h4 className="font-semibold mb-2">품질 관리 시스템</h4>
-                        <p className="text-gray-700 text-sm">체계적인 관리 시스템 구축</p>
-                      </div>
-                    </div>
+                <div className="text-blue-500 text-xs uppercase tracking-wide font-semibold mb-8">● Main Work Areas</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="bg-white p-10 rounded">
+                    <h4 className="text-sm font-bold uppercase tracking-wide mb-5">현장직진 및 현장대응</h4>
+                    <ul className="space-y-2">
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">다양한 행사 컨퍼런스 운영</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">종합 AI 시청 커뮤니케이션</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">돌발상황 대비 라이브 진행 대처</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">VOD 자료 제작 디지털콘텐츠 관리</li>
+                    </ul>
                   </div>
-
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 text-black">현장 대응 & 자동화</h3>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-orange-500 pl-4">
-                        <h4 className="font-semibold mb-2">현장 영업 하이라이트</h4>
-                        <p className="text-gray-700 text-sm">실시간 현장 대응 및 시스템 관리</p>
-                      </div>
-                      <div className="border-l-4 border-red-500 pl-4">
-                        <h4 className="font-semibold mb-2">OpenCV 솔루션</h4>
-                        <p className="text-gray-700 text-sm">OpenCV와 Python을 활용한 자동화</p>
-                      </div>
-                      <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-semibold mb-2">통합 프로젝트 관리</h4>
-                        <p className="text-gray-700 text-sm">직접 인력 및 품질 관리</p>
-                      </div>
-                    </div>
+                  <div className="bg-white p-10 rounded">
+                    <h4 className="text-sm font-bold uppercase tracking-wide mb-5">라이브현장작업진행 & 밴드PM</h4>
+                    <ul className="space-y-2">
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">직업평점서비스 디지털 관리</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">소프트웨어 디자인랜드 2023</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">실시간 구축 진행 모니터링</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">밴드 관리 및 협업 시스템</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-10 rounded">
+                    <h4 className="text-sm font-bold uppercase tracking-wide mb-5">현장대응 & Tech 지원화</h4>
+                    <ul className="space-y-2">
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">직접 진행형 현장대응 솔루션</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">패션멘츠치과슬라 기술 지원</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">실시간 문제 해결 시스템</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">현장 상황 분석 및 개선</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-10 rounded">
+                    <h4 className="text-sm font-bold uppercase tracking-wide mb-5">기술혁신 & 현장대응</h4>
+                    <ul className="space-y-2">
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">Python과 OpenCV 시스템 구축</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">AI 라운드학습 플랫폼 개발</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">패션멘 현장 극복 솔루션</li>
+                      <li className="text-sm text-gray-700 pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-blue-500">자동화 및 최적화 시스템</li>
+                    </ul>
                   </div>
                 </div>
               </motion.div>
@@ -1099,18 +1108,96 @@ export default function CombinedLanding() {
                 className="mb-16"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+              >
+                <div className="text-blue-500 text-xs uppercase tracking-wide font-semibold mb-8">● Technology Stack</div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="bg-white p-8 rounded">
+                    <h4 className="text-sm font-bold uppercase tracking-wide mb-4">Core Technologies</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">Python</span>
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">OpenCV</span>
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">AI 라운드학습</span>
+                    </div>
+                  </div>
+                  <div className="bg-white p-8 rounded">
+                    <h4 className="text-sm font-bold uppercase tracking-wide mb-4">Platform & Tools</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">실시간 스트리밍</span>
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">VOD 제작</span>
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">디지털콘텐츠</span>
+                    </div>
+                  </div>
+                  <div className="bg-white p-8 rounded">
+                    <h4 className="text-sm font-bold uppercase tracking-wide mb-4">Management</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">프로젝트 관리</span>
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">품질 관리</span>
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 text-xs rounded-full border">현장 대응</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Process Section */}
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                <h2 className="text-2xl font-bold mb-8 text-black">활용 기술</h2>
-                <div className="flex flex-wrap gap-3">
-                  <span className="bg-black text-white px-4 py-2 text-sm font-medium">OpenCV</span>
-                  <span className="bg-black text-white px-4 py-2 text-sm font-medium">Python</span>
-                  <span className="bg-black text-white px-4 py-2 text-sm font-medium">AI 솔루션</span>
-                  <span className="bg-black text-white px-4 py-2 text-sm font-medium">영상 처리</span>
-                  <span className="bg-black text-white px-4 py-2 text-sm font-medium">자동화 스크립팅</span>
-                  <span className="bg-black text-white px-4 py-2 text-sm font-medium">라이브 스트림</span>
-                  <span className="bg-black text-white px-4 py-2 text-sm font-medium">Samsung Multicampus</span>
+                <div className="text-blue-500 text-xs uppercase tracking-wide font-semibold mb-8">● The process behind the creation</div>
+                <div className="space-y-16">
+                  <div className="bg-white rounded overflow-hidden">
+                    <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                      <span className="text-gray-600 font-semibold">SYSTEM ARCHITECTURE DESIGN</span>
+                    </div>
+                    <div className="p-8">
+                      <h4 className="text-sm font-bold uppercase tracking-wide mb-3">시스템 설계 단계</h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        온·오프라인 통합 플랫폼의 전체적인 시스템 구조를 설계하고, Python과 OpenCV를 활용한 실시간 처리 아키텍처를 구축했습니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded overflow-hidden">
+                    <div className="h-64 bg-gradient-to-br from-blue-200 to-purple-300 flex items-center justify-center">
+                      <span className="text-gray-700 font-semibold">LIVE EVENT MANAGEMENT</span>
+                    </div>
+                    <div className="p-8">
+                      <h4 className="text-sm font-bold uppercase tracking-wide mb-3">실시간 행사 운영</h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        50+ 행사에서의 실시간 모니터링, 돌발상황 대응, 그리고 참가자들의 만족도를 높이기 위한 체계적인 운영 프로세스를 개발했습니다.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </motion.div>
+
+              {/* Credits */}
+              <motion.div 
+                className="mb-16 bg-white p-10 rounded text-center"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.3 }}
+              >
+                <div className="text-blue-500 text-xs uppercase tracking-wide font-semibold mb-5">● Credits</div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Project Lead & Development: 개인 프로젝트<br/>
+                  Technical Advisory: OpenCV 커뮤니티, AI 개발 그룹<br/>
+                  Partnership: 대학교 평생교육원, 교육부 디지털 혁신 사업<br/>
+                  Approval: 행사 주최측, 참가자 만족도 조사팀
+                </p>
+              </motion.div>
+
+              {/* Next Project */}
+              <motion.div 
+                className="bg-black text-white p-16 rounded text-center mb-8"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.4 }}
+              >
+                <h2 className="text-4xl font-black uppercase tracking-tight mb-4">Next Project</h2>
+                <p className="text-sm uppercase tracking-wide opacity-70">Explore More Work</p>
               </motion.div>
 
               {/* Navigation */}
