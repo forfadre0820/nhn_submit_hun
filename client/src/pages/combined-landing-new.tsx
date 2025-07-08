@@ -897,41 +897,36 @@ export default function CombinedLanding() {
         </div>
       </footer>
 
-      {/* Project Detail Modal - MAMA AFRICA 25 Style */}
+      {/* Project Detail Modal - MAMA AFRICA 25 Lightbox Style */}
       {selectedProject && selectedProject.id === "1" && (
         <motion.div 
-          className="fixed inset-0 bg-white z-[99999] overflow-y-auto"
+          className="fixed inset-0 bg-black bg-opacity-90 z-[99999] flex items-center justify-center p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          onClick={() => setSelectedProject(null)}
         >
-          {/* Fixed Header */}
-          <div className="fixed top-0 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-sm z-50">
-            <div className="max-w-5xl mx-auto px-8 py-6">
-              <div className="flex justify-between items-center">
-                <div className="flex items-center space-x-8">
-                  <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">Work is Play</span>
-                  <nav className="flex space-x-8">
-                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Archive</span>
-                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Solutions</span>
-                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Studio</span>
-                    <span className="text-xs text-gray-700 hover:text-black cursor-pointer uppercase tracking-wide">Contact</span>
-                  </nav>
-                </div>
-                <button
-                  className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black transition-colors"
-                  onClick={() => setSelectedProject(null)}
-                >
-                  <span className="text-xl leading-none">×</span>
-                </button>
-              </div>
+          <motion.div 
+            className="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <div className="absolute top-6 right-6 z-10">
+              <button
+                className="w-10 h-10 bg-white bg-opacity-80 backdrop-blur-sm flex items-center justify-center text-gray-600 hover:text-black transition-colors rounded-full"
+                onClick={() => setSelectedProject(null)}
+              >
+                <span className="text-xl leading-none">×</span>
+              </button>
             </div>
-          </div>
 
-          {/* Main Content */}
-          <div className="pt-20 pb-0">
-            <div className="max-w-5xl mx-auto px-8">
+            {/* Main Content */}
+            <div className="p-12">
               
               {/* Hero Title */}
               <motion.div 
@@ -940,7 +935,7 @@ export default function CombinedLanding() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                <h1 className="text-6xl lg:text-8xl font-bold text-black mb-4 leading-none tracking-tight">
+                <h1 className="text-5xl lg:text-6xl font-bold text-black mb-4 leading-none tracking-tight">
                   온·오프라인 실시간<br />
                   행사/교육 기획·진행
                 </h1>
@@ -982,7 +977,7 @@ export default function CombinedLanding() {
                     transition={{ delay: 0.7, duration: 0.8 }}
                   >
                     <p className="text-lg text-gray-800 leading-relaxed mb-6">
-                      온라인과 오프라인을 연계한 실시간 행사 및 교육 콘텐츠 기획부터 실행까지 전 과정을 담당했습니다. 콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표를 달성했습니다. 외부 협력업체 총괄 PM 역할을 수행하며 프로젝트 품질 관리 및 일정 관리를 효율적으로 수행했습니다. OpenCV와 Python을 연계한 자동화 워크플로우 설계로 업무 효율성을 크게 향상시켰습니다.
+                      온라인과 오프라인을 연계한 실시간 행사 및 교육 콘텐츠 기획부터 실행까지 전 과정을 담당했습니다. 콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표를 달성했습니다. 외부 협력업체 총괄 PM 역할을 수행하며 프로젝트 품질 관리 및 일정 관리를 효율적으로 수행했습니다.
                     </p>
                   </motion.div>
                 </div>
@@ -995,10 +990,12 @@ export default function CombinedLanding() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
               >
-                <div className="w-full aspect-[16/9] bg-gradient-to-br from-blue-100 via-purple-50 to-orange-100 mb-8 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-gray-600">
-                    <span className="text-sm">콘텐츠 기획 및 실행 프로세스</span>
-                  </div>
+                <div className="w-full aspect-[16/9] overflow-hidden mb-8">
+                  <img
+                    src="/api/placeholder/800/450"
+                    alt="Project process"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
 
@@ -1009,8 +1006,8 @@ export default function CombinedLanding() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.8 }}
               >
-                <blockquote className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-8">
-                  "콘텐츠 기획부터 벤더 관리까지 종합적이고도 12개 기업 이상을 대상으로 하는 주요 업무를 모두 NPS 4.5+ 점수로 수익 및 목표를 달성했습니다."
+                <blockquote className="text-3xl lg:text-4xl font-light text-gray-900 leading-tight mb-8">
+                  "개인 및 기업 브랜딩 위주로 애플리케이션을 이용하여 시청자 및 교육생과 고품질 콘텐츠를 통해 실시간으로 소통하고 피드백을 제공할 수 있게 되었습니다."
                 </blockquote>
               </motion.div>
 
@@ -1021,10 +1018,12 @@ export default function CombinedLanding() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.3, duration: 0.8 }}
               >
-                <div className="w-full aspect-[3/2] bg-gradient-to-br from-green-100 to-blue-100 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-gray-600">
-                    <span className="text-sm">기술 스택 및 워크플로우</span>
-                  </div>
+                <div className="w-full aspect-[3/2] overflow-hidden">
+                  <img
+                    src="/api/placeholder/800/533"
+                    alt="Festival atmosphere"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
 
@@ -1047,9 +1046,9 @@ export default function CombinedLanding() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 1.5, duration: 0.8 }}
                   >
-                    <h4 className="text-sm font-medium text-black mb-2">Creative Direction <span className="text-gray-500">Client Service, The Sword in the Stone Creative Direction</span></h4>
                     <h4 className="text-sm font-medium text-black mb-2">Project Management <span className="text-gray-500">이승훈</span></h4>
                     <h4 className="text-sm font-medium text-black mb-2">Technical Implementation <span className="text-gray-500">OpenCV, Python, AI Solutions</span></h4>
+                    <h4 className="text-sm font-medium text-black mb-2">Client Service <span className="text-gray-500">Samsung Multicampus</span></h4>
                   </motion.div>
                 </div>
                 <div className="col-span-5">
@@ -1072,52 +1071,53 @@ export default function CombinedLanding() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.9, duration: 0.8 }}
               >
-                <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-gray-600">
-                    <span className="text-sm">행사 현장 모습</span>
-                  </div>
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src="/api/placeholder/400/400"
+                    alt="Team collaboration"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="aspect-square bg-gradient-to-br from-yellow-100 to-orange-100 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-gray-600">
-                    <span className="text-sm">팀 협업 프로세스</span>
-                  </div>
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src="/api/placeholder/400/400"
+                    alt="Festival planning"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
 
               {/* Large Final Image */}
               <motion.div 
-                className="mb-12"
+                className="mb-8"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 2.1, duration: 0.8 }}
               >
-                <div className="w-full aspect-[16/9] bg-gradient-to-br from-orange-200 via-red-200 to-yellow-200 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center text-black">
+                <div className="w-full aspect-[16/9] overflow-hidden">
+                  <img
+                    src="/api/placeholder/800/450"
+                    alt="APAV Real Horror project"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                    <div className="text-center text-white">
                       <h2 className="text-4xl font-bold mb-4">라이브 환경 & 벤더 관리</h2>
-                      <p className="text-sm uppercase tracking-wide">다음 프로젝트 - 실시간 시스템 운영</p>
+                      <p className="text-sm uppercase tracking-wide">다음 프로젝트</p>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
               {/* Navigation */}
-              <div className="text-center pb-16">
-                <div className="inline-flex items-center space-x-4 text-xs text-gray-400 mb-8">
+              <div className="text-center">
+                <div className="inline-flex items-center space-x-4 text-xs text-gray-400 mb-4">
                   <span>○</span>
                   <span className="uppercase tracking-wider">Next</span>
                 </div>
-                <div>
-                  <button 
-                    onClick={() => setSelectedProject(null)}
-                    className="text-xs text-gray-600 hover:text-black transition-colors uppercase tracking-wider underline underline-offset-4"
-                  >
-                    Back to Projects
-                  </button>
-                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       )}
       
