@@ -343,6 +343,9 @@ Changelog:
 - July 08, 2025. Added lightbox modal functionality for portfolio images with click-to-view-large feature, including close button and image captions on semi-transparent background
 - July 08, 2025. Redesigned portfolio to masonry grid layout with 8 items using CSS Grid with varied column spans and row spans to match reference image layout
 - July 08, 2025. Implemented dynamic grid positioning: tall portraits (row-span-2), wide rectangles (col-span-2), and squares with natural aspect ratios for visual interest
+- July 08, 2025. Rebuilt masonry layout using position: absolute with precise coordinates based on user-provided HTML reference
+- July 08, 2025. Implemented 4-column masonry structure (left: 0%, 25%, 50%, 75%) with varying image heights and 640px container height
+- July 08, 2025. Adjusted bottom row image heights to 250px for better alignment and visual balance
 ```
 
 ## User Preferences

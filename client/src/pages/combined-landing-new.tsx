@@ -694,7 +694,7 @@ export default function CombinedLanding() {
                       className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
-                      style={{ aspectRatio: '800/775', height: '200px' }}
+                      style={{ aspectRatio: '800/775', height: '250px' }}
                     />
                     <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>교육 콘텐츠</span>
@@ -722,7 +722,7 @@ export default function CombinedLanding() {
                       className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
-                      style={{ aspectRatio: '1/1', height: '180px' }}
+                      style={{ aspectRatio: '1/1', height: '250px' }}
                     />
                     <div className="portfolio-caption absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>팀 인터뷰</span>
