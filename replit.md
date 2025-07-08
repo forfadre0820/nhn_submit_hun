@@ -360,6 +360,7 @@ Changelog:
 - July 08, 2025. Redesigned detailed project modal to horizontal scrolling gallery layout with dynamic image sizing
 - July 08, 2025. Implemented single-row image display with varied aspect ratios: standard 4:3, wide 16:9, and small 3:2 for online event image
 - July 08, 2025. Added scroll snap functionality and hover scale effects to horizontal image gallery for better user experience
+- July 08, 2025. Redesigned image layout to 2x2 grid with uniform aspect ratios and equal width distribution for better visual balance
 ```
 
 ## User Preferences
