@@ -582,7 +582,7 @@ export default function CombinedLanding() {
             {/* Main About Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
-                <h3 className={`${FONT_SIZES.small} font-medium text-red-500 uppercase tracking-wide`}>
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">
                   ABOUT 이승훈
                 </h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>01</span>
