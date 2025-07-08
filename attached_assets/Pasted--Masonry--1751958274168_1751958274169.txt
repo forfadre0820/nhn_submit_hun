@@ -1,0 +1,91 @@
+벽돌을 쌓아 올린다는 의미로 하나의 축이(보통 열) 일반적인 그리드 레이아웃을 사용하고 다른 한 축이 Masonry 레이아웃을 사용한다. 즉, 요소의 너비는 일정하고, 높이는 가변적인 형태의 레이아웃이다.
+Pinterest나 네이버 이미지 검색에서 Masonry 레이아웃이 구현된 페이지를 볼 수 있다.
+보통 무한스크롤과 Masonry를 같이 구현하는 경우도 많다고 한다.
+
+이 기능을 구현하는데 라이브러리를 포함한 여러가지 방법이 있지만 라이브러리 없이 직접 구현하는 것이 나중에 써먹을때 이해하기 쉽고 속도도 빨라서 해당 방법을 사용하였다.
+
+사용법
+엘리먼트들을 먼저 배치 한 뒤 스크립트로 엘리먼트의 높이 값을 구한 뒤 css를 지정해 주는 방법을 사용하였다.
+
+<section class="content">
+  <ul class="content__card">
+    <li class="content__list">
+      <div class="content__list-inner weather">
+        <!-- 내용 --> 
+      </div>
+    </li>
+    <li class="content__list">
+      <div class="content__list-inner weather">
+        <!-- 내용 --> 
+      </div>
+    </li>
+    <!-- 반복 -->
+  </ul>
+</section>
+html 구조는 위와 같다.
+주의 할 점은 li태그 안의 요소에 해당하는 div태그가 반드시 있어야 한다.
+
+.content {
+	max-width: 1100px;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 180px;
+	display: flex;
+	justify-content: center;
+	&__card {
+		margin: 0 auto;
+		margin-bottom: 50px;
+		width: 100%;
+		--gap: 20px; 
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); // 3열
+		column-gap: var(--gap); // 열 간격
+		grid-auto-rows: 20px; // 각 행의 높이
+	}
+	@media screen and (max-width: 1150px) {
+		&__card {
+			margin: 0 30px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media screen and (max-width: 650px) {
+		&__card {
+			margin: 0 30px;
+			display: block; // grid 해제(한 줄로 표시)
+		}
+		.advertise {
+			display: none;
+		}
+	}
+
+	&__list {
+		background: white;
+		border-radius: 10px;
+		border: 1px solid rgba(204, 204, 204, 0.5);
+		margin-bottom: var(--gap);
+	}
+    
+    // ...
+}
+function masonryLayout() {
+	const masonryContainerStyle = getComputedStyle(
+		document.querySelector(".content__card")
+	);
+	const autoRows = parseInt(
+		masonryContainerStyle.getPropertyValue("grid-auto-rows")
+	);
+	document.querySelectorAll(".content__list").forEach((elt) => {
+		elt.style.gridRowEnd = `span ${Math.ceil(
+			elt.querySelector(".content__list-inner").scrollHeight / autoRows
+		)}`;
+	});
+}
+
+masonryLayout();
+window.addEventListener("resize", masonryLayout);
+window.addEventListener("load", masonryLayout);
+미디어 쿼리를 사용하여 레이아웃의 크기 기준을 세개로 나눠 3열 2열 1열로 배치되도록 하였다.
+
+핵심인 js 로직에서는 브라우저가 렌더링 될 때, 페이지 사이즈가 조정이 될 때마다 리스트의 자동 행 높이인 grid-auto-rows와 열 간격인 column-gap, 리스트 요소의 내부 높이인 scrollHeight를 이용하여 그리드 내에서 차지하는 행의 수를 결정한다.
+
+즉, 행의 수 = (요소가 차지하는 높이 / 행의 높이) 가 된다.
