@@ -1253,14 +1253,15 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       {/* Project Detail Modal - Floating Lightbox Style */}
-      {selectedProject && !selectedProject.id.startsWith("gallery-") && !isGalleryMode && (
+      {!isGalleryMode && selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
-          animate={{ opacity: isClosingModal ? 0 : 1 }}
+          animate={{ opacity: isClosingModal || isGalleryMode ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
           onClick={closeModal}
+          style={{ display: isGalleryMode ? 'none' : 'flex' }}
         >
           {/* Navigation Bar - Hidden in lightbox */}
           <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[100000] opacity-0 pointer-events-none">
