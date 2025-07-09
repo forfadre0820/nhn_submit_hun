@@ -507,11 +507,15 @@ export default function CombinedLanding() {
   // Gallery navigation functions
   const openGalleryLightbox = (item: PortfolioItem) => {
     const index = galleryItems.findIndex(galleryItem => galleryItem.id === item.id);
-    setCurrentGalleryIndex(index);
-    setSelectedProject(item);
+    if (index !== -1) {
+      setCurrentGalleryIndex(index);
+      setSelectedProject(item);
+    }
   };
 
   const navigateGallery = (direction: 'prev' | 'next') => {
+    if (galleryItems.length === 0) return;
+    
     const newIndex = direction === 'next' 
       ? (currentGalleryIndex + 1) % galleryItems.length
       : (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
@@ -524,19 +528,26 @@ export default function CombinedLanding() {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (selectedProject && selectedProject.id.startsWith("gallery-")) {
-        if (e.key === 'ArrowLeft') {
-          navigateGallery('prev');
-        } else if (e.key === 'ArrowRight') {
-          navigateGallery('next');
-        } else if (e.key === 'Escape') {
-          closeModal();
+        switch(e.key) {
+          case 'ArrowLeft':
+            e.preventDefault();
+            navigateGallery('prev');
+            break;
+          case 'ArrowRight':
+            e.preventDefault();
+            navigateGallery('next');
+            break;
+          case 'Escape':
+            e.preventDefault();
+            closeModal();
+            break;
         }
       }
     };
 
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedProject, currentGalleryIndex]);
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, [selectedProject, currentGalleryIndex, galleryItems]);
 
   // Navigation handler with smooth scroll to section
   const handleNavigation = (section: string) => {
@@ -1152,7 +1163,8 @@ export default function CombinedLanding() {
           {/* Close Button */}
           <button 
             onClick={closeModal}
-            className="absolute top-6 right-6 z-[100000] text-white hover:text-gray-300 transition-colors text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40"
+            className="absolute top-6 right-6 z-[100000] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+            aria-label="Close gallery"
           >
             ×
           </button>
@@ -1163,7 +1175,9 @@ export default function CombinedLanding() {
               e.stopPropagation();
               navigateGallery('prev');
             }}
-            className="absolute left-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-colors text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40"
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+            aria-label="Previous image"
+            disabled={galleryItems.length <= 1}
           >
             ←
           </button>
@@ -1174,7 +1188,9 @@ export default function CombinedLanding() {
               e.stopPropagation();
               navigateGallery('next');
             }}
-            className="absolute right-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-colors text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40"
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+            aria-label="Next image"
+            disabled={galleryItems.length <= 1}
           >
             →
           </button>
@@ -1189,29 +1205,35 @@ export default function CombinedLanding() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image */}
-            <img
-              src={galleryItems[currentGalleryIndex]?.src}
-              alt={galleryItems[currentGalleryIndex]?.alt}
-              className="max-w-full max-h-full object-contain"
-            />
+            {galleryItems[currentGalleryIndex] && (
+              <>
+                <img
+                  src={galleryItems[currentGalleryIndex].src}
+                  alt={galleryItems[currentGalleryIndex].alt}
+                  className="max-w-full max-h-full object-contain transition-opacity duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
 
-            {/* Image Info Overlay - Bottom Left */}
-            <div className="absolute bottom-6 left-6 text-white">
-              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="text-lg font-medium mb-1">{galleryItems[currentGalleryIndex]?.title}</h3>
-                <p className="text-sm text-gray-300 mb-2">{galleryItems[currentGalleryIndex]?.client}</p>
-                <p className="text-sm text-gray-400">{galleryItems[currentGalleryIndex]?.description}</p>
-              </div>
-            </div>
+                {/* Image Info Overlay - Bottom Left */}
+                <div className="absolute bottom-6 left-6 text-white max-w-sm">
+                  <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4">
+                    <h3 className="text-lg font-medium mb-1">{galleryItems[currentGalleryIndex].title}</h3>
+                    <p className="text-sm text-gray-300 mb-2">{galleryItems[currentGalleryIndex].client}</p>
+                    <p className="text-sm text-gray-400 leading-relaxed">{galleryItems[currentGalleryIndex].description}</p>
+                  </div>
+                </div>
 
-            {/* Image Counter - Bottom Right */}
-            <div className="absolute bottom-6 right-6 text-white">
-              <div className="bg-black/50 backdrop-blur-sm rounded-lg px-4 py-2">
-                <span className="text-sm font-medium">
-                  {currentGalleryIndex + 1} of {galleryItems.length}
-                </span>
-              </div>
-            </div>
+                {/* Image Counter - Bottom Right */}
+                <div className="absolute bottom-6 right-6 text-white">
+                  <div className="bg-black/60 backdrop-blur-sm rounded-lg px-4 py-2">
+                    <span className="text-sm font-medium">
+                      {currentGalleryIndex + 1} of {galleryItems.length}
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
           </motion.div>
         </motion.div>
       )}
