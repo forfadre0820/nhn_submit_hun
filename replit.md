@@ -405,6 +405,7 @@ Changelog:
 - July 09, 2025. Removed duplicate content sections and inconsistent numbering across all projects for clean career documentation formatting
 - July 09, 2025. Changed browser tab title from "Ross Mason" to "LEESEUNGHUN – Content Creator"
 - July 09, 2025. Redesigned footer section with separator line matching other sections width, added collaboration call-to-action, email contact, back to top button, and copyright information
+- July 09, 2025. Updated hero section video from Pexels stock video to user's personal showreel (ShowReels_2025_public.mp4) for authentic portfolio presentation
 ```
 
 ## User Preferences

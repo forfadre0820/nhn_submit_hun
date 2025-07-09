@@ -590,7 +590,7 @@ export default function CombinedLanding() {
                 >
                   <video
                     ref={videoRef}
-                    src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4"
+                    src="/attached_assets/ShowReels_2025_public_1752082844140.mp4"
                     autoPlay
                     loop
                     muted
