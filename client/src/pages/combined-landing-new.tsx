@@ -1156,20 +1156,20 @@ export default function CombinedLanding() {
                   나의 스킬
                 </h4>
                 
-                {/* Skills Tags Grid */}
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">ComfyUI</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Asana</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Slack</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">DaVinci Resolve</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Python</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Premier Pro</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Unity</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Photoshop</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Illustrator</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">C#</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Java</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">After Effect</span>
+                {/* Skills Text List */}
+                <div className="flex flex-wrap gap-4">
+                  <span className="text-gray-700 text-[14px] font-medium">ComfyUI</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Asana</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Slack</span>
+                  <span className="text-gray-700 text-[14px] font-medium">DaVinci Resolve</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Python</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Premier Pro</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Unity</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Photoshop</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Illustrator</span>
+                  <span className="text-gray-700 text-[14px] font-medium">C#</span>
+                  <span className="text-gray-700 text-[14px] font-medium">Java</span>
+                  <span className="text-gray-700 text-[14px] font-medium">After Effect</span>
                 </div>
               </div>
             </div>
