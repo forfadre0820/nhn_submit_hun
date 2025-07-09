@@ -14,6 +14,7 @@ import OverseasEventImage from "@assets/오프라인 운영_1752007181258.jpg";
 import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_1752007184273.jpg";
 
 // Gallery images
+import VRCulturalHeritageImage from "@assets/NISI20180418_0000135162_web_1752090687436.jpg";
 import GalleryCalligraphyImage from "@assets/image_1752014631972.png";
 import GalleryBeautyImage from "@assets/image_1752014636911.png";
 import GalleryWorkspaceImage from "@assets/image_1752014643264.png";
@@ -282,16 +283,16 @@ export default function CombinedLanding() {
   const galleryItems: PortfolioItem[] = [
     {
       id: "gallery-1",
-      src: GalleryCalligraphyImage,
-      alt: "영성의 시각화된 표현",
-      title: "캘리그래피 아트",
-      subtitle: "전통 서예와 현대 디자인의 만남",
-      description: "영성을 시각화한 서예 작품으로 전통과 현대의 조화를 추구합니다.",
-      category: "Typography",
+      src: VRCulturalHeritageImage,
+      alt: "종로구 문화유산 VR 콘텐츠 체험",
+      title: "종로구 문화유산 VR 콘텐츠 기획",
+      subtitle: "전통 문화유산의 디지털 체험",
+      description: "종로구의 소중한 문화유산을 VR 기술로 체험할 수 있는 몰입형 콘텐츠입니다.",
+      category: "VR Content",
       year: "2024",
-      client: "개인 작업",
-      role: "디자인, 서예",
-      tools: ["Traditional Calligraphy", "Digital Design"],
+      client: "종로구청",
+      role: "VR 콘텐츠 기획, 제작",
+      tools: ["VR Technology", "3D Modeling", "Cultural Research"],
       images: []
     },
     {
