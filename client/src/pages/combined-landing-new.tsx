@@ -301,7 +301,7 @@ export default function CombinedLanding() {
       alt: "뷰티 브랜드 제품 광고 이미지",
       title: "모델, 제품 광고 이미지",
       subtitle: "화장품 브랜드 광고 촬영",
-      description: "자연스러운 뷰티 룩을 강조한 제품 광고 콘텐츠입니다.",
+      description: "ComfyUI, FLUX, Python을 활용하여 자연스러운 실사형 뷰티 룩을 강조한 제품 광고 콘텐츠입니다.",
       category: "Beauty Photography",
       year: "2024",
       client: "개인 포트폴리오",
