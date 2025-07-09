@@ -1145,7 +1145,6 @@ export default function CombinedLanding() {
                     >
                       <li>• 한국어 (모국어)</li>
                       <li>• 영어 (업무 수준)</li>
-                      <li>• 일본어 (기초 회화)</li>
                     </ul>
                   </div>
                 </div>
