@@ -17,7 +17,7 @@ import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_17520071
 import VRCulturalHeritageImage from "@assets/NISI20180418_0000135162_web_1752090687436.jpg";
 import KoreyaHospitalImage from "@assets/4_1752092502620.jpg";
 import GalleryBeautyImage from "@assets/image_1752014636911.png";
-import GalleryWorkspaceImage from "@assets/image_1752014643264.png";
+import PersonalPortfolioImage from "@assets/86639380-814e6f3935db756d97edfc2262f7958ce4cf73d56bd0b605c511f97007163f9c (1)_1752092998931.png";
 import GalleryInterviewImage from "@assets/image_1752014659090.png";
 import LikelionHackathonImage from "@assets/image_1752092842644.png";
 import GalleryMalePortraitImage from "@assets/image_1752014670363.png";
@@ -311,16 +311,16 @@ export default function CombinedLanding() {
     },
     {
       id: "gallery-3",
-      src: GalleryWorkspaceImage,
-      alt: "프로덕션 워크스페이스 현장",
-      title: "프로덕션 워크스페이스",
-      subtitle: "콘텐츠 제작 현장의 모습",
-      description: "콘텐츠 제작이 이루어지는 전문 작업 공간의 모습입니다.",
-      category: "Behind The Scenes",
+      src: PersonalPortfolioImage,
+      alt: "개인 포트폴리오 뷰티 촬영",
+      title: "개인 포트폴리오",
+      subtitle: "뷰티 제품 광고 촬영",
+      description: "개인 포트폴리오를 위한 뷰티 제품 광고 촬영 작업입니다. 자연스러운 조명과 모델의 표정을 통해 제품의 매력을 부각시킨 개인 프로젝트입니다.",
+      category: "Personal Project",
       year: "2024",
-      client: "삼성 멀티캠퍼스",
-      role: "현장 기록, 스냅 촬영",
-      tools: ["Natural Light", "Documentary Photography"],
+      client: "개인 포트폴리오",
+      role: "포토그래피, 디렉팅",
+      tools: ["Beauty Photography", "Product Placement", "Natural Lighting"],
       images: []
     },
     {
