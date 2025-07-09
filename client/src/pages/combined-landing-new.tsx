@@ -1687,8 +1687,8 @@ export default function CombinedLanding() {
                       
                       <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-lg">
                         <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white">⚡</div>
-                          <span className="ml-3 text-lg font-semibold text-gray-800">의사결정 지연해소</span>
+                          <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-medium text-sm">의사결정</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">지연해소</span>
                         </div>
                         <p className="text-sm text-gray-600">로컬 외주 제작자와의 커뮤니케이션 최소화로 의사숙도 향상</p>
                       </div>
@@ -1703,8 +1703,8 @@ export default function CombinedLanding() {
 
                       <div className="bg-gradient-to-br from-cyan-50 to-teal-50 p-6 rounded-lg">
                         <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white">🎬</div>
-                          <span className="ml-3 text-lg font-semibold text-gray-800">홍콩본사 BP 사례선정</span>
+                          <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-medium text-sm">BP</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">홍콩본사 사례선정</span>
                         </div>
                         <p className="text-sm text-gray-600">미술 효과장비 품질 향상 콘텐츠 사례 선정</p>
                       </div>
@@ -1754,10 +1754,7 @@ export default function CombinedLanding() {
                     <div className="bg-gray-50 p-6 rounded-lg mb-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <h4 className="text-sm font-bold text-purple-600 mb-3 flex items-center">
-                            <span className="w-6 h-6 bg-purple-600 text-white rounded text-xs flex items-center justify-center mr-2">📹</span>
-                            FFmpeg 최적화
-                          </h4>
+                          <h4 className="text-sm font-bold text-purple-600 mb-3">FFmpeg 최적화</h4>
                           <ul className="space-y-2 text-sm text-gray-700">
                             <li>• FFmpeg 기반 자막생성 시스템 구축</li>
                             <li>• 고정판 다단계 메일 장면 병렬 처리</li>
@@ -1770,10 +1767,7 @@ export default function CombinedLanding() {
                         </div>
 
                         <div>
-                          <h4 className="text-sm font-bold text-blue-600 mb-3 flex items-center">
-                            <span className="w-6 h-6 bg-blue-600 text-white rounded text-xs flex items-center justify-center mr-2">📊</span>
-                            효율화 성과
-                          </h4>
+                          <h4 className="text-sm font-bold text-blue-600 mb-3">효율화 성과</h4>
                           <ul className="space-y-2 text-sm text-gray-700">
                             <li>• 자막 리타이밍 대폭 단축 폭 달성</li>
                             <li>• 다회차 설문 관리 체계 구축</li>
@@ -1847,34 +1841,28 @@ export default function CombinedLanding() {
                     <div className="bg-gray-50 p-6 rounded-lg mb-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <h4 className="text-sm font-bold text-purple-600 mb-3 flex items-center">
-                            <span className="w-6 h-6 bg-purple-600 text-white rounded text-xs flex items-center justify-center mr-2">📹</span>
-                            FFmpeg 최적화
-                          </h4>
+                          <h4 className="text-sm font-bold text-purple-600 mb-3">FFmpeg 최적화</h4>
                           <ul className="space-y-2 text-sm text-gray-700">
-                            <li>• FFmpeg 기반자막생성 시스템 구축</li>
-                            <li>• 고정판 다단계 메일 장면 병렬</li>
-                            <li>• 모댈설계자체콘텐츠 시스템</li>
+                            <li>• FFmpeg 기반 자막생성 시스템 구축</li>
+                            <li>• 고정판 다단계 메일 장면 병렬 처리</li>
+                            <li>• 모델 설계 자체 콘텐츠 시스템 구축</li>
                           </ul>
                           <div className="mt-3 flex space-x-2">
                             <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">FFmpeg</span>
-                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">자막광성</span>
+                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">자막생성</span>
                           </div>
                         </div>
 
                         <div>
-                          <h4 className="text-sm font-bold text-blue-600 mb-3 flex items-center">
-                            <span className="w-6 h-6 bg-blue-600 text-white rounded text-xs flex items-center justify-center mr-2">📊</span>
-                            효율화성과
-                          </h4>
+                          <h4 className="text-sm font-bold text-blue-600 mb-3">효율화 성과</h4>
                           <ul className="space-y-2 text-sm text-gray-700">
-                            <li>• 채팅 리다기 다캅 폴품 곹체</li>
-                            <li>• 다적환 설문 관리 체쫄 필목</li>
-                            <li>• 간체 물라약 양자치 별화</li>
+                            <li>• 자막 리타이밍 대폭 단축 폭 달성</li>
+                            <li>• 다회차 설문 관리 체계 구축</li>
+                            <li>• 간체 물량 양산체계 별도 확보</li>
                           </ul>
                           <div className="mt-3 flex space-x-2">
-                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">성과창자</span>
-                            <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">품질쇼조</span>
+                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">성과향상</span>
+                            <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">품질제고</span>
                           </div>
                         </div>
                       </div>
@@ -1888,32 +1876,32 @@ export default function CombinedLanding() {
                     <div className="mb-6">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                        기본책략 브랜드 개념 설정
+                        베트남 인플루언서 프로모션 전략
                       </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                       <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-4">핵심젠력의 수립</h4>
+                        <h4 className="text-sm font-medium text-[#282623] mb-4">핵심 전략 수립</h4>
                         <div className="space-y-3">
                           <div className="flex items-start space-x-3">
                             <span className="w-2 h-2 bg-purple-500 rounded-full mt-2"></span>
                             <div>
-                              <p className="text-sm text-[#282623] font-medium">설력업무규성 상세운체오주가 입력운체적</p>
-                              <p className="text-xs text-[#58534e] mt-1">처적설 핵심성과 신터화주 세창설 업체 설립</p>
+                              <p className="text-sm text-[#282623] font-medium">현지 문화 맞춤형 콘텐츠 기획</p>
+                              <p className="text-xs text-[#58534e] mt-1">베트남 현지 트렌드와 문화적 특성을 반영한 브랜드 메시지 설계</p>
                             </div>
                           </div>
                           <div className="flex items-start space-x-3">
                             <span className="w-2 h-2 bg-blue-500 rounded-full mt-2"></span>
                             <div>
-                              <p className="text-sm text-[#282623] font-medium">설계퇴공기업식 그큼시공 젝구조성 오주지임 도니의</p>
-                              <p className="text-xs text-[#58534e] mt-1">새모핵심 동하요업 수창 설립 설계기어으로세 생용의</p>
+                              <p className="text-sm text-[#282623] font-medium">인플루언서 네트워크 구축</p>
+                              <p className="text-xs text-[#58534e] mt-1">현지 주요 인플루언서와의 협업 체계 수립 및 콘텐츠 제작 가이드라인 제공</p>
                             </div>
                           </div>
                           <div className="flex items-start space-x-3">
                             <span className="w-2 h-2 bg-green-500 rounded-full mt-2"></span>
                             <div>
-                              <p className="text-sm text-[#282623] font-medium">설젝카업젬 독김수즊성 노업 라고맹설젝</p>
-                              <p className="text-xs text-[#58534e] mt-1">사담설기업체젝 상세룻순설 휙체입연대급</p>
+                              <p className="text-sm text-[#282623] font-medium">다채널 프로모션 운영</p>
+                              <p className="text-xs text-[#58534e] mt-1">SNS 플랫폼별 특성에 맞는 콘텐츠 배포 및 효과 측정</p>
                             </div>
                           </div>
                         </div>
@@ -1923,42 +1911,42 @@ export default function CombinedLanding() {
                         <h4 className="text-sm font-medium text-[#282623] mb-4">주요 기술스택</h4>
                         <div className="grid grid-cols-3 gap-3">
                           <div className="text-center p-3 bg-purple-50 rounded-lg">
-                            <span className="text-purple-600 font-medium text-sm">캐물리더</span>
+                            <span className="text-purple-600 font-medium text-sm">콘텐츠 기획</span>
                           </div>
                           <div className="text-center p-3 bg-blue-50 rounded-lg">
-                            <span className="text-blue-600 font-medium text-sm">쿠업제도</span>
+                            <span className="text-blue-600 font-medium text-sm">SNS 운영</span>
                           </div>
                           <div className="text-center p-3 bg-green-50 rounded-lg">
-                            <span className="text-green-600 font-medium text-sm">대기인</span>
+                            <span className="text-green-600 font-medium text-sm">데이터 분석</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* 기술발전 논의 */}
+                    {/* 성과 및 결과 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                        기술발견 비교&완화법
+                        성과 및 결과
                       </h2>
                     </div>
                     <div className="space-y-6 mb-8">
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        창크쿠업의은설 네이서게를휙주포젓수내엔 설계과기업그스설 지요청주셔업설새창집 
-                        대거음요퇴기업 설업내 세창설부동엔 휙상으로 화생키역의 바설창 제출기능비합연 곶르르네시다.
+                        베트남 현지 인플루언서들과의 협업을 통해 진에어 브랜드 인지도를 크게 향상시켰습니다. 
+                        현지 문화에 맞는 콘텐츠 기획으로 높은 참여율과 브랜드 호감도를 달성했습니다.
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="bg-purple-50 p-4 rounded-lg">
-                          <h5 className="font-medium text-purple-700 mb-2">조회률창설 시여정</h5>
-                          <p className="text-sm text-gray-600">오창주의 팽주대여부엔시 달청창으히달성</p>
+                          <h5 className="font-medium text-purple-700 mb-2">높은 참여율 달성</h5>
+                          <p className="text-sm text-gray-600">현지 맞춤 콘텐츠로 평균 참여율 대폭 향상</p>
                         </div>
                         <div className="bg-blue-50 p-4 rounded-lg">
-                          <h5 className="font-medium text-blue-700 mb-2">설그혅상퓨어</h5>
-                          <p className="text-sm text-gray-600">설계부동화이어창 재엔 활창삘달결</p>
+                          <h5 className="font-medium text-blue-700 mb-2">브랜드 인지도 상승</h5>
+                          <p className="text-sm text-gray-600">베트남 시장 내 진에어 브랜드 인지도 크게 개선</p>
                         </div>
                         <div className="bg-green-50 p-4 rounded-lg">
-                          <h5 className="font-medium text-green-700 mb-2">BP 사례 선정</h5>
-                          <p className="text-sm text-gray-600">미술 효과장비 품질 향상 콘텐츠 사례 선정</p>
+                          <h5 className="font-medium text-green-700 mb-2">성공 사례 구축</h5>
+                          <p className="text-sm text-gray-600">현지 인플루언서 마케팅 모델 케이스 수립</p>
                         </div>
                       </div>
                     </div>
