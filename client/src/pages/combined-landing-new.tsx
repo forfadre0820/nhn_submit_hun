@@ -1056,7 +1056,6 @@ export default function CombinedLanding() {
           </motion.div>
         </div>
       </section>
-
       {/* Footer Section */}
       <footer className="py-16">
         <div className="container mx-auto px-4 pt-20">
@@ -1072,7 +1071,7 @@ export default function CombinedLanding() {
               <div className="text-left">
                 <button 
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className={`${FONT_SIZES.small} text-gray-500 hover:text-gray-700 transition-colors cursor-pointer`}
+                  className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer text-[16px]"
                 >
                   Back to top ↑
                 </button>
@@ -1080,14 +1079,14 @@ export default function CombinedLanding() {
               
               {/* Center - Copyright */}
               <div>
-                <p className={`${FONT_SIZES.small} text-gray-500`}>© LEESEUNGHUN 2025</p>
+                <p className="text-gray-500 text-[16px]">© LEESEUNGHUN 2025</p>
               </div>
               
               {/* Right - Email */}
               <div className="text-right">
                 <a 
                   href="mailto:buen136003@gmail.com"
-                  className={`${FONT_SIZES.small} text-gray-500 hover:text-gray-700 transition-colors`}
+                  className="text-gray-500 hover:text-gray-700 transition-colors text-[16px]"
                 >
                   buen136003@gmail.com
                 </a>
