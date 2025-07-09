@@ -1158,15 +1158,18 @@ export default function CombinedLanding() {
                 
                 {/* Skills Tags Grid */}
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">ComfyUI</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Asana, Slack</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">DaVinci Resolve</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Python</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Premier Pro</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Unity</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Photoshop, Illustrator</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">C#, Java</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">After Effect</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">ComfyUI</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Asana</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Slack</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">DaVinci Resolve</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Python</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Premier Pro</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Unity</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Photoshop</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Illustrator</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">C#</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Java</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">After Effect</span>
                 </div>
               </div>
             </div>
