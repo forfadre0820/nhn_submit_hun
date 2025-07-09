@@ -1044,10 +1044,10 @@ export default function CombinedLanding() {
                     
                     <a 
                       href="mailto:buen136003@gmail.com"
-                      className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors rounded-full"
+                      className="inline-block text-gray-900 hover:text-gray-700 transition-colors underline text-[16px]"
                       style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
                     >
-                      Our Work
+                      Contact With Me
                     </a>
                   </div>
                 </div>
