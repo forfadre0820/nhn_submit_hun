@@ -1071,7 +1071,7 @@ export default function CombinedLanding() {
               <div className="text-left">
                 <button 
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer text-[16px]"
+                  className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer text-[14px]"
                 >
                   Back to top ↑
                 </button>
