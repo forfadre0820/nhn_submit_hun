@@ -19,7 +19,7 @@ import KoreyaHospitalImage from "@assets/4_1752092502620.jpg";
 import GalleryBeautyImage from "@assets/image_1752014636911.png";
 import GalleryWorkspaceImage from "@assets/image_1752014643264.png";
 import GalleryInterviewImage from "@assets/image_1752014659090.png";
-import GalleryLuxuryBagImage from "@assets/image_1752014666138.png";
+import LikelionHackathonImage from "@assets/image_1752092842644.png";
 import GalleryMalePortraitImage from "@assets/image_1752014670363.png";
 import GalleryCasualPortraitImage from "@assets/image_1752014672407.png";
 import GalleryJinairPromotionImage from "@assets/image_1752014683656.png";
@@ -339,16 +339,16 @@ export default function CombinedLanding() {
     },
     {
       id: "gallery-5",
-      src: GalleryLuxuryBagImage,
-      alt: "럭셔리 브랜드 제품 이미지",
-      title: "럭셔리 제품 포토그래피",
-      subtitle: "Louis Vuitton 브랜드 이미지",
-      description: "ComfyUI, FLUX, Python 활용하여 실사형 제품 이미지를 제작하였습니다.",
-      category: "Luxury Brand",
+      src: LikelionHackathonImage,
+      alt: "멋쟁이사자처럼 해커톤 홍보영상",
+      title: "해커톤 홍보영상 제작",
+      subtitle: "개발자 커뮤니티 행사 홍보",
+      description: "멋쟁이사자처럼 해커톤 행사를 위한 홍보영상을 기획하고 제작했습니다. 개발자 커뮤니티의 열정과 도전 정신을 담아 참가자들의 참여를 유도하는 영상 콘텐츠입니다.",
+      category: "Event Promotion",
       year: "2024",
-      client: "Louis Vuitton",
-      role: "제품 이미지 제작, AI 후보정",
-      tools: ["AI Image Generation", "ComfyUI", "FLUX"],
+      client: "멋쟁이사자처럼",
+      role: "홍보영상 기획, 제작",
+      tools: ["Video Production", "Motion Graphics", "Event Marketing"],
       images: []
     },
     {
