@@ -823,7 +823,7 @@ export default function CombinedLanding() {
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
                   <motion.h2 
-                    className="leading-tight mb-4 font-light"
+                    className="leading-tight mb-4 font-light text-[#ef4444]"
                     style={{
                       fontFamily: "'Noto Sans', sans-serif",
                       fontSize: "3.5rem",
