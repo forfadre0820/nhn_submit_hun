@@ -1153,7 +1153,7 @@ export default function CombinedLanding() {
       {/* Gallery Lightbox Modal */}
       {selectedProject && selectedProject.id.startsWith("gallery-") && (
         <motion.div 
-          className="fixed inset-0 bg-black/90 z-[99999] flex items-center justify-center"
+          className="fixed inset-0 bg-black/90 z-[999999] flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
@@ -1163,7 +1163,7 @@ export default function CombinedLanding() {
           {/* Close Button */}
           <button 
             onClick={closeModal}
-            className="absolute top-6 right-6 z-[100000] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+            className="absolute top-6 right-6 z-[9999999] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
             aria-label="Close gallery"
           >
             ×
@@ -1175,7 +1175,7 @@ export default function CombinedLanding() {
               e.stopPropagation();
               navigateGallery('prev');
             }}
-            className="absolute left-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 z-[9999999] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
             aria-label="Previous image"
             disabled={galleryItems.length <= 1}
           >
@@ -1188,7 +1188,7 @@ export default function CombinedLanding() {
               e.stopPropagation();
               navigateGallery('next');
             }}
-            className="absolute right-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 z-[9999999] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
             aria-label="Next image"
             disabled={galleryItems.length <= 1}
           >
