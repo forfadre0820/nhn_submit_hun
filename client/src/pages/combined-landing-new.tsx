@@ -1543,7 +1543,7 @@ export default function CombinedLanding() {
                       {selectedProject.id === "1" 
                         ? "삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다."
                         : selectedProject.id === "2"
-                        ? "Snapask Korea의 프리미엄 학습 콘텐츠 영상 제작을 담당했습니다. 학습자 몰입도 향상을 위한 인터랙티브 영상 요소 도입과 AI 기반 자동화 시스템으로 제작 효율성을 40% 개선했습니다."
+                        ? "Snapask Korea의 프리미엄 교육 콘텐츠 영상 제작을 담당했습니다. 인하우스 제작 체제 전환으로 제작 예산 40% 절감을 달성하고, 전 제작 과정을 직접 수행하여 본사 의사결정 지연 문제를 해소했습니다."
                         : selectedProject.id === "3"
                         ? "삼성 멀티캠퍼스의 교육 콘텐츠 기획 및 제작을 담당했습니다. 학습자 중심의 교육 설계와 실무 중심 커리큘럼 개발로 교육 만족도를 크게 향상시켰습니다."
                         : selectedProject.id === "4"
@@ -1660,62 +1660,96 @@ export default function CombinedLanding() {
                     <div className="mb-6">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                        주요 역할 및 기술적 성과
+                        프로젝트 기간
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                        전체 기간: 2022.01 ~ 2022.07 (7개월)
+                      </div>
+                    </div>
+
+                    {/* 주요 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                        주요 성과
                       </h2>
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">기획연출 촬영 조명 미술 스튜디오 제작 과정직접 수행</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">전체 제작 파이프라인을 직접 관리하며 일관된 품질 확보</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 인하우스 제작 체제 전환으로 제작 예산 40% 절감</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">본사 의사결정 지연 문제 해소 및 품질 재투자</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">BMPCC 6K 시네마틱 촬영 스튜디오 세팅, 브랜드 LUT 적용</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">고품질 영상 제작을 위한 전문 장비 활용</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로모션 2편 조회수 10만 이상 달성</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">시네마틱 품질로 높은 참여율과 브랜드 인지도 향상</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">Python + FFmpeg로 자막처리 생성 및 우류 검수 시스템 구축</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">자동화를 통한 제작 효율성 개선</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 홍콩 본사 BP 사례 선정</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">미술 효과장비 품질 향상 콘텐츠 사례 선정</p>
                       </div>
                     </div>
 
-                    {/* 핵심 성과 */}
+                    {/* 주요 역할 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                        핵심 성과
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                        주요 역할
                       </h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                      <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-lg">
-                        <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">40%</div>
-                          <span className="ml-3 text-lg font-semibold text-gray-800">예상절감</span>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">전 제작 과정 직접 수행</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">기획·연출·촬영·조명·미술(스튜디오 제작 포함) 전 제작 과정 직접 수행으로 본사 의사결정 지연 문제 해소</p>
                         </div>
-                        <p className="text-sm text-gray-600">인하우스 제작체계로 외주 비용절감 및 품질 제품투</p>
-                      </div>
-                      
-                      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-lg">
-                        <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white">⚡</div>
-                          <span className="ml-3 text-lg font-semibold text-gray-800">외산결정 저하해소</span>
-                        </div>
-                        <p className="text-sm text-gray-600">로컬외국인회원만 케이션 최소화로 저작숙도 향상</p>
                       </div>
 
-                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg">
-                        <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">10만+</div>
-                          <span className="ml-3 text-lg font-semibold text-gray-800">조회수 달성</span>
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">시네마틱 촬영 및 스튜디오 세팅</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            BMPCC 6K 시네마틱 촬영·스튜디오 환경 직접 세팅, 조명 시스템 구축 및 브랜드 LUT 적용하여 시네마 룩 구현을 통해 품질 고도화
+                          </p>
                         </div>
-                        <p className="text-sm text-gray-600">프로모션 영상 2편 시네마틱 품질로 높은 참여율 달성</p>
                       </div>
 
-                      <div className="bg-gradient-to-br from-cyan-50 to-teal-50 p-6 rounded-lg">
-                        <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white">🎬</div>
-                          <span className="ml-3 text-lg font-semibold text-gray-800">종료분석 시데 선정</span>
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 시스템 구축</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            Python + FFmpeg를 활용해 자막 자동 생성 및 음성 텍스트 변환 기반 오류 검수 루틴 구축으로 대규모 컷편집 반복 작업 효율화
+                          </p>
                         </div>
-                        <p className="text-sm text-gray-600">미술 효과장비 품질 향상 콘텐츠 시데 선정</p>
+                      </div>
+                    </div>
+
+                    {/* 활용 기술 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                        활용 기술
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">영상 편집 및 후보정</h3>
+                        <div className="space-y-2">
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• DaVinci Resolve (LUT 적용)</div>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• Premiere Pro (전체 편집)</div>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• After Effects (모션그래픽)</div>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• 컬러 컬렉션 & 컬러 그레이딩</div>
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">그래픽 및 자동화</h3>
+                        <div className="space-y-2">
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• Photoshop (그래픽 리소스 생성)</div>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• Midjourney (AI 그래픽 생성)</div>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• Python + FFmpeg (자막 자동화)</div>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">• 오픈소스 활용 대규모 편집 자동화</div>
+                        </div>
                       </div>
                     </div>
                   </>
