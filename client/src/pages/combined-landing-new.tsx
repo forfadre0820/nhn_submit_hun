@@ -1593,7 +1593,7 @@ export default function CombinedLanding() {
                   <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                     <div className="lg:col-span-3">
                       <h1 className="text-4xl lg:text-5xl text-[#282623] leading-tight mb-0 font-semibold">
-                        교육 콘텐츠 기획 제작
+                        {selectedProject.title}
                       </h1>
                     </div>
                   </div>
@@ -1606,7 +1606,7 @@ export default function CombinedLanding() {
                           Categories
                         </h5>
                         <p className="text-sm text-[#282623]">
-                          Educational Content
+                          {selectedProject.category}
                         </p>
                       </div>
 
@@ -1614,7 +1614,7 @@ export default function CombinedLanding() {
                         <h5 className="opacity-50 text-base font-normal mb-2">
                           Client
                         </h5>
-                        <p className="text-sm text-[#282623]">삼성교육재단</p>
+                        <p className="text-sm text-[#282623]">{selectedProject.client}</p>
                       </div>
 
                       <div>
@@ -1622,17 +1622,14 @@ export default function CombinedLanding() {
                           Role
                         </h5>
                         <p className="text-sm text-[#282623]">
-                          콘텐츠 기획, 제작
+                          {selectedProject.role}
                         </p>
                       </div>
                     </div>
 
                     <div>
                       <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                        삼성 멀티캠퍼스의 교육 콘텐츠 기획 및 제작을 담당하여
-                        학습자 중심의 교육 설계와 실제 수업 촬영을 기반으로 한
-                        교육 콘텐츠를 개발했습니다. 효과적인 학습 경험 설계를
-                        통해 교육 만족도를 높이고, 양질의 교육 콘텐츠를 제공했습니다.
+                        {selectedProject.description}
                       </p>
                     </div>
                   </div>
@@ -1657,15 +1654,15 @@ export default function CombinedLanding() {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                         <img
-                          src={IntegratedOperationImage}
-                          alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
+                          src={selectedProject.images[0]}
+                          alt={selectedProject.title}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                         <img
-                          src={TechSupportImage}
-                          alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
+                          src={selectedProject.images[1]}
+                          alt={selectedProject.title}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                       </div>
@@ -1675,15 +1672,15 @@ export default function CombinedLanding() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                         <img
-                          src={OverseasEventImage}
-                          alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
+                          src={selectedProject.images[2]}
+                          alt={selectedProject.title}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                         <img
-                          src={OnlineEventImage}
-                          alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
+                          src={selectedProject.images[3]}
+                          alt={selectedProject.title}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                       </div>
@@ -1692,12 +1689,12 @@ export default function CombinedLanding() {
 
                   <div className="text-center mb-8">
                     <p className="text-sm text-[#58534e] italic">
-                      오프라인 교육부터 온라인 이벤트까지 통합 운영
+                      {selectedProject.subtitle}
                     </p>
                   </div>
                 </motion.div>
 
-                {/* Project Details */}
+                {/* Project Details - 조건부 렌더링 */}
                 <motion.div
                   className="mb-12"
                   initial={{ opacity: 0, y: 40 }}
@@ -1707,160 +1704,467 @@ export default function CombinedLanding() {
                     delay: ANIMATION_DURATIONS.stagger * 4,
                   }}
                 >
-                  {/* 프로젝트 기간 */}
-                  <div className="mb-6">
-                    <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        1
-                      </span>
-                      프로젝트 기간
-                    </h2>
-                  </div>
-                  <div className="space-y-5 mb-8">
+                  {/* 각 프로젝트별 상세 내용 */}
+                  {selectedProject.id === "1" && (
                     <div>
-                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                        프로젝트 기간: 2023년 2월 ~ 2023년 8월 (6개월)
+                      {/* Samsung 온오프라인 콘텐츠 기획 */}
+                      <div className="mb-6">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            1
+                          </span>
+                          프로젝트 기간
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                            프로젝트 기간: 2023.05 ~ 2024.03 (10개월)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            2
+                          </span>
+                          프로젝트 배경
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            삼성 멀티캠퍼스의 교육 콘텐츠 기획 및 제작을 담당하여 학습자 중심의 교육 설계와 
+                            실제 수업 촬영을 기반으로 한 교육 콘텐츠를 개발했습니다. 
+                            효과적인 학습 경험 설계를 통해 교육 만족도를 높이고, 양질의 교육 콘텐츠를 제공했습니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            3
+                          </span>
+                          주요 역할 및 기술적 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            통합 교육 프로그램 운영
+                          </h3>
+                          <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                            <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                              온라인과 오프라인 교육을 통합한 하이브리드 교육 프로그램을 설계하고 운영했습니다.
+                              실시간 상호작용과 개별 피드백을 통해 학습 효과를 극대화했습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            4
+                          </span>
+                          핵심 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            • 교육 프로그램 만족도 95% 달성
+                          </h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                            체계적인 교육 설계와 실시간 피드백 시스템으로 높은 학습자 만족도 달성
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            5
+                          </span>
+                          기술 스택 및 도구
+                        </h2>
+                      </div>
+                      <div className="space-y-4 mb-8">
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                            교육 설계
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            프로그램 운영
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            영상 제작
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
 
-                  {/* 프로젝트 배경 */}
-                  <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                    <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        2
-                      </span>
-                      프로젝트 배경
-                    </h2>
-                  </div>
-                  <div className="space-y-5 mb-8">
+                  {selectedProject.id === "2" && (
                     <div>
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        삼성물산의 효과적인 교육 메시지 전달을 위한 Screen Life 연출 기법을 통해 교육 콘텐츠를 제작하고, 
-                        사용자 행동 분석을 통한 맞춤형 교육 전략을 수립하였습니다. 
-                        재생 중 창 최소화, 낮은 참여도, 5초 이내 주의 집중 분산 등의 사용자 행동 패턴을 분석하여 
-                        Screen Life 포맷을 활용한 몰입도 향상과 자동 주의 집중 유도 시스템을 구축했습니다.
-                      </p>
-                    </div>
-                  </div>
+                      {/* Snapask 프리미엄 콘텐츠 영상 제작 */}
+                      <div className="mb-6">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            1
+                          </span>
+                          프로젝트 기간
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                            프로젝트 기간: 2022.07 ~ 2023.06 (12개월)
+                          </div>
+                        </div>
+                      </div>
 
-                  {/* 주요 역할 및 기술적 성과 */}
-                  <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                    <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        3
-                      </span>
-                      주요 역할 및 기술적 성과
-                    </h2>
-                  </div>
-                  <div className="space-y-5 mb-8">
-                    <div>
-                      <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        교육기획 & 브랜드전략
-                      </h3>
-                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          사용자 행동 분석을 바탕으로 5초 이내 주의 집중 유도 기법을 개발하여 교육 효과를 극대화했습니다. 
-                          교육 콘텐츠 내 자연스러운 브랜드 메시지 통합과 타겟 오디언스별 맞춤형 메시지를 개발했습니다.
-                        </p>
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            2
+                          </span>
+                          프로젝트 배경
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            Snapask Korea의 프리미엄 교육 콘텐츠 제작을 담당하여 학생들의 학습 효과를 극대화하는 
+                            고품질 영상 콘텐츠를 개발했습니다. 개인 맞춤형 학습 경험을 제공하여 
+                            학습자의 이해도와 참여도를 높이는 것을 목표로 했습니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            3
+                          </span>
+                          주요 역할 및 기술적 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            프리미엄 콘텐츠 기획 및 제작
+                          </h3>
+                          <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                            <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                              학습자 맞춤형 교육 콘텐츠를 기획하고 제작하여 개별화된 학습 경험을 제공했습니다.
+                              인터랙티브 요소를 활용한 참여형 콘텐츠로 학습 몰입도를 높였습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            4
+                          </span>
+                          핵심 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            • 프리미엄 콘텐츠 완성도 향상
+                          </h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                            고품질 교육 콘텐츠 제작을 통해 학습자 만족도와 이해도를 크게 향상시켰습니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            5
+                          </span>
+                          기술 스택 및 도구
+                        </h2>
+                      </div>
+                      <div className="space-y-4 mb-8">
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                            교육 콘텐츠 기획
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            영상 제작
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            모바일 플랫폼
+                          </span>
+                        </div>
                       </div>
                     </div>
+                  )}
+
+                  {selectedProject.id === "3" && (
                     <div>
-                      <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        크리에이티브 디렉팅
-                      </h3>
-                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          Screen Life 포맷과 Found Footage 기법을 결합하여 사용자 몰입도를 극대화하고 복잡한 메시지를 효과적으로 전달했습니다. 
-                          실제 컴퓨터 화면을 활용한 현실감 있는 교육 환경 구성과 화면 애니메이션을 통한 동적 학습 경험을 제공했습니다.
-                        </p>
+                      {/* Samsung 교육 콘텐츠 기획 제작 - 워드 문서 내용 */}
+                      <div className="mb-6">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            1
+                          </span>
+                          프로젝트 기간
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                            프로젝트 기간: 2023년 2월 ~ 2023년 8월 (6개월)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            2
+                          </span>
+                          프로젝트 배경
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            삼성물산의 효과적인 교육 메시지 전달을 위한 Screen Life 연출 기법을 통해 교육 콘텐츠를 제작하고, 
+                            사용자 행동 분석을 통한 맞춤형 교육 전략을 수립하였습니다. 
+                            재생 중 창 최소화, 낮은 참여도, 5초 이내 주의 집중 분산 등의 사용자 행동 패턴을 분석하여 
+                            Screen Life 포맷을 활용한 몰입도 향상과 자동 주의 집중 유도 시스템을 구축했습니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            3
+                          </span>
+                          주요 역할 및 기술적 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            교육기획 & 브랜드전략
+                          </h3>
+                          <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                            <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                              사용자 행동 분석을 바탕으로 5초 이내 주의 집중 유도 기법을 개발하여 교육 효과를 극대화했습니다. 
+                              교육 콘텐츠 내 자연스러운 브랜드 메시지 통합과 타겟 오디언스별 맞춤형 메시지를 개발했습니다.
+                            </p>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            크리에이티브 디렉팅
+                          </h3>
+                          <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                            <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                              Screen Life 포맷과 Found Footage 기법을 결합하여 사용자 몰입도를 극대화하고 복잡한 메시지를 효과적으로 전달했습니다. 
+                              실제 컴퓨터 화면을 활용한 현실감 있는 교육 환경 구성과 화면 애니메이션을 통한 동적 학습 경험을 제공했습니다.
+                            </p>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            프로젝트 관리
+                          </h3>
+                          <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                            <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                              실제 업무 환경을 반영한 효과적인 교육 콘텐츠 제작을 위해 사용자 행동 분석 및 데이터 기반 의사결정을 수행했습니다. 
+                              프로젝트 일정 및 품질 관리를 최적화하여 창의적 특성을 확립했습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            4
+                          </span>
+                          핵심 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            • 경쟁사 대비 30% 높은 단가임에도 불구하고 수주 성공
+                          </h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                            사용자 친화적 분석과 창의적 기법의 효과적 결합으로 높은 입찰 성공률 달성
+                          </p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            • 교육 콘텐츠 분야 차별화된 접근 방식 개발
+                          </h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                            Screen Life 장르의 전문적 활용으로 현실감 있는 교육 환경 구성 노하우 축적
+                          </p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            • 5초 이내 주의 집중 유도 기법 개발
+                          </h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                            체계적인 사용자 행동 분석을 바탕으로 교육 효과를 극대화하는 혁신적 방법론 구축
+                          </p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            • 교육 효과와 브랜드 메시지 전달의 균형있는 통합
+                          </h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                            사용자 경험 중심의 콘텐츠 제작 프로세스를 통해 지속 가능한 교육 방법론 정립
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            5
+                          </span>
+                          기술 스택 및 도구
+                        </h2>
+                      </div>
+                      <div className="space-y-4 mb-8">
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                            Found Footage
+                          </span>
+                          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                            Screen Life
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            Photoshop
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            After Effects
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            Premiere Pro
+                          </span>
+                        </div>
                       </div>
                     </div>
+                  )}
+
+                  {selectedProject.id === "4" && (
                     <div>
-                      <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        프로젝트 관리
-                      </h3>
-                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          실제 업무 환경을 반영한 효과적인 교육 콘텐츠 제작을 위해 사용자 행동 분석 및 데이터 기반 의사결정을 수행했습니다. 
-                          프로젝트 일정 및 품질 관리를 최적화하여 창의적 특성을 확립했습니다.
-                        </p>
+                      {/* Jinair 베트남 인플루언서 프로모션 콘텐츠 제작 */}
+                      <div className="mb-6">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            1
+                          </span>
+                          프로젝트 기간
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                            프로젝트 기간: 2023.09 ~ 2023.12 (4개월)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            2
+                          </span>
+                          프로젝트 배경
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            진에어의 베트남 시장 진출을 위한 인플루언서 마케팅 콘텐츠를 기획하고 제작했습니다. 
+                            현지 문화와 트렌드를 반영한 브랜드 메시지 전달을 통해 베트남 소비자들의 
+                            진에어 브랜드 인지도 향상과 항공편 이용률 증대를 목표로 했습니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            3
+                          </span>
+                          주요 역할 및 기술적 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            해외 마케팅 콘텐츠 기획
+                          </h3>
+                          <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                            <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                              베트남 현지 인플루언서와의 협업을 통해 문화적 특성을 반영한 마케팅 콘텐츠를 기획했습니다.
+                              젊은 층을 타겟으로 한 참신한 프로모션 전략으로 브랜드 인지도를 높였습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            4
+                          </span>
+                          핵심 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            • 베트남 시장 브랜드 인지도 향상
+                          </h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                            현지 문화를 반영한 콘텐츠 제작으로 베트남 소비자들의 브랜드 친밀도를 높였습니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            5
+                          </span>
+                          기술 스택 및 도구
+                        </h2>
+                      </div>
+                      <div className="space-y-4 mb-8">
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                            인플루언서 마케팅
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            브랜드 콘텐츠
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            영상 제작
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  {/* 핵심 성과 */}
-                  <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                    <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        4
-                      </span>
-                      핵심 성과
-                    </h2>
-                  </div>
-                  <div className="space-y-5 mb-8">
-                    <div>
-                      <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 경쟁사 대비 30% 높은 단가임에도 불구하고 수주 성공
-                      </h3>
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        사용자 친화적 분석과 창의적 기법의 효과적 결합으로 높은 입찰 성공률 달성
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 교육 콘텐츠 분야 차별화된 접근 방식 개발
-                      </h3>
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        Screen Life 장르의 전문적 활용으로 현실감 있는 교육 환경 구성 노하우 축적
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 5초 이내 주의 집중 유도 기법 개발
-                      </h3>
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        체계적인 사용자 행동 분석을 바탕으로 교육 효과를 극대화하는 혁신적 방법론 구축
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 교육 효과와 브랜드 메시지 전달의 균형있는 통합
-                      </h3>
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        사용자 경험 중심의 콘텐츠 제작 프로세스를 통해 지속 가능한 교육 방법론 정립
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* 기술 스택 및 도구 */}
-                  <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                    <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        5
-                      </span>
-                      기술 스택 및 도구
-                    </h2>
-                  </div>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                        Found Footage
-                      </span>
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                        Screen Life
-                      </span>
-                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                        Photoshop
-                      </span>
-                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                        After Effects
-                      </span>
-                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                        Premiere Pro
-                      </span>
-                    </div>
-                  </div>
+                  )}
                 </motion.div>
               </div>
 
