@@ -212,6 +212,7 @@ export default function CombinedLanding() {
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [isClosingModal, setIsClosingModal] = useState(false);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+  const [isGalleryMode, setIsGalleryMode] = useState(false);
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -501,6 +502,7 @@ export default function CombinedLanding() {
       setSelectedProject(null);
       setIsClosingModal(false);
       setCurrentGalleryIndex(0);
+      setIsGalleryMode(false);
     }, 400);
   };
 
@@ -508,8 +510,10 @@ export default function CombinedLanding() {
   const openGalleryLightbox = (item: PortfolioItem) => {
     const index = galleryItems.findIndex(galleryItem => galleryItem.id === item.id);
     if (index !== -1) {
+      setIsGalleryMode(true);
       setCurrentGalleryIndex(index);
       setSelectedProject(item);
+      setIsClosingModal(false);
     }
   };
 
@@ -1151,7 +1155,7 @@ export default function CombinedLanding() {
         </div>
       </footer>
       {/* Gallery Lightbox Modal */}
-      {selectedProject && selectedProject.id.startsWith("gallery-") && (
+      {isGalleryMode && selectedProject && (
         <motion.div 
           className="fixed inset-0 bg-black/90 z-[999999] flex items-center justify-center"
           initial={{ opacity: 0 }}
@@ -1238,7 +1242,7 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       {/* Project Detail Modal - Floating Lightbox Style */}
-      {selectedProject && !selectedProject.id.startsWith("gallery-") && (
+      {!isGalleryMode && selectedProject && (
         <motion.div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
