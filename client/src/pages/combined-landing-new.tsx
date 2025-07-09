@@ -354,15 +354,15 @@ export default function CombinedLanding() {
     {
       id: "gallery-6",
       src: GalleryMalePortraitImage,
-      alt: "Louis Vuitton 남성 모델 포트레이트",
-      title: "Louis Vuitton 남성 캠페인",
-      subtitle: "클래식한 매력의 표현",
-      description: "ComfyUI, FLUX, Python 활용하여 실사형 인물 이미지를 제작하였습니다.",
-      category: "Fashion Portrait",
+      alt: "AI 생성 실사형 남성 포트레이트",
+      title: "실사형 인물 생성",
+      subtitle: "AI 기반 포트레이트 제작",
+      description: "ComfyUI, Python, Photoshop을 활용하여 실사 인물을 생성하는 것에 초점을 맞춘 AI 포트레이트 작업입니다. 자연스러운 인물 표현과 디테일한 후보정을 통해 실제 촬영과 구분이 어려운 수준의 결과물을 구현했습니다.",
+      category: "AI Portrait",
       year: "2024",
-      client: "Louis Vuitton",
-      role: "AI 포트레이트 제작",
-      tools: ["AI Portrait", "ComfyUI", "FLUX"],
+      client: "개인 포트폴리오",
+      role: "AI 인물 생성, 후보정",
+      tools: ["ComfyUI", "Python", "Photoshop"],
       images: []
     },
     {
