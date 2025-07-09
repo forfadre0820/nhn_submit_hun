@@ -948,7 +948,7 @@ export default function CombinedLanding() {
                 {galleryItems.map((item, index) => {
                   // 다양한 높이 패턴 생성 (rem 단위 사용)
                   const heightVariants = [
-                    'h-[12rem]', 'h-[20rem]', 'h-[14rem]', 'h-[18rem]', 'h-[10rem]', 'h-[22rem]', 'h-[13rem]', 'h-[17rem]'
+                    'h-[12rem]', 'h-[20rem]', 'h-[14rem]', 'h-[18rem]', 'h-[10rem]', 'h-[22rem]', 'h-[13rem]', 'h-[19rem]'
                   ];
                   const randomHeight = heightVariants[index % heightVariants.length];
                   
