@@ -3,6 +3,16 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Import skeleton components
+import {
+  HeroSkeleton,
+  PortfolioGridSkeleton,
+  GalleryGridSkeleton,
+  AboutSkeleton,
+  ContactSkeleton,
+  ProjectDetailSkeleton
+} from "@/components/skeletons/PortfolioSkeletons";
+
 import ContactWorkspaceImage from "@assets/image_1752013143751.png";
 import SamsungOfflineImage from "@assets/오프라인 운영_1752012039625.png";
 import SnapaskContentImage from "@assets/image_1752012210723.png";
@@ -211,6 +221,15 @@ export default function CombinedLanding() {
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [isClosingModal, setIsClosingModal] = useState(false);
+  
+  // Loading states
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+  const [isPortfolioLoading, setIsPortfolioLoading] = useState(false);
+  const [isGalleryLoading, setIsGalleryLoading] = useState(false);
+  const [isAboutLoading, setIsAboutLoading] = useState(false);
+  const [isContactLoading, setIsContactLoading] = useState(false);
+  const [isModalLoading, setIsModalLoading] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -493,13 +512,63 @@ export default function CombinedLanding() {
     setShowSoundControl(false);
   };
 
+  // Image loading handlers
+  const handleImageLoad = useCallback((imageSrc: string) => {
+    setLoadedImages(prev => new Set([...prev, imageSrc]));
+  }, []);
+
+  const isImageLoaded = useCallback((imageSrc: string) => {
+    return loadedImages.has(imageSrc);
+  }, [loadedImages]);
+
+  // Initial loading simulation
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsInitialLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Simulate section loading when scrolled into view
+  const handleSectionLoading = useCallback((section: string) => {
+    switch(section) {
+      case 'portfolio':
+        setIsPortfolioLoading(true);
+        setTimeout(() => setIsPortfolioLoading(false), 800);
+        break;
+      case 'gallery':
+        setIsGalleryLoading(true);
+        setTimeout(() => setIsGalleryLoading(false), 600);
+        break;
+      case 'about':
+        setIsAboutLoading(true);
+        setTimeout(() => setIsAboutLoading(false), 700);
+        break;
+      case 'contact':
+        setIsContactLoading(true);
+        setTimeout(() => setIsContactLoading(false), 500);
+        break;
+    }
+  }, []);
+
   // Modal close with dissolve effect
   const closeModal = () => {
     setIsClosingModal(true);
     setTimeout(() => {
       setSelectedProject(null);
       setIsClosingModal(false);
+      setIsModalLoading(false);
     }, 400);
+  };
+
+  // Handle project selection with loading
+  const handleProjectClick = (project: PortfolioItem) => {
+    setIsModalLoading(true);
+    setTimeout(() => {
+      setSelectedProject(project);
+      setIsModalLoading(false);
+    }, 600);
   };
 
   // Navigation handler with smooth scroll to section
@@ -561,7 +630,10 @@ export default function CombinedLanding() {
         ref={heroRef}
         className="hero h-screen flex items-center justify-center relative bg-white overflow-hidden"
       >
-        <div className="container mx-auto px-4 text-center">
+        {isInitialLoading ? (
+          <HeroSkeleton />
+        ) : (
+          <div className="container mx-auto px-4 text-center">
           <motion.h1 
             className={`hero__heading font-bold leading-tight ${SPACING.itemGap}`}
             style={{ fontSize: "62px", lineHeight: "1.1" }}
@@ -693,18 +765,23 @@ export default function CombinedLanding() {
               </motion.div>
             </motion.div>
           )}
-        </div>
+          </div>
+        )}
       </section>
       {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-1 min-h-screen" data-section="about">
         <div className="container mx-auto px-4 pt-20">
-          <motion.div 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          {isAboutLoading ? (
+            <AboutSkeleton />
+          ) : (
+            <motion.div 
+              className="max-w-6xl mx-auto"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              onViewportEnter={() => handleSectionLoading('about')}
+            >
             {/* Main About Section */}
             <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
@@ -886,174 +963,205 @@ export default function CombinedLanding() {
 
             {/* Featured Work Section */}
             <div className={SPACING.sectionGap} data-section="work">
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">MAIN PROJECT</h3>
-                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
-              </div>
+              {isPortfolioLoading ? (
+                <PortfolioGridSkeleton />
+              ) : (
+                <>
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">MAIN PROJECT</h3>
+                    <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
+                  </div>
 
-              {/* Separator Line */}
-              <div className="separator-wrap mb-8">
-                <div className="separator-line h-px bg-gray-200"></div>
-              </div>
+                  {/* Separator Line */}
+                  <div className="separator-wrap mb-8">
+                    <div className="separator-line h-px bg-gray-200"></div>
+                  </div>
 
-              {/* Portfolio Grid - Single Row Layout */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                {portfolioItems.slice(0, 4).map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    className="group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    onClick={() => setSelectedProject(item)}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                  {/* Portfolio Grid - Single Row Layout */}
+                  <div 
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+                    onMouseEnter={() => handleSectionLoading('portfolio')}
                   >
-                    {/* 프로젝트 이미지 카드 */}
-                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[16/9]">
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      {/* 호버 오버레이 */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
-                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
+                    {portfolioItems.slice(0, 4).map((item, index) => (
+                      <motion.div
+                        key={item.id}
+                        className="group cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        onClick={() => handleProjectClick(item)}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        {/* 프로젝트 이미지 카드 */}
+                        <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[16/9]">
+                          <img
+                            src={item.src}
+                            alt={item.alt}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                            decoding="async"
+                            onLoad={() => handleImageLoad(item.src)}
+                          />
+                          {/* 호버 오버레이 */}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
+                              <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Gallery Section */}
             <div className={SPACING.sectionGap} data-section="gallery">
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">VISUAL GALLERY</h3>
-                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
-              </div>
+              {isGalleryLoading ? (
+                <GalleryGridSkeleton />
+              ) : (
+                <>
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">VISUAL GALLERY</h3>
+                    <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
+                  </div>
 
-              {/* Separator Line */}
-              <div className="separator-wrap mb-8">
-                <div className="separator-line h-px bg-gray-200"></div>
-              </div>
+                  {/* Separator Line */}
+                  <div className="separator-wrap mb-8">
+                    <div className="separator-line h-px bg-gray-200"></div>
+                  </div>
 
-              {/* Gallery Grid - 4x2 Grid Layout (8 images) */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {galleryItems.map((item, index) => (
-                  <motion.div
-                    key={`gallery-${item.id}`}
-                    className="group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    onClick={() => setSelectedProject(item)}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                  {/* Gallery Grid - 4x2 Grid Layout (8 images) */}
+                  <div 
+                    className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+                    onMouseEnter={() => handleSectionLoading('gallery')}
                   >
-                    {/* 갤러리 이미지 카드 */}
-                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      {/* 호버 오버레이 */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
-                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                    {galleryItems.map((item, index) => (
+                      <motion.div
+                        key={`gallery-${item.id}`}
+                        className="group cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        onClick={() => handleProjectClick(item)}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        {/* 갤러리 이미지 카드 */}
+                        <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
+                          <img
+                            src={item.src}
+                            alt={item.alt}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                            decoding="async"
+                            onLoad={() => handleImageLoad(item.src)}
+                          />
+                          {/* 호버 오버레이 */}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
+                              <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Contact Section */}
             <div className={SPACING.sectionGap} data-section="contact">
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
-                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
-              </div>
-
-              {/* Separator Line */}
-              <div className="separator-wrap mb-8">
-                <div className="separator-line h-px bg-gray-200"></div>
-              </div>
-
-              {/* MAKE IT BETTER Section */}
-              <div className="bg-white py-16 lg:py-24 pt-[0px] pb-[0px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]">
-                  {/* Left Column - Image */}
-                  <div className="relative">
-                    <div className="w-full h-full bg-gray-100 overflow-hidden">
-                      <img 
-                        src={ContactWorkspaceImage}
-                        loading="lazy" 
-                        decoding="async" 
-                        draggable="false" 
-                        alt="Professional Content Production Workspace" 
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
+              {isContactLoading ? (
+                <ContactSkeleton />
+              ) : (
+                <>
+                  <div 
+                    className="flex justify-between items-start mb-6"
+                    onMouseEnter={() => handleSectionLoading('contact')}
+                  >
+                    <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
+                    <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
                   </div>
 
-                  {/* Right Column - Content */}
-                  <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center">
-                    <motion.h3 
-                      className="text-red-500 font-light mb-8 lg:mb-12"
-                      style={{ 
-                        fontFamily: "'Noto Sans', sans-serif",
-                        fontWeight: '300',
-                        fontSize: '4rem',
-                        lineHeight: '1.1',
-                        letterSpacing: '-0.02em'
-                      }}
-                      initial={{ y: 50, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ 
-                        duration: 0.8, 
-                        ease: [0.25, 0.46, 0.45, 0.94] 
-                      }}
-                      viewport={{ once: true, margin: "-100px" }}
-                    >
-                      <span>&gt;</span>Collaboration
-                    </motion.h3>
-                    
-                    <div className="text-gray-700 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
-                      <p className="text-[14px] mb-4">
-                        콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
-                        연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
-                      </p>
-                      <p className="text-[14px] mb-4">
-                        라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
-                        AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
-                        넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
-                        콘텐츠를 만들어가겠습니다.
-                      </p>
-                    </div>
-                    
-                    <a 
-                      href="mailto:buen136003@gmail.com"
-                      className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors rounded-full"
-                      style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
-                    >
-                      Our Work
-                    </a>
+                  {/* Separator Line */}
+                  <div className="separator-wrap mb-8">
+                    <div className="separator-line h-px bg-gray-200"></div>
                   </div>
-                </div>
-              </div>
+
+                  {/* MAKE IT BETTER Section */}
+                  <div className="bg-white py-16 lg:py-24 pt-[0px] pb-[0px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]">
+                      {/* Left Column - Image */}
+                      <div className="relative">
+                        <div className="w-full h-full bg-gray-100 overflow-hidden">
+                          <img 
+                            src={ContactWorkspaceImage}
+                            loading="lazy" 
+                            decoding="async" 
+                            draggable="false" 
+                            alt="Professional Content Production Workspace" 
+                            className="object-cover w-full h-full"
+                            onLoad={() => handleImageLoad(ContactWorkspaceImage)}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Right Column - Content */}
+                      <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center">
+                        <motion.h3 
+                          className="text-red-500 font-light mb-8 lg:mb-12"
+                          style={{ 
+                            fontFamily: "'Noto Sans', sans-serif",
+                            fontWeight: '300',
+                            fontSize: '4rem',
+                            lineHeight: '1.1',
+                            letterSpacing: '-0.02em'
+                          }}
+                          initial={{ y: 50, opacity: 0 }}
+                          whileInView={{ y: 0, opacity: 1 }}
+                          transition={{ 
+                            duration: 0.8, 
+                            ease: [0.25, 0.46, 0.45, 0.94] 
+                          }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
+                          <span>&gt;</span>Collaboration
+                        </motion.h3>
+                        
+                        <div className="text-gray-700 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
+                          <p className="text-[14px] mb-4">
+                            콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
+                            연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
+                          </p>
+                          <p className="text-[14px] mb-4">
+                            라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
+                            AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
+                            넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
+                            콘텐츠를 만들어가겠습니다.
+                          </p>
+                        </div>
+                        
+                        <a 
+                          href="mailto:buen136003@gmail.com"
+                          className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors rounded-full"
+                          style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
+                        >
+                          Our Work
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </motion.div>
+          )}
         </div>
       </section>
       {/* Gallery Item Simple Modal */}
@@ -1441,8 +1549,6 @@ export default function CombinedLanding() {
             <div className="pb-8"></div>
             </div> {/* Close scroll container */}
             
-
-            
             {/* Close Button */}
             <button
               className="absolute top-6 right-6 w-10 h-10 bg-white/80 hover:bg-white text-gray-600 hover:text-gray-800 rounded-full flex items-center justify-center transition-all shadow-lg z-10"
@@ -1813,56 +1919,140 @@ export default function CombinedLanding() {
 
                 {selectedProject.id === "3" && (
                   <>
-                    {/* 삼성 교육 콘텐츠 프로젝트 */}
+                    {/* 삼성 교육형 영상 콘텐츠 기획 제작 프로젝트 */}
                     <div className="mb-6">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                        교육 콘텐츠 설계 접근법
+                        프로젝트 기간
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                        전체 기간: 2023.02 ~ 2023.08 (06개월)
+                      </div>
+                    </div>
+
+                    {/* 주요 역할 및 기술적 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                        주요 역할 및 기술적 성과
+                      </h2>
+                    </div>
+                    <div className="space-y-6 mb-8">
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">🎯 재생 시간 5초 내 이탈하지 않도록 강제 몰입 구조 설계</h3>
+                        <div className="bg-gray-50 p-4 rounded-lg">
+                          <ul className="space-y-2 text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            <li>• 웹툰형 시각구성 'Screen Life' 포맷 모의하여 소리 없이 보더라도 메시지가 전달되는 구조 구현</li>
+                            <li>• 사용자의 다양한 몰입 방식(시각/청각/상호작용)을 고려한 네트워크서, 타이밍, 마우스 인터랙션 파워</li>
+                            <li>• 일괄 등록계</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">핵심 성과</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div className="flex items-center mb-3">
+                              <div className="w-10 h-10 bg-[#282623] rounded-full flex items-center justify-center text-white font-bold text-sm">30%</div>
+                              <span className="ml-3 text-base font-semibold text-[#282623]">높은 가격 수주 성공</span>
+                            </div>
+                            <p className="text-sm text-[#58534e]">회피성향을 억엑 음성 전략으로 강제인창 우익 확보</p>
+                          </div>
+                          
+                          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div className="flex items-center mb-3">
+                              <div className="w-10 h-10 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-xs">효율성</div>
+                              <span className="ml-3 text-base font-semibold text-[#282623]">5초 내 이탈 방지</span>
+                            </div>
+                            <p className="text-sm text-[#58534e]">ALT+TAB 회피패턴을 억제 음성 초기 부분의 초기 몰입 부탁드려 부탁드리겠습니다</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 인지원체 분석 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                        인지원체 분석 및 대응
                       </h2>
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">학습자 중심 교육 설계</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실무 중심의 커리큘럼과 인터랙티브 학습 요소 도입</p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">멀티미디어 콘텐츠 제작</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">영상, 인터랙티브 요소, 실습 자료를 통합한 종합적 학습 경험</p>
-                      </div>
-                    </div>
-
-                    {/* FFmpeg 최적화 */}
-                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                        FFmpeg 최적화
-                      </h2>
-                    </div>
-                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="text-sm font-bold text-purple-600 mb-3">FFmpeg 최적화</h4>
-                          <ul className="space-y-2 text-sm text-gray-700">
-                            <li>• FFmpeg 기반 자막생성 시스템 구축</li>
-                            <li>• 고정판 다단계 메일 장면 병렬 처리</li>
-                            <li>• 모델 설계 자체 콘텐츠 시스템 구축</li>
-                          </ul>
-                          <div className="mt-3 flex space-x-2">
-                            <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">FFmpeg</span>
-                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">자막생성</span>
+                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">ALT+TAB 회피패턴 분석</h3>
+                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                          <div className="space-y-3">
+                            <div className="flex items-start">
+                              <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">1</span>
+                              <div>
+                                <p className="text-sm text-[#282623] font-medium">재생 과목시 창을 좋아나 'ALT+TAB'으로 최소화</p>
+                                <p className="text-xs text-[#58534e] mt-1">수리민간독구성 호메이 보지않게 이이하 본작용</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start">
+                              <span className="bg-orange-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">3</span>
+                              <div>
+                                <p className="text-sm text-[#282623] font-medium">단축키 다움 흔한으로 부딪기 위해 최소우 진입</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start">
+                              <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">4</span>
+                              <div>
+                                <p className="text-sm text-[#282623] font-medium">5초 이 아이태이비가상 구문직적으로 왜인</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
+                      </div>
+                    </div>
 
-                        <div>
-                          <h4 className="text-sm font-bold text-blue-600 mb-3">효율화 성과</h4>
-                          <ul className="space-y-2 text-sm text-gray-700">
-                            <li>• 자막 리타이밍 대폭 단축 폭 달성</li>
-                            <li>• 다회차 설문 관리 체계 구축</li>
-                            <li>• 간체 물량 양산체계 별도 확보</li>
-                          </ul>
-                          <div className="mt-3 flex space-x-2">
-                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">성과향상</span>
-                            <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">품질제고</span>
+                    {/* Screen Life 포맷 구현 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                        Screen Life 포맷 구현
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div>
+                        <h4 className="text-sm font-medium text-[#282623] mb-3">웹툰형 시구성의</h4>
+                        <div className="space-y-3">
+                          <div className="flex items-center space-x-3">
+                            <span className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">💻</span>
+                            <div>
+                              <p className="text-sm text-[#282623] font-medium">웹툰형 시각구성 모듀쳐</p>
+                              <p className="text-xs text-[#58534e]">실제 디지털 기기 화면을 통한 몰입 욤익 구현</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <span className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-bold">🎬</span>
+                            <div>
+                              <p className="text-sm text-[#282623] font-medium">Screen Life 포맷</p>
+                              <p className="text-xs text-[#58534e]">실제 디지털기기훔을 통하 통로한 몰입 욤익 구현</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-sm font-medium text-[#282623] mb-3">시청자 물입 전략</h4>
+                        <div className="space-y-3">
+                          <div className="flex items-center space-x-3">
+                            <span className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">🔊</span>
+                            <div>
+                              <p className="text-sm text-[#282623] font-medium">지헌선/수민저/후보 예제</p>
+                              <p className="text-xs text-[#58534e]">4명 좌우에서 할공 그 대상으로 구주뽐 타 부시지알 수 장애학생</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <span className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold">✨</span>
+                            <div>
+                              <p className="text-sm text-[#282623] font-medium">버류류교 반복유도</p>
+                              <p className="text-xs text-[#58534e]">학원 내용법 노타이어 호응 이영여 긴 좌우 부모 비옮격 대처</p>
+                            </div>
                           </div>
                         </div>
                       </div>
