@@ -1669,10 +1669,61 @@ export default function CombinedLanding() {
                       </div>
                     </div>
 
-                    {/* 핵심 성과 */}
+                    {/* 프로젝트 배경 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                        프로젝트 배경
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                          외주 제작에 따른 의사결정 지연, 예산 낭비, 품질 편차 문제를 해결하기 위해 전 공정 인하우스 제작 체계를 구축했습니다. 프리랜서 시절부터 쌓인 기획, 연출, 촬영, 편집, 조명, 미술 경험을 바탕으로 모든 제작 과정을 수행하며 프로덕트를 성공적으로 완수했습니다.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 주요 역할 및 기술적 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                        주요 역할 및 기술적 성과
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">기획·연출·촬영·조명·미술(스튜디오 제작 포함) 전 제작 과정 직접 수행</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            전 제작 과정 직접 수행으로 본사 의사결정 지연 문제 해소
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">BMPCC 6K 시네마틱 촬영·스튜디오 세팅, 브랜드 LUT 적용</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            시네마틱 촬영 및 스튜디오 환경 직접 세팅으로 프로모션 영상 품질 향상
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">Python + FFmpeg를 자막 자동 생성 및 오류 검수 시스템 구축</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            대규모 컷편집 반복 작업 효율화로 생산성 향상
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 핵심 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
                         핵심 성과
                       </h2>
                     </div>
@@ -1690,7 +1741,7 @@ export default function CombinedLanding() {
                           <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-sm">의사결정</div>
                           <span className="ml-3 text-lg font-semibold text-[#282623]">지연해소</span>
                         </div>
-                        <p className="text-sm text-[#58534e]">로컬 외주 제작자와의 커뮤니케이션 최소화로 의사숙도 향상</p>
+                        <p className="text-sm text-[#58534e]">본사와 우선자의 커뮤니케이션 최소화로 의사숙도 향상</p>
                       </div>
 
                       <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
@@ -1710,73 +1761,142 @@ export default function CombinedLanding() {
                       </div>
                     </div>
 
-                    {/* 주요 역할 */}
+
+
+                    {/* 세부 기술 구현 사항 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
-                        주요 역할
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">5</span>
+                        세부 기술 구현 사항
                       </h2>
                     </div>
-                    <div className="space-y-5 mb-8">
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">전 제작 과정 직접 수행</h3>
-                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">기획·연출·촬영·조명·미술(스튜디오 제작 포함) 전 제작 과정 직접 수행으로 본사 의사결정 지연 문제 해소</p>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">기획 및 시나리오 작성</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 컨셉 기획 및 브랜드 메시지 전달</li>
+                            <li>• 스토리보드 제작 및 분할 레이아웃</li>
+                            <li>• 스크립트 작성 및 콘텐츠 구성</li>
+                          </ul>
                         </div>
-                      </div>
 
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">시네마틱 촬영 및 스튜디오 세팅</h3>
-                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                            BMPCC 6K 시네마틱 촬영·스튜디오 환경 직접 세팅, 조명 시스템 구축 및 브랜드 LUT 적용하여 시네마 룩 구현을 통해 품질 고도화
-                          </p>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">자동화 시스템 구축</h3>
-                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                            Python + FFmpeg를 활용해 자막 자동 생성 및 음성 텍스트 변환 기반 오류 검수 루틴 구축으로 대규모 컷편집 반복 작업 효율화
-                          </p>
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">컬러 그레이딩</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 브랜드 LUT: 브랜드 색상 및 설정 노트 그레이딩</li>
+                            <li>• 색온도 룩: Teal & Orange, Film Emulation 등 양상 적용</li>
+                            <li>• 순열 툴: DaVinci Resolve 수작업 LUT 사용</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
 
-                    {/* FFmpeg 최적화 및 효율화 성과 */}
-                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
-                        FFmpeg 최적화 및 효율화 성과
-                      </h2>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">시네마틱 촬영</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 촬영 장비: 고화질 포맷 다이내믹 중심 완성도 지향</li>
+                            <li>• 연출 기법: 얕은 심도, 영화적 앵글, 프레임 구성</li>
+                            <li>• 라이팅 기법: 양면 영감, 얕은 심도 영상 구성</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">편집 및 사운드</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 편집 워크플로우: 추상적 시나리오 시각 실현</li>
+                            <li>• 후반 워크플로우: 칼라 글어 위주 색상 조정</li>
+                            <li>• 시청자 미장세리 각각 기음 치밀 고려</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
+
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">프로젝트 배경</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 50분 분량의 고품질 콘텐츠 4~5개 콘텐츠 동시 제작</li>
+                            <li>• 기존 수동 방식으로는 날간 순도 본격 곤란</li>
+                            <li>• 스 간적 완료 물량 관리 필요</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">Python 자동</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• Python 기반 오디오 추출 시스템 개발</li>
+                            <li>• 별절 차트단 1초 레벨 동시 지원</li>
+                            <li>• 타임라인 자동 분할 및 리글 고려</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="bg-gray-50 p-6 rounded-lg mb-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <h4 className="text-sm font-bold text-[#282623] mb-3">FFmpeg 최적화</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
                             <li>• FFmpeg 기반 자막생성 시스템 구축</li>
-                            <li>• 고정판 다단계 메일 장면 병렬 처리</li>
-                            <li>• 모델 설계 자체 콘텐츠 시스템 구축</li>
+                            <li>• 고정판 타임라인 메타 병렬 처리</li>
+                            <li>• 모광 출력 자동 시스템 구축</li>
                           </ul>
-                          <div className="mt-3 flex space-x-2">
-                            <span className="px-2 py-1 bg-gray-200 text-[#282623] text-xs rounded">FFmpeg</span>
-                            <span className="px-2 py-1 bg-gray-200 text-[#282623] text-xs rounded">자막생성</span>
-                          </div>
                         </div>
 
                         <div>
                           <h4 className="text-sm font-bold text-[#282623] mb-3">효율화 성과</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
-                            <li>• 자막 리타이밍 대폭 단축 폭 달성</li>
-                            <li>• 다회차 설문 관리 체계 구축</li>
-                            <li>• 간체 물량 양산체계 별도 확보</li>
+                            <li>• 처리 리타이밍 메일 단축 분 달성</li>
+                            <li>• 고확률 물량 일간 분석 집중</li>
+                            <li>• 수천 콘텐츠 일정 물량 수율 최적화</li>
                           </ul>
-                          <div className="mt-3 flex space-x-2">
-                            <span className="px-2 py-1 bg-gray-200 text-[#282623] text-xs rounded">성과향상</span>
-                            <span className="px-2 py-1 bg-gray-200 text-[#282623] text-xs rounded">품질제고</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Full-Stack 개발 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">6</span>
+                        Full-Stack 개발 성과
+                      </h2>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#282623] rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <div className="text-white font-bold text-sm">전공정</div>
                           </div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-2">전 공정 직접 수행</h4>
+                          <p className="text-xs text-[#58534e]">기획·촬영·편집·조명·미술</p>
+                        </div>
+                        
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#282623] rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <div className="text-white font-bold text-sm">시네마틱</div>
+                          </div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-2">시네마틱 품질 달성</h4>
+                          <p className="text-xs text-[#58534e]">브랜드 LUT, 시네마틱 룩</p>
+                        </div>
+                        
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#282623] rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <div className="text-white font-bold text-sm">기술 혁신</div>
+                          </div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-2">기술 혁신</h4>
+                          <p className="text-xs text-[#58534e]">Python 자동화, FFmpeg</p>
+                        </div>
+                        
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#282623] rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <div className="text-white font-bold text-sm">최종 품질</div>
+                          </div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-2">최종 품질 인정</h4>
+                          <p className="text-xs text-[#58534e]">10만+ 조회수, 홍콩BP</p>
                         </div>
                       </div>
                     </div>
