@@ -1453,10 +1453,10 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
-      {/* Other Projects - Simple Modal */}
+      {/* Other Projects - Floating Lightbox Style */}
       {selectedProject && selectedProject.id !== "1" && (
         <motion.div 
-          className="fixed inset-0 bg-gray-50 bg-opacity-95 backdrop-blur-sm flex items-center justify-center z-[99999] p-4"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
@@ -1464,87 +1464,138 @@ export default function CombinedLanding() {
           onClick={closeModal}
         >
           <motion.div 
-            className="relative max-w-3xl max-h-[80vh] bg-white rounded-lg overflow-hidden shadow-lg overflow-y-auto border border-gray-200"
-            initial={{ scale: 0.9, opacity: 0, y: 30 }}
+            className="bg-white w-full max-w-5xl h-[90vh] rounded-xl shadow-2xl relative tracking-tight leading-relaxed overflow-hidden"
+            initial={{ scale: 0.95, opacity: 0, y: 30 }}
             animate={{ 
-              scale: isClosingModal ? 0.9 : 1, 
+              scale: isClosingModal ? 0.95 : 1, 
               opacity: isClosingModal ? 0 : 1, 
               y: isClosingModal ? -30 : 0 
             }}
-            exit={{ scale: 0.9, opacity: 0, y: -30 }}
+            exit={{ scale: 0.95, opacity: 0, y: -30 }}
             transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-all z-10"
-              onClick={closeModal}
-            >
-              <span className="text-lg leading-none">×</span>
-            </button>
+            {/* Custom Scroll Container */}
+            <div className="h-full overflow-y-scroll custom-scrollbar">
+            {/* Page Header */}
+            <div className="px-8 lg:px-16 pb-2 pt-16">
+              {/* Back Link */}
+              <motion.div 
+                className="mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
+              >
+                <button
+                  onClick={closeModal}
+                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors flex items-center gap-1"
+                >
+                  ← Back To All Work
+                </button>
+              </motion.div>
 
-            <div className="p-8">
-              <div className="text-center mb-6">
-                <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                  {selectedProject.title}
-                </h1>
-                <p className="text-gray-600">{selectedProject.subtitle}</p>
-              </div>
-
-              <div className="mb-6">
-                <img
-                  src={selectedProject.src}
-                  alt={selectedProject.alt}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-3">프로젝트 설명</h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {selectedProject.description}
-                  </p>
+              {/* Header Body */}
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 2 }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                  <div className="lg:col-span-3">
+                    <h1 className="text-4xl lg:text-5xl text-[#282623] leading-tight mb-0 font-semibold">
+                      {selectedProject.title}
+                    </h1>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">카테고리</h4>
-                    <p className="text-gray-900 font-medium text-sm">{selectedProject.category}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">클라이언트</h4>
-                    <p className="text-gray-900 font-medium text-sm">{selectedProject.client}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">사용 도구</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {selectedProject.tools.map((tool, index) => (
-                        <span 
-                          key={index}
-                          className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
-                        >
-                          {tool}
-                        </span>
-                      ))}
+                {/* Header Details */}
+                <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
+                      <p className="text-sm text-[#282623]">{selectedProject.category}</p>
+                    </div>
+                    
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
+                      <p className="text-sm text-[#282623]">{selectedProject.client}</p>
+                    </div>
+                    
+                    <div>
+                      <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
+                      <p className="text-sm text-[#282623]">기획, 운영, 제작</p>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              <div className="border-t border-gray-200 pt-4 mt-6">
-                <div className="flex justify-between items-center">
-                  <div className="text-gray-500 text-xs">
-                    {portfolioItems.findIndex(item => item.id === selectedProject.id) + 1} / {portfolioItems.length}
+                  <div>
+                    <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
+                      {selectedProject.description}
+                    </p>
                   </div>
-                  <button 
-                    onClick={closeModal}
-                    className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm"
-                  >
-                    돌아가기
-                  </button>
                 </div>
-              </div>
+              </motion.div>
             </div>
+
+            {/* Content Container */}
+            <div className="px-8 lg:px-16 pb-12">
+              {/* Project Images Gallery */}
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
+              >
+                <div className="mb-8">
+                  <div className="aspect-[16/9] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                    <img
+                      src={selectedProject.src}
+                      alt={selectedProject.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                
+                <div className="text-center mb-8">
+                  <p className="text-sm text-[#58534e] italic">{selectedProject.subtitle}</p>
+                </div>
+              </motion.div>
+
+              {/* Project Details */}
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
+              >
+                {/* 사용 기술 */}
+                <div className="mb-6">
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
+                    사용 기술
+                  </h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
+                  {selectedProject.tools && selectedProject.tools.map((tool, index) => (
+                    <div key={index}>
+                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">{tool}</div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Bottom padding for scroll */}
+            <div className="pb-8"></div>
+            </div> {/* Close scroll container */}
+            
+            {/* Close Button */}
+            <button
+              className="absolute top-6 right-6 w-10 h-10 bg-white/80 hover:bg-white text-gray-600 hover:text-gray-800 rounded-full flex items-center justify-center transition-all shadow-lg z-10"
+              onClick={closeModal}
+            >
+              <span className="text-xl leading-none">×</span>
+            </button>
           </motion.div>
         </motion.div>
       )}
