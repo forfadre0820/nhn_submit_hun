@@ -1341,12 +1341,7 @@ export default function CombinedLanding() {
                         fontWeight: "300",
                       }}
                     >
-                      <p className="text-[14px] mb-4 text-[#4b5563] font-normal">
-                        콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야
-                        하는 설계자입니다. 저는 기획부터 연출, 촬영, 편집,
-                        사용자 경험까지 모든 과정에서 '무엇을, 어떻게'
-                        보여줄지를 고민해왔습니다.
-                      </p>
+                      <p className="text-[14px] mb-4 text-[#4b5563] font-normal">저는 제작 역량을 기반으로 기획부터 연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.</p>
                       <p className="text-[14px] mb-4 text-[#4b5563] font-normal">
                         라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선
                         이탈 데이터를 분석해 UI 개선을 제안했으며, AI 툴을
