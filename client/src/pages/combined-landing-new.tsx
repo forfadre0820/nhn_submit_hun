@@ -823,65 +823,54 @@ export default function CombinedLanding() {
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
                   <h2
-                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
+                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-12 font-light"
                   >
                     ALL IN ONE CONTENT CREATOR
                   </h2>
-                  <p className="text-gray-700 text-[14px] mt-8">
-                    10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제
-                    출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등
-                    제작 전반의 워크플로우를 체계적으로 수행해왔습니다. 다양한
-                    프로젝트를 총괄하며 제작 전 과정에 대한 깊이 있는 이해를
-                    바탕으로 일정, 예산, 품질을 효과적으로 관리했습니다.
+                  <p className="text-gray-700 text-[14px] leading-relaxed mb-8">
+                    10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제 출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등 제작 전반의 워크플로우를 체계적으로 수행해왔습니다. 다양한 프로젝트를 총괄하며 제작 전 과정에 대한 깊이 있는 이해를 바탕으로 일정, 예산, 품질을 효과적으로 관리했습니다.
                   </p>
                 </div>
 
                 {/* Right Column - Services */}
                 <div className="lg:col-span-6">
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div>
                       <h4
-                        className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}
+                        className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
                       >
                         콘텐츠 기획, 제작
                       </h4>
                       <p
                         className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}
                       >
-                        시청자 데이터와 시청환경 분석을 바탕으로 한 전략적
-                        기획력과 촬영·편집·조명·미술까지 아우르는 올라운드 제작
-                        역량으로 고품질 콘텐츠를 구현하여 제작비 최적화와 브랜드
-                        가치 향상을 견인합니다.
+                        시청자 데이터와 시청환경 분석을 바탕으로 한 전략적 기획력과 촬영·편집·조명·미술까지 아우르는 올라운드 제작 역량으로 고품질 콘텐츠를 구현하여 제작비 최적화와 브랜드 가치 향상을 견인합니다.
                       </p>
                     </div>
 
                     <div>
                       <h4
-                        className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}
+                        className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
                       >
                         프로젝트 매니지먼트
                       </h4>
                       <p
                         className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}
                       >
-                        콘텐츠 제작 전문성과 IT 기술 활용 능력을 결합해 창작과
-                        기술의 경계를 넘나들며, 혁신적인 제작 워크플로우 구축을
-                        통해 프로젝트 성과를 극대화합니다.
+                        콘텐츠 제작 전문성과 IT 기술 활용 능력을 결합해 창작과 기술의 경계를 넘나들며, 혁신적인 제작 워크플로우 구축을 통해 프로젝트 성과를 극대화합니다.
                       </p>
                     </div>
 
                     <div>
                       <h4
-                        className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}
+                        className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
                       >
                         온, 오프라인 콘텐츠 운영
                       </h4>
                       <p
                         className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}
                       >
-                        라이브 콘텐츠를 직접 운영하며 출연자 관리와 제작 능력을
-                        기반으로 한 기술적 이슈 대응을 통해 1년간 NPS 4.5 이상의
-                        안정적인 성과를 달성합니다.{" "}
+                        라이브 콘텐츠를 직접 운영하며 출연자 관리와 제작 능력을 기반으로 한 기술적 이슈 대응을 통해 1년간 NPS 4.5 이상의 안정적인 성과를 달성합니다.
                       </p>
                     </div>
                   </div>
@@ -889,7 +878,7 @@ export default function CombinedLanding() {
               </div>
 
               {/* Bottom Info Grid */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-6 pt-4 border-t border-gray-100">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12 pt-6 border-t border-gray-100">
                 <div>
                   <h5
                     className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}
