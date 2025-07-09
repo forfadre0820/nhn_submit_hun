@@ -350,31 +350,18 @@ export default function CombinedLanding() {
       id: "gallery-3",
       src: PersonalPortfolioImage,
       alt: "AI 뷰티 제품 광고",
-      title: "AI 뷰티 제품 광고",
+      title: "개인 포트폴리오",
       subtitle: "AI 뷰티 제품 광고",
       description:
         "ComfyUI, FLUX를 활용하여 제작한 실사형 AI 뷰티 제품 광고 이미지입니다. AI 기술을 통해 자연스러운 모델 표현과 제품 배치를 구현한 개인 포트폴리오 작업입니다.",
       category: "Personal Project",
       year: "2024",
-      client: "AI 뷰티 제품 광고",
+      client: "개인 포트폴리오",
       role: "AI 이미지 생성, 프롬프트 엔지니어링",
       tools: ["ComfyUI", "FLUX", "AI Image Generation"],
       images: [],
     },
-    {
-      id: "gallery-4",
-      src: GalleryInterviewImage,
-      alt: "인터뷰 및 대담 현장 촬영",
-      title: "인터뷰 프로그램 제작",
-      subtitle: "진솔한 대화의 순간",
-      description: "자연스러운 인터뷰 분위기를 담은 현장 스냅입니다.",
-      category: "Interview Program",
-      year: "2024",
-      client: "현대 글로비스",
-      role: "현장 촬영, 프로그램 제작",
-      tools: ["Documentary Style", "Interview Setup"],
-      images: [],
-    },
+
     {
       id: "gallery-5",
       src: LikelionHackathonImage,
@@ -394,14 +381,14 @@ export default function CombinedLanding() {
       id: "gallery-6",
       src: GalleryMalePortraitImage,
       alt: "개인 포트폴리오",
-      title: "AI 실사형 인물제작",
+      title: "개인 포트폴리오",
       subtitle: "",
       description:
         "ComfyUI, FLUX, Python을 활용하여 실사형 제품 광고 이미지를 제작했습니다. 자연스러운 인물 표현과 디테일한 후보정을 통해 실제 촬영과 구분이 어려운 수준의 결과물을 구현했습니다.",
       category: "AI Portrait",
       year: "2024",
       client: "개인 포트폴리오",
-      role: "AI 인물 생성, 후보정",
+      role: "개인 포트폴리오",
       tools: ["ComfyUI", "Python", "Photoshop"],
       images: [],
     },
@@ -1274,16 +1261,15 @@ export default function CombinedLanding() {
               {/* Gallery Grid - Masonry Layout (Pinterest style) */}
               <div className="columns-2 md:columns-4 gap-4 mb-8 space-y-4">
                 {galleryItems.map((item, index) => {
-                  // 다양한 높이 패턴 생성 (rem 단위 사용)
+                  // 다양한 높이 패턴 생성 (rem 단위 사용) - 높이 증가
                   const heightVariants = [
-                    "h-[12rem]",
-                    "h-[20rem]",
-                    "h-[14rem]",
+                    "h-[16rem]",
+                    "h-[26rem]",
                     "h-[18rem]",
-                    "h-[10rem]",
-                    "h-[22rem]",
-                    "h-[13rem]",
-                    "h-[19rem]",
+                    "h-[24rem]",
+                    "h-[14rem]",
+                    "h-[28rem]",
+                    "h-[17rem]",
                   ];
                   const randomHeight =
                     heightVariants[index % heightVariants.length];
