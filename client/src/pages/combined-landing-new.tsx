@@ -1044,7 +1044,7 @@ export default function CombinedLanding() {
                     
                     <a 
                       href="mailto:buen136003@gmail.com"
-                      className="inline-block text-gray-900 hover:text-gray-700 transition-colors underline text-[16px]"
+                      className="inline-block text-gray-900 hover:text-gray-700 transition-colors underline text-[16px] font-light"
                       style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
                     >
                       Contact With Me
