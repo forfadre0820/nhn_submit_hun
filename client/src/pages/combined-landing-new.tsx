@@ -823,7 +823,14 @@ export default function CombinedLanding() {
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
                   <motion.h2 
-                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
+                    className="text-gray-900 leading-tight mb-4 font-light"
+                    style={{
+                      fontFamily: "'Noto Sans', sans-serif",
+                      fontSize: "3.5rem",
+                      fontWeight: "300",
+                      letterSpacing: "0.02em",
+                      lineHeight: "1.1",
+                    }}
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -1324,9 +1331,9 @@ export default function CombinedLanding() {
                       style={{
                         fontFamily: "'Noto Sans', sans-serif",
                         fontWeight: "300",
-                        fontSize: "4rem",
+                        fontSize: "3.5rem",
                         lineHeight: "1.1",
-                        letterSpacing: "-0.02em",
+                        letterSpacing: "0.02em",
                         marginBottom: "4rem",
                       }}
                       initial={{ y: 50, opacity: 0 }}
