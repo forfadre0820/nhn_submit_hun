@@ -355,7 +355,7 @@ export default function CombinedLanding() {
       id: "gallery-6",
       src: GalleryMalePortraitImage,
       alt: "AI 생성 실사형 남성 포트레이트",
-      title: "제품 광고 제작",
+      title: "개인 포트폴리오",
       subtitle: "",
       description: "ComfyUI, FLUX, Python을 활용하여 실사형 제품 광고 이미지를 제작했습니다. 자연스러운 인물 표현과 디테일한 후보정을 통해 실제 촬영과 구분이 어려운 수준의 결과물을 구현했습니다.",
       category: "AI Portrait",
