@@ -315,12 +315,12 @@ export default function CombinedLanding() {
       alt: "개인 포트폴리오 뷰티 촬영",
       title: "개인 포트폴리오",
       subtitle: "뷰티 제품 광고 촬영",
-      description: "개인 포트폴리오를 위한 뷰티 제품 광고 촬영 작업입니다. 자연스러운 조명과 모델의 표정을 통해 제품의 매력을 부각시킨 개인 프로젝트입니다.",
+      description: "ComfyUI, FLUX를 활용하여 제작한 실사형 AI 뷰티 제품 광고 이미지입니다. AI 기술을 통해 자연스러운 모델 표현과 제품 배치를 구현한 개인 포트폴리오 작업입니다.",
       category: "Personal Project",
       year: "2024",
       client: "개인 포트폴리오",
-      role: "포토그래피, 디렉팅",
-      tools: ["Beauty Photography", "Product Placement", "Natural Lighting"],
+      role: "AI 이미지 생성, 프롬프트 엔지니어링",
+      tools: ["ComfyUI", "FLUX", "AI Image Generation"],
       images: []
     },
     {
