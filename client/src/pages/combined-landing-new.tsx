@@ -14,8 +14,8 @@ import OverseasEventImage from "@assets/오프라인 운영_1752007181258.jpg";
 import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_1752007184273.jpg";
 
 // Gallery images
-import VRCulturalHeritageImage from "@assets/4_1752092502620.jpg";
-import GalleryCalligraphyImage from "@assets/image_1752014631972.png";
+import VRCulturalHeritageImage from "@assets/NISI20180418_0000135162_web_1752090687436.jpg";
+import KoreyaHospitalImage from "@assets/4_1752092502620.jpg";
 import GalleryBeautyImage from "@assets/image_1752014636911.png";
 import GalleryWorkspaceImage from "@assets/image_1752014643264.png";
 import GalleryInterviewImage from "@assets/image_1752014659090.png";
@@ -297,16 +297,16 @@ export default function CombinedLanding() {
     },
     {
       id: "gallery-2",
-      src: GalleryBeautyImage,
-      alt: "뷰티 브랜드 제품 광고 이미지",
-      title: "모델, 제품 광고 이미지",
-      subtitle: "화장품 브랜드 광고 촬영",
-      description: "ComfyUI, FLUX, Python을 활용하여 자연스러운 실사형 뷰티 룩을 강조한 제품 광고 콘텐츠입니다.",
-      category: "Beauty Photography",
+      src: KoreyaHospitalImage,
+      alt: "고려대학교구로병원 사내방송 콘텐츠",
+      title: "사내방송 콘텐츠",
+      subtitle: "의료진 대상 사내 소통 프로그램",
+      description: "고려대학교구로병원의 의료진과 직원들을 대상으로 한 사내방송 콘텐츠를 기획하고 제작했습니다. 병원 내 소통과 정보 공유를 위한 전문적인 방송 콘텐츠입니다.",
+      category: "Broadcasting Content",
       year: "2024",
-      client: "개인 포트폴리오",
-      role: "포토그래피, 리터칭",
-      tools: ["Studio Photography", "Photoshop"],
+      client: "고려대학교구로병원",
+      role: "방송 콘텐츠 기획, 제작",
+      tools: ["Broadcasting", "Medical Communication", "Video Production"],
       images: []
     },
     {
