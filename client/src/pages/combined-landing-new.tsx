@@ -825,8 +825,7 @@ export default function CombinedLanding() {
                   <h2
                     className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
                   >
-                    &gt; ALL IN ONE CONTENT CREATOR
-                  </h2>
+                  > ALL IN ONE CONTENT CREATOR</h2>
                   <p className="text-gray-700 text-[14px]">
 
 
