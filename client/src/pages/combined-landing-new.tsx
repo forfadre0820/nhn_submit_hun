@@ -355,7 +355,7 @@ export default function CombinedLanding() {
       id: "gallery-6",
       src: GalleryMalePortraitImage,
       alt: "남성 포트레이트 촬영",
-      title: "남성 포트레이트",
+      title: "Louis Vuitton",
       subtitle: "클래식한 매력의 표현",
       description: "ComfyUI, FLUX, Python 활용하여 실사형 인물 이미지를 제작하였습니다.",
       category: "Portrait",
