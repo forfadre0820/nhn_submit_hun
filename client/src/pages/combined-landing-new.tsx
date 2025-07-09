@@ -1270,7 +1270,7 @@ export default function CombinedLanding() {
                     "h-[24rem]",
                     "h-[14rem]",
                     "h-[28rem]",
-                    "h-[17rem]",
+                    "h-[43rem]",
                   ];
                   const randomHeight =
                     heightVariants[index % heightVariants.length];
