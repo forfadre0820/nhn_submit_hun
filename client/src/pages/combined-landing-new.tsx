@@ -1784,9 +1784,9 @@ export default function CombinedLanding() {
                         <div>
                           <h4 className="text-sm font-bold text-[#282623] mb-3">컬러 그레이딩</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
-                            <li>• 브랜드 LUT: 브랜드 색상 및 설정 노트 그레이딩</li>
-                            <li>• 색온도 룩: Teal & Orange, Film Emulation 등 양상 적용</li>
-                            <li>• 순열 툴: DaVinci Resolve 수작업 LUT 사용</li>
+                            <li>• 브랜드 LUT: 브랜드 색상 및 설정 컬러 그레이딩</li>
+                            <li>• 색온도 룩: Teal & Orange, Film Emulation 등 스타일 적용</li>
+                            <li>• 전문 툴: DaVinci Resolve 수작업 LUT 활용</li>
                           </ul>
                         </div>
                       </div>
@@ -1797,18 +1797,18 @@ export default function CombinedLanding() {
                         <div>
                           <h4 className="text-sm font-bold text-[#282623] mb-3">시네마틱 촬영</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
-                            <li>• 촬영 장비: 고화질 포맷 다이내믹 중심 완성도 지향</li>
+                            <li>• 촬영 장비: 고화질 포맷 다이내믹 레인지 중심 완성도 지향</li>
                             <li>• 연출 기법: 얕은 심도, 영화적 앵글, 프레임 구성</li>
-                            <li>• 라이팅 기법: 양면 영감, 얕은 심도 영상 구성</li>
+                            <li>• 라이팅 기법: 양방향 조명, 얕은 심도 영상 구성</li>
                           </ul>
                         </div>
 
                         <div>
                           <h4 className="text-sm font-bold text-[#282623] mb-3">편집 및 사운드</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
-                            <li>• 편집 워크플로우: 추상적 시나리오 시각 실현</li>
-                            <li>• 후반 워크플로우: 칼라 글어 위주 색상 조정</li>
-                            <li>• 시청자 미장세리 각각 기음 치밀 고려</li>
+                            <li>• 편집 워크플로우: 추상적 시나리오 시각화 실현</li>
+                            <li>• 후반 워크플로우: 컬러 그레이딩 위주 색상 조정</li>
+                            <li>• 시청자 미장센과 각 요소 기능 치밀 고려</li>
                           </ul>
                         </div>
                       </div>
@@ -1819,18 +1819,18 @@ export default function CombinedLanding() {
                         <div>
                           <h4 className="text-sm font-bold text-[#282623] mb-3">프로젝트 배경</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
-                            <li>• 50분 분량의 고품질 콘텐츠 4~5개 콘텐츠 동시 제작</li>
-                            <li>• 기존 수동 방식으로는 날간 순도 본격 곤란</li>
-                            <li>• 스 간적 완료 물량 관리 필요</li>
+                            <li>• 50분 분량의 고품질 콘텐츠 4~5개 동시 제작</li>
+                            <li>• 기존 수동 방식으로는 일간 생산량 한계</li>
+                            <li>• 시간적 효율성 및 물량 관리 필요</li>
                           </ul>
                         </div>
 
                         <div>
-                          <h4 className="text-sm font-bold text-[#282623] mb-3">Python 자동</h4>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">Python 자동화</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
                             <li>• Python 기반 오디오 추출 시스템 개발</li>
-                            <li>• 별절 차트단 1초 레벨 동시 지원</li>
-                            <li>• 타임라인 자동 분할 및 리글 고려</li>
+                            <li>• 벡터 차트 단위 1초 레벨 동시 지원</li>
+                            <li>• 타임라인 자동 분할 및 리그 고려</li>
                           </ul>
                         </div>
                       </div>
@@ -1842,17 +1842,17 @@ export default function CombinedLanding() {
                           <h4 className="text-sm font-bold text-[#282623] mb-3">FFmpeg 최적화</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
                             <li>• FFmpeg 기반 자막생성 시스템 구축</li>
-                            <li>• 고정판 타임라인 메타 병렬 처리</li>
-                            <li>• 모광 출력 자동 시스템 구축</li>
+                            <li>• 고정판 타임라인 메타데이터 병렬 처리</li>
+                            <li>• 모든 출력 자동화 시스템 구축</li>
                           </ul>
                         </div>
 
                         <div>
                           <h4 className="text-sm font-bold text-[#282623] mb-3">효율화 성과</h4>
                           <ul className="space-y-2 text-sm text-[#58534e]">
-                            <li>• 처리 리타이밍 메일 단축 분 달성</li>
-                            <li>• 고확률 물량 일간 분석 집중</li>
-                            <li>• 수천 콘텐츠 일정 물량 수율 최적화</li>
+                            <li>• 처리 리타이밍 시간 대폭 단축 달성</li>
+                            <li>• 고품질 물량 일간 생산 집중</li>
+                            <li>• 수십 콘텐츠 일정 물량 생산율 최적화</li>
                           </ul>
                         </div>
                       </div>
