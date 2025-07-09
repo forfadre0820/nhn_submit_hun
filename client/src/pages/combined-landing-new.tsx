@@ -830,7 +830,7 @@ export default function CombinedLanding() {
                       fontWeight: "300",
                       letterSpacing: "0.02em",
                       lineHeight: "1.1",
-                      color: "#000000",
+                      color: "#ef4444",
                     }}
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
