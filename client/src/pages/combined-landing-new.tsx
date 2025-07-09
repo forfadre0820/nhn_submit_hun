@@ -943,38 +943,46 @@ export default function CombinedLanding() {
                 <div className="separator-line h-px bg-gray-200"></div>
               </div>
 
-              {/* Gallery Grid - 4x2 Grid Layout (8 images) */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {galleryItems.map((item, index) => (
-                  <motion.div
-                    key={`gallery-${item.id}`}
-                    className="group cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    onClick={() => setSelectedProject(item)}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    {/* 갤러리 이미지 카드 */}
-                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      {/* 호버 오버레이 */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
-                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+              {/* Gallery Grid - Masonry Layout (Pinterest style) */}
+              <div className="columns-2 md:columns-4 gap-4 mb-8 space-y-4">
+                {galleryItems.map((item, index) => {
+                  // 다양한 높이 패턴 생성
+                  const heightVariants = [
+                    'h-48', 'h-64', 'h-56', 'h-72', 'h-40', 'h-60', 'h-52', 'h-68'
+                  ];
+                  const randomHeight = heightVariants[index % heightVariants.length];
+                  
+                  return (
+                    <motion.div
+                      key={`gallery-${item.id}`}
+                      className={`group cursor-pointer break-inside-avoid mb-4 ${randomHeight}`}
+                      whileHover={{ scale: 1.02 }}
+                      onClick={() => setSelectedProject(item)}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      {/* 갤러리 이미지 카드 */}
+                      <div className="relative overflow-hidden bg-gray-100 rounded-lg w-full h-full">
+                        <img
+                          src={item.src}
+                          alt={item.alt}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {/* 호버 오버레이 */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                          <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
+                            <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
