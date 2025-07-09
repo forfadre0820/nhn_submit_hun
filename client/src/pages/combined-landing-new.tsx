@@ -355,7 +355,7 @@ export default function CombinedLanding() {
       id: "gallery-6",
       src: GalleryMalePortraitImage,
       alt: "AI 생성 실사형 남성 포트레이트",
-      title: "실사형 인물 생성",
+      title: "개인 포트폴리오",
       subtitle: "AI 기반 포트레이트 제작",
       description: "ComfyUI, Python, Photoshop을 활용하여 실사 인물을 생성하는 것에 초점을 맞춘 AI 포트레이트 작업입니다. 자연스러운 인물 표현과 디테일한 후보정을 통해 실제 촬영과 구분이 어려운 수준의 결과물을 구현했습니다.",
       category: "AI Portrait",
