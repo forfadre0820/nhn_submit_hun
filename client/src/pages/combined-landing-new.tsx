@@ -209,10 +209,14 @@ export default function CombinedLanding() {
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const [showSoundControl, setShowSoundControl] = useState(false);
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
+  // 프로젝트 모달 상태
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [isClosingModal, setIsClosingModal] = useState(false);
+  
+  // 갤러리 전용 상태
+  const [selectedGalleryItem, setSelectedGalleryItem] = useState<PortfolioItem | null>(null);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
-  const [isGalleryMode, setIsGalleryMode] = useState(false);
+  const [isClosingGallery, setIsClosingGallery] = useState(false);
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -495,36 +499,36 @@ export default function CombinedLanding() {
     setShowSoundControl(false);
   };
 
-  // Modal close with dissolve effect
+  // 프로젝트 모달 닫기
   const closeModal = () => {
     setIsClosingModal(true);
     setTimeout(() => {
       setSelectedProject(null);
       setIsClosingModal(false);
-      setCurrentGalleryIndex(0);
-      setIsGalleryMode(false);
     }, 400);
   };
 
-  // Gallery navigation functions
+  // 갤러리 모달 닫기
+  const closeGalleryModal = () => {
+    setIsClosingGallery(true);
+    setTimeout(() => {
+      setSelectedGalleryItem(null);
+      setIsClosingGallery(false);
+      setCurrentGalleryIndex(0);
+    }, 400);
+  };
+
+  // 갤러리 라이트박스 열기
   const openGalleryLightbox = (item: PortfolioItem) => {
     const index = galleryItems.findIndex(galleryItem => galleryItem.id === item.id);
     if (index !== -1) {
-      // 먼저 모든 모달 상태 초기화
-      setSelectedProject(null);
-      setIsClosingModal(false);
-      
-      // 갤러리 모드 설정
-      setIsGalleryMode(true);
       setCurrentGalleryIndex(index);
-      
-      // 갤러리 프로젝트 선택
-      setTimeout(() => {
-        setSelectedProject(item);
-      }, 10);
+      setSelectedGalleryItem(item);
+      setIsClosingGallery(false);
     }
   };
 
+  // 갤러리 네비게이션
   const navigateGallery = (direction: 'prev' | 'next') => {
     if (galleryItems.length === 0) return;
     
@@ -533,13 +537,13 @@ export default function CombinedLanding() {
       : (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
     
     setCurrentGalleryIndex(newIndex);
-    setSelectedProject(galleryItems[newIndex]);
+    setSelectedGalleryItem(galleryItems[newIndex]);
   };
 
   // Keyboard navigation for gallery
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (selectedProject && selectedProject.id.startsWith("gallery-")) {
+      if (selectedGalleryItem) {
         switch(e.key) {
           case 'ArrowLeft':
             e.preventDefault();
@@ -551,7 +555,7 @@ export default function CombinedLanding() {
             break;
           case 'Escape':
             e.preventDefault();
-            closeModal();
+            closeGalleryModal();
             break;
         }
       }
@@ -559,7 +563,7 @@ export default function CombinedLanding() {
 
     document.addEventListener('keydown', handleKeyPress);
     return () => document.removeEventListener('keydown', handleKeyPress);
-  }, [selectedProject, currentGalleryIndex, galleryItems]);
+  }, [selectedGalleryItem, currentGalleryIndex, galleryItems]);
 
   // Navigation handler with smooth scroll to section
   const handleNavigation = (section: string) => {
@@ -962,10 +966,7 @@ export default function CombinedLanding() {
                     key={item.id}
                     className="group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
-                    onClick={() => {
-                      setIsGalleryMode(false);
-                      setSelectedProject(item);
-                    }}
+                    onClick={() => setSelectedProject(item)}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -1166,18 +1167,18 @@ export default function CombinedLanding() {
         </div>
       </footer>
       {/* Gallery Lightbox Modal */}
-      {isGalleryMode && selectedProject && selectedProject.id.startsWith("gallery-") && (
+      {selectedGalleryItem && (
         <motion.div 
           className="fixed inset-0 bg-black/90 z-[999999] flex items-center justify-center"
           initial={{ opacity: 0 }}
-          animate={{ opacity: isClosingModal ? 0 : 1 }}
+          animate={{ opacity: isClosingGallery ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.modal }}
-          onClick={closeModal}
+          onClick={closeGalleryModal}
         >
           {/* Close Button */}
           <button 
-            onClick={closeModal}
+            onClick={closeGalleryModal}
             className="absolute top-6 right-6 z-[9999999] text-white hover:text-gray-300 transition-all duration-200 text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
             aria-label="Close gallery"
           >
@@ -1214,7 +1215,7 @@ export default function CombinedLanding() {
           <motion.div 
             className="relative max-w-[90vw] max-h-[90vh] w-full h-full flex items-center justify-center"
             initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: isClosingModal ? 0.9 : 1, opacity: isClosingModal ? 0 : 1 }}
+            animate={{ scale: isClosingGallery ? 0.9 : 1, opacity: isClosingGallery ? 0 : 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: ANIMATION_DURATIONS.modal }}
             onClick={(e) => e.stopPropagation()}
@@ -1253,15 +1254,15 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       {/* Project Detail Modal - Floating Lightbox Style */}
-      {!isGalleryMode && selectedProject && !selectedProject.id.startsWith("gallery-") && (
+      {selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
-          animate={{ opacity: isClosingModal || isGalleryMode ? 0 : 1 }}
+          animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
           onClick={closeModal}
-          style={{ display: isGalleryMode ? 'none' : 'flex' }}
+
         >
           {/* Navigation Bar - Hidden in lightbox */}
           <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[100000] opacity-0 pointer-events-none">
