@@ -1809,26 +1809,143 @@ export default function CombinedLanding() {
                     <div className="mb-6">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                        교육 콘텐츠 설계 접근법
+                        프로젝트 기간
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                        전체 기간: 2023.05 ~ 2024.03 (11개월)
+                      </div>
+                    </div>
+
+                    {/* 프로젝트 배경 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                        프로젝트 배경
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                          삼성 멀티캠퍼스 교육 프로그램의 디지털 트랜스포메이션 과정에서 기존 이론 중심 교육의 한계를 극복하고, 실무 중심의 체계적 학습 경험을 제공하기 위해 종합적인 교육 콘텐츠 기획 및 제작 프로젝트를 진행했습니다.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 주요 역할 및 기술적 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                        주요 역할 및 기술적 성과
                       </h2>
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">학습자 중심 교육 설계</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실무 중심의 커리큘럼과 인터랙티브 학습 요소 도입</p>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">교육 콘텐츠 아키텍처 설계</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            학습자 중심의 단계별 커리큘럼 설계 및 인터랙티브 학습 요소 도입
+                          </p>
+                        </div>
                       </div>
+
                       <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">멀티미디어 콘텐츠 제작</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">영상, 인터랙티브 요소, 실습 자료를 통합한 종합적 학습 경험</p>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">멀티미디어 콘텐츠 제작 및 최적화</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            영상, 그래픽, 인터랙티브 요소를 통합한 종합적 학습 경험 구현
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">시스템 통합 및 사용자 경험 최적화</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            LMS 연동 및 학습 성과 추적 시스템 구축으로 교육 효과 극대화
+                          </p>
+                        </div>
                       </div>
                     </div>
 
-                    {/* FFmpeg 최적화 */}
+                    {/* 핵심 성과 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                        FFmpeg 최적화
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                        핵심 성과
                       </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-bold">30%</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">학습 효과 향상</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">인터랙티브 콘텐츠로 학습자 참여도 및 이해도 대폭 증가</p>
+                      </div>
+                      
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-sm">완료율</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">95% 달성</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">체계적 학습 경로 설계로 높은 과정 완료율 달성</p>
+                      </div>
+
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-sm">표준화</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">교육 모듈화</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">재사용 가능한 교육 모듈 개발로 확장성 확보</p>
+                      </div>
+
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-sm">기업</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">수강생 만족도</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">실무 중심 커리큘럼으로 높은 교육 만족도 및 현업 활용도</p>
+                      </div>
+                    </div>
+
+                    {/* 기술 스택 및 도구 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">5</span>
+                        기술 스택 및 도구
+                      </h2>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">교육 설계</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 학습자 중심 커리큘럼 설계</li>
+                            <li>• 단계별 학습 로드맵 구성</li>
+                            <li>• 인터랙티브 학습 요소 도입</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">콘텐츠 제작</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 영상 콘텐츠 기획 및 제작</li>
+                            <li>• 그래픽 디자인 및 인포그래픽</li>
+                            <li>• 실습 자료 및 과제 개발</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">시스템 통합</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• LMS 시스템 연동</li>
+                            <li>• 학습 성과 추적 시스템</li>
+                            <li>• 사용자 경험 최적화</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-lg mb-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
