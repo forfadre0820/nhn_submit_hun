@@ -822,10 +822,9 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
-                  <h2
-                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
-                  >
-                  > ALL IN ONE CONTENT CREATOR</h2>
+                  <h2 className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light">
+                    &gt; ALL IN ONE CONTENT CREATOR
+                  </h2>
                   <p className="text-gray-700 text-[14px]">
 
 
