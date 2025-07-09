@@ -406,7 +406,20 @@ export default function CombinedLanding() {
       tools: ["ComfyUI", "Python", "Photoshop"],
       images: [],
     },
-
+    {
+      id: "gallery-7",
+      src: GalleryCasualPortraitImage,
+      alt: "개인 포트폴리오",
+      title: "자연스러운 인물 포트레이트",
+      subtitle: "편안한 분위기의 인물 사진",
+      description: "자연스럽고 편안한 분위기를 담은 캐주얼 포트레이트입니다.",
+      category: "Lifestyle Portrait",
+      year: "2024",
+      client: "개인 포트폴리오",
+      role: "포트레이트 촬영",
+      tools: ["Natural Light", "Casual Setup"],
+      images: [],
+    },
 
   ];
 
@@ -1257,6 +1270,7 @@ export default function CombinedLanding() {
                     "h-[14rem]",
                     "h-[28rem]",
                     "h-[17rem]",
+                    "h-[25rem]",
                   ];
                   const randomHeight =
                     heightVariants[index % heightVariants.length];
