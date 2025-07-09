@@ -2063,6 +2063,214 @@ export default function CombinedLanding() {
                             Premiere Pro
                           </span>
                         </div>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                          Screen Life 포맷과 Found Footage 기법을 결합하여 사용자 몰입도를 극대화하고 
+                          복잡한 메시지를 효과적으로 전달하였습니다.
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedProject.id === "3" && (
+                    <div>
+                      {/* Samsung 교육 콘텐츠 기획 제작 - 워드 문서 내용 반영 */}
+                      <div className="mb-6">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            1
+                          </span>
+                          프로젝트 기간
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                            프로젝트 기간: 2023년 2월 - 2023년 8월 (6개월)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            2
+                          </span>
+                          프로젝트 배경
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            삼성물산의 교육 콘텐츠 기획 및 브랜드 전략을 통해 효과적인 교육 메시지 전달을 위한 
+                            Screen Life 연출 기법을 통해 교육 콘텐츠를 제작하고, 사용자 행동 분석을 통한 
+                            맞춤형 교육 전략을 수립하였습니다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            3
+                          </span>
+                          주요 역할 및 기술적 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            사용자 행동 분석 및 대응 전략
+                          </h3>
+                          <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                            <div className="space-y-2">
+                              <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                                <strong>주요 사용자 행동 패턴:</strong>
+                              </p>
+                              <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                                <li>• 재생 중 창 최소화 및 다른 업무 처리</li>
+                                <li>• 교육 콘텐츠에 대한 낮은 참여도</li>
+                                <li>• 단순 반복 교육에 대한 회피 현상</li>
+                                <li>• 5초 이내 주의 집중 분산</li>
+                              </ul>
+                            </div>
+                          </div>
+                          
+                          <div className="border-l-2 border-blue-200 pl-4 py-2 mb-4">
+                            <div className="space-y-2">
+                              <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                                <strong>맞춤형 교육 전략:</strong>
+                              </p>
+                              <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                                <li>• Screen Life 포맷을 활용한 몰입도 향상</li>
+                                <li>• 자동 주의 집중 유도 시스템 구축</li>
+                                <li>• 복잡한 메시지의 단순화 및 시각화</li>
+                                <li>• 상호작용 요소를 통한 참여도 증대</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            브랜드 메시지 전달 최적화
+                          </h3>
+                          <div className="border-l-2 border-green-200 pl-4 py-2 mb-4">
+                            <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed space-y-1">
+                              <li>• 교육 콘텐츠 내 자연스러운 브랜드 메시지 통합</li>
+                              <li>• 사용자 경험을 해치지 않는 브랜드 노출 전략</li>
+                              <li>• 교육 효과와 브랜드 인지도 동시 달성</li>
+                              <li>• 타겟 오디언스별 맞춤형 메시지 개발</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            크리에이티브 디렉팅 - Screen Life 포맷 활용
+                          </h3>
+                          <div className="border-l-2 border-purple-200 pl-4 py-2 mb-4">
+                            <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed space-y-1">
+                              <li>• 실제 컴퓨터 화면을 활용한 현실감 있는 교육 환경 구성</li>
+                              <li>• 사용자 친화적인 인터페이스 설계</li>
+                              <li>• 직관적인 학습 경로 제시</li>
+                              <li>• 실무 환경과 유사한 교육 시나리오 구현</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
+                            시각적 & 청각적 메시지 전달
+                          </h3>
+                          <div className="border-l-2 border-orange-200 pl-4 py-2 mb-4">
+                            <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed space-y-1">
+                              <li>• 화면 애니메이션을 통한 동적 학습 경험 제공</li>
+                              <li>• 상황별 적절한 사운드 효과 활용</li>
+                              <li>• 최소한의 시각적 요소로 최대 효과 달성</li>
+                              <li>• 효율적인 커뮤니케이션 구조 설계</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            4
+                          </span>
+                          핵심 성과
+                        </h2>
+                      </div>
+                      <div className="space-y-5 mb-8">
+                        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
+                            🏆 경쟁사 대비 30% 높은 단가임에도 불구하고 수주 성공
+                          </h3>
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <div>
+                            <h4 className="text-sm font-medium text-[#282623] mb-1">프로젝트 관리 성과:</h4>
+                            <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                              <li>• 실제 업무 환경을 반영한 효과적인 교육 콘텐츠 제작</li>
+                              <li>• 사용자 행동 분석 및 데이터 기반 의사결정</li>
+                              <li>• 프로젝트 일정 및 품질 관리 최적화</li>
+                            </ul>
+                          </div>
+                          
+                          <div>
+                            <h4 className="text-sm font-medium text-[#282623] mb-1">창의적 특성 확립:</h4>
+                            <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                              <li>• 교육 콘텐츠 분야의 차별화된 접근 방식 개발</li>
+                              <li>• Screen Life 장르의 전문적 활용 능력 구축</li>
+                              <li>• 현실감 있는 교육 환경 구성 노하우 축적</li>
+                              <li>• 사용자 경험 중심의 콘텐츠 제작 프로세스 정립</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                          <h4 className="text-sm font-medium text-[#282623] mb-2">주요 경쟁 우위 요소</h4>
+                          <ul className="text-sm text-[#58534e] tracking-tight leading-relaxed space-y-1">
+                            <li>• 사용자 친화적 분석 및 맞춤형 솔루션 제공</li>
+                            <li>• 창의적 기법과 사용자 행동 분석의 효과적 결합</li>
+                            <li>• 교육 효과와 브랜드 메시지 전달의 균형있는 통합</li>
+                            <li>• 지속 가능한 교육 콘텐츠 제작 방법론 구축</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                        <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                          <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                            5
+                          </span>
+                          기술 스택 및 도구
+                        </h2>
+                      </div>
+                      <div className="space-y-4 mb-8">
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">
+                            Found Footage
+                          </span>
+                          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                            Screen Life
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            Photoshop
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            After Effects
+                          </span>
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            Premiere Pro
+                          </span>
+                        </div>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                          Screen Life 포맷과 Found Footage 기법을 결합하여 사용자 몰입도를 극대화하고 
+                          복잡한 메시지를 효과적으로 전달하였습니다. 체계적인 사용자 행동 분석을 바탕으로 
+                          5초 이내 주의 집중 유도 기법을 개발하여 교육 효과를 극대화하였습니다.
+                        </p>
                       </div>
                     </div>
                   )}
