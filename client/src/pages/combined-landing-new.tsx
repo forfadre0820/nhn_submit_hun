@@ -1119,30 +1119,98 @@ export default function CombinedLanding() {
                     </ul>
                   </div>
 
-                  <div>
+                  <div className="lg:col-span-2">
                     <h5
-                      className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
+                      className={`${FONT_SIZES.body} font-medium text-gray-900 mb-6`}
                     >
-                      SKILL SET
+                      전문 기술
                     </h5>
-                    <ul
-                      className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}
-                    >
-                      <li>• Adobe Creative Suite (전문가)</li>
-                      <li>• Final Cut Pro (고급)</li>
-                      <li>• DaVinci Resolve (중급)</li>
-                      <li>• ComfyUI (상)</li>
-                      <li>• Stable Diffusion (상)</li>
-                      <li>• Midjourney (상)</li>
-                      <li>• Flux (상)</li>
-                      <li>• Asana, Slack (중)</li>
-                      <li>• Python (중)</li>
-                      <li>• Premiere Pro (상)</li>
-                      <li>• Unity (중)</li>
-                      <li>• Photoshop, Illustrator (상)</li>
-                      <li>• C#, Java (중)</li>
-                      <li>• After Effect (상)</li>
-                    </ul>
+                    <div className="space-y-4">
+                      {/* 각 기술별 상세 정보 */}
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">ComfyUI</div>
+                        <div className="col-span-2 text-xs text-gray-500">1-3년</div>
+                        <div className="col-span-1 text-xs text-gray-500">상</div>
+                        <div className="col-span-6 text-xs text-gray-600">커리어 디자인, 심사 커리어 생성, 그래픽 리스소 제작, 이미지 업스케일링 등 AI 기반 바</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Asana, Slack</div>
+                        <div className="col-span-2 text-xs text-gray-500">3-5년</div>
+                        <div className="col-span-1 text-xs text-gray-500">중</div>
+                        <div className="col-span-6 text-xs text-gray-600">보드 타입의 관리, 자동 일정 댓시보드 연동, 프로젝트 관리</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">DaVinci Resolve</div>
+                        <div className="col-span-2 text-xs text-gray-500">3-5년</div>
+                        <div className="col-span-1 text-xs text-gray-500">중</div>
+                        <div className="col-span-6 text-xs text-gray-600">기본 컷 콘텐츠 그레이딩, 컬러 컬렉션, 노드 LUT 활용</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Python</div>
+                        <div className="col-span-2 text-xs text-gray-500">1-3년</div>
+                        <div className="col-span-1 text-xs text-gray-500">중</div>
+                        <div className="col-span-6 text-xs text-gray-600">데이터 처리, 크롤링, 편집작업 자동화 스크립트</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Premiere Pro</div>
+                        <div className="col-span-2 text-xs text-gray-500">9년 이상</div>
+                        <div className="col-span-1 text-xs text-gray-500">상</div>
+                        <div className="col-span-6 text-xs text-gray-600">컷 편집과 편집, 색차교정, 텍스트 기본 보정</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Unity</div>
+                        <div className="col-span-2 text-xs text-gray-500">1-3년</div>
+                        <div className="col-span-1 text-xs text-gray-500">중</div>
+                        <div className="col-span-6 text-xs text-gray-600">모프마임 구성, 프로토타입 제작, UI 애니메이션, Android 빌드</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Photoshop, Illustrator</div>
+                        <div className="col-span-2 text-xs text-gray-500">5-7년</div>
+                        <div className="col-span-1 text-xs text-gray-500">상</div>
+                        <div className="col-span-6 text-xs text-gray-600">보정 합성, AI Generative Fill, UI 시안 제작, 그래픽 디자인 제작</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">C#, Java</div>
+                        <div className="col-span-2 text-xs text-gray-500">1-3년</div>
+                        <div className="col-span-1 text-xs text-gray-500">중</div>
+                        <div className="col-span-6 text-xs text-gray-600">OOP 기초, 앱 개발, Unity 스크립트 작성</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">After Effect</div>
+                        <div className="col-span-2 text-xs text-gray-500">7-9년</div>
+                        <div className="col-span-1 text-xs text-gray-500">상</div>
+                        <div className="col-span-6 text-xs text-gray-600">타이포그래피 모션, 3D 트래킹, Expression 컨트롤</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Stable Diffusion</div>
+                        <div className="col-span-2 text-xs text-gray-500">1-2년</div>
+                        <div className="col-span-1 text-xs text-gray-500">상</div>
+                        <div className="col-span-6 text-xs text-gray-600">이미지 생성, 스타일 변환, 인페인팅, 컨트롤넷 활용</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3 border-b border-gray-100">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Midjourney</div>
+                        <div className="col-span-2 text-xs text-gray-500">2-3년</div>
+                        <div className="col-span-1 text-xs text-gray-500">상</div>
+                        <div className="col-span-6 text-xs text-gray-600">프롬프트 엔지니어링, 컨셉 아트 생성, 브랜드 비주얼 제작</div>
+                      </div>
+                      
+                      <div className="grid grid-cols-12 gap-4 items-center py-3">
+                        <div className="col-span-3 font-medium text-gray-900 text-sm">Flux</div>
+                        <div className="col-span-2 text-xs text-gray-500">1년</div>
+                        <div className="col-span-1 text-xs text-gray-500">상</div>
+                        <div className="col-span-6 text-xs text-gray-600">고품질 이미지 생성, 텍스트 렌더링, 사실적 이미지 제작</div>
+                      </div>
+                    </div>
                   </div>
 
                   <div>
