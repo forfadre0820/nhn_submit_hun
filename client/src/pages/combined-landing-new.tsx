@@ -3,16 +3,6 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Import skeleton components
-import {
-  HeroSkeleton,
-  PortfolioGridSkeleton,
-  GalleryGridSkeleton,
-  AboutSkeleton,
-  ContactSkeleton,
-  ProjectDetailSkeleton
-} from "@/components/skeletons/PortfolioSkeletons";
-
 import ContactWorkspaceImage from "@assets/image_1752013143751.png";
 import SamsungOfflineImage from "@assets/오프라인 운영_1752012039625.png";
 import SnapaskContentImage from "@assets/image_1752012210723.png";
@@ -35,40 +25,30 @@ import GalleryJinairPromotionImage from "@assets/image_1752014683656.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Design System Constants
-const DESIGN_SYSTEM = {
-  fonts: {
-    hero: "text-6xl",
-    sectionTitle: "text-4xl lg:text-5xl", 
-    heading: "text-xl lg:text-2xl",
-    subheading: "text-lg",
-    body: "text-base",
-    small: "text-sm",
-    tiny: "text-xs"
-  },
-  spacing: {
-    section: "mb-20",
-    subsection: "mb-12",
-    item: "mb-8",
-    small: "mb-4"
-  },
-  animations: {
-    modal: 0.4,
-    content: 0.5,
-    stagger: 0.1
-  },
-  typography: {
-    lineHeight: {
-      tight: "leading-tight",
-      normal: "leading-normal", 
-      relaxed: "leading-relaxed"
-    },
-    letterSpacing: {
-      tight: "tracking-tight",
-      normal: "tracking-normal",
-      wide: "tracking-wide"
-    }
-  }
+// Constants for consistent styling
+const FONT_SIZES = {
+  hero: "text-6xl", // 62px equivalent
+  sectionTitle: "text-4xl lg:text-5xl",
+  subsectionTitle: "text-2xl lg:text-3xl",
+  heading: "text-xl lg:text-2xl",
+  subheading: "text-lg",
+  body: "text-base",
+  small: "text-sm",
+  tiny: "text-xs"
+};
+
+const SPACING = {
+  sectionGap: "mb-20",
+  subsectionGap: "mb-12",
+  itemGap: "mb-8",
+  smallGap: "mb-4"
+};
+
+// Animation constants
+const ANIMATION_DURATIONS = {
+  modal: 0.4,
+  modalContent: 0.5,
+  stagger: 0.1
 };
 
 // Portfolio item interface
@@ -193,8 +173,8 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onProjectClick }) => {
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
               <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className={`title block ${DESIGN_SYSTEM.fonts.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
-                <span className={`subtitle block ${DESIGN_SYSTEM.fonts.small} opacity-90`}>{item.subtitle}</span>
+                <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                <span className={`subtitle block ${FONT_SIZES.small} opacity-90`}>{item.subtitle}</span>
               </div>
             </div>
           </div>
@@ -231,15 +211,6 @@ export default function CombinedLanding() {
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [isClosingModal, setIsClosingModal] = useState(false);
-  
-  // Loading states
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
-  const [isPortfolioLoading, setIsPortfolioLoading] = useState(false);
-  const [isGalleryLoading, setIsGalleryLoading] = useState(false);
-  const [isAboutLoading, setIsAboutLoading] = useState(false);
-  const [isContactLoading, setIsContactLoading] = useState(false);
-  const [isModalLoading, setIsModalLoading] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -522,63 +493,13 @@ export default function CombinedLanding() {
     setShowSoundControl(false);
   };
 
-  // Image loading handlers
-  const handleImageLoad = useCallback((imageSrc: string) => {
-    setLoadedImages(prev => new Set([...prev, imageSrc]));
-  }, []);
-
-  const isImageLoaded = useCallback((imageSrc: string) => {
-    return loadedImages.has(imageSrc);
-  }, [loadedImages]);
-
-  // Initial loading simulation
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsInitialLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Simulate section loading when scrolled into view
-  const handleSectionLoading = useCallback((section: string) => {
-    switch(section) {
-      case 'portfolio':
-        setIsPortfolioLoading(true);
-        setTimeout(() => setIsPortfolioLoading(false), 800);
-        break;
-      case 'gallery':
-        setIsGalleryLoading(true);
-        setTimeout(() => setIsGalleryLoading(false), 600);
-        break;
-      case 'about':
-        setIsAboutLoading(true);
-        setTimeout(() => setIsAboutLoading(false), 700);
-        break;
-      case 'contact':
-        setIsContactLoading(true);
-        setTimeout(() => setIsContactLoading(false), 500);
-        break;
-    }
-  }, []);
-
   // Modal close with dissolve effect
   const closeModal = () => {
     setIsClosingModal(true);
     setTimeout(() => {
       setSelectedProject(null);
       setIsClosingModal(false);
-      setIsModalLoading(false);
     }, 400);
-  };
-
-  // Handle project selection with loading
-  const handleProjectClick = (project: PortfolioItem) => {
-    setIsModalLoading(true);
-    setTimeout(() => {
-      setSelectedProject(project);
-      setIsModalLoading(false);
-    }, 600);
   };
 
   // Navigation handler with smooth scroll to section
@@ -610,25 +531,25 @@ export default function CombinedLanding() {
           <div className="flex items-center space-x-8">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Home
             </button>
             <button 
               onClick={() => document.querySelector('.next')?.scrollIntoView({ behavior: 'smooth' })}
-              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               About
             </button>
             <button 
               onClick={() => document.querySelector('[data-section="work"]')?.scrollIntoView({ behavior: 'smooth' })}
-              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Work
             </button>
             <button 
               onClick={() => document.querySelector('[data-section="contact"]')?.scrollIntoView({ behavior: 'smooth' })}
-              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Contact
             </button>
@@ -640,25 +561,18 @@ export default function CombinedLanding() {
         ref={heroRef}
         className="hero h-screen flex items-center justify-center relative bg-white overflow-hidden"
       >
-        {isInitialLoading ? (
-          <HeroSkeleton />
-        ) : (
-          <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
           <motion.h1 
-            className={`hero__heading font-bold ${DESIGN_SYSTEM.typography.lineHeight.tight} ${DESIGN_SYSTEM.typography.letterSpacing.tight} ${DESIGN_SYSTEM.spacing.itemGap}`}
-            style={{ 
-              fontSize: "62px", 
-              lineHeight: "1.1",
-              letterSpacing: "-0.02em"
-            }}
+            className={`hero__heading font-bold leading-tight ${SPACING.itemGap}`}
+            style={{ fontSize: "62px", lineHeight: "1.1" }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="space-y-2 text-center max-w-4xl mx-auto">
-              <div className="block text-left ${DESIGN_SYSTEM.typography.lineHeight.tight}" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
-              <div className="block mt-[2px] mb-[2px] pt-[1px] pb-[1px] ${DESIGN_SYSTEM.typography.lineHeight.tight}" style={{ lineHeight: "1.1" }}>      시청자의 경험까지</div>
-              <div className="block pt-[0px] pb-[0px] mt-[-4px] mb-[-4px] ${DESIGN_SYSTEM.typography.lineHeight.tight}" style={{ lineHeight: "1.1" }}>
+              <div className="block text-left" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
+              <div className="block mt-[2px] mb-[2px] pt-[1px] pb-[1px]" style={{ lineHeight: "1.1" }}>      시청자의 경험까지</div>
+              <div className="block pt-[0px] pb-[0px] mt-[-4px] mb-[-4px]" style={{ lineHeight: "1.1" }}>
                 설계하는<span 
                   ref={videoWrapRef}
                   className="hero__videoWrap inline-block relative cursor-pointer"
@@ -707,7 +621,7 @@ export default function CombinedLanding() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className={`${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.spacing.smallGap} transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
+              className={`${FONT_SIZES.small} ${SPACING.smallGap} transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
             >
               {isVideoFullscreen ? 'Keep to explore' : 'Scroll to explore'}
             </motion.div>
@@ -779,28 +693,23 @@ export default function CombinedLanding() {
               </motion.div>
             </motion.div>
           )}
-          </div>
-        )}
+        </div>
       </section>
       {/* Next Section - Portfolio */}
       <section className="next bg-white text-black relative z-1 min-h-screen" data-section="about">
         <div className="container mx-auto px-4 pt-20">
-          {isAboutLoading ? (
-            <AboutSkeleton />
-          ) : (
-            <motion.div 
-              className="max-w-6xl mx-auto"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              onViewportEnter={() => handleSectionLoading('about')}
-            >
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             {/* Main About Section */}
-            <div className={DESIGN_SYSTEM.spacing.sectionGap}>
+            <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">ABOUT Hun</h3>
-                <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>01</span>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>01</span>
               </div>
 
               {/* Separator Line */}
@@ -812,28 +721,28 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
-                  <h2 className={`${DESIGN_SYSTEM.fonts.sectionTitle} font-bold text-gray-900 ${DESIGN_SYSTEM.typography.lineHeight.tight} ${DESIGN_SYSTEM.typography.letterSpacing.tight} ${DESIGN_SYSTEM.spacing.smallGap}`}>
+                  <h2 className={`${FONT_SIZES.sectionTitle} font-bold text-gray-900 leading-tight ${SPACING.smallGap}`}>
                     콘텐츠 제작자이자 크리에이터를 위한 교육자
                   </h2>
-                  <p className={`text-gray-700 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제 출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등 제작 전반의 워크플로우를 체계적으로 수행해왔습니다. 다양한 프로젝트를 총괄하며 제작 전 과정에 대한 깊이 있는 이해를 바탕으로 일정, 예산, 품질을 효과적으로 관리했습니다.</p>
+                  <p className="text-gray-700 text-[14px]">10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제 출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등 제작 전반의 워크플로우를 체계적으로 수행해왔습니다. 다양한 프로젝트를 총괄하며 제작 전 과정에 대한 깊이 있는 이해를 바탕으로 일정, 예산, 품질을 효과적으로 관리했습니다.</p>
                 </div>
 
                 {/* Right Column - Services */}
                 <div className="lg:col-span-6">
                   <div className="space-y-6">
                     <div>
-                      <h4 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 ${DESIGN_SYSTEM.typography.letterSpacing.normal} mb-1`}>콘텐츠 기획, 제작</h4>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>시청자 데이터와 시청환경 분석을 바탕으로 한 전략적 기획력과 촬영·편집·조명·미술까지 아우르는 올라운드 제작 역량으로 고품질 콘텐츠를 구현하여 제작비 최적화와 브랜드 가치 향상을 견인합니다.</p>
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>콘텐츠 기획, 제작</h4>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>시청자 데이터와 시청환경 분석을 바탕으로 한 전략적 기획력과 촬영·편집·조명·미술까지 아우르는 올라운드 제작 역량으로 고품질 콘텐츠를 구현하여 제작비 최적화와 브랜드 가치 향상을 견인합니다.</p>
                     </div>
                     
                     <div>
-                      <h4 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 ${DESIGN_SYSTEM.typography.letterSpacing.normal} mb-1`}>프로젝트 매니지먼트</h4>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>콘텐츠 제작 전문성과 IT 기술 활용 능력을 결합해 창작과 기술의 경계를 넘나들며, 혁신적인 제작 워크플로우 구축을 통해 프로젝트 성과를 극대화합니다.</p>
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>프로젝트 매니지먼트</h4>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>콘텐츠 제작 전문성과 IT 기술 활용 능력을 결합해 창작과 기술의 경계를 넘나들며, 혁신적인 제작 워크플로우 구축을 통해 프로젝트 성과를 극대화합니다.</p>
                     </div>
                     
                     <div>
-                      <h4 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 ${DESIGN_SYSTEM.typography.letterSpacing.normal} mb-1`}>온, 오프라인 콘텐츠 운영</h4>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>라이브 콘텐츠를 직접 운영하며 출연자 관리와 제작 능력을 기반으로 한 기술적 이슈 대응을 통해 1년간 NPS 4.5 이상의 안정적인 성과를 달성합니다. </p>
+                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>온, 오프라인 콘텐츠 운영</h4>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>라이브 콘텐츠를 직접 운영하며 출연자 관리와 제작 능력을 기반으로 한 기술적 이슈 대응을 통해 1년간 NPS 4.5 이상의 안정적인 성과를 달성합니다. </p>
                     </div>
                   </div>
                 </div>
@@ -842,34 +751,34 @@ export default function CombinedLanding() {
               {/* Bottom Info Grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-6 pt-4 border-t border-gray-100">
                 <div>
-                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>전문 분야</h5>
-                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>콘텐츠 제작 & 교육</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>전문 분야</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>콘텐츠 제작 & 교육</p>
                 </div>
                 
                 <div>
-                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>활동 지역</h5>
-                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>대한민국</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>활동 지역</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>대한민국</p>
                 </div>
                 
                 <div>
-                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>경력</h5>
-                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>5+ years</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>경력</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>5+ years</p>
                 </div>
                 
                 <div>
-                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>플랫폼</h5>
-                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>YouTube & 온라인</p>
+                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>플랫폼</h5>
+                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>YouTube & 온라인</p>
                 </div>
               </div>
             </div>
 
             {/* Education & Career Section */}
-            <div className={DESIGN_SYSTEM.spacing.sectionGap}>
+            <div className={SPACING.sectionGap}>
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">
                   Education & Experience
                 </h3>
-                <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>02</span>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>02</span>
               </div>
 
               {/* Separator Line */}
@@ -880,62 +789,62 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Education Section */}
                 <div>
-                  <h4 className={`${DESIGN_SYSTEM.fonts.heading} font-bold text-gray-900 mb-6`}>학력</h4>
+                  <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-6`}>학력</h4>
                   <div className="space-y-6">
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>상명대학교(서울) 대학원(석사)</h5>
-                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.07 - 휴학중</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울) 대학원(석사)</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 휴학중</span>
                       </div>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>감성공학과</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>감성공학과</p>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>상명대학교(서울)</h5>
-                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.07 졸업</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울)</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 졸업</span>
                       </div>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>컴퓨터과학과</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>컴퓨터과학과</p>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>한국애니메이션고등학교</h5>
-                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2010.06 - 2013.03</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>한국애니메이션고등학교</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2010.06 - 2013.03</span>
                       </div>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>주전공: 영상연출과 | 부전공: 컴퓨터게임제작과</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>주전공: 영상연출과 | 부전공: 컴퓨터게임제작과</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Career Section */}
                 <div>
-                  <h4 className={`${DESIGN_SYSTEM.fonts.heading} font-bold text-gray-900 mb-6`}>주요 경력</h4>
+                  <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-6`}>주요 경력</h4>
                   <div className="space-y-6">
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>삼성 멀티캠퍼스</h5>
-                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.07 - 재직중</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>삼성 멀티캠퍼스</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 재직중</span>
                       </div>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>Professional</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Professional</p>
                       <div className="text-gray-500 mt-2 text-[14px]">온, 오프라인 콘텐츠 기획 및 제작 총괄, 프로젝트 관리, 라이브 콘텐츠 운영, 클라이언트 협력사 관리</div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>Snapask Korea</h5>
-                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.01 - 2022.07</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>Snapask Korea</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.01 - 2022.07</span>
                       </div>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>Assistant Production Manager</p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Assistant Production Manager</p>
                       <div className="text-gray-500 mt-2 text-[14px]">홍콩 기반 에듀테크 기업, 콘텐츠 기획·제작, 현장 촬영 연출, 콘텐츠 편집·배포</div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>프리랜서</h5>
-                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2019.01 - 2020.01</span>
+                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>프리랜서</h5>
+                        <span className={`${FONT_SIZES.small} text-gray-500`}>2019.01 - 2020.01</span>
                       </div>
-                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 </p>
+                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 </p>
                       <div className="text-gray-500 mt-2 text-[14px]">B2B 클라이언트 대상 콘텐츠 기획·연출·제작, 촬영·조명·미술, 후반 제작 및 품질관리</div>
                     </div>
                   </div>
@@ -946,8 +855,8 @@ export default function CombinedLanding() {
               <div className="mt-12 pt-8 border-t border-gray-100">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div>
-                    <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 mb-3`}>보유 자격증</h5>
-                    <ul className={`space-y-2 ${DESIGN_SYSTEM.fonts.small} text-gray-600`}>
+                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>보유 자격증</h5>
+                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
                       <li>• 정보처리기사</li>
                       <li>• 정보처리산업기사</li>
                       <li>• Adobe Certified Expert (Premiere Pro)</li>
@@ -955,8 +864,8 @@ export default function CombinedLanding() {
                   </div>
                   
                   <div>
-                    <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 mb-3`}>전문 기술</h5>
-                    <ul className={`space-y-2 ${DESIGN_SYSTEM.fonts.small} text-gray-600`}>
+                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>전문 기술</h5>
+                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
                       <li>• Adobe Creative Suite (전문가)</li>
                       <li>• Final Cut Pro (고급)</li>
                       <li>• DaVinci Resolve (중급)</li>
@@ -964,8 +873,8 @@ export default function CombinedLanding() {
                   </div>
                   
                   <div>
-                    <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 mb-3`}>언어 능력</h5>
-                    <ul className={`space-y-2 ${DESIGN_SYSTEM.fonts.small} text-gray-600`}>
+                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>언어 능력</h5>
+                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
                       <li>• 한국어 (모국어)</li>
                       <li>• 영어 (업무 수준)</li>
                       <li>• 일본어 (기초 회화)</li>
@@ -976,206 +885,175 @@ export default function CombinedLanding() {
             </div>
 
             {/* Featured Work Section */}
-            <div className={DESIGN_SYSTEM.spacing.sectionGap} data-section="work">
-              {isPortfolioLoading ? (
-                <PortfolioGridSkeleton />
-              ) : (
-                <>
-                  <div className="flex justify-between items-start mb-6">
-                    <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">MAIN PROJECT</h3>
-                    <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>03</span>
-                  </div>
+            <div className={SPACING.sectionGap} data-section="work">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">MAIN PROJECT</h3>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
+              </div>
 
-                  {/* Separator Line */}
-                  <div className="separator-wrap mb-8">
-                    <div className="separator-line h-px bg-gray-200"></div>
-                  </div>
+              {/* Separator Line */}
+              <div className="separator-wrap mb-8">
+                <div className="separator-line h-px bg-gray-200"></div>
+              </div>
 
-                  {/* Portfolio Grid - Single Row Layout */}
-                  <div 
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
-                    onMouseEnter={() => handleSectionLoading('portfolio')}
+              {/* Portfolio Grid - Single Row Layout */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {portfolioItems.slice(0, 4).map((item, index) => (
+                  <motion.div
+                    key={item.id}
+                    className="group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    onClick={() => setSelectedProject(item)}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                   >
-                    {portfolioItems.slice(0, 4).map((item, index) => (
-                      <motion.div
-                        key={item.id}
-                        className="group cursor-pointer"
-                        whileHover={{ scale: 1.02 }}
-                        onClick={() => handleProjectClick(item)}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                      >
-                        {/* 프로젝트 이미지 카드 */}
-                        <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[16/9]">
-                          <img
-                            src={item.src}
-                            alt={item.alt}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            loading="lazy"
-                            decoding="async"
-                            onLoad={() => handleImageLoad(item.src)}
-                          />
-                          {/* 호버 오버레이 */}
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <span className={`company block ${DESIGN_SYSTEM.fonts.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
-                              <span className={`content block ${DESIGN_SYSTEM.fonts.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
-                            </div>
-                          </div>
+                    {/* 프로젝트 이미지 카드 */}
+                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[16/9]">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {/* 호버 오버레이 */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
+                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
                         </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </>
-              )}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             {/* Gallery Section */}
-            <div className={DESIGN_SYSTEM.spacing.sectionGap} data-section="gallery">
-              {isGalleryLoading ? (
-                <GalleryGridSkeleton />
-              ) : (
-                <>
-                  <div className="flex justify-between items-start mb-6">
-                    <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">VISUAL GALLERY</h3>
-                    <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>04</span>
-                  </div>
+            <div className={SPACING.sectionGap} data-section="gallery">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">VISUAL GALLERY</h3>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
+              </div>
 
-                  {/* Separator Line */}
-                  <div className="separator-wrap mb-8">
-                    <div className="separator-line h-px bg-gray-200"></div>
-                  </div>
+              {/* Separator Line */}
+              <div className="separator-wrap mb-8">
+                <div className="separator-line h-px bg-gray-200"></div>
+              </div>
 
-                  {/* Gallery Grid - 4x2 Grid Layout (8 images) */}
-                  <div 
-                    className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
-                    onMouseEnter={() => handleSectionLoading('gallery')}
+              {/* Gallery Grid - 4x2 Grid Layout (8 images) */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                {galleryItems.map((item, index) => (
+                  <motion.div
+                    key={`gallery-${item.id}`}
+                    className="group cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    onClick={() => setSelectedProject(item)}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                   >
-                    {galleryItems.map((item, index) => (
-                      <motion.div
-                        key={`gallery-${item.id}`}
-                        className="group cursor-pointer"
-                        whileHover={{ scale: 1.02 }}
-                        onClick={() => handleProjectClick(item)}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                      >
-                        {/* 갤러리 이미지 카드 */}
-                        <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
-                          <img
-                            src={item.src}
-                            alt={item.alt}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            loading="lazy"
-                            decoding="async"
-                            onLoad={() => handleImageLoad(item.src)}
-                          />
-                          {/* 호버 오버레이 */}
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
-                            <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <span className={`company block ${DESIGN_SYSTEM.fonts.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
-                              <span className={`content block ${DESIGN_SYSTEM.fonts.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
-                            </div>
-                          </div>
+                    {/* 갤러리 이미지 카드 */}
+                    <div className="relative overflow-hidden bg-gray-100 rounded-lg aspect-[4/3]">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {/* 호버 오버레이 */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
+                        <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
+                          <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
                         </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </>
-              )}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             {/* Contact Section */}
-            <div className={DESIGN_SYSTEM.spacing.sectionGap} data-section="contact">
-              {isContactLoading ? (
-                <ContactSkeleton />
-              ) : (
-                <>
-                  <div 
-                    className="flex justify-between items-start mb-6"
-                    onMouseEnter={() => handleSectionLoading('contact')}
-                  >
-                    <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
-                    <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>05</span>
-                  </div>
+            <div className={SPACING.sectionGap} data-section="contact">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
+                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
+              </div>
 
-                  {/* Separator Line */}
-                  <div className="separator-wrap mb-8">
-                    <div className="separator-line h-px bg-gray-200"></div>
-                  </div>
+              {/* Separator Line */}
+              <div className="separator-wrap mb-8">
+                <div className="separator-line h-px bg-gray-200"></div>
+              </div>
 
-                  {/* MAKE IT BETTER Section */}
-                  <div className="bg-white py-16 lg:py-24 pt-[0px] pb-[0px]">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]">
-                      {/* Left Column - Image */}
-                      <div className="relative">
-                        <div className="w-full h-full bg-gray-100 overflow-hidden">
-                          <img 
-                            src={ContactWorkspaceImage}
-                            loading="lazy" 
-                            decoding="async" 
-                            draggable="false" 
-                            alt="Professional Content Production Workspace" 
-                            className="object-cover w-full h-full"
-                            onLoad={() => handleImageLoad(ContactWorkspaceImage)}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Right Column - Content */}
-                      <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center">
-                        <motion.h3 
-                          className="text-red-500 font-light mb-8 lg:mb-12"
-                          style={{ 
-                            fontFamily: "'Noto Sans', sans-serif",
-                            fontWeight: '300',
-                            fontSize: '4rem',
-                            lineHeight: '1.1',
-                            letterSpacing: '-0.02em'
-                          }}
-                          initial={{ y: 50, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ 
-                            duration: 0.8, 
-                            ease: [0.25, 0.46, 0.45, 0.94] 
-                          }}
-                          viewport={{ once: true, margin: "-100px" }}
-                        >
-                          <span>&gt;</span>Collaboration
-                        </motion.h3>
-                        
-                        <div className={`text-gray-700 ${DESIGN_SYSTEM.typography.lineHeight.relaxed} mb-8`} style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
-                          <p className={`${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed} mb-4`}>
-                            콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
-                            연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
-                          </p>
-                          <p className={`${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed} mb-4`}>
-                            라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
-                            AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
-                            넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
-                            콘텐츠를 만들어가겠습니다.
-                          </p>
-                        </div>
-                        
-                        <a 
-                          href="mailto:buen136003@gmail.com"
-                          className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors rounded-full"
-                          style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
-                        >
-                          Our Work
-                        </a>
-                      </div>
+              {/* MAKE IT BETTER Section */}
+              <div className="bg-white py-16 lg:py-24 pt-[0px] pb-[0px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]">
+                  {/* Left Column - Image */}
+                  <div className="relative">
+                    <div className="w-full h-full bg-gray-100 overflow-hidden">
+                      <img 
+                        src={ContactWorkspaceImage}
+                        loading="lazy" 
+                        decoding="async" 
+                        draggable="false" 
+                        alt="Professional Content Production Workspace" 
+                        className="object-cover w-full h-full"
+                      />
                     </div>
                   </div>
-                </>
-              )}
+
+                  {/* Right Column - Content */}
+                  <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center">
+                    <motion.h3 
+                      className="text-red-500 font-light mb-8 lg:mb-12"
+                      style={{ 
+                        fontFamily: "'Noto Sans', sans-serif",
+                        fontWeight: '300',
+                        fontSize: '4rem',
+                        lineHeight: '1.1',
+                        letterSpacing: '-0.02em'
+                      }}
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        ease: [0.25, 0.46, 0.45, 0.94] 
+                      }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <span>&gt;</span>Collaboration
+                    </motion.h3>
+                    
+                    <div className="text-gray-700 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
+                      <p className="text-[14px] mb-4">
+                        콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
+                        연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
+                      </p>
+                      <p className="text-[14px] mb-4">
+                        라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
+                        AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
+                        넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
+                        콘텐츠를 만들어가겠습니다.
+                      </p>
+                    </div>
+                    
+                    <a 
+                      href="mailto:buen136003@gmail.com"
+                      className="inline-block px-6 py-3 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors rounded-full"
+                      style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '400' }}
+                    >
+                      Our Work
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
-          )}
         </div>
       </section>
       {/* Gallery Item Simple Modal */}
@@ -1185,7 +1063,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: DESIGN_SYSTEM.animations.modal }}
+          transition={{ duration: ANIMATION_DURATIONS.modal }}
           onClick={closeModal}
         >
           <motion.div 
@@ -1193,7 +1071,7 @@ export default function CombinedLanding() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: isClosingModal ? 0.9 : 1, opacity: isClosingModal ? 0 : 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: DESIGN_SYSTEM.animations.modal }}
+            transition={{ duration: ANIMATION_DURATIONS.modal }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -1215,9 +1093,9 @@ export default function CombinedLanding() {
             
             {/* Content */}
             <div className="p-6">
-              <h3 className={`${DESIGN_SYSTEM.fonts.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
-              <p className={`${DESIGN_SYSTEM.fonts.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
-              <p className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 leading-relaxed`}>{selectedProject.description}</p>
+              <h3 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
+              <p className={`${FONT_SIZES.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
+              <p className={`${FONT_SIZES.small} text-gray-700 leading-relaxed`}>{selectedProject.description}</p>
               
               <div className="mt-4 pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-center text-sm text-gray-500">
@@ -1236,7 +1114,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: DESIGN_SYSTEM.animations.modal, ease: "easeInOut" }}
+          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
           onClick={closeModal}
         >
           {/* Navigation Bar - Hidden in lightbox */}
@@ -1245,25 +1123,25 @@ export default function CombinedLanding() {
               <div className="flex items-center space-x-8">
                 <button 
                   onClick={() => handleNavigation('home')}
-                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Home
                 </button>
                 <button 
                   onClick={() => handleNavigation('about')}
-                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   About
                 </button>
                 <button 
                   onClick={() => handleNavigation('work')}
-                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Work
                 </button>
                 <button 
                   onClick={() => handleNavigation('contact')}
-                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Contact
                 </button>
@@ -1280,7 +1158,7 @@ export default function CombinedLanding() {
               y: isClosingModal ? -30 : 0 
             }}
             exit={{ scale: 0.95, opacity: 0, y: -30 }}
-            transition={{ duration: DESIGN_SYSTEM.animations.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Custom Scroll Container */}
@@ -1292,7 +1170,7 @@ export default function CombinedLanding() {
                 className="mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: DESIGN_SYSTEM.animations.stagger }}
+                transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
               >
                 <button
                   onClick={closeModal}
@@ -1307,7 +1185,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 2 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 2 }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
@@ -1353,7 +1231,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 3 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
               >
                 {/* 두 줄 이미지 그리드 */}
                 <div className="mb-8">
@@ -1404,7 +1282,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 4 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
               >
                 {/* 프로젝트 기간 */}
                 <div className="mb-6">
@@ -1563,6 +1441,8 @@ export default function CombinedLanding() {
             <div className="pb-8"></div>
             </div> {/* Close scroll container */}
             
+
+            
             {/* Close Button */}
             <button
               className="absolute top-6 right-6 w-10 h-10 bg-white/80 hover:bg-white text-gray-600 hover:text-gray-800 rounded-full flex items-center justify-center transition-all shadow-lg z-10"
@@ -1580,7 +1460,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: DESIGN_SYSTEM.animations.modal, ease: "easeInOut" }}
+          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
           onClick={closeModal}
         >
           <motion.div 
@@ -1592,7 +1472,7 @@ export default function CombinedLanding() {
               y: isClosingModal ? -30 : 0 
             }}
             exit={{ scale: 0.95, opacity: 0, y: -30 }}
-            transition={{ duration: DESIGN_SYSTEM.animations.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Custom Scroll Container */}
@@ -1604,7 +1484,7 @@ export default function CombinedLanding() {
                 className="mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: DESIGN_SYSTEM.animations.stagger }}
+                transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
               >
                 <button
                   onClick={closeModal}
@@ -1619,7 +1499,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 2 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 2 }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
@@ -1682,7 +1562,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 3 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
               >
                 {/* 프로젝트별 이미지 레이아웃 */}
                 {selectedProject.id === "1" && (
@@ -1754,7 +1634,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 4 }}
+                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
               >
                 {/* 프로젝트별 상세 내용 */}
                 {selectedProject.id === "1" && (
@@ -1933,140 +1813,56 @@ export default function CombinedLanding() {
 
                 {selectedProject.id === "3" && (
                   <>
-                    {/* 삼성 교육형 영상 콘텐츠 기획 제작 프로젝트 */}
+                    {/* 삼성 교육 콘텐츠 프로젝트 */}
                     <div className="mb-6">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                        프로젝트 기간
+                        교육 콘텐츠 설계 접근법
                       </h2>
                     </div>
                     <div className="space-y-5 mb-8">
-                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                        전체 기간: 2023.02 ~ 2023.08 (06개월)
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">학습자 중심 교육 설계</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실무 중심의 커리큘럼과 인터랙티브 학습 요소 도입</p>
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">멀티미디어 콘텐츠 제작</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">영상, 인터랙티브 요소, 실습 자료를 통합한 종합적 학습 경험</p>
                       </div>
                     </div>
 
-                    {/* 주요 역할 및 기술적 성과 */}
+                    {/* FFmpeg 최적화 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                        주요 역할 및 기술적 성과
+                        FFmpeg 최적화
                       </h2>
                     </div>
-                    <div className="space-y-6 mb-8">
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">🎯 재생 시간 5초 내 이탈하지 않도록 강제 몰입 구조 설계</h3>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <ul className="space-y-2 text-sm text-[#58534e] tracking-tight leading-relaxed">
-                            <li>• 웹툰형 시각구성 'Screen Life' 포맷 모의하여 소리 없이 보더라도 메시지가 전달되는 구조 구현</li>
-                            <li>• 사용자의 다양한 몰입 방식(시각/청각/상호작용)을 고려한 네트워크서, 타이밍, 마우스 인터랙션 파워</li>
-                            <li>• 일괄 등록계</li>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-purple-600 mb-3">FFmpeg 최적화</h4>
+                          <ul className="space-y-2 text-sm text-gray-700">
+                            <li>• FFmpeg 기반 자막생성 시스템 구축</li>
+                            <li>• 고정판 다단계 메일 장면 병렬 처리</li>
+                            <li>• 모델 설계 자체 콘텐츠 시스템 구축</li>
                           </ul>
+                          <div className="mt-3 flex space-x-2">
+                            <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">FFmpeg</span>
+                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">자막생성</span>
+                          </div>
                         </div>
-                      </div>
 
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">핵심 성과</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <div className="flex items-center mb-3">
-                              <div className="w-10 h-10 bg-[#282623] rounded-full flex items-center justify-center text-white font-bold text-sm">30%</div>
-                              <span className="ml-3 text-base font-semibold text-[#282623]">높은 가격 수주 성공</span>
-                            </div>
-                            <p className="text-sm text-[#58534e]">회피성향을 억엑 음성 전략으로 강제인창 우익 확보</p>
-                          </div>
-                          
-                          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <div className="flex items-center mb-3">
-                              <div className="w-10 h-10 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-xs">효율성</div>
-                              <span className="ml-3 text-base font-semibold text-[#282623]">5초 내 이탈 방지</span>
-                            </div>
-                            <p className="text-sm text-[#58534e]">ALT+TAB 회피패턴을 억제 음성 초기 부분의 초기 몰입 부탁드려 부탁드리겠습니다</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* 인지원체 분석 */}
-                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
-                        인지원체 분석 및 대응
-                      </h2>
-                    </div>
-                    <div className="space-y-5 mb-8">
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-3 tracking-tight leading-relaxed">ALT+TAB 회피패턴 분석</h3>
-                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                          <div className="space-y-3">
-                            <div className="flex items-start">
-                              <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">1</span>
-                              <div>
-                                <p className="text-sm text-[#282623] font-medium">재생 과목시 창을 좋아나 'ALT+TAB'으로 최소화</p>
-                                <p className="text-xs text-[#58534e] mt-1">수리민간독구성 호메이 보지않게 이이하 본작용</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start">
-                              <span className="bg-orange-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">3</span>
-                              <div>
-                                <p className="text-sm text-[#282623] font-medium">단축키 다움 흔한으로 부딪기 위해 최소우 진입</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start">
-                              <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">4</span>
-                              <div>
-                                <p className="text-sm text-[#282623] font-medium">5초 이 아이태이비가상 구문직적으로 왜인</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Screen Life 포맷 구현 */}
-                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
-                        Screen Life 포맷 구현
-                      </h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                      <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-3">웹툰형 시구성의</h4>
-                        <div className="space-y-3">
-                          <div className="flex items-center space-x-3">
-                            <span className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">💻</span>
-                            <div>
-                              <p className="text-sm text-[#282623] font-medium">웹툰형 시각구성 모듀쳐</p>
-                              <p className="text-xs text-[#58534e]">실제 디지털 기기 화면을 통한 몰입 욤익 구현</p>
-                            </div>
-                          </div>
-                          <div className="flex items-center space-x-3">
-                            <span className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-bold">🎬</span>
-                            <div>
-                              <p className="text-sm text-[#282623] font-medium">Screen Life 포맷</p>
-                              <p className="text-xs text-[#58534e]">실제 디지털기기훔을 통하 통로한 몰입 욤익 구현</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-3">시청자 물입 전략</h4>
-                        <div className="space-y-3">
-                          <div className="flex items-center space-x-3">
-                            <span className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">🔊</span>
-                            <div>
-                              <p className="text-sm text-[#282623] font-medium">지헌선/수민저/후보 예제</p>
-                              <p className="text-xs text-[#58534e]">4명 좌우에서 할공 그 대상으로 구주뽐 타 부시지알 수 장애학생</p>
-                            </div>
-                          </div>
-                          <div className="flex items-center space-x-3">
-                            <span className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold">✨</span>
-                            <div>
-                              <p className="text-sm text-[#282623] font-medium">버류류교 반복유도</p>
-                              <p className="text-xs text-[#58534e]">학원 내용법 노타이어 호응 이영여 긴 좌우 부모 비옮격 대처</p>
-                            </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-blue-600 mb-3">효율화 성과</h4>
+                          <ul className="space-y-2 text-sm text-gray-700">
+                            <li>• 자막 리타이밍 대폭 단축 폭 달성</li>
+                            <li>• 다회차 설문 관리 체계 구축</li>
+                            <li>• 간체 물량 양산체계 별도 확보</li>
+                          </ul>
+                          <div className="mt-3 flex space-x-2">
+                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">성과향상</span>
+                            <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">품질제고</span>
                           </div>
                         </div>
                       </div>
