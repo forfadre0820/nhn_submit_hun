@@ -1102,74 +1102,34 @@ export default function CombinedLanding() {
                 </div>
               </div>
 
-              {/* Certifications & Skills */}
-              <div className="mt-12 pt-8 border-t border-gray-100">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div>
-                    <h5
-                      className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
-                    >
-                      보유 자격증
-                    </h5>
-                    <ul
-                      className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}
-                    >
-                      <li>• 정보처리기사</li>
-                      <li>• 정보처리산업기사</li>
-                    </ul>
-                  </div>
 
-                  <div>
-                    <h5
-                      className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
-                    >
-                      전문 기술
-                    </h5>
-                    <ul
-                      className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}
-                    >
-                      <li>• Adobe Creative Suite (전문가)</li>
-                      <li>• Final Cut Pro (고급)</li>
-                      <li>• DaVinci Resolve (중급)</li>
-                    </ul>
-                  </div>
 
-                  <div>
-                    <h5
-                      className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
-                    >
-                      언어 능력
-                    </h5>
-                    <ul
-                      className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}
-                    >
-                      <li>• 한국어 (모국어)</li>
-                      <li>• 영어 (업무 수준)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* 나의 스킬 Section */}
+              {/* 스킬/자격/언어 Section */}
               <div className="mt-12 pt-8 border-t border-gray-100">
                 <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-6`}>
-                  나의 스킬
+                  스킬/자격/언어
                 </h4>
                 
-                {/* Skills Text List */}
-                <div className="flex flex-wrap gap-4">
-                  <span className="text-gray-700 text-[14px] font-medium">ComfyUI</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Asana</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Slack</span>
-                  <span className="text-gray-700 text-[14px] font-medium">DaVinci Resolve</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Python</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Premier Pro</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Unity</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Photoshop</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Illustrator</span>
-                  <span className="text-gray-700 text-[14px] font-medium">C#</span>
-                  <span className="text-gray-700 text-[14px] font-medium">Java</span>
-                  <span className="text-gray-700 text-[14px] font-medium">After Effect</span>
+                {/* All Skills Tags Grid */}
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">ComfyUI</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Asana</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Slack</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">DaVinci Resolve</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Python</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Premier Pro</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Unity</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Photoshop</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Illustrator</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">C#</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Java</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">After Effect</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">정보처리기사</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">정보처리산업기사</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Adobe Creative Suite</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Final Cut Pro</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">한국어 (모국어)</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">영어 (업무 수준)</span>
                 </div>
               </div>
             </div>
