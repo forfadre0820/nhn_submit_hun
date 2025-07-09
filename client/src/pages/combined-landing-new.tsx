@@ -369,7 +369,7 @@ export default function CombinedLanding() {
       id: "gallery-7",
       src: GalleryCasualPortraitImage,
       alt: "자연스러운 인물 포트레이트",
-      title: "캐주얼 포트레이트",
+      title: "모델, 제품 광고 이미지",
       subtitle: "편안한 분위기의 인물 사진",
       description: "자연스럽고 편안한 분위기를 담은 캐주얼 포트레이트입니다.",
       category: "Lifestyle Portrait",
