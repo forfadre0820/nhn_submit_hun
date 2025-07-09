@@ -860,10 +860,8 @@ export default function CombinedLanding() {
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
                   <h2
-                    className={`${FONT_SIZES.sectionTitle} font-bold text-gray-900 leading-tight ${SPACING.smallGap}`}
-                  >
-                    콘텐츠 제작자이자 크리에이터를 위한 교육자
-                  </h2>
+                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
+                  >> ALL IN ONE CONTENT CREATOR</h2>
                   <p className="text-gray-700 text-[14px]">
                     10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제
                     출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등
@@ -1646,9 +1644,7 @@ export default function CombinedLanding() {
                   <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                     <div className="lg:col-span-3">
                       <h1 className="text-4xl lg:text-5xl text-[#282623] leading-tight mb-0 font-semibold">
-                        온·오프라인 실시간 행사
-                        <br />
-                        /교육 기획·진행
+                        교육 콘텐츠 기획 제작
                       </h1>
                     </div>
                   </div>
@@ -1661,7 +1657,7 @@ export default function CombinedLanding() {
                           Categories
                         </h5>
                         <p className="text-sm text-[#282623]">
-                          행사, 교육 기획
+                          Educational Content
                         </p>
                       </div>
 
@@ -1669,7 +1665,7 @@ export default function CombinedLanding() {
                         <h5 className="opacity-50 text-base font-normal mb-2">
                           Client
                         </h5>
-                        <p className="text-sm text-[#282623]">삼성 그룹</p>
+                        <p className="text-sm text-[#282623]">삼성교육재단</p>
                       </div>
 
                       <div>
@@ -1677,18 +1673,17 @@ export default function CombinedLanding() {
                           Role
                         </h5>
                         <p className="text-sm text-[#282623]">
-                          기획, 운영, 제작
+                          콘텐츠 기획, 제작
                         </p>
                       </div>
                     </div>
 
                     <div>
                       <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                        삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행
-                        프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작
-                        기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객
-                        만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규
-                        고객사 5개를 수주했습니다.
+                        삼성 멀티캠퍼스의 교육 콘텐츠 기획 및 제작을 담당하여
+                        학습자 중심의 교육 설계와 실제 수업 촬영을 기반으로 한
+                        교육 콘텐츠를 개발했습니다. 효과적인 학습 경험 설계를
+                        통해 교육 만족도를 높이고, 양질의 교육 콘텐츠를 제공했습니다.
                       </p>
                     </div>
                   </div>
@@ -1775,8 +1770,27 @@ export default function CombinedLanding() {
                   <div className="space-y-5 mb-8">
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                        전체 기간: 2023.01 ~ 2024.11 (23개월)
+                        프로젝트 기간: 2023.02 ~ 2023.08 (6개월)
                       </div>
+                    </div>
+                  </div>
+
+                  {/* 프로젝트 배경 */}
+                  <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                    <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                        2
+                      </span>
+                      프로젝트 배경
+                    </h2>
+                  </div>
+                  <div className="space-y-5 mb-8">
+                    <div>
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                        임직원의 관련 초기 상황 분석하여 역량 개발 방향 분석하고 
+                        적절한 디지털 전환 교육을 위해서 이론과 실습이 균형잡힌 
+                        교육 콘텐츠를 개발했습니다.
+                      </p>
                     </div>
                   </div>
 
@@ -1784,7 +1798,7 @@ export default function CombinedLanding() {
                   <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                     <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                       <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        2
+                        3
                       </span>
                       주요 성과
                     </h2>
@@ -1792,70 +1806,76 @@ export default function CombinedLanding() {
                   <div className="space-y-5 mb-8">
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 고객 만족도 NPS 4.5+ 달성
+                        • 30% 높은 기계의 견딜수 개선 성과
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        30+ 온 오프라인 행사, 교육에서 일관된 고품질 서비스 제공
+                        맞춤형 설정 방안으로 인력이수로 효율적인 수업 환경 조성
                       </p>
                     </div>
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 기업 고객사 수주 5개
+                        • 5초 아이벌방지 점검
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트
-                        수주
+                        ALT+TAB 작업 최적화로 몰입도 높인 최초 학습 명령 구조
                       </p>
                     </div>
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 운영 효율성 개선
+                        • Screen Life 포맷 창출
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        자동화 프로그램 도입으로 인력 및 시간 비용 절감
+                        실제 디지털 기기를 활용한 실습 중심의 교육 콘텐츠 개발
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
+                        • 시청자 특화 절단 방식
+                      </h3>
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
+                        대상자별 맞춤 컨텐츠로 소수집단별 세분화된 교육 구조
                       </p>
                     </div>
                   </div>
 
-                  {/* 주요 역할 */}
+                  {/* 주요 역할 및 기술적 성과 */}
                   <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                     <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                       <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        3
+                        4
                       </span>
-                      주요 역할
+                      주요 역할 및 기술적 성과
                     </h2>
                   </div>
                   <div className="space-y-5 mb-8">
                     <div>
                       <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        실시간 행사 운영 및 기술 대응
+                        교육기획 & 브랜드 전략
                       </h3>
                       <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                         <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러
-                          협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생
+                          시청자의 학습 맥락과 디지털 기기 활용 역량을 분석하여
+                          개인별 맞춤형 교육 브랜드 메시지 개발과 효과적인 학습 방법을 확인했습니다.
                         </p>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            협력사 커뮤니케이션
+                            실무 수업 교육 분석
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 영상: 앵글, 트랜지션 품질 확보</li>
-                            <li>• 음향: 밸런스 조정 및 품질 관리</li>
-                            <li>• 송출: 실시간 기술 이슈 대응</li>
+                            <li>• 재직자 교육 상황 맞춤 해외 베스트 프랙티스 미디어 전술 분석</li>
+                            <li>• 학령층별 특화 분석을 통한 개별 역시 학습자 참여</li>
+                            <li>• 5초 이내 이탈 방지를 위한 고몰입 콘텐츠 개발</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            돌발 상황 대응
+                            창의적 콘텐츠 개발
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 출연자 지각, 건강 이상 등</li>
-                            <li>• 큐시트 실시간 수정</li>
-                            <li>• 직접 대체 진행 수행</li>
+                            <li>• Screen Life 포맷 활용한 실사형 교육 콘텐츠 개발</li>
+                            <li>• 실전 최적화된 다양한 사용자 경험 설계</li>
                           </ul>
                         </div>
                       </div>
@@ -1863,38 +1883,33 @@ export default function CombinedLanding() {
 
                     <div>
                       <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        콘텐츠 제작 및 자동화 시스템 개발
+                        크리에이티브 & 디렉팅
                       </h3>
                       <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                         <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          행사별 다양한 그래픽 필요 + 송출 타이밍 오류 = 행사
-                          품질 직접 영향 → 효율적 제작 & 자동화 필요
+                          Screen Life 포맷을 활용한 실제 디지털 기기 화면을 활용한
+                          교육 콘텐츠 제작과 시청자별 특화된 절단 방식을 통한 맞춤형 콘텐츠 개발
                         </p>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            그래픽 제작 시스템
+                            Screen Life 포맷 구현
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
-                            <li>
-                              • Python , 오픈소스 (Pulid, Ipadater, Flux) 활용
-                              후보정
-                            </li>
-                            <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
+                            <li>• 실제 디지털 기기를 활용한 실습 중심 콘텐츠</li>
+                            <li>• 화면 녹화 기반 몰입형 교육 방식</li>
+                            <li>• 실무 상황 반영 교육 시나리오 구성</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            자동화 프로그램 (폐쇄망 환경)
+                            웹툰형 사건구성
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• Python + OCR 화면 인식 시스템 구축</li>
-                            <li>
-                              • 화면 인식 기반 영상, 음악 송출 타이밍 자동 제어
-                            </li>
-                            <li>• 수동 조작 대비 타이밍 오류 90% 감소</li>
+                            <li>• 웹툰 스타일의 방송 녹화 현장 구성</li>
+                            <li>• 브랜드 메시지 일관성을 위한 시각적 연출</li>
+                            <li>• 학습자 참여 유도를 위한 인터랙티브 요소</li>
                           </ul>
                         </div>
                       </div>
