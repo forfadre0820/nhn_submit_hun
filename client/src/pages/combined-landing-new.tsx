@@ -1056,6 +1056,50 @@ export default function CombinedLanding() {
           </motion.div>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="py-16">
+        <div className="container mx-auto px-6 lg:px-8">
+          {/* Separator Line - Same as other sections */}
+          <div className="separator-wrap mb-8">
+            <div className="separator-line h-px bg-gray-200"></div>
+          </div>
+          
+          {/* Footer Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left Content */}
+            <div>
+              <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-4`}>
+                Ready to collaborate?
+              </h4>
+              <p className={`${FONT_SIZES.body} text-gray-600 mb-6 leading-relaxed`}>
+                콘텐츠 제작과 기획에 대한 모든 문의를 환영합니다. 
+                함께 의미 있는 콘텐츠를 만들어보세요.
+              </p>
+              <a 
+                href="mailto:buen136003@gmail.com"
+                className={`${FONT_SIZES.small} text-red-500 hover:text-red-600 transition-colors font-medium`}
+              >
+                buen136003@gmail.com
+              </a>
+            </div>
+            
+            {/* Right Content */}
+            <div className="lg:text-right">
+              <button 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className={`${FONT_SIZES.small} text-gray-500 hover:text-gray-700 transition-colors mb-4 cursor-pointer`}
+              >
+                Back to top ↑
+              </button>
+              <div className="text-gray-400">
+                <p className={`${FONT_SIZES.tiny} mb-2`}>Seoul, Korea</p>
+                <p className={`${FONT_SIZES.tiny}`}>© LEESEUNGHUN 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
       {/* Gallery Item Simple Modal */}
       {selectedProject && selectedProject.id.startsWith("gallery-") && (
         <motion.div 
