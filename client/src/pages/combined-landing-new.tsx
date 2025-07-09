@@ -1066,7 +1066,7 @@ export default function CombinedLanding() {
       </section>
       {/* Footer Section */}
       <footer className="py-[30px]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 pt-[10px] pb-[10px]">
           <div className="max-w-6xl mx-auto">
             {/* Separator Line - Same as other sections */}
             <div className="separator-wrap mb-4">
