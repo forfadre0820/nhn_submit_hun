@@ -212,6 +212,7 @@ export default function CombinedLanding() {
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [isClosingModal, setIsClosingModal] = useState(false);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+  const [isGalleryMode, setIsGalleryMode] = useState(false);
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -501,6 +502,7 @@ export default function CombinedLanding() {
       setSelectedProject(null);
       setIsClosingModal(false);
       setCurrentGalleryIndex(0);
+      setIsGalleryMode(false);
     }, 400);
   };
 
@@ -509,6 +511,7 @@ export default function CombinedLanding() {
     const index = galleryItems.findIndex(galleryItem => galleryItem.id === item.id);
     setCurrentGalleryIndex(index);
     setSelectedProject(item);
+    setIsGalleryMode(true);
   };
 
   const navigateGallery = (direction: 'prev' | 'next') => {
@@ -523,7 +526,7 @@ export default function CombinedLanding() {
   // Keyboard navigation for gallery
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (selectedProject && selectedProject.id.startsWith("gallery-")) {
+      if (selectedProject && isGalleryMode) {
         if (e.key === 'ArrowLeft') {
           navigateGallery('prev');
         } else if (e.key === 'ArrowRight') {
@@ -536,7 +539,7 @@ export default function CombinedLanding() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedProject, currentGalleryIndex]);
+  }, [selectedProject, isGalleryMode, currentGalleryIndex]);
 
   // Navigation handler with smooth scroll to section
   const handleNavigation = (section: string) => {
@@ -982,9 +985,9 @@ export default function CombinedLanding() {
               {/* Gallery Grid - Masonry Layout (Pinterest style) */}
               <div className="columns-2 md:columns-4 gap-4 mb-8 space-y-4">
                 {galleryItems.map((item, index) => {
-                  // 다양한 높이 패턴 생성 (rem 단위 사용)
+                  // 최적화된 높이 패턴 - 이미지가 잘리지 않도록 조정
                   const heightVariants = [
-                    'h-[12rem]', 'h-[20rem]', 'h-[14rem]', 'h-[18rem]', 'h-[10rem]', 'h-[22rem]', 'h-[13rem]', 'h-[19rem]'
+                    'h-[280px]', 'h-[360px]', 'h-[320px]', 'h-[400px]', 'h-[240px]', 'h-[440px]', 'h-[300px]', 'h-[380px]'
                   ];
                   const randomHeight = heightVariants[index % heightVariants.length];
                   
@@ -1140,7 +1143,7 @@ export default function CombinedLanding() {
         </div>
       </footer>
       {/* Gallery Lightbox Modal */}
-      {selectedProject && selectedProject.id.startsWith("gallery-") && (
+      {selectedProject && isGalleryMode && (
         <motion.div 
           className="fixed inset-0 bg-black/90 z-[99999] flex items-center justify-center"
           initial={{ opacity: 0 }}
@@ -1216,7 +1219,7 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       {/* Project Detail Modal - Floating Lightbox Style */}
-      {selectedProject && !selectedProject.id.startsWith("gallery-") && (
+      {selectedProject && !isGalleryMode && (
         <motion.div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
