@@ -224,10 +224,10 @@ export default function CombinedLanding() {
       role: "기획, 운영, 제작",
       tools: ["Adobe Premiere", "After Effects", "Photoshop"],
       images: [
+        SamsungOfflineImage,
         IntegratedOperationImage,
         TechSupportImage,
         OverseasEventImage,
-        OnlineEventImage,
       ],
     },
     {
@@ -243,10 +243,10 @@ export default function CombinedLanding() {
       role: "콘텐츠 기획, 영상 제작",
       tools: ["Video Production", "Educational Content", "Mobile Platform"],
       images: [
-        IntegratedOperationImage,
-        TechSupportImage,
-        OverseasEventImage,
-        OnlineEventImage,
+        SnapaskContentImage,
+        PersonalPortfolioImage,
+        VRCulturalHeritageImage,
+        KoreyaHospitalImage,
       ],
     },
     {
@@ -262,10 +262,10 @@ export default function CombinedLanding() {
       role: "교육 콘텐츠 기획",
       tools: ["Learning Management", "Video Production", "Interactive Content"],
       images: [
-        IntegratedOperationImage,
-        TechSupportImage,
-        OverseasEventImage,
-        OnlineEventImage,
+        SamsungEducationImage,
+        GalleryInterviewImage,
+        GalleryBeautyImage,
+        GalleryMalePortraitImage,
       ],
     },
     {
@@ -281,10 +281,10 @@ export default function CombinedLanding() {
       role: "마케팅 콘텐츠 기획",
       tools: ["Influencer Marketing", "Brand Content", "Video Production"],
       images: [
-        IntegratedOperationImage,
-        TechSupportImage,
-        OverseasEventImage,
-        OnlineEventImage,
+        JinairPromoImage,
+        JinairSurfingDayImage,
+        GalleryJinairPromotionImage,
+        LikelionHackathonImage,
       ],
     },
   ];
@@ -1629,7 +1629,10 @@ export default function CombinedLanding() {
 
                     <div>
                       <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                        {selectedProject.description}
+                        {selectedProject.id === "1" && "삼성 멀티캠퍼스의 교육 콘텐츠 기획 및 제작을 담당하여 학습자 중심의 교육 설계와 실제 수업 촬영을 기반으로 한 교육 콘텐츠를 개발했습니다. 효과적인 학습 경험 설계를 통해 교육 만족도를 높이고, 양질의 교육 콘텐츠를 제공했습니다."}
+                        {selectedProject.id === "2" && "Snapask Korea의 프리미엄 교육 콘텐츠 제작을 담당하여 학생들의 학습 효과를 극대화하는 고품질 영상 콘텐츠를 개발했습니다. 개인 맞춤형 학습 경험을 제공하여 학습자의 이해도와 참여도를 높이는 것을 목표로 했습니다."}
+                        {selectedProject.id === "3" && "삼성물산의 효과적인 교육 메시지 전달을 위한 Screen Life 연출 기법을 통해 교육 콘텐츠를 제작하고, 사용자 행동 분석을 통한 맞춤형 교육 전략을 수립하였습니다. 5초 이내 주의 집중 분산 등의 사용자 행동 패턴을 분석하여 Screen Life 포맷을 활용한 몰입도 향상 시스템을 구축했습니다."}
+                        {selectedProject.id === "4" && "진에어의 베트남 시장 진출을 위한 인플루언서 마케팅 콘텐츠를 기획하고 제작했습니다. 현지 문화와 트렌드를 반영한 브랜드 메시지 전달을 통해 베트남 소비자들의 진에어 브랜드 인지도 향상과 항공편 이용률 증대를 목표로 했습니다."}
                       </p>
                     </div>
                   </div>
