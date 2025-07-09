@@ -383,14 +383,14 @@ export default function CombinedLanding() {
       id: "gallery-8",
       src: GalleryJinairPromotionImage,
       alt: "진에어 프로모션 콘텐츠",
-      title: "항공사 프로모션",
+      title: "모션 그래픽",
       subtitle: "여행의 설렘을 담은 비주얼",
       description: "진에어의 쿠폰 대방출 프로모션을 위한 그래픽 디자인입니다.",
-      category: "Promotion Design",
+      category: "Motion Graphics",
       year: "2024",
       client: "JIN AIR",
-      role: "그래픽 디자인",
-      tools: ["Graphic Design", "Promotion Material"],
+      role: "모션 그래픽 디자인",
+      tools: ["Motion Graphics", "Animation", "Promotion Material"],
       images: []
     }
   ];
