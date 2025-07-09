@@ -1079,7 +1079,7 @@ export default function CombinedLanding() {
               
               {/* Center - Copyright */}
               <div>
-                <p className="text-gray-500 text-[16px]">© LEESEUNGHUN 2025</p>
+                <p className="text-gray-500 text-[14px]">© LEESEUNGHUN 2025</p>
               </div>
               
               {/* Right - Email */}
