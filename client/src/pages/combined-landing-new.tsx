@@ -357,7 +357,7 @@ export default function CombinedLanding() {
       alt: "남성 포트레이트 촬영",
       title: "남성 포트레이트",
       subtitle: "클래식한 매력의 표현",
-      description: "세련된 남성의 매력을 담은 클래식 포트레이트입니다.",
+      description: "ComfyUI, FLUX, Python 활용하여 실사형 인물 이미지를 제작하였습니다.",
       category: "Portrait",
       year: "2024",
       client: "개인 촬영",
