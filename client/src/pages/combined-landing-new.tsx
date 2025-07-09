@@ -824,7 +824,9 @@ export default function CombinedLanding() {
                 <div className="lg:col-span-6">
                   <h2
                     className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
-                  >> ALL IN ONE CONTENT CREATOR</h2>
+                  >
+                    ALL IN ONE CONTENT CREATOR
+                  </h2>
                   <p className="text-gray-700 text-[14px]">
                     10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제
                     출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등
