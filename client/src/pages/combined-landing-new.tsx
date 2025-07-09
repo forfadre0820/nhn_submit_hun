@@ -374,7 +374,7 @@ export default function CombinedLanding() {
       description: "자연스럽고 편안한 분위기를 담은 캐주얼 포트레이트입니다.",
       category: "Lifestyle Portrait",
       year: "2024",
-      client: "개인 포트폴리오",
+      client: "모델, 제품 광고 이미지",
       role: "포트레이트 촬영",
       tools: ["Natural Light", "Casual Setup"],
       images: []
