@@ -1104,7 +1104,7 @@ export default function CombinedLanding() {
 
               {/* Certifications & Skills */}
               <div className="mt-12 pt-8 border-t border-gray-100">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div>
                     <h5
                       className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
@@ -1123,7 +1123,7 @@ export default function CombinedLanding() {
                     <h5
                       className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
                     >
-                      전문 기술
+                      SKILL SET
                     </h5>
                     <ul
                       className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}
@@ -1131,19 +1131,10 @@ export default function CombinedLanding() {
                       <li>• Adobe Creative Suite (전문가)</li>
                       <li>• Final Cut Pro (고급)</li>
                       <li>• DaVinci Resolve (중급)</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h5
-                      className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
-                    >
-                      SKILL SET
-                    </h5>
-                    <ul
-                      className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}
-                    >
                       <li>• ComfyUI (상)</li>
+                      <li>• Stable Diffusion (상)</li>
+                      <li>• Midjourney (상)</li>
+                      <li>• Flux (상)</li>
                       <li>• Asana, Slack (중)</li>
                       <li>• Python (중)</li>
                       <li>• Premiere Pro (상)</li>
