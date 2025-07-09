@@ -822,9 +822,15 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
-                  <h2 className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light">
-                    &gt; ALL IN ONE CONTENT CREATOR
-                  </h2>
+                  <motion.h2 
+                    className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    &gt; ALL IN ONE CONTENT<br />CREATOR
+                  </motion.h2>
                   <p className="text-gray-700 text-[14px]">
 
 
@@ -1331,7 +1337,7 @@ export default function CombinedLanding() {
                       }}
                       viewport={{ once: true, margin: "-100px" }}
                     >
-                      <span>&gt; AWAYS THINK MAKE BETTER</span>
+                      &gt; AWAYS THINK<br />MAKE BETTER
                     </motion.h3>
 
                     <div
