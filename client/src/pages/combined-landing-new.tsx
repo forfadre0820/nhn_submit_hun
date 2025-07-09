@@ -343,7 +343,7 @@ export default function CombinedLanding() {
       alt: "럭셔리 제품 촬영",
       title: "제품 포토그래피",
       subtitle: "고급스러운 브랜드 이미지",
-      description: "럭셔리 브랜드의 제품 특성을 극대화한 스튜디오 촬영입니다.",
+      description: "ComfyUI, FLUX, Python 활용하여 실사형 이미지를 생성하였습니다.",
       category: "Product Photography",
       year: "2024",
       client: "Louis Vuitton",
