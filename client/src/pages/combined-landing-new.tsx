@@ -1116,7 +1116,6 @@ export default function CombinedLanding() {
                     >
                       <li>• 정보처리기사</li>
                       <li>• 정보처리산업기사</li>
-                      <li>• Adobe Certified Expert (Premiere Pro)</li>
                     </ul>
                   </div>
 
