@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FONT_SIZES, SPACING, ANIMATION_DURATIONS } from "../constants/styles";
 
 import ContactWorkspaceImage from "@assets/image_1752013143751.png";
 import SamsungOfflineImage from "@assets/오프라인 운영_1752012039625.png";
@@ -25,32 +26,6 @@ import JinairSurfingDayImage from "@assets/image_1752095977745.png";
 import GalleryJinairPromotionImage from "@assets/image_1752014683656.png";
 
 gsap.registerPlugin(ScrollTrigger);
-
-// Constants for consistent styling
-const FONT_SIZES = {
-  hero: "text-6xl", // 62px equivalent
-  sectionTitle: "text-4xl lg:text-5xl",
-  subsectionTitle: "text-2xl lg:text-3xl",
-  heading: "text-xl lg:text-2xl",
-  subheading: "text-lg",
-  body: "text-base",
-  small: "text-sm",
-  tiny: "text-xs",
-};
-
-const SPACING = {
-  sectionGap: "mb-20",
-  subsectionGap: "mb-12",
-  itemGap: "mb-8",
-  smallGap: "mb-4",
-};
-
-// Animation constants
-const ANIMATION_DURATIONS = {
-  modal: 0.4,
-  modalContent: 0.5,
-  stagger: 0.1,
-};
 
 // Portfolio item interface
 interface PortfolioItem {
@@ -630,37 +605,25 @@ export default function CombinedLanding() {
         <div className="bg-gray-100/90 backdrop-blur-md rounded-full px-8 py-3">
           <div className="flex items-center space-x-8">
             <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => handleNavigation("home")}
               className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Home
             </button>
             <button
-              onClick={() =>
-                document
-                  .querySelector(".next")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => handleNavigation("about")}
               className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               About
             </button>
             <button
-              onClick={() =>
-                document
-                  .querySelector('[data-section="work"]')
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => handleNavigation("work")}
               className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Work
             </button>
             <button
-              onClick={() =>
-                document
-                  .querySelector('[data-section="contact"]')
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => handleNavigation("contact")}
               className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Contact
@@ -861,7 +824,9 @@ export default function CombinedLanding() {
                 <div className="lg:col-span-6">
                   <h2
                     className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
-                  >> ALL IN ONE CONTENT CREATOR</h2>
+                  >
+                    ALL IN ONE CONTENT CREATOR
+                  </h2>
                   <p className="text-gray-700 text-[14px]">
                     10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제
                     출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등
@@ -1806,23 +1771,23 @@ export default function CombinedLanding() {
                   <div className="space-y-5 mb-8">
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 30% 높은 기계의 견딜수 개선 성과
+                        • 학습 효과 30% 향상
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        맞춤형 설정 방안으로 인력이수로 효율적인 수업 환경 조성
+                        인터랙티브 콘텐츠 도입으로 기존 대비 학습 이해도 대폭 증가
                       </p>
                     </div>
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 5초 아이벌방지 점검
+                        • 5초 이내 몰입도 확보
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        ALT+TAB 작업 최적화로 몰입도 높인 최초 학습 명령 구조
+                        Screen Life 포맷으로 초기 이탈률 최소화 및 집중도 향상
                       </p>
                     </div>
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • Screen Life 포맷 창출
+                        • Screen Life 포맷 개발
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
                         실제 디지털 기기를 활용한 실습 중심의 교육 콘텐츠 개발
@@ -1830,10 +1795,10 @@ export default function CombinedLanding() {
                     </div>
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 시청자 특화 절단 방식
+                        • 맞춤형 교육 설계
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        대상자별 맞춤 컨텐츠로 소수집단별 세분화된 교육 구조
+                        학습자별 특화 콘텐츠로 개별 역량에 최적화된 교육 제공
                       </p>
                     </div>
                   </div>
@@ -1864,8 +1829,8 @@ export default function CombinedLanding() {
                             실무 수업 교육 분석
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 재직자 교육 상황 맞춤 해외 베스트 프랙티스 미디어 전술 분석</li>
-                            <li>• 학령층별 특화 분석을 통한 개별 역시 학습자 참여</li>
+                            <li>• 재직자 교육에 최적화된 해외 베스트 프랙티스 분석</li>
+                            <li>• 학습자 연령대별 특화 분석을 통한 개별 맞춤 교육</li>
                             <li>• 5초 이내 이탈 방지를 위한 고몰입 콘텐츠 개발</li>
                           </ul>
                         </div>
