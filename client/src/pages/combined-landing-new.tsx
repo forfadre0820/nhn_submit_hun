@@ -823,13 +823,14 @@ export default function CombinedLanding() {
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
                   <motion.h2 
-                    className="text-gray-900 leading-tight mb-4 font-light"
+                    className="leading-tight mb-4 font-light"
                     style={{
                       fontFamily: "'Noto Sans', sans-serif",
                       fontSize: "3.5rem",
                       fontWeight: "300",
                       letterSpacing: "0.02em",
                       lineHeight: "1.1",
+                      color: "#000000",
                     }}
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -1327,7 +1328,7 @@ export default function CombinedLanding() {
                   {/* Right Column - Content */}
                   <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center text-[#4b5563]">
                     <motion.h3
-                      className="text-red-500 font-light mb-4"
+                      className="font-light mb-4"
                       style={{
                         fontFamily: "'Noto Sans', sans-serif",
                         fontWeight: "300",
@@ -1335,6 +1336,7 @@ export default function CombinedLanding() {
                         lineHeight: "1.1",
                         letterSpacing: "0.02em",
                         marginBottom: "4rem",
+                        color: "#ef4444",
                       }}
                       initial={{ y: 50, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
