@@ -1150,7 +1150,7 @@ export default function CombinedLanding() {
           </nav>
 
           <motion.div 
-            className="bg-white w-full max-w-5xl max-h-[90vh] rounded-xl shadow-2xl relative tracking-tight leading-relaxed overflow-hidden"
+            className="bg-white w-full max-w-5xl h-[90vh] rounded-xl shadow-2xl relative tracking-tight leading-relaxed overflow-hidden"
             initial={{ scale: 0.95, opacity: 0, y: 30 }}
             animate={{ 
               scale: isClosingModal ? 0.95 : 1, 
@@ -1162,9 +1162,9 @@ export default function CombinedLanding() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Custom Scroll Container */}
-            <div className="h-full overflow-y-auto custom-scrollbar">
+            <div className="h-full overflow-y-scroll custom-scrollbar">
             {/* Page Header */}
-            <div className="px-8 lg:px-16 pb-2 pt-32">
+            <div className="px-8 lg:px-16 pb-2 pt-16">
               {/* Back Link */}
               <motion.div 
                 className="mb-8"
@@ -1462,9 +1462,9 @@ export default function CombinedLanding() {
             </div> {/* Close scroll container */}
             
             {/* Custom Scroll Indicator */}
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-2">
-              <div className="w-1 h-16 bg-gray-200 rounded-full relative">
-                <div className="w-1 h-4 bg-gray-600 rounded-full absolute top-0 transition-all duration-200"></div>
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-2 z-20">
+              <div className="w-1 h-20 bg-gray-200 rounded-full relative">
+                <div className="w-1 h-6 bg-gray-600 rounded-full absolute top-0 transition-all duration-200"></div>
               </div>
               <span className="text-xs text-gray-500 writing-mode-vertical-rl transform rotate-180">SCROLL</span>
             </div>
