@@ -1504,7 +1504,11 @@ export default function CombinedLanding() {
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
                     <h1 className="text-4xl lg:text-5xl text-[#282623] leading-tight mb-0 font-semibold">
-                      {selectedProject.title}
+                      {selectedProject.id === "1" ? "온·오프라인 실시간 행사/교육 기획·진행" :
+                       selectedProject.id === "2" ? "프리미엄 콘텐츠 영상 제작" :
+                       selectedProject.id === "3" ? "교육 콘텐츠 기획 제작" :
+                       selectedProject.id === "4" ? "베트남 인플루언서 프로모션 콘텐츠 제작" :
+                       selectedProject.title}
                     </h1>
                   </div>
                 </div>
@@ -1524,13 +1528,27 @@ export default function CombinedLanding() {
                     
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
-                      <p className="text-sm text-[#282623]">기획, 운영, 제작</p>
+                      <p className="text-sm text-[#282623]">
+                        {selectedProject.id === "1" ? "기획, 운영, 제작" :
+                         selectedProject.id === "2" ? "영상 기획, 연출, 편집" :
+                         selectedProject.id === "3" ? "콘텐츠 기획, 제작" :
+                         selectedProject.id === "4" ? "프로모션 기획, 운영" :
+                         "기획, 운영, 제작"}
+                      </p>
                     </div>
                   </div>
 
                   <div>
                     <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                      {selectedProject.description}
+                      {selectedProject.id === "1" 
+                        ? "삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다."
+                        : selectedProject.id === "2"
+                        ? "Snapask Korea의 프리미엄 학습 콘텐츠 영상 제작을 담당했습니다. 학습자 몰입도 향상을 위한 인터랙티브 영상 요소 도입과 AI 기반 자동화 시스템으로 제작 효율성을 40% 개선했습니다."
+                        : selectedProject.id === "3"
+                        ? "삼성 멀티캠퍼스의 교육 콘텐츠 기획 및 제작을 담당했습니다. 학습자 중심의 교육 설계와 실무 중심 커리큘럼 개발로 교육 만족도를 크게 향상시켰습니다."
+                        : selectedProject.id === "4"
+                        ? "진에어 베트남 인플루언서 프로모션 콘텐츠 제작 및 운영을 담당했습니다. 현지 문화와 트렌드를 반영한 콘텐츠 기획으로 높은 참여율과 브랜드 인지도 향상을 달성했습니다."
+                        : selectedProject.description}
                     </p>
                   </div>
                 </div>
@@ -1546,18 +1564,68 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
               >
-                <div className="mb-8">
-                  <div className="aspect-[16/9] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                    <img
-                      src={selectedProject.src}
-                      alt={selectedProject.alt}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
+                {/* 프로젝트별 이미지 레이아웃 */}
+                {selectedProject.id === "1" && (
+                  <>
+                    {/* 삼성 프로젝트 - 2x2 그리드 */}
+                    <div className="mb-8">
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                          <img
+                            src={IntegratedOperationImage}
+                            alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                          <img
+                            src={TechSupportImage}
+                            alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                          <img
+                            src={OverseasEventImage}
+                            alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                          <img
+                            src={OnlineEventImage}
+                            alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {selectedProject.id !== "1" && (
+                  <>
+                    {/* 다른 프로젝트들 - 단일 이미지 */}
+                    <div className="mb-8">
+                      <div className="aspect-[16/9] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                        <img
+                          src={selectedProject.src}
+                          alt={selectedProject.alt}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
                 
                 <div className="text-center mb-8">
-                  <p className="text-sm text-[#58534e] italic">{selectedProject.subtitle}</p>
+                  <p className="text-sm text-[#58534e] italic">
+                    {selectedProject.id === "1" 
+                      ? "오프라인 교육부터 온라인 이벤트까지 통합 운영"
+                      : selectedProject.subtitle}
+                  </p>
                 </div>
               </motion.div>
 
@@ -1568,11 +1636,246 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
               >
-                {/* 사용 기술 */}
-                <div className="mb-6">
+                {/* 프로젝트별 상세 내용 */}
+                {selectedProject.id === "1" && (
+                  <>
+                    {/* 삼성 프로젝트 상세 내용 - 기존과 동일 */}
+                    <div className="mb-6">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
+                        프로젝트 기간
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                        전체 기간: 2023.01 ~ 2024.11 (23개월)
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {selectedProject.id === "2" && (
+                  <>
+                    {/* Snapask 프로젝트 상세 내용 */}
+                    <div className="mb-6">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
+                        주요 역할 및 기술적 성과
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">기획연출 촬영 조명 미술 스튜디오 제작 과정직접 수행</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">전체 제작 파이프라인을 직접 관리하며 일관된 품질 확보</p>
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">BMPCC 6K 시네마틱 촬영 스튜디오 세팅, 브랜드 LUT 적용</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">고품질 영상 제작을 위한 전문 장비 활용</p>
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">Python + FFmpeg로 자막처리 생성 및 우류 검수 시스템 구축</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">자동화를 통한 제작 효율성 개선</p>
+                      </div>
+                    </div>
+
+                    {/* 핵심 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                        핵심 성과
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                      <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">40%</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">예상절감</span>
+                        </div>
+                        <p className="text-sm text-gray-600">인하우스 제작체계로 외주 비용절감 및 품질 제품투</p>
+                      </div>
+                      
+                      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white">⚡</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">외산결정 저하해소</span>
+                        </div>
+                        <p className="text-sm text-gray-600">로컬외국인회원만 케이션 최소화로 저작숙도 향상</p>
+                      </div>
+
+                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">10만+</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">조회수 달성</span>
+                        </div>
+                        <p className="text-sm text-gray-600">프로모션 영상 2편 시네마틱 품질로 높은 참여율 달성</p>
+                      </div>
+
+                      <div className="bg-gradient-to-br from-cyan-50 to-teal-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white">🎬</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">종료분석 시데 선정</span>
+                        </div>
+                        <p className="text-sm text-gray-600">미술 효과장비 품질 향상 콘텐츠 시데 선정</p>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {selectedProject.id === "3" && (
+                  <>
+                    {/* 삼성 교육 콘텐츠 프로젝트 */}
+                    <div className="mb-6">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
+                        교육 콘텐츠 설계 접근법
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">학습자 중심 교육 설계</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실무 중심의 커리큘럼과 인터랙티브 학습 요소 도입</p>
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">멀티미디어 콘텐츠 제작</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">영상, 인터랙티브 요소, 실습 자료를 통합한 종합적 학습 경험</p>
+                      </div>
+                    </div>
+
+                    {/* FFmpeg 최적화 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                        FFmpeg 최적화
+                      </h2>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-purple-600 mb-3 flex items-center">
+                            <span className="w-6 h-6 bg-purple-600 text-white rounded text-xs flex items-center justify-center mr-2">📹</span>
+                            FFmpeg 최적화
+                          </h4>
+                          <ul className="space-y-2 text-sm text-gray-700">
+                            <li>• FFmpeg 기반자막생성 시스템 구축</li>
+                            <li>• 고정판 다단계 메일 장면 병렬</li>
+                            <li>• 모댈설계자체콘텐츠 시스템</li>
+                          </ul>
+                          <div className="mt-3 flex space-x-2">
+                            <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">FFmpeg</span>
+                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">자막광성</span>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-blue-600 mb-3 flex items-center">
+                            <span className="w-6 h-6 bg-blue-600 text-white rounded text-xs flex items-center justify-center mr-2">📊</span>
+                            효율화성과
+                          </h4>
+                          <ul className="space-y-2 text-sm text-gray-700">
+                            <li>• 채팅 리다기 다캅 폴품 곹체</li>
+                            <li>• 다적환 설문 관리 체쫄 필목</li>
+                            <li>• 간체 물라약 양자치 별화</li>
+                          </ul>
+                          <div className="mt-3 flex space-x-2">
+                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">성과창자</span>
+                            <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">품질쇼조</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {selectedProject.id === "4" && (
+                  <>
+                    {/* 진에어 프로젝트 */}
+                    <div className="mb-6">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
+                        기본책략 브랜드 개념 설정
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                      <div>
+                        <h4 className="text-sm font-medium text-[#282623] mb-4">핵심젠력의 수립</h4>
+                        <div className="space-y-3">
+                          <div className="flex items-start space-x-3">
+                            <span className="w-2 h-2 bg-purple-500 rounded-full mt-2"></span>
+                            <div>
+                              <p className="text-sm text-[#282623] font-medium">설력업무규성 상세운체오주가 입력운체적</p>
+                              <p className="text-xs text-[#58534e] mt-1">처적설 핵심성과 신터화주 세창설 업체 설립</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full mt-2"></span>
+                            <div>
+                              <p className="text-sm text-[#282623] font-medium">설계퇴공기업식 그큼시공 젝구조성 오주지임 도니의</p>
+                              <p className="text-xs text-[#58534e] mt-1">새모핵심 동하요업 수창 설립 설계기어으로세 생용의</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <span className="w-2 h-2 bg-green-500 rounded-full mt-2"></span>
+                            <div>
+                              <p className="text-sm text-[#282623] font-medium">설젝카업젬 독김수즊성 노업 라고맹설젝</p>
+                              <p className="text-xs text-[#58534e] mt-1">사담설기업체젝 상세룻순설 휙체입연대급</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="text-sm font-medium text-[#282623] mb-4">주요 기술스택</h4>
+                        <div className="grid grid-cols-3 gap-3">
+                          <div className="text-center p-3 bg-purple-50 rounded-lg">
+                            <span className="text-purple-600 font-medium text-sm">캐물리더</span>
+                          </div>
+                          <div className="text-center p-3 bg-blue-50 rounded-lg">
+                            <span className="text-blue-600 font-medium text-sm">쿠업제도</span>
+                          </div>
+                          <div className="text-center p-3 bg-green-50 rounded-lg">
+                            <span className="text-green-600 font-medium text-sm">대기인</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 기술발전 논의 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
+                        기술발견 비교&완화법
+                      </h2>
+                    </div>
+                    <div className="space-y-6 mb-8">
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                        창크쿠업의은설 네이서게를휙주포젓수내엔 설계과기업그스설 지요청주셔업설새창집 
+                        대거음요퇴기업 설업내 세창설부동엔 휙상으로 화생키역의 바설창 제출기능비합연 곶르르네시다.
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-purple-50 p-4 rounded-lg">
+                          <h5 className="font-medium text-purple-700 mb-2">조회률창설 시여정</h5>
+                          <p className="text-sm text-gray-600">오창주의 팽주대여부엔시 달청창으히달성</p>
+                        </div>
+                        <div className="bg-blue-50 p-4 rounded-lg">
+                          <h5 className="font-medium text-blue-700 mb-2">설그혅상퓨어</h5>
+                          <p className="text-sm text-gray-600">설계부동화이어창 재엔 활창삘달결</p>
+                        </div>
+                        <div className="bg-green-50 p-4 rounded-lg">
+                          <h5 className="font-medium text-green-700 mb-2">BP 사례 선정</h5>
+                          <p className="text-sm text-gray-600">미술 효과장비 품질 향상 콘텐츠 사례 선정</p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {/* 공통 사용 기술 섹션 */}
+                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                    사용 기술
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
+                      {selectedProject.id === "1" ? "4" : selectedProject.id === "2" ? "3" : selectedProject.id === "3" ? "3" : selectedProject.id === "4" ? "3" : "1"}
+                    </span>
+                    {selectedProject.id === "1" ? "활용 기술" : "주요 기술 스택"}
                   </h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
