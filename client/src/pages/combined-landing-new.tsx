@@ -35,30 +35,40 @@ import GalleryJinairPromotionImage from "@assets/image_1752014683656.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Constants for consistent styling
-const FONT_SIZES = {
-  hero: "text-6xl", // 62px equivalent
-  sectionTitle: "text-4xl lg:text-5xl",
-  subsectionTitle: "text-2xl lg:text-3xl",
-  heading: "text-xl lg:text-2xl",
-  subheading: "text-lg",
-  body: "text-base",
-  small: "text-sm",
-  tiny: "text-xs"
-};
-
-const SPACING = {
-  sectionGap: "mb-20",
-  subsectionGap: "mb-12",
-  itemGap: "mb-8",
-  smallGap: "mb-4"
-};
-
-// Animation constants
-const ANIMATION_DURATIONS = {
-  modal: 0.4,
-  modalContent: 0.5,
-  stagger: 0.1
+// Design System Constants
+const DESIGN_SYSTEM = {
+  fonts: {
+    hero: "text-6xl",
+    sectionTitle: "text-4xl lg:text-5xl", 
+    heading: "text-xl lg:text-2xl",
+    subheading: "text-lg",
+    body: "text-base",
+    small: "text-sm",
+    tiny: "text-xs"
+  },
+  spacing: {
+    section: "mb-20",
+    subsection: "mb-12",
+    item: "mb-8",
+    small: "mb-4"
+  },
+  animations: {
+    modal: 0.4,
+    content: 0.5,
+    stagger: 0.1
+  },
+  typography: {
+    lineHeight: {
+      tight: "leading-tight",
+      normal: "leading-normal", 
+      relaxed: "leading-relaxed"
+    },
+    letterSpacing: {
+      tight: "tracking-tight",
+      normal: "tracking-normal",
+      wide: "tracking-wide"
+    }
+  }
 };
 
 // Portfolio item interface
@@ -183,8 +193,8 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, onProjectClick }) => {
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
               <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className={`title block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
-                <span className={`subtitle block ${FONT_SIZES.small} opacity-90`}>{item.subtitle}</span>
+                <span className={`title block ${DESIGN_SYSTEM.fonts.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                <span className={`subtitle block ${DESIGN_SYSTEM.fonts.small} opacity-90`}>{item.subtitle}</span>
               </div>
             </div>
           </div>
@@ -600,25 +610,25 @@ export default function CombinedLanding() {
           <div className="flex items-center space-x-8">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Home
             </button>
             <button 
               onClick={() => document.querySelector('.next')?.scrollIntoView({ behavior: 'smooth' })}
-              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               About
             </button>
             <button 
               onClick={() => document.querySelector('[data-section="work"]')?.scrollIntoView({ behavior: 'smooth' })}
-              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Work
             </button>
             <button 
               onClick={() => document.querySelector('[data-section="contact"]')?.scrollIntoView({ behavior: 'smooth' })}
-              className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+              className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
             >
               Contact
             </button>
@@ -635,16 +645,20 @@ export default function CombinedLanding() {
         ) : (
           <div className="container mx-auto px-4 text-center">
           <motion.h1 
-            className={`hero__heading font-bold leading-tight ${SPACING.itemGap}`}
-            style={{ fontSize: "62px", lineHeight: "1.1" }}
+            className={`hero__heading font-bold ${DESIGN_SYSTEM.typography.lineHeight.tight} ${DESIGN_SYSTEM.typography.letterSpacing.tight} ${DESIGN_SYSTEM.spacing.itemGap}`}
+            style={{ 
+              fontSize: "62px", 
+              lineHeight: "1.1",
+              letterSpacing: "-0.02em"
+            }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="space-y-2 text-center max-w-4xl mx-auto">
-              <div className="block text-left" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
-              <div className="block mt-[2px] mb-[2px] pt-[1px] pb-[1px]" style={{ lineHeight: "1.1" }}>      시청자의 경험까지</div>
-              <div className="block pt-[0px] pb-[0px] mt-[-4px] mb-[-4px]" style={{ lineHeight: "1.1" }}>
+              <div className="block text-left ${DESIGN_SYSTEM.typography.lineHeight.tight}" style={{ lineHeight: "1.1" }}>메세지를 넘어</div>
+              <div className="block mt-[2px] mb-[2px] pt-[1px] pb-[1px] ${DESIGN_SYSTEM.typography.lineHeight.tight}" style={{ lineHeight: "1.1" }}>      시청자의 경험까지</div>
+              <div className="block pt-[0px] pb-[0px] mt-[-4px] mb-[-4px] ${DESIGN_SYSTEM.typography.lineHeight.tight}" style={{ lineHeight: "1.1" }}>
                 설계하는<span 
                   ref={videoWrapRef}
                   className="hero__videoWrap inline-block relative cursor-pointer"
@@ -693,7 +707,7 @@ export default function CombinedLanding() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className={`${FONT_SIZES.small} ${SPACING.smallGap} transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
+              className={`${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.spacing.smallGap} transition-colors duration-300 ${isVideoFullscreen ? 'text-white' : 'text-black/80'}`}
             >
               {isVideoFullscreen ? 'Keep to explore' : 'Scroll to explore'}
             </motion.div>
@@ -783,10 +797,10 @@ export default function CombinedLanding() {
               onViewportEnter={() => handleSectionLoading('about')}
             >
             {/* Main About Section */}
-            <div className={SPACING.sectionGap}>
+            <div className={DESIGN_SYSTEM.spacing.sectionGap}>
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">ABOUT Hun</h3>
-                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>01</span>
+                <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>01</span>
               </div>
 
               {/* Separator Line */}
@@ -798,28 +812,28 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
                 {/* Left Column - Main Description */}
                 <div className="lg:col-span-6">
-                  <h2 className={`${FONT_SIZES.sectionTitle} font-bold text-gray-900 leading-tight ${SPACING.smallGap}`}>
+                  <h2 className={`${DESIGN_SYSTEM.fonts.sectionTitle} font-bold text-gray-900 ${DESIGN_SYSTEM.typography.lineHeight.tight} ${DESIGN_SYSTEM.typography.letterSpacing.tight} ${DESIGN_SYSTEM.spacing.smallGap}`}>
                     콘텐츠 제작자이자 크리에이터를 위한 교육자
                   </h2>
-                  <p className="text-gray-700 text-[14px]">10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제 출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등 제작 전반의 워크플로우를 체계적으로 수행해왔습니다. 다양한 프로젝트를 총괄하며 제작 전 과정에 대한 깊이 있는 이해를 바탕으로 일정, 예산, 품질을 효과적으로 관리했습니다.</p>
+                  <p className={`text-gray-700 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제 출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등 제작 전반의 워크플로우를 체계적으로 수행해왔습니다. 다양한 프로젝트를 총괄하며 제작 전 과정에 대한 깊이 있는 이해를 바탕으로 일정, 예산, 품질을 효과적으로 관리했습니다.</p>
                 </div>
 
                 {/* Right Column - Services */}
                 <div className="lg:col-span-6">
                   <div className="space-y-6">
                     <div>
-                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>콘텐츠 기획, 제작</h4>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>시청자 데이터와 시청환경 분석을 바탕으로 한 전략적 기획력과 촬영·편집·조명·미술까지 아우르는 올라운드 제작 역량으로 고품질 콘텐츠를 구현하여 제작비 최적화와 브랜드 가치 향상을 견인합니다.</p>
+                      <h4 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 ${DESIGN_SYSTEM.typography.letterSpacing.normal} mb-1`}>콘텐츠 기획, 제작</h4>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>시청자 데이터와 시청환경 분석을 바탕으로 한 전략적 기획력과 촬영·편집·조명·미술까지 아우르는 올라운드 제작 역량으로 고품질 콘텐츠를 구현하여 제작비 최적화와 브랜드 가치 향상을 견인합니다.</p>
                     </div>
                     
                     <div>
-                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>프로젝트 매니지먼트</h4>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>콘텐츠 제작 전문성과 IT 기술 활용 능력을 결합해 창작과 기술의 경계를 넘나들며, 혁신적인 제작 워크플로우 구축을 통해 프로젝트 성과를 극대화합니다.</p>
+                      <h4 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 ${DESIGN_SYSTEM.typography.letterSpacing.normal} mb-1`}>프로젝트 매니지먼트</h4>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>콘텐츠 제작 전문성과 IT 기술 활용 능력을 결합해 창작과 기술의 경계를 넘나들며, 혁신적인 제작 워크플로우 구축을 통해 프로젝트 성과를 극대화합니다.</p>
                     </div>
                     
                     <div>
-                      <h4 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-1`}>온, 오프라인 콘텐츠 운영</h4>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} leading-relaxed`}>라이브 콘텐츠를 직접 운영하며 출연자 관리와 제작 능력을 기반으로 한 기술적 이슈 대응을 통해 1년간 NPS 4.5 이상의 안정적인 성과를 달성합니다. </p>
+                      <h4 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 ${DESIGN_SYSTEM.typography.letterSpacing.normal} mb-1`}>온, 오프라인 콘텐츠 운영</h4>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed}`}>라이브 콘텐츠를 직접 운영하며 출연자 관리와 제작 능력을 기반으로 한 기술적 이슈 대응을 통해 1년간 NPS 4.5 이상의 안정적인 성과를 달성합니다. </p>
                     </div>
                   </div>
                 </div>
@@ -828,34 +842,34 @@ export default function CombinedLanding() {
               {/* Bottom Info Grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-6 pt-4 border-t border-gray-100">
                 <div>
-                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>전문 분야</h5>
-                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>콘텐츠 제작 & 교육</p>
+                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>전문 분야</h5>
+                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>콘텐츠 제작 & 교육</p>
                 </div>
                 
                 <div>
-                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>활동 지역</h5>
-                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>대한민국</p>
+                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>활동 지역</h5>
+                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>대한민국</p>
                 </div>
                 
                 <div>
-                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>경력</h5>
-                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>5+ years</p>
+                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>경력</h5>
+                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>5+ years</p>
                 </div>
                 
                 <div>
-                  <h5 className={`${FONT_SIZES.tiny} font-medium text-gray-500 mb-2`}>플랫폼</h5>
-                  <p className={`text-gray-900 font-medium ${FONT_SIZES.small}`}>YouTube & 온라인</p>
+                  <h5 className={`${DESIGN_SYSTEM.fonts.tiny} font-medium text-gray-500 mb-2`}>플랫폼</h5>
+                  <p className={`text-gray-900 font-medium ${DESIGN_SYSTEM.fonts.small}`}>YouTube & 온라인</p>
                 </div>
               </div>
             </div>
 
             {/* Education & Career Section */}
-            <div className={SPACING.sectionGap}>
+            <div className={DESIGN_SYSTEM.spacing.sectionGap}>
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">
                   Education & Experience
                 </h3>
-                <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>02</span>
+                <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>02</span>
               </div>
 
               {/* Separator Line */}
@@ -866,62 +880,62 @@ export default function CombinedLanding() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Education Section */}
                 <div>
-                  <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-6`}>학력</h4>
+                  <h4 className={`${DESIGN_SYSTEM.fonts.heading} font-bold text-gray-900 mb-6`}>학력</h4>
                   <div className="space-y-6">
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울) 대학원(석사)</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 휴학중</span>
+                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>상명대학교(서울) 대학원(석사)</h5>
+                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.07 - 휴학중</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>감성공학과</p>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>감성공학과</p>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>상명대학교(서울)</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 졸업</span>
+                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>상명대학교(서울)</h5>
+                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.07 졸업</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>컴퓨터과학과</p>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>컴퓨터과학과</p>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>한국애니메이션고등학교</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2010.06 - 2013.03</span>
+                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>한국애니메이션고등학교</h5>
+                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2010.06 - 2013.03</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>주전공: 영상연출과 | 부전공: 컴퓨터게임제작과</p>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>주전공: 영상연출과 | 부전공: 컴퓨터게임제작과</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Career Section */}
                 <div>
-                  <h4 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-6`}>주요 경력</h4>
+                  <h4 className={`${DESIGN_SYSTEM.fonts.heading} font-bold text-gray-900 mb-6`}>주요 경력</h4>
                   <div className="space-y-6">
                     <div className="border-l-2 border-red-500 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>삼성 멀티캠퍼스</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.07 - 재직중</span>
+                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>삼성 멀티캠퍼스</h5>
+                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.07 - 재직중</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Professional</p>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>Professional</p>
                       <div className="text-gray-500 mt-2 text-[14px]">온, 오프라인 콘텐츠 기획 및 제작 총괄, 프로젝트 관리, 라이브 콘텐츠 운영, 클라이언트 협력사 관리</div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>Snapask Korea</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2022.01 - 2022.07</span>
+                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>Snapask Korea</h5>
+                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2022.01 - 2022.07</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>Assistant Production Manager</p>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>Assistant Production Manager</p>
                       <div className="text-gray-500 mt-2 text-[14px]">홍콩 기반 에듀테크 기업, 콘텐츠 기획·제작, 현장 촬영 연출, 콘텐츠 편집·배포</div>
                     </div>
                     
                     <div className="border-l-2 border-gray-300 pl-4">
                       <div className="flex justify-between items-start mb-2">
-                        <h5 className={`${FONT_SIZES.body} font-medium text-gray-900`}>프리랜서</h5>
-                        <span className={`${FONT_SIZES.small} text-gray-500`}>2019.01 - 2020.01</span>
+                        <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900`}>프리랜서</h5>
+                        <span className={`${DESIGN_SYSTEM.fonts.small} text-gray-500`}>2019.01 - 2020.01</span>
                       </div>
-                      <p className={`text-gray-600 ${FONT_SIZES.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 </p>
+                      <p className={`text-gray-600 ${DESIGN_SYSTEM.fonts.small} mb-1`}>영상 제작·PD/편집자·콘텐츠기획 </p>
                       <div className="text-gray-500 mt-2 text-[14px]">B2B 클라이언트 대상 콘텐츠 기획·연출·제작, 촬영·조명·미술, 후반 제작 및 품질관리</div>
                     </div>
                   </div>
@@ -932,8 +946,8 @@ export default function CombinedLanding() {
               <div className="mt-12 pt-8 border-t border-gray-100">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div>
-                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>보유 자격증</h5>
-                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
+                    <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 mb-3`}>보유 자격증</h5>
+                    <ul className={`space-y-2 ${DESIGN_SYSTEM.fonts.small} text-gray-600`}>
                       <li>• 정보처리기사</li>
                       <li>• 정보처리산업기사</li>
                       <li>• Adobe Certified Expert (Premiere Pro)</li>
@@ -941,8 +955,8 @@ export default function CombinedLanding() {
                   </div>
                   
                   <div>
-                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>전문 기술</h5>
-                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
+                    <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 mb-3`}>전문 기술</h5>
+                    <ul className={`space-y-2 ${DESIGN_SYSTEM.fonts.small} text-gray-600`}>
                       <li>• Adobe Creative Suite (전문가)</li>
                       <li>• Final Cut Pro (고급)</li>
                       <li>• DaVinci Resolve (중급)</li>
@@ -950,8 +964,8 @@ export default function CombinedLanding() {
                   </div>
                   
                   <div>
-                    <h5 className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}>언어 능력</h5>
-                    <ul className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}>
+                    <h5 className={`${DESIGN_SYSTEM.fonts.body} font-medium text-gray-900 mb-3`}>언어 능력</h5>
+                    <ul className={`space-y-2 ${DESIGN_SYSTEM.fonts.small} text-gray-600`}>
                       <li>• 한국어 (모국어)</li>
                       <li>• 영어 (업무 수준)</li>
                       <li>• 일본어 (기초 회화)</li>
@@ -962,14 +976,14 @@ export default function CombinedLanding() {
             </div>
 
             {/* Featured Work Section */}
-            <div className={SPACING.sectionGap} data-section="work">
+            <div className={DESIGN_SYSTEM.spacing.sectionGap} data-section="work">
               {isPortfolioLoading ? (
                 <PortfolioGridSkeleton />
               ) : (
                 <>
                   <div className="flex justify-between items-start mb-6">
                     <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">MAIN PROJECT</h3>
-                    <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>03</span>
+                    <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>03</span>
                   </div>
 
                   {/* Separator Line */}
@@ -1006,8 +1020,8 @@ export default function CombinedLanding() {
                           {/* 호버 오버레이 */}
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
                             <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
-                              <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
+                              <span className={`company block ${DESIGN_SYSTEM.fonts.small} opacity-90 font-medium drop-shadow-lg`}>{item.description.split('\n')[0]}</span>
+                              <span className={`content block ${DESIGN_SYSTEM.fonts.subheading} font-medium drop-shadow-lg`}>{item.description.split('\n')[1]}</span>
                             </div>
                           </div>
                         </div>
@@ -1019,14 +1033,14 @@ export default function CombinedLanding() {
             </div>
 
             {/* Gallery Section */}
-            <div className={SPACING.sectionGap} data-section="gallery">
+            <div className={DESIGN_SYSTEM.spacing.sectionGap} data-section="gallery">
               {isGalleryLoading ? (
                 <GalleryGridSkeleton />
               ) : (
                 <>
                   <div className="flex justify-between items-start mb-6">
                     <h3 className="text-red-500 uppercase tracking-wide text-[16px] font-semibold">VISUAL GALLERY</h3>
-                    <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>04</span>
+                    <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>04</span>
                   </div>
 
                   {/* Separator Line */}
@@ -1063,8 +1077,8 @@ export default function CombinedLanding() {
                           {/* 호버 오버레이 */}
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300">
                             <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <span className={`company block ${FONT_SIZES.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
-                              <span className={`content block ${FONT_SIZES.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
+                              <span className={`company block ${DESIGN_SYSTEM.fonts.small} opacity-90 font-medium drop-shadow-lg`}>{item.client}</span>
+                              <span className={`content block ${DESIGN_SYSTEM.fonts.subheading} font-medium drop-shadow-lg`}>{item.title}</span>
                             </div>
                           </div>
                         </div>
@@ -1076,7 +1090,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* Contact Section */}
-            <div className={SPACING.sectionGap} data-section="contact">
+            <div className={DESIGN_SYSTEM.spacing.sectionGap} data-section="contact">
               {isContactLoading ? (
                 <ContactSkeleton />
               ) : (
@@ -1086,7 +1100,7 @@ export default function CombinedLanding() {
                     onMouseEnter={() => handleSectionLoading('contact')}
                   >
                     <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
-                    <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
+                    <span className={`${DESIGN_SYSTEM.fonts.small} font-medium text-gray-500`}>05</span>
                   </div>
 
                   {/* Separator Line */}
@@ -1134,12 +1148,12 @@ export default function CombinedLanding() {
                           <span>&gt;</span>Collaboration
                         </motion.h3>
                         
-                        <div className="text-gray-700 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
-                          <p className="text-[14px] mb-4">
+                        <div className={`text-gray-700 ${DESIGN_SYSTEM.typography.lineHeight.relaxed} mb-8`} style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
+                          <p className={`${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed} mb-4`}>
                             콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
                             연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
                           </p>
-                          <p className="text-[14px] mb-4">
+                          <p className={`${DESIGN_SYSTEM.fonts.small} ${DESIGN_SYSTEM.typography.lineHeight.relaxed} mb-4`}>
                             라이브 콘텐츠에선 출연자의 심리를 설계하고, 플랫폼에선 이탈 데이터를 분석해 UI 개선을 제안했으며, 
                             AI 툴을 활용해 제작 속도와 품질을 동시에 끌어올렸습니다. 감성과 전략, 창의성과 기술을 
                             넘나들며 종합적인 콘텐츠 구조를 설계하는 PD로 성장해왔으며, 앞으로도 명확한 메시지를 중심에 둔 
@@ -1171,7 +1185,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: ANIMATION_DURATIONS.modal }}
+          transition={{ duration: DESIGN_SYSTEM.animations.modal }}
           onClick={closeModal}
         >
           <motion.div 
@@ -1179,7 +1193,7 @@ export default function CombinedLanding() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: isClosingModal ? 0.9 : 1, opacity: isClosingModal ? 0 : 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: ANIMATION_DURATIONS.modal }}
+            transition={{ duration: DESIGN_SYSTEM.animations.modal }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -1201,9 +1215,9 @@ export default function CombinedLanding() {
             
             {/* Content */}
             <div className="p-6">
-              <h3 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
-              <p className={`${FONT_SIZES.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
-              <p className={`${FONT_SIZES.small} text-gray-700 leading-relaxed`}>{selectedProject.description}</p>
+              <h3 className={`${DESIGN_SYSTEM.fonts.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
+              <p className={`${DESIGN_SYSTEM.fonts.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
+              <p className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 leading-relaxed`}>{selectedProject.description}</p>
               
               <div className="mt-4 pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-center text-sm text-gray-500">
@@ -1222,7 +1236,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
+          transition={{ duration: DESIGN_SYSTEM.animations.modal, ease: "easeInOut" }}
           onClick={closeModal}
         >
           {/* Navigation Bar - Hidden in lightbox */}
@@ -1231,25 +1245,25 @@ export default function CombinedLanding() {
               <div className="flex items-center space-x-8">
                 <button 
                   onClick={() => handleNavigation('home')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Home
                 </button>
                 <button 
                   onClick={() => handleNavigation('about')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   About
                 </button>
                 <button 
                   onClick={() => handleNavigation('work')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Work
                 </button>
                 <button 
                   onClick={() => handleNavigation('contact')}
-                  className={`${FONT_SIZES.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
+                  className={`${DESIGN_SYSTEM.fonts.small} text-gray-700 hover:text-black transition-colors cursor-pointer`}
                 >
                   Contact
                 </button>
@@ -1266,7 +1280,7 @@ export default function CombinedLanding() {
               y: isClosingModal ? -30 : 0 
             }}
             exit={{ scale: 0.95, opacity: 0, y: -30 }}
-            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: DESIGN_SYSTEM.animations.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Custom Scroll Container */}
@@ -1278,7 +1292,7 @@ export default function CombinedLanding() {
                 className="mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
+                transition={{ duration: 0.4, delay: DESIGN_SYSTEM.animations.stagger }}
               >
                 <button
                   onClick={closeModal}
@@ -1293,7 +1307,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 2 }}
+                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 2 }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
@@ -1339,7 +1353,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
+                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 3 }}
               >
                 {/* 두 줄 이미지 그리드 */}
                 <div className="mb-8">
@@ -1390,7 +1404,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
+                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 4 }}
               >
                 {/* 프로젝트 기간 */}
                 <div className="mb-6">
@@ -1566,7 +1580,7 @@ export default function CombinedLanding() {
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: ANIMATION_DURATIONS.modal, ease: "easeInOut" }}
+          transition={{ duration: DESIGN_SYSTEM.animations.modal, ease: "easeInOut" }}
           onClick={closeModal}
         >
           <motion.div 
@@ -1578,7 +1592,7 @@ export default function CombinedLanding() {
               y: isClosingModal ? -30 : 0 
             }}
             exit={{ scale: 0.95, opacity: 0, y: -30 }}
-            transition={{ duration: ANIMATION_DURATIONS.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: DESIGN_SYSTEM.animations.modalContent, ease: [0.25, 0.46, 0.45, 0.94] }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Custom Scroll Container */}
@@ -1590,7 +1604,7 @@ export default function CombinedLanding() {
                 className="mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: ANIMATION_DURATIONS.stagger }}
+                transition={{ duration: 0.4, delay: DESIGN_SYSTEM.animations.stagger }}
               >
                 <button
                   onClick={closeModal}
@@ -1605,7 +1619,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 2 }}
+                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 2 }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
@@ -1668,7 +1682,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
+                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 3 }}
               >
                 {/* 프로젝트별 이미지 레이아웃 */}
                 {selectedProject.id === "1" && (
@@ -1740,7 +1754,7 @@ export default function CombinedLanding() {
                 className="mb-12"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 4 }}
+                transition={{ duration: 0.6, delay: DESIGN_SYSTEM.animations.stagger * 4 }}
               >
                 {/* 프로젝트별 상세 내용 */}
                 {selectedProject.id === "1" && (
