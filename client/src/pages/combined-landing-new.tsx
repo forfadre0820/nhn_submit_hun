@@ -1669,25 +1669,44 @@ export default function CombinedLanding() {
                       </div>
                     </div>
 
-                    {/* 주요 성과 */}
+                    {/* 핵심 성과 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                        주요 성과
+                        핵심 성과
                       </h2>
                     </div>
-                    <div className="space-y-5 mb-8">
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 인하우스 제작 체제 전환으로 제작 예산 40% 절감</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">본사 의사결정 지연 문제 해소 및 품질 재투자</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                      <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">40%</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">예산절감</span>
+                        </div>
+                        <p className="text-sm text-gray-600">인하우스 제작체계로 외주 비용절감 및 품질 재투자</p>
                       </div>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로모션 2편 조회수 10만 이상 달성</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">시네마틱 품질로 높은 참여율과 브랜드 인지도 향상</p>
+                      
+                      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white">⚡</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">의사결정 지연해소</span>
+                        </div>
+                        <p className="text-sm text-gray-600">로컬 외주 제작자와의 커뮤니케이션 최소화로 의사숙도 향상</p>
                       </div>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 홍콩 본사 BP 사례 선정</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">미술 효과장비 품질 향상 콘텐츠 사례 선정</p>
+
+                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">10만+</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">조회수 달성</span>
+                        </div>
+                        <p className="text-sm text-gray-600">프로모션 영상 2편 시네마틱 품질로 높은 참여율 달성</p>
+                      </div>
+
+                      <div className="bg-gradient-to-br from-cyan-50 to-teal-50 p-6 rounded-lg">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white">🎬</div>
+                          <span className="ml-3 text-lg font-semibold text-gray-800">홍콩본사 BP 사례선정</span>
+                        </div>
+                        <p className="text-sm text-gray-600">미술 효과장비 품질 향상 콘텐츠 사례 선정</p>
                       </div>
                     </div>
 
@@ -1725,10 +1744,53 @@ export default function CombinedLanding() {
                       </div>
                     </div>
 
-                    {/* 활용 기술 */}
+                    {/* FFmpeg 최적화 및 효율화 성과 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                        FFmpeg 최적화 및 효율화 성과
+                      </h2>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-purple-600 mb-3 flex items-center">
+                            <span className="w-6 h-6 bg-purple-600 text-white rounded text-xs flex items-center justify-center mr-2">📹</span>
+                            FFmpeg 최적화
+                          </h4>
+                          <ul className="space-y-2 text-sm text-gray-700">
+                            <li>• FFmpeg 기반 자막생성 시스템 구축</li>
+                            <li>• 고정판 다단계 메일 장면 병렬 처리</li>
+                            <li>• 모델 설계 자체 콘텐츠 시스템 구축</li>
+                          </ul>
+                          <div className="mt-3 flex space-x-2">
+                            <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">FFmpeg</span>
+                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">자막생성</span>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-blue-600 mb-3 flex items-center">
+                            <span className="w-6 h-6 bg-blue-600 text-white rounded text-xs flex items-center justify-center mr-2">📊</span>
+                            효율화 성과
+                          </h4>
+                          <ul className="space-y-2 text-sm text-gray-700">
+                            <li>• 자막 리타이밍 대폭 단축 폭 달성</li>
+                            <li>• 다회차 설문 관리 체계 구축</li>
+                            <li>• 간체 물량 양산체계 별도 확보</li>
+                          </ul>
+                          <div className="mt-3 flex space-x-2">
+                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">성과향상</span>
+                            <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">품질제고</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 활용 기술 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">5</span>
                         활용 기술
                       </h2>
                     </div>
