@@ -1437,37 +1437,11 @@ export default function CombinedLanding() {
 
             </div>
             
-            {/* Footer - Inside scroll container */}
-            <div className="mt-16 border-t border-gray-200 pt-[11px] pb-[11px] px-8">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <button 
-                  type="button" 
-                  className="text-sm text-[#58534e] hover:text-[#282623] transition-colors"
-                  onClick={() => handleNavigation('home')}
-                >↑ Back To Top</button>
-                
-                <div className="text-center">
-                  <p className="text-sm text-[#58534e]">Copyright © LEESEUNGHUN 2025</p>
-                </div>
-                
-                <div className="text-sm text-[#58534e]">
-                  Seoul, KR {new Date().toLocaleTimeString('ko-KR', { 
-                    hour: '2-digit', 
-                    minute: '2-digit',
-                    hour12: false 
-                  })}
-                </div>
-              </div>
-            </div>
+            {/* Bottom padding for scroll */}
+            <div className="pb-8"></div>
             </div> {/* Close scroll container */}
             
-            {/* Custom Scroll Indicator */}
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-2 z-20">
-              <div className="w-1 h-20 bg-gray-200 rounded-full relative">
-                <div className="w-1 h-6 bg-gray-600 rounded-full absolute top-0 transition-all duration-200"></div>
-              </div>
-              <span className="text-xs text-gray-500 writing-mode-vertical-rl transform rotate-180">SCROLL</span>
-            </div>
+
             
             {/* Close Button */}
             <button
