@@ -1333,7 +1333,7 @@ export default function CombinedLanding() {
                       }}
                       viewport={{ once: true, margin: "-100px" }}
                     >
-                      <span>&gt;</span>Collaboration
+                      <span>> AWAY THINK MAKE BETTER</span>Collaboration
                     </motion.h3>
 
                     <div
