@@ -1158,37 +1158,15 @@ export default function CombinedLanding() {
                 
                 {/* Skills Tags Grid */}
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">영상 제작 전 과정에 대한 이해 역량</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">제작 현장 기반 프로그래밍 관리 및 콘텐츠 보관</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">라이브 콘텐츠 기술 이슈 운영</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">출연자 역량 구성 컨설팅과 실시간 진행</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">IT역량 활용 온/오프 프로그램 개발 역량</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Python, 오토소스, AI 실무 그래픽 리소스 고급화</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Python</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">comfyUI</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Midjourney</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">StableDiffusion</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Adobe Premiere Pro</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Adobe Photoshop</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Adobe After Effects</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">ComfyUI</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Asana, Slack</span>
                   <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">DaVinci Resolve</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">브레인</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">시장분석</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">인제미어링</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">사업자식</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">구매/기산/소서</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">전략</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">BM(브랜드로테이션)</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">산학기업</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">IMC</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">컴사이</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">KPI관리</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">기획</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">홍보</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">디자인</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">홍보료</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">스토리텔링</span>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">PM(프로덕트매니지)</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Python</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Premier Pro</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Unity</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Photoshop, Illustrator</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">C#, Java</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">After Effect</span>
                 </div>
               </div>
             </div>
