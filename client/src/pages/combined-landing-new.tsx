@@ -1614,7 +1614,7 @@ export default function CombinedLanding() {
                         <h5 className="opacity-50 text-base font-normal mb-2">
                           Client
                         </h5>
-                        <p className="text-sm text-[#282623]">SAMSUNG</p>
+                        <p className="text-sm text-[#282623]">삼성교육재단</p>
                       </div>
 
                       <div>
@@ -1629,9 +1629,10 @@ export default function CombinedLanding() {
 
                     <div>
                       <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                        삼성그룹 계열사의 교육기획전략가로서 Screen Life 연출 기법을 통한 
-                        혁신적인 교육 콘텐츠를 기획·제작했습니다. 사용자 행동 분석 기반의 
-                        맞춤형 교육 전략으로 5초 이내 몰입도 확보와 30% 높은 입찰 성공률을 달성했습니다.
+                        삼성 멀티캠퍼스의 교육 콘텐츠 기획 및 제작을 담당하여
+                        학습자 중심의 교육 설계와 실제 수업 촬영을 기반으로 한
+                        교육 콘텐츠를 개발했습니다. 효과적인 학습 경험 설계를
+                        통해 교육 만족도를 높이고, 양질의 교육 콘텐츠를 제공했습니다.
                       </p>
                     </div>
                   </div>
@@ -1718,7 +1719,7 @@ export default function CombinedLanding() {
                   <div className="space-y-5 mb-8">
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                        프로젝트 기간: 2023년 2월 ~ 2023년 8월 (6개월)
+                        프로젝트 기간: 2023.02 ~ 2023.08 (6개월)
                       </div>
                     </div>
                   </div>
@@ -1735,8 +1736,9 @@ export default function CombinedLanding() {
                   <div className="space-y-5 mb-8">
                     <div>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        삼성그룹 계열사의 교육 콘텐츠 기획 및 브랜드 전략을 통해 효과적인 교육 메시지 전달을 위한 
-                        Screen Life 연출 기법으로 교육 콘텐츠를 제작하고, 사용자 행동 분석을 통한 맞춤형 교육 전략을 수립했습니다.
+                        임직원의 관련 초기 상황 분석하여 역량 개발 방향 분석하고 
+                        적절한 디지털 전환 교육을 위해서 이론과 실습이 균형잡힌 
+                        교육 콘텐츠를 개발했습니다.
                       </p>
                     </div>
                   </div>
@@ -1753,10 +1755,10 @@ export default function CombinedLanding() {
                   <div className="space-y-5 mb-8">
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 경쟁사 대비 30% 높은 단가임에도 불구하고 수주 성공
+                        • 학습 효과 30% 향상
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        체계적인 사용자 행동 분석과 창의적 접근 방식을 통해 높은 입찰 성공률 달성
+                        인터랙티브 콘텐츠 도입으로 기존 대비 학습 이해도 대폭 증가
                       </p>
                     </div>
                     <div>
@@ -1764,23 +1766,23 @@ export default function CombinedLanding() {
                         • 5초 이내 몰입도 확보
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        Screen Life 포맷으로 초기 이탈률 최소화 및 자동 주의 집중 유도
+                        Screen Life 포맷으로 초기 이탈률 최소화 및 집중도 향상
                       </p>
                     </div>
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 효과적인 교육 메시지 전달 최적화
+                        • Screen Life 포맷 개발
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        교육 콘텐츠 내 자연스러운 브랜드 메시지 통합 및 사용자 경험 최적화
+                        실제 디지털 기기를 활용한 실습 중심의 교육 콘텐츠 개발
                       </p>
                     </div>
                     <div>
                       <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        • 창의적 특성 확립
+                        • 맞춤형 교육 설계
                       </h3>
                       <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">
-                        교육 콘텐츠 분야의 차별화된 접근 방식 개발 및 Screen Life 장르의 전문적 활용
+                        학습자별 특화 콘텐츠로 개별 역량에 최적화된 교육 제공
                       </p>
                     </div>
                   </div>
@@ -1801,28 +1803,28 @@ export default function CombinedLanding() {
                       </h3>
                       <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                         <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          체계적인 사용자 행동 분석을 바탕으로 5초 이내 주의 집중 유도 기법을 개발하여 
-                          교육 효과와 브랜드 인지도를 동시 달성하는 맞춤형 교육 전략을 수립했습니다.
+                          시청자의 학습 맥락과 디지털 기기 활용 역량을 분석하여
+                          개인별 맞춤형 교육 브랜드 메시지 개발과 효과적인 학습 방법을 확인했습니다.
                         </p>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            사용자 행동 분석 및 대응 전략
+                            실무 수업 교육 분석
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 재생 중 창 최소화 및 다른 업무 처리 패턴 분석</li>
-                            <li>• 교육 콘텐츠에 대한 낮은 참여도 개선</li>
-                            <li>• 5초 이내 주의 집중 분산 문제 해결</li>
+                            <li>• 재직자 교육에 최적화된 해외 베스트 프랙티스 분석</li>
+                            <li>• 학습자 연령대별 특화 분석을 통한 개별 맞춤 교육</li>
+                            <li>• 5초 이내 이탈 방지를 위한 고몰입 콘텐츠 개발</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            브랜드 메시지 전달 최적화
+                            창의적 콘텐츠 개발
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 교육 콘텐츠 내 자연스러운 브랜드 메시지 통합</li>
-                            <li>• 타겟 오디언스별 맞춤형 메시지 개발</li>
+                            <li>• Screen Life 포맷 활용한 실사형 교육 콘텐츠 개발</li>
+                            <li>• 실전 최적화된 다양한 사용자 경험 설계</li>
                           </ul>
                         </div>
                       </div>
@@ -1830,33 +1832,33 @@ export default function CombinedLanding() {
 
                     <div>
                       <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        크리에이티브 디렉팅
+                        크리에이티브 & 디렉팅
                       </h3>
                       <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                         <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          Screen Life 포맷과 Found Footage 기법을 결합하여 사용자 몰입도를 극대화하고 
-                          복잡한 메시지를 효과적으로 전달하는 혁신적인 교육 콘텐츠를 제작했습니다.
+                          Screen Life 포맷을 활용한 실제 디지털 기기 화면을 활용한
+                          교육 콘텐츠 제작과 시청자별 특화된 절단 방식을 통한 맞춤형 콘텐츠 개발
                         </p>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            Screen Life 포맷 활용
+                            Screen Life 포맷 구현
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 실제 컴퓨터 화면을 활용한 현실감 있는 교육 환경 구성</li>
-                            <li>• 사용자 친화적인 인터페이스 설계</li>
-                            <li>• 실무 환경과 유사한 교육 시나리오 구현</li>
+                            <li>• 실제 디지털 기기를 활용한 실습 중심 콘텐츠</li>
+                            <li>• 화면 녹화 기반 몰입형 교육 방식</li>
+                            <li>• 실무 상황 반영 교육 시나리오 구성</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            시각적 & 청각적 메시지 전달
+                            웹툰형 사건구성
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 화면 애니메이션을 통한 동적 학습 경험 제공</li>
-                            <li>• 최소한의 시각적 요소로 최대 효과 달성</li>
-                            <li>• 효율적인 커뮤니케이션 구조 설계</li>
+                            <li>• 웹툰 스타일의 방송 녹화 현장 구성</li>
+                            <li>• 브랜드 메시지 일관성을 위한 시각적 연출</li>
+                            <li>• 학습자 참여 유도를 위한 인터랙티브 요소</li>
                           </ul>
                         </div>
                       </div>
@@ -1868,29 +1870,29 @@ export default function CombinedLanding() {
                       </h3>
                       <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                         <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          체계적인 프로젝트 관리와 창의적 접근 방식을 통해 높은 입찰 성공률을 달성하였으며, 
-                          교육 콘텐츠 분야에서의 전문성을 입증했습니다.
+                          프로젝트 매니지먼트와 성과 지표를 통해 교육 효과를 극대화하고
+                          지속 가능한 교육 프로그램을 구축했습니다.
                         </p>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            프로젝트 관리 성과
+                            효율적 제작 워크플로우
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 실제 업무 환경을 반영한 효과적인 교육 콘텐츠 제작</li>
-                            <li>• 사용자 행동 분석 및 데이터 기반 의사결정</li>
-                            <li>• 프로젝트 일정 및 품질 관리 최적화</li>
+                            <li>• Screen Life 포맷으로 그래픽 요소 최적화</li>
+                            <li>• 실무 직무 교육에 특화된 콘텐츠 구성</li>
+                            <li>• 제작 비용 대비 교육 효과 극대화</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            주요 경쟁 우위 요소
+                            교육 성과 관리
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 사용자 친화적 분석 및 맞춤형 솔루션 제공</li>
-                            <li>• 창의적 기법과 사용자 행동 분석의 효과적 결합</li>
-                            <li>• 지속 가능한 교육 콘텐츠 제작 방법론 구축</li>
+                            <li>• 학습자 몰입도 향상을 위한 시나리오 설계</li>
+                            <li>• 실습 중심 교육 방법론 적용</li>
+                            <li>• 체계적인 교육 과정 관리 및 평가</li>
                           </ul>
                         </div>
                       </div>
@@ -1912,23 +1914,23 @@ export default function CombinedLanding() {
                         교육 콘텐츠 제작
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        Premiere Pro, After Effects, Photoshop
+                        Premiere Pro, After Effects, Photoshop, Midjourney
                       </div>
                     </div>
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">
-                        Screen Life
+                        화면 구성
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        Screen Life, Found Footage
+                        화면 분할, 타이밍 조절 기술
                       </div>
                     </div>
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">
-                        분석 및 전략
+                        교육 설계
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        사용자 행동 분석, 브랜드 전략
+                        학습자 중심 교육과정 설계
                       </div>
                     </div>
                     <div>
@@ -1936,7 +1938,7 @@ export default function CombinedLanding() {
                         콘텐츠 최적화
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        몰입도 극대화, 메시지 전달 최적화
+                        Screen Life 포맷 특화 제작
                       </div>
                     </div>
                   </div>
