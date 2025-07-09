@@ -979,7 +979,7 @@ export default function CombinedLanding() {
             </div>
 
             {/* Contact Section */}
-            <div className={SPACING.sectionGap} data-section="contact">
+            <div className="mb-0" data-section="contact">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="font-medium text-red-500 uppercase tracking-wide text-[16px]">Keep going with you</h3>
                 <span className={`${FONT_SIZES.small} font-medium text-gray-500`}>05</span>
@@ -1086,7 +1086,7 @@ export default function CombinedLanding() {
               <div className="text-right">
                 <a 
                   href="mailto:buen136003@gmail.com"
-                  className="text-gray-500 hover:text-gray-700 transition-colors text-[16px]"
+                  className="text-gray-500 hover:text-gray-700 transition-colors text-[14px]"
                 >
                   buen136003@gmail.com
                 </a>
