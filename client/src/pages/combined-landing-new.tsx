@@ -510,10 +510,18 @@ export default function CombinedLanding() {
   const openGalleryLightbox = (item: PortfolioItem) => {
     const index = galleryItems.findIndex(galleryItem => galleryItem.id === item.id);
     if (index !== -1) {
+      // 먼저 모든 모달 상태 초기화
+      setSelectedProject(null);
+      setIsClosingModal(false);
+      
+      // 갤러리 모드 설정
       setIsGalleryMode(true);
       setCurrentGalleryIndex(index);
-      setSelectedProject(item);
-      setIsClosingModal(false);
+      
+      // 갤러리 프로젝트 선택
+      setTimeout(() => {
+        setSelectedProject(item);
+      }, 10);
     }
   };
 
@@ -1245,7 +1253,7 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       {/* Project Detail Modal - Floating Lightbox Style */}
-      {!isGalleryMode && selectedProject && !selectedProject.id.startsWith("gallery-") && (
+      {selectedProject && !selectedProject.id.startsWith("gallery-") && !isGalleryMode && (
         <motion.div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
