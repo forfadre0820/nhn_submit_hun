@@ -363,6 +363,20 @@ export default function CombinedLanding() {
     },
 
     {
+      id: "gallery-4",
+      src: GalleryInterviewImage,
+      alt: "인터뷰 및 대담 현장 촬영",
+      title: "인터뷰 프로그램 제작",
+      subtitle: "진솔한 대화의 순간",
+      description: "자연스러운 인터뷰 분위기를 담은 현장 스냅입니다.",
+      category: "Interview Program",
+      year: "2024",
+      client: "현대 글로비스",
+      role: "현장 촬영, 프로그램 제작",
+      tools: ["Documentary Style", "Interview Setup"],
+      images: [],
+    },
+    {
       id: "gallery-5",
       src: LikelionHackathonImage,
       alt: "멋쟁이사자처럼 해커톤 홍보영상",
@@ -406,21 +420,7 @@ export default function CombinedLanding() {
       tools: ["Natural Light", "Casual Setup"],
       images: [],
     },
-    {
-      id: "gallery-8",
-      src: GalleryJinairPromotionImage,
-      alt: "진에어 프로모션 모션 그래픽",
-      title: "진에어 프로모션 그래픽",
-      subtitle: "여행의 설렘을 담은 비주얼",
-      description:
-        "진에어의 쿠폰 대방출 프로모션을 위한 모션 그래픽 디자인입니다.",
-      category: "Motion Graphics",
-      year: "2024",
-      client: "JIN AIR",
-      role: "모션 그래픽 디자인",
-      tools: ["Motion Graphics", "After Effects", "Promotion Design"],
-      images: [],
-    },
+
   ];
 
   useEffect(() => {
@@ -1270,6 +1270,7 @@ export default function CombinedLanding() {
                     "h-[14rem]",
                     "h-[28rem]",
                     "h-[17rem]",
+                    "h-[25rem]",
                   ];
                   const randomHeight =
                     heightVariants[index % heightVariants.length];
