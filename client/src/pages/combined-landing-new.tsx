@@ -1108,7 +1108,7 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       {/* Project Detail Modal - Floating Lightbox Style */}
-      {selectedProject && !selectedProject.id.startsWith("gallery-") && (selectedProject.id === "1" || selectedProject.id === "2") && (
+      {selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
@@ -1190,13 +1190,8 @@ export default function CombinedLanding() {
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                   <div className="lg:col-span-3">
                     <h1 className="text-4xl lg:text-5xl text-[#282623] leading-tight mb-0 font-semibold">
-                      {selectedProject.id === "1" ? (
-                        <>온·오프라인 실시간 행사<br />
-                        /교육 기획·진행</>
-                      ) : selectedProject.id === "2" ? (
-                        <>Snapask 프리미엄<br />
-                        교육 콘텐츠 영상 제작</>
-                      ) : selectedProject.title}
+                      온·오프라인 실시간 행사<br />
+                      /교육 기획·진행
                     </h1>
                   </div>
                 </div>
@@ -1206,20 +1201,12 @@ export default function CombinedLanding() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
-                      <p className="text-sm text-[#282623]">
-                        {selectedProject.id === "1" ? "행사, 교육 기획" : 
-                         selectedProject.id === "2" ? "영상 제작, 콘텐츠 기획" : 
-                         selectedProject.category}
-                      </p>
+                      <p className="text-sm text-[#282623]">행사, 교육 기획</p>
                     </div>
                     
                     <div>
                       <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
-                      <p className="text-sm text-[#282623]">
-                        {selectedProject.id === "1" ? "삼성 그룹" : 
-                         selectedProject.id === "2" ? "Snapask Korea" : 
-                         selectedProject.client}
-                      </p>
+                      <p className="text-sm text-[#282623]">삼성 그룹</p>
                     </div>
                     
                     <div>
@@ -1230,11 +1217,7 @@ export default function CombinedLanding() {
 
                   <div>
                     <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                      {selectedProject.id === "1" ? 
-                        "삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다." :
-                        selectedProject.id === "2" ? 
-                        "Snapask Korea의 프리미엄 교육 콘텐츠 영상 제작 프로젝트를 담당했습니다. 기획부터 촬영, 편집까지 전 제작 과정을 직접 수행하여 인하우스 제작 체제로 전환, 제작 예산 40% 절감과 동시에 품질 고도화를 달성했습니다." :
-                        selectedProject.description}
+                      삼성 그룹의 온·오프라인 실시간 행사/교육 기획·진행 프로젝트를 담당했습니다. 진행과 동시에 콘텐츠 제작 기반의 기술 이슈 대응, 커뮤니케이션을 주도하여 고객 만족도 NPS 4.5+를 달성하고, 온라인 이벤트 콘텐츠는 신규 고객사 5개를 수주했습니다.
                     </p>
                   </div>
                 </div>
@@ -1250,107 +1233,48 @@ export default function CombinedLanding() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: ANIMATION_DURATIONS.stagger * 3 }}
               >
-                {selectedProject.id === "1" ? (
-                  <>
-                    {/* 삼성 프로젝트 이미지 */}
-                    <div className="mb-8">
-                      {/* 첫 번째 줄 - 2개 이미지 */}
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src={IntegratedOperationImage}
-                            alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src={TechSupportImage}
-                            alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                      </div>
-                      
-                      {/* 두 번째 줄 - 2개 이미지 */}
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src={OverseasEventImage}
-                            alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src={OnlineEventImage}
-                            alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="text-center mb-8">
-                      <p className="text-sm text-[#58534e] italic">오프라인 교육부터 온라인 이벤트까지 통합 운영</p>
-                    </div>
-                  </>
-                ) : selectedProject.id === "2" ? (
-                  <>
-                    {/* Snapask 프로젝트 이미지 */}
-                    <div className="mb-8">
-                      {/* 첫 번째 줄 - 2개 이미지 */}
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src="/attached_assets/image_1752020194146.png"
-                            alt="Snapask 프로젝트 성과 - 40% 예산절감, 홍콩본사 BP 사례선정"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src="/attached_assets/image_1752020211423.png"
-                            alt="컬러 그레이딩 - 브랜드 LUT 적용 및 시네마틱 룩 구현"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                      </div>
-                      
-                      {/* 두 번째 줄 - 2개 이미지 */}
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src="/attached_assets/image_1752020218986.png"
-                            alt="제작 프로세스 - FFmpeg 자동화 및 편집 효율화"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img
-                            src="/attached_assets/image_1752020227866.png"
-                            alt="프로젝트 완성도 - 시네마틱 촬영부터 자동화까지"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="text-center mb-8">
-                      <p className="text-sm text-[#58534e] italic">BMPCC 6K 시네마틱 촬영부터 Python 자동화까지 전 과정</p>
-                    </div>
-                  </>
-                ) : (
-                  <div className="mb-8">
-                    <div className="aspect-[16/9] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                {/* 두 줄 이미지 그리드 */}
+                <div className="mb-8">
+                  {/* 첫 번째 줄 - 2개 이미지 */}
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                       <img
-                        src={selectedProject.src}
-                        alt={selectedProject.alt}
+                        src={IntegratedOperationImage}
+                        alt="온·오프라인 통합 운영 - 대형 강의실에서 진행"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                      <img
+                        src={TechSupportImage}
+                        alt="현장 기술 대응 - HDMI 분배기 및 장비 설정"
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   </div>
-                )}
+                  
+                  {/* 두 번째 줄 - 2개 이미지 */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                      <img
+                        src={OverseasEventImage}
+                        alt="해외법인 초청 이벤트 운영 - 국제 비즈니스 프로그램"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                      <img
+                        src={OnlineEventImage}
+                        alt="온라인 이벤트 기획 - 가상 아바타 활용 이벤트"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center mb-8">
+                  <p className="text-sm text-[#58534e] italic">오프라인 교육부터 온라인 이벤트까지 통합 운영</p>
+                </div>
               </motion.div>
 
               {/* Project Details */}
@@ -1370,11 +1294,7 @@ export default function CombinedLanding() {
                 <div className="space-y-5 mb-8">
                   <div>
                     <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                      {selectedProject.id === "1" ? 
-                        "전체 기간: 2023.01 ~ 2024.11 (23개월)" :
-                        selectedProject.id === "2" ? 
-                        "전체 기간: 2022.01 ~ 2022.07 (7개월)" :
-                        "프로젝트 기간 정보"}
+                      전체 기간: 2023.01 ~ 2024.11 (23개월)
                     </div>
                   </div>
                 </div>
@@ -1387,42 +1307,18 @@ export default function CombinedLanding() {
                   </h2>
                 </div>
                 <div className="space-y-5 mb-8">
-                  {selectedProject.id === "1" ? (
-                    <>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 고객 만족도 NPS 4.5+ 달성</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">30+ 온 오프라인 행사, 교육에서 일관된 고품질 서비스 제공</p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 기업 고객사 수주 5개</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 운영 효율성 개선</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
-                      </div>
-                    </>
-                  ) : selectedProject.id === "2" ? (
-                    <>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 인하우스 제작 체제 전환으로 제작 예산 40% 절감</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">외주 의존에서 벗어나 품질 재투자로 프리미엄 콘텐츠 완성도 향상</p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로모션 2편 조회수 10만 이상 달성</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">시네마틱 품질로 브랜드 인지도 및 사용자 몰입도 극대화</p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 홍콩 본사 BP(Best Practice) 사례 선정</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">비용 효율성과 품질 양립 달성으로 글로벌 표준 사례로 인정</p>
-                      </div>
-                    </>
-                  ) : (
-                    <div>
-                      <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 주요 성과</h3>
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">프로젝트 성과 정보</p>
-                    </div>
-                  )}
+                  <div>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 고객 만족도 NPS 4.5+ 달성</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">30+ 온 오프라인 행사, 교육에서 일관된 고품질 서비스 제공</p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 기업 고객사 수주 5개</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단, 한국증권 등 온라인 이벤트 프로젝트 수주</p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 운영 효율성 개선</h3>
+                    <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">자동화 프로그램 도입으로 인력 및 시간 비용 절감</p>
+                  </div>
                 </div>
                 
                 {/* 주요 역할 */}
@@ -1433,122 +1329,83 @@ export default function CombinedLanding() {
                   </h2>
                 </div>
                 <div className="space-y-5 mb-8">
-                  {selectedProject.id === "1" ? (
-                    <>
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
-                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생</p>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <div>
-                            <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
-                            <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                              <li>• 영상: 앵글, 트랜지션 품질 확보</li>
-                              <li>• 음향: 밸런스 조정 및 품질 관리</li>
-                              <li>• 송출: 실시간 기술 이슈 대응</li>
-                            </ul>
-                          </div>
-                          <div>
-                            <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">돌발 상황 대응</h4>
-                            <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                              <li>• 출연자 지각, 건강 이상 등</li>
-                              <li>• 큐시트 실시간 수정</li>
-                              <li>• 직접 대체 진행 수행</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : selectedProject.id === "2" ? (
-                    <>
-                      <div>
-                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">전 제작 과정 직접 수행으로 본사 의사결정 지연 문제 해소</h3>
-                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">외주 제작 → 본사 승인 대기 → 수정 요청 → 재제작 지연 사이클을 인하우스 제작으로 완전 제거</p>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <div>
-                            <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">기획·연출</h4>
-                            <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                              <li>• 50분 분량 교육 콘텐츠 4-5개 클래스 동시 제작</li>
-                              <li>• 기존 수동 편집 방식에서 나타나는 비일관적 품질 개선</li>
-                              <li>• 스키마 관리 필요</li>
-                            </ul>
-                          </div>
-                          <div>
-                            <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">촬영·조명·미술</h4>
-                            <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                              <li>• 스튜디오 환경 직접 세팅</li>
-                              <li>• 조명 시스템 구축</li>
-                              <li>• BMPCC 6K 활용 한국영화시장 톤앤매너 구현</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <div>
-                      <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">주요 역할 정보</h3>
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">역할 상세 내용</p>
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">실시간 행사 운영 및 기술 대응</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">삼성 그룹 대규모 행사 → 영상, 음향, 송출 등 여러 협력사 동시 작업 → 실시간 기술 이슈 & 출연자 변수 발생</p>
                     </div>
-                  )}
-                </div>
-
-                {/* Snapask 전용 추가 역할 섹션 */}
-                {selectedProject.id === "2" && (
-                  <div className="space-y-5 mb-8">
-                    <div>
-                      <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">BMPCC 6K 시네마틱 촬영 및 브랜드 LUT 적용</h3>
-                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">브랜드 시네마틱 룩 구현을 위한 전문 장비 구축 및 조명 시스템 세팅</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">협력사 커뮤니케이션</h4>
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
+                          <li>• 영상: 앵글, 트랜지션 품질 확보</li>
+                          <li>• 음향: 밸런스 조정 및 품질 관리</li>
+                          <li>• 송출: 실시간 기술 이슈 대응</li>
+                        </ul>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                          <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">컬러 그레이딩</h4>
-                          <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 브랜드 LUT 적용 실제 시네마틱 룩 구현</li>
-                            <li>• DaVinci Resolve 활용 컬러 컬렉션·그레이딩</li>
-                            <li>• Teal & Orange, Film Emulation 등 영화적 색감</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">시네마틱 촬영</h4>
-                          <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• BMPCC 6K 활용 한국영화시장 수준 화질</li>
-                            <li>• 완전 스튜디오 환경 직접 구축</li>
-                            <li>• 모든 선생님들이 만족할만한 조명</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">Python + FFmpeg 자막 자동 생성 시스템 구축</h3>
-                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">음성 텍스트 변환 기반 오류 검수 루틴 구축으로 대규모 컷편집 작업 효율화</p>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                          <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로세스</h4>
-                          <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• FFmpeg 기반 자막 자동 생성</li>
-                            <li>• 고정 자막 박스 크기 메타데이터 매핑 제작</li>
-                            <li>• 녹화 후 세부 수정 작업 자동화</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">기술적 혁신</h4>
-                          <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 음성 인식 텍스트 변환 오류 감소</li>
-                            <li>• 편집 반복 작업 90% 이상 자동화</li>
-                            <li>• 대량 영상 일괄 처리 시스템 구축</li>
-                          </ul>
-                        </div>
+                      <div>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">돌발 상황 대응</h4>
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
+                          <li>• 출연자 지각, 건강 이상 등</li>
+                          <li>• 큐시트 실시간 수정</li>
+                          <li>• 직접 대체 진행 수행</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
-                )}
+
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">콘텐츠 제작 및 자동화 시스템 개발</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                        행사별 다양한 그래픽 필요 + 송출 타이밍 오류 = 행사 품질 직접 영향 → 효율적 제작 & 자동화 필요
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">그래픽 제작 시스템</h4>
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
+                          <li>• Midjourney, Stable Diffusion ComfyUI 활용</li>
+                          <li>• Python , 오픈소스 (Pulid, Ipadater, Flux) 활용 후보정</li>
+                          <li>• AI 생성 흔적 최소화 → 실사용급 완성</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">자동화 프로그램 (폐쇄망 환경)</h4>
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
+                          <li>• Python + OCR 화면 인식 시스템 구축</li>
+                          <li>• 화면 인식 기반 영상, 음악 송출 타이밍 자동 제어</li>
+                          <li>• 수동 조작 대비 타이밍 오류 90% 감소</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">사용자 몰입 유도를 위한 온라인 콘텐츠 플랫폼 기획</h3>
+                    <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">기존 플랫폼 한계 (임직원 참여 데이터 확보 어려움) → 메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요와 RAW DATA 확보</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">플랫폼 확장 기획</h4>
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
+                          <li>• 외부 플랫폼 연동·상품화 </li>
+                          <li>• 실질적 임직원 참여 RAW 데이터 확보</li>
+                          <li>• 현실 조직 공간 반영 맵 디자인</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">데이터 구조 설계</h4>
+                        <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
+                          <li>• SnowFlake 기반 행동 로그 수집</li>
+                          <li>• API 연동 구조 협의</li>
+                          <li>• 사용자 자율 탐색 유도</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 {/* 활용 기술 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
@@ -1558,67 +1415,22 @@ export default function CombinedLanding() {
                   </h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-                  {selectedProject.id === "1" ? (
-                    <>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Python</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Midjourney</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Stable Diffusion</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">ComfyUI</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">OCR 화면 인식</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">SnowFlake</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">API 연동</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">메타버스 플랫폼</div>
-                      </div>
-                    </>
-                  ) : selectedProject.id === "2" ? (
-                    <>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">DaVinci Resolve</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Premiere Pro</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">After Effects</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Photoshop</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">BMPCC 6K</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Python</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">FFmpeg</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Midjourney</div>
-                      </div>
-                    </>
-                  ) : (
-                    selectedProject.tools && selectedProject.tools.map((tool, index) => (
-                      <div key={index}>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">{tool}</div>
-                      </div>
-                    ))
-                  )}
+                  <div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Adobe Creative Suite</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects, Photoshop</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">생성형 AI</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Midjourney, Stable Diffusion ComfyUI</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">자동화 개발</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OCR 화면 인식</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">데이터 설계</div>
+                    <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">SnowFlake, API 연동</div>
+                  </div>
                 </div>
 
               </motion.div>
