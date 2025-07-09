@@ -1947,35 +1947,6 @@ export default function CombinedLanding() {
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="text-sm font-bold text-purple-600 mb-3">FFmpeg 최적화</h4>
-                          <ul className="space-y-2 text-sm text-gray-700">
-                            <li>• FFmpeg 기반 자막생성 시스템 구축</li>
-                            <li>• 고정판 다단계 메일 장면 병렬 처리</li>
-                            <li>• 모델 설계 자체 콘텐츠 시스템 구축</li>
-                          </ul>
-                          <div className="mt-3 flex space-x-2">
-                            <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">FFmpeg</span>
-                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">자막생성</span>
-                          </div>
-                        </div>
-
-                        <div>
-                          <h4 className="text-sm font-bold text-blue-600 mb-3">효율화 성과</h4>
-                          <ul className="space-y-2 text-sm text-gray-700">
-                            <li>• 자막 리타이밍 대폭 단축 폭 달성</li>
-                            <li>• 다회차 설문 관리 체계 구축</li>
-                            <li>• 간체 물량 양산체계 별도 확보</li>
-                          </ul>
-                          <div className="mt-3 flex space-x-2">
-                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">성과향상</span>
-                            <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">품질제고</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </>
                 )}
 
@@ -1985,99 +1956,148 @@ export default function CombinedLanding() {
                     <div className="mb-6">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
-                        베트남 인플루언서 프로모션 전략
+                        프로젝트 기간
                       </h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                      <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-4">핵심 전략 수립</h4>
-                        <div className="space-y-3">
-                          <div className="flex items-start space-x-3">
-                            <span className="w-2 h-2 bg-purple-500 rounded-full mt-2"></span>
-                            <div>
-                              <p className="text-sm text-[#282623] font-medium">현지 문화 맞춤형 콘텐츠 기획</p>
-                              <p className="text-xs text-[#58534e] mt-1">베트남 현지 트렌드와 문화적 특성을 반영한 브랜드 메시지 설계</p>
-                            </div>
-                          </div>
-                          <div className="flex items-start space-x-3">
-                            <span className="w-2 h-2 bg-blue-500 rounded-full mt-2"></span>
-                            <div>
-                              <p className="text-sm text-[#282623] font-medium">인플루언서 네트워크 구축</p>
-                              <p className="text-xs text-[#58534e] mt-1">현지 주요 인플루언서와의 협업 체계 수립 및 콘텐츠 제작 가이드라인 제공</p>
-                            </div>
-                          </div>
-                          <div className="flex items-start space-x-3">
-                            <span className="w-2 h-2 bg-green-500 rounded-full mt-2"></span>
-                            <div>
-                              <p className="text-sm text-[#282623] font-medium">다채널 프로모션 운영</p>
-                              <p className="text-xs text-[#58534e] mt-1">SNS 플랫폼별 특성에 맞는 콘텐츠 배포 및 효과 측정</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-medium text-[#282623] mb-4">주요 기술스택</h4>
-                        <div className="grid grid-cols-3 gap-3">
-                          <div className="text-center p-3 bg-gray-50 rounded-lg border border-gray-200">
-                            <span className="text-[#282623] font-medium text-sm">콘텐츠 기획</span>
-                          </div>
-                          <div className="text-center p-3 bg-gray-50 rounded-lg border border-gray-200">
-                            <span className="text-[#282623] font-medium text-sm">SNS 운영</span>
-                          </div>
-                          <div className="text-center p-3 bg-gray-50 rounded-lg border border-gray-200">
-                            <span className="text-[#282623] font-medium text-sm">데이터 분석</span>
-                          </div>
-                        </div>
+                    <div className="space-y-5 mb-8">
+                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
+                        전체 기간: 2023.02 ~ 2023.04 (3개월)
                       </div>
                     </div>
 
-                    {/* 성과 및 결과 */}
+                    {/* 프로젝트 배경 */}
                     <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                       <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                         <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">2</span>
-                        성과 및 결과
+                        프로젝트 배경
                       </h2>
                     </div>
-                    <div className="space-y-6 mb-8">
-                      <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        베트남 현지 인플루언서들과의 협업을 통해 진에어 브랜드 인지도를 크게 향상시켰습니다. 
-                        현지 문화에 맞는 콘텐츠 기획으로 높은 참여율과 브랜드 호감도를 달성했습니다.
-                      </p>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-[#282623] mb-2">높은 참여율 달성</h5>
-                          <p className="text-sm text-[#58534e]">현지 맞춤 콘텐츠로 평균 참여율 대폭 향상</p>
+                    <div className="space-y-5 mb-8">
+                      <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                          진에어의 베트남 시장 진출 과정에서 현지 문화와 소비자 특성을 고려한 차별화된 마케팅 전략이 필요했습니다. 기존 한국식 마케팅 접근법의 한계를 극복하고, 베트남 현지 인플루언서들과의 협업을 통해 브랜드 인지도 향상과 현지 시장 정착을 목표로 한 프로모션 프로젝트를 진행했습니다.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 주요 역할 및 기술적 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                        주요 역할 및 기술적 성과
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">현지 문화 맞춤형 콘텐츠 기획</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            베트남 현지 트렌드와 문화적 특성을 반영한 브랜드 메시지 설계 및 실행
+                          </p>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-[#282623] mb-2">브랜드 인지도 상승</h5>
-                          <p className="text-sm text-[#58534e]">베트남 시장 내 진에어 브랜드 인지도 크게 개선</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">인플루언서 네트워크 구축 및 협업 체계 수립</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            현지 주요 인플루언서와의 협업 체계 구축 및 콘텐츠 제작 가이드라인 제공
+                          </p>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                          <h5 className="font-medium text-[#282623] mb-2">성공 사례 구축</h5>
-                          <p className="text-sm text-[#58534e]">현지 인플루언서 마케팅 모델 케이스 수립</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">다채널 프로모션 전략 및 성과 측정</h3>
+                        <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
+                            SNS 플랫폼별 특성에 맞는 콘텐츠 배포 및 실시간 효과 측정 시스템 구축
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 핵심 성과 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                        핵심 성과
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-bold">200%</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">참여율 향상</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">현지 맞춤 콘텐츠로 기존 대비 200% 이상 참여율 상승</p>
+                      </div>
+                      
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-sm">브랜드</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">인지도 상승</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">베트남 시장 내 진에어 브랜드 인지도 크게 개선</p>
+                      </div>
+
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-sm">모델</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">마케팅 사례</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">현지 인플루언서 마케팅 성공 모델 케이스 구축</p>
+                      </div>
+
+                      <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 bg-[#282623] rounded-full flex items-center justify-center text-white font-medium text-sm">확장</div>
+                          <span className="ml-3 text-lg font-semibold text-[#282623]">시장 기반</span>
+                        </div>
+                        <p className="text-sm text-[#58534e]">베트남 시장 진출을 위한 마케팅 인프라 구축</p>
+                      </div>
+                    </div>
+
+                    {/* 기술 스택 및 도구 */}
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">5</span>
+                        기술 스택 및 도구
+                      </h2>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">콘텐츠 기획</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 현지 문화 분석 및 트렌드 리서치</li>
+                            <li>• 브랜드 메시지 현지화 전략</li>
+                            <li>• 크리에이티브 가이드라인 수립</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">SNS 운영</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 플랫폼별 콘텐츠 최적화</li>
+                            <li>• 인플루언서 협업 관리</li>
+                            <li>• 실시간 소통 및 피드백 관리</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-bold text-[#282623] mb-3">데이터 분석</h4>
+                          <ul className="space-y-2 text-sm text-[#58534e]">
+                            <li>• 참여율 및 도달률 분석</li>
+                            <li>• 인플루언서 성과 측정</li>
+                            <li>• ROI 분석 및 최적화</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
                   </>
                 )}
 
-                {/* 공통 사용 기술 섹션 */}
-                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
-                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                      {selectedProject.id === "1" ? "4" : selectedProject.id === "2" ? "3" : selectedProject.id === "3" ? "3" : selectedProject.id === "4" ? "3" : "1"}
-                    </span>
-                    {selectedProject.id === "1" ? "활용 기술" : "주요 기술 스택"}
-                  </h2>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-                  {selectedProject.tools && selectedProject.tools.map((tool, index) => (
-                    <div key={index}>
-                      <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">{tool}</div>
-                    </div>
-                  ))}
-                </div>
+
               </motion.div>
             </div>
             
