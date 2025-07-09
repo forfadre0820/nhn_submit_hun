@@ -1316,13 +1316,14 @@ export default function CombinedLanding() {
                   {/* Right Column - Content */}
                   <div className="bg-gray-50 p-8 lg:p-16 flex flex-col justify-center text-[#4b5563]">
                     <motion.h3
-                      className="text-red-500 font-light mb-8 lg:mb-12"
+                      className="text-red-500 font-light mb-4"
                       style={{
                         fontFamily: "'Noto Sans', sans-serif",
                         fontWeight: "300",
                         fontSize: "4rem",
                         lineHeight: "1.1",
                         letterSpacing: "-0.02em",
+                        marginBottom: "4rem",
                       }}
                       initial={{ y: 50, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
