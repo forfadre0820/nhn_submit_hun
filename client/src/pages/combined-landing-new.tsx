@@ -1104,7 +1104,7 @@ export default function CombinedLanding() {
 
               {/* Certifications & Skills */}
               <div className="mt-12 pt-8 border-t border-gray-100">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   <div>
                     <h5
                       className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
@@ -1138,6 +1138,26 @@ export default function CombinedLanding() {
                     <h5
                       className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
                     >
+                      SKILL SET
+                    </h5>
+                    <ul
+                      className={`space-y-2 ${FONT_SIZES.small} text-gray-600`}
+                    >
+                      <li>• ComfyUI (상)</li>
+                      <li>• Asana, Slack (중)</li>
+                      <li>• Python (중)</li>
+                      <li>• Premiere Pro (상)</li>
+                      <li>• Unity (중)</li>
+                      <li>• Photoshop, Illustrator (상)</li>
+                      <li>• C#, Java (중)</li>
+                      <li>• After Effect (상)</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h5
+                      className={`${FONT_SIZES.body} font-medium text-gray-900 mb-3`}
+                    >
                       언어 능력
                     </h5>
                     <ul
@@ -1145,7 +1165,6 @@ export default function CombinedLanding() {
                     >
                       <li>• 한국어 (모국어)</li>
                       <li>• 영어 (업무 수준)</li>
-                      <li>• 일본어 (기초 회화)</li>
                     </ul>
                   </div>
                 </div>
