@@ -211,6 +211,7 @@ export default function CombinedLanding() {
   const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [isClosingModal, setIsClosingModal] = useState(false);
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
   
   // Portfolio data
   const portfolioItems: PortfolioItem[] = [
@@ -499,8 +500,43 @@ export default function CombinedLanding() {
     setTimeout(() => {
       setSelectedProject(null);
       setIsClosingModal(false);
+      setCurrentGalleryIndex(0);
     }, 400);
   };
+
+  // Gallery navigation functions
+  const openGalleryLightbox = (item: PortfolioItem) => {
+    const index = galleryItems.findIndex(galleryItem => galleryItem.id === item.id);
+    setCurrentGalleryIndex(index);
+    setSelectedProject(item);
+  };
+
+  const navigateGallery = (direction: 'prev' | 'next') => {
+    const newIndex = direction === 'next' 
+      ? (currentGalleryIndex + 1) % galleryItems.length
+      : (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+    
+    setCurrentGalleryIndex(newIndex);
+    setSelectedProject(galleryItems[newIndex]);
+  };
+
+  // Keyboard navigation for gallery
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (selectedProject && selectedProject.id.startsWith("gallery-")) {
+        if (e.key === 'ArrowLeft') {
+          navigateGallery('prev');
+        } else if (e.key === 'ArrowRight') {
+          navigateGallery('next');
+        } else if (e.key === 'Escape') {
+          closeModal();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [selectedProject, currentGalleryIndex]);
 
   // Navigation handler with smooth scroll to section
   const handleNavigation = (section: string) => {
@@ -957,7 +993,7 @@ export default function CombinedLanding() {
                       key={`gallery-${item.id}`}
                       className={`group cursor-pointer break-inside-avoid mb-4 ${randomHeight}`}
                       whileHover={{ scale: 1.02 }}
-                      onClick={() => setSelectedProject(item)}
+                      onClick={() => openGalleryLightbox(item)}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -1103,52 +1139,77 @@ export default function CombinedLanding() {
           </div>
         </div>
       </footer>
-      {/* Gallery Item Simple Modal */}
+      {/* Gallery Lightbox Modal */}
       {selectedProject && selectedProject.id.startsWith("gallery-") && (
         <motion.div 
-          className="fixed inset-0 bg-black/70 z-[99999] flex items-center justify-center p-8"
+          className="fixed inset-0 bg-black/90 z-[99999] flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: isClosingModal ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.modal }}
           onClick={closeModal}
         >
+          {/* Close Button */}
+          <button 
+            onClick={closeModal}
+            className="absolute top-6 right-6 z-[100000] text-white hover:text-gray-300 transition-colors text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40"
+          >
+            ×
+          </button>
+
+          {/* Previous Button */}
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              navigateGallery('prev');
+            }}
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-colors text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40"
+          >
+            ←
+          </button>
+
+          {/* Next Button */}
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              navigateGallery('next');
+            }}
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 z-[100000] text-white hover:text-gray-300 transition-colors text-2xl w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40"
+          >
+            →
+          </button>
+
+          {/* Main Image Container */}
           <motion.div 
-            className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden"
+            className="relative max-w-[90vw] max-h-[90vh] w-full h-full flex items-center justify-center"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: isClosingModal ? 0.9 : 1, opacity: isClosingModal ? 0 : 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: ANIMATION_DURATIONS.modal }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
-            <button 
-              onClick={closeModal}
-              className="absolute top-4 right-4 z-10 bg-black/20 hover:bg-black/40 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors"
-            >
-              ×
-            </button>
-            
             {/* Image */}
-            <div className="relative">
-              <img
-                src={selectedProject.src}
-                alt={selectedProject.alt}
-                className="w-full h-auto max-h-[60vh] object-cover"
-              />
+            <img
+              src={galleryItems[currentGalleryIndex]?.src}
+              alt={galleryItems[currentGalleryIndex]?.alt}
+              className="max-w-full max-h-full object-contain"
+            />
+
+            {/* Image Info Overlay - Bottom Left */}
+            <div className="absolute bottom-6 left-6 text-white">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="text-lg font-medium mb-1">{galleryItems[currentGalleryIndex]?.title}</h3>
+                <p className="text-sm text-gray-300 mb-2">{galleryItems[currentGalleryIndex]?.client}</p>
+                <p className="text-sm text-gray-400">{galleryItems[currentGalleryIndex]?.description}</p>
+              </div>
             </div>
-            
-            {/* Content */}
-            <div className="p-6">
-              <h3 className={`${FONT_SIZES.heading} font-bold text-gray-900 mb-2`}>{selectedProject.title}</h3>
-              <p className={`${FONT_SIZES.body} text-gray-600 mb-4`}>{selectedProject.subtitle}</p>
-              <p className={`${FONT_SIZES.small} text-gray-700 leading-relaxed`}>{selectedProject.description}</p>
-              
-              <div className="mt-4 pt-4 border-t border-gray-100">
-                <div className="flex justify-between items-center text-sm text-gray-500">
-                  <span>{selectedProject.client}</span>
-                  <span>{selectedProject.year}</span>
-                </div>
+
+            {/* Image Counter - Bottom Right */}
+            <div className="absolute bottom-6 right-6 text-white">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg px-4 py-2">
+                <span className="text-sm font-medium">
+                  {currentGalleryIndex + 1} of {galleryItems.length}
+                </span>
               </div>
             </div>
           </motion.div>
