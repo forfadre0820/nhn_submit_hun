@@ -861,7 +861,9 @@ export default function CombinedLanding() {
                 <div className="lg:col-span-6">
                   <h2
                     className="text-4xl lg:text-5xl text-gray-900 leading-tight mb-4 font-light"
-                  >> ALL IN ONE CONTENT CREATOR</h2>
+                  >
+                    ALL IN ONE CONTENT CREATOR
+                  </h2>
                   <p className="text-gray-700 text-[14px]">
                     10년 이상의 영상 제작 경력을 바탕으로 다수의 공모전, 영화제
                     출품 및 방송 제작에 참여하며 기획·연출·편집·색보정·사운드 등
@@ -1917,34 +1919,33 @@ export default function CombinedLanding() {
 
                     <div>
                       <h3 className="text-sm font-medium text-[#282623] mb-2 tracking-tight leading-relaxed">
-                        사용자 몰입 유도를 위한 온라인 콘텐츠 플랫폼 기획
+                        PM & 성과
                       </h3>
                       <div className="border-l-2 border-gray-200 pl-4 py-2 mb-4">
                         <p className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                          기존 플랫폼 한계 (임직원 참여 데이터 확보 어려움) →
-                          메타버스 환경에서 자연스러운 몰입 & 참여 유도 필요와
-                          RAW DATA 확보
+                          프로젝트 매니지먼트와 성과 지표를 통해 교육 효과를 극대화하고
+                          지속 가능한 교육 프로그램을 구축했습니다.
                         </p>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            플랫폼 확장 기획
+                            효율적 제작 워크플로우
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• 외부 플랫폼 연동·상품화 </li>
-                            <li>• 실질적 임직원 참여 RAW 데이터 확보</li>
-                            <li>• 현실 조직 공간 반영 맵 디자인</li>
+                            <li>• Screen Life 포맷으로 그래픽 요소 최적화</li>
+                            <li>• 실무 직무 교육에 특화된 콘텐츠 구성</li>
+                            <li>• 제작 비용 대비 교육 효과 극대화</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">
-                            데이터 구조 설계
+                            교육 성과 관리
                           </h4>
                           <ul className="text-sm text-[#58534e] space-y-2 tracking-tight leading-relaxed">
-                            <li>• SnowFlake 기반 행동 로그 수집</li>
-                            <li>• API 연동 구조 협의</li>
-                            <li>• 사용자 자율 탐색 유도</li>
+                            <li>• 학습자 몰입도 향상을 위한 시나리오 설계</li>
+                            <li>• 실습 중심 교육 방법론 적용</li>
+                            <li>• 체계적인 교육 과정 관리 및 평가</li>
                           </ul>
                         </div>
                       </div>
@@ -1955,42 +1956,42 @@ export default function CombinedLanding() {
                   <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                     <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                       <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">
-                        4
+                        5
                       </span>
-                      활용 기술
+                      기술 스택 및 도구
                     </h2>
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">
-                        Adobe Creative Suite
+                        교육 콘텐츠 제작
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        Premiere Pro, After Effects, Photoshop
+                        Premiere Pro, After Effects, Photoshop, Midjourney
                       </div>
                     </div>
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">
-                        생성형 AI
+                        화면 구성
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        Midjourney, Stable Diffusion ComfyUI
+                        화면 분할, 타이밍 조절 기술
                       </div>
                     </div>
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">
-                        자동화 개발
+                        교육 설계
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        Python, OCR 화면 인식
+                        학습자 중심 교육과정 설계
                       </div>
                     </div>
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">
-                        데이터 설계
+                        콘텐츠 최적화
                       </div>
                       <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">
-                        SnowFlake, API 연동
+                        Screen Life 포맷 특화 제작
                       </div>
                     </div>
                   </div>
