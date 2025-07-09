@@ -23,7 +23,6 @@ import LikelionHackathonImage from "@assets/image_1752092842644.png";
 import GalleryMalePortraitImage from "@assets/image_1752014670363.png";
 import GalleryCasualPortraitImage from "@assets/image_1752014672407.png";
 import GalleryJinairPromotionImage from "@assets/image_1752014683656.png";
-import ProductAdvertImage from "@assets/image_1752093967972.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -354,14 +353,14 @@ export default function CombinedLanding() {
     },
     {
       id: "gallery-6",
-      src: ProductAdvertImage,
-      alt: "AI 생성 실사형 제품 광고 이미지",
+      src: GalleryMalePortraitImage,
+      alt: "AI 생성 실사형 남성 포트레이트",
       title: "제품 광고 제작",
-      subtitle: "개인 포트폴리오",
+      subtitle: "",
       description: "ComfyUI, FLUX, Python을 활용하여 실사형 제품 광고 이미지를 제작했습니다. 자연스러운 인물 표현과 디테일한 후보정을 통해 실제 촬영과 구분이 어려운 수준의 결과물을 구현했습니다.",
       category: "AI Portrait",
       year: "2024",
-      client: "개인 포트폴리오",
+      client: "실사형 인물 제작",
       role: "AI 인물 생성, 후보정",
       tools: ["ComfyUI", "Python", "Photoshop"],
       images: []
