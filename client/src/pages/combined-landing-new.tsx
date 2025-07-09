@@ -946,9 +946,9 @@ export default function CombinedLanding() {
               {/* Gallery Grid - Masonry Layout (Pinterest style) */}
               <div className="columns-2 md:columns-4 gap-4 mb-8 space-y-4">
                 {galleryItems.map((item, index) => {
-                  // 다양한 높이 패턴 생성
+                  // 다양한 높이 패턴 생성 (rem 단위 사용)
                   const heightVariants = [
-                    'h-48', 'h-64', 'h-56', 'h-72', 'h-40', 'h-60', 'h-52', 'h-68'
+                    'h-[12rem]', 'h-[20rem]', 'h-[14rem]', 'h-[18rem]', 'h-[10rem]', 'h-[15rem]', 'h-[13rem]', 'h-[17rem]'
                   ];
                   const randomHeight = heightVariants[index % heightVariants.length];
                   
