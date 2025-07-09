@@ -839,7 +839,7 @@ export default function CombinedLanding() {
                   >
                     &gt; ALL IN ONE CONTENT<br />CREATOR
                   </motion.h2>
-                  <p className="text-gray-700 text-[14px]">
+                  <p className="text-gray-700 text-[14px] pt-[8px] pb-[8px] mt-[0px] mb-[0px]">
 
 
 
