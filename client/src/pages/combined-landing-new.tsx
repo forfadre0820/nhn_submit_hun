@@ -1057,7 +1057,7 @@ export default function CombinedLanding() {
         </div>
       </section>
       {/* Footer Section */}
-      <footer className="pb-1 pt-8">
+      <footer className="pb-2 pt-8">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Separator Line - Same as other sections */}
