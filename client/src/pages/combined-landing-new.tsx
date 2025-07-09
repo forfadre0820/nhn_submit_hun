@@ -1030,7 +1030,7 @@ export default function CombinedLanding() {
                     </motion.h3>
                     
                     <div className="text-gray-700 leading-relaxed mb-8" style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: '300' }}>
-                      <p className="text-[14px] mb-4 text-[#4b5563]">
+                      <p className="text-[14px] mb-4 text-[#4b5563] font-normal">
                         콘텐츠 PD는 단순 제작자가 아닌 메시지를 전달할 수 있어야 하는 설계자입니다. 저는 기획부터 
                         연출, 촬영, 편집, 사용자 경험까지 모든 과정에서 '무엇을, 어떻게' 보여줄지를 고민해왔습니다.
                       </p>
