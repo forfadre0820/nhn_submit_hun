@@ -1127,7 +1127,10 @@ export default function CombinedLanding() {
                   <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">정보처리기사</span>
                   <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">정보처리산업기사</span>
                   <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">Adobe Creative Suite</span>
-
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">기획</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">제작</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">PM</span>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">OA</span>
                   <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">한국어 (모국어)</span>
                   <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-[14px] font-medium">영어 (업무 수준)</span>
                 </div>
