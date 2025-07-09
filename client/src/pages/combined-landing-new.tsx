@@ -284,15 +284,15 @@ export default function CombinedLanding() {
     {
       id: "gallery-1",
       src: VRCulturalHeritageImage,
-      alt: "서예 작품 및 전통 문화 콘텐츠",
-      title: "서예 및 전통 문화 콘텐츠",
-      subtitle: "전통 서예의 현대적 해석",
-      description: "전통 서예와 문화유산을 현대적 감각으로 재해석한 콘텐츠입니다.",
-      category: "Cultural Content",
+      alt: "종로구 문화유산 VR 콘텐츠",
+      title: "종로구 문화유산 VR 콘텐츠 기획",
+      subtitle: "문화유산의 VR 콘텐츠 제작",
+      description: "종로구의 문화유산을 가상현실(VR) 기술로 체험할 수 있는 콘텐츠를 기획하고 제작했습니다.",
+      category: "VR Content",
       year: "2024",
-      client: "문화체육관광부",
-      role: "문화 콘텐츠 기획, 제작",
-      tools: ["Traditional Calligraphy", "Cultural Research", "Digital Art"],
+      client: "종로구청",
+      role: "VR 콘텐츠 기획, 제작",
+      tools: ["VR Development", "Cultural Research", "3D Modeling"],
       images: []
     },
     {
