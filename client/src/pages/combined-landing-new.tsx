@@ -954,7 +954,10 @@ export default function CombinedLanding() {
                     key={item.id}
                     className="group cursor-pointer"
                     whileHover={{ scale: 1.02 }}
-                    onClick={() => setSelectedProject(item)}
+                    onClick={() => {
+                      setIsGalleryMode(false);
+                      setSelectedProject(item);
+                    }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -1155,7 +1158,7 @@ export default function CombinedLanding() {
         </div>
       </footer>
       {/* Gallery Lightbox Modal */}
-      {isGalleryMode && selectedProject && (
+      {isGalleryMode && selectedProject && selectedProject.id.startsWith("gallery-") && (
         <motion.div 
           className="fixed inset-0 bg-black/90 z-[999999] flex items-center justify-center"
           initial={{ opacity: 0 }}
@@ -1242,7 +1245,7 @@ export default function CombinedLanding() {
         </motion.div>
       )}
       {/* Project Detail Modal - Floating Lightbox Style */}
-      {!isGalleryMode && selectedProject && (
+      {!isGalleryMode && selectedProject && !selectedProject.id.startsWith("gallery-") && (
         <motion.div 
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
