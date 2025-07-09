@@ -14,7 +14,7 @@ import OverseasEventImage from "@assets/오프라인 운영_1752007181258.jpg";
 import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_1752007184273.jpg";
 
 // Gallery images
-import KoreyaHospitalImage from "@assets/4_1752092502620.jpg";
+import VRCulturalHeritageImage from "@assets/4_1752092502620.jpg";
 import GalleryCalligraphyImage from "@assets/image_1752014631972.png";
 import GalleryBeautyImage from "@assets/image_1752014636911.png";
 import GalleryWorkspaceImage from "@assets/image_1752014643264.png";
@@ -283,16 +283,16 @@ export default function CombinedLanding() {
   const galleryItems: PortfolioItem[] = [
     {
       id: "gallery-1",
-      src: KoreyaHospitalImage,
-      alt: "고려대학교구로병원 사내방송 콘텐츠",
-      title: "사내방송 콘텐츠",
-      subtitle: "의료진 대상 사내 소통 프로그램",
-      description: "고려대학교구로병원의 의료진과 직원들을 대상으로 한 사내방송 콘텐츠를 기획하고 제작했습니다. 병원 내 소통과 정보 공유를 위한 전문적인 방송 콘텐츠입니다.",
-      category: "Broadcasting Content",
+      src: VRCulturalHeritageImage,
+      alt: "종로구 문화유산 VR 콘텐츠",
+      title: "종로구 문화유산 VR 콘텐츠 기획",
+      subtitle: "문화유산의 VR 콘텐츠 제작",
+      description: "종로구의 문화유산을 가상현실(VR) 기술로 체험할 수 있는 콘텐츠를 기획하고 제작했습니다. 전통 문화의 디지털 보존과 체험형 콘텐츠를 통해 문화유산의 가치를 확산시키는 프로젝트입니다.",
+      category: "VR Content",
       year: "2024",
-      client: "고려대학교구로병원",
-      role: "방송 콘텐츠 기획, 제작",
-      tools: ["Broadcasting", "Medical Communication", "Video Production"],
+      client: "종로구청",
+      role: "VR 콘텐츠 기획, 제작",
+      tools: ["VR Development", "Cultural Research", "3D Modeling"],
       images: []
     },
     {
