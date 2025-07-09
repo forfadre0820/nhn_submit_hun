@@ -15,7 +15,7 @@ import OnlineEventImage from "@assets/온라인 이벤트 기획 운영_17520071
 
 // Gallery images
 import VRCulturalHeritageImage from "@assets/NISI20180418_0000135162_web_1752090687436.jpg";
-import KoreyaHospitalImage from "@assets/4_1752092502620.jpg";
+import JinairSurfingDayImage from "@assets/image_1752095977745.png";
 import GalleryBeautyImage from "@assets/image_1752014636911.png";
 import PersonalPortfolioImage from "@assets/86639380-814e6f3935db756d97edfc2262f7958ce4cf73d56bd0b605c511f97007163f9c (1)_1752092998931.png";
 import GalleryInterviewImage from "@assets/image_1752014659090.png";
@@ -333,17 +333,17 @@ export default function CombinedLanding() {
     },
     {
       id: "gallery-2",
-      src: KoreyaHospitalImage,
-      alt: "고려대학교구로병원 사내방송 콘텐츠",
-      title: "사내방송 콘텐츠",
-      subtitle: "의료진 대상 사내 소통 프로그램",
+      src: JinairSurfingDayImage,
+      alt: "진에어 서핑 데이 프로모션",
+      title: "진에어 서핑 데이 프로모션",
+      subtitle: "12월 겨울철 서핑 여행 프로모션",
       description:
-        "고려대학교구로병원의 의료진과 직원들을 대상으로 한 사내방송 콘텐츠를 기획하고 제작했습니다. 병원 내 소통과 정보 공유를 위한 전문적인 방송 콘텐츠입니다.",
-      category: "Broadcasting Content",
+        "진에어의 겨울 서핑 여행 프로모션 '서핑 데이'를 위한 창의적인 시각 콘텐츠입니다. 12월 겨울철에도 따뜻한 해변에서 서핑을 즐길 수 있다는 메시지를 전달하며, 항공사 브랜드의 젊고 활동적인 이미지를 강조했습니다.",
+      category: "Travel Promotion",
       year: "2024",
-      client: "고려대학교구로병원",
-      role: "방송 콘텐츠 기획, 제작",
-      tools: ["Broadcasting", "Medical Communication", "Video Production"],
+      client: "JINAIR",
+      role: "시각 콘텐츠 기획, 디자인",
+      tools: ["Photoshop", "Illustrator", "Brand Design"],
       images: [],
     },
     {
