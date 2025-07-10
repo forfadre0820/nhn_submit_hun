@@ -113,6 +113,27 @@ body {
   100% { opacity: 0; }
 }
 
+@keyframes drawSequence {
+  0% { stroke-dashoffset: 460; }
+  80% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeArea {
+  0% { opacity: 0; }
+  60% { opacity: 0; }
+  80% { opacity: 0.1; }
+  100% { opacity: 0.1; }
+}
+
+@keyframes pointPulse {
+  0% { r: 3; opacity: 0; }
+  15% { r: 3; opacity: 0; }
+  20% { r: 4; opacity: 1; }
+  25% { r: 3; opacity: 1; }
+  100% { r: 3; opacity: 1; }
+}
+
 .hero__videoWrap video {
   transform-origin: 50% 50%;
   clip-path: inset(8% 0);
