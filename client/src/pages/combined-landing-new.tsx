@@ -1954,16 +1954,152 @@ export default function CombinedLanding() {
                     {selectedProject.id === "4" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 베트남 인플루언서 한국 체험 콘텐츠 기획</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">베트남 현지 인플루언서를 대상으로 한국 문화 체험을 통한 자연스러운 브랜드 노출 전략</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 전략 구조</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-4">
+                            <p><strong>베트남 인플루언서 마케팅 접근법:</strong></p>
+                            
+                            {/* 전략 구조 도식 */}
+                            <div className="bg-white border border-gray-200 p-6 rounded-lg">
+                              <div className="text-center mb-4">
+                                <h4 className="text-sm font-medium text-[#282623] mb-2">베트남 인플루언서 콘텐츠 제작 전략</h4>
+                                <p className="text-xs text-[#58534e]">자연스러운 브랜드 노출과 현지 문화 체험의 조화</p>
+                              </div>
+                              
+                              <svg width="100%" height="200" viewBox="0 0 600 200" className="overflow-visible">
+                                {/* 중앙 핵심 전략 원 */}
+                                <circle cx="300" cy="100" r="45" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="2"/>
+                                <text x="300" y="95" textAnchor="middle" className="text-sm fill-[#374151] font-medium">한국 문화</text>
+                                <text x="300" y="110" textAnchor="middle" className="text-sm fill-[#374151] font-medium">체험 콘텐츠</text>
+                                
+                                {/* 3개 전략 박스 */}
+                                {/* 인플루언서 마케팅 */}
+                                <rect x="50" y="30" width="120" height="50" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="6"/>
+                                <text x="110" y="50" textAnchor="middle" className="text-xs fill-[#374151] font-medium">베트남 인플루언서</text>
+                                <text x="110" y="65" textAnchor="middle" className="text-xs fill-[#6b7280]">현지 마케팅</text>
+                                <line x1="170" y1="55" x2="255" y2="85" stroke="#374151" strokeWidth="2" markerEnd="url(#arrow1)"/>
+                                
+                                {/* 현장 제작 */}
+                                <rect x="430" y="30" width="120" height="50" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="6"/>
+                                <text x="490" y="50" textAnchor="middle" className="text-xs fill-[#374151] font-medium">현장 중심 제작</text>
+                                <text x="490" y="65" textAnchor="middle" className="text-xs fill-[#6b7280]">유연한 대응</text>
+                                <line x1="430" y1="55" x2="345" y2="85" stroke="#374151" strokeWidth="2" markerEnd="url(#arrow2)"/>
+                                
+                                {/* PPL 통합 */}
+                                <rect x="240" y="140" width="120" height="50" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="6"/>
+                                <text x="300" y="160" textAnchor="middle" className="text-xs fill-[#374151] font-medium">자연스러운 PPL</text>
+                                <text x="300" y="175" textAnchor="middle" className="text-xs fill-[#6b7280]">브랜드 통합</text>
+                                <line x1="300" y1="145" x2="300" y2="140" stroke="#374151" strokeWidth="2" markerEnd="url(#arrow3)"/>
+                                
+                                {/* 화살표 마커 정의 */}
+                                <defs>
+                                  <marker id="arrow1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+                                  </marker>
+                                  <marker id="arrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+                                  </marker>
+                                  <marker id="arrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+                                  </marker>
+                                </defs>
+                              </svg>
+                            </div>
+                            
+                            <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                              <h5 className="text-sm font-medium text-[#282623] mb-3">핵심 전략 포인트</h5>
+                              <div className="space-y-2 text-sm">
+                                <div className="flex items-start space-x-2">
+                                  <span className="text-[#ef4444] font-bold">1.</span>
+                                  <span className="text-[#58534e]">베트남 현지 인플루언서의 자연스러운 한국 문화 체험</span>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                  <span className="text-[#ef4444] font-bold">2.</span>
+                                  <span className="text-[#58534e]">예측 불가능한 현장 상황에 대응하는 유연한 제작 방식</span>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                  <span className="text-[#ef4444] font-bold">3.</span>
+                                  <span className="text-[#58534e]">신라면세점·서지루텐 등 협찬 브랜드의 유기적 노출</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장 중심의 제작 접근법</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">예측 불가능한 현장 상황에 대응할 수 있는 유연한 제작 방식과 출연자와의 원활한 커뮤니케이션 중시</p>
-                        </div>
-                        <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 협찬 브랜드 자연스러운 노출</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">콘텐츠 흐름을 해치지 않으면서 효과적인 브랜드 메시지 전달을 위한 전략적 PPL 배치</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장 제작 워크플로우</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-4">
+                            <p><strong>제작 프로세스 최적화:</strong></p>
+                            
+                            {/* 워크플로우 도식 */}
+                            <div className="bg-white border border-gray-200 p-4 rounded-lg">
+                              <div className="text-center mb-3">
+                                <h4 className="text-sm font-medium text-[#282623] mb-1">현장 제작 워크플로우</h4>
+                                <p className="text-xs text-[#58534e]">핸디캠 중심의 효율적 제작 과정</p>
+                              </div>
+                              <svg width="100%" height="140" viewBox="0 0 700 140" className="overflow-visible">
+                                {/* 프로세스 단계들 */}
+                                {/* 1단계 */}
+                                <rect x="20" y="50" width="80" height="40" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="4"/>
+                                <text x="60" y="68" textAnchor="middle" className="text-xs fill-[#374151] font-medium">현장 분석</text>
+                                <text x="60" y="82" textAnchor="middle" className="text-xs fill-[#6b7280]">환경 파악</text>
+                                
+                                {/* 화살표 1 */}
+                                <line x1="100" y1="70" x2="130" y2="70" stroke="#374151" strokeWidth="2" markerEnd="url(#flowArrow1)"/>
+                                
+                                {/* 2단계 */}
+                                <rect x="130" y="50" width="80" height="40" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="4"/>
+                                <text x="170" y="68" textAnchor="middle" className="text-xs fill-[#374151] font-medium">인플루언서</text>
+                                <text x="170" y="82" textAnchor="middle" className="text-xs fill-[#6b7280]">커뮤니케이션</text>
+                                
+                                {/* 화살표 2 */}
+                                <line x1="210" y1="70" x2="240" y2="70" stroke="#374151" strokeWidth="2" markerEnd="url(#flowArrow2)"/>
+                                
+                                {/* 3단계 */}
+                                <rect x="240" y="50" width="80" height="40" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="4"/>
+                                <text x="280" y="68" textAnchor="middle" className="text-xs fill-[#374151] font-medium">핸디캠</text>
+                                <text x="280" y="82" textAnchor="middle" className="text-xs fill-[#6b7280]">촬영</text>
+                                
+                                {/* 화살표 3 */}
+                                <line x1="320" y1="70" x2="350" y2="70" stroke="#374151" strokeWidth="2" markerEnd="url(#flowArrow3)"/>
+                                
+                                {/* 4단계 */}
+                                <rect x="350" y="50" width="80" height="40" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="4"/>
+                                <text x="390" y="68" textAnchor="middle" className="text-xs fill-[#374151] font-medium">PPL 삽입</text>
+                                <text x="390" y="82" textAnchor="middle" className="text-xs fill-[#6b7280]">자연스러운 노출</text>
+                                
+                                {/* 화살표 4 */}
+                                <line x1="430" y1="70" x2="460" y2="70" stroke="#374151" strokeWidth="2" markerEnd="url(#flowArrow4)"/>
+                                
+                                {/* 5단계 */}
+                                <rect x="460" y="50" width="80" height="40" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="4"/>
+                                <text x="500" y="68" textAnchor="middle" className="text-xs fill-[#374151] font-medium">후반 작업</text>
+                                <text x="500" y="82" textAnchor="middle" className="text-xs fill-[#6b7280]">편집 완료</text>
+                                
+                                {/* 화살표 마커 정의 */}
+                                <defs>
+                                  <marker id="flowArrow1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                    <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+                                  </marker>
+                                  <marker id="flowArrow2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                    <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+                                  </marker>
+                                  <marker id="flowArrow3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                    <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+                                  </marker>
+                                  <marker id="flowArrow4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                    <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+                                  </marker>
+                                </defs>
+                              </svg>
+                            </div>
+                            
+                            <div className="space-y-2 text-sm">
+                              <p className="text-[#282623] font-medium">제작 특징:</p>
+                              <p>- 시네마 장비 대신 핸디캠 활용으로 자연스러운 분위기 연출</p>
+                              <p>- 출연자와의 원활한 소통을 통한 협조적 촬영 환경 구축</p>
+                              <p>- 현장 상황 변화에 즉시 대응 가능한 유연한 제작 방식</p>
+                              <p>- 베트남 인플루언서와의 문화적 소통 및 현장 커뮤니케이션</p>
+                            </div>
+                          </div>
                         </div>
                       </>
                     )}
