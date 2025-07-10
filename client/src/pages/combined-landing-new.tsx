@@ -1737,53 +1737,41 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• 프로젝트 개요</h3>
-                          <div className="ml-4 space-y-4">
-                            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                              <p className="text-sm text-blue-800 font-medium mb-2">목표</p>
-                              <p className="text-sm text-blue-700">외주 제작의 한계를 극복하고 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지 전달</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 프로젝트 개요</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-3">
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">목표</p>
+                              <p>외주 제작의 한계를 극복하고 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지 전달</p>
                             </div>
-                            <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
-                              <p className="text-sm text-green-800 font-medium mb-2">접근 방식</p>
-                              <p className="text-sm text-green-700">전 공정 인하우스 제작 체계 구축으로 시네마틱 품질과 효율성을 동시에 달성</p>
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">접근 방식</p>
+                              <p>전 공정 인하우스 제작 체계 구축으로 시네마틱 품질과 효율성을 동시에 달성</p>
                             </div>
-                            <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
-                              <p className="text-sm text-purple-800 font-medium mb-2">성과</p>
-                              <p className="text-sm text-purple-700">새로운 제작 표준 확립 및 프리미엄 교육 콘텐츠 시장에서의 경쟁력 확보</p>
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">성과</p>
+                              <p>새로운 제작 표준 확립 및 프리미엄 교육 콘텐츠 시장에서의 경쟁력 확보</p>
                             </div>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• 해결한 주요 문제점</h3>
-                          <div className="ml-4 space-y-3">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                              <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
-                                <div className="flex items-center mb-2">
-                                  <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-                                  <p className="text-sm font-medium text-red-800">의사결정 지연</p>
-                                </div>
-                                <p className="text-xs text-red-700">외주 제작으로 인한 커뮤니케이션 비효율성 및 프로젝트 지연</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 해결한 주요 문제점</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-3">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">의사결정 지연</p>
+                                <p className="text-xs">외주 제작으로 인한 커뮤니케이션 비효율성 및 프로젝트 지연</p>
                               </div>
-                              <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
-                                <div className="flex items-center mb-2">
-                                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                  <p className="text-sm font-medium text-orange-800">품질 편차</p>
-                                </div>
-                                <p className="text-xs text-orange-700">연출 방향의 일관성 부족과 예측 불가능한 품질 변동</p>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">품질 편차</p>
+                                <p className="text-xs">연출 방향의 일관성 부족과 예측 불가능한 품질 변동</p>
                               </div>
-                              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-                                <div className="flex items-center mb-2">
-                                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                                  <p className="text-sm font-medium text-yellow-800">브랜드 메시지</p>
-                                </div>
-                                <p className="text-xs text-yellow-700">브랜드 정체성 전달력 저하 및 차별화 요소 부족</p>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">브랜드 메시지</p>
+                                <p className="text-xs">브랜드 정체성 전달력 저하 및 차별화 요소 부족</p>
                               </div>
-                              <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
-                                <div className="flex items-center mb-2">
-                                  <div className="w-2 h-2 bg-gray-500 rounded-full mr-2"></div>
-                                  <p className="text-sm font-medium text-gray-800">비용 증가</p>
-                                </div>
-                                <p className="text-xs text-gray-700">제작 일정 관리 어려움으로 인한 예산 초과 발생</p>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">비용 증가</p>
+                                <p className="text-xs">제작 일정 관리 어려움으로 인한 예산 초과 발생</p>
                               </div>
                             </div>
                           </div>
@@ -2043,74 +2031,52 @@ export default function CombinedLanding() {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• Tech 효율화</h3>
-                          <div className="ml-4 space-y-4">
-                            <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r-lg">
-                              <p className="text-sm text-indigo-800 font-medium mb-2">도전 과제</p>
-                              <p className="text-sm text-indigo-700">50분 분량의 교육 콘텐츠 5개 클래스를 동시에 제작하는 대규모 프로젝트</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• Python, 오픈소스 기반 대규모 편집 워크플로우 구축</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-3">
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">프로젝트 규모</p>
+                              <p>50분 분량의 교육 콘텐츠 5개 클래스를 동시에 제작하는 대규모 프로젝트</p>
                             </div>
                             
-                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg border border-blue-200">
-                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
-                                <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs mr-2">1</div>
-                                문제 분석
-                              </h4>
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="text-xs text-blue-700">• 수동 편집 방식의 한계</div>
-                                <div className="text-xs text-blue-700">• 시간 소요 문제</div>
-                                <div className="text-xs text-blue-700">• 일관된 품질 관리 필요</div>
-                                <div className="text-xs text-blue-700">• 대규모 확장성 요구</div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">Python 자동화 시스템</p>
+                                <ul className="text-xs space-y-1">
+                                  <li>• 자동화 스크립트 개발</li>
+                                  <li>• 병렬 처리를 통한 다중 작업</li>
+                                  <li>• 데이터 자동 분류 및 관리</li>
+                                  <li>• 반복 작업 자동화</li>
+                                </ul>
+                              </div>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">오픈소스 기반 처리</p>
+                                <ul className="text-xs space-y-1">
+                                  <li>• FFmpeg 비디오 처리 시스템</li>
+                                  <li>• 대용량 파일 배치 처리</li>
+                                  <li>• 포맷 통합 자동화</li>
+                                  <li>• 품질 표준화 시스템</li>
+                                </ul>
                               </div>
                             </div>
 
-                            <div className="bg-gradient-to-r from-emerald-50 to-green-50 p-6 rounded-lg border border-emerald-200">
-                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
-                                <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs mr-2">2</div>
-                                기술 솔루션
-                              </h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-white p-4 rounded-lg border border-emerald-100">
-                                  <p className="font-medium text-emerald-800 mb-2">Python 자동화</p>
-                                  <ul className="text-xs text-emerald-700 space-y-1">
-                                    <li>▸ 자동화 시스템 개발</li>
-                                    <li>▸ 병렬 처리 구현</li>
-                                    <li>▸ 데이터 자동 분류</li>
-                                    <li>▸ 반복 작업 최적화</li>
-                                  </ul>
-                                </div>
-                                <div className="bg-white p-4 rounded-lg border border-emerald-100">
-                                  <p className="font-medium text-emerald-800 mb-2">FFmpeg 최적화</p>
-                                  <ul className="text-xs text-emerald-700 space-y-1">
-                                    <li>▸ 맞춤형 시스템 구축</li>
-                                    <li>▸ 고성능 비디오 처리</li>
-                                    <li>▸ 포맷 통합 자동화</li>
-                                    <li>▸ 배치 처리 구현</li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
-                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
-                                <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs mr-2">3</div>
-                                최종 성과
-                              </h4>
+                            <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">효율화 성과</p>
                               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
-                                  <div className="text-lg font-bold text-orange-600">40%</div>
-                                  <div className="text-xs text-orange-700">리드타임 단축</div>
+                                <div className="text-center">
+                                  <div className="text-lg font-bold text-green-700">40%</div>
+                                  <div className="text-xs text-green-600">리드타임 단축</div>
                                 </div>
-                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
-                                  <div className="text-lg font-bold text-orange-600">5개</div>
-                                  <div className="text-xs text-orange-700">동시 제작</div>
+                                <div className="text-center">
+                                  <div className="text-lg font-bold text-green-700">5개</div>
+                                  <div className="text-xs text-green-600">동시 제작</div>
                                 </div>
-                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
-                                  <div className="text-lg font-bold text-orange-600">100%</div>
-                                  <div className="text-xs text-orange-700">품질 일관성</div>
+                                <div className="text-center">
+                                  <div className="text-lg font-bold text-green-700">100%</div>
+                                  <div className="text-xs text-green-600">품질 일관성</div>
                                 </div>
-                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
-                                  <div className="text-lg font-bold text-orange-600">30%</div>
-                                  <div className="text-xs text-orange-700">비용 절감</div>
+                                <div className="text-center">
+                                  <div className="text-lg font-bold text-green-700">30%</div>
+                                  <div className="text-xs text-green-600">비용 절감</div>
                                 </div>
                               </div>
                             </div>
@@ -2190,83 +2156,57 @@ export default function CombinedLanding() {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• 시장 임팩트 및 차별화 전략</h3>
-                          <div className="ml-4 space-y-4">
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 시장 임팩트 및 차별화 전략</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-3">
                             
-                            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
-                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
-                                <div className="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-xs mr-2">🎯</div>
-                                시장 포지셔닝
-                              </h4>
-                              <p className="text-sm text-purple-800 mb-3">프리미엄 교육 콘텐츠 시장에서 새로운 제작 표준 확립</p>
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="bg-white p-3 rounded-lg border border-purple-100">
-                                  <p className="text-xs font-medium text-purple-800">차별화 요소</p>
-                                  <p className="text-xs text-purple-700">시네마틱 품질 + 효율성</p>
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">시장 포지셔닝</p>
+                              <p>프리미엄 교육 콘텐츠 시장에서 새로운 제작 표준 확립</p>
+                              <div className="grid grid-cols-2 gap-3 mt-3">
+                                <div className="text-xs">
+                                  <span className="font-medium">차별화 요소:</span> 시네마틱 품질 + 효율성
                                 </div>
-                                <div className="bg-white p-3 rounded-lg border border-purple-100">
-                                  <p className="text-xs font-medium text-purple-800">경쟁 우위</p>
-                                  <p className="text-xs text-purple-700">인하우스 통합 제작</p>
+                                <div className="text-xs">
+                                  <span className="font-medium">경쟁 우위:</span> 인하우스 통합 제작
                                 </div>
                               </div>
                             </div>
 
-                            <div className="bg-gradient-to-r from-teal-50 to-blue-50 p-6 rounded-lg border border-teal-200">
-                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
-                                <div className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs mr-2">⚡</div>
-                                제작 워크플로우 혁신
-                              </h4>
-                              <div className="bg-white p-4 rounded-lg border border-teal-100">
-                                <div className="flex items-center justify-between text-xs text-teal-700 mb-2">
-                                  <span>기획</span>
-                                  <span>→</span>
-                                  <span>사전제작</span>
-                                  <span>→</span>
-                                  <span>촬영</span>
-                                  <span>→</span>
-                                  <span>편집</span>
-                                  <span>→</span>
-                                  <span>그레이딩</span>
-                                  <span>→</span>
-                                  <span>배포</span>
-                                </div>
-                                <p className="text-xs text-teal-600">전 과정 일관된 품질 기준 적용으로 최적의 결과물 도출</p>
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">제작 워크플로우</p>
+                              <div className="text-xs mb-2">
+                                <strong>기획 → 사전제작 → 촬영 → 편집 → 컬러 그레이딩 → 배포</strong>
                               </div>
+                              <p className="text-xs">전 과정 일관된 품질 기준 적용으로 최적의 결과물 도출</p>
                             </div>
 
-                            <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-lg border border-amber-200">
-                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
-                                <div className="w-6 h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-xs mr-2">📊</div>
-                                성과 지표
-                              </h4>
+                            <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-3">성과 지표</p>
                               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="bg-white p-4 rounded-lg text-center border border-amber-100">
-                                  <div className="text-2xl font-bold text-amber-600 mb-1">40%</div>
-                                  <div className="text-xs text-amber-700">리드타임 단축</div>
-                                  <div className="text-xs text-amber-600 mt-1">제작 효율성 혁신</div>
+                                <div className="text-center">
+                                  <div className="text-2xl font-bold text-green-700 mb-1">40%</div>
+                                  <div className="text-xs text-green-600">리드타임 단축</div>
+                                  <div className="text-xs text-green-600 mt-1">제작 효율성 혁신</div>
                                 </div>
-                                <div className="bg-white p-4 rounded-lg text-center border border-amber-100">
-                                  <div className="text-2xl font-bold text-amber-600 mb-1">10만+</div>
-                                  <div className="text-xs text-amber-700">조회수 달성</div>
-                                  <div className="text-xs text-amber-600 mt-1">시장 반응 검증</div>
+                                <div className="text-center">
+                                  <div className="text-2xl font-bold text-green-700 mb-1">10만+</div>
+                                  <div className="text-xs text-green-600">조회수 달성</div>
+                                  <div className="text-xs text-green-600 mt-1">시장 반응 검증</div>
                                 </div>
-                                <div className="bg-white p-4 rounded-lg text-center border border-amber-100">
-                                  <div className="text-2xl font-bold text-amber-600 mb-1">BP</div>
-                                  <div className="text-xs text-amber-700">홍콩 인증 획득</div>
-                                  <div className="text-xs text-amber-600 mt-1">글로벌 품질 검증</div>
+                                <div className="text-center">
+                                  <div className="text-2xl font-bold text-green-700 mb-1">BP</div>
+                                  <div className="text-xs text-green-600">홍콩 인증 획득</div>
+                                  <div className="text-xs text-green-600 mt-1">글로벌 품질 검증</div>
                                 </div>
                               </div>
                             </div>
 
-                            <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-lg border border-slate-200">
-                              <h4 className="font-medium text-[#282623] mb-3 flex items-center">
-                                <div className="w-6 h-6 bg-slate-500 text-white rounded-full flex items-center justify-center text-xs mr-2">💡</div>
-                                프로젝트 결론
-                              </h4>
-                              <p className="text-sm text-slate-700 leading-relaxed">
-                                Snapask 프로젝트는 <span className="font-medium text-slate-800">전 공정 직접 수행</span>과 <span className="font-medium text-slate-800">기술 혁신</span>을 통해 
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">프로젝트 결론</p>
+                              <p className="text-sm leading-relaxed">
+                                Snapask 프로젝트는 전 공정 직접 수행과 기술 혁신을 통해 
                                 프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였으며, 시네마틱 품질과 효율성을 동시에 달성하는 
-                                <span className="font-medium text-slate-800">새로운 제작 표준</span>을 확립하는 성과를 거두었습니다.
+                                새로운 제작 표준을 확립하는 성과를 거두었습니다.
                               </p>
                             </div>
                           </div>
@@ -2335,11 +2275,11 @@ export default function CombinedLanding() {
                       </div>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Python</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 시스템 구축</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">대규모 편집 워크플로우 자동화</div>
                       </div>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">FFmpeg</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">고성능 비디오 처리</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">오픈소스 비디오 처리 엔진</div>
                       </div>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">DaVinci Resolve</div>
