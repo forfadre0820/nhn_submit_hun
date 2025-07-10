@@ -1677,8 +1677,8 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 제작 리드타임 40% 이상 단축</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">FFmpeg 최적화를 통한 획기적인 효율성 향상</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 제작 비용 40% 이상 단축</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">인하우스 제작 프로세스 전과정 직접 수행으로 획기적인 비용 효율성 달성</p>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프리미엄 콘텐츠 10만+ 조회수 달성</h3>
@@ -1686,7 +1686,7 @@ export default function CombinedLanding() {
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 교육 콘텐츠 시장에서 차별화된 경쟁력 확보</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">40% 이상 제작 리드타임 단축으로 프리미엄 교육 콘텐츠 시장에서 경쟁력 입증</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">인하우스 제작 체계로 40% 이상 제작 비용 단축 및 프리미엄 교육 콘텐츠 시장에서 경쟁력 입증</p>
                         </div>
                       </>
                     )}
@@ -1746,7 +1746,7 @@ export default function CombinedLanding() {
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• FFmpeg 최적화를 통한 획기적인 효율성 향상</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python 자동화와 대규모 편집 워크플로우 구축으로 50분 분량 5개 클래스 동시 제작 시 40% 리드타임 단축 달성</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python 자동화와 대규모 편집 워크플로우 구축으로 50분 분량 5개 클래스 동시 제작 시 40% 제작 비용 단축 달성</p>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 10만+ 조회수 및 홍콩 BP 인증 획득</h3>
