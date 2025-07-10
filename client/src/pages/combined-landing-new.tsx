@@ -1669,10 +1669,7 @@ export default function CombinedLanding() {
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 운영 시스템 구축</h3>
                           <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온오프라인 통합 자동화 시스템과 메타버스 기반 참여 환경 구축 완료</p>
                         </div>
-                        <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• AI 기반 자동화 효과</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python/OpenCV 자동화를 통한 효율적 운영 체계 확립 및 브랜드 메시지 전달 최적화</p>
-                        </div>
+                        
                       </>
                     )}
                     {selectedProject.id === "2" && (
