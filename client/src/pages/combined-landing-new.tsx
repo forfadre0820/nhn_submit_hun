@@ -1972,55 +1972,16 @@ export default function CombinedLanding() {
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 온라인 참여자 경험의 혁신</h3>
-                        <div className="ml-4 space-y-3">
-                          <div className="bg-gray-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">참여 생태계 구축</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">단순한 시청을 넘어 능동적 참여가 가능한 온라인 환경 구축</p>
-                          </div>
-                          <div className="bg-gray-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">AI 기반 기술 최적화</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">자동 화질 조정과 음성 최적화로 기술적 장벽 제거</p>
-                          </div>
-                          <div className="bg-gray-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">실시간 소통 & 접근성</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">실시간 채팅 모니터링과 멀티 플랫폼 동시 송출</p>
-                          </div>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 온라인 참여자 경험의 혁신</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">능동적 참여 생태계 구축, AI 기반 자동 화질/음성 최적화, 실시간 채팅 모니터링, 멀티 플랫폼 동시 송출</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 지능형 콘텐츠 분석 시스템</h3>
-                        <div className="ml-4 space-y-3">
-                          <div className="bg-blue-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">OpenCV 실시간 분석</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">참석자 행동 패턴 파악 및 콘텐츠 동적 최적화</p>
-                          </div>
-                          <div className="bg-blue-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">자동 하이라이트 생성</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">중요한 순간 자동 감지 및 클립 추출</p>
-                          </div>
-                          <div className="bg-blue-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">품질 모니터링</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">이슈 사전 감지를 통한 seamless 경험 보장</p>
-                          </div>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 지능형 콘텐츠 분석 시스템</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">OpenCV 기반 실시간 영상 분석, 참석자 행동 패턴 파악, 자동 하이라이트 클립 생성, 품질 이슈 사전 감지</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 몰입감 있는 메타버스 공간</h3>
-                        <div className="ml-4 space-y-3">
-                          <div className="bg-green-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">브랜드 아이덴티티 반영</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">Gather 플랫폼 위에 브랜드 정체성이 녹아든 가상 공간 설계</p>
-                          </div>
-                          <div className="bg-green-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">게임형 인터랙션</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">자연스러운 탐험과 상호작용이 가능한 환경 구축</p>
-                          </div>
-                          <div className="bg-green-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">새로운 디지털 경험</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">기존 회의실을 넘어선 혁신적 참여 모델 제공</p>
-                          </div>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 몰입감 있는 메타버스 공간</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Gather 플랫폼 브랜드 아이덴티티 반영, 게임형 인터랙션 환경, 자연스러운 탐험과 상호작용</p>
                       </div>
                     </div>
                   </div>
@@ -2037,55 +1998,16 @@ export default function CombinedLanding() {
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 현장과 기술의 완벽한 융합</h3>
-                        <div className="ml-4 space-y-3">
-                          <div className="bg-orange-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">휴먼-테크 조화</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">사람의 따뜻함과 기술의 정확성이 조화를 이루는 현장 환경</p>
-                          </div>
-                          <div className="bg-orange-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">실시간 소통 체계</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">현장 스태프 즉각적 연결 및 자동화된 장비 모니터링</p>
-                          </div>
-                          <div className="bg-orange-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">비상 대응 시스템</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">기술적 안정성과 인간 판단력이 결합된 대응 체계</p>
-                          </div>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장과 기술의 완벽한 융합</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">휴먼-테크 조화 환경, 실시간 소통 시스템, 자동화된 장비 모니터링, 비상 상황 대응 체계</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 예측 가능한 성공을 위한 데이터 과학</h3>
-                        <div className="ml-4 space-y-3">
-                          <div className="bg-purple-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">실시간 데이터 수집</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">참여자 행동 데이터 분석 및 예측 시스템 구축</p>
-                          </div>
-                          <div className="bg-purple-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">Snowflake 대시보드</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">통합 모니터링을 통한 전체 이벤트 흐름 파악</p>
-                          </div>
-                          <div className="bg-purple-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">자동 알림 시스템</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">적절한 타이밍의 조치 안내 및 사전 대응</p>
-                          </div>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 예측 가능한 성공을 위한 데이터 과학</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 참여자 행동 데이터 분석, Snowflake 기반 통합 모니터링 대시보드, 자동 알림 및 사전 대응 시스템</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 위기를 기회로 바꾸는 대응 체계</h3>
-                        <div className="ml-4 space-y-3">
-                          <div className="bg-red-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">탄력적 운영 체계</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">예상치 못한 상황에도 흔들리지 않는 안정적 시스템</p>
-                          </div>
-                          <div className="bg-red-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">솔루션 제공 체계</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">실시간 대응부터 사후 분석까지 체계적 접근</p>
-                          </div>
-                          <div className="bg-red-50 p-3 rounded-lg">
-                            <h4 className="text-xs text-[#282623] font-medium mb-2">학습 기반 개선</h4>
-                            <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">모든 이슈를 성장 기회로 전환하는 프로세스</p>
-                          </div>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 위기를 기회로 바꾸는 대응 체계</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">탄력적 운영 체계, 실시간 솔루션 제공, 사후 분석 기반 지속적 개선, 학습 중심 프로세스</p>
                       </div>
                     </div>
                   </div>
@@ -2103,42 +2025,12 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 업계 패러다임의 전환점</h3>
-                          <div className="ml-4 space-y-3">
-                            <div className="bg-indigo-50 p-3 rounded-lg">
-                              <h4 className="text-xs text-[#282623] font-medium mb-2">업계 기준점 설정</h4>
-                              <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">단순한 성공 사례를 넘어 업계 전체의 새로운 기준 확립</p>
-                            </div>
-                            <div className="bg-indigo-50 p-3 rounded-lg">
-                              <h4 className="text-xs text-[#282623] font-medium mb-2">통합 자동화 시스템</h4>
-                              <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">업계 최초 온오프라인 통합 자동화 플랫폼 구축</p>
-                            </div>
-                            <div className="bg-indigo-50 p-3 rounded-lg">
-                              <h4 className="text-xs text-[#282623] font-medium mb-2">융합 경험 혁신</h4>
-                              <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">메타버스 B2B 모델로 하이브리드를 융합 경험으로 발전</p>
-                            </div>
-                          </div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 업계 패러다임의 전환점</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">업계 전체 새로운 기준점 설정, 온오프라인 통합 자동화 시스템 구축, 메타버스 B2B 융합 경험 혁신</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-3 tracking-tight leading-relaxed">• 지속 가능한 혁신 모델의 구축</h3>
-                          <div className="ml-4 space-y-3">
-                            <div className="bg-teal-50 p-3 rounded-lg">
-                              <h4 className="text-xs text-[#282623] font-medium mb-2">확장 가능한 아키텍처</h4>
-                              <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">14개월 프로젝트로 플랫폼 아키텍처 설계 완성</p>
-                            </div>
-                            <div className="bg-teal-50 p-3 rounded-lg">
-                              <h4 className="text-xs text-[#282623] font-medium mb-2">데이터 기반 의사결정</h4>
-                              <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">실시간 데이터 분석을 통한 즉각적 프로세스 개선</p>
-                            </div>
-                            <div className="bg-teal-50 p-3 rounded-lg">
-                              <h4 className="text-xs text-[#282623] font-medium mb-2">혁신 생태계 구축</h4>
-                              <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">일회성 성과를 넘어 지속 발전 가능한 시스템 확립</p>
-                            </div>
-                            <div className="bg-teal-50 p-3 rounded-lg">
-                              <h4 className="text-xs text-[#282623] font-medium mb-2">업계 표준 설정</h4>
-                              <p className="text-xs text-[#58534e] tracking-tight leading-relaxed">디지털 트랜스포메이션 프로젝트의 새로운 표준 제시</p>
-                            </div>
-                          </div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 지속 가능한 혁신 모델의 구축</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">확장 가능한 플랫폼 아키텍처 설계, 데이터 기반 실시간 의사결정, 지속 발전 혁신 생태계, 디지털 트랜스포메이션 표준 설정</p>
                         </div>
                       </>
                     )}
