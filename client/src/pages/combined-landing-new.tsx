@@ -1737,26 +1737,16 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 개요</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">대규모 행사 기획부터 실시간 이슈 대응까지 온라인과 오프라인을 통합한 콘텐츠 기획·운영 프로젝트입니다. AI/OpenCV 기술을 활용한 자동화 시스템과 메타버스 게임형 환경을 구축하여 차별화된 사용자 경험을 제공했습니다.</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트의 시작점과 도전</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">기존 이벤트 운영의 한계를 극복하고자 시작된 이 프로젝트는 온라인과 오프라인이 분리된 채 진행되던 기업 행사들을 하나의 통합된 경험으로 발전시키는 것이 핵심 과제였습니다. 단순한 하이브리드 방식을 넘어 진정한 융합 모델을 구축해야 했습니다.</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 통합 운영의 핵심 가치</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                            <p>- 온라인과 오프라인 경험의 seamless 연결</p>
-                            <p>- 실시간 데이터 분석을 통한 즉각적 대응</p>
-                            <p>- 기술과 휴먼터치의 최적 조합</p>
-                            <p>- 확장 가능한 플랫폼 기반 서비스 제공</p>
-                          </div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 솔루션의 설계</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">이 문제를 해결하기 위해 AI/OpenCV 기술 기반의 자동화 시스템을 개발하고, Gather 플랫폼을 활용한 메타버스 게임형 환경을 구축했습니다. 이를 통해 참여자들이 온라인과 오프라인을 자유롭게 넘나들며 seamless한 브랜드 경험을 할 수 있는 새로운 모델을 완성했습니다.</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 주요 고객사 수주</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                            <p>- NH농협: 대규모 조합원 교육 행사 기획 및 운영</p>
-                            <p>- 삼성교육재단: 온라인 교육 플랫폼 통합 운영</p>
-                            <p>- 한국출판: 하이브리드 도서 출간 기념 행사</p>
-                            <p>- 기타 2개 고객사: 기업 교육 및 브랜딩 이벤트</p>
-                          </div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시장에서의 성공적 검증</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">이 혁신적 접근법은 시장에서 즉시 검증되었습니다. NH농협의 대규모 조합원 교육, 삼성교육재단의 온라인 플랫폼 통합 운영, 한국출판의 하이브리드 도서 출간 행사 등 5개 주요 고객사가 연이어 프로젝트를 의뢰했고, 각각이 업계 벤치마크가 되는 성과를 거두었습니다.</p>
                         </div>
                       </>
                     )}
@@ -1982,31 +1972,16 @@ export default function CombinedLanding() {
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 실시간 스트리밍 & 자동화</h3>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                          <p>- 고품질 실시간 스트리밍 시스템 구축</p>
-                          <p>- AI 기반 자동 화질 조정 및 음성 최적화</p>
-                          <p>- 실시간 채팅 모니터링 및 자동 응답</p>
-                          <p>- 멀티 플랫폼 동시 송출 관리</p>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 온라인 참여자 경험의 혁신</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온라인 환경에서는 단순한 시청을 넘어 능동적 참여가 가능한 생태계를 구축했습니다. AI 기반 자동 화질 조정과 음성 최적화로 기술적 장벽을 제거하고, 실시간 채팅 모니터링을 통해 참여자와 즉각적으로 소통했습니다. 멀티 플랫폼 동시 송출로 접근성을 극대화했습니다.</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• AI/OpenCV 기술 활용</h3>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                          <p>- OpenCV를 활용한 실시간 영상 분석 및 처리</p>
-                          <p>- AI 기반 참석자 행동 패턴 분석</p>
-                          <p>- 자동 하이라이트 생성 및 클립 추출</p>
-                          <p>- 실시간 품질 모니터링 및 이슈 감지</p>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 지능형 콘텐츠 분석 시스템</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">OpenCV를 활용한 실시간 영상 분석으로 참석자의 행동 패턴을 파악하고, 이를 바탕으로 콘텐츠를 동적으로 최적화했습니다. 중요한 순간을 자동으로 감지해 하이라이트 클립을 생성하고, 품질 이슈가 발생하기 전에 미리 감지하여 seamless한 경험을 보장했습니다.</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 메타버스 게임형 환경</h3>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                          <p>- Gather 플랫폼 기반 게임형 메타버스 환경 구축</p>
-                          <p>- 브랜드 아이덴티티 반영 가상 공간 설계</p>
-                          <p>- 인터랙티브 콘텐츠 요소 구현</p>
-                          <p>- 성취 시스템 및 리워드 프로그램</p>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 몰입감 있는 메타버스 공간</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Gather 플랫폼 위에 브랜드의 정체성이 녹아든 가상 공간을 설계했습니다. 단순한 회의실이 아닌 참여자들이 자연스럽게 탐험하고 상호작용할 수 있는 게임형 환경을 만들어, 평균 체류시간이 200% 증가하는 놀라운 성과를 달성했습니다.</p>
                       </div>
                     </div>
                   </div>
@@ -2023,31 +1998,16 @@ export default function CombinedLanding() {
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장 대응 & 기술 자동화</h3>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                          <p>- 현장 스태프 실시간 소통 시스템</p>
-                          <p>- 자동화된 장비 모니터링 및 제어</p>
-                          <p>- 비상 상황 대응 프로토콜 운영</p>
-                          <p>- 실시간 피드백 수집 및 분석</p>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장과 기술의 완벽한 융합</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">오프라인 현장에서는 사람의 따뜻함과 기술의 정확성이 조화를 이루는 환경을 만들었습니다. 현장 스태프들은 실시간 소통 시스템을 통해 즉각적으로 연결되고, 자동화된 장비 모니터링이 기술적 안정성을 보장하면서도 비상 상황에는 인간의 판단력이 개입할 수 있는 체계를 구축했습니다.</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 데이터 기반 기획</h3>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                          <p>- 개인화 행동 데이터 수집</p>
-                          <p>- 예측 분석을 통한 사전 대응</p>
-                          <p>- 통합 모니터링 대시보드 운영</p>
-                          <p>- 자동 알림 시스템 및 에스컬레이션</p>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 예측 가능한 성공을 위한 데이터 과학</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">모든 참여자의 행동 데이터를 실시간으로 수집하고 분석하여, 문제가 발생하기 전에 미리 대응할 수 있는 예측 시스템을 구축했습니다. Snowflake 기반의 통합 모니터링 대시보드를 통해 전체 이벤트의 흐름을 한눈에 파악하고, 자동 알림 시스템이 적절한 타이밍에 필요한 조치를 안내했습니다.</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 실시간 이슈 대응</h3>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                          <p>- 실시간 솔루션 제공 체계</p>
-                          <p>- 사후 분석 및 개선 프로세스</p>
-                          <p>- 통합 모니터링 대시보드 운영</p>
-                          <p>- 비상 상황 대응 매뉴얼 구축</p>
-                        </div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 위기를 기회로 바꾸는 대응 체계</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">예상치 못한 상황에도 흔들리지 않는 탄력적 운영 체계를 구축했습니다. 실시간 솔루션 제공부터 사후 분석을 통한 지속적 개선까지, 모든 이슈를 학습의 기회로 전환하는 프로세스를 통해 운영 효율성을 30% 향상시켰습니다.</p>
                       </div>
                     </div>
                   </div>
@@ -2065,22 +2025,12 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 임팩트</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                            <p>- 업계 최초 온오프라인 통합 자동화 시스템 구축</p>
-                            <p>- 메타버스 기반 B2B 이벤트 운영 모델 확립</p>
-                            <p>- 데이터 기반 실시간 의사결정 프로세스 도입</p>
-                            <p>- 확장 가능한 플랫폼 아키텍처 설계 및 구현</p>
-                          </div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 업계 패러다임의 전환점</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">이 프로젝트는 단순한 성공 사례를 넘어 업계 전체의 새로운 기준점이 되었습니다. 업계 최초로 온오프라인 통합 자동화 시스템을 구축하고, 메타버스 기반 B2B 이벤트 운영 모델을 확립하면서, 기존의 '하이브리드'라는 단순한 개념을 '융합'이라는 혁신적 경험으로 발전시켰습니다.</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 솔루션</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                            <p>- 온라인과 오프라인 경험의 seamless 연결</p>
-                            <p>- 실시간 데이터 분석을 통한 즉각적 대응</p>
-                            <p>- 기술과 휴먼터치의 최적 조합</p>
-                            <p>- 차별화된 고객 경험 제공</p>
-                          </div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 지속 가능한 혁신 모델의 구축</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">14개월간의 프로젝트를 통해 확장 가능한 플랫폼 아키텍처를 설계하고, 데이터 기반 실시간 의사결정 프로세스를 도입했습니다. 이는 일회성 성과가 아닌 지속적으로 발전할 수 있는 혁신 생태계를 만들어낸 것으로, 향후 디지털 트랜스포메이션 프로젝트의 새로운 표준이 되고 있습니다.</p>
                         </div>
                       </>
                     )}
