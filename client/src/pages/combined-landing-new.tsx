@@ -1663,7 +1663,7 @@ export default function CombinedLanding() {
                       <>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 성공적인 고객사 수주</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단, 한국출판 등 5개 주요 고객사 수주 성공</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단 5개 주요 고객사 수주 성공</p>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 운영 시스템 구축</h3>
