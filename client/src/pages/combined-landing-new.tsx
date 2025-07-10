@@ -266,10 +266,15 @@ export default function CombinedLanding() {
       role: "콘텐츠 기획, 영상 제작",
       tools: ["Video Production", "Educational Content", "Mobile Platform"],
       images: [
-        SnapaskContentImage,
-        PersonalPortfolioImage,
-        VRCulturalHeritageImage,
-        KoreyaHospitalImage,
+        "/attached_assets/image_1752117224002.png",
+        "/attached_assets/image_1752117245939.png",
+        "/attached_assets/image_1752117297358.png",
+        "/attached_assets/image_1752117306935.png",
+        "/attached_assets/image_1752117499684.png",
+        "/attached_assets/image_1752117512169.png",
+        "/attached_assets/image_1752117522606.png",
+        "/attached_assets/image_1752117572091.png",
+        "/attached_assets/image_1752117594242.png",
       ],
     },
     {
@@ -1580,17 +1585,49 @@ export default function CombinedLanding() {
                 {/* 이미지 갤러리 */}
                 <div className="mb-12">
                   <div className="mb-8">
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      {selectedProject.images.map((image, index) => (
-                        <div key={index} className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
-                          <img 
-                            src={image} 
-                            alt={`${selectedProject.title} 이미지 ${index + 1}`}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
+                    {selectedProject.id === "2" ? (
+                      <>
+                        {/* Snapask 프로젝트 - 더 많은 이미지를 위한 특별 레이아웃 */}
+                        <div className="grid grid-cols-2 gap-4 mb-4">
+                          {selectedProject.images.slice(0, 4).map((image, index) => (
+                            <div key={index} className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                              <img 
+                                src={image} 
+                                alt={`${selectedProject.title} 이미지 ${index + 1}`}
+                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                        {/* 추가 이미지들 - 3열 레이아웃 */}
+                        {selectedProject.images.length > 4 && (
+                          <div className="grid grid-cols-3 gap-3 mb-4">
+                            {selectedProject.images.slice(4).map((image, index) => (
+                              <div key={index + 4} className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                                <img 
+                                  src={image} 
+                                  alt={`${selectedProject.title} 이미지 ${index + 5}`}
+                                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      /* 다른 프로젝트들 - 기본 2x2 레이아웃 */
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        {selectedProject.images.map((image, index) => (
+                          <div key={index} className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                            <img 
+                              src={image} 
+                              alt={`${selectedProject.title} 이미지 ${index + 1}`}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <div className="text-center mb-8">
                     <p className="text-sm text-[#58534e] italic">프로젝트 진행 과정 및 결과물</p>
@@ -1645,16 +1682,16 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 학습 완료율 42% 향상</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">프리미엄 콘텐츠의 높은 몰입도로 완료율 증가</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 제작 리드타임 40% 이상 단축</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">FFmpeg 최적화를 통한 획기적인 효율성 향상</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 학습자 만족도 4.7/5.0 달성</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">고품질 교육 콘텐츠로 높은 만족도 확보</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프리미엄 콘텐츠 10만+ 조회수 달성</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">홍콩 BP 인증 획득으로 콘텐츠 품질 검증</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 평균 시청 시간 65% 증가</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">인터랙티브 요소 도입으로 참여도 증대</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 교육 콘텐츠 시장에서 차별화된 경쟁력 확보</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">40% 이상 제작 리드타임 단축으로 프리미엄 교육 콘텐츠 시장에서 경쟁력 입증</p>
                         </div>
                       </>
                     )}
@@ -1693,15 +1730,39 @@ export default function CombinedLanding() {
                   </div>
                 </div>
 
-                {/* 교육기획 & 브랜드전략 */}
+                {/* 프로젝트 배경 및 전략 */}
                 <div className="mb-12">
                   <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                     <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
                       <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
-                      교육기획 & 브랜드전략
+                      프로젝트 배경 및 전략
                     </h2>
                   </div>
                   <div className="space-y-5 mb-8">
+                    {selectedProject.id === "2" && (
+                      <>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 배경</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <p><strong>Snapask 프리미엄 콘텐츠 기획 배경:</strong></p>
+                            <p>- 기존 교육 콘텐츠의 단순 반복 구조로 인한 학습 효과 저하</p>
+                            <p>- 아시아 교육 시장의 급성장과 프리미엄 콘텐츠 수요 증가</p>
+                            <p>- 경쟁 서비스 대비 차별화된 교육 방법론 필요</p>
+                            <p>- 브랜드 메시지 전달 및 시각적 일관성 부족 문제</p>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 해결 전략</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <p><strong>영상 제작 전문성 기반 통합 솔루션:</strong></p>
+                            <p>- 브랜드 전용 LUT 설계로 일관된 시각적 브랜딩 구현</p>
+                            <p>- 시네마틱 색감 적용 (Teal & Orange, Film Emulation)</p>
+                            <p>- 3세대 스토리보드 기법으로 체계적 기획 프로세스 구축</p>
+                            <p>- Full-Stack 제작 환경 구축으로 품질 일관성 확보</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
                     {selectedProject.id === "3" && (
                       <>
                         <div>
@@ -1906,6 +1967,30 @@ export default function CombinedLanding() {
                     </h2>
                   </div>
                   <div className="space-y-5 mb-8">
+                    {selectedProject.id === "2" && (
+                      <>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Tech 효율화 및 자동화</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <p><strong>FFmpeg 최적화를 통한 획기적인 효율성 향상:</strong></p>
+                            <p>- 기존 수동 렌더링 방식에서 자동화된 일괄 처리 시스템으로 전환</p>
+                            <p>- 영상 포맷 변환 및 압축 최적화로 제작 리드타임 40% 이상 단축</p>
+                            <p>- 멀티스레드 처리를 통한 동시 작업 처리 능력 향상</p>
+                            <p>- 품질 손실 최소화 알고리즘 적용으로 프리미엄 품질 유지</p>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Full-Stack 제작 성과</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <p><strong>통합 제작 환경 구축:</strong></p>
+                            <p>- 기획부터 편집까지 모든 단계를 일원화하여 의사결정 속도 개선</p>
+                            <p>- 외주 의존도 최소화로 품질 일관성 및 비용 효율성 달성</p>
+                            <p>- 브랜드 메시지 통합성 확보 및 차별화 요소 강화</p>
+                            <p>- 홍콩 BP 인증 획득으로 국제적 품질 검증 완료</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
                     {selectedProject.id === "3" && (
                       <>
                         <div>
@@ -1963,16 +2048,16 @@ export default function CombinedLanding() {
                         <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">교육 도구</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Articulate 360, Camtasia</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">색상 보정</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">DaVinci Resolve, Custom LUT</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">자동화 도구</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">FFmpeg, Python Scripts</div>
                       </div>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">디자인</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Photoshop, Sketch</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">협업 도구</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Figma, Miro</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Photoshop, Figma</div>
                       </div>
                     </>
                   )}
