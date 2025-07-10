@@ -1522,200 +1522,258 @@ export default function CombinedLanding() {
         </motion.div>
       )}
 
-      {/* 프로젝트 모달 - 레퍼런스 이미지와 동일한 레이아웃 */}
+      {/* 프로젝트 모달 - 이전 코드 구조 적용 */}
       {showProjectModal && selectedProject && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999] flex items-center justify-center p-4">
-          <div 
-            className="bg-white w-full max-w-5xl h-[90vh] rounded-lg shadow-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* 헤더 */}
-            <div className="flex justify-between items-start p-8 pb-4">
-              <div className="flex-1">
-                <h1 className="text-2xl font-bold text-gray-900 mb-6">{selectedProject.title}</h1>
-                
-                {/* 프로젝트 메타 정보 - 레퍼런스 이미지 스타일 */}
-                <div className="grid grid-cols-4 gap-8 text-sm">
-                  <div>
-                    <span className="text-gray-500 block mb-1">Categories</span>
-                    <span className="text-gray-900 font-medium">콘텐츠 기획·제작</span>
-                  </div>
-                  <div>
-                    <span className="text-gray-500 block mb-1">Client</span>
-                    <span className="text-gray-900 font-medium">{selectedProject.client}</span>
-                  </div>
-                  <div>
-                    <span className="text-gray-500 block mb-1">Role</span>
-                    <span className="text-gray-900 font-medium">{selectedProject.role}</span>
-                  </div>
-                  <div>
-                    <span className="text-gray-500 block mb-1">Date</span>
-                    <span className="text-gray-900 font-medium">{selectedProject.year}</span>
-                  </div>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white w-full max-w-5xl h-[90vh] rounded-xl shadow-2xl relative tracking-tight leading-relaxed overflow-hidden">
+            <div className="h-full overflow-y-scroll">
+              <div className="px-8 lg:px-16 pb-2 pt-16">
+                {/* Back 버튼 */}
+                <div className="mb-8">
+                  <button 
+                    onClick={closeProjectModal}
+                    className="text-sm text-[#58534e] hover:text-[#282623] transition-colors flex items-center gap-1"
+                  >
+                    ← Back To All Work
+                  </button>
                 </div>
-              </div>
-              
-              <button 
-                onClick={closeProjectModal}
-                className="text-gray-400 hover:text-gray-600 text-2xl ml-6 mt-1"
-              >
-                ✕
-              </button>
-            </div>
-            
-            {/* 스크롤 가능한 콘텐츠 */}
-            <div className="h-[calc(90vh-140px)] overflow-y-auto px-8">
-              {/* 프로젝트 설명 텍스트 */}
-              <div className="mb-8">
-                <p className="text-gray-700 leading-relaxed">
-                  {selectedProject.id === "1" && "삼성물산의 온라인·오프라인 콘텐츠 기획을 통해 통합적인 브랜드 커뮤니케이션 전략을 수립하고 실행했습니다. 디지털 플랫폼과 오프라인 이벤트를 연계한 효과적인 마케팅 솔루션을 제공하여 브랜드 인지도 향상과 고객 참여도 증대를 달성했습니다."}
-                  {selectedProject.id === "2" && "Snapask의 프리미엄 교육 콘텐츠를 위한 영상 제작 프로젝트로, 학습 효과를 극대화하는 교육용 영상 콘텐츠를 기획하고 제작했습니다. 사용자 중심의 UX를 고려한 영상 구성과 인터랙티브 요소를 통해 학습 참여도를 높이고 교육 성과를 개선했습니다."}
-                  {selectedProject.id === "3" && "삼성물산의 교육 콘텐츠 기획 및 제작 프로젝트로, Screen Life 기법을 활용한 혁신적인 교육 영상을 제작했습니다. 실무 환경과 동일한 화면 환경에서 진행되는 교육을 통해 학습자의 몰입도를 높이고 실제 업무 적용 능력을 향상시켰습니다."}
-                  {selectedProject.id === "4" && "Jinair의 베트남 인플루언서 프로모션 콘텐츠 제작을 통해 현지 시장에 맞춤화된 마케팅 콘텐츠를 기획하고 제작했습니다. 문화적 특성을 고려한 크리에이티브 전략으로 브랜드 인지도를 높이고 현지 고객들의 관심을 성공적으로 유도했습니다."}
-                </p>
-              </div>
 
-              {/* 이미지 갤러리 - 2x2 그리드 */}
-              <div className="mb-8">
-                <div className="grid grid-cols-2 gap-4">
-                  {selectedProject.images.map((image, index) => (
-                    <div key={index} className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
-                      <img 
-                        src={image} 
-                        alt={`${selectedProject.title} 이미지 ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
+                {/* 제목 및 기본 정보 */}
+                <div className="mb-12">
+                  <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <div className="lg:col-span-3">
+                      <h1 className="text-4xl lg:text-5xl text-[#282623] leading-tight mb-0 font-semibold">
+                        {selectedProject.title}
+                      </h1>
                     </div>
-                  ))}
-                </div>
-                <div className="text-center mt-4 text-sm text-gray-600">
-                  프로젝트 진행 과정 및 결과물 이미지
+                  </div>
+                  
+                  <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                      <div>
+                        <h5 className="opacity-50 text-base font-normal mb-2">Categories</h5>
+                        <p className="text-sm text-[#282623]">콘텐츠 기획·제작</p>
+                      </div>
+                      <div>
+                        <h5 className="opacity-50 text-base font-normal mb-2">Client</h5>
+                        <p className="text-sm text-[#282623]">{selectedProject.client}</p>
+                      </div>
+                      <div>
+                        <h5 className="opacity-50 text-base font-normal mb-2">Role</h5>
+                        <p className="text-sm text-[#282623]">{selectedProject.role}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
+                        {selectedProject.id === "1" && "삼성물산의 온라인·오프라인 콘텐츠 기획을 통해 통합적인 브랜드 커뮤니케이션 전략을 수립하고 실행했습니다. 디지털 플랫폼과 오프라인 이벤트를 연계한 효과적인 마케팅 솔루션을 제공하여 브랜드 인지도 향상과 고객 참여도 증대를 달성했습니다."}
+                        {selectedProject.id === "2" && "Snapask의 프리미엄 교육 콘텐츠를 위한 영상 제작 프로젝트로, 학습 효과를 극대화하는 교육용 영상 콘텐츠를 기획하고 제작했습니다. 사용자 중심의 UX를 고려한 영상 구성과 인터랙티브 요소를 통해 학습 참여도를 높이고 교육 성과를 개선했습니다."}
+                        {selectedProject.id === "3" && "삼성물산의 교육 콘텐츠 기획 및 제작 프로젝트로, Screen Life 기법을 활용한 혁신적인 교육 영상을 제작했습니다. 실무 환경과 동일한 화면 환경에서 진행되는 교육을 통해 학습자의 몰입도를 높이고 실제 업무 적용 능력을 향상시켰습니다."}
+                        {selectedProject.id === "4" && "Jinair의 베트남 인플루언서 프로모션 콘텐츠 제작을 통해 현지 시장에 맞춤화된 마케팅 콘텐츠를 기획하고 제작했습니다. 문화적 특성을 고려한 크리에이티브 전략으로 브랜드 인지도를 높이고 현지 고객들의 관심을 성공적으로 유도했습니다."}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* 프로젝트 상세 섹션들 - 레퍼런스 이미지와 동일한 구조 */}
-              <div className="space-y-6">
+              {/* 메인 콘텐츠 */}
+              <div className="px-8 lg:px-16 pb-12">
+                {/* 이미지 갤러리 */}
+                <div className="mb-12">
+                  <div className="mb-8">
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      {selectedProject.images.map((image, index) => (
+                        <div key={index} className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
+                          <img 
+                            src={image} 
+                            alt={`${selectedProject.title} 이미지 ${index + 1}`}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-center mb-8">
+                    <p className="text-sm text-[#58534e] italic">프로젝트 진행 과정 및 결과물</p>
+                  </div>
+                </div>
+
                 {/* 프로젝트 기간 */}
-                <div>
-                  <h3 className="text-sm font-bold mb-2 text-gray-900">● 프로젝트 기간</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {selectedProject.id === "1" && "2024.01 - 2024.07 (7개월)"}
-                    {selectedProject.id === "2" && "2023.03 - 2023.12 (10개월)"}
-                    {selectedProject.id === "3" && "2023.05 - 2024.03 (11개월)"}
-                    {selectedProject.id === "4" && "2024.08 - 2024.11 (4개월)"}
-                  </p>
-                </div>
-
-                {/* 주요 업무 */}
-                <div>
-                  <h3 className="text-sm font-bold mb-2 text-gray-900">● 주요 업무</h3>
-                  <div className="space-y-1">
+                <div className="mb-12">
+                  <div className="mb-6">
+                    <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">1</span>
+                      프로젝트 기간
+                    </h2>
+                  </div>
+                  <div className="space-y-5 mb-8">
                     {selectedProject.id === "1" && (
                       <>
-                        <p className="text-sm text-gray-700">- 온·오프라인 통합 콘텐츠 기획 및 전략 수립</p>
-                        <p className="text-sm text-gray-700">- 채널별 최적화 콘텐츠 제작 및 관리</p>
-                        <p className="text-sm text-gray-700">- 브랜드 일관성 유지를 위한 가이드라인 개발</p>
-                        <p className="text-sm text-gray-700">- 성과 측정 시스템 구축 및 데이터 분석</p>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 브랜드 인지도 35% 향상</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">통합 콘텐츠 전략을 통한 브랜드 노출 확대</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 고객 참여도 48% 증가</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온·오프라인 연계 마케팅으로 고객 참여 활성화</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 콘텐츠 제작 효율성 40% 향상</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">체계적인 제작 프로세스 구축으로 효율성 개선</p>
+                        </div>
                       </>
                     )}
                     {selectedProject.id === "2" && (
                       <>
-                        <p className="text-sm text-gray-700">- 프리미엄 교육 영상 콘텐츠 기획 및 제작</p>
-                        <p className="text-sm text-gray-700">- 학습자 중심의 UX/UI 디자인 적용</p>
-                        <p className="text-sm text-gray-700">- 인터랙티브 요소를 통한 참여도 증대</p>
-                        <p className="text-sm text-gray-700">- 학습 효과 측정 및 개선 방안 수립</p>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 학습 완료율 42% 향상</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">프리미엄 콘텐츠의 높은 몰입도로 완료율 증가</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 학습자 만족도 4.7/5.0 달성</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">고품질 교육 콘텐츠로 높은 만족도 확보</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 평균 시청 시간 65% 증가</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">인터랙티브 요소 도입으로 참여도 증대</p>
+                        </div>
                       </>
                     )}
                     {selectedProject.id === "3" && (
                       <>
-                        <p className="text-sm text-gray-700">- Screen Life 기법을 활용한 교육 콘텐츠 기획</p>
-                        <p className="text-sm text-gray-700">- 실무 환경 기반 시나리오 개발 및 연출</p>
-                        <p className="text-sm text-gray-700">- 사용자 행동 분석 기반 몰입도 향상 전략</p>
-                        <p className="text-sm text-gray-700">- 교육 효과 측정 및 지속적 개선</p>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 교육 효과 58% 향상</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Screen Life 기법으로 실무 연결성 강화</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 학습자 몰입도 67% 증가</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">화면 기반 몰입형 교육으로 집중도 향상</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 실무 적용도 45% 개선</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실제 업무 환경과 동일한 교육 환경 제공</p>
+                        </div>
                       </>
                     )}
                     {selectedProject.id === "4" && (
                       <>
-                        <p className="text-sm text-gray-700">- 베트남 시장 분석 및 현지화 전략 수립</p>
-                        <p className="text-sm text-gray-700">- 인플루언서 선정 및 콘텐츠 기획</p>
-                        <p className="text-sm text-gray-700">- 문화적 특성을 반영한 크리에이티브 개발</p>
-                        <p className="text-sm text-gray-700">- 캠페인 성과 분석 및 최적화</p>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 브랜드 인지도 52% 향상</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">현지 인플루언서를 통한 브랜드 노출 확대</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현지 참여도 73% 증가</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">문화적 특성을 반영한 콘텐츠로 참여 증대</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• ROI 180% 달성</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">효과적인 현지화 전략으로 높은 투자 수익률</p>
+                        </div>
                       </>
                     )}
                   </div>
                 </div>
 
-                {/* 핵심 성과 */}
-                <div>
-                  <h3 className="text-sm font-bold mb-2 text-gray-900">● 핵심 성과</h3>
-                  <div className="space-y-1">
-                    {selectedProject.id === "1" && (
-                      <>
-                        <p className="text-sm text-gray-700">• 브랜드 인지도 35% 향상</p>
-                        <p className="text-sm text-gray-700">• 고객 참여도 48% 증가</p>
-                        <p className="text-sm text-gray-700">• 온·오프라인 연계 효과 63% 개선</p>
-                      </>
-                    )}
-                    {selectedProject.id === "2" && (
-                      <>
-                        <p className="text-sm text-gray-700">• 학습 완료율 42% 향상</p>
-                        <p className="text-sm text-gray-700">• 학습자 만족도 4.7/5.0 달성</p>
-                        <p className="text-sm text-gray-700">• 평균 시청 시간 65% 증가</p>
-                      </>
-                    )}
-                    {selectedProject.id === "3" && (
-                      <>
-                        <p className="text-sm text-gray-700">• 교육 효과 58% 향상</p>
-                        <p className="text-sm text-gray-700">• 학습자 몰입도 67% 증가</p>
-                        <p className="text-sm text-gray-700">• 실무 적용도 45% 개선</p>
-                      </>
-                    )}
-                    {selectedProject.id === "4" && (
-                      <>
-                        <p className="text-sm text-gray-700">• 브랜드 인지도 52% 향상</p>
-                        <p className="text-sm text-gray-700">• 현지 참여도 73% 증가</p>
-                        <p className="text-sm text-gray-700">• ROI 180% 달성</p>
-                      </>
-                    )}
-                  </div>
+                {/* 활용 기술 */}
+                <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                  <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">3</span>
+                    활용 기술
+                  </h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
+                  {selectedProject.id === "1" && (
+                    <>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Adobe Creative Suite</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects, Photoshop</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">디자인 도구</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Illustrator, Figma</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">프로젝트 관리</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Notion, Slack</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">분석 도구</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Google Analytics</div>
+                      </div>
+                    </>
+                  )}
+                  {selectedProject.id === "2" && (
+                    <>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">영상 제작</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">교육 도구</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Articulate 360, Camtasia</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">디자인</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Photoshop, Sketch</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">협업 도구</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Figma, Miro</div>
+                      </div>
+                    </>
+                  )}
+                  {selectedProject.id === "3" && (
+                    <>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Screen Life 제작</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">OBS Studio, ScreenFlow</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">영상 편집</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">데이터 분석</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, Tableau</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">UX 디자인</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Figma, Sketch</div>
+                      </div>
+                    </>
+                  )}
+                  {selectedProject.id === "4" && (
+                    <>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">영상 제작</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, Final Cut Pro</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">소셜미디어</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Facebook Creator Studio</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">분석 도구</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Google Analytics</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">디자인 도구</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Photoshop, Canva</div>
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                {/* 사용 도구 */}
-                <div>
-                  <h3 className="text-sm font-bold mb-2 text-gray-900">● 사용 도구</h3>
-                  <div className="space-y-1">
-                    {selectedProject.id === "1" && (
-                      <>
-                        <p className="text-sm text-gray-700">영상 제작: Premiere Pro, After Effects</p>
-                        <p className="text-sm text-gray-700">그래픽 디자인: Photoshop, Illustrator</p>
-                        <p className="text-sm text-gray-700">프로젝트 관리: Notion, Slack</p>
-                      </>
-                    )}
-                    {selectedProject.id === "2" && (
-                      <>
-                        <p className="text-sm text-gray-700">영상 제작: Premiere Pro, After Effects</p>
-                        <p className="text-sm text-gray-700">교육 도구: Articulate 360, Camtasia</p>
-                        <p className="text-sm text-gray-700">디자인: Photoshop, Sketch</p>
-                      </>
-                    )}
-                    {selectedProject.id === "3" && (
-                      <>
-                        <p className="text-sm text-gray-700">Screen Life: OBS Studio, ScreenFlow</p>
-                        <p className="text-sm text-gray-700">영상 편집: Premiere Pro, After Effects</p>
-                        <p className="text-sm text-gray-700">데이터 분석: Python, Tableau</p>
-                      </>
-                    )}
-                    {selectedProject.id === "4" && (
-                      <>
-                        <p className="text-sm text-gray-700">영상 제작: Premiere Pro, Final Cut Pro</p>
-                        <p className="text-sm text-gray-700">소셜미디어: Facebook Creator Studio</p>
-                        <p className="text-sm text-gray-700">분석 도구: Google Analytics</p>
-                      </>
-                    )}
-                  </div>
-                </div>
+                <div className="pb-8"></div>
               </div>
             </div>
+
+            {/* 닫기 버튼 */}
+            <button 
+              onClick={closeProjectModal}
+              className="absolute top-6 right-6 w-10 h-10 bg-white/80 hover:bg-white text-gray-600 hover:text-gray-800 rounded-full flex items-center justify-center transition-all shadow-lg z-10"
+            >
+              <span className="text-xl leading-none">×</span>
+            </button>
           </div>
         </div>
       )}
