@@ -1706,15 +1706,31 @@ export default function CombinedLanding() {
                       <>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 사용자 행동 분석 및 대응 전략</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">재생 중 창 최소화, 낮은 참여도, 단순 반복 교육 회피, 5초 이내 주의 집중 분산 현상 분석</p>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p><strong>주요 사용자 행동 패턴:</strong></p>
+                            <p>- 재생 중 창 최소화 및 다른 업무 처리</p>
+                            <p>- 교육 콘텐츠에 대한 낮은 참여도</p>
+                            <p>- 단순 반복 교육에 대한 회피 현상</p>
+                            <p>- 5초 이내 주의 집중 분산</p>
+                          </div>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 맞춤형 교육 전략</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Screen Life 포맷을 활용한 몰입도 향상, 자동 주의 집중 유도 시스템 구축, 복잡한 메시지의 단순화 및 시각화, 상호작용 요소를 통한 참여도 증대</p>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p>- Screen Life 포맷을 활용한 몰입도 향상</p>
+                            <p>- 자동 주의 집중 유도 시스템 구축</p>
+                            <p>- 복잡한 메시지의 단순화 및 시각화</p>
+                            <p>- 상호작용 요소를 통한 참여도 증대</p>
+                          </div>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 브랜드 메시지 전달 최적화</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">교육 콘텐츠 내 자연스러운 브랜드 메시지 통합, 사용자 경험을 해치지 않는 브랜드 노출 전략, 교육 효과와 브랜드 인지도 동시 달성</p>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p>- 교육 콘텐츠 내 자연스러운 브랜드 메시지 통합</p>
+                            <p>- 사용자 경험을 해치지 않는 브랜드 노출 전략</p>
+                            <p>- 교육 효과와 브랜드 인지도 동시 달성</p>
+                            <p>- 타겟 오디언스별 맞춤형 메시지 개발</p>
+                          </div>
                         </div>
                       </>
                     )}
@@ -1834,6 +1850,35 @@ export default function CombinedLanding() {
                     </>
                   )}
                 </div>
+
+                {/* PM & 성과 (삼성 프로젝트만) */}
+                {selectedProject.id === "3" && (
+                  <div className="mb-12">
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">6</span>
+                        PM & 성과
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">🏆 경쟁사 대비 30% 높은 단가임에도 불구하고 수주 성공</h3>
+                      </div>
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 관리 성과</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실제 업무 환경을 반영한 효과적인 교육 콘텐츠 제작, 사용자 행동 분석 및 데이터 기반 의사결정, 프로젝트 일정 및 품질 관리 최적화</p>
+                      </div>
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 창의적 특성 확립</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">교육 콘텐츠 분야의 차별화된 접근 방식 개발, Screen Life 장르의 전문적 활용 능력 구축, 현실감 있는 교육 환경 구성 노하우 축적, 사용자 경험 중심의 콘텐츠 제작 프로세스 정립</p>
+                      </div>
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 주요 경쟁 우위 요소</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">사용자 친화적 분석 및 맞춤형 솔루션 제공, 창의적 기법과 사용자 행동 분석의 효과적 결합, 교육 효과와 브랜드 메시지 전달의 균형있는 통합, 지속 가능한 교육 콘텐츠 제작 방법론 구축</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 <div className="pb-8"></div>
               </div>
