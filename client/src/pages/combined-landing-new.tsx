@@ -970,9 +970,7 @@ export default function CombinedLanding() {
                   </h5>
                   <p
                     className={`text-gray-900 font-medium ${FONT_SIZES.small}`}
-                  >
-                    YouTube & 온라인
-                  </p>
+                  >온라인, 오프라인 </p>
                 </div>
               </div>
             </div>
@@ -1521,7 +1519,6 @@ export default function CombinedLanding() {
           </motion.div>
         </motion.div>
       )}
-
       {/* 프로젝트 모달 - 이전 코드 구조 적용 */}
       {showProjectModal && selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -1611,7 +1608,7 @@ export default function CombinedLanding() {
                       </>
                     ) : (
                       /* 다른 프로젝트들 - 기본 2x2 레이아웃 */
-                      <div className="grid grid-cols-2 gap-4 mb-4">
+                      (<div className="grid grid-cols-2 gap-4 mb-4">
                         {selectedProject.images.map((image, index) => (
                           <div key={index} className="aspect-[4/3] bg-[#b9b8b6] overflow-hidden rounded-lg">
                             <img 
@@ -1621,7 +1618,7 @@ export default function CombinedLanding() {
                             />
                           </div>
                         ))}
-                      </div>
+                      </div>)
                     )}
                   </div>
                   <div className="text-center mb-8">
