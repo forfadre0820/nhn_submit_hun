@@ -1707,8 +1707,7 @@ export default function CombinedLanding() {
                     delay: ANIMATION_DURATIONS.stagger * 4,
                   }}
                 >
-                  {/* 각 프로젝트별 상세 내용 - 디버깅 로그 */}
-                  {console.log("현재 선택된 프로젝트 ID:", selectedProject.id)}
+                  {/* 각 프로젝트별 상세 내용 */}
                   {selectedProject.id === "1" && (
                     <div>
                       {/* Samsung 온오프라인 콘텐츠 기획 */}
