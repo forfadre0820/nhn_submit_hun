@@ -266,10 +266,10 @@ export default function CombinedLanding() {
       role: "콘텐츠 기획, 영상 제작",
       tools: ["BMPCC 6K", "브랜드 LUT", "Python", "FFmpeg", "DaVinci Resolve", "Premiere Pro", "After Effects"],
       images: [
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80",
+        "/attached_assets/image_1752122592516.png",
+        "/attached_assets/image_1752122595670.png",
+        "/attached_assets/image_1752122598334.png",
+        "/attached_assets/image_1752122607322.png",
       ],
     },
     {
