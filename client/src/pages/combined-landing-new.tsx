@@ -1560,7 +1560,7 @@ export default function CombinedLanding() {
                     </div>
                     <div>
                       <p className="text-[#282623] text-sm tracking-tight leading-relaxed">
-                        {selectedProject.id === "1" && "삼성그룹의 다양한 온라인·오프라인 콘텐츠 기획 및 운영을 실행했습니다. 디지털 플랫폼과 오프라인 이벤트를 연계, 자동화 프로세스, AI 그래픽 리소스 고도화를 통해 임직원들 참여도 증대를 달성했으며 1년이 넘는 기간동안 NPS 4.5+ 을 달성하였습니다."}
+                        {selectedProject.id === "1" && "삼성물산의 온라인·오프라인 콘텐츠 기획을 통해 통합적인 브랜드 커뮤니케이션 전략을 수립하고 실행했습니다. 디지털 플랫폼과 오프라인 이벤트를 연계한 효과적인 마케팅 솔루션을 제공하여 브랜드 인지도 향상과 고객 참여도 증대를 달성했습니다."}
                         {selectedProject.id === "2" && "Snapask의 프리미엄 교육 콘텐츠를 위한 영상 제작 프로젝트로, 학습 효과를 극대화하는 교육용 영상 콘텐츠를 기획하고 제작했습니다. 사용자 중심의 UX를 고려한 영상 구성과 인터랙티브 요소를 통해 학습 참여도를 높이고 교육 성과를 개선했습니다."}
                         {selectedProject.id === "3" && "삼성물산의 교육 콘텐츠 기획 및 브랜드 전략을 통해 효과적인 교육 메시지 전달을 위한 Screen Life 연출 기법을 활용하여 교육 콘텐츠를 제작하고, 사용자 행동 분석을 통한 맞춤형 교육 전략을 수립했습니다. 경쟁사 대비 30% 높은 단가임에도 불구하고 수주에 성공하여 상업적 가치를 입증했습니다."}
                         {selectedProject.id === "4" && "Jinair의 베트남 인플루언서 프로모션 콘텐츠 제작을 통해 현지 시장에 맞춤화된 마케팅 콘텐츠를 기획하고 제작했습니다. 문화적 특성을 고려한 크리에이티브 전략으로 브랜드 인지도를 높이고 현지 고객들의 관심을 성공적으로 유도했습니다."}
@@ -1656,8 +1656,8 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 메타버스 온라인 콘텐츠 성공적인 고객사 수주</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단 등 5개 주요 고객사 수주 성공</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 성공적인 고객사 수주</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단, 한국출판 등 5개 주요 고객사 수주 성공</p>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 운영 시스템 구축</h3>
@@ -1732,16 +1732,16 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 시작점</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온오프라인 분리 문제, 통합 경험 구축, 하이브리드 융합 모델</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트의 시작점과 도전</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">기존 이벤트 운영의 한계를 극복하고자 시작된 프로젝트입니다. 온라인과 오프라인이 분리된 채 진행되던 기업 행사를 통합된 경험으로 발전시키는 것이 핵심 과제였습니다. 단순한 하이브리드 방식을 넘어 진정한 융합 모델 구축을 목표로 했습니다.</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 솔루션 설계</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">AI/OpenCV 자동화 시스템, Gather 메타버스 환경, 새로운 브랜드 경험 모델</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 솔루션의 설계</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">이 문제를 해결하기 위해 AI/OpenCV 기술 기반의 자동화 시스템을 개발했습니다. Gather 플랫폼을 활용한 메타버스 게임형 환경도 구축했습니다. 이를 통해 참여자들이 온라인과 오프라인을 자유롭게 넘나드는 새로운 브랜드 경험 모델을 완성했습니다.</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시장 검증</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협 조합원 교육, 삼성교육재단 플랫폼 운영, 한국출판 하이브리드 행사, 5개 주요 고객사 연이은 의뢰</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시장에서의 성공적 검증</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">이 혁신적 접근법은 시장에서 즉시 검증되었습니다. NH농협의 대규모 조합원 교육, 삼성교육재단의 온라인 플랫폼 통합 운영, 한국출판의 하이브리드 도서 출간 행사 등 5개 주요 고객사가 연이어 프로젝트를 의뢰했습니다. 각각이 업계 벤치마크가 되는 성과를 거두었습니다.</p>
                         </div>
                       </>
                     )}
@@ -1749,15 +1749,15 @@ export default function CombinedLanding() {
                       <>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 목표</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">외주 제작 한계 극복, 인하우스 제작 체계, 프리미엄 교육 콘텐츠 차별화</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">외주 제작의 한계를 극복하고 전 공정 인하우스 제작 체계를 구축하여 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지 전달</p>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 핵심 전략</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">시네마틱 품질, 제작 효율성, Python 자동화 시스템, 대규모 워크플로우</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">시네마틱 품질과 제작 효율성을 동시에 달성하는 새로운 제작 표준 확립 및 Python 자동화 시스템을 통한 대규모 워크플로우 구축</p>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 기술적 접근</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">BMPCC 6K 시네마틱 촬영, 브랜드 전용 LUT 설계, FFmpeg 최적화, 50분 5개 클래스 동시 제작</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">BMPCC 6K 시네마틱 촬영, 브랜드 전용 LUT 설계, FFmpeg 최적화를 통한 50분 분량 5개 클래스 동시 제작 시스템 구축</p>
                         </div>
                       </>
                     )}
@@ -1846,19 +1846,19 @@ export default function CombinedLanding() {
                               <div className="space-y-3 text-sm">
                                 <div className="flex items-start space-x-2">
                                   <span className="text-[#ef4444] font-bold">1.</span>
-                                  <span className="text-[#58534e]">5초 이내 주의 집중 분산, 교육 효과 저하</span>
+                                  <span className="text-[#58534e]">5초 이내 주의 집중 분산 - 초기 집중도가 급격히 감소하여 교육 효과 저하</span>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                   <span className="text-[#ef4444] font-bold">2.</span>
-                                  <span className="text-[#58534e]">창 최소화, 멀티태스킹, 학습 방해</span>
+                                  <span className="text-[#58534e]">창 최소화 및 다른 업무 처리 - 재생 중 멀티태스킹으로 인한 학습 방해</span>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                   <span className="text-[#ef4444] font-bold">3.</span>
-                                  <span className="text-[#58534e]">참여도 급격 하락, 흥미 상실</span>
+                                  <span className="text-[#58534e]">참여도 급격 하락 - 중간 지점 이후 교육 콘텐츠에 대한 흥미 상실</span>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                   <span className="text-[#ef4444] font-bold">4.</span>
-                                  <span className="text-[#58534e]">반복 교육 회피, 저항 현상</span>
+                                  <span className="text-[#58534e]">단순 반복 교육 회피 - 기존 교육 방식에 대한 저항 및 회피 현상</span>
                                 </div>
                               </div>
                             </div>
@@ -1935,16 +1935,21 @@ export default function CombinedLanding() {
                             
                             <div className="space-y-2 text-sm">
                               <p className="text-[#282623] font-medium">핵심 전략:</p>
-                              <p>- Screen Life 포맷, 몰입도 향상</p>
-                              <p>- 자동 주의 집중 유도 시스템</p>
-                              <p>- 메시지 단순화, 시각화</p>
-                              <p>- 상호작용 요소, 참여도 증대</p>
+                              <p>- Screen Life 포맷을 활용한 몰입도 향상</p>
+                              <p>- 자동 주의 집중 유도 시스템 구축</p>
+                              <p>- 복잡한 메시지의 단순화 및 시각화</p>
+                              <p>- 상호작용 요소를 통한 참여도 증대</p>
                             </div>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 브랜드 메시지 최적화</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">자연스러운 브랜드 통합, 사용자 경험 보호, 교육 효과와 브랜드 인지도 동시 달성, 타겟별 맞춤형 메시지</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 브랜드 메시지 전달 최적화</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p>- 교육 콘텐츠 내 자연스러운 브랜드 메시지 통합</p>
+                            <p>- 사용자 경험을 해치지 않는 브랜드 노출 전략</p>
+                            <p>- 교육 효과와 브랜드 인지도 동시 달성</p>
+                            <p>- 타겟 오디언스별 맞춤형 메시지 개발</p>
+                          </div>
                         </div>
                       </>
                     )}
@@ -2028,8 +2033,8 @@ export default function CombinedLanding() {
                       <>
 
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 성과 검증</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">10만+ 조회수, 시장 반응 검증, 홍콩 BP 인증, 글로벌 품질 표준</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 10만+ 조회수 달성</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">프리미엄 교육 콘텐츠의 시장 반응 검증 및 홍콩 BP 인증 획득으로 글로벌 품질 표준 확립</p>
                         </div>
 
 
@@ -2038,12 +2043,19 @@ export default function CombinedLanding() {
                     {selectedProject.id === "3" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Screen Life 포맷</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실제 화면 활용 영상 기법, 실제 업무 환경 표현, 사용자 인터페이스 교육, 화면 분할 멀티태스킹 재현, 직관적 몰입 학습</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Screen Life 포맷 활용</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <p><strong>Screen Life란?</strong> 실제 컴퓨터나 모바일 화면을 그대로 활용하여 이야기를 전개하는 영상 기법</p>
+                            <p><strong>교육 콘텐츠 적용:</strong></p>
+                            <p>- 실제 업무 환경 (브라우저, 프로그램, 앱)을 그대로 화면에 표현</p>
+                            <p>- 사용자가 실제로 마주할 인터페이스를 사용한 교육</p>
+                            <p>- 화면 분할, 멀티태스킹 상황 등 현실적인 작업 환경 재현</p>
+                            <p>- 직관적이고 몰입도 높은 학습 경험 제공</p>
+                          </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시각청각 메시지 전달</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">화면 애니메이션, 동적 학습 경험, 사운드 효과 활용, 최소 요소 최대 효과, 효율적 커뮤니케이션</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시각적 & 청각적 메시지 전달</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">화면 애니메이션을 통한 동적 학습 경험 제공, 상황별 적절한 사운드 효과 활용, 최소한의 시각적 요소로 최대 효과 달성, 효율적인 커뮤니케이션 구조 설계</p>
                         </div>
                       </>
                     )}
