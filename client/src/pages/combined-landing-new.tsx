@@ -2117,16 +2117,16 @@ export default function CombinedLanding() {
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 온라인 참여자 경험의 혁신</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">능동적 참여 생태계 구축, AI 기반 자동 화질/음성 최적화, 실시간 채팅 모니터링, 멀티 플랫폼 동시 송출</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 온라인 참여자 경험</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 채팅 모니터링, 멀티 플랫폼 동시 송출, 화질/음성 최적화</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 지능형 콘텐츠 분석 시스템</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">OpenCV 기반 실시간 영상 분석, 참석자 행동 패턴 파악, 자동 하이라이트 클립 생성, 품질 이슈 사전 감지</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 콘텐츠 분석 시스템</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">OpenCV 기반 실시간 영상 분석, 참석자 행동 패턴 파악, 자동 하이라이트 클립 생성</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 몰입감 있는 메타버스 공간</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Gather 플랫폼 브랜드 아이덴티티 반영, 게임형 인터랙션 환경, 자연스러운 탐험과 상호작용</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 메타버스 공간</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Gather 플랫폼 기반 게임형 환경, 인터랙티브 콘텐츠 시스템</p>
                       </div>
                     </div>
                   </div>
@@ -2143,16 +2143,16 @@ export default function CombinedLanding() {
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장과 기술의 완벽한 융합</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">휴먼-테크 조화 환경, 실시간 소통 시스템, 자동화된 장비 모니터링, 비상 상황 대응 체계</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장 운영 시스템</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 소통 시스템, 자동화된 장비 모니터링, 비상 상황 대응 체계</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 예측 가능한 성공을 위한 데이터 과학</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 참여자 행동 데이터 분석, Snowflake 기반 통합 모니터링 대시보드, 자동 알림 및 사전 대응 시스템</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Python OCR 기반 모니터링 시스템</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 화면 분석 및 텍스트 인식을 통한 자동 모니터링, 채팅 로그 분석 및 상황별 자동 대응 시스템</p>
                       </div>
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 위기를 기회로 바꾸는 대응 체계</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">탄력적 운영 체계, 실시간 솔루션 제공, 사후 분석 기반 지속적 개선, 학습 중심 프로세스</p>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 대응 체계</h3>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 솔루션 제공, 사후 분석 기반 지속적 개선</p>
                       </div>
                     </div>
                   </div>
@@ -2170,12 +2170,12 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 업계 패러다임의 전환점</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">업계 전체 새로운 기준점 설정, 온오프라인 통합 자동화 시스템 구축, 메타버스 B2B 융합 경험 혁신</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 온오프라인 통합 운영</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온라인 플랫폼과 오프라인 이벤트를 연계한 통합 운영 시스템 구축, 실시간 모니터링 및 대응 체계 완성</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 지속 가능한 혁신 모델의 구축</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">확장 가능한 플랫폼 아키텍처 설계, 데이터 기반 실시간 의사결정, 지속 발전 혁신 생태계, 디지털 트랜스포메이션 표준 설정</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 자동화 시스템 구축</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python OCR 기반 실시간 모니터링 프로그램 개발, 채팅 로그 분석 및 자동 알림 시스템 구축</p>
                         </div>
                       </>
                     )}
@@ -2243,8 +2243,8 @@ export default function CombinedLanding() {
                         <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OpenCV, AI 기술</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">데이터 인프라</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Snowflake 기반 데이터 웨어하우스<br/>실시간 데이터 파이프라인</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">OCR 모니터링</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python OCR 실시간 분석<br/>채팅 로그 자동 처리</div>
                       </div>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">메타버스 플랫폼</div>
