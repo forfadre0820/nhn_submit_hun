@@ -1784,24 +1784,24 @@ export default function CombinedLanding() {
                                 
                                 {/* 주요 포인트 - 곡선 위에 정확히 위치 */}
                                 <circle cx="150" cy="55" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
-                                <rect x="110" y="15" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
-                                <text x="150" y="25" textAnchor="middle" className="text-xs fill-[#374151] font-medium">5초 이내</text>
-                                <text x="150" y="35" textAnchor="middle" className="text-xs fill-[#6b7280]">집중 분산</text>
+                                <rect x="110" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
+                                <text x="150" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">5초 이내</text>
+                                <text x="150" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">집중 분산</text>
                                 
                                 <circle cx="200" cy="90" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
-                                <rect x="160" y="50" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
-                                <text x="200" y="60" textAnchor="middle" className="text-xs fill-[#374151] font-medium">창 최소화</text>
-                                <text x="200" y="70" textAnchor="middle" className="text-xs fill-[#6b7280]">다른 업무</text>
+                                <rect x="160" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
+                                <text x="200" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">창 최소화</text>
+                                <text x="200" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">다른 업무</text>
                                 
                                 <circle cx="320" cy="150" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
-                                <rect x="280" y="110" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
-                                <text x="320" y="120" textAnchor="middle" className="text-xs fill-[#374151] font-medium">참여도</text>
-                                <text x="320" y="130" textAnchor="middle" className="text-xs fill-[#6b7280]">급격 하락</text>
+                                <rect x="280" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
+                                <text x="320" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">참여도</text>
+                                <text x="320" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">급격 하락</text>
                                 
                                 <circle cx="500" cy="175" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
-                                <rect x="460" y="145" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
-                                <text x="500" y="155" textAnchor="middle" className="text-xs fill-[#374151] font-medium">반복 교육</text>
-                                <text x="500" y="165" textAnchor="middle" className="text-xs fill-[#6b7280]">회피</text>
+                                <rect x="460" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
+                                <text x="500" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">반복 교육</text>
+                                <text x="500" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">회피</text>
                               </svg>
                             </div>
                             
@@ -1834,61 +1834,65 @@ export default function CombinedLanding() {
                             <p><strong>Screen Life 솔루션 구조:</strong></p>
                             
                             {/* 솔루션 도식 */}
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                              <svg width="100%" height="250" viewBox="0 0 600 250" className="overflow-visible">
+                            <div className="bg-white border border-gray-200 p-8 rounded-lg">
+                              <div className="text-center mb-6">
+                                <h4 className="text-sm font-medium text-[#282623] mb-2">Screen Life 솔루션 구조</h4>
+                                <p className="text-xs text-[#58534e]">집중도 향상을 위한 4가지 핵심 전략</p>
+                              </div>
+                              <svg width="100%" height="280" viewBox="0 0 600 280" className="overflow-visible">
                                 {/* 중앙 Screen Life 원 */}
-                                <circle cx="300" cy="125" r="50" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" strokeWidth="1"/>
-                                <text x="300" y="120" textAnchor="middle" className="text-xs fill-[#282623] font-medium">Screen</text>
-                                <text x="300" y="135" textAnchor="middle" className="text-xs fill-[#282623] font-medium">Life</text>
+                                <circle cx="300" cy="155" r="50" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="2"/>
+                                <text x="300" y="150" textAnchor="middle" className="text-sm fill-[#374151] font-medium">Screen</text>
+                                <text x="300" y="165" textAnchor="middle" className="text-sm fill-[#374151] font-medium">Life</text>
                                 
                                 {/* 4개 해결책 박스 */}
                                 {/* 몰입도 향상 */}
-                                <rect x="80" y="40" width="120" height="50" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" strokeWidth="1" rx="5"/>
-                                <text x="140" y="60" textAnchor="middle" className="text-xs fill-[#282623] font-medium">몰입도 향상</text>
-                                <text x="140" y="75" textAnchor="middle" className="text-xs fill-[#58534e]">실제 화면 활용</text>
-                                <line x1="200" y1="65" x2="250" y2="100" stroke="#282623" strokeWidth="1" markerEnd="url(#arrowhead1)"/>
+                                <rect x="70" y="70" width="130" height="55" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="8"/>
+                                <text x="135" y="90" textAnchor="middle" className="text-xs fill-[#374151] font-medium">몰입도 향상</text>
+                                <text x="135" y="105" textAnchor="middle" className="text-xs fill-[#6b7280]">실제 화면 활용</text>
+                                <line x1="200" y1="97" x2="250" y2="130" stroke="#374151" strokeWidth="2" markerEnd="url(#arrowhead1)"/>
                                 
                                 {/* 주의 집중 유도 */}
-                                <rect x="400" y="40" width="120" height="50" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" strokeWidth="1" rx="5"/>
-                                <text x="460" y="60" textAnchor="middle" className="text-xs fill-[#282623] font-medium">주의 집중 유도</text>
-                                <text x="460" y="75" textAnchor="middle" className="text-xs fill-[#58534e]">자동 시스템</text>
-                                <line x1="400" y1="65" x2="350" y2="100" stroke="#282623" strokeWidth="1" markerEnd="url(#arrowhead2)"/>
+                                <rect x="400" y="70" width="130" height="55" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="8"/>
+                                <text x="465" y="90" textAnchor="middle" className="text-xs fill-[#374151] font-medium">주의 집중 유도</text>
+                                <text x="465" y="105" textAnchor="middle" className="text-xs fill-[#6b7280]">자동 시스템</text>
+                                <line x1="400" y1="97" x2="350" y2="130" stroke="#374151" strokeWidth="2" markerEnd="url(#arrowhead2)"/>
                                 
                                 {/* 메시지 단순화 */}
-                                <rect x="80" y="160" width="120" height="50" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" strokeWidth="1" rx="5"/>
-                                <text x="140" y="180" textAnchor="middle" className="text-xs fill-[#282623] font-medium">메시지 단순화</text>
-                                <text x="140" y="195" textAnchor="middle" className="text-xs fill-[#58534e]">시각화 처리</text>
-                                <line x1="200" y1="185" x2="250" y2="150" stroke="#282623" strokeWidth="1" markerEnd="url(#arrowhead3)"/>
+                                <rect x="70" y="190" width="130" height="55" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="8"/>
+                                <text x="135" y="210" textAnchor="middle" className="text-xs fill-[#374151] font-medium">메시지 단순화</text>
+                                <text x="135" y="225" textAnchor="middle" className="text-xs fill-[#6b7280]">시각화 처리</text>
+                                <line x1="200" y1="217" x2="250" y2="180" stroke="#374151" strokeWidth="2" markerEnd="url(#arrowhead3)"/>
                                 
                                 {/* 상호작용 증대 */}
-                                <rect x="400" y="160" width="120" height="50" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" strokeWidth="1" rx="5"/>
-                                <text x="460" y="180" textAnchor="middle" className="text-xs fill-[#282623] font-medium">상호작용 증대</text>
-                                <text x="460" y="195" textAnchor="middle" className="text-xs fill-[#58534e]">참여도 향상</text>
-                                <line x1="400" y1="185" x2="350" y2="150" stroke="#282623" strokeWidth="1" markerEnd="url(#arrowhead4)"/>
+                                <rect x="400" y="190" width="130" height="55" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="8"/>
+                                <text x="465" y="210" textAnchor="middle" className="text-xs fill-[#374151] font-medium">상호작용 증대</text>
+                                <text x="465" y="225" textAnchor="middle" className="text-xs fill-[#6b7280]">참여도 향상</text>
+                                <line x1="400" y1="217" x2="350" y2="180" stroke="#374151" strokeWidth="2" markerEnd="url(#arrowhead4)"/>
                                 
                                 {/* 화살표 마커 정의 */}
                                 <defs>
                                   <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                                    <polygon points="0 0, 10 3.5, 0 7" fill="#282623"/>
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
                                   </marker>
                                   <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                                    <polygon points="0 0, 10 3.5, 0 7" fill="#282623"/>
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
                                   </marker>
                                   <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                                    <polygon points="0 0, 10 3.5, 0 7" fill="#282623"/>
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
                                   </marker>
                                   <marker id="arrowhead4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                                    <polygon points="0 0, 10 3.5, 0 7" fill="#282623"/>
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
                                   </marker>
                                 </defs>
                                 
                                 {/* 결과 표시 */}
-                                <rect x="250" y="200" width="100" height="30" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" strokeWidth="1" rx="5"/>
-                                <text x="300" y="220" textAnchor="middle" className="text-xs fill-[#282623] font-medium">집중도 개선</text>
-                                <line x1="300" y1="175" x2="300" y2="200" stroke="#282623" strokeWidth="1" markerEnd="url(#arrowhead5)"/>
+                                <rect x="250" y="260" width="100" height="35" fill="#ef4444" opacity="0.1" stroke="#ef4444" strokeWidth="1" rx="8"/>
+                                <text x="300" y="280" textAnchor="middle" className="text-xs fill-[#374151] font-medium">집중도 개선</text>
+                                <line x1="300" y1="205" x2="300" y2="260" stroke="#374151" strokeWidth="2" markerEnd="url(#arrowhead5)"/>
                                 
                                 <marker id="arrowhead5" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                                  <polygon points="0 0, 10 3.5, 0 7" fill="#282623"/>
+                                  <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
                                 </marker>
                               </svg>
                             </div>
