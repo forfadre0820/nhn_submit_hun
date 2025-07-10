@@ -1640,7 +1640,7 @@ export default function CombinedLanding() {
                   <div className="space-y-5 mb-8">
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
-                        {selectedProject.id === "1" && "전체 기간: 2024.01 ~ 2024.07 (7개월)"}
+                        {selectedProject.id === "1" && "전체 기간: 2023년 9월 ~ 2024년 11월 (14개월)"}
                         {selectedProject.id === "2" && "전체 기간: 2022년 1월 ~ 2022년 7월 (7개월)"}
                         {selectedProject.id === "3" && "전체 기간: 2023.02 ~ 2023.08 (7개월)"}
                         {selectedProject.id === "4" && "전체 기간: 2024.08 ~ 2024.11 (4개월)"}
@@ -1661,16 +1661,16 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 브랜드 인지도 35% 향상</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">통합 콘텐츠 전략을 통한 브랜드 노출 확대</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• NPS 4.5+ 고객만족도 달성</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">50회 이상의 행사를 성공적으로 운영하여 높은 고객 만족도 성과를 달성</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 고객 참여도 48% 증가</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온·오프라인 연계 마케팅으로 고객 참여 활성화</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 참가자 만족도 85% 이상 달성</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온라인과 오프라인을 융합한 혁신적인 이벤트 프로그램 기획으로 참가자 만족도 극대화</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 콘텐츠 제작 효율성 40% 향상</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">체계적인 제작 프로세스 구축으로 효율성 개선</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 운영 효율성 70% 향상</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python/OpenCV 기반 특허 시스템 개발로 현장 진행과 기술 관리를 동시에 달성</p>
                         </div>
                       </>
                     )}
@@ -1734,6 +1734,22 @@ export default function CombinedLanding() {
                     </h2>
                   </div>
                   <div className="space-y-5 mb-8">
+                    {selectedProject.id === "1" && (
+                      <>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 목표</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">삼성 그룹의 다양한 이벤트와 교육 프로그램을 온라인과 오프라인으로 융합하는 업무를 담당했습니다. 14개월간 50회 이상의 행사를 진행하여 기획부터 현장 운영, 기술 시스템 개발까지 전반적인 업무를 수행했습니다.</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 핵심 전략</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">외부 프로그램 사용의 제약을 극복하고자 Python과 OpenCV 기반 특허 시스템을 개발했습니다. 현장 진행과 기술 관리를 동시에 달성하여 70% 효율성 향상을 이루었습니다.</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 온라인 vs 오프라인 융합 접근</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온라인 환경에서는 기술적 안정성, 실시간 모니터링 및 분석, 데이터 기반 참여도 측정, 네트워크 품질 관리가 핵심이었습니다. 오프라인에서는 물리적 환경 관리, 현장 장비 설치 및 운영, 참가자 경험 최적화가 중요했습니다.</p>
+                        </div>
+                      </>
+                    )}
                     {selectedProject.id === "2" && (
                       <>
                         <div>
@@ -1998,20 +2014,12 @@ export default function CombinedLanding() {
                   {selectedProject.id === "1" && (
                     <>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Adobe Creative Suite</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects, Photoshop</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">핵심 기술</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OpenCV, 실시간 스트리밍, VOD 플랫폼, 그래픽 디자인, 현장 운영</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">디자인 도구</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Illustrator, Figma</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">프로젝트 관리</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Notion, Slack</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">분석 도구</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Google Analytics</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">특수 기술</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">AI 자동화, Snowflake, 메타버스 플랫폼, 웹디 관리, 데이터 분석, 품질 모니터링</div>
                       </div>
                     </>
                   )}
