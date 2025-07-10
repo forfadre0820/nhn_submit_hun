@@ -1662,15 +1662,15 @@ export default function CombinedLanding() {
                       <>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• NPS 4.5+ 고객만족도 달성</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">50회 이상의 행사를 성공적으로 운영하여 높은 고객 만족도 성과를 달성</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">50회 이상의 행사를 성공적으로 운영하며 5개 주요 고객사 수주 성공</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 참가자 만족도 85% 이상 달성</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온라인과 오프라인을 융합한 혁신적인 이벤트 프로그램 기획으로 참가자 만족도 극대화</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 운영 성과</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 피드백 시스템으로 90% 이상 참여도 향상, 메타버스 환경에서 평균 체류시간 200% 증가</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 운영 효율성 70% 향상</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python/OpenCV 기반 특허 시스템 개발로 현장 진행과 기술 관리를 동시에 달성</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• AI 기반 자동화 효과</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">운영 인력 30% 절감, 브랜드 메시지 전달 효과 최적화 달성</p>
                         </div>
                       </>
                     )}
@@ -1737,16 +1737,26 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 목표</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">삼성 그룹의 다양한 이벤트와 교육 프로그램을 온라인과 오프라인으로 융합하는 업무를 담당했습니다. 14개월간 50회 이상의 행사를 진행하여 기획부터 현장 운영, 기술 시스템 개발까지 전반적인 업무를 수행했습니다.</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 개요</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">대규모 행사 기획부터 실시간 이슈 대응까지 온라인과 오프라인을 통합한 콘텐츠 기획·운영 프로젝트입니다. AI/OpenCV 기술을 활용한 자동화 시스템과 메타버스 게임형 환경을 구축하여 차별화된 사용자 경험을 제공했습니다.</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 핵심 전략</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">외부 프로그램 사용의 제약을 극복하고자 Python과 OpenCV 기반 특허 시스템을 개발했습니다. 현장 진행과 기술 관리를 동시에 달성하여 70% 효율성 향상을 이루었습니다.</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 통합 운영의 핵심 가치</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p>- 온라인과 오프라인 경험의 seamless 연결</p>
+                            <p>- 실시간 데이터 분석을 통한 즉각적 대응</p>
+                            <p>- 기술과 휴먼터치의 최적 조합</p>
+                            <p>- 확장 가능한 플랫폼 기반 서비스 제공</p>
+                          </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 온라인 vs 오프라인 융합 접근</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온라인 환경에서는 기술적 안정성, 실시간 모니터링 및 분석, 데이터 기반 참여도 측정, 네트워크 품질 관리가 핵심이었습니다. 오프라인에서는 물리적 환경 관리, 현장 장비 설치 및 운영, 참가자 경험 최적화가 중요했습니다.</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 주요 고객사 수주</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p>- NH농협: 대규모 조합원 교육 행사 기획 및 운영</p>
+                            <p>- 삼성교육재단: 온라인 교육 플랫폼 통합 운영</p>
+                            <p>- 한국출판: 하이브리드 도서 출간 기념 행사</p>
+                            <p>- 기타 2개 고객사: 기업 교육 및 브랜딩 이벤트</p>
+                          </div>
                         </div>
                       </>
                     )}
@@ -1961,15 +1971,119 @@ export default function CombinedLanding() {
                   </div>
                 </div>
 
+                {/* 온라인 콘텐츠 운영 (Samsung 프로젝트만) */}
+                {selectedProject.id === "1" && (
+                  <div className="mb-12">
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                        온라인 콘텐츠 운영
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 실시간 스트리밍 & 자동화</h3>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                          <p>- 고품질 실시간 스트리밍 시스템 구축</p>
+                          <p>- AI 기반 자동 화질 조정 및 음성 최적화</p>
+                          <p>- 실시간 채팅 모니터링 및 자동 응답</p>
+                          <p>- 멀티 플랫폼 동시 송출 관리</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• AI/OpenCV 기술 활용</h3>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                          <p>- OpenCV를 활용한 실시간 영상 분석 및 처리</p>
+                          <p>- AI 기반 참석자 행동 패턴 분석</p>
+                          <p>- 자동 하이라이트 생성 및 클립 추출</p>
+                          <p>- 실시간 품질 모니터링 및 이슈 감지</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 메타버스 게임형 환경</h3>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                          <p>- Gather 플랫폼 기반 게임형 메타버스 환경 구축</p>
+                          <p>- 브랜드 아이덴티티 반영 가상 공간 설계</p>
+                          <p>- 인터랙티브 콘텐츠 요소 구현</p>
+                          <p>- 성취 시스템 및 리워드 프로그램</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* 오프라인 콘텐츠 운영 (Samsung 프로젝트만) */}
+                {selectedProject.id === "1" && (
+                  <div className="mb-12">
+                    <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
+                      <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
+                        <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">5</span>
+                        오프라인 콘텐츠 운영
+                      </h2>
+                    </div>
+                    <div className="space-y-5 mb-8">
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장 대응 & 기술 자동화</h3>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                          <p>- 현장 스태프 실시간 소통 시스템</p>
+                          <p>- 자동화된 장비 모니터링 및 제어</p>
+                          <p>- 비상 상황 대응 프로토콜 운영</p>
+                          <p>- 실시간 피드백 수집 및 분석</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 데이터 기반 기획</h3>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                          <p>- 개인화 행동 데이터 수집</p>
+                          <p>- 예측 분석을 통한 사전 대응</p>
+                          <p>- 통합 모니터링 대시보드 운영</p>
+                          <p>- 자동 알림 시스템 및 에스컬레이션</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 실시간 이슈 대응</h3>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                          <p>- 실시간 솔루션 제공 체계</p>
+                          <p>- 사후 분석 및 개선 프로세스</p>
+                          <p>- 통합 모니터링 대시보드 운영</p>
+                          <p>- 비상 상황 대응 매뉴얼 구축</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* 크리에이티브 디렉팅 */}
                 <div className="mb-12">
                   <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                     <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">4</span>
+                      <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">{selectedProject.id === "1" ? "6" : "4"}</span>
                       크리에이티브 디렉팅
                     </h2>
                   </div>
                   <div className="space-y-5 mb-8">
+                    {selectedProject.id === "1" && (
+                      <>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 임팩트</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p>- 업계 최초 온오프라인 통합 자동화 시스템 구축</p>
+                            <p>- 메타버스 기반 B2B 이벤트 운영 모델 확립</p>
+                            <p>- 데이터 기반 실시간 의사결정 프로세스 도입</p>
+                            <p>- 확장 가능한 플랫폼 아키텍처 설계 및 구현</p>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 솔루션</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                            <p>- 온라인과 오프라인 경험의 seamless 연결</p>
+                            <p>- 실시간 데이터 분석을 통한 즉각적 대응</p>
+                            <p>- 기술과 휴먼터치의 최적 조합</p>
+                            <p>- 차별화된 고객 경험 제공</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
                     {selectedProject.id === "2" && (
                       <>
 
@@ -2006,7 +2120,7 @@ export default function CombinedLanding() {
                 {/* 활용 기술 */}
                 <div className="mb-6 mt-8 pt-8 border-t border-gray-200">
                   <h2 className="text-base text-[#282623] font-medium mb-4 tracking-tight leading-relaxed">
-                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">5</span>
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-[#282623] text-white text-xs font-bold rounded-full mr-2">{selectedProject.id === "1" ? "7" : "5"}</span>
                     활용 기술
                   </h2>
                 </div>
@@ -2015,11 +2129,27 @@ export default function CombinedLanding() {
                     <>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">핵심 기술</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OpenCV, 실시간 스트리밍, VOD 플랫폼, 그래픽 디자인, 현장 운영</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python, OpenCV, AI 기술</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">특수 기술</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">AI 자동화, Snowflake, 메타버스 플랫폼, 웹디 관리, 데이터 분석, 품질 모니터링</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">데이터 인프라</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Snowflake 기반 데이터 웨어하우스<br/>실시간 데이터 파이프라인</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">메타버스 플랫폼</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Gather 기반 게임형 환경<br/>인터랙티브 콘텐츠 시스템</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">스트리밍 기술</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">실시간 스트리밍<br/>멀티 플랫폼 송출</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">자동화 시스템</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Python 기반 워크플로우<br/>모니터링 및 알림 시스템</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">데이터 분석</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">머신러닝 모델 운영<br/>비즈니스 인텔리전스 도구</div>
                       </div>
                     </>
                   )}
