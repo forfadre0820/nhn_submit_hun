@@ -1737,20 +1737,55 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 프로젝트 개요</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p>외주 제작에 따른 의사결정 지연, 연출 난립, 품질 단차 문제를 해결하기 위해 전 공정 인하우스 제작 체계를 구축하였습니다. 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지를 효과적으로 전달하는 고품질 영상 콘텐츠를 제작하여 시네마틱 품질과 효율성을 동시에 달성하는 새로운 제작 표준을 확립하였습니다.</p>
+                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• 프로젝트 개요</h3>
+                          <div className="ml-4 space-y-4">
+                            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                              <p className="text-sm text-blue-800 font-medium mb-2">목표</p>
+                              <p className="text-sm text-blue-700">외주 제작의 한계를 극복하고 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지 전달</p>
+                            </div>
+                            <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                              <p className="text-sm text-green-800 font-medium mb-2">접근 방식</p>
+                              <p className="text-sm text-green-700">전 공정 인하우스 제작 체계 구축으로 시네마틱 품질과 효율성을 동시에 달성</p>
+                            </div>
+                            <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                              <p className="text-sm text-purple-800 font-medium mb-2">성과</p>
+                              <p className="text-sm text-purple-700">새로운 제작 표준 확립 및 프리미엄 교육 콘텐츠 시장에서의 경쟁력 확보</p>
+                            </div>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 해결한 주요 문제점</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>외주 제작에 따른 의사결정 지연 및 커뮤니케이션 비효율성</li>
-                              <li>연출 방향의 일관성 부족과 품질 편차 발생</li>
-                              <li>브랜드 메시지 전달력 저하 및 차별화 요소 부족</li>
-                              <li>제작 일정 관리 어려움과 비용 증가</li>
-                            </ul>
+                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• 해결한 주요 문제점</h3>
+                          <div className="ml-4 space-y-3">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
+                                <div className="flex items-center mb-2">
+                                  <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                  <p className="text-sm font-medium text-red-800">의사결정 지연</p>
+                                </div>
+                                <p className="text-xs text-red-700">외주 제작으로 인한 커뮤니케이션 비효율성 및 프로젝트 지연</p>
+                              </div>
+                              <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
+                                <div className="flex items-center mb-2">
+                                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+                                  <p className="text-sm font-medium text-orange-800">품질 편차</p>
+                                </div>
+                                <p className="text-xs text-orange-700">연출 방향의 일관성 부족과 예측 불가능한 품질 변동</p>
+                              </div>
+                              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                                <div className="flex items-center mb-2">
+                                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
+                                  <p className="text-sm font-medium text-yellow-800">브랜드 메시지</p>
+                                </div>
+                                <p className="text-xs text-yellow-700">브랜드 정체성 전달력 저하 및 차별화 요소 부족</p>
+                              </div>
+                              <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                                <div className="flex items-center mb-2">
+                                  <div className="w-2 h-2 bg-gray-500 rounded-full mr-2"></div>
+                                  <p className="text-sm font-medium text-gray-800">비용 증가</p>
+                                </div>
+                                <p className="text-xs text-gray-700">제작 일정 관리 어려움으로 인한 예산 초과 발생</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </>
@@ -2008,47 +2043,76 @@ export default function CombinedLanding() {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• Tech 효율화</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p className="font-medium">기술 혁신을 통한 효율성 극대화</p>
-                            <p>50분 분량의 교육 콘텐츠 5개 클래스를 동시에 제작하는 대규모 프로젝트에서 Python 자동화와 FFmpeg 최적화를 통해 획기적인 효율성 향상을 달성하였습니다.</p>
-                            <div className="mt-4 p-3 bg-[#f8f8f8] rounded-lg">
-                              <p className="font-medium text-[#282623] mb-2">프로젝트 배경</p>
-                              <ul className="text-xs text-[#58534e] space-y-1">
-                                <li>• 50분 분량의 교육 콘텐츠 5개 클래스 동시 제작 요구</li>
-                                <li>• 기존 수동 편집 방식의 한계와 시간 소요 문제</li>
-                                <li>• 일관된 품질 유지와 효율적 관리 필요</li>
-                                <li>• 스케일업된 제작 환경에서의 최적화 요구</li>
-                              </ul>
+                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• Tech 효율화</h3>
+                          <div className="ml-4 space-y-4">
+                            <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r-lg">
+                              <p className="text-sm text-indigo-800 font-medium mb-2">도전 과제</p>
+                              <p className="text-sm text-indigo-700">50분 분량의 교육 콘텐츠 5개 클래스를 동시에 제작하는 대규모 프로젝트</p>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
-                                <p className="font-medium text-[#282623] mb-2">Python 자동화</p>
-                                <ul className="text-xs text-[#58534e] space-y-1">
-                                  <li>• Python 기반 자동화 시스템 개발</li>
-                                  <li>• 병렬 처리를 통한 다중 클래스 동시 작업</li>
-                                  <li>• 데이터 자동 분류 및 카테고리화</li>
-                                  <li>• 반복 작업 자동화를 통한 시간 절약</li>
-                                </ul>
-                              </div>
-                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
-                                <p className="font-medium text-[#282623] mb-2">FFmpeg 최적화</p>
-                                <ul className="text-xs text-[#58534e] space-y-1">
-                                  <li>• FFmpeg 기반 맞춤형 시스템 구축</li>
-                                  <li>• 고성능 비디오 변환 및 처리</li>
-                                  <li>• 포맷 통합 자동화 시스템</li>
-                                  <li>• 배치 처리를 통한 대량 작업 효율화</li>
-                                </ul>
+                            
+                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg border border-blue-200">
+                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
+                                <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs mr-2">1</div>
+                                문제 분석
+                              </h4>
+                              <div className="grid grid-cols-2 gap-3">
+                                <div className="text-xs text-blue-700">• 수동 편집 방식의 한계</div>
+                                <div className="text-xs text-blue-700">• 시간 소요 문제</div>
+                                <div className="text-xs text-blue-700">• 일관된 품질 관리 필요</div>
+                                <div className="text-xs text-blue-700">• 대규모 확장성 요구</div>
                               </div>
                             </div>
-                            <div className="mt-4 p-3 bg-[#f8f8f8] rounded-lg">
-                              <p className="font-medium text-[#282623] mb-2">효율화 성과</p>
-                              <ul className="text-xs text-[#58534e] space-y-1">
-                                <li>• 제작 리드타임 40% 이상 대폭 단축</li>
-                                <li>• 규격화된 품질 관리 시스템 구축</li>
-                                <li>• 전체 클래스 일관된 품질 확보</li>
-                                <li>• 인적 자원 최적화 및 비용 절감</li>
-                              </ul>
+
+                            <div className="bg-gradient-to-r from-emerald-50 to-green-50 p-6 rounded-lg border border-emerald-200">
+                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
+                                <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs mr-2">2</div>
+                                기술 솔루션
+                              </h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="bg-white p-4 rounded-lg border border-emerald-100">
+                                  <p className="font-medium text-emerald-800 mb-2">Python 자동화</p>
+                                  <ul className="text-xs text-emerald-700 space-y-1">
+                                    <li>▸ 자동화 시스템 개발</li>
+                                    <li>▸ 병렬 처리 구현</li>
+                                    <li>▸ 데이터 자동 분류</li>
+                                    <li>▸ 반복 작업 최적화</li>
+                                  </ul>
+                                </div>
+                                <div className="bg-white p-4 rounded-lg border border-emerald-100">
+                                  <p className="font-medium text-emerald-800 mb-2">FFmpeg 최적화</p>
+                                  <ul className="text-xs text-emerald-700 space-y-1">
+                                    <li>▸ 맞춤형 시스템 구축</li>
+                                    <li>▸ 고성능 비디오 처리</li>
+                                    <li>▸ 포맷 통합 자동화</li>
+                                    <li>▸ 배치 처리 구현</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg border border-orange-200">
+                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
+                                <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs mr-2">3</div>
+                                최종 성과
+                              </h4>
+                              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
+                                  <div className="text-lg font-bold text-orange-600">40%</div>
+                                  <div className="text-xs text-orange-700">리드타임 단축</div>
+                                </div>
+                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
+                                  <div className="text-lg font-bold text-orange-600">5개</div>
+                                  <div className="text-xs text-orange-700">동시 제작</div>
+                                </div>
+                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
+                                  <div className="text-lg font-bold text-orange-600">100%</div>
+                                  <div className="text-xs text-orange-700">품질 일관성</div>
+                                </div>
+                                <div className="bg-white p-3 rounded-lg text-center border border-orange-100">
+                                  <div className="text-lg font-bold text-orange-600">30%</div>
+                                  <div className="text-xs text-orange-700">비용 절감</div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2126,33 +2190,83 @@ export default function CombinedLanding() {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 시장 임팩트 및 차별화 전략</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-4">
-                              <p className="text-sm text-yellow-800 font-medium">
-                                인하우스 제작 체계 구축을 통해 40% 이상의 리드타임 단축과 동시에 시네마틱 품질을 달성하여 프리미엄 교육 콘텐츠 시장에서의 경쟁력을 확보하였습니다.
-                              </p>
+                          <h3 className="text-sm text-[#282623] mb-3 tracking-wide leading-relaxed">• 시장 임팩트 및 차별화 전략</h3>
+                          <div className="ml-4 space-y-4">
+                            
+                            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
+                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
+                                <div className="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-xs mr-2">🎯</div>
+                                시장 포지셔닝
+                              </h4>
+                              <p className="text-sm text-purple-800 mb-3">프리미엄 교육 콘텐츠 시장에서 새로운 제작 표준 확립</p>
+                              <div className="grid grid-cols-2 gap-3">
+                                <div className="bg-white p-3 rounded-lg border border-purple-100">
+                                  <p className="text-xs font-medium text-purple-800">차별화 요소</p>
+                                  <p className="text-xs text-purple-700">시네마틱 품질 + 효율성</p>
+                                </div>
+                                <div className="bg-white p-3 rounded-lg border border-purple-100">
+                                  <p className="text-xs font-medium text-purple-800">경쟁 우위</p>
+                                  <p className="text-xs text-purple-700">인하우스 통합 제작</p>
+                                </div>
+                              </div>
                             </div>
-                            <div className="bg-[#f8f8f8] p-4 rounded-lg mb-4">
-                              <ul className="text-xs text-[#58534e] space-y-1">
-                                <li>• 프리미엄 교육 콘텐츠 시장에서의 새로운 표준 제시</li>
-                                <li>• 기술 혁신을 통한 차별화된 경쟁력 확보</li>
-                                <li>• 효율성과 품질을 동시에 달성하는 제작 모델 구축</li>
-                                <li>• 지속 가능한 고품질 콘텐츠 제작 시스템 확립</li>
-                              </ul>
+
+                            <div className="bg-gradient-to-r from-teal-50 to-blue-50 p-6 rounded-lg border border-teal-200">
+                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
+                                <div className="w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs mr-2">⚡</div>
+                                제작 워크플로우 혁신
+                              </h4>
+                              <div className="bg-white p-4 rounded-lg border border-teal-100">
+                                <div className="flex items-center justify-between text-xs text-teal-700 mb-2">
+                                  <span>기획</span>
+                                  <span>→</span>
+                                  <span>사전제작</span>
+                                  <span>→</span>
+                                  <span>촬영</span>
+                                  <span>→</span>
+                                  <span>편집</span>
+                                  <span>→</span>
+                                  <span>그레이딩</span>
+                                  <span>→</span>
+                                  <span>배포</span>
+                                </div>
+                                <p className="text-xs text-teal-600">전 과정 일관된 품질 기준 적용으로 최적의 결과물 도출</p>
+                              </div>
                             </div>
-                            <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mb-4">
-                              <p className="font-medium text-[#282623] mb-2">통합 제작 프로세스</p>
-                              <p className="text-xs text-gray-700 mb-2">
-                                <strong>기획 → 사전 제작 → 촬영 → 편집 → 컬러 그레이딩 → 마스터링 → 배포</strong>
-                              </p>
-                              <p className="text-xs text-gray-600">
-                                의 전 과정을 일관된 품질 기준으로 통합 관리하여 최적의 결과물을 도출하였습니다.
-                              </p>
+
+                            <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-lg border border-amber-200">
+                              <h4 className="font-medium text-[#282623] mb-4 flex items-center">
+                                <div className="w-6 h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-xs mr-2">📊</div>
+                                성과 지표
+                              </h4>
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="bg-white p-4 rounded-lg text-center border border-amber-100">
+                                  <div className="text-2xl font-bold text-amber-600 mb-1">40%</div>
+                                  <div className="text-xs text-amber-700">리드타임 단축</div>
+                                  <div className="text-xs text-amber-600 mt-1">제작 효율성 혁신</div>
+                                </div>
+                                <div className="bg-white p-4 rounded-lg text-center border border-amber-100">
+                                  <div className="text-2xl font-bold text-amber-600 mb-1">10만+</div>
+                                  <div className="text-xs text-amber-700">조회수 달성</div>
+                                  <div className="text-xs text-amber-600 mt-1">시장 반응 검증</div>
+                                </div>
+                                <div className="bg-white p-4 rounded-lg text-center border border-amber-100">
+                                  <div className="text-2xl font-bold text-amber-600 mb-1">BP</div>
+                                  <div className="text-xs text-amber-700">홍콩 인증 획득</div>
+                                  <div className="text-xs text-amber-600 mt-1">글로벌 품질 검증</div>
+                                </div>
+                              </div>
                             </div>
-                            <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                              <p className="text-sm text-blue-800 font-medium">
-                                Snapas 프로젝트는 전 공정 직접 수행과 기술 혁신을 통해 프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였으며, 시네마틱 품질과 효율성을 동시에 달성하는 새로운 제작 표준을 확립하는 성과를 거두었습니다. 40% 이상의 리드타임 단축과 10만+ 조회수 달성, 홍콩 BP 인증 획득은 이 프로젝트의 성공을 입증하는 대표적인 지표입니다.
+
+                            <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-lg border border-slate-200">
+                              <h4 className="font-medium text-[#282623] mb-3 flex items-center">
+                                <div className="w-6 h-6 bg-slate-500 text-white rounded-full flex items-center justify-center text-xs mr-2">💡</div>
+                                프로젝트 결론
+                              </h4>
+                              <p className="text-sm text-slate-700 leading-relaxed">
+                                Snapask 프로젝트는 <span className="font-medium text-slate-800">전 공정 직접 수행</span>과 <span className="font-medium text-slate-800">기술 혁신</span>을 통해 
+                                프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였으며, 시네마틱 품질과 효율성을 동시에 달성하는 
+                                <span className="font-medium text-slate-800">새로운 제작 표준</span>을 확립하는 성과를 거두었습니다.
                               </p>
                             </div>
                           </div>
