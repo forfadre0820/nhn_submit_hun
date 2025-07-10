@@ -98,8 +98,23 @@ body {
   object-position: center center;
   filter: brightness(1.05);
   border-radius: 0;
+}
+
+/* Chart Animation Styles */
+@keyframes draw {
+  0% { stroke-dashoffset: 1000; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1000; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+.hero__videoWrap video {
   transform-origin: 50% 50%;
-  /* Clip-path for small size, removed when scaling */
   clip-path: inset(8% 0);
   transition: clip-path 0.5s ease-out;
 }

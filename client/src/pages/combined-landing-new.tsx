@@ -1710,45 +1710,60 @@ export default function CombinedLanding() {
                             <p><strong>주요 사용자 행동 패턴:</strong></p>
                             
                             {/* 사용자 행동 패턴 도식 */}
-                            <div className="bg-gray-50 p-4 rounded-lg">
+                            <div className="bg-gray-50 p-6 rounded-lg">
                               <svg width="100%" height="200" viewBox="0 0 600 200" className="overflow-visible">
-                                {/* 시간축 */}
-                                <line x1="50" y1="180" x2="550" y2="180" stroke="#282623" strokeWidth="2"/>
+                                {/* 축 및 레이블 */}
+                                <line x1="60" y1="180" x2="540" y2="180" stroke="#282623" strokeWidth="1"/>
+                                <line x1="60" y1="180" x2="60" y2="30" stroke="#282623" strokeWidth="1"/>
                                 <text x="300" y="195" textAnchor="middle" className="text-xs fill-[#58534e]">시간 흐름</text>
+                                <text x="30" y="105" textAnchor="middle" className="text-xs fill-[#58534e]" transform="rotate(-90 30 105)">집중도</text>
                                 
-                                {/* 집중도 축 */}
-                                <line x1="50" y1="180" x2="50" y2="20" stroke="#282623" strokeWidth="2"/>
-                                <text x="25" y="100" textAnchor="middle" className="text-xs fill-[#58534e]" transform="rotate(-90 25 100)">집중도</text>
+                                {/* 애니메이션 곡선 */}
+                                <path 
+                                  d="M 70 50 Q 120 40 170 80 Q 220 120 270 140 Q 320 160 370 165 Q 420 170 470 175 Q 520 180 530 180" 
+                                  stroke="#ff6b6b" 
+                                  strokeWidth="3" 
+                                  fill="none"
+                                  className="animate-[draw_3s_ease-in-out_infinite]"
+                                  style={{
+                                    strokeDasharray: "1000",
+                                    strokeDashoffset: "1000",
+                                    animation: "draw 3s ease-in-out infinite"
+                                  }}
+                                />
                                 
-                                {/* 집중도 곡선 */}
-                                <path d="M 60 160 Q 90 50 120 60 Q 150 70 180 120 Q 210 160 240 170 Q 270 175 300 170 Q 330 165 360 175 Q 390 180 420 175 Q 450 170 480 175 Q 510 180 540 175" 
-                                      stroke="#ff6b6b" strokeWidth="3" fill="none"/>
+                                {/* 채워진 영역 */}
+                                <path 
+                                  d="M 70 50 Q 120 40 170 80 Q 220 120 270 140 Q 320 160 370 165 Q 420 170 470 175 Q 520 180 530 180 L 530 180 L 70 180 Z" 
+                                  fill="#ff6b6b" 
+                                  opacity="0.1"
+                                  className="animate-[fadeIn_3s_ease-in-out_infinite]"
+                                />
                                 
-                                {/* 주요 행동 패턴 포인트 */}
-                                <circle cx="90" cy="50" r="4" fill="#ff6b6b"/>
-                                <text x="90" y="35" textAnchor="middle" className="text-xs fill-[#282623]">5초 이내</text>
-                                <text x="90" y="48" textAnchor="middle" className="text-xs fill-[#282623]">집중 분산</text>
+                                {/* 주요 포인트 */}
+                                <circle cx="120" cy="40" r="3" fill="#ff6b6b" className="animate-pulse"/>
+                                <text x="120" y="25" textAnchor="middle" className="text-xs fill-[#282623]">5초 이내</text>
+                                <text x="120" y="15" textAnchor="middle" className="text-xs fill-[#282623]">집중 분산</text>
                                 
-                                <circle cx="180" cy="120" r="4" fill="#ff6b6b"/>
-                                <text x="180" y="105" textAnchor="middle" className="text-xs fill-[#282623]">창 최소화</text>
-                                <text x="180" y="140" textAnchor="middle" className="text-xs fill-[#282623]">다른 업무</text>
+                                <circle cx="220" cy="120" r="3" fill="#ff6b6b" className="animate-pulse"/>
+                                <text x="220" y="105" textAnchor="middle" className="text-xs fill-[#282623]">창 최소화</text>
+                                <text x="220" y="95" textAnchor="middle" className="text-xs fill-[#282623]">다른 업무</text>
                                 
-                                <circle cx="300" cy="170" r="4" fill="#ff6b6b"/>
-                                <text x="300" y="155" textAnchor="middle" className="text-xs fill-[#282623]">참여도</text>
-                                <text x="300" y="168" textAnchor="middle" className="text-xs fill-[#282623]">급격 하락</text>
+                                <circle cx="320" cy="160" r="3" fill="#ff6b6b" className="animate-pulse"/>
+                                <text x="320" y="145" textAnchor="middle" className="text-xs fill-[#282623]">참여도</text>
+                                <text x="320" y="135" textAnchor="middle" className="text-xs fill-[#282623]">급격 하락</text>
                                 
-                                <circle cx="450" cy="175" r="4" fill="#ff6b6b"/>
-                                <text x="450" y="160" textAnchor="middle" className="text-xs fill-[#282623]">반복 교육</text>
-                                <text x="450" y="173" textAnchor="middle" className="text-xs fill-[#282623]">회피</text>
+                                <circle cx="470" cy="175" r="3" fill="#ff6b6b" className="animate-pulse"/>
+                                <text x="470" y="160" textAnchor="middle" className="text-xs fill-[#282623]">반복 교육</text>
+                                <text x="470" y="150" textAnchor="middle" className="text-xs fill-[#282623]">회피</text>
                                 
-                                {/* 문제 영역 표시 */}
-                                <rect x="60" y="120" width="480" height="60" fill="#ff6b6b" opacity="0.1" rx="5"/>
-                                <text x="300" y="135" textAnchor="middle" className="text-xs fill-[#ff6b6b] font-medium">문제 영역: 지속적인 집중도 저하</text>
+                                {/* 문제 영역 텍스트 */}
+                                <text x="300" y="115" textAnchor="middle" className="text-xs fill-[#ff6b6b] font-medium">문제 영역: 지속적인 집중도 저하</text>
                               </svg>
                             </div>
                             
                             <div className="space-y-2 text-sm">
-                              <p>📊 <strong>분석 결과:</strong></p>
+                              <p className="text-[#282623] font-medium">분석 결과:</p>
                               <p>- 재생 중 창 최소화 및 다른 업무 처리</p>
                               <p>- 교육 콘텐츠에 대한 낮은 참여도</p>
                               <p>- 단순 반복 교육에 대한 회피 현상</p>
@@ -1822,7 +1837,7 @@ export default function CombinedLanding() {
                             </div>
                             
                             <div className="space-y-2 text-sm">
-                              <p>🎯 <strong>핵심 전략:</strong></p>
+                              <p className="text-[#282623] font-medium">핵심 전략:</p>
                               <p>- Screen Life 포맷을 활용한 몰입도 향상</p>
                               <p>- 자동 주의 집중 유도 시스템 구축</p>
                               <p>- 복잡한 메시지의 단순화 및 시각화</p>
@@ -1976,7 +1991,7 @@ export default function CombinedLanding() {
                     </div>
                     <div className="space-y-5 mb-8">
                       <div>
-                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">🏆 경쟁사 대비 30% 높은 단가임에도 불구하고 수주 성공</h3>
+                        <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed font-medium">경쟁사 대비 30% 높은 단가임에도 불구하고 수주 성공</h3>
                       </div>
                       <div>
                         <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 관리 성과</h3>
