@@ -1706,21 +1706,128 @@ export default function CombinedLanding() {
                       <>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 사용자 행동 분석 및 대응 전략</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-4">
                             <p><strong>주요 사용자 행동 패턴:</strong></p>
-                            <p>- 재생 중 창 최소화 및 다른 업무 처리</p>
-                            <p>- 교육 콘텐츠에 대한 낮은 참여도</p>
-                            <p>- 단순 반복 교육에 대한 회피 현상</p>
-                            <p>- 5초 이내 주의 집중 분산</p>
+                            
+                            {/* 사용자 행동 패턴 도식 */}
+                            <div className="bg-gray-50 p-4 rounded-lg">
+                              <svg width="100%" height="200" viewBox="0 0 600 200" className="overflow-visible">
+                                {/* 시간축 */}
+                                <line x1="50" y1="180" x2="550" y2="180" stroke="#282623" strokeWidth="2"/>
+                                <text x="300" y="195" textAnchor="middle" className="text-xs fill-[#58534e]">시간 흐름</text>
+                                
+                                {/* 집중도 축 */}
+                                <line x1="50" y1="180" x2="50" y2="20" stroke="#282623" strokeWidth="2"/>
+                                <text x="25" y="100" textAnchor="middle" className="text-xs fill-[#58534e]" transform="rotate(-90 25 100)">집중도</text>
+                                
+                                {/* 집중도 곡선 */}
+                                <path d="M 60 160 Q 90 50 120 60 Q 150 70 180 120 Q 210 160 240 170 Q 270 175 300 170 Q 330 165 360 175 Q 390 180 420 175 Q 450 170 480 175 Q 510 180 540 175" 
+                                      stroke="#ff6b6b" strokeWidth="3" fill="none"/>
+                                
+                                {/* 주요 행동 패턴 포인트 */}
+                                <circle cx="90" cy="50" r="4" fill="#ff6b6b"/>
+                                <text x="90" y="35" textAnchor="middle" className="text-xs fill-[#282623]">5초 이내</text>
+                                <text x="90" y="48" textAnchor="middle" className="text-xs fill-[#282623]">집중 분산</text>
+                                
+                                <circle cx="180" cy="120" r="4" fill="#ff6b6b"/>
+                                <text x="180" y="105" textAnchor="middle" className="text-xs fill-[#282623]">창 최소화</text>
+                                <text x="180" y="140" textAnchor="middle" className="text-xs fill-[#282623]">다른 업무</text>
+                                
+                                <circle cx="300" cy="170" r="4" fill="#ff6b6b"/>
+                                <text x="300" y="155" textAnchor="middle" className="text-xs fill-[#282623]">참여도</text>
+                                <text x="300" y="168" textAnchor="middle" className="text-xs fill-[#282623]">급격 하락</text>
+                                
+                                <circle cx="450" cy="175" r="4" fill="#ff6b6b"/>
+                                <text x="450" y="160" textAnchor="middle" className="text-xs fill-[#282623]">반복 교육</text>
+                                <text x="450" y="173" textAnchor="middle" className="text-xs fill-[#282623]">회피</text>
+                                
+                                {/* 문제 영역 표시 */}
+                                <rect x="60" y="120" width="480" height="60" fill="#ff6b6b" opacity="0.1" rx="5"/>
+                                <text x="300" y="135" textAnchor="middle" className="text-xs fill-[#ff6b6b] font-medium">문제 영역: 지속적인 집중도 저하</text>
+                              </svg>
+                            </div>
+                            
+                            <div className="space-y-2 text-sm">
+                              <p>📊 <strong>분석 결과:</strong></p>
+                              <p>- 재생 중 창 최소화 및 다른 업무 처리</p>
+                              <p>- 교육 콘텐츠에 대한 낮은 참여도</p>
+                              <p>- 단순 반복 교육에 대한 회피 현상</p>
+                              <p>- 5초 이내 주의 집중 분산</p>
+                            </div>
                           </div>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 맞춤형 교육 전략</h3>
-                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-1">
-                            <p>- Screen Life 포맷을 활용한 몰입도 향상</p>
-                            <p>- 자동 주의 집중 유도 시스템 구축</p>
-                            <p>- 복잡한 메시지의 단순화 및 시각화</p>
-                            <p>- 상호작용 요소를 통한 참여도 증대</p>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-4">
+                            <p><strong>Screen Life 솔루션 구조:</strong></p>
+                            
+                            {/* 솔루션 도식 */}
+                            <div className="bg-blue-50 p-4 rounded-lg">
+                              <svg width="100%" height="250" viewBox="0 0 600 250" className="overflow-visible">
+                                {/* 중앙 Screen Life 원 */}
+                                <circle cx="300" cy="125" r="50" fill="#4f46e5" opacity="0.8"/>
+                                <text x="300" y="120" textAnchor="middle" className="text-sm fill-white font-medium">Screen</text>
+                                <text x="300" y="135" textAnchor="middle" className="text-sm fill-white font-medium">Life</text>
+                                
+                                {/* 4개 해결책 박스 */}
+                                {/* 몰입도 향상 */}
+                                <rect x="80" y="40" width="120" height="50" fill="#10b981" opacity="0.8" rx="8"/>
+                                <text x="140" y="60" textAnchor="middle" className="text-xs fill-white font-medium">몰입도 향상</text>
+                                <text x="140" y="75" textAnchor="middle" className="text-xs fill-white">실제 화면 활용</text>
+                                <line x1="200" y1="65" x2="250" y2="100" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead1)"/>
+                                
+                                {/* 주의 집중 유도 */}
+                                <rect x="400" y="40" width="120" height="50" fill="#f59e0b" opacity="0.8" rx="8"/>
+                                <text x="460" y="60" textAnchor="middle" className="text-xs fill-white font-medium">주의 집중 유도</text>
+                                <text x="460" y="75" textAnchor="middle" className="text-xs fill-white">자동 시스템</text>
+                                <line x1="400" y1="65" x2="350" y2="100" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowhead2)"/>
+                                
+                                {/* 메시지 단순화 */}
+                                <rect x="80" y="160" width="120" height="50" fill="#8b5cf6" opacity="0.8" rx="8"/>
+                                <text x="140" y="180" textAnchor="middle" className="text-xs fill-white font-medium">메시지 단순화</text>
+                                <text x="140" y="195" textAnchor="middle" className="text-xs fill-white">시각화 처리</text>
+                                <line x1="200" y1="185" x2="250" y2="150" stroke="#8b5cf6" strokeWidth="2" markerEnd="url(#arrowhead3)"/>
+                                
+                                {/* 상호작용 증대 */}
+                                <rect x="400" y="160" width="120" height="50" fill="#ef4444" opacity="0.8" rx="8"/>
+                                <text x="460" y="180" textAnchor="middle" className="text-xs fill-white font-medium">상호작용 증대</text>
+                                <text x="460" y="195" textAnchor="middle" className="text-xs fill-white">참여도 향상</text>
+                                <line x1="400" y1="185" x2="350" y2="150" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrowhead4)"/>
+                                
+                                {/* 화살표 마커 정의 */}
+                                <defs>
+                                  <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+                                  </marker>
+                                  <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+                                  </marker>
+                                  <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+                                  </marker>
+                                  <marker id="arrowhead4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+                                  </marker>
+                                </defs>
+                                
+                                {/* 결과 표시 */}
+                                <rect x="250" y="200" width="100" height="30" fill="#059669" opacity="0.8" rx="15"/>
+                                <text x="300" y="220" textAnchor="middle" className="text-xs fill-white font-medium">집중도 개선</text>
+                                <line x1="300" y1="175" x2="300" y2="200" stroke="#059669" strokeWidth="2" markerEnd="url(#arrowhead5)"/>
+                                
+                                <marker id="arrowhead5" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                  <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+                                </marker>
+                              </svg>
+                            </div>
+                            
+                            <div className="space-y-2 text-sm">
+                              <p>🎯 <strong>핵심 전략:</strong></p>
+                              <p>- Screen Life 포맷을 활용한 몰입도 향상</p>
+                              <p>- 자동 주의 집중 유도 시스템 구축</p>
+                              <p>- 복잡한 메시지의 단순화 및 시각화</p>
+                              <p>- 상호작용 요소를 통한 참여도 증대</p>
+                            </div>
                           </div>
                         </div>
                         <div>
