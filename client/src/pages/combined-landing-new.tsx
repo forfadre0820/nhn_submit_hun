@@ -1773,6 +1773,12 @@ export default function CombinedLanding() {
                                   fill="#ef4444" 
                                   opacity="0.1"
                                 />
+                                
+                                {/* 주요 포인트 도트 */}
+                                <circle cx="140" cy="73" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2"/>
+                                <circle cx="200" cy="90" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2"/>
+                                <circle cx="320" cy="150" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2"/>
+                                <circle cx="500" cy="175" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2"/>
                               </svg>
                             </div>
                             
