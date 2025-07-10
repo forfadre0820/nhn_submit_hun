@@ -1638,7 +1638,7 @@ export default function CombinedLanding() {
                         {selectedProject.id === "1" && "전체 기간: 2023년 9월 ~ 2024년 11월 (14개월)"}
                         {selectedProject.id === "2" && "전체 기간: 2022년 1월 ~ 2022년 7월 (7개월)"}
                         {selectedProject.id === "3" && "전체 기간: 2023.02 ~ 2023.08 (7개월)"}
-                        {selectedProject.id === "4" && "전체 기간: 2024.08 ~ 2024.11 (4개월)"}
+                        {selectedProject.id === "4" && "전체 기간: 2019.05 ~ 2019.06 (2개월)"}
                       </div>
                     </div>
                   </div>
@@ -1704,16 +1704,8 @@ export default function CombinedLanding() {
                     {selectedProject.id === "4" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 브랜드 인지도 52% 향상</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">현지 인플루언서를 통한 브랜드 노출 확대</p>
-                        </div>
-                        <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현지 참여도 73% 증가</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">문화적 특성을 반영한 콘텐츠로 참여 증대</p>
-                        </div>
-                        <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• ROI 180% 달성</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">효과적인 현지화 전략으로 높은 투자 수익률</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시즌2 기획 논의 확보</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">진에어 측과 후속 프로젝트 진행을 위한 시즌2 기획 논의 성공적 확보</p>
                         </div>
                       </>
                     )}
@@ -1953,6 +1945,22 @@ export default function CombinedLanding() {
                         </div>
                       </>
                     )}
+                    {selectedProject.id === "4" && (
+                      <>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 베트남 인플루언서 한국 체험 콘텐츠 기획</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">베트남 현지 인플루언서를 대상으로 한국 문화 체험을 통한 자연스러운 브랜드 노출 전략</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장 중심의 제작 접근법</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">예측 불가능한 현장 상황에 대응할 수 있는 유연한 제작 방식과 출연자와의 원활한 커뮤니케이션 중시</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 협찬 브랜드 자연스러운 노출</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">콘텐츠 흐름을 해치지 않으면서 효과적인 브랜드 메시지 전달을 위한 전략적 PPL 배치</p>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -2059,6 +2067,22 @@ export default function CombinedLanding() {
                         </div>
                       </>
                     )}
+                    {selectedProject.id === "4" && (
+                      <>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 연출, 디자인, 편집 전 과정 직접 수행</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">현장 인터랙션 중심의 촬영 진행, 출연자 협조 유도</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 현장 통제 한계를 고려한 촬영 방식</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">시네마 장비 대신 핸디캠 활용한 자연스러운 촬영 방식으로 연출</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• PPL 브랜드 유기적 삽입</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">신라면세점·서지루텐 등 PPL 브랜드 노출을 콘텐츠 동선·연출에 유기적으로 삽입하며 협찬 성과 확보</p>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -2153,20 +2177,20 @@ export default function CombinedLanding() {
                   {selectedProject.id === "4" && (
                     <>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">영상 제작</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, Final Cut Pro</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">영상 편집</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">소셜미디어</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Facebook Creator Studio</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">모션 그래픽</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">After Effects</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">분석 도구</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Google Analytics</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">현장 커뮤니케이션</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">베트남 인플루언서 소통</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">디자인 도구</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Photoshop, Canva</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">촬영 장비</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">핸디캠 활용 자연스러운 촬영</div>
                       </div>
                     </>
                   )}
