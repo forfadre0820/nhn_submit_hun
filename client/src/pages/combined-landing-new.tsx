@@ -1661,16 +1661,16 @@ export default function CombinedLanding() {
                     {selectedProject.id === "1" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• NPS 4.5+ 고객만족도 달성</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">50회 이상의 행사를 성공적으로 운영하며 5개 주요 고객사 수주 성공</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 성공적인 고객사 수주</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">NH농협, 삼성교육재단, 한국출판 등 5개 주요 고객사 수주 성공</p>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 운영 성과</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실시간 피드백 시스템으로 90% 이상 참여도 향상, 메타버스 환경에서 평균 체류시간 200% 증가</p>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 혁신적 운영 시스템 구축</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">온오프라인 통합 자동화 시스템과 메타버스 기반 참여 환경 구축 완료</p>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• AI 기반 자동화 효과</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">운영 인력 30% 절감, 브랜드 메시지 전달 효과 최적화 달성</p>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python/OpenCV 자동화를 통한 효율적 운영 체계 확립 및 브랜드 메시지 전달 최적화</p>
                         </div>
                       </>
                     )}
@@ -1981,7 +1981,7 @@ export default function CombinedLanding() {
                       </div>
                       <div>
                         <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 몰입감 있는 메타버스 공간</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Gather 플랫폼 위에 브랜드의 정체성이 녹아든 가상 공간을 설계했습니다. 단순한 회의실이 아닌 참여자들이 자연스럽게 탐험하고 상호작용할 수 있는 게임형 환경을 만들어, 평균 체류시간이 200% 증가하는 놀라운 성과를 달성했습니다.</p>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Gather 플랫폼 위에 브랜드의 정체성이 녹아든 가상 공간을 설계했습니다. 단순한 회의실이 아닌 참여자들이 자연스럽게 탐험하고 상호작용할 수 있는 게임형 환경을 구축하여 새로운 형태의 디지털 참여 경험을 제공했습니다.</p>
                       </div>
                     </div>
                   </div>
@@ -2007,7 +2007,7 @@ export default function CombinedLanding() {
                       </div>
                       <div>
                         <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 위기를 기회로 바꾸는 대응 체계</h3>
-                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">예상치 못한 상황에도 흔들리지 않는 탄력적 운영 체계를 구축했습니다. 실시간 솔루션 제공부터 사후 분석을 통한 지속적 개선까지, 모든 이슈를 학습의 기회로 전환하는 프로세스를 통해 운영 효율성을 30% 향상시켰습니다.</p>
+                        <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">예상치 못한 상황에도 흔들리지 않는 탄력적 운영 체계를 구축했습니다. 실시간 솔루션 제공부터 사후 분석을 통한 지속적 개선까지, 모든 이슈를 학습의 기회로 전환하는 체계적인 프로세스를 확립했습니다.</p>
                       </div>
                     </div>
                   </div>
