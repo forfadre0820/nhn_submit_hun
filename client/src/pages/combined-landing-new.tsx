@@ -1759,17 +1759,12 @@ export default function CombinedLanding() {
                                 <text x="360" y="245" textAnchor="middle" className="text-sm fill-[#374151] font-medium">시간 (분)</text>
                                 <text x="30" y="120" textAnchor="middle" className="text-sm fill-[#374151] font-medium" transform="rotate(-90 30 120)">집중도</text>
                                 
-                                {/* 애니메이션 곡선 - 집중도 하강 패턴 */}
+                                {/* 곡선 - 집중도 하강 패턴 */}
                                 <path 
                                   d="M 90 60 Q 140 73 200 90 Q 250 130 320 150 Q 400 170 500 175 Q 550 180 630 180" 
                                   stroke="#ef4444" 
                                   strokeWidth="3" 
                                   fill="none"
-                                  style={{
-                                    strokeDasharray: "560",
-                                    strokeDashoffset: "560",
-                                    animation: "drawSequence 8s ease-out infinite"
-                                  }}
                                 />
                                 
                                 {/* 채워진 영역 */}
@@ -1777,48 +1772,28 @@ export default function CombinedLanding() {
                                   d="M 90 60 Q 140 73 200 90 Q 250 130 320 150 Q 400 170 500 175 Q 550 180 630 180 L 630 200 L 90 200 Z" 
                                   fill="#ef4444" 
                                   opacity="0.1"
-                                  style={{
-                                    animation: "fadeArea 8s ease-out infinite"
-                                  }}
                                 />
-                                
-                                {/* 주요 포인트 - 각 도트의 높이에 맞춰 위치 */}
-                                <circle cx="140" cy="73" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1s"}}/>
-                                <text x="100" y="45" textAnchor="middle" className="text-xs fill-[#374151] font-medium" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1s"}}>5초 이내</text>
-                                <text x="100" y="58" textAnchor="middle" className="text-xs fill-[#6b7280]" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1s"}}>집중 분산</text>
-                                
-                                <circle cx="200" cy="90" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2s"}}/>
-                                <text x="170" y="65" textAnchor="middle" className="text-xs fill-[#374151] font-medium" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2s"}}>창 최소화</text>
-                                <text x="170" y="78" textAnchor="middle" className="text-xs fill-[#6b7280]" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2s"}}>다른 업무</text>
-                                
-                                <circle cx="320" cy="150" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "3.5s"}}/>
-                                <text x="280" y="125" textAnchor="middle" className="text-xs fill-[#374151] font-medium" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "3.5s"}}>참여도</text>
-                                <text x="280" y="138" textAnchor="middle" className="text-xs fill-[#6b7280]" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "3.5s"}}>급격 하락</text>
-                                
-                                <circle cx="500" cy="175" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5s"}}/>
-                                <text x="460" y="155" textAnchor="middle" className="text-xs fill-[#374151] font-medium" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5s"}}>반복 교육</text>
-                                <text x="460" y="168" textAnchor="middle" className="text-xs fill-[#6b7280]" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5s"}}>회피</text>
                               </svg>
                             </div>
                             
                             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                               <h5 className="text-sm font-medium text-[#282623] mb-3">주요 분석 결과</h5>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                              <div className="space-y-3 text-sm">
                                 <div className="flex items-start space-x-2">
-                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-[#58534e]">재생 중 창 최소화 및 다른 업무 처리</span>
+                                  <span className="text-[#ef4444] font-bold">1.</span>
+                                  <span className="text-[#58534e]">5초 이내 주의 집중 분산 - 초기 집중도가 급격히 감소하여 교육 효과 저하</span>
                                 </div>
                                 <div className="flex items-start space-x-2">
-                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-[#58534e]">교육 콘텐츠에 대한 낮은 참여도</span>
+                                  <span className="text-[#ef4444] font-bold">2.</span>
+                                  <span className="text-[#58534e]">창 최소화 및 다른 업무 처리 - 재생 중 멀티태스킹으로 인한 학습 방해</span>
                                 </div>
                                 <div className="flex items-start space-x-2">
-                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-[#58534e]">단순 반복 교육에 대한 회피 현상</span>
+                                  <span className="text-[#ef4444] font-bold">3.</span>
+                                  <span className="text-[#58534e]">참여도 급격 하락 - 중간 지점 이후 교육 콘텐츠에 대한 흥미 상실</span>
                                 </div>
                                 <div className="flex items-start space-x-2">
-                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-[#58534e]">5초 이내 주의 집중 분산</span>
+                                  <span className="text-[#ef4444] font-bold">4.</span>
+                                  <span className="text-[#58534e]">단순 반복 교육 회피 - 기존 교육 방식에 대한 저항 및 회피 현상</span>
                                 </div>
                               </div>
                             </div>
