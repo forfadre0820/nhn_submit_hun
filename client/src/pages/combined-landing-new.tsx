@@ -1710,31 +1710,72 @@ export default function CombinedLanding() {
                             <p><strong>주요 사용자 행동 패턴:</strong></p>
                             
                             {/* 사용자 행동 패턴 도식 */}
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                              <svg width="100%" height="200" viewBox="0 0 600 200" className="overflow-visible">
+                            <div className="bg-white border border-gray-200 p-8 rounded-lg">
+                              <div className="text-center mb-6">
+                                <h4 className="text-sm font-medium text-[#282623] mb-2">사용자 집중도 변화 패턴</h4>
+                                <p className="text-xs text-[#58534e]">교육 콘텐츠 시청 시간에 따른 집중도 하락 분석</p>
+                              </div>
+                              
+                              <svg width="100%" height="260" viewBox="0 0 700 260" className="overflow-visible">
+                                {/* 격자 배경 */}
+                                <defs>
+                                  <pattern id="grid" width="70" height="40" patternUnits="userSpaceOnUse">
+                                    <path d="M 70 0 L 0 0 0 40" fill="none" stroke="#f3f4f6" strokeWidth="1"/>
+                                  </pattern>
+                                </defs>
+                                <rect width="560" height="160" x="80" y="40" fill="url(#grid)"/>
+                                
                                 {/* 축 및 레이블 */}
-                                <line x1="60" y1="180" x2="540" y2="180" stroke="#282623" strokeWidth="1"/>
-                                <line x1="60" y1="180" x2="60" y2="30" stroke="#282623" strokeWidth="1"/>
-                                <text x="300" y="195" textAnchor="middle" className="text-xs fill-[#58534e]">시간 흐름</text>
-                                <text x="30" y="105" textAnchor="middle" className="text-xs fill-[#58534e]" transform="rotate(-90 30 105)">집중도</text>
+                                <line x1="80" y1="200" x2="640" y2="200" stroke="#374151" strokeWidth="2"/>
+                                <line x1="80" y1="200" x2="80" y2="40" stroke="#374151" strokeWidth="2"/>
+                                
+                                {/* 시간 축 눈금 */}
+                                <line x1="150" y1="200" x2="150" y2="205" stroke="#374151" strokeWidth="1"/>
+                                <text x="150" y="220" textAnchor="middle" className="text-xs fill-[#6b7280]">1분</text>
+                                
+                                <line x1="290" y1="200" x2="290" y2="205" stroke="#374151" strokeWidth="1"/>
+                                <text x="290" y="220" textAnchor="middle" className="text-xs fill-[#6b7280]">3분</text>
+                                
+                                <line x1="430" y1="200" x2="430" y2="205" stroke="#374151" strokeWidth="1"/>
+                                <text x="430" y="220" textAnchor="middle" className="text-xs fill-[#6b7280]">5분</text>
+                                
+                                <line x1="570" y1="200" x2="570" y2="205" stroke="#374151" strokeWidth="1"/>
+                                <text x="570" y="220" textAnchor="middle" className="text-xs fill-[#6b7280]">7분</text>
+                                
+                                {/* 집중도 축 눈금 */}
+                                <line x1="75" y1="60" x2="80" y2="60" stroke="#374151" strokeWidth="1"/>
+                                <text x="70" y="65" textAnchor="end" className="text-xs fill-[#6b7280]">100%</text>
+                                
+                                <line x1="75" y1="100" x2="80" y2="100" stroke="#374151" strokeWidth="1"/>
+                                <text x="70" y="105" textAnchor="end" className="text-xs fill-[#6b7280]">75%</text>
+                                
+                                <line x1="75" y1="140" x2="80" y2="140" stroke="#374151" strokeWidth="1"/>
+                                <text x="70" y="145" textAnchor="end" className="text-xs fill-[#6b7280]">50%</text>
+                                
+                                <line x1="75" y1="180" x2="80" y2="180" stroke="#374151" strokeWidth="1"/>
+                                <text x="70" y="185" textAnchor="end" className="text-xs fill-[#6b7280]">25%</text>
+                                
+                                {/* 축 레이블 */}
+                                <text x="360" y="245" textAnchor="middle" className="text-sm fill-[#374151] font-medium">시간 (분)</text>
+                                <text x="30" y="120" textAnchor="middle" className="text-sm fill-[#374151] font-medium" transform="rotate(-90 30 120)">집중도</text>
                                 
                                 {/* 애니메이션 곡선 - 집중도 하강 패턴 */}
                                 <path 
-                                  d="M 70 60 Q 150 50 180 90 Q 220 130 280 150 Q 340 170 420 175 Q 480 180 530 180" 
-                                  stroke="#ff6b6b" 
+                                  d="M 90 60 Q 150 55 200 90 Q 250 130 320 150 Q 400 170 500 175 Q 550 180 630 180" 
+                                  stroke="#ef4444" 
                                   strokeWidth="3" 
                                   fill="none"
                                   style={{
-                                    strokeDasharray: "460",
-                                    strokeDashoffset: "460",
+                                    strokeDasharray: "560",
+                                    strokeDashoffset: "560",
                                     animation: "drawSequence 8s ease-out infinite"
                                   }}
                                 />
                                 
                                 {/* 채워진 영역 */}
                                 <path 
-                                  d="M 70 60 Q 150 50 180 90 Q 220 130 280 150 Q 340 170 420 175 Q 480 180 530 180 L 530 180 L 70 180 Z" 
-                                  fill="#ff6b6b" 
+                                  d="M 90 60 Q 150 55 200 90 Q 250 130 320 150 Q 400 170 500 175 Q 550 180 630 180 L 630 200 L 90 200 Z" 
+                                  fill="#ef4444" 
                                   opacity="0.1"
                                   style={{
                                     animation: "fadeArea 8s ease-out infinite"
@@ -1742,33 +1783,48 @@ export default function CombinedLanding() {
                                 />
                                 
                                 {/* 주요 포인트 - 곡선 위에 정확히 위치 */}
-                                <circle cx="150" cy="53" r="3" fill="#ff6b6b" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
-                                <text x="150" y="38" textAnchor="middle" className="text-xs fill-[#282623]">5초 이내</text>
-                                <text x="150" y="28" textAnchor="middle" className="text-xs fill-[#282623]">집중 분산</text>
+                                <circle cx="150" cy="55" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
+                                <rect x="110" y="15" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
+                                <text x="150" y="25" textAnchor="middle" className="text-xs fill-[#374151] font-medium">5초 이내</text>
+                                <text x="150" y="35" textAnchor="middle" className="text-xs fill-[#6b7280]">집중 분산</text>
                                 
-                                <circle cx="180" cy="90" r="3" fill="#ff6b6b" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
-                                <text x="180" y="75" textAnchor="middle" className="text-xs fill-[#282623]">창 최소화</text>
-                                <text x="180" y="65" textAnchor="middle" className="text-xs fill-[#282623]">다른 업무</text>
+                                <circle cx="200" cy="90" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
+                                <rect x="160" y="50" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
+                                <text x="200" y="60" textAnchor="middle" className="text-xs fill-[#374151] font-medium">창 최소화</text>
+                                <text x="200" y="70" textAnchor="middle" className="text-xs fill-[#6b7280]">다른 업무</text>
                                 
-                                <circle cx="280" cy="150" r="3" fill="#ff6b6b" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
-                                <text x="280" y="135" textAnchor="middle" className="text-xs fill-[#282623]">참여도</text>
-                                <text x="280" y="125" textAnchor="middle" className="text-xs fill-[#282623]">급격 하락</text>
+                                <circle cx="320" cy="150" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
+                                <rect x="280" y="110" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
+                                <text x="320" y="120" textAnchor="middle" className="text-xs fill-[#374151] font-medium">참여도</text>
+                                <text x="320" y="130" textAnchor="middle" className="text-xs fill-[#6b7280]">급격 하락</text>
                                 
-                                <circle cx="420" cy="175" r="3" fill="#ff6b6b" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
-                                <text x="420" y="160" textAnchor="middle" className="text-xs fill-[#282623]">반복 교육</text>
-                                <text x="420" y="150" textAnchor="middle" className="text-xs fill-[#282623]">회피</text>
-                                
-                                {/* 문제 영역 텍스트 */}
-                                <text x="300" y="115" textAnchor="middle" className="text-xs fill-[#ff6b6b] font-medium">문제 영역: 지속적인 집중도 저하</text>
+                                <circle cx="500" cy="175" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
+                                <rect x="460" y="145" width="80" height="28" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
+                                <text x="500" y="155" textAnchor="middle" className="text-xs fill-[#374151] font-medium">반복 교육</text>
+                                <text x="500" y="165" textAnchor="middle" className="text-xs fill-[#6b7280]">회피</text>
                               </svg>
                             </div>
                             
-                            <div className="space-y-2 text-sm">
-                              <p className="text-[#282623] font-medium">분석 결과:</p>
-                              <p>- 재생 중 창 최소화 및 다른 업무 처리</p>
-                              <p>- 교육 콘텐츠에 대한 낮은 참여도</p>
-                              <p>- 단순 반복 교육에 대한 회피 현상</p>
-                              <p>- 5초 이내 주의 집중 분산</p>
+                            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                              <h5 className="text-sm font-medium text-[#282623] mb-3">주요 분석 결과</h5>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                <div className="flex items-start space-x-2">
+                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
+                                  <span className="text-[#58534e]">재생 중 창 최소화 및 다른 업무 처리</span>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
+                                  <span className="text-[#58534e]">교육 콘텐츠에 대한 낮은 참여도</span>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
+                                  <span className="text-[#58534e]">단순 반복 교육에 대한 회피 현상</span>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                  <div className="w-2 h-2 bg-[#ef4444] rounded-full mt-2 flex-shrink-0"></div>
+                                  <span className="text-[#58534e]">5초 이내 주의 집중 분산</span>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>

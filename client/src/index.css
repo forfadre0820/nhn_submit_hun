@@ -114,7 +114,7 @@ body {
 }
 
 @keyframes drawSequence {
-  0% { stroke-dashoffset: 460; }
+  0% { stroke-dashoffset: 560; }
   70% { stroke-dashoffset: 0; }
   100% { stroke-dashoffset: 0; }
 }
