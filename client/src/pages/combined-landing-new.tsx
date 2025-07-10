@@ -1738,6 +1738,33 @@ export default function CombinedLanding() {
                       </div>
                     </div>
                   </div>
+
+                  {/* 프로젝트 이미지 갤러리 */}
+                  <div>
+                    <h2 className="text-lg font-semibold mb-4 flex items-center">
+                      <span className="w-6 h-6 bg-black text-white text-sm rounded-full flex items-center justify-center mr-3">6</span>
+                      프로젝트 이미지
+                    </h2>
+                    <div className="ml-9">
+                      <div className="grid grid-cols-2 gap-4">
+                        {selectedProject.images.map((image, index) => (
+                          <div key={index} className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                            <img 
+                              src={image} 
+                              alt={`${selectedProject.title} 이미지 ${index + 1}`}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-4 grid grid-cols-2 gap-4 text-xs text-gray-600">
+                        <div>스튜디오 촬영 환경</div>
+                        <div>카메라 작업 현장</div>
+                        <div>Screen Life 녹화 작업</div>
+                        <div>멀티스크린 편집 환경</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
 
