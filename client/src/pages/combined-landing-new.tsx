@@ -1741,8 +1741,16 @@ export default function CombinedLanding() {
                           <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">외주 제작의 한계를 극복하고 전 공정 인하우스 제작 체계를 구축하여 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지를 전달했습니다. 시네마틱 품질과 효율성을 동시에 달성하는 새로운 제작 표준을 확립했습니다.</p>
                         </div>
                         <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시네마틱 촬영 및 컬러 그레이딩</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">BMPCC 6K 활용한 영화적 촬영과 브랜드 LUT, 시네마틱 룩 직접 설계로 Teal & Orange, Film Emulation 등 영화적 색감 구현</p>
+                        </div>
+                        <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• FFmpeg 최적화를 통한 획기적인 효율성 향상</h3>
                           <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">Python 자동화와 대규모 편집 워크플로우 구축으로 50분 분량 5개 클래스 동시 제작 시 40% 리드타임 단축 달성</p>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 10만+ 조회수 및 홍콩 BP 인증 획득</h3>
+                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">프리미엄 교육 콘텐츠의 시장 반응 검증 및 글로벌 품질 표준 확립으로 업계 최고 수준의 시각적 품질과 기술적 혁신 달성</p>
                         </div>
                       </>
                     )}
