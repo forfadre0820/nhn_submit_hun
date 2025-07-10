@@ -1750,7 +1750,14 @@ export default function CombinedLanding() {
                       <>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Screen Life 포맷 활용</h3>
-                          <p className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4">실제 컴퓨터 화면을 활용한 현실감 있는 교육 환경 구성, 사용자 친화적인 인터페이스 설계, 직관적인 학습 경로 제시, 실무 환경과 유사한 교육 시나리오 구현</p>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <p><strong>Screen Life란?</strong> 실제 컴퓨터나 모바일 화면을 그대로 활용하여 이야기를 전개하는 영상 기법</p>
+                            <p><strong>교육 콘텐츠 적용:</strong></p>
+                            <p>- 실제 업무 환경 (브라우저, 프로그램, 앱)을 그대로 화면에 표현</p>
+                            <p>- 사용자가 실제로 마주할 인터페이스를 사용한 교육</p>
+                            <p>- 화면 분할, 멀티태스킹 상황 등 현실적인 작업 환경 재현</p>
+                            <p>- 직관적이고 몰입도 높은 학습 경험 제공</p>
+                          </div>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시각적 & 청각적 메시지 전달</h3>
@@ -1813,7 +1820,7 @@ export default function CombinedLanding() {
                     <>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Found Footage</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Screen Life 기법 활용</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Screen Life 기법의 핵심 도구<br/>실제 화면 녹화 및 편집</div>
                       </div>
                       <div>
                         <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Photoshop</div>
