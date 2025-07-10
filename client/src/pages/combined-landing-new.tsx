@@ -31,6 +31,12 @@ import SamsungEducationFilming from "@assets/2_1752108034458.jpg";
 import SamsungEducationScreenLife from "@assets/3_1752108034455.jpg";
 import SamsungEducationMultiscreen from "@assets/4_1752108034456.jpg";
 
+// 4번 진에어 프로젝트 새로운 이미지들
+import JinairEsportsEvent from "@assets/image_1752127221003.png";
+import JinairFanEvent from "@assets/image_1752127231436.png";
+import JinairShillaBeauty from "@assets/image_1752127654728.png";
+import JinairShillaStore from "@assets/image_1752127669601.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
 // Portfolio item interface
@@ -304,10 +310,10 @@ export default function CombinedLanding() {
       role: "마케팅 콘텐츠 기획",
       tools: ["Influencer Marketing", "Brand Content", "Video Production"],
       images: [
-        JinairPromoImage,
-        JinairSurfingDayImage,
-        GalleryJinairPromotionImage,
-        LikelionHackathonImage,
+        JinairEsportsEvent,
+        JinairFanEvent,
+        JinairShillaBeauty,
+        JinairShillaStore,
       ],
     },
   ];
