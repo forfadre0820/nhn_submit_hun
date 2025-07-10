@@ -1737,19 +1737,18 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 개요</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 프로젝트 개요</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>Snapask 프리미엄 교육 콘텐츠 영상제작:</strong></p>
-                            <p>외국 제작에 따른 의사결정 지연, 연출 난잡, 품질 단차 문제를 해결하기 위해 전 공정 인하우스 제작 체계를 구축하였습니다. 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지를 효과적으로 전달하는 교육용 영상 콘텐츠를 제작하여 시너마틱 품질과 효율성을 동시에 달성하는 새로운 제작 표준을 확립하였습니다.</p>
+                            <p>외주 제작에 따른 의사결정 지연, 연출 난립, 품질 단차 문제를 해결하기 위해 전 공정 인하우스 제작 체계를 구축하였습니다. 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지를 효과적으로 전달하는 고품질 영상 콘텐츠를 제작하여 시네마틱 품질과 효율성을 동시에 달성하는 새로운 제작 표준을 확립하였습니다.</p>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 해결한 주요 문제점</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 해결한 주요 문제점</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>외국 제작에 따른 의사결정 지연 및 커뮤니케이션 비효율성:</strong></p>
                             <ul className="list-disc ml-4 space-y-1">
-                              <li>외국 방향의 일관성 부족으로 인한 품질 저하</li>
-                              <li>브랜드 메시지 전달 및 차별화 요소 부재</li>
+                              <li>외주 제작에 따른 의사결정 지연 및 커뮤니케이션 비효율성</li>
+                              <li>연출 방향의 일관성 부족과 품질 편차 발생</li>
+                              <li>브랜드 메시지 전달력 저하 및 차별화 요소 부족</li>
                               <li>제작 일정 관리 어려움과 비용 증가</li>
                             </ul>
                           </div>
@@ -1963,129 +1962,199 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 영상제작 전문성</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 영상제작 전문성</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>기획 및 사전 제작:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>브랜드 메시지를 고려한 전략적 기획</li>
-                              <li>삼세대 스토리보드 작성 및 시나리오 개발</li>
-                            </ul>
-                            <p><strong>촬영 그레이딩:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>브랜드 전용 LUT 설계 및 개발</li>
-                              <li>시네마틱 색감 구현 (Teal & Orange, Film Emulation)</li>
-                            </ul>
-                            <p><strong>편집 오디오:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>일관된 톤 앤 매너의 시스템 적용</li>
-                              <li>영화적 품질의 색상 보정 및 사운드 디자인</li>
-                            </ul>
+                            <p>전 제작 공정을 직접 수행하여 일관된 품질과 창의적 통합을 달성하였습니다.</p>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">기획 및 사전 제작</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• 브랜드 메시지를 고려한 전략적 기획</li>
+                                  <li>• 상세한 스토리보드 작성 및 시나리오 개발</li>
+                                  <li>• 타겟 오디언스 분석 및 맞춤형 콘텐츠 설계</li>
+                                  <li>• 촬영 단계별 세부 계획 수립</li>
+                                </ul>
+                              </div>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">컬러 그레이딩</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• 브랜드 전용 LUT 설계 및 개발</li>
+                                  <li>• 시네마틱 색감 구현 (Teal & Orange, Film Emulation)</li>
+                                  <li>• 일관된 브랜드 컬러 시스템 적용</li>
+                                  <li>• 영화적 품질의 색상 보정 작업</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">시네마틱 촬영</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• BMPCC 6K를 활용한 고품질 영상 촬영</li>
+                                  <li>• 영화적 구도와 전문적 라이팅 기법 적용</li>
+                                  <li>• 깊이 있는 영상 연출 및 스토리텔링</li>
+                                  <li>• 다양한 앵글과 시점을 통한 시각적 몰입도 향상</li>
+                                </ul>
+                              </div>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">편집 및 마스터링</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• 효율적인 편집 워크플로우 구축</li>
+                                  <li>• 시네마틱 품질 유지를 위한 후반 작업</li>
+                                  <li>• 통합적 마스터링 과정 수행</li>
+                                  <li>• 최종 품질 검증 및 최적화</li>
+                                </ul>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Tech 효율화</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• Tech 효율화</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>기존 혁신을 통한 효율성 극대화:</strong></p>
+                            <p className="font-medium">기술 혁신을 통한 효율성 극대화</p>
                             <p>50분 분량의 교육 콘텐츠 5개 클래스를 동시에 제작하는 대규모 프로젝트에서 Python 자동화와 FFmpeg 최적화를 통해 획기적인 효율성 향상을 달성하였습니다.</p>
-                            <p><strong>프로젝트 배경:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>50분 분량의 교육 콘텐츠 5개 클래스 동시 제작 요구</li>
-                              <li>기존 수동 편집 방식의 한계와 시간 소요 문제</li>
-                              <li>일관된 품질 유지와 효율적 관리 필요</li>
-                              <li>스케일업된 제작 환경에서의 최적화 요구</li>
-                            </ul>
-                            <p><strong>Python 자동화:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>Python 기반 자동화 시스템 개발</li>
-                              <li>병렬 처리를 통한 다중 클래스 동시 작업</li>
-                              <li>데이터 자동 분류 및 카테고리화</li>
-                              <li>반복 작업 자동화를 통한 시간 절약</li>
-                            </ul>
-                            <p><strong>FFmpeg 최적화:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>FFmpeg 기반 멀티스레드 시스템 구축</li>
-                              <li>고성능 비디오 편집 및 처리</li>
-                              <li>포맷 통합 자동화 시스템</li>
-                              <li>배치 처리를 통한 대용량 작업 효율화</li>
-                            </ul>
-                            <p><strong>효율화 성과:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>제작 리드타임 40% 이상 대폭 단축</li>
-                              <li>규격화된 품질 관리 시스템 구축</li>
-                              <li>전체 클래스 일관된 품질 확보</li>
-                              <li>인력 자원 최적화로 비용 절감</li>
-                            </ul>
+                            <div className="mt-4 p-3 bg-[#f8f8f8] rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">프로젝트 배경</p>
+                              <ul className="text-xs text-[#58534e] space-y-1">
+                                <li>• 50분 분량의 교육 콘텐츠 5개 클래스 동시 제작 요구</li>
+                                <li>• 기존 수동 편집 방식의 한계와 시간 소요 문제</li>
+                                <li>• 일관된 품질 유지와 효율적 관리 필요</li>
+                                <li>• 스케일업된 제작 환경에서의 최적화 요구</li>
+                              </ul>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">Python 자동화</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• Python 기반 자동화 시스템 개발</li>
+                                  <li>• 병렬 처리를 통한 다중 클래스 동시 작업</li>
+                                  <li>• 데이터 자동 분류 및 카테고리화</li>
+                                  <li>• 반복 작업 자동화를 통한 시간 절약</li>
+                                </ul>
+                              </div>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">FFmpeg 최적화</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• FFmpeg 기반 맞춤형 시스템 구축</li>
+                                  <li>• 고성능 비디오 변환 및 처리</li>
+                                  <li>• 포맷 통합 자동화 시스템</li>
+                                  <li>• 배치 처리를 통한 대량 작업 효율화</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="mt-4 p-3 bg-[#f8f8f8] rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">효율화 성과</p>
+                              <ul className="text-xs text-[#58534e] space-y-1">
+                                <li>• 제작 리드타임 40% 이상 대폭 단축</li>
+                                <li>• 규격화된 품질 관리 시스템 구축</li>
+                                <li>• 전체 클래스 일관된 품질 확보</li>
+                                <li>• 인적 자원 최적화 및 비용 절감</li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Full-Stack 제작 성과</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• Full-Stack 제작성과</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
                             <div className="bg-green-50 border border-green-200 p-4 rounded-lg mb-4">
                               <div className="text-center mb-3">
-                                <div className="text-xl font-bold text-green-700 mb-1">40% 이상 제작 리드타임 단축 달성</div>
+                                <div className="text-lg font-bold text-green-700 mb-1">🎯 40% 이상 제작 리드타임 단축 달성</div>
                               </div>
-                              <div className="grid grid-cols-3 gap-4 text-center">
+                              <div className="grid grid-cols-3 gap-3 text-center">
                                 <div className="bg-white p-3 rounded-lg border border-green-100">
                                   <div className="text-lg font-bold text-green-700">40%</div>
-                                  <div className="text-sm text-green-600">리드타임 단축</div>
+                                  <div className="text-xs text-green-600">리드타임 단축</div>
                                 </div>
                                 <div className="bg-white p-3 rounded-lg border border-green-100">
                                   <div className="text-lg font-bold text-green-700">10만+</div>
-                                  <div className="text-sm text-green-600">조회수 달성</div>
+                                  <div className="text-xs text-green-600">조회수 달성</div>
                                 </div>
                                 <div className="bg-white p-3 rounded-lg border border-green-100">
                                   <div className="text-lg font-bold text-green-700">홍콩 BP</div>
-                                  <div className="text-sm text-green-600">인증 획득</div>
+                                  <div className="text-xs text-green-600">인증 획득</div>
                                 </div>
                               </div>
                             </div>
-                            <p><strong>전 공정 직접 수행:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>기획부터 후반 작업까지 원스톱 제작 체계 구축</li>
-                              <li>품질 일관성과 창의적 통합 관리를 통한 시너지 효과 창출</li>
-                              <li>효율적인 커뮤니케이션 통한 시너지 효과</li>
-                              <li>통합 관리를 통한 시너지 효과</li>
-                            </ul>
-                            <p><strong>시네마틱 품질 달성:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>브랜드 LUT 및 시네마틱 톤 적용 설계</li>
-                              <li>영화적 품질 수준의 교육 콘텐츠 제작</li>
-                              <li>차별화된 시각적 경험 제공</li>
-                              <li>프리미엄 브랜드 이미지 구축</li>
-                            </ul>
-                            <p><strong>품질 인증:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>10만+ 조회수 달성</li>
-                              <li>홍콩 BP에게 인증 획득</li>
-                              <li>초기 구매자 만족도 5.0</li>
-                            </ul>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">전 공정 직접 수행</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• 기획부터 후반 작업까지 원스톱 제작</li>
+                                  <li>• 품질 일관성과 창의적 통합 달성</li>
+                                  <li>• 효율적인 커뮤니케이션 및 의사결정</li>
+                                  <li>• 통합 관리를 통한 시너지 효과</li>
+                                </ul>
+                              </div>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">시네마틱 품질 달성</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• 브랜드 LUT 및 시네마틱 룩 직접 설계</li>
+                                  <li>• 영화적 품질 수준의 교육 콘텐츠 제작</li>
+                                  <li>• 차별화된 시각적 경험 제공</li>
+                                  <li>• 프리미엄 브랜드 이미지 구축</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">기술 혁신</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• Python 자동화 시스템 개발</li>
+                                  <li>• FFmpeg 최적화 구현</li>
+                                  <li>• 기술과 창의성의 완벽한 결합</li>
+                                  <li>• 효율적인 워크플로우 구축</li>
+                                </ul>
+                              </div>
+                              <div className="bg-[#f8f8f8] p-4 rounded-lg">
+                                <p className="font-medium text-[#282623] mb-2">품질 인증</p>
+                                <ul className="text-xs text-[#58534e] space-y-1">
+                                  <li>• 10만+ 조회수 달성</li>
+                                  <li>• 홍콩 BP 인증 획득</li>
+                                  <li>• 업계 표준 품질 검증</li>
+                                  <li>• 시장에서의 성공적 반응</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="mt-4 p-3 bg-[#f8f8f8] rounded-lg">
+                              <p className="font-medium text-[#282623] mb-2">제작 환경 및 시설</p>
+                              <ul className="text-xs text-[#58534e] space-y-1">
+                                <li>• 전용 스튜디오 환경 직접 설계 및 구축</li>
+                                <li>• 시네마틱 품질을 위한 전문 장비 시스템</li>
+                                <li>• 효율적인 후반 작업 환경 조성</li>
+                                <li>• 품질 관리를 위한 체계적 워크플로우</li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시장 인텐트 및 차별화 전략</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-wide leading-relaxed">• 시장 임팩트 및 차별화 전략</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
                             <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-4">
                               <p className="text-sm text-yellow-800 font-medium">
-                                인하우스 제작 체계 구축을 통해 40% 이상의 리드타임 단축 달성으로 시네마틱 품질을 돌시에 담성하는 제작 모델 구축으로 프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였습니다.
+                                인하우스 제작 체계 구축을 통해 40% 이상의 리드타임 단축과 동시에 시네마틱 품질을 달성하여 프리미엄 교육 콘텐츠 시장에서의 경쟁력을 확보하였습니다.
                               </p>
                             </div>
-                            <p><strong>시장 인텐트 및 차별화 전략:</strong></p>
-                            <ul className="list-disc ml-4 space-y-1">
-                              <li>프리미엄 교육 콘텐츠 시장에서의 새로운 표준 제시</li>
-                              <li>기술 혁신을 통한 차별화된 경쟁력 확보</li>
-                              <li>효율성과 품질을 동시에 담성하는 제작 모델 구축</li>
-                              <li>자체 가능한 고품질 콘텐츠 제작 시스템 확립</li>
-                            </ul>
-                            <p><strong>통합 제작 프로세스:</strong></p>
-                            <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
-                              <p className="text-sm text-gray-700 mb-2">
+                            <div className="bg-[#f8f8f8] p-4 rounded-lg mb-4">
+                              <ul className="text-xs text-[#58534e] space-y-1">
+                                <li>• 프리미엄 교육 콘텐츠 시장에서의 새로운 표준 제시</li>
+                                <li>• 기술 혁신을 통한 차별화된 경쟁력 확보</li>
+                                <li>• 효율성과 품질을 동시에 달성하는 제작 모델 구축</li>
+                                <li>• 지속 가능한 고품질 콘텐츠 제작 시스템 확립</li>
+                              </ul>
+                            </div>
+                            <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mb-4">
+                              <p className="font-medium text-[#282623] mb-2">통합 제작 프로세스</p>
+                              <p className="text-xs text-gray-700 mb-2">
                                 <strong>기획 → 사전 제작 → 촬영 → 편집 → 컬러 그레이딩 → 마스터링 → 배포</strong>
                               </p>
                               <p className="text-xs text-gray-600">
-                                기획부터 상영까지 전 과정을 일관되게 관리하여 최적화된 결과물을 도출하는 통합 제작 프로세스를 구축하였습니다.
+                                의 전 과정을 일관된 품질 기준으로 통합 관리하여 최적의 결과물을 도출하였습니다.
                               </p>
                             </div>
-                            <p><strong>Snapask 프로젝트 전 공정 직접 수행 기술 혁신을 통해 프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였으며, 시네마틱 품질과 효율성을 동시에 담성하는 새로운 제작 표준을 확립하였습니다. 40% 이상의 리드타임 단축 10만+ 조회수 달성, 홍콩 BP 인증 획득 이 프로젝트의 성공을 입증하는 내로직 지표입니다.</strong></p>
+                            <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                              <p className="text-sm text-blue-800 font-medium">
+                                Snapas 프로젝트는 전 공정 직접 수행과 기술 혁신을 통해 프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였으며, 시네마틱 품질과 효율성을 동시에 달성하는 새로운 제작 표준을 확립하는 성과를 거두었습니다. 40% 이상의 리드타임 단축과 10만+ 조회수 달성, 홍콩 BP 인증 획득은 이 프로젝트의 성공을 입증하는 대표적인 지표입니다.
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </>
@@ -2119,7 +2188,7 @@ export default function CombinedLanding() {
                     활용 기술
                   </h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-8">
                   {selectedProject.id === "1" && (
                     <>
                       <div>
@@ -2143,20 +2212,32 @@ export default function CombinedLanding() {
                   {selectedProject.id === "2" && (
                     <>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">영상 제작</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Premiere Pro, After Effects</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">BMPCC 6K</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">시네마틱 품질 촬영 장비</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">색상 보정</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">DaVinci Resolve, Custom LUT</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">브랜드 LUT</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">전용 컬러 그레이딩 시스템</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">자동화 도구</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">FFmpeg, Python Scripts</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Python</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">자동화 시스템 구축</div>
                       </div>
                       <div>
-                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">디자인</div>
-                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">Photoshop, Figma</div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">FFmpeg</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">고성능 비디오 처리</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">DaVinci Resolve</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">전문 색상 보정 도구</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">Premiere Pro</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">영상 편집 및 구성</div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-[#282623] tracking-tight leading-relaxed mb-2">After Effects</div>
+                        <div className="text-sm text-[#58534e] tracking-tight leading-relaxed">모션 그래픽 및 합성</div>
                       </div>
                     </>
                   )}
