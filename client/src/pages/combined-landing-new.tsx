@@ -1560,46 +1560,57 @@ export default function CombinedLanding() {
                 </div>
               </div>
 
-              {/* 3번 프로젝트 - 전문적으로 재작성된 내용 */}
+              {/* 3번 프로젝트 - 디자인 체계화된 내용 */}
               {selectedProject.id === "3" && (
-                <div className="space-y-8">
+                <div className="space-y-12">
                   {/* 프로젝트 이미지 갤러리 - 최상단 배치 */}
-                  <div>
-                    <h2 className="text-lg font-semibold mb-4">프로젝트 이미지</h2>
-                    <div className="grid grid-cols-2 gap-4">
+                  <div className="pb-8 border-b border-gray-100">
+                    <h2 className={`${FONT_SIZES.heading} font-bold mb-6 text-gray-900 tracking-tight`}>
+                      프로젝트 이미지
+                    </h2>
+                    <div className="grid grid-cols-2 gap-6">
                       {selectedProject.images.map((image, index) => (
-                        <div key={index} className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                        <div key={index} className="aspect-video bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100">
                           <img 
                             src={image} 
                             alt={`${selectedProject.title} 이미지 ${index + 1}`}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                           />
                         </div>
                       ))}
                     </div>
-                    <div className="mt-4 grid grid-cols-2 gap-4 text-xs text-gray-600">
-                      <div>스튜디오 촬영 환경</div>
-                      <div>카메라 작업 현장</div>
-                      <div>Screen Life 녹화 작업</div>
-                      <div>멀티스크린 편집 환경</div>
+                    <div className="mt-6 grid grid-cols-2 gap-6">
+                      <div className={`${FONT_SIZES.small} text-gray-600 text-center py-2`}>스튜디오 촬영 환경</div>
+                      <div className={`${FONT_SIZES.small} text-gray-600 text-center py-2`}>카메라 작업 현장</div>
+                      <div className={`${FONT_SIZES.small} text-gray-600 text-center py-2`}>Screen Life 녹화 작업</div>
+                      <div className={`${FONT_SIZES.small} text-gray-600 text-center py-2`}>멀티스크린 편집 환경</div>
                     </div>
                   </div>
 
                   {/* 1. 프로젝트 개요 */}
-                  <div>
-                    <h2 className="text-lg font-semibold mb-4 flex items-center">
-                      <span className="w-6 h-6 bg-black text-white text-sm rounded-full flex items-center justify-center mr-3">1</span>
+                  <div className="pb-8 border-b border-gray-100">
+                    <h2 className={`${FONT_SIZES.heading} font-bold mb-6 text-gray-900 tracking-tight flex items-center`}>
+                      <span className="w-8 h-8 bg-gray-900 text-white text-sm rounded-full flex items-center justify-center mr-4 font-medium">1</span>
                       프로젝트 개요
                     </h2>
-                    <div className="ml-9 space-y-4">
-                      <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                        <p className="text-sm text-gray-800 leading-relaxed">
-                          <strong>프로젝트 기간:</strong> 2023년 2월 - 2023년 8월 (6개월)<br />
-                          <strong>클라이언트:</strong> 삼성물산<br />
-                          <strong>프로젝트 목표:</strong> Screen Life 기법을 활용한 혁신적 교육 콘텐츠 제작
-                        </p>
+                    <div className="ml-12 space-y-6">
+                      <div className="bg-blue-50 border border-blue-100 p-6 rounded-xl">
+                        <div className="space-y-3">
+                          <div className="flex items-start">
+                            <span className={`${FONT_SIZES.body} font-semibold text-gray-900 min-w-0 w-24`}>기간</span>
+                            <span className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>2023년 2월 - 2023년 8월 (6개월)</span>
+                          </div>
+                          <div className="flex items-start">
+                            <span className={`${FONT_SIZES.body} font-semibold text-gray-900 min-w-0 w-24`}>클라이언트</span>
+                            <span className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>삼성물산</span>
+                          </div>
+                          <div className="flex items-start">
+                            <span className={`${FONT_SIZES.body} font-semibold text-gray-900 min-w-0 w-24`}>목표</span>
+                            <span className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>Screen Life 기법을 활용한 혁신적 교육 콘텐츠 제작</span>
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-sm text-gray-700 leading-relaxed">
+                      <p className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>
                         삼성물산의 교육 콘텐츠 혁신을 위해 Screen Life 연출 기법과 사용자 행동 분석을 
                         결합한 맞춤형 교육 전략을 수립하고 실행했습니다. 전통적인 교육 방식의 한계를 
                         극복하고 실무 환경과 동일한 학습 경험을 제공하는 것이 핵심 목표였습니다.
@@ -1608,30 +1619,54 @@ export default function CombinedLanding() {
                   </div>
 
                   {/* 2. 사용자 행동 분석 & 솔루션 */}
-                  <div>
-                    <h2 className="text-lg font-semibold mb-4 flex items-center">
-                      <span className="w-6 h-6 bg-black text-white text-sm rounded-full flex items-center justify-center mr-3">2</span>
+                  <div className="pb-8 border-b border-gray-100">
+                    <h2 className={`${FONT_SIZES.heading} font-bold mb-6 text-gray-900 tracking-tight flex items-center`}>
+                      <span className="w-8 h-8 bg-gray-900 text-white text-sm rounded-full flex items-center justify-center mr-4 font-medium">2</span>
                       사용자 행동 분석 & 솔루션
                     </h2>
-                    <div className="ml-9 space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-red-50 p-4 rounded-lg">
-                          <h4 className="font-medium mb-3 text-red-800">주요 문제점</h4>
-                          <ul className="text-sm text-gray-700 space-y-2">
-                            <li>• 교육 영상 재생 중 창 최소화 후 다른 업무 처리</li>
-                            <li>• 5초 이내 주의 집중 분산으로 인한 낮은 학습 효과</li>
-                            <li>• 단순 반복 교육에 대한 회피 현상 증가</li>
-                            <li>• 실무와 괴리된 교육 환경으로 인한 적용도 저하</li>
+                    <div className="ml-12 space-y-8">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div className="bg-red-50 border border-red-100 p-6 rounded-xl">
+                          <h4 className={`${FONT_SIZES.subheading} font-semibold mb-4 text-red-800`}>주요 문제점</h4>
+                          <ul className="space-y-3">
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              교육 영상 재생 중 창 최소화 후 다른 업무 처리
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              5초 이내 주의 집중 분산으로 인한 낮은 학습 효과
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              단순 반복 교육에 대한 회피 현상 증가
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              실무와 괴리된 교육 환경으로 인한 적용도 저하
+                            </li>
                           </ul>
                         </div>
                         
-                        <div className="bg-green-50 p-4 rounded-lg">
-                          <h4 className="font-medium mb-3 text-green-800">혁신적 솔루션</h4>
-                          <ul className="text-sm text-gray-700 space-y-2">
-                            <li>• Screen Life 포맷으로 자연스러운 몰입 환경 조성</li>
-                            <li>• 5초 내 주의 집중 자동 유도 시스템 개발</li>
-                            <li>• 실제 업무 화면과 동일한 인터페이스 구현</li>
-                            <li>• 상호작용 요소를 통한 능동적 학습 참여 유도</li>
+                        <div className="bg-green-50 border border-green-100 p-6 rounded-xl">
+                          <h4 className={`${FONT_SIZES.subheading} font-semibold mb-4 text-green-800`}>혁신적 솔루션</h4>
+                          <ul className="space-y-3">
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              Screen Life 포맷으로 자연스러운 몰입 환경 조성
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              5초 내 주의 집중 자동 유도 시스템 개발
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              실제 업무 화면과 동일한 인터페이스 구현
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                              <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              상호작용 요소를 통한 능동적 학습 참여 유도
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -1639,35 +1674,51 @@ export default function CombinedLanding() {
                   </div>
 
                   {/* 3. 핵심 기술 및 제작 방법론 */}
-                  <div>
-                    <h2 className="text-lg font-semibold mb-4 flex items-center">
-                      <span className="w-6 h-6 bg-black text-white text-sm rounded-full flex items-center justify-center mr-3">3</span>
+                  <div className="pb-8 border-b border-gray-100">
+                    <h2 className={`${FONT_SIZES.heading} font-bold mb-6 text-gray-900 tracking-tight flex items-center`}>
+                      <span className="w-8 h-8 bg-gray-900 text-white text-sm rounded-full flex items-center justify-center mr-4 font-medium">3</span>
                       핵심 기술 및 제작 방법론
                     </h2>
-                    <div className="ml-9 space-y-6">
+                    <div className="ml-12 space-y-8">
                       <div>
-                        <h3 className="font-medium mb-3">Screen Life + Found Footage 기법</h3>
-                        <div className="bg-purple-50 p-4 rounded-lg">
-                          <ul className="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>실제 컴퓨터 화면 녹화:</strong> 사용자가 실제 업무에서 보는 화면과 100% 동일한 환경 구성</li>
-                            <li>• <strong>자연스러운 인터랙션:</strong> 마우스 클릭, 키보드 입력 등 실제 조작 과정 그대로 재현</li>
-                            <li>• <strong>현실감 있는 학습 시나리오:</strong> 실무에서 발생하는 상황을 그대로 교육에 적용</li>
-                            <li>• <strong>직관적 학습 경로:</strong> 복잡한 업무 프로세스를 단계별로 명확하게 제시</li>
+                        <h3 className={`${FONT_SIZES.subheading} font-semibold mb-4 text-gray-900`}>Screen Life + Found Footage 기법</h3>
+                        <div className="bg-purple-50 border border-purple-100 p-6 rounded-xl">
+                          <ul className="space-y-4">
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>
+                              <strong className="text-gray-900">실제 컴퓨터 화면 녹화:</strong> 사용자가 실제 업무에서 보는 화면과 100% 동일한 환경 구성
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>
+                              <strong className="text-gray-900">자연스러운 인터랙션:</strong> 마우스 클릭, 키보드 입력 등 실제 조작 과정 그대로 재현
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>
+                              <strong className="text-gray-900">현실감 있는 학습 시나리오:</strong> 실무에서 발생하는 상황을 그대로 교육에 적용
+                            </li>
+                            <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>
+                              <strong className="text-gray-900">직관적 학습 경로:</strong> 복잡한 업무 프로세스를 단계별로 명확하게 제시
+                            </li>
                           </ul>
                         </div>
                       </div>
 
                       <div>
-                        <h3 className="font-medium mb-3">전문 촬영 환경 구축</h3>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <p className="text-sm text-gray-700 leading-relaxed mb-3">
+                        <h3 className={`${FONT_SIZES.subheading} font-semibold mb-4 text-gray-900`}>전문 촬영 환경 구축</h3>
+                        <div className="bg-gray-50 border border-gray-200 p-6 rounded-xl">
+                          <p className={`${FONT_SIZES.body} text-gray-700 leading-relaxed mb-6`}>
                             업계 표준 촬영 장비와 스튜디오 환경을 구축하여 최고 품질의 교육 콘텐츠를 제작했습니다.
                           </p>
-                          <div className="flex flex-wrap gap-2">
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">전문 조명 시스템</span>
-                            <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">다중 카메라 구성</span>
-                            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">실시간 편집</span>
-                            <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">고품질 음향</span>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <div className="bg-blue-100 border border-blue-200 p-3 rounded-lg text-center">
+                              <div className={`${FONT_SIZES.small} font-medium text-blue-800`}>전문 조명 시스템</div>
+                            </div>
+                            <div className="bg-green-100 border border-green-200 p-3 rounded-lg text-center">
+                              <div className={`${FONT_SIZES.small} font-medium text-green-800`}>다중 카메라 구성</div>
+                            </div>
+                            <div className="bg-purple-100 border border-purple-200 p-3 rounded-lg text-center">
+                              <div className={`${FONT_SIZES.small} font-medium text-purple-800`}>실시간 편집</div>
+                            </div>
+                            <div className="bg-yellow-100 border border-yellow-200 p-3 rounded-lg text-center">
+                              <div className={`${FONT_SIZES.small} font-medium text-yellow-800`}>고품질 음향</div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1675,47 +1726,56 @@ export default function CombinedLanding() {
                   </div>
 
                   {/* 4. 프로젝트 성과 & 경쟁 우위 */}
-                  <div>
-                    <h2 className="text-lg font-semibold mb-4 flex items-center">
-                      <span className="w-6 h-6 bg-black text-white text-sm rounded-full flex items-center justify-center mr-3">4</span>
+                  <div className="pb-8 border-b border-gray-100">
+                    <h2 className={`${FONT_SIZES.heading} font-bold mb-6 text-gray-900 tracking-tight flex items-center`}>
+                      <span className="w-8 h-8 bg-gray-900 text-white text-sm rounded-full flex items-center justify-center mr-4 font-medium">4</span>
                       프로젝트 성과 & 경쟁 우위
                     </h2>
-                    <div className="ml-9 space-y-4">
-                      <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-l-4 border-orange-500 p-6 rounded-lg">
-                        <h3 className="font-bold text-orange-800 text-lg mb-2">🏆 경쟁사 대비 30% 높은 단가로 수주 성공</h3>
-                        <p className="text-sm text-gray-700">
-                          혁신적인 Screen Life 기법과 데이터 기반 사용자 분석을 통해 차별화된 가치를 제공하며, 
-                          경쟁 입찰에서 압도적 우위를 달성했습니다.
-                        </p>
+                    <div className="ml-12 space-y-8">
+                      <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 p-8 rounded-xl">
+                        <div className="flex items-start mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center text-white text-xl font-bold mr-4">
+                            🏆
+                          </div>
+                          <div>
+                            <h3 className={`${FONT_SIZES.subheading} font-bold text-orange-800 mb-2`}>
+                              경쟁사 대비 30% 높은 단가로 수주 성공
+                            </h3>
+                            <p className={`${FONT_SIZES.body} text-gray-700 leading-relaxed`}>
+                              혁신적인 Screen Life 기법과 데이터 기반 사용자 분석을 통해 차별화된 가치를 제공하며, 
+                              경쟁 입찰에서 압도적 우위를 달성했습니다.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
-                          <div className="text-center mb-3">
-                            <div className="text-2xl font-bold text-blue-600">95%</div>
-                            <div className="text-sm text-gray-600">학습자 만족도</div>
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                          <div className="text-center mb-4">
+                            <div className="text-4xl font-bold text-blue-600 mb-2">95%</div>
+                            <div className={`${FONT_SIZES.subheading} font-medium text-gray-900`}>학습자 만족도</div>
                           </div>
-                          <p className="text-xs text-gray-700 text-center">
+                          <p className={`${FONT_SIZES.body} text-gray-700 text-center leading-relaxed`}>
                             기존 교육 대비 현실감과 실용성에서 높은 평가
                           </p>
                         </div>
                         
-                        <div className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
-                          <div className="text-center mb-3">
-                            <div className="text-2xl font-bold text-green-600">40%</div>
-                            <div className="text-sm text-gray-600">학습 완료율 향상</div>
+                        <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                          <div className="text-center mb-4">
+                            <div className="text-4xl font-bold text-green-600 mb-2">40%</div>
+                            <div className={`${FONT_SIZES.subheading} font-medium text-gray-900`}>학습 완료율 향상</div>
                           </div>
-                          <p className="text-xs text-gray-700 text-center">
+                          <p className={`${FONT_SIZES.body} text-gray-700 text-center leading-relaxed`}>
                             몰입형 Screen Life 포맷으로 중도 이탈 감소
                           </p>
                         </div>
                         
-                        <div className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
-                          <div className="text-center mb-3">
-                            <div className="text-2xl font-bold text-purple-600">85%</div>
-                            <div className="text-sm text-gray-600">업무 적용도</div>
+                        <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                          <div className="text-center mb-4">
+                            <div className="text-4xl font-bold text-purple-600 mb-2">85%</div>
+                            <div className={`${FONT_SIZES.subheading} font-medium text-gray-900`}>업무 적용도</div>
                           </div>
-                          <p className="text-xs text-gray-700 text-center">
+                          <p className={`${FONT_SIZES.body} text-gray-700 text-center leading-relaxed`}>
                             실무 환경과 동일한 교육으로 즉시 활용 가능
                           </p>
                         </div>
@@ -1725,37 +1785,49 @@ export default function CombinedLanding() {
 
                   {/* 5. 기술 스택 & 전문 도구 */}
                   <div>
-                    <h2 className="text-lg font-semibold mb-4 flex items-center">
-                      <span className="w-6 h-6 bg-black text-white text-sm rounded-full flex items-center justify-center mr-3">5</span>
+                    <h2 className={`${FONT_SIZES.heading} font-bold mb-6 text-gray-900 tracking-tight flex items-center`}>
+                      <span className="w-8 h-8 bg-gray-900 text-white text-sm rounded-full flex items-center justify-center mr-4 font-medium">5</span>
                       기술 스택 & 전문 도구
                     </h2>
-                    <div className="ml-9 space-y-4">
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <div className="bg-red-100 p-3 rounded-lg text-center">
-                          <div className="font-medium text-red-800 text-sm">Found Footage</div>
-                          <div className="text-xs text-gray-600 mt-1">실제 화면 캡처</div>
+                    <div className="ml-12 space-y-8">
+                      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="bg-red-50 border border-red-200 p-4 rounded-xl text-center hover:bg-red-100 transition-colors">
+                          <div className={`${FONT_SIZES.subheading} font-semibold text-red-800 mb-2`}>Found Footage</div>
+                          <div className={`${FONT_SIZES.small} text-gray-600`}>실제 화면 캡처</div>
                         </div>
-                        <div className="bg-blue-100 p-3 rounded-lg text-center">
-                          <div className="font-medium text-blue-800 text-sm">Screen Life</div>
-                          <div className="text-xs text-gray-600 mt-1">몰입형 포맷</div>
+                        <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl text-center hover:bg-blue-100 transition-colors">
+                          <div className={`${FONT_SIZES.subheading} font-semibold text-blue-800 mb-2`}>Screen Life</div>
+                          <div className={`${FONT_SIZES.small} text-gray-600`}>몰입형 포맷</div>
                         </div>
-                        <div className="bg-green-100 p-3 rounded-lg text-center">
-                          <div className="font-medium text-green-800 text-sm">After Effects</div>
-                          <div className="text-xs text-gray-600 mt-1">후반 작업</div>
+                        <div className="bg-green-50 border border-green-200 p-4 rounded-xl text-center hover:bg-green-100 transition-colors">
+                          <div className={`${FONT_SIZES.subheading} font-semibold text-green-800 mb-2`}>After Effects</div>
+                          <div className={`${FONT_SIZES.small} text-gray-600`}>후반 작업</div>
                         </div>
-                        <div className="bg-purple-100 p-3 rounded-lg text-center">
-                          <div className="font-medium text-purple-800 text-sm">Premiere Pro</div>
-                          <div className="text-xs text-gray-600 mt-1">편집 작업</div>
+                        <div className="bg-purple-50 border border-purple-200 p-4 rounded-xl text-center hover:bg-purple-100 transition-colors">
+                          <div className={`${FONT_SIZES.subheading} font-semibold text-purple-800 mb-2`}>Premiere Pro</div>
+                          <div className={`${FONT_SIZES.small} text-gray-600`}>편집 작업</div>
                         </div>
                       </div>
                       
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <h4 className="font-medium mb-2">전문성 입증 요소</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                          <li>• <strong>체계적 사용자 분석:</strong> 5초 이내 주의 집중 분산 패턴 분석 및 대응 기법 개발</li>
-                          <li>• <strong>혁신적 제작 방법론:</strong> Screen Life와 Found Footage 기법의 창의적 결합</li>
-                          <li>• <strong>데이터 기반 설계:</strong> 사용자 행동 데이터를 활용한 맞춤형 교육 경험 설계</li>
-                          <li>• <strong>상업적 성공:</strong> 경쟁사 대비 30% 프리미엄으로 프로젝트 수주</li>
+                      <div className="bg-gray-50 border border-gray-200 p-6 rounded-xl">
+                        <h4 className={`${FONT_SIZES.subheading} font-semibold mb-4 text-gray-900`}>전문성 입증 요소</h4>
+                        <ul className="space-y-3">
+                          <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                            <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span><strong className="text-gray-900">체계적 사용자 분석:</strong> 5초 이내 주의 집중 분산 패턴 분석 및 대응 기법 개발</span>
+                          </li>
+                          <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                            <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span><strong className="text-gray-900">혁신적 제작 방법론:</strong> Screen Life와 Found Footage 기법의 창의적 결합</span>
+                          </li>
+                          <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                            <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span><strong className="text-gray-900">데이터 기반 설계:</strong> 사용자 행동 데이터를 활용한 맞춤형 교육 경험 설계</span>
+                          </li>
+                          <li className={`${FONT_SIZES.body} text-gray-700 leading-relaxed flex items-start`}>
+                            <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span><strong className="text-gray-900">상업적 성공:</strong> 경쟁사 대비 30% 프리미엄으로 프로젝트 수주</span>
+                          </li>
                         </ul>
                       </div>
                     </div>
