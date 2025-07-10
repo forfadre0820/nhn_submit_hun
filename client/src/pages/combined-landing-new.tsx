@@ -1783,23 +1783,23 @@ export default function CombinedLanding() {
                                 />
                                 
                                 {/* 주요 포인트 - 곡선 위에 정확히 위치 */}
-                                <circle cx="140" cy="73" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
-                                <rect x="60" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1.5s"}}/>
+                                <circle cx="140" cy="73" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1s"}}/>
+                                <rect x="60" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "1s"}}/>
                                 <text x="100" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">5초 이내</text>
                                 <text x="100" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">집중 분산</text>
                                 
-                                <circle cx="200" cy="90" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
-                                <rect x="160" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2.5s"}}/>
+                                <circle cx="200" cy="90" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2s"}}/>
+                                <rect x="160" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "2s"}}/>
                                 <text x="200" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">창 최소화</text>
                                 <text x="200" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">다른 업무</text>
                                 
-                                <circle cx="320" cy="150" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
-                                <rect x="360" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "4s"}}/>
+                                <circle cx="320" cy="150" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "3.5s"}}/>
+                                <rect x="360" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "3.5s"}}/>
                                 <text x="400" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">참여도</text>
                                 <text x="400" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">급격 하락</text>
                                 
-                                <circle cx="500" cy="175" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
-                                <rect x="520" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5.5s"}}/>
+                                <circle cx="500" cy="175" r="4" fill="#ef4444" stroke="#ffffff" strokeWidth="2" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5s"}}/>
+                                <rect x="520" y="8" width="80" height="32" fill="#ffffff" stroke="#e5e7eb" strokeWidth="1" rx="4" style={{animation: "pointFadeIn 8s ease-out infinite", animationDelay: "5s"}}/>
                                 <text x="560" y="20" textAnchor="middle" className="text-xs fill-[#374151] font-medium">반복 교육</text>
                                 <text x="560" y="32" textAnchor="middle" className="text-xs fill-[#6b7280]">회피</text>
                               </svg>
