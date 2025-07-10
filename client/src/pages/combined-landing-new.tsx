@@ -264,17 +264,12 @@ export default function CombinedLanding() {
       year: "2022-2023",
       client: "Snapask Korea",
       role: "콘텐츠 기획, 영상 제작",
-      tools: ["Video Production", "Educational Content", "Mobile Platform"],
+      tools: ["BMPCC 6K", "브랜드 LUT", "Python", "FFmpeg", "DaVinci Resolve", "Premiere Pro", "After Effects"],
       images: [
-        "/attached_assets/image_1752117224002.png",
-        "/attached_assets/image_1752117245939.png",
-        "/attached_assets/image_1752117297358.png",
-        "/attached_assets/image_1752117306935.png",
-        "/attached_assets/image_1752117499684.png",
-        "/attached_assets/image_1752117512169.png",
-        "/attached_assets/image_1752117522606.png",
-        "/attached_assets/image_1752117572091.png",
-        "/attached_assets/image_1752117594242.png",
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80",
       ],
     },
     {
@@ -1646,7 +1641,7 @@ export default function CombinedLanding() {
                     <div>
                       <div className="text-sm text-[#282623] tracking-tight leading-relaxed">
                         {selectedProject.id === "1" && "전체 기간: 2024.01 ~ 2024.07 (7개월)"}
-                        {selectedProject.id === "2" && "전체 기간: 2023.03 ~ 2023.12 (10개월)"}
+                        {selectedProject.id === "2" && "전체 기간: 2022년 1월 ~ 2022년 7월 (7개월)"}
                         {selectedProject.id === "3" && "전체 기간: 2023.02 ~ 2023.08 (7개월)"}
                         {selectedProject.id === "4" && "전체 기간: 2024.08 ~ 2024.11 (4개월)"}
                       </div>
@@ -1742,23 +1737,21 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 배경</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 프로젝트 개요</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>Snapask 프리미엄 콘텐츠 기획 배경:</strong></p>
-                            <p>- 기존 교육 콘텐츠의 단순 반복 구조로 인한 학습 효과 저하</p>
-                            <p>- 아시아 교육 시장의 급성장과 프리미엄 콘텐츠 수요 증가</p>
-                            <p>- 경쟁 서비스 대비 차별화된 교육 방법론 필요</p>
-                            <p>- 브랜드 메시지 전달 및 시각적 일관성 부족 문제</p>
+                            <p><strong>Snapask 프리미엄 교육 콘텐츠 영상제작:</strong></p>
+                            <p>외국 제작에 따른 의사결정 지연, 연출 난잡, 품질 단차 문제를 해결하기 위해 전 공정 인하우스 제작 체계를 구축하였습니다. 프리미엄 교육 콘텐츠 시장에서 차별화된 브랜드 메시지를 효과적으로 전달하는 교육용 영상 콘텐츠를 제작하여 시너마틱 품질과 효율성을 동시에 달성하는 새로운 제작 표준을 확립하였습니다.</p>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 해결 전략</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 해결한 주요 문제점</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>영상 제작 전문성 기반 통합 솔루션:</strong></p>
-                            <p>- 브랜드 전용 LUT 설계로 일관된 시각적 브랜딩 구현</p>
-                            <p>- 시네마틱 색감 적용 (Teal & Orange, Film Emulation)</p>
-                            <p>- 3세대 스토리보드 기법으로 체계적 기획 프로세스 구축</p>
-                            <p>- Full-Stack 제작 환경 구축으로 품질 일관성 확보</p>
+                            <p><strong>외국 제작에 따른 의사결정 지연 및 커뮤니케이션 비효율성:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>외국 방향의 일관성 부족으로 인한 품질 저하</li>
+                              <li>브랜드 메시지 전달 및 차별화 요소 부재</li>
+                              <li>제작 일정 관리 어려움과 비용 증가</li>
+                            </ul>
                           </div>
                         </div>
                       </>
@@ -1970,23 +1963,129 @@ export default function CombinedLanding() {
                     {selectedProject.id === "2" && (
                       <>
                         <div>
-                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Tech 효율화 및 자동화</h3>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 영상제작 전문성</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>FFmpeg 최적화를 통한 획기적인 효율성 향상:</strong></p>
-                            <p>- 기존 수동 렌더링 방식에서 자동화된 일괄 처리 시스템으로 전환</p>
-                            <p>- 영상 포맷 변환 및 압축 최적화로 제작 리드타임 40% 이상 단축</p>
-                            <p>- 멀티스레드 처리를 통한 동시 작업 처리 능력 향상</p>
-                            <p>- 품질 손실 최소화 알고리즘 적용으로 프리미엄 품질 유지</p>
+                            <p><strong>기획 및 사전 제작:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>브랜드 메시지를 고려한 전략적 기획</li>
+                              <li>삼세대 스토리보드 작성 및 시나리오 개발</li>
+                            </ul>
+                            <p><strong>촬영 그레이딩:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>브랜드 전용 LUT 설계 및 개발</li>
+                              <li>시네마틱 색감 구현 (Teal & Orange, Film Emulation)</li>
+                            </ul>
+                            <p><strong>편집 오디오:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>일관된 톤 앤 매너의 시스템 적용</li>
+                              <li>영화적 품질의 색상 보정 및 사운드 디자인</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Tech 효율화</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <p><strong>기존 혁신을 통한 효율성 극대화:</strong></p>
+                            <p>50분 분량의 교육 콘텐츠 5개 클래스를 동시에 제작하는 대규모 프로젝트에서 Python 자동화와 FFmpeg 최적화를 통해 획기적인 효율성 향상을 달성하였습니다.</p>
+                            <p><strong>프로젝트 배경:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>50분 분량의 교육 콘텐츠 5개 클래스 동시 제작 요구</li>
+                              <li>기존 수동 편집 방식의 한계와 시간 소요 문제</li>
+                              <li>일관된 품질 유지와 효율적 관리 필요</li>
+                              <li>스케일업된 제작 환경에서의 최적화 요구</li>
+                            </ul>
+                            <p><strong>Python 자동화:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>Python 기반 자동화 시스템 개발</li>
+                              <li>병렬 처리를 통한 다중 클래스 동시 작업</li>
+                              <li>데이터 자동 분류 및 카테고리화</li>
+                              <li>반복 작업 자동화를 통한 시간 절약</li>
+                            </ul>
+                            <p><strong>FFmpeg 최적화:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>FFmpeg 기반 멀티스레드 시스템 구축</li>
+                              <li>고성능 비디오 편집 및 처리</li>
+                              <li>포맷 통합 자동화 시스템</li>
+                              <li>배치 처리를 통한 대용량 작업 효율화</li>
+                            </ul>
+                            <p><strong>효율화 성과:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>제작 리드타임 40% 이상 대폭 단축</li>
+                              <li>규격화된 품질 관리 시스템 구축</li>
+                              <li>전체 클래스 일관된 품질 확보</li>
+                              <li>인력 자원 최적화로 비용 절감</li>
+                            </ul>
                           </div>
                         </div>
                         <div>
                           <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• Full-Stack 제작 성과</h3>
                           <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
-                            <p><strong>통합 제작 환경 구축:</strong></p>
-                            <p>- 기획부터 편집까지 모든 단계를 일원화하여 의사결정 속도 개선</p>
-                            <p>- 외주 의존도 최소화로 품질 일관성 및 비용 효율성 달성</p>
-                            <p>- 브랜드 메시지 통합성 확보 및 차별화 요소 강화</p>
-                            <p>- 홍콩 BP 인증 획득으로 국제적 품질 검증 완료</p>
+                            <div className="bg-green-50 border border-green-200 p-4 rounded-lg mb-4">
+                              <div className="text-center mb-3">
+                                <div className="text-xl font-bold text-green-700 mb-1">40% 이상 제작 리드타임 단축 달성</div>
+                              </div>
+                              <div className="grid grid-cols-3 gap-4 text-center">
+                                <div className="bg-white p-3 rounded-lg border border-green-100">
+                                  <div className="text-lg font-bold text-green-700">40%</div>
+                                  <div className="text-sm text-green-600">리드타임 단축</div>
+                                </div>
+                                <div className="bg-white p-3 rounded-lg border border-green-100">
+                                  <div className="text-lg font-bold text-green-700">10만+</div>
+                                  <div className="text-sm text-green-600">조회수 달성</div>
+                                </div>
+                                <div className="bg-white p-3 rounded-lg border border-green-100">
+                                  <div className="text-lg font-bold text-green-700">홍콩 BP</div>
+                                  <div className="text-sm text-green-600">인증 획득</div>
+                                </div>
+                              </div>
+                            </div>
+                            <p><strong>전 공정 직접 수행:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>기획부터 후반 작업까지 원스톱 제작 체계 구축</li>
+                              <li>품질 일관성과 창의적 통합 관리를 통한 시너지 효과 창출</li>
+                              <li>효율적인 커뮤니케이션 통한 시너지 효과</li>
+                              <li>통합 관리를 통한 시너지 효과</li>
+                            </ul>
+                            <p><strong>시네마틱 품질 달성:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>브랜드 LUT 및 시네마틱 톤 적용 설계</li>
+                              <li>영화적 품질 수준의 교육 콘텐츠 제작</li>
+                              <li>차별화된 시각적 경험 제공</li>
+                              <li>프리미엄 브랜드 이미지 구축</li>
+                            </ul>
+                            <p><strong>품질 인증:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>10만+ 조회수 달성</li>
+                              <li>홍콩 BP에게 인증 획득</li>
+                              <li>초기 구매자 만족도 5.0</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-[#282623] mb-2 tracking-tight leading-relaxed">• 시장 인텐트 및 차별화 전략</h3>
+                          <div className="text-sm text-[#58534e] tracking-tight leading-relaxed ml-4 space-y-2">
+                            <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-4">
+                              <p className="text-sm text-yellow-800 font-medium">
+                                인하우스 제작 체계 구축을 통해 40% 이상의 리드타임 단축 달성으로 시네마틱 품질을 돌시에 담성하는 제작 모델 구축으로 프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였습니다.
+                              </p>
+                            </div>
+                            <p><strong>시장 인텐트 및 차별화 전략:</strong></p>
+                            <ul className="list-disc ml-4 space-y-1">
+                              <li>프리미엄 교육 콘텐츠 시장에서의 새로운 표준 제시</li>
+                              <li>기술 혁신을 통한 차별화된 경쟁력 확보</li>
+                              <li>효율성과 품질을 동시에 담성하는 제작 모델 구축</li>
+                              <li>자체 가능한 고품질 콘텐츠 제작 시스템 확립</li>
+                            </ul>
+                            <p><strong>통합 제작 프로세스:</strong></p>
+                            <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                              <p className="text-sm text-gray-700 mb-2">
+                                <strong>기획 → 사전 제작 → 촬영 → 편집 → 컬러 그레이딩 → 마스터링 → 배포</strong>
+                              </p>
+                              <p className="text-xs text-gray-600">
+                                기획부터 상영까지 전 과정을 일관되게 관리하여 최적화된 결과물을 도출하는 통합 제작 프로세스를 구축하였습니다.
+                              </p>
+                            </div>
+                            <p><strong>Snapask 프로젝트 전 공정 직접 수행 기술 혁신을 통해 프리미엄 교육 콘텐츠 시장에서 차별화된 경쟁력을 확보하였으며, 시네마틱 품질과 효율성을 동시에 담성하는 새로운 제작 표준을 확립하였습니다. 40% 이상의 리드타임 단축 10만+ 조회수 달성, 홍콩 BP 인증 획득 이 프로젝트의 성공을 입증하는 내로직 지표입니다.</strong></p>
                           </div>
                         </div>
                       </>
