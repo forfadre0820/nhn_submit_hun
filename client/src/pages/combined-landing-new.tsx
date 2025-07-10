@@ -1718,45 +1718,45 @@ export default function CombinedLanding() {
                                 <text x="300" y="195" textAnchor="middle" className="text-xs fill-[#58534e]">시간 흐름</text>
                                 <text x="30" y="105" textAnchor="middle" className="text-xs fill-[#58534e]" transform="rotate(-90 30 105)">집중도</text>
                                 
-                                {/* 애니메이션 곡선 - 시청자 행동 순서대로 */}
+                                {/* 애니메이션 곡선 - 집중도 하강 패턴 */}
                                 <path 
-                                  d="M 70 50 Q 120 40 170 80 Q 220 120 270 140 Q 320 160 370 165 Q 420 170 470 175 Q 520 180 530 180" 
+                                  d="M 70 60 Q 150 50 180 90 Q 220 130 280 150 Q 340 170 420 175 Q 480 180 530 180" 
                                   stroke="#ff6b6b" 
                                   strokeWidth="3" 
                                   fill="none"
                                   style={{
                                     strokeDasharray: "460",
                                     strokeDashoffset: "460",
-                                    animation: "drawSequence 6s ease-out infinite"
+                                    animation: "drawSequence 8s ease-out infinite"
                                   }}
                                 />
                                 
                                 {/* 채워진 영역 */}
                                 <path 
-                                  d="M 70 50 Q 120 40 170 80 Q 220 120 270 140 Q 320 160 370 165 Q 420 170 470 175 Q 520 180 530 180 L 530 180 L 70 180 Z" 
+                                  d="M 70 60 Q 150 50 180 90 Q 220 130 280 150 Q 340 170 420 175 Q 480 180 530 180 L 530 180 L 70 180 Z" 
                                   fill="#ff6b6b" 
                                   opacity="0.1"
                                   style={{
-                                    animation: "fadeArea 6s ease-out infinite"
+                                    animation: "fadeArea 8s ease-out infinite"
                                   }}
                                 />
                                 
-                                {/* 주요 포인트 - 순차 애니메이션 */}
-                                <circle cx="120" cy="40" r="3" fill="#ff6b6b" style={{animation: "pointPulse 6s ease-out infinite", animationDelay: "1s"}}/>
-                                <text x="120" y="25" textAnchor="middle" className="text-xs fill-[#282623]">5초 이내</text>
-                                <text x="120" y="15" textAnchor="middle" className="text-xs fill-[#282623]">집중 분산</text>
+                                {/* 주요 포인트 - 곡선 진행에 맞춰 순차 등장 */}
+                                <circle cx="150" cy="50" r="3" fill="#ff6b6b" style={{animation: "pointPulse 8s ease-out infinite", animationDelay: "1.5s"}}/>
+                                <text x="150" y="35" textAnchor="middle" className="text-xs fill-[#282623]">5초 이내</text>
+                                <text x="150" y="25" textAnchor="middle" className="text-xs fill-[#282623]">집중 분산</text>
                                 
-                                <circle cx="220" cy="120" r="3" fill="#ff6b6b" style={{animation: "pointPulse 6s ease-out infinite", animationDelay: "2s"}}/>
-                                <text x="220" y="105" textAnchor="middle" className="text-xs fill-[#282623]">창 최소화</text>
-                                <text x="220" y="95" textAnchor="middle" className="text-xs fill-[#282623]">다른 업무</text>
+                                <circle cx="220" cy="130" r="3" fill="#ff6b6b" style={{animation: "pointPulse 8s ease-out infinite", animationDelay: "3s"}}/>
+                                <text x="220" y="115" textAnchor="middle" className="text-xs fill-[#282623]">창 최소화</text>
+                                <text x="220" y="105" textAnchor="middle" className="text-xs fill-[#282623]">다른 업무</text>
                                 
-                                <circle cx="320" cy="160" r="3" fill="#ff6b6b" style={{animation: "pointPulse 6s ease-out infinite", animationDelay: "3s"}}/>
-                                <text x="320" y="145" textAnchor="middle" className="text-xs fill-[#282623]">참여도</text>
-                                <text x="320" y="135" textAnchor="middle" className="text-xs fill-[#282623]">급격 하락</text>
+                                <circle cx="280" cy="150" r="3" fill="#ff6b6b" style={{animation: "pointPulse 8s ease-out infinite", animationDelay: "4.5s"}}/>
+                                <text x="280" y="135" textAnchor="middle" className="text-xs fill-[#282623]">참여도</text>
+                                <text x="280" y="125" textAnchor="middle" className="text-xs fill-[#282623]">급격 하락</text>
                                 
-                                <circle cx="470" cy="175" r="3" fill="#ff6b6b" style={{animation: "pointPulse 6s ease-out infinite", animationDelay: "4s"}}/>
-                                <text x="470" y="160" textAnchor="middle" className="text-xs fill-[#282623]">반복 교육</text>
-                                <text x="470" y="150" textAnchor="middle" className="text-xs fill-[#282623]">회피</text>
+                                <circle cx="420" cy="175" r="3" fill="#ff6b6b" style={{animation: "pointPulse 8s ease-out infinite", animationDelay: "6s"}}/>
+                                <text x="420" y="160" textAnchor="middle" className="text-xs fill-[#282623]">반복 교육</text>
+                                <text x="420" y="150" textAnchor="middle" className="text-xs fill-[#282623]">회피</text>
                                 
                                 {/* 문제 영역 텍스트 */}
                                 <text x="300" y="115" textAnchor="middle" className="text-xs fill-[#ff6b6b] font-medium">문제 영역: 지속적인 집중도 저하</text>
